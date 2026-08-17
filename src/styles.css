@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -50,9 +51,9 @@
   --color-brand-glow: var(--brand-glow);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
- --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
- --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
+  --font-mono: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 :root {
@@ -108,14 +109,17 @@
   html {
     color-scheme: dark;
     background-color: var(--color-background);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    scroll-behavior: smooth;
   }
   * {
     border-color: var(--color-border);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: var(--font-sans);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
@@ -123,6 +127,23 @@
   ::selection {
     background: oklch(0.72 0.19 55 / 0.4);
     color: var(--color-foreground);
+  }
+
+  /* Custom Ultra-Sleek Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 9999px;
+    border: 2px solid #000000;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff7a00;
   }
 }
 

@@ -47,9 +47,9 @@ const presets = [
 export function WorkflowShowcase() {
   const [active, setActive] = useState(0);
   return (
-    <section className="relative container-pad mx-auto max-w-[1400px] py-24 md:py-32">
+    <section className="relative container-pad mx-auto max-w-[1400px] py-10 md:py-14">
       <SectionHeading title="Watch a workflow come to life" description="Real templates we deploy in production — click any preset to see the flow animate." />
-      <div className="mt-16 grid gap-8 lg:grid-cols-[280px_1fr]">
+      <div className="mt-8 grid gap-8 lg:grid-cols-[280px_1fr]">
         <div className="space-y-2">
           {presets.map((p, i) => (
             <button

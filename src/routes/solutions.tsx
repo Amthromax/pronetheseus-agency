@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/sections/SectionHeading";
 export const Route = createFileRoute("/solutions")({
   head: () => ({
     meta: [
-      { title: "Solutions — Helleious" },
+      { title: "Solutions — Pronetheseus" },
       { name: "description", content: "End-to-end AI solutions for revenue, operations, and support." },
       { property: "og:url", content: "/solutions" },
     ],

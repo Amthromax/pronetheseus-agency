@@ -80,9 +80,9 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2">
               <div className="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-[#ff7a00] to-[#c2410c]">
-                <span className="font-display text-2xl leading-none text-white">A</span>
+                <span className="font-display text-2xl leading-none text-white">P</span>
               </div>
-              <span className="font-display text-2xl">Helleious</span>
+              <span className="font-display text-2xl">Pronetheseus</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               AI Employees that work 24/7. We design and ship automation systems for teams
@@ -136,7 +136,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-6 border-t border-white/5 pt-8 md:flex-row md:items-center">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Helleious. All rights reserved.
+            © {new Date().getFullYear()} Pronetheseus. All rights reserved.
           </p>
           <div className="flex items-center gap-3">
             {[

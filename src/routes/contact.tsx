@@ -10,9 +10,9 @@ import type { ComponentType, ReactNode } from "react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Helleious" },
-      { name: "description", content: "Book a free 30-minute strategy call with the Helleious team." },
-      { property: "og:title", content: "Contact — Helleious" },
+      { title: "Contact — Pronetheseus" },
+      { name: "description", content: "Book a free 30-minute strategy call with the Pronetheseus team." },
+      { property: "og:title", content: "Contact — Pronetheseus" },
       { property: "og:description", content: "30-minute strategy call. Concrete plan, no fluff." },
       { property: "og:url", content: "/contact" },
     ],
@@ -41,32 +41,37 @@ function Page() {
       <div className="container-pad mx-auto max-w-[1400px]">
         <SectionHeading title="Let's talk about your automation stack" description="Book a call or send a note — we reply within a business day." />
       </div>
-      <section className="container-pad mx-auto mt-20 max-w-[1400px]">
-        <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
-          <form onSubmit={handleSubmit(onSubmit)} className="rounded-3xl border border-white/10 glass p-8 md:p-10">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Name" error={errors.name?.message}><input {...register("name")} className="cf-input" placeholder="Your name" /></Field>
-              <Field label="Email" error={errors.email?.message}><input {...register("email")} type="email" className="cf-input" placeholder="you@company.com" /></Field>
-              <div className="sm:col-span-2">
-                <Field label="Company (optional)" error={errors.company?.message}><input {...register("company")} className="cf-input" placeholder="Acme Inc." /></Field>
+      <section className="container-pad mx-auto mt-10 max-w-[1400px]">
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+          {/* Left Column: Contact Form + Company Background Cards */}
+          <div className="space-y-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="rounded-2xl border border-white/10 glass p-6 md:p-7 backdrop-blur-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+              <div className="grid gap-3.5 sm:grid-cols-2">
+                <Field label="Name" error={errors.name?.message}><input {...register("name")} className="cf-input" placeholder="Your name" /></Field>
+                <Field label="Email" error={errors.email?.message}><input {...register("email")} type="email" className="cf-input" placeholder="you@company.com" /></Field>
+                <div className="sm:col-span-2">
+                  <Field label="Company (optional)" error={errors.company?.message}><input {...register("company")} className="cf-input" placeholder="Acme Inc." /></Field>
+                </div>
+                <div className="sm:col-span-2">
+                  <Field label="What are you looking to build?" error={errors.message?.message}>
+                    <textarea {...register("message")} rows={4} className="cf-input resize-none" placeholder="Tell us about your business and where you'd like automation..." />
+                  </Field>
+                </div>
               </div>
-              <div className="sm:col-span-2">
-                <Field label="What are you looking to build?" error={errors.message?.message}>
-                  <textarea {...register("message")} rows={5} className="cf-input resize-none" placeholder="Tell us about your business and where you'd like automation..." />
-                </Field>
-              </div>
-            </div>
-            <button disabled={isSubmitting} className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-6 py-3.5 text-sm font-medium text-white transition hover:scale-[1.01] disabled:opacity-60">
-              {isSubmitting ? "Sending..." : "Send message"}
-            </button>
-            <style>{`.cf-input{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:12px 14px;font-size:14px;outline:none;color:inherit}.cf-input::placeholder{color:rgb(148,148,158)}.cf-input:focus{border-color:rgba(255,122,0,0.5);box-shadow:0 0 0 4px rgba(255,122,0,0.1)}`}</style>
-          </form>
+              <button disabled={isSubmitting} className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-6 py-3 text-sm font-medium text-white transition hover:scale-[1.01] disabled:opacity-60 shadow-[0_8px_20px_-8px_rgba(255,122,0,0.6)]">
+                {isSubmitting ? "Sending..." : "Send message"}
+              </button>
+              <style>{`.cf-input{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:10px 12px;font-size:13.5px;outline:none;color:inherit}.cf-input::placeholder{color:rgb(148,148,158)}.cf-input:focus{border-color:rgba(255,122,0,0.5);box-shadow:0 0 0 4px rgba(255,122,0,0.1)}`}</style>
+            </form>
+            <InfoCard Icon={Building2} title="Pronetheseus Technologies" body="An AI automation studio building AI Employees, n8n workflows, CRM automations and voice agents for growing teams worldwide." />
+            <InfoCard Icon={MapPin} title="Headquartered in India" body="Registered office · Mumbai, Maharashtra, India — with a fully remote delivery team across London, New York, Dubai and Singapore." />
+          </div>
+
+          {/* Right Column: Direct Channels + Working Hours */}
           <div className="space-y-4">
             <InfoCard Icon={CalendarDays} title="Book a strategy call" body="30-minute call with a principal engineer. Free, actionable, no sales pressure." cta="Open calendar" ctaTo="/book" />
-            <InfoCard Icon={Mail} title="Email us directly" body="info@helleious.com — we reply within one business day." />
-            <InfoCard Icon={Phone} title="Call or WhatsApp" body="+91 90000 00000 · Mon–Fri, available across IST & GMT timezones." />
-            <InfoCard Icon={Building2} title="Helleious Technologies" body="An AI automation studio building AI Employees, n8n workflows, CRM automations and voice agents for growing teams worldwide." />
-            <InfoCard Icon={MapPin} title="Headquartered in India" body="Registered office · Mumbai, Maharashtra, India — with a fully remote delivery team across London, New York, Dubai and Singapore." />
+            <InfoCard Icon={Mail} title="Email us directly" body="info@pronetheseus.com — we reply within one business day." />
+            <InfoCard Icon={Phone} title="Call or WhatsApp" body="+91 86829 19009 · Mon–Fri, available across IST & GMT timezones." />
             <InfoCard Icon={Clock} title="Working hours" body="Monday – Friday · 9:00 AM to 7:00 PM IST. Async support over email on weekends." />
           </div>
         </div>

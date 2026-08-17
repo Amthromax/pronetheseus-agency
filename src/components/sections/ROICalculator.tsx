@@ -42,7 +42,7 @@ function Slider({ label, value, min, max, step = 1, unit = "", prefix = "", onCh
     <label className="block">
       <div className="flex items-center justify-between text-sm">
         <span className="text-neutral-500">{label}</span>
-        <span className="font-mono text-neutral-900">{prefix}{value.toLocaleString()}{unit}</span>
+        <span className="font-sans font-semibold text-neutral-900">{prefix}{value.toLocaleString()}{unit}</span>
       </div>
       <input type="range" min={min} max={max} step={step} value={value} onChange={(e) => onChange(Number(e.target.value))} className="mt-3 w-full accent-[#ff7a00]" />
     </label>
@@ -53,7 +53,7 @@ function Metric({ label, value, prefix = "", suffix = "", highlight = false }: {
   return (
     <div className={`rounded-2xl border p-5 ${highlight ? "border-brand/40 bg-gradient-to-br from-brand/10 to-transparent" : "border-neutral-200 bg-neutral-50"}`}>
       <div className="text-xs uppercase tracking-widest text-neutral-500">{label}</div>
-      <div key={value} className="mt-2 font-display text-3xl text-gradient-brand md:text-4xl">
+      <div key={value} className="mt-2 font-sans font-bold text-3xl text-gradient-brand md:text-4xl">
         <Counter to={value} prefix={prefix} suffix={suffix} duration={800} />
       </div>
     </div>

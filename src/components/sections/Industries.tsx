@@ -83,11 +83,6 @@ export function Industries() {
             <AgentCard key={`a-${a.name}`} agent={a} />
           ))}
         </Marquee>
-        <Marquee speed={65} reverse className="mt-6 py-4">
-          {[...agents].reverse().map((a) => (
-            <AgentCard key={`b-${a.name}`} agent={a} />
-          ))}
-        </Marquee>
       </div>
     </section>
   );

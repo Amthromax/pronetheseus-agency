@@ -21,7 +21,7 @@ export function Comparison() {
         <div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-neutral-200 bg-neutral-50 text-xs uppercase tracking-widest text-neutral-500">
           <div className="p-4" />
           <div className="p-4 text-center">Traditional Agency</div>
-          <div className="p-4 text-center text-brand">Helleious</div>
+          <div className="p-4 text-center text-brand">Pronetheseus</div>
         </div>
         {rows.map((r, i) => (
           <div key={i} className="grid grid-cols-[1.4fr_1fr_1fr] items-center border-b border-neutral-100 text-sm last:border-b-0">

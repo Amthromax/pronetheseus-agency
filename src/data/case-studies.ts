@@ -38,7 +38,7 @@ export const caseStudies: CaseStudy[] = [
       { v: 47, s: "%", l: "More calls" },
     ],
     quote:
-      "Helleious quietly replaced an entire SDR function. We now book more meetings with fewer people.",
+      "Pronetheseus quietly replaced an entire SDR function. We now book more meetings with fewer people.",
     who: "Sarah Chen",
     role: "VP Sales",
     customer: {
@@ -175,6 +175,129 @@ export const caseStudies: CaseStudy[] = [
       { step: "04", title: "Pilot", duration: "Week 5", description: "10% traffic shadow, side-by-side quality scoring." },
       { step: "05", title: "Launch", duration: "Week 6", description: "Full rollout across web and in-app surfaces." },
       { step: "06", title: "Handover", duration: "Ongoing", description: "Weekly retraining, monthly reviews, on-call Slack channel." },
+    ],
+  },
+  {
+    slug: "apex-global-media",
+    company: "Apex Global Media",
+    industry: "Digital Agency",
+    hero: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80",
+    before: "Client onboarding took 14 days with manual Slack, Notion & Drive setup.",
+    after: "Automated OS onboarded clients in 12 minutes with 100% data accuracy.",
+    metrics: [
+      { v: 1450, s: "hrs", l: "Saved / month" },
+      { v: 420, s: "%", l: "ROI" },
+      { v: 12, s: "min", l: "Avg onboarding" },
+    ],
+    quote: "Pronetheseus transformed our operational engine. Client satisfaction soared from day one.",
+    who: "David Sterling",
+    role: "Managing Director",
+    customer: {
+      founded: "2016",
+      size: "95 employees",
+      location: "New York, NY",
+      website: "apexglobalmedia.com",
+      stack: ["Slack", "Notion", "Google Drive", "n8n", "ClickUp"],
+    },
+    challenge:
+      "Rapid client acquisition created severe onboarding bottlenecks, delaying project kickoff dates and overburdening account managers.",
+    approach: [
+      "Zero-touch intake workflow triggering instant Slack channel & Drive creation.",
+      "Automated contract generation and DocuSign integration.",
+      "Real-time task template duplication in ClickUp based on client tier.",
+    ],
+    feedback: [
+      { name: "David Sterling", role: "Managing Director", rating: 5, text: "Incredible velocity and flawless architecture. Transformed our business." },
+      { name: "Elena Rostova", role: "Ops Lead", rating: 5, text: "Onboarding went from our biggest headache to our strongest selling point." },
+    ],
+    gallery: [
+      { src: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80", caption: "Automated Onboarding Console" },
+    ],
+    workflow: [
+      { step: "01", title: "Audit", duration: "Week 1", description: "Mapped all intake touchpoints and bottlenecks." },
+      { step: "02", title: "Build", duration: "Weeks 2–3", description: "n8n webhooks, Slack API, Google Workspace integration." },
+      { step: "03", title: "Launch", duration: "Week 4", description: "Full deployment with live client onboarding." },
+    ],
+  },
+  {
+    slug: "vanguard-capital",
+    company: "Vanguard Capital",
+    industry: "Wealth Management",
+    hero: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1600&q=80",
+    before: "Quarterly investor reporting required 3 analyst weeks of manual Excel building.",
+    after: "Live API reporting portal updates investor portfolios 24/7 automatically.",
+    metrics: [
+      { v: 950, s: "hrs", l: "Saved / month" },
+      { v: 380, s: "%", l: "ROI" },
+      { v: 100, s: "%", l: "Data accuracy" },
+    ],
+    quote: "Our investors receive live financial intelligence with zero manual effort from our team.",
+    who: "Victoria Hayes",
+    role: "Chief Investment Officer",
+    customer: {
+      founded: "2011",
+      size: "140 employees",
+      location: "Boston, MA",
+      website: "vanguardcapital.com",
+      stack: ["Salesforce", "Snowflake", "PowerBI", "FastAPI"],
+    },
+    challenge:
+      "Manual data aggregation across 15 liquidity providers led to delayed quarterly reports and potential human calculation errors.",
+    approach: [
+      "Built automated data pipeline syncing API feeds into Snowflake data lake.",
+      "Custom investor portal with role-based access control.",
+      "Automated PDF report generator dispatched via secure email.",
+    ],
+    feedback: [
+      { name: "Victoria Hayes", role: "CIO", rating: 5, text: "Outstanding engineering rigor. Banking-grade security with zero hiccups." },
+    ],
+    gallery: [
+      { src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80", caption: "Investor Financial Dashboard" },
+    ],
+    workflow: [
+      { step: "01", title: "Architecture", duration: "Week 1", description: "Designed bank-grade encryption and API schemas." },
+      { step: "02", title: "Pipeline Build", duration: "Weeks 2–4", description: "Snowflake & FastAPI data sync engine." },
+      { step: "03", title: "Portal Cutover", duration: "Week 5", description: "Production release for 500+ accredited investors." },
+    ],
+  },
+  {
+    slug: "hyperscale-logistics",
+    company: "HyperScale Logistics",
+    industry: "E-Commerce Logistics",
+    hero: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80",
+    before: "Supplier inventory sync lags caused 18% out-of-stock order cancellations.",
+    after: "n8n bi-directional inventory router syncs 50k SKUs in sub-second intervals.",
+    metrics: [
+      { v: 3100, s: "hrs", l: "Saved / month" },
+      { v: 510, s: "%", l: "ROI" },
+      { v: 99.9, s: "%", l: "Fulfillment rate" },
+    ],
+    quote: "We scaled our order volume 3x while cutting stock-out cancellations down to zero.",
+    who: "Marcus Vance",
+    role: "Head of Operations",
+    customer: {
+      founded: "2018",
+      size: "310 employees",
+      location: "Chicago, IL",
+      website: "hyperscalelogistics.com",
+      stack: ["Shopify Plus", "NetSuite", "n8n", "PostgreSQL"],
+    },
+    challenge:
+      "Disconnected warehouse ERP systems caused inventory overselling during flash sale spikes.",
+    approach: [
+      "Sub-second event-driven webhook architecture connecting Shopify Plus & NetSuite.",
+      "Automated exception handling router with real-time Slack notifications.",
+    ],
+    feedback: [
+      { name: "Marcus Vance", role: "Head of Ops", rating: 5, text: "The system handled Black Friday volume without a single dropped packet." },
+    ],
+    gallery: [
+      { src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80", caption: "Warehouse Logistics Radar" },
+    ],
+    workflow: [
+      { step: "01", title: "Load Test", duration: "Week 1", description: "Simulated 50k requests/min against n8n cluster." },
+      { step: "02", title: "Build", duration: "Weeks 2–3", description: "NetSuite ERP connector & inventory cache." },
+      { step: "03", title: "Deployment", duration: "Week 4", description: "Live production cutover with zero downtime." },
     ],
   },
 ];

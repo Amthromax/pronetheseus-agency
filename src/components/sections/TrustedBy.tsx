@@ -8,7 +8,7 @@ export function TrustedBy() {
       {/* edge fades */}
       <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-black to-transparent" />
       <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-black to-transparent" />
-      <div className="container-pad mx-auto max-w-[1400px]">
+      <div className="w-full">
         <div className="mb-8 text-center text-[11px] uppercase tracking-[0.35em] text-white/50">
           Trusted by ambitious teams worldwide
         </div>

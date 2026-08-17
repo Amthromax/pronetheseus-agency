@@ -7,9 +7,9 @@ import { ContactCTA } from "@/components/sections/ContactCTA";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Helleious" },
-      { name: "description", content: "The senior team behind Helleious and the beliefs that guide our work." },
-      { property: "og:title", content: "About — Helleious" },
+      { title: "About — Pronetheseus" },
+      { name: "description", content: "The senior team behind Pronetheseus and the beliefs that guide our work." },
+      { property: "og:title", content: "About — Pronetheseus" },
       { property: "og:description", content: "Meet the team building the AI backbone of ambitious companies." },
       { property: "og:url", content: "/about" },
     ],
@@ -46,7 +46,7 @@ function Page() {
         </Stagger>
       </section>
       <section className="container-pad mx-auto mt-24 max-w-[1400px]">
-        <SectionHeading title="The humans behind Helleious" />
+        <SectionHeading title="The humans behind Pronetheseus" />
         <div className="mt-14 flex flex-wrap justify-center gap-6">
           {team.map((m, i) => (
             <motion.div key={m.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group w-full rounded-3xl border border-white/10 bg-white/[0.03] p-4 sm:w-[320px]">

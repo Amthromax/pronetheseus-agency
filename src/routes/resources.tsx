@@ -5,7 +5,7 @@ import { RESOURCES } from "@/lib/resources";
 export const Route = createFileRoute("/resources")({
   head: () => ({
     meta: [
-      { title: "Resources — Helleious" },
+      { title: "Resources — Pronetheseus" },
       { name: "description", content: "Templates, playbooks, and guides for teams shipping AI." },
       { property: "og:url", content: "/resources" },
     ],

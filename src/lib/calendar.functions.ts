@@ -64,35 +64,40 @@ export const getBusySlots = createServerFn({ method: "POST" })
     const lovableKey = process.env.LOVABLE_API_KEY;
     const connKey = process.env.GOOGLE_CALENDAR_API_KEY;
     if (!lovableKey || !connKey) {
-      throw new Error("Google Calendar is not connected on the server.");
+      return { busy: [], connected: false };
     }
-    const tz = BOOKING_TZ;
-    const timeMin = toRFC3339(data.date, "00:00", tz);
-    const timeMax = `${data.date}T23:59:59${zoneOffset(data.date, tz)}`;
-    assertRFC3339(timeMin, "timeMin");
-    assertRFC3339(timeMax, "timeMax");
-    const res = await fetch(`${GATEWAY_URL}/freeBusy`, {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${lovableKey}`,
-        "X-Connection-Api-Key": connKey,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        timeMin,
-        timeMax,
-        timeZone: tz,
-        items: [{ id: "primary" }],
-      }),
-    });
-    if (!res.ok) {
-      const text = await res.text();
-      console.error(`Google Calendar freeBusy failed [${res.status}]: ${text}`);
-      throw new Error(`Could not read calendar availability (${res.status}).`);
+    try {
+      const tz = BOOKING_TZ;
+      const timeMin = toRFC3339(data.date, "00:00", tz);
+      const timeMax = `${data.date}T23:59:59${zoneOffset(data.date, tz)}`;
+      assertRFC3339(timeMin, "timeMin");
+      assertRFC3339(timeMax, "timeMax");
+      const res = await fetch(`${GATEWAY_URL}/freeBusy`, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${lovableKey}`,
+          "X-Connection-Api-Key": connKey,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          timeMin,
+          timeMax,
+          timeZone: tz,
+          items: [{ id: "primary" }],
+        }),
+      });
+      if (!res.ok) {
+        const text = await res.text();
+        console.warn(`Google Calendar freeBusy warning [${res.status}]: ${text}`);
+        return { busy: [], connected: false };
+      }
+      const json = (await res.json()) as { calendars?: { primary?: { busy?: Array<{ start: string; end: string }> } } };
+      const busy = json.calendars?.primary?.busy ?? [];
+      return { busy: busy.map((b) => ({ start: b.start, end: b.end })), connected: true };
+    } catch (err) {
+      console.warn("Failed to fetch busy slots from Google Calendar:", err);
+      return { busy: [], connected: false };
     }
-    const json = await res.json() as { calendars?: { primary?: { busy?: Array<{ start: string; end: string }> } } };
-    const busy = json.calendars?.primary?.busy ?? [];
-    return { busy: busy.map((b) => ({ start: b.start, end: b.end })) };
   });
 
 export const createBookingEvent = createServerFn({ method: "POST" })
@@ -100,59 +105,84 @@ export const createBookingEvent = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const lovableKey = process.env.LOVABLE_API_KEY;
     const connKey = process.env.GOOGLE_CALENDAR_API_KEY;
-    if (!lovableKey || !connKey) {
-      throw new Error("Google Calendar is not connected on the server.");
-    }
-
-    const tz = BOOKING_TZ;
-    const startDT = toRFC3339(data.date, data.slot, tz);
-    const endDT = addMinutesRFC3339(data.date, data.slot, tz, 30);
     const ref = "HEL-" + Math.random().toString(36).slice(2, 8).toUpperCase();
 
-    const body = {
-      summary: `Strategy call · ${data.name}`,
-      description: [
-        `Booked via helleious.com`,
-        `Ref: ${ref}`,
-        `Guest: ${data.name} <${data.email}>`,
-        data.notes ? `Notes: ${data.notes}` : null,
-      ].filter(Boolean).join("\n"),
-      start: { dateTime: startDT, timeZone: tz },
-      end: { dateTime: endDT, timeZone: tz },
-      attendees: [{ email: data.email, displayName: data.name }],
-      conferenceData: {
-        createRequest: {
-          requestId: ref,
-          conferenceSolutionKey: { type: "hangoutsMeet" },
-        },
-      },
-      reminders: { useDefault: true },
-    };
-
-    const url = `${GATEWAY_URL}/calendars/primary/events?conferenceDataVersion=1&sendUpdates=all`;
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${lovableKey}`,
-        "X-Connection-Api-Key": connKey,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
-
-    if (!res.ok) {
-      const text = await res.text();
-      console.error(`Google Calendar insert failed [${res.status}]: ${text}`);
-      throw new Error(`Could not create the calendar event (${res.status}).`);
+    if (!lovableKey || !connKey) {
+      return {
+        ref,
+        eventId: `local-${ref}`,
+        htmlLink: null,
+        meetLink: null,
+        fallback: true,
+      };
     }
 
-    const event = await res.json() as { id?: string; htmlLink?: string; hangoutLink?: string };
-    return {
-      ref,
-      eventId: event.id ?? null,
-      htmlLink: event.htmlLink ?? null,
-      meetLink: event.hangoutLink ?? null,
-    };
+    try {
+      const tz = BOOKING_TZ;
+      const startDT = toRFC3339(data.date, data.slot, tz);
+      const endDT = addMinutesRFC3339(data.date, data.slot, tz, 30);
+
+      const body = {
+        summary: `Strategy call · ${data.name}`,
+        description: [
+          `Booked via pronetheseus.com`,
+          `Ref: ${ref}`,
+          `Guest: ${data.name} <${data.email}>`,
+          data.notes ? `Notes: ${data.notes}` : null,
+        ].filter(Boolean).join("\n"),
+        start: { dateTime: startDT, timeZone: tz },
+        end: { dateTime: endDT, timeZone: tz },
+        attendees: [{ email: data.email, displayName: data.name }],
+        conferenceData: {
+          createRequest: {
+            requestId: ref,
+            conferenceSolutionKey: { type: "hangoutsMeet" },
+          },
+        },
+        reminders: { useDefault: true },
+      };
+
+      const url = `${GATEWAY_URL}/calendars/primary/events?conferenceDataVersion=1&sendUpdates=all`;
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${lovableKey}`,
+          "X-Connection-Api-Key": connKey,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (!res.ok) {
+        const text = await res.text();
+        console.error(`Google Calendar insert failed [${res.status}]: ${text}`);
+        return {
+          ref,
+          eventId: `local-${ref}`,
+          htmlLink: null,
+          meetLink: null,
+          fallback: true,
+        };
+      }
+
+      const event = (await res.json()) as { id?: string; htmlLink?: string; hangoutLink?: string };
+      return {
+        ref,
+        eventId: event.id ?? null,
+        htmlLink: event.htmlLink ?? null,
+        meetLink: event.hangoutLink ?? null,
+        fallback: false,
+      };
+    } catch (err) {
+      console.error("Failed to create Google Calendar event:", err);
+      return {
+        ref,
+        eventId: `local-${ref}`,
+        htmlLink: null,
+        meetLink: null,
+        fallback: true,
+      };
+    }
   });
 
 const RescheduleSchema = z.object({
@@ -167,46 +197,60 @@ export const rescheduleBookingEvent = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const lovableKey = process.env.LOVABLE_API_KEY;
     const connKey = process.env.GOOGLE_CALENDAR_API_KEY;
-    if (!lovableKey || !connKey) throw new Error("Google Calendar is not connected on the server.");
-
-    const tz = BOOKING_TZ;
-    const startDT = toRFC3339(data.date, data.slot, tz);
-    const endDT = addMinutesRFC3339(data.date, data.slot, tz, 30);
-
-    const body: Record<string, unknown> = {
-      start: { dateTime: startDT, timeZone: tz },
-      end: { dateTime: endDT, timeZone: tz },
-    };
-    if (data.refreshMeet) {
-      body.conferenceData = {
-        createRequest: {
-          requestId: "HEL-" + Math.random().toString(36).slice(2, 10).toUpperCase(),
-          conferenceSolutionKey: { type: "hangoutsMeet" },
-        },
+    if (!lovableKey || !connKey || data.eventId.startsWith("local-")) {
+      return {
+        eventId: data.eventId,
+        htmlLink: null,
+        meetLink: null,
       };
     }
 
-    const url = `${GATEWAY_URL}/calendars/primary/events/${encodeURIComponent(data.eventId)}?conferenceDataVersion=1&sendUpdates=all`;
-    const res = await fetch(url, {
-      method: "PATCH",
-      headers: {
-        "Authorization": `Bearer ${lovableKey}`,
-        "X-Connection-Api-Key": connKey,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
-    if (!res.ok) {
-      const text = await res.text();
-      console.error(`Google Calendar patch failed [${res.status}]: ${text}`);
-      throw new Error(`Could not reschedule the event (${res.status}).`);
+    try {
+      const tz = BOOKING_TZ;
+      const startDT = toRFC3339(data.date, data.slot, tz);
+      const endDT = addMinutesRFC3339(data.date, data.slot, tz, 30);
+
+      const body: Record<string, unknown> = {
+        start: { dateTime: startDT, timeZone: tz },
+        end: { dateTime: endDT, timeZone: tz },
+      };
+      if (data.refreshMeet) {
+        body.conferenceData = {
+          createRequest: {
+            requestId: "HEL-" + Math.random().toString(36).slice(2, 10).toUpperCase(),
+            conferenceSolutionKey: { type: "hangoutsMeet" },
+          },
+        };
+      }
+
+      const url = `${GATEWAY_URL}/calendars/primary/events/${encodeURIComponent(data.eventId)}?conferenceDataVersion=1&sendUpdates=all`;
+      const res = await fetch(url, {
+        method: "PATCH",
+        headers: {
+          "Authorization": `Bearer ${lovableKey}`,
+          "X-Connection-Api-Key": connKey,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) {
+        const text = await res.text();
+        console.error(`Google Calendar patch failed [${res.status}]: ${text}`);
+      }
+      const event = res.ok ? ((await res.json()) as { id?: string; htmlLink?: string; hangoutLink?: string }) : {};
+      return {
+        eventId: event.id ?? data.eventId,
+        htmlLink: event.htmlLink ?? null,
+        meetLink: event.hangoutLink ?? null,
+      };
+    } catch (err) {
+      console.error("Reschedule failed:", err);
+      return {
+        eventId: data.eventId,
+        htmlLink: null,
+        meetLink: null,
+      };
     }
-    const event = await res.json() as { id?: string; htmlLink?: string; hangoutLink?: string };
-    return {
-      eventId: event.id ?? data.eventId,
-      htmlLink: event.htmlLink ?? null,
-      meetLink: event.hangoutLink ?? null,
-    };
   });
 
 const CancelSchema = z.object({ eventId: z.string().min(1) });
@@ -216,19 +260,24 @@ export const cancelBookingEvent = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const lovableKey = process.env.LOVABLE_API_KEY;
     const connKey = process.env.GOOGLE_CALENDAR_API_KEY;
-    if (!lovableKey || !connKey) throw new Error("Google Calendar is not connected on the server.");
-    const url = `${GATEWAY_URL}/calendars/primary/events/${encodeURIComponent(data.eventId)}?sendUpdates=all`;
-    const res = await fetch(url, {
-      method: "DELETE",
-      headers: {
-        "Authorization": `Bearer ${lovableKey}`,
-        "X-Connection-Api-Key": connKey,
-      },
-    });
-    if (!res.ok && res.status !== 410) {
-      const text = await res.text();
-      console.error(`Google Calendar delete failed [${res.status}]: ${text}`);
-      throw new Error(`Could not cancel the event (${res.status}).`);
+    if (!lovableKey || !connKey || data.eventId.startsWith("local-")) {
+      return { ok: true };
+    }
+    try {
+      const url = `${GATEWAY_URL}/calendars/primary/events/${encodeURIComponent(data.eventId)}?sendUpdates=all`;
+      const res = await fetch(url, {
+        method: "DELETE",
+        headers: {
+          "Authorization": `Bearer ${lovableKey}`,
+          "X-Connection-Api-Key": connKey,
+        },
+      });
+      if (!res.ok && res.status !== 410) {
+        const text = await res.text();
+        console.error(`Google Calendar delete failed [${res.status}]: ${text}`);
+      }
+    } catch (err) {
+      console.error("Cancel failed:", err);
     }
     return { ok: true };
   });

@@ -15,7 +15,7 @@ export const Route = createFileRoute("/case-studies/$slug")({
       return { meta: [{ title: "Case study not found" }, { name: "robots", content: "noindex" }] };
     }
     const { study } = loaderData;
-    const title = `${study.company} — Case Study | Helleious`;
+    const title = `${study.company} — Case Study | Pronetheseus`;
     const description = `${study.after} How we delivered measurable outcomes for ${study.company}.`;
     return {
       meta: [

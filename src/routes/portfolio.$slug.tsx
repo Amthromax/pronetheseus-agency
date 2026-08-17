@@ -11,14 +11,14 @@ export const Route = createFileRoute("/portfolio/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.title} — Helleious Portfolio` },
+          { title: `${loaderData.title} — Pronetheseus Portfolio` },
           { name: "description", content: loaderData.summary },
-          { property: "og:title", content: `${loaderData.title} — Helleious` },
+          { property: "og:title", content: `${loaderData.title} — Pronetheseus` },
           { property: "og:description", content: loaderData.summary },
           { property: "og:type", content: "article" },
           { name: "twitter:card", content: "summary_large_image" },
         ]
-      : [{ title: "Case study — Helleious" }],
+      : [{ title: "Case study — Pronetheseus" }],
   }),
   notFoundComponent: () => (
     <main className="container-pad mx-auto max-w-3xl py-32 text-center">

@@ -84,23 +84,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Helleious — AI Automation & AI Agents that Work 24/7" },
+      { title: "Pronetheseus — AI Automation & AI Agents that Work 24/7" },
       {
         name: "description",
         content:
-          "Helleious builds AI agents, n8n workflows, and custom automation systems that save teams hundreds of hours every month.",
+          "Pronetheseus builds AI agents, n8n workflows, and custom automation systems that save teams hundreds of hours every month.",
       },
-      { name: "author", content: "Helleious" },
+      { name: "author", content: "Pronetheseus" },
       { name: "theme-color", content: "#0a0a0a" },
-      { property: "og:site_name", content: "Helleious" },
-      { property: "og:title", content: "Helleious — AI Automation & AI Agents" },
+      { property: "og:site_name", content: "Pronetheseus" },
+      { property: "og:title", content: "Pronetheseus — AI Automation & AI Agents" },
       {
         property: "og:description",
         content: "AI Employees that work 24/7. We design and ship automation that pays for itself.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@helleious" },
+      { name: "twitter:site", content: "@pronetheseus" },
     ],
     links: [
       {
@@ -121,13 +121,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "Helleious",
+          name: "Pronetheseus",
           url: "/",
           description:
             "AI automation agency building AI agents, n8n workflows, CRM automation, voice AI, and custom software.",
           sameAs: [
-            "https://www.linkedin.com/company/helleious",
-            "https://x.com/helleious",
+            "https://www.linkedin.com/company/pronetheseus",
+            "https://x.com/pronetheseus",
           ],
         }),
       },

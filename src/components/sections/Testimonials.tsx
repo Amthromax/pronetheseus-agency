@@ -4,7 +4,7 @@ import { Marquee } from "@/components/ui/marquee";
 import { Star } from "lucide-react";
 
 const testimonials = [
-  { quote: "Helleious quietly replaced an entire SDR function.", who: "Sarah Chen", role: "VP Sales, Northwind" },
+  { quote: "Pronetheseus quietly replaced an entire SDR function.", who: "Sarah Chen", role: "VP Sales, Northwind" },
   { quote: "Sub-second voice AI that actually sounds human.", who: "Amir Khan", role: "COO, Helios Health" },
   { quote: "The best money we spent all year.", who: "Priya Nair", role: "Head of Support, Meridian" },
   { quote: "Weekly demos, zero surprises, huge outcomes.", who: "Marco Rossi", role: "CEO, Atlas Co." },

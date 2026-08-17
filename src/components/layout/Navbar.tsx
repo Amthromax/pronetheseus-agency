@@ -31,13 +31,13 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
         "fixed inset-x-0 top-0 z-[80] transition-all duration-500",
-        scrolled ? "py-2" : "py-4",
+        scrolled ? "py-2 px-4 md:px-8" : "py-4 px-6 md:px-10",
       )}
     >
-      <div className="container-pad mx-auto max-w-[1400px]">
+      <div className="w-full">
         <nav
           className={cn(
-            "relative flex items-center justify-between rounded-2xl px-4 py-3 transition-all duration-500",
+            "relative flex items-center justify-between rounded-2xl px-6 py-3 transition-all duration-500",
             scrolled
               ? "glass-strong shadow-[0_10px_40px_-15px_rgba(0,0,0,0.6)]"
               : "border border-transparent",
@@ -45,10 +45,10 @@ export function Navbar() {
         >
           <Link to="/" className="flex items-center gap-2 pr-4 group">
             <div className="relative grid size-9 place-items-center overflow-hidden rounded-xl bg-gradient-to-br from-[#ff7a00] to-[#c2410c] shadow-[0_10px_30px_-10px_rgba(255,122,0,0.7)]">
-              <span className="font-display text-xl text-white leading-none">A</span>
+              <span className="font-display text-xl text-white leading-none">P</span>
               <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             </div>
-            <span className="font-display text-xl tracking-tight text-neutral-900">Helleious</span>
+            <span className="font-display text-xl tracking-tight text-white font-semibold">Pronetheseus</span>
           </Link>
 
           <div className="hidden items-center gap-1 lg:flex">
@@ -56,8 +56,8 @@ export function Navbar() {
               <Link
                 key={l.to}
                 to={l.to}
-                className="relative rounded-full px-4 py-2 text-sm text-neutral-700 transition hover:text-neutral-950"
-                activeProps={{ className: "text-neutral-950" }}
+                className="relative rounded-full px-4 py-2 text-sm text-white/80 transition hover:text-white hover:bg-white/10"
+                activeProps={{ className: "text-white font-semibold bg-white/10" }}
               >
                 {l.label}
               </Link>
@@ -93,7 +93,7 @@ export function Navbar() {
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-4 py-3 text-sm text-foreground/80 hover:bg-white/5"
+                className="rounded-xl px-4 py-3 text-sm text-white/90 hover:bg-white/10 hover:text-white"
               >
                 {l.label}
               </Link>

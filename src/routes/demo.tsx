@@ -6,9 +6,9 @@ import { ArrowRight, Bot, CheckCircle2, RefreshCw, Send, Sparkles, User } from "
 export const Route = createFileRoute("/demo")({
   head: () => ({
     meta: [
-      { title: "AI Agent Demo — Helleious" },
-      { name: "description", content: "Try a live preview of a Helleious AI agent handling real customer questions, then book a consult to build your own." },
-      { property: "og:title", content: "AI Agent Demo — Helleious" },
+      { title: "AI Agent Demo — Pronetheseus" },
+      { name: "description", content: "Try a live preview of a Pronetheseus AI agent handling real customer questions, then book a consult to build your own." },
+      { property: "og:title", content: "AI Agent Demo — Pronetheseus" },
       { property: "og:description", content: "Interactive preview of a production-style AI agent. Ask about pricing, booking, or handoff — see how it responds." },
       { property: "og:url", content: "/demo" },
     ],
@@ -23,13 +23,13 @@ type Msg = { id: string; role: Role; text: string; ts: number };
 type Reply = { text: string; suggestions?: string[] };
 
 const AGENT_NAME = "Ava";
-const AGENT_ROLE = "Helleious concierge";
+const AGENT_ROLE = "Pronetheseus concierge";
 
 const GREETING: Msg = {
   id: "seed-1",
   role: "agent",
   ts: Date.now(),
-  text: `Hi, I'm ${AGENT_NAME} — the Helleious concierge agent. I can answer questions about our services, pricing, and timelines, or help you book a strategy call. What are you working on?`,
+  text: `Hi, I'm ${AGENT_NAME} — the Pronetheseus concierge agent. I can answer questions about our services, pricing, and timelines, or help you book a strategy call. What are you working on?`,
 };
 
 const STARTER_SUGGESTIONS = [
@@ -60,7 +60,7 @@ function reply(input: string): Reply {
       suggestions: ["Book a consult", "How much does it cost?"],
     };
   }
-  if (/(build|do|services|offer|what.*(you|helleious))/.test(q)) {
+  if (/(build|do|services|offer|what.*(you|pronetheseus))/.test(q)) {
     return {
       text: "We build production AI agents end-to-end: scoping the workflow, wiring tools and retrieval, adding evals and guardrails, then deploying with monitoring. Voice, chat, and internal copilots are the three shapes we ship most.",
       suggestions: ["How much does it cost?", "How long does it take?", "Can I see examples?"],
@@ -182,7 +182,7 @@ function DemoPage() {
       <div className="container-pad mx-auto max-w-[1400px] pb-24">
         <SectionHeading
           eyebrow="Live demo"
-          title="Talk to a Helleious AI agent"
+          title="Talk to a Pronetheseus AI agent"
           description="This is a scripted preview of the kind of concierge agent we ship — same shape, same tone. Ask about pricing, timelines, integrations, or handoff."
         />
 

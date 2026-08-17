@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/sections/SectionHeading";
-import { ContactCTA } from "@/components/sections/ContactCTA";
 import {
   ArrowRight,
   Bot,
@@ -20,13 +19,13 @@ import {
 export const Route = createFileRoute("/automations")({
   head: () => ({
     meta: [
-      { title: "Automations — Helleious" },
+      { title: "Automations — Pronetheseus" },
       {
         name: "description",
         content:
           "Production-grade AI agents and n8n automations for sales, support, ops, and marketing — shipped in weeks with evals, guardrails, and monitoring built in.",
       },
-      { property: "og:title", content: "Automations — Helleious" },
+      { property: "og:title", content: "Automations — Pronetheseus" },
       {
         property: "og:description",
         content:
@@ -169,7 +168,6 @@ function AutomationsPage() {
       <section className="pt-40">
         <div className="container-pad mx-auto max-w-[1400px] pb-16">
           <SectionHeading
-            eyebrow="Automations"
             title="AI agents and workflows that actually ship"
             description="Production-grade automations for sales, support, ops, and marketing — deployed in weeks, with evals, guardrails, and monitoring built in from day one."
           />
@@ -207,7 +205,7 @@ function AutomationsPage() {
 
       {/* Automations grid */}
       <section className="container-pad mx-auto max-w-[1400px] py-16">
-        <SectionHeading eyebrow="What we build" title="Six automations we ship most" />
+        <SectionHeading title="Six automations we ship most" />
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {AUTOMATIONS.map((a) => (
             <article
@@ -236,7 +234,7 @@ function AutomationsPage() {
 
       {/* Process */}
       <section className="container-pad mx-auto max-w-[1400px] py-16">
-        <SectionHeading eyebrow="How it works" title="Four weeks, from scope to production" />
+        <SectionHeading title="Four weeks, from scope to production" />
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {PROCESS.map((p) => (
             <div key={p.week} className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
@@ -252,7 +250,7 @@ function AutomationsPage() {
 
       {/* Guarantees */}
       <section className="container-pad mx-auto max-w-[1400px] py-16">
-        <SectionHeading eyebrow="What you get" title="Every engagement, guaranteed" />
+        <SectionHeading title="Every engagement, guaranteed" />
         <div className="mt-14 grid gap-4 md:grid-cols-3">
           {GUARANTEES.map((g) => (
             <div key={g.title} className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
@@ -268,7 +266,7 @@ function AutomationsPage() {
 
       {/* Integrations */}
       <section className="container-pad mx-auto max-w-[1400px] py-16">
-        <SectionHeading eyebrow="Integrations" title="Plays well with your stack" description="If it has an API, we can integrate. A few we work with weekly:" />
+        <SectionHeading title="Plays well with your stack" description="If it has an API, we can integrate. A few we work with weekly:" />
         <div className="mt-10 flex flex-wrap justify-center gap-2">
           {INTEGRATIONS.map((i) => (
             <span
@@ -283,7 +281,7 @@ function AutomationsPage() {
 
       {/* FAQ */}
       <section className="container-pad mx-auto max-w-3xl py-16">
-        <SectionHeading eyebrow="FAQ" title="Common questions" />
+        <SectionHeading title="Common questions" />
         <div className="mt-10 space-y-3">
           {FAQS.map((f) => (
             <details
@@ -299,8 +297,6 @@ function AutomationsPage() {
           ))}
         </div>
       </section>
-
-      <ContactCTA />
     </>
   );
 }

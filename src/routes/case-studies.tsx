@@ -6,9 +6,9 @@ import { SectionHeading } from "@/components/sections/SectionHeading";
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
     meta: [
-      { title: "Case Studies — Helleious" },
+      { title: "Case Studies — Pronetheseus" },
       { name: "description", content: "Measurable results from teams who chose to build with us." },
-      { property: "og:title", content: "Case Studies — Helleious" },
+      { property: "og:title", content: "Case Studies — Pronetheseus" },
       { property: "og:description", content: "ROI, hours saved, and revenue lift — the outcomes we deliver." },
       { property: "og:url", content: "/case-studies" },
     ],
@@ -16,9 +16,7 @@ export const Route = createFileRoute("/case-studies")({
   }),
   component: () => (
     <>
-      <div className="container-pad mx-auto max-w-[1400px] pt-40">
-        <SectionHeading eyebrow="Case Studies" title="Outcomes, not slideware" />
-      </div>
+      <div className="pt-24 md:pt-32" />
       <CaseStudies />
       <ContactCTA />
     </>

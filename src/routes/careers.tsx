@@ -5,9 +5,9 @@ import { ContactCTA } from "@/components/sections/ContactCTA";
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — Helleious" },
+      { title: "Careers — Pronetheseus" },
       { name: "description", content: "Join a senior team building the AI backbone of ambitious companies." },
-      { property: "og:title", content: "Careers — Helleious" },
+      { property: "og:title", content: "Careers — Pronetheseus" },
       { property: "og:description", content: "We hire senior operators, engineers, and designers." },
       { property: "og:url", content: "/careers" },
     ],
