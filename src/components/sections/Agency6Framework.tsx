@@ -158,21 +158,25 @@ export function Agency6Framework() {
   const activeQuestion = CORE_QUESTIONS.find((q) => q.id === activeId) || CORE_QUESTIONS[0];
 
   return (
-    <section id="clarity-framework" className="relative bg-neutral-900 py-16 text-white md:py-24 overflow-hidden">
-      {/* Background ambient lighting */}
+    <section id="clarity-framework" className="relative bg-[#fbfbfd] py-10 md:py-16 text-neutral-900 overflow-hidden border-y border-black/[0.05]">
+      {/* Apple-style soft ambient background light */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 size-[600px] rounded-full bg-gradient-to-tr from-brand/10 to-orange-600/5 blur-[120px]" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 size-[600px] rounded-full bg-gradient-to-tr from-orange-200/25 via-neutral-200/30 to-transparent blur-[140px]" />
       </div>
 
-      <div className="container-pad relative mx-auto max-w-[1400px]">
+      <div className="relative mx-auto w-full max-w-[1750px] px-4 sm:px-6 md:px-10 lg:px-12">
 
-        <SectionHeading
-          title="The 6 Core Questions Answered"
-          description="Everything you need to know about our Agency Infrastructure & System Builds — upfront, clear, and measurable."
-        />
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-950 leading-[1.1]">
+            The 6 Core Questions Answered
+          </h2>
+          <p className="mt-2 text-xs sm:text-sm md:text-base text-neutral-600 leading-relaxed font-normal">
+            Everything you need to know about our Agency Infrastructure &amp; System Builds — upfront, clear, and measurable.
+          </p>
+        </div>
 
-        {/* 6 Tabs Grid */}
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        {/* 6 Tabs Grid (Compact Apple Bento Row) */}
+        <div className="mt-6 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-6">
           {CORE_QUESTIONS.map((q) => {
             const Icon = q.icon;
             const isActive = q.id === activeId;
@@ -180,24 +184,24 @@ export function Agency6Framework() {
               <button
                 key={q.id}
                 onClick={() => setActiveId(q.id)}
-                className={`group relative flex flex-col items-start justify-between rounded-2xl border p-3.5 text-left transition-all duration-300 backdrop-blur-xl ${
+                className={`group relative flex flex-col items-start justify-between rounded-[18px] p-3 text-left transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   isActive
-                    ? "border-brand/60 bg-gradient-to-b from-white/15 to-white/5 shadow-[0_0_30px_-5px_rgba(255,122,0,0.35),inset_0_1px_0_0_rgba(255,255,255,0.2)] ring-1 ring-brand/40"
-                    : "border-white/10 bg-white/[0.03] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] hover:border-white/20 hover:bg-white/[0.07]"
+                    ? "border border-orange-500/40 bg-white text-neutral-950 shadow-[0_8px_24px_-4px_rgba(255,122,0,0.2),0_2px_4px_rgba(0,0,0,0.03)] ring-2 ring-orange-500/20 -translate-y-0.5"
+                    : "border border-black/[0.06] bg-white/70 backdrop-blur-md text-neutral-700 shadow-[0_2px_6px_rgba(0,0,0,0.02)] hover:border-black/15 hover:bg-white hover:shadow-[0_6px_16px_rgba(0,0,0,0.04)]"
                 }`}
               >
                 <div className="flex w-full items-center justify-between">
-                  <span className={`font-mono text-xs font-semibold tabular-nums tracking-wider ${isActive ? "text-brand" : "text-white/40"}`}>
+                  <span className={`font-mono text-[11px] font-bold tabular-nums tracking-wider ${isActive ? "text-brand" : "text-neutral-400"}`}>
                     {q.number}
                   </span>
-                  <div className={`grid size-6.5 place-items-center rounded-lg transition-colors ${isActive ? "bg-brand text-white shadow-sm" : "bg-white/5 text-white/60 group-hover:text-white"}`}>
-                    <Icon className="size-3.5" />
+                  <div className={`grid size-6 place-items-center rounded-lg transition-all duration-300 ${isActive ? "bg-brand text-white shadow-xs scale-105" : "bg-neutral-100/80 text-neutral-500 group-hover:bg-neutral-200/80 group-hover:text-neutral-950"}`}>
+                    <Icon className="size-3" />
                   </div>
                 </div>
-                <div className="mt-3 font-display text-xs font-semibold leading-snug tracking-tight text-white">
+                <div className={`mt-2 font-display text-[11px] sm:text-xs font-bold leading-snug tracking-tight ${isActive ? "text-neutral-950" : "text-neutral-800"}`}>
                   {q.question}
                 </div>
-                <span className={`mt-2 inline-block text-[10px] font-medium tracking-tight ${isActive ? "text-orange-200 font-semibold" : "text-white/40"}`}>
+                <span className={`mt-1.5 inline-block text-[9px] font-semibold tracking-tight ${isActive ? "text-brand" : "text-neutral-400"}`}>
                   {q.badge}
                 </span>
               </button>
@@ -205,42 +209,43 @@ export function Agency6Framework() {
           })}
         </div>
 
-        {/* Active Question Detail Panel */}
-        <div className="mt-6">
+        {/* Active Question Detail Panel (Compact Apple Pro Design Box) */}
+        <div className="mt-5">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeQuestion.id}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="relative overflow-hidden rounded-3xl border border-white/15 bg-neutral-950/80 p-6 md:p-9 backdrop-blur-2xl shadow-[0_30px_90px_-20px_rgba(0,0,0,0.9),inset_0_1px_0_0_rgba(255,255,255,0.12)]"
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="relative overflow-hidden rounded-[26px] border border-black/[0.08] bg-white/90 p-5 md:p-7 backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.04),0_1px_3px_rgba(0,0,0,0.02)] ring-1 ring-black/[0.02]"
             >
               <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
                 {/* Left Column: Deep Answers */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs font-bold tabular-nums tracking-widest text-brand">
+                <div className="space-y-3.5">
+                  <div className="flex items-center gap-2.5">
+                    <span className="font-mono text-[11px] font-bold tabular-nums tracking-widest text-brand">
                       QUESTION {activeQuestion.number}
                     </span>
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
-                    <span className="text-[11px] font-medium uppercase tracking-widest text-white/50">{activeQuestion.badge}</span>
+                    <span className="h-1 w-1 rounded-full bg-neutral-300" />
+                    <span className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400">{activeQuestion.badge}</span>
                   </div>
 
-                  <h3 className="font-display text-xl md:text-3xl font-semibold tracking-tight text-white leading-tight">
+                  <h3 className="font-display text-xl md:text-2xl font-bold tracking-tight text-neutral-950 leading-tight">
                     {activeQuestion.question}
                   </h3>
 
-                  <div className="rounded-2xl border border-brand/25 bg-gradient-to-r from-brand/10 via-orange-950/20 to-transparent px-4.5 py-3 text-sm md:text-base font-medium text-orange-100 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+                  {/* Compact Apple Pill Quote Box */}
+                  <div className="rounded-xl border border-black/[0.06] bg-neutral-100/70 p-3.5 text-xs md:text-sm font-semibold text-neutral-900 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)] backdrop-blur-md">
                     &ldquo;{activeQuestion.shortAnswer}&rdquo;
                   </div>
 
-                  <div className="space-y-2.5 pt-1">
-                    <h4 className="text-[11px] font-bold uppercase tracking-wider text-white/50">Detailed Infrastructure Blueprint:</h4>
-                    <ul className="space-y-2.5">
+                  <div className="space-y-2 pt-1">
+                    <h4 className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">Detailed Infrastructure Blueprint:</h4>
+                    <ul className="space-y-2">
                       {activeQuestion.details.points.map((pt, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-xs md:text-sm text-white/85 leading-relaxed">
-                          <CheckCircle2 className="size-4 shrink-0 text-brand mt-0.5" />
+                        <li key={idx} className="flex items-start gap-2.5 text-xs text-neutral-700 font-medium leading-normal">
+                          <CheckCircle2 className="size-3.5 shrink-0 text-brand mt-0.5" />
                           <span>{pt}</span>
                         </li>
                       ))}
@@ -248,47 +253,47 @@ export function Agency6Framework() {
                   </div>
 
                   {/* Avoid Fluff Guarantee Box */}
-                  <div className="mt-3 rounded-xl border border-white/10 bg-white/[0.02] px-4 py-2.5 text-xs text-white/50 backdrop-blur-sm shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
-                    <span className="font-semibold text-white/80">Why we don&apos;t use hype words: </span>
+                  <div className="mt-2.5 rounded-xl border border-black/[0.05] bg-neutral-100/50 p-3 text-[11px] text-neutral-600 backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)]">
+                    <span className="font-semibold text-neutral-950">Why we don&apos;t use hype words: </span>
                     {activeQuestion.avoidText}
                   </div>
                 </div>
 
-                {/* Right Column: Metric Showcase & Call To Action */}
-                <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-6 md:p-8 backdrop-blur-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+                {/* Right Column: Metric Showcase (Compact Space Black Pro Glass Box) */}
+                <div className="flex flex-col justify-between rounded-[22px] border border-neutral-800/90 bg-neutral-950 p-5 md:p-6 text-white shadow-[0_15px_40px_rgba(0,0,0,0.22)] backdrop-blur-2xl">
                   <div>
-                    <div className="text-[11px] uppercase tracking-widest text-white/50 font-medium">Key Deliverable Benchmark</div>
+                    <div className="text-[10px] uppercase tracking-widest text-neutral-400 font-semibold">Key Deliverable Benchmark</div>
                     {activeQuestion.details.metric && (
-                      <div className="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tight text-gradient-brand tabular-nums">
+                      <div className="mt-1.5 font-display text-3xl md:text-5xl font-extrabold tracking-tight text-gradient-brand tabular-nums">
                         {activeQuestion.details.metric}
                       </div>
                     )}
                     {activeQuestion.details.metricLabel && (
-                      <div className="mt-1 font-medium text-sm text-white/70">
+                      <div className="mt-0.5 font-semibold text-xs text-neutral-300">
                         {activeQuestion.details.metricLabel}
                       </div>
                     )}
 
-                    <hr className="my-6 border-white/10" />
+                    <hr className="my-3.5 border-neutral-800/80" />
 
-                    <div className="space-y-3">
-                      <div className="text-xs font-semibold uppercase tracking-wider text-white/60">Our Commitment</div>
-                      <p className="text-xs md:text-sm text-white/70 leading-relaxed">
+                    <div className="space-y-2">
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">Our Commitment</div>
+                      <p className="text-xs text-neutral-300 leading-relaxed font-normal">
                         Every system we build is custom-fitted to your agency&apos;s existing software stack. You maintain 100% data residency, zero vendor lock-in, and full repository control.
                       </p>
                     </div>
                   </div>
 
-                  <div className="mt-8 space-y-3">
+                  <div className="mt-5 space-y-2.5">
                     <Link
                       to="/book"
-                      className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(255,122,0,0.6)] transition hover:scale-[1.02]"
+                      className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-5 py-2.5 text-xs font-bold text-white shadow-[0_8px_25px_-5px_rgba(255,122,0,0.4)] transition hover:scale-[1.02] active:scale-[0.98]"
                     >
                       Book Strategy Call to Discuss This
-                      <ArrowRight className="size-4 transition group-hover:translate-x-1" />
+                      <ArrowRight className="size-3.5 transition group-hover:translate-x-1" />
                     </Link>
                     
-                    <div className="flex items-center justify-center gap-4 text-[11px] text-white/40 font-medium">
+                    <div className="flex items-center justify-center gap-3 text-[10px] text-neutral-400 font-medium">
                       <span>• Free 30-min call</span>
                       <span>• Concrete plan</span>
                       <span>• No commitment</span>

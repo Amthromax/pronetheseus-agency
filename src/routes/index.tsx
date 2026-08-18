@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { Hero } from "@/components/hero/Hero";
 import { Agency6Framework } from "@/components/sections/Agency6Framework";
+import { TrustedBy } from "@/components/sections/TrustedBy";
 import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
 import { ExpectedOutcomes } from "@/components/sections/ExpectedOutcomes";
@@ -33,6 +34,7 @@ function Index() {
     <>
       <Hero />
       <Agency6Framework />
+      <TrustedBy />
       <Services />
       <Process />
       <ExpectedOutcomes />
