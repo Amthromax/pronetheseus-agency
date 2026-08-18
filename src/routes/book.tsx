@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import {
   ArrowLeft,
@@ -34,6 +34,21 @@ const GOOGLE_CALENDAR_BOOKING_URL = "https://calendar.app.google/yJMFo3qDAZfJZoe
 function BookPage() {
   const [isBooked, setIsBooked] = useState(false);
 
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (
+        event.origin.includes("google.com") ||
+        event.origin.includes("calendar.app.google") ||
+        (typeof event.data === "string" && (event.data.includes("booked") || event.data.includes("scheduled")))
+      ) {
+        setIsBooked(true);
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
+
   return (
     <div className="pt-36 md:pt-40">
       <div className="container-pad mx-auto max-w-[1400px]">
@@ -55,7 +70,7 @@ function BookPage() {
 
       <section className="container-pad mx-auto mt-10 max-w-[1400px]">
         {isBooked ? (
-          /* Thanksgiving Box / Confirmation State */
+          /* Thanksgiving Box / Confirmation State (Shown ONLY after booking completion) */
           <div className="relative overflow-hidden rounded-3xl border border-brand/30 bg-neutral-950/90 p-8 md:p-14 backdrop-blur-2xl shadow-[0_20px_60px_-15px_rgba(255,122,0,0.15),inset_0_1px_0_0_rgba(255,255,255,0.1)]">
             <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
               {/* Glowing Icon Badge */}
@@ -126,7 +141,7 @@ function BookPage() {
             </div>
           </div>
         ) : (
-          /* Google Calendar Embed Booking View */
+          /* Active Booking View (Google Calendar Scheduling) */
           <div>
             {/* Top Badges */}
             <div className="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/10 bg-neutral-950/70 p-4 backdrop-blur-2xl">
@@ -142,25 +157,15 @@ function BookPage() {
                 </span>
               </div>
 
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={() => setIsBooked(true)}
-                  className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-4 py-1.5 text-xs font-semibold text-orange-200 transition hover:bg-brand/20 hover:text-white"
-                >
-                  <CheckCircle2 className="size-3.5 text-brand" />
-                  I&apos;ve Completed Booking
-                </button>
-
-                <a
-                  href={GOOGLE_CALENDAR_BOOKING_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-brand/10 border border-brand/30 px-4 py-1.5 text-xs font-semibold text-orange-200 transition hover:bg-brand/20 hover:text-white"
-                >
-                  Open in Google Calendar
-                  <ExternalLink className="size-3.5" />
-                </a>
-              </div>
+              <a
+                href={GOOGLE_CALENDAR_BOOKING_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-brand/10 border border-brand/30 px-4 py-1.5 text-xs font-semibold text-orange-200 transition hover:bg-brand/20 hover:text-white"
+              >
+                Open in Google Calendar
+                <ExternalLink className="size-3.5" />
+              </a>
             </div>
 
             {/* Embedded Google Calendar Appointment Schedule */}
@@ -174,18 +179,18 @@ function BookPage() {
               />
             </div>
 
-            {/* Post-Booking Thanksgiving Bar */}
-            <div className="mt-6 flex flex-col items-center justify-between gap-4 rounded-2xl border border-brand/30 bg-gradient-to-r from-brand/15 via-orange-950/20 to-neutral-950/90 p-5 sm:flex-row backdrop-blur-xl">
-              <div className="flex items-center gap-3 text-sm text-neutral-200">
-                <CalendarCheck className="size-5 text-brand shrink-0" />
-                <span>Finished picking your time on Google Calendar? View your confirmation & next steps.</span>
+            {/* Completion Trigger Bar (Only shown after user picks slot in Google Calendar) */}
+            <div className="mt-6 flex flex-col items-center justify-between gap-4 rounded-2xl border border-white/10 bg-neutral-950/80 p-4 sm:flex-row backdrop-blur-xl">
+              <div className="flex items-center gap-3 text-xs md:text-sm text-neutral-300">
+                <CalendarCheck className="size-4 text-brand shrink-0" />
+                <span>Completed your booking above? Click to view your confirmation &amp; next steps.</span>
               </div>
               <button
                 onClick={() => setIsBooked(true)}
-                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-5 py-2.5 text-xs font-semibold text-white shadow-[0_8px_20px_-8px_rgba(255,122,0,0.6)] transition hover:scale-105"
+                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-5 py-2 text-xs font-semibold text-white shadow-[0_8px_20px_-8px_rgba(255,122,0,0.6)] transition hover:scale-105"
               >
-                View Thanksgiving & Confirmation Box
-                <ArrowRight className="size-3.5" />
+                I&apos;ve Completed My Booking
+                <CheckCircle2 className="size-3.5" />
               </button>
             </div>
           </div>
