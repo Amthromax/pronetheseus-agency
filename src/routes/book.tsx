@@ -4,7 +4,6 @@ import { SectionHeading } from "@/components/sections/SectionHeading";
 import {
   ArrowLeft,
   ArrowRight,
-  CalendarCheck,
   CheckCircle2,
   Clock,
   ExternalLink,
@@ -177,21 +176,6 @@ function BookPage() {
                 title="Book a strategy call via Google Calendar"
                 loading="lazy"
               />
-            </div>
-
-            {/* Completion Trigger Bar (Only shown after user picks slot in Google Calendar) */}
-            <div className="mt-6 flex flex-col items-center justify-between gap-4 rounded-2xl border border-white/10 bg-neutral-950/80 p-4 sm:flex-row backdrop-blur-xl">
-              <div className="flex items-center gap-3 text-xs md:text-sm text-neutral-300">
-                <CalendarCheck className="size-4 text-brand shrink-0" />
-                <span>Completed your booking above? Click to view your confirmation &amp; next steps.</span>
-              </div>
-              <button
-                onClick={() => setIsBooked(true)}
-                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-5 py-2 text-xs font-semibold text-white shadow-[0_8px_20px_-8px_rgba(255,122,0,0.6)] transition hover:scale-105"
-              >
-                I&apos;ve Completed My Booking
-                <CheckCircle2 className="size-3.5" />
-              </button>
             </div>
           </div>
         )}
