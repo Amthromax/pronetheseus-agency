@@ -47,8 +47,6 @@ export function Hero() {
       </div>
 
       <div className="container-pad relative mx-auto flex max-w-[1400px] flex-col items-center px-4 sm:px-6 lg:px-8">
-        {/* Anti-fluff positioning badge */}
-
         <div className="mx-auto max-w-7xl text-center">
           <h1 className="font-display text-[26px] xs:text-[32px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[78px] 2xl:text-[84px] font-semibold leading-[1.12] sm:leading-[1.08] tracking-tight text-neutral-900">
             <span className="block">

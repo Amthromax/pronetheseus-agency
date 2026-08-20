@@ -43,12 +43,8 @@ export function Navbar() {
               : "border border-transparent",
           )}
         >
-          <Link to="/" className="flex items-center gap-2 pr-4 group">
-            <div className="relative grid size-9 place-items-center overflow-hidden rounded-xl bg-gradient-to-br from-[#ff7a00] to-[#c2410c] shadow-[0_10px_30px_-10px_rgba(255,122,0,0.7)]">
-              <span className="font-display text-xl text-white leading-none">P</span>
-              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-            </div>
-            <span className="font-display text-xl tracking-tight text-white font-semibold">Pronetheseus</span>
+          <Link to="/" className="flex items-center pr-4 group" aria-label="Pronetheseus Home">
+            <img src="/logo.png" alt="Pronetheseus Logo" className="h-12 sm:h-14 md:h-16 w-auto object-contain filter brightness-0 transition-transform duration-300 group-hover:scale-110" />
           </Link>
 
           <div className="hidden items-center gap-1 lg:flex">
@@ -56,8 +52,8 @@ export function Navbar() {
               <Link
                 key={l.to}
                 to={l.to}
-                className="relative rounded-full px-4 py-2 text-sm text-white/80 transition hover:text-white hover:bg-white/10"
-                activeProps={{ className: "text-white font-semibold bg-white/10" }}
+                className="relative rounded-full px-4 py-2 text-sm font-medium text-neutral-700 transition hover:text-neutral-900 hover:bg-neutral-100/80"
+                activeProps={{ className: "text-neutral-900 font-semibold bg-neutral-100" }}
               >
                 {l.label}
               </Link>

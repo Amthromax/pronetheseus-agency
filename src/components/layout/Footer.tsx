@@ -78,11 +78,9 @@ export function Footer() {
       <div className="container-pad mx-auto max-w-[1400px] py-20">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-[#ff7a00] to-[#c2410c]">
-                <span className="font-display text-2xl leading-none text-white">P</span>
-              </div>
-              <span className="font-display text-2xl">Pronetheseus</span>
+            <Link to="/" className="flex items-center gap-3.5 group">
+              <img src="/logo.png" alt="Pronetheseus Logo" className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110" />
+              <span className="font-display text-2xl sm:text-3xl font-extrabold">Pronetheseus</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               AI Employees that work 24/7. We design and ship automation systems for teams

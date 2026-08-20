@@ -7,7 +7,6 @@ import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
 import { ExpectedOutcomes } from "@/components/sections/ExpectedOutcomes";
 import { WhyTrustUs } from "@/components/sections/WhyTrustUs";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
@@ -60,7 +59,6 @@ function Index() {
         </div>
       </section>
 
-      <Testimonials />
       <FAQ />
       <ContactCTA />
     </>
