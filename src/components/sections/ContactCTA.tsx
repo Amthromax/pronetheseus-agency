@@ -1,77 +1,68 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Calendar, CheckCircle2, Clock, Video, ShieldCheck } from "lucide-react";
-import { Reveal } from "@/components/ui/reveal";
+import { ArrowRight, ShieldCheck, Zap } from "lucide-react";
+import { ScrollReveal } from "@/components/fx/ScrollReveal";
+import { SplitText } from "@/components/fx/SplitText";
+import { MagneticButton } from "@/components/fx/MagneticButton";
 
 export function ContactCTA() {
   return (
-    <section id="book-call" className="relative overflow-hidden bg-neutral-950 text-white py-16 md:py-24">
-      <div className="container-pad relative mx-auto flex max-w-[1400px] flex-col items-center">
-        
-        <Reveal>
-          <h2 className="mx-auto max-w-4xl text-balance text-center font-display text-3xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            Ready to eliminate delivery bottlenecks & scale your agency?
-          </h2>
-        </Reveal>
+    <section className="relative overflow-hidden bg-neutral-950 py-20 text-white border-t border-white/10">
+      {/* Glow Orbs */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] rounded-full bg-gradient-to-tr from-brand/20 via-orange-950/20 to-transparent blur-[140px] animate-pulse-glow" />
+      </div>
 
-        <Reveal delay={0.1}>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-base text-neutral-400 md:text-lg">
-            Book a 30-minute Infrastructure Strategy Call with a Principal Systems Architect. Zero high-pressure sales pitch. Just a direct tear-down of your agency stack and a concrete plan.
+      <div className="container-pad relative mx-auto max-w-[1400px] text-center">
+        <ScrollReveal variant="badge" className="mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-neutral-300 backdrop-blur-md">
+            <span className="size-1.5 rounded-full bg-brand animate-ping" />
+            Ready for Zero-Touch Operations?
+          </div>
+        </ScrollReveal>
+
+        <h2 className="mx-auto max-w-4xl font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
+          <SplitText text="Transform Your Agency Delivery Infrastructure in 3 Weeks." />
+        </h2>
+
+        <ScrollReveal variant="text" delay={0.2} className="mx-auto mt-6 max-w-2xl">
+          <p className="text-base sm:text-lg text-neutral-400 font-normal leading-relaxed">
+            Eliminate manual client onboarding, reporting chaos, and payroll bloat. Book your free 30-minute infrastructure strategy audit today.
           </p>
-        </Reveal>
+        </ScrollReveal>
 
-        {/* 3 Call Highlights */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs md:text-sm text-neutral-300">
-          <span className="inline-flex items-center gap-2">
-            <Clock className="size-4 text-brand" /> 30-Minute Free Audit
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <Video className="size-4 text-brand" /> Live Google Meet Session
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <ShieldCheck className="size-4 text-brand" /> Blueprint Delivered in 24 Hours
-          </span>
-        </div>
+        <ScrollReveal variant="button" delay={0.35} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link to="/book">
+            <MagneticButton className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-8 py-4 text-base font-semibold text-white shadow-[0_10px_35px_-5px_rgba(255,122,0,0.6)] transition duration-300 hover:scale-105">
+              <span className="relative z-10 inline-flex items-center gap-2">
+                Book Strategy Call
+                <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+              <span aria-hidden className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+            </MagneticButton>
+          </Link>
 
-        {/* Action Button */}
-        <Reveal delay={0.2}>
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-            <Link
-              to="/book"
-              className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-8 py-4 text-base font-semibold text-white shadow-[0_10px_30px_-10px_rgba(255,122,0,0.7)] transition hover:scale-105"
-            >
-              <Calendar className="size-5" />
-              <span>Book Strategy Call Now</span>
-              <ArrowRight className="size-4 transition group-hover:translate-x-1" />
-            </Link>
-          </div>
-        </Reveal>
-
-        {/* Big Brand Watermark */}
-        <div aria-hidden className="pointer-events-none mt-16 select-none overflow-hidden">
-          <div
-            className="text-center font-display font-black leading-none tracking-tight"
-            style={{
-              fontSize: "clamp(5rem, 18vw, 18rem)",
-              background:
-                "linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0) 100%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
+          <Link
+            to="/pricing"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-base font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-white/10"
           >
-            Pronetheseus
-          </div>
-        </div>
+            <span>Explore Pricing & SLAs</span>
+          </Link>
+        </ScrollReveal>
 
-        {/* Footer links */}
-        <div className="container-pad mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-neutral-400 sm:flex-row">
-          <span>© {new Date().getFullYear()} Pronetheseus Agency Infrastructure Systems. All rights reserved.</span>
-          <div className="flex items-center gap-6">
-            <Link to="/terms" className="hover:text-white">Terms of Service</Link>
-            <Link to="/privacy" className="hover:text-white">Privacy Policy</Link>
-            <Link to="/contact" className="hover:text-white">Contact Us</Link>
+        <ScrollReveal variant="text" delay={0.45} className="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs text-neutral-400 font-medium">
+          <div className="flex items-center gap-1.5">
+            <ShieldCheck className="size-4 text-brand" />
+            <span>100% Code Ownership</span>
           </div>
-        </div>
+          <div className="flex items-center gap-1.5">
+            <Zap className="size-4 text-brand" />
+            <span>30-Day SLA Guarantee</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="size-2 rounded-full bg-emerald-400" />
+            <span>SOC2 Security Standards</span>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

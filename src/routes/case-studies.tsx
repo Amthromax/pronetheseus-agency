@@ -16,7 +16,7 @@ export const Route = createFileRoute("/case-studies")({
   }),
   component: () => (
     <>
-      <div className="pt-24 md:pt-32" />
+      <div className="pt-20" />
       <CaseStudies />
       <ContactCTA />
     </>

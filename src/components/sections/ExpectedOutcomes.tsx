@@ -1,3 +1,7 @@
+import { ScrollReveal } from "@/components/fx/ScrollReveal";
+import { SectionHeading } from "./SectionHeading";
+import { motion } from "motion/react";
+
 const METRICS_LIST = [
   {
     value: "300%",
@@ -23,30 +27,33 @@ const METRICS_LIST = [
 
 export function ExpectedOutcomes() {
   return (
-    <section id="expected-outcomes" className="relative bg-white py-16 text-neutral-900 md:py-24">
+    <section id="expected-outcomes" className="relative bg-white py-16 text-neutral-900 md:py-24 border-y border-black/[0.05]">
       <div className="container-pad mx-auto max-w-[1400px]">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
-            What outcome can your agency expect?
-          </h2>
-          <p className="mt-4 text-base text-neutral-600 md:text-lg">
-            Hard, measurable operational benchmarks delivered directly to your P&L within 30 days of deployment.
-          </p>
-        </div>
+        <SectionHeading
+          title="What outcome can your agency expect?"
+          description="Hard, measurable operational benchmarks delivered directly to your P&L within 30 days of deployment."
+        />
 
-        {/* 4 Hard Metrics Cards */}
+        {/* 4 Metrics Cards */}
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {METRICS_LIST.map((m, idx) => (
-            <div
-              key={idx}
-              className="group rounded-3xl border border-neutral-200/80 bg-neutral-50/80 p-6 md:p-8 transition-all duration-300 hover:border-brand/50 hover:bg-white hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08),inset_0_1px_0_0_rgba(255,255,255,0.8)] backdrop-blur-md"
-            >
-              <div className="font-display text-4xl md:text-5xl font-bold tracking-tight text-gradient-brand tabular-nums">
-                {m.value}
-              </div>
-              <h3 className="mt-4 font-display text-lg font-semibold tracking-tight text-neutral-900">{m.label}</h3>
-              <p className="mt-2 text-xs md:text-sm text-neutral-600 leading-relaxed font-normal">{m.desc}</p>
-            </div>
+            <ScrollReveal key={idx} variant="card" staggerIndex={idx} staggerStep={0.09}>
+              <motion.div
+                whileHover={{ scale: 1.03, y: -5 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative rounded-lg border border-neutral-200/90 bg-neutral-50/90 p-6 md:p-8 transition-all duration-300 hover:border-brand/40 hover:bg-white hover:shadow-[0_20px_50px_-15px_rgba(255,122,0,0.15)] backdrop-blur-md h-full flex flex-col justify-between"
+              >
+                <div>
+                  <div className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-gradient-brand tabular-nums">
+                    {m.value}
+                  </div>
+                  <h3 className="mt-4 font-display text-lg font-semibold tracking-tight text-neutral-900">{m.label}</h3>
+                  <p className="mt-2 text-xs md:text-sm text-neutral-600 leading-relaxed font-normal">{m.desc}</p>
+                </div>
+
+                <div className="mt-6 h-1 w-0 bg-gradient-to-r from-[#ff7a00] to-[#c2410c] transition-all duration-500 group-hover:w-full rounded-full" />
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

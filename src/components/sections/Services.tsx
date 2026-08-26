@@ -1,56 +1,72 @@
 import { services } from "@/data/services";
-import { Stagger, staggerItem } from "@/components/ui/reveal";
 import { TiltCard } from "@/components/fx/TiltCard";
+import { ScrollReveal } from "@/components/fx/ScrollReveal";
+import { ParallaxLayer } from "@/components/fx/ParallaxLayer";
 import { ArrowUpRight, Check } from "lucide-react";
 import { motion } from "motion/react";
 import { SectionHeading } from "./SectionHeading";
 
 export function Services() {
   return (
-    <section id="services" className="relative container-pad mx-auto max-w-[1400px] py-14 md:py-20">
-      <SectionHeading
-        title="Core Agency Infrastructure Modules"
-        description="Bespoke engineering components built to replace manual operations across your entire client lifecycle."
-      />
-      <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((s) => (
-          <motion.div key={s.slug} variants={staggerItem} className="group">
-            <TiltCard
-              intensity={6}
-              className="relative h-full rounded-3xl p-[1px]"
-            >
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                style={{
-                  background:
-                    "conic-gradient(from 180deg at 50% 50%, rgba(255,122,0,0) 0deg, rgba(255,122,0,0.7) 90deg, rgba(255,122,0,0) 180deg, rgba(255,122,0,0.7) 270deg, rgba(255,122,0,0) 360deg)",
-                  filter: "blur(1px)",
-                }}
-              />
-              <div className="relative h-full overflow-hidden rounded-[calc(1.5rem-1px)] border border-white/10 bg-neutral-950/80 p-7 backdrop-blur-2xl transition duration-500 group-hover:-translate-y-1 group-hover:border-white/20 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_20px_60px_-20px_rgba(0,0,0,0.6)]">
-                <div className="flex items-start justify-between">
-                  <div className="relative grid size-12 place-items-center rounded-2xl bg-gradient-to-br from-brand/20 via-orange-950/20 to-brand/5 text-brand ring-1 ring-inset ring-white/10">
-                    <s.Icon className="size-5" />
-                    <span aria-hidden className="absolute -inset-2 rounded-2xl bg-brand/20 opacity-0 blur-xl transition duration-500 group-hover:opacity-100" />
+    <section id="services" className="relative bg-white py-10 md:py-14 text-neutral-900 overflow-hidden border-y border-neutral-200">
+      {/* Background Decorative Ambient Flares */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <ParallaxLayer speed="slow" className="absolute top-0 right-0 w-96 h-96">
+          <div className="h-full w-full rounded-full bg-[#ff7a00]/5 blur-3xl" />
+        </ParallaxLayer>
+        <ParallaxLayer speed="medium" className="absolute bottom-0 left-0 w-96 h-96">
+          <div className="h-full w-full rounded-full bg-[#ff7a00]/5 blur-3xl" />
+        </ParallaxLayer>
+      </div>
+
+      <div className="relative container-pad mx-auto max-w-[1400px]">
+        <SectionHeading
+          dark={false}
+          title="Core Agency Infrastructure Modules"
+          description="Bespoke engineering components built to replace manual operations across your entire client lifecycle."
+        />
+
+        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((s, idx) => (
+            <ScrollReveal key={s.slug} variant="card" staggerIndex={idx} staggerStep={0.06}>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="group h-full"
+              >
+                <TiltCard intensity={4} className="relative h-full rounded-xl">
+                  <div className="relative h-full overflow-hidden rounded-xl border border-neutral-200/90 bg-[#f8f9fa] hover:bg-white p-5 transition duration-300 group-hover:border-neutral-300 shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-start justify-between">
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className="relative grid size-9 place-items-center rounded-lg bg-[#ff7a00]/10 text-[#ff7a00] border border-[#ff7a00]/20 shadow-2xs"
+                        >
+                          <s.Icon className="size-4.5 transition-transform duration-300 group-hover:scale-110" />
+                        </motion.div>
+                        
+                        <ArrowUpRight className="size-4 -translate-x-1 translate-y-1 text-neutral-400 opacity-0 transition duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:text-[#ff7a00] group-hover:opacity-100" />
+                      </div>
+
+                      <h3 className="mt-3.5 font-display text-base sm:text-lg font-semibold text-neutral-900 tracking-tight group-hover:text-black transition-colors">{s.title}</h3>
+                      <p className="mt-1.5 text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">{s.desc}</p>
+                    </div>
+
+                    <ul className="mt-4 space-y-1.5 text-xs border-t border-neutral-200/80 pt-3">
+                      {s.benefits.map((b) => (
+                        <li key={b} className="flex items-center gap-2 text-neutral-700 font-normal">
+                          <Check className="size-3 shrink-0 text-[#ff7a00]" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ArrowUpRight className="size-5 -translate-x-1 translate-y-1 text-neutral-500 opacity-0 transition duration-500 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:text-brand group-hover:opacity-100" />
-                </div>
-                <h3 className="mt-6 font-display text-xl font-semibold text-white tracking-tight">{s.title}</h3>
-                <p className="mt-2 text-sm text-neutral-400 leading-relaxed">{s.desc}</p>
-                <ul className="mt-6 space-y-2.5 text-sm border-t border-white/5 pt-4">
-                  {s.benefits.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-neutral-300 font-medium text-xs md:text-sm">
-                      <Check className="size-4 shrink-0 text-brand" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </TiltCard>
-          </motion.div>
-        ))}
-      </Stagger>
+                </TiltCard>
+              </motion.div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

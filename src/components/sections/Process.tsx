@@ -1,110 +1,225 @@
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
-import { SectionHeading } from "./SectionHeading";
-import processBg from "@/assets/process-bg.png.asset.json";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { useState, useRef } from "react";
 import { Link } from "@tanstack/react-router";
+import { ScrollReveal } from "@/components/fx/ScrollReveal";
+import { SplitText } from "@/components/fx/SplitText";
+import { motion } from "motion/react";
 
-const agencySteps = [
+type IndustryCategory =
+  | "AUTONOMOUS AI AGENTS"
+  | "ENTERPRISE INTEGRATIONS"
+  | "CUSTOM AI ARCHITECTURE"
+  | "DOMAIN AI MODELS"
+  | "GLOBAL AI PIPELINES"
+  | "AI GOVERNANCE & SECURITY";
+
+interface CardData {
+  id: IndustryCategory;
+  title: string;
+  subtitle: string;
+  trustedLabel: string;
+  logos: string[];
+  sketchImage: string;
+}
+
+const CARDS: CardData[] = [
   {
-    step: "01",
-    timeframe: "Days 1–3",
-    t: "Operations Audit & Infrastructure Blueprint",
-    d: "We shadow your account team, map every manual touchpoint across sales, onboarding, delivery, and reporting, and deliver a custom infrastructure architectural blueprint."
+    id: "AUTONOMOUS AI AGENTS",
+    title: "Autonomous AI Agent Networks",
+    subtitle: "Orchestrate multi-agent autonomous workflows on n8n & Python that execute lead qualification, research, outreach, and client onboarding 24/7.",
+    trustedLabel: "DEPLOYED AGENT STACK:",
+    logos: ["n8n Workflows", "LangChain", "OpenAI Swarm", "Claude 3.5 Sonnet", "Supabase DB"],
+    sketchImage: "/sketch-tower.png",
   },
   {
-    step: "02",
-    timeframe: "Weeks 1–2",
-    t: "Custom n8n & AI Agent Architecture",
-    d: "Our engineers build your automated client onboarding OS, live reporting engines, and AI agents tailored specifically to your existing stack (Slack, ClickUp, HubSpot, Notion)."
+    id: "ENTERPRISE INTEGRATIONS",
+    title: "Enterprise API & Workflow Bridges",
+    subtitle: "Build resilient high-throughput data pipelines connecting CRMs, ERPs, webhooks, and custom LLM agents with bank-grade encryption.",
+    trustedLabel: "INTEGRATED PLATFORMS:",
+    logos: ["Salesforce API", "HubSpot CRM", "Stripe Connect", "Zendesk AI", "PostgreSQL"],
+    sketchImage: "/sketch-bridge.png",
   },
   {
-    step: "03",
-    timeframe: "Week 2–3",
-    t: "Turnkey Integration & Fail-Safe Testing",
-    d: "We connect APIs, run stress-testing for edge cases, build human-in-the-loop fallback guardrails, and conduct hands-on training with your agency team."
+    id: "CUSTOM AI ARCHITECTURE",
+    title: "Custom AI System Architectures",
+    subtitle: "Architect production-ready RAG pipelines, fine-tuned domain models, and scalable vector search systems engineered for high-growth B2B agencies.",
+    trustedLabel: "ENGINEERING INFRASTRUCTURE:",
+    logos: ["Pinecone VectorDB", "Qdrant", "Docker / K8s", "AWS Bedrock", "FastAPI"],
+    sketchImage: "/sketch-pagoda.png",
   },
   {
-    step: "04",
-    timeframe: "Week 3+",
-    t: "Full Handoff & 24/7 Operations Monitoring",
-    d: "100% code and repository ownership is transferred to your organization. We maintain real-time monitoring and 30-day SLA hyper-care to ensure zero downtime."
-  }
+    id: "DOMAIN AI MODELS",
+    title: "Domain-Specific LLM Models",
+    subtitle: "Fine-tune domain-specific language models for legal, financial, and technical document extraction with high precision.",
+    trustedLabel: "MODEL ARCHITECTURE STACK:",
+    logos: ["Llama 3.3 70B", "Mistral NeMo", "Unsloth AI", "vLLM", "HF TGI"],
+    sketchImage: "/sketch-cathedral.png",
+  },
+  {
+    id: "GLOBAL AI PIPELINES",
+    title: "Global Multi-Region AI Pipelines",
+    subtitle: "Deploy edge-computed AI automation pipelines with sub-100ms response latencies across North America, Europe, and Asia.",
+    trustedLabel: "CLOUD EDGE INFRASTRUCTURE:",
+    logos: ["Cloudflare Workers", "AWS Lambda@Edge", "Vercel AI SDK", "Redis Enterprise", "Fastly"],
+    sketchImage: "/sketch-eiffel.png",
+  },
+  {
+    id: "AI GOVERNANCE & SECURITY",
+    title: "Enterprise AI Governance & Security",
+    subtitle: "Guarantee SOC2 & GDPR compliance with automated PII masking, RBAC access controls, and real-time audit trail logs.",
+    trustedLabel: "SECURITY & AUDIT PROTOCOLS:",
+    logos: ["SOC2 Type II", "GDPR Guard", "Vault Encryption", "Datadog APM", "OpenTelemetry"],
+    sketchImage: "/sketch-building.png",
+  },
+];
+
+const TABS: IndustryCategory[] = [
+  "AUTONOMOUS AI AGENTS",
+  "ENTERPRISE INTEGRATIONS",
+  "CUSTOM AI ARCHITECTURE",
+  "DOMAIN AI MODELS",
+  "GLOBAL AI PIPELINES",
+  "AI GOVERNANCE & SECURITY",
 ];
 
 export function Process() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const lineHeight = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "100%"]);
+  const [activeTab, setActiveTab] = useState<IndustryCategory>("AUTONOMOUS AI AGENTS");
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleTabClick = (tab: IndustryCategory) => {
+    setActiveTab(tab);
+    if (scrollRef.current) {
+      const cardElem = scrollRef.current.querySelector(`[data-card-id="${tab}"]`);
+      if (cardElem) {
+        cardElem.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+      }
+    }
+  };
 
   return (
-    <section id="how-it-works" className="relative overflow-hidden bg-neutral-950 py-16 text-white md:py-24">
-      <img
-        src={processBg.url}
-        alt=""
-        aria-hidden
-        loading="lazy"
-        decoding="async"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center opacity-30"
-      />
-      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-neutral-950/80 via-neutral-950/60 to-neutral-950" />
-      
-      <div className="relative container-pad mx-auto max-w-[1400px]">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
-            How does it work?
-          </h2>
-          <p className="mt-4 text-base text-neutral-400 md:text-lg">
-            A 4-step engineering protocol designed to get your agency infrastructure live in 3 weeks with zero disruption to daily client work.
-          </p>
-        </div>
+    <section id="global-enterprises" className="relative bg-black py-16 text-white md:py-24 overflow-hidden border-y border-neutral-800">
+      <div className="w-full pl-6 sm:pl-10 md:pl-16 lg:pl-20 pr-0">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[380px_1fr] xl:grid-cols-[420px_1fr]">
+          {/* Left Column */}
+          <div className="flex flex-col justify-between pr-4 sm:pr-8 lg:pr-4 py-2">
+            <div>
+              <ScrollReveal variant="heading">
+                <h2 className="font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-[48px] leading-[1.08]">
+                  <SplitText text="Engineered for high-growth B2B agencies & AI automation" />
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal variant="text" delay={0.2} className="mt-4">
+                <p className="text-base font-normal text-neutral-400 md:text-lg">
+                  Production-grade n8n agentic infrastructure and enterprise API automation built for scale.
+                </p>
+              </ScrollReveal>
+            </div>
 
-        <div ref={ref} className="relative mx-auto mt-14 max-w-4xl">
-          <div className="absolute left-6 top-0 h-full w-px bg-white/10 md:left-1/2 md:-translate-x-1/2" />
-          <motion.div style={{ height: lineHeight }} className="absolute left-6 top-0 w-px bg-gradient-to-b from-[#ff7a00] to-[#c2410c] shadow-[0_0_20px_rgba(255,122,0,0.6)] md:left-1/2 md:-translate-x-1/2" />
-          
-          <div className="space-y-12">
-            {agencySteps.map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: i % 2 ? 50 : -50, y: 20 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
-                className="relative grid grid-cols-[48px_1fr] gap-6 md:grid-cols-2 md:gap-16"
-              >
-                <div className={`hidden md:block ${i % 2 ? "" : "order-2"}`} />
-                <div className={`relative ${i % 2 ? "md:pl-20" : "md:pr-20 md:text-right"}`}>
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true, margin: "-60px" }}
-                    transition={{ delay: i * 0.1 + 0.15, duration: 0.4, type: "spring", stiffness: 200 }}
-                    className="absolute left-0 top-3 z-10 size-5 -translate-x-1/2 rounded-full bg-gradient-to-br from-[#ff7a00] to-[#c2410c] shadow-[0_0_0_4px_#0a0a0a,0_0_20px_4px_rgba(255,122,0,0.6)] md:left-1/2"
-                  />
-                  <div className="rounded-3xl border border-white/12 bg-neutral-950/70 p-6 md:p-8 backdrop-blur-2xl transition duration-300 hover:border-brand/40 hover:bg-neutral-950/90 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8),inset_0_1px_0_0_rgba(255,255,255,0.1)]">
-                    <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand">
-                      <span className="font-mono tabular-nums tracking-widest bg-brand/10 border border-brand/20 px-2 py-0.5 rounded-md">STEP {s.step}</span>
-                      <span>•</span>
-                      <span className="text-white/60 font-medium">{s.timeframe}</span>
-                    </div>
-                    <h3 className="mt-3 font-display text-xl font-semibold tracking-tight text-white md:text-2xl">{s.t}</h3>
-                    <p className="mt-2.5 text-sm text-neutral-400 leading-relaxed font-normal">{s.d}</p>
-                  </div>
+            <ScrollReveal variant="button" delay={0.3} className="mt-12 lg:mt-20">
+              <p className="text-sm font-normal text-neutral-400 mb-4">
+                See how leading organizations scale 3x faster with custom automation.
+              </p>
+              <div className="rounded-2xl border border-neutral-800 bg-neutral-900/90 p-3 shadow-xs inline-block">
+                <div className="flex flex-wrap items-center gap-3">
+                  <Link
+                    to="/demo"
+                    className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-black shadow-sm transition-all duration-300 hover:bg-neutral-200 hover:scale-[1.02]"
+                  >
+                    REQUEST A DEMO <span className="inline-block size-1.5 rounded-full bg-black ml-0.5" />
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 rounded-full border border-neutral-700 bg-transparent px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-sm transition-all duration-300 hover:border-neutral-500 hover:bg-neutral-800 hover:scale-[1.02]"
+                  >
+                    LET'S TALK
+                  </Link>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </ScrollReveal>
           </div>
-        </div>
 
-        <div className="mt-16 text-center">
-          <Link
-            to="/book"
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-8 py-4 text-base font-semibold text-white shadow-lg transition hover:scale-105"
-          >
-            Start Step 1: Book Audit Call
-            <ArrowRight className="size-4 transition group-hover:translate-x-1" />
-          </Link>
+          {/* Right Column */}
+          <div className="flex flex-col min-w-0 w-full pr-0">
+            {/* Filter Tabs Bar */}
+            <ScrollReveal variant="card" delay={0.1} className="mb-6 pr-6">
+              <div className="flex flex-wrap items-center justify-start gap-2">
+                {TABS.map((tab) => {
+                  const isActive = activeTab === tab;
+                  return (
+                    <button
+                      key={tab}
+                      onClick={() => handleTabClick(tab)}
+                      className={`relative rounded-full px-4 py-2 text-[11px] font-semibold tracking-wider transition-all duration-300 uppercase cursor-pointer ${
+                        isActive
+                          ? "bg-white text-black shadow-md scale-105"
+                          : "border border-neutral-800 bg-neutral-900 text-neutral-400 hover:border-neutral-700 hover:text-white"
+                      }`}
+                    >
+                      {tab}
+                    </button>
+                  );
+                })}
+              </div>
+            </ScrollReveal>
+
+            {/* Horizontal Cards Showcase */}
+            <div
+              ref={scrollRef}
+              className="flex gap-6 overflow-x-auto pb-6 pt-2 scrollbar-none snap-x snap-mandatory w-full pr-6 sm:pr-12"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {CARDS.map((card, idx) => {
+                const isSelected = activeTab === card.id;
+                return (
+                  <ScrollReveal key={card.id} variant="card" staggerIndex={idx} staggerStep={0.1}>
+                    <motion.div
+                      data-card-id={card.id}
+                      onClick={() => setActiveTab(card.id)}
+                      whileHover={{ scale: 1.015, y: -4 }}
+                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                      className={`group relative flex min-h-[500px] w-[320px] xs:w-[420px] sm:w-[540px] md:w-[580px] lg:w-[640px] shrink-0 snap-start flex-col justify-between rounded-3xl p-8 sm:p-9 bg-white border border-neutral-200 shadow-xl transition-all duration-500 cursor-pointer overflow-hidden ${
+                        isSelected ? "ring-2 ring-black" : "opacity-95 hover:opacity-100"
+                      }`}
+                    >
+                      {/* Full-size Sharp & Unblurred Architectural Sketch Image */}
+                      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden rounded-3xl z-0 select-none opacity-90 transition-opacity duration-300 group-hover:opacity-100">
+                        <img
+                          src={card.sketchImage}
+                          alt={`${card.title} Architectural Sketch`}
+                          className="w-full h-full object-cover object-right sm:object-center mix-blend-multiply filter contrast-125 brightness-95"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent pointer-events-none" />
+                      </div>
+
+                      <div className="relative z-10 max-w-md">
+                        <h3 className="font-display text-2xl sm:text-3xl font-semibold text-neutral-900 tracking-tight leading-tight">
+                          {card.title}
+                        </h3>
+                        <p className="mt-3 text-sm text-neutral-600 leading-relaxed font-normal">
+                          {card.subtitle}
+                        </p>
+                      </div>
+
+                      <div className="relative z-10 rounded-2xl border border-neutral-200/80 bg-white/70 p-4.5 backdrop-blur-md max-w-lg mt-auto shadow-sm">
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-neutral-500">
+                          {card.trustedLabel}
+                        </div>
+                        <div className="mt-2.5 flex flex-wrap items-center gap-2">
+                          {card.logos.map((logo, lIdx) => (
+                            <span
+                              key={lIdx}
+                              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-1 text-[11px] font-medium text-neutral-800 shadow-2xs"
+                            >
+                              {logo}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  </ScrollReveal>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>

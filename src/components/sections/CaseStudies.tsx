@@ -1,111 +1,158 @@
-import { motion } from "motion/react";
-import { SectionHeading } from "./SectionHeading";
-import { ArrowRight, TrendingUp, Clock, ShieldCheck } from "lucide-react";
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { caseStudies } from "@/data/case-studies";
+import { Search } from "lucide-react";
+
+interface StoryItem {
+  id: string;
+  title: string;
+  category: string;
+  image: string;
+  slug: string;
+}
+
+const STORIES: StoryItem[] = [
+  {
+    id: "1",
+    title: "How an 80-million-customer energy giant replaced voice with AI-driven self-service",
+    category: "Customer Story",
+    image: "https://images.unsplash.com/photo-1527018606416-a6545375b2ce?auto=format&fit=crop&w=800&q=80",
+    slug: "energy-giant-ai-voice",
+  },
+  {
+    id: "2",
+    title: "Fortune 50 Financial Institution Modernizes Global Banking Service Operations",
+    category: "Customer Story",
+    image: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?auto=format&fit=crop&w=800&q=80",
+    slug: "financial-institution-modernization",
+  },
+  {
+    id: "3",
+    title: "Ecuador's largest insurer transforms contact center operations with generative AI",
+    category: "Customer Story",
+    image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80",
+    slug: "ecuador-insurer-transformation",
+  },
+  {
+    id: "4",
+    title: "Insurance provider transforms customer service with AI agents",
+    category: "Customer Story",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+    slug: "insurance-provider-ai-agents",
+  },
+  {
+    id: "5",
+    title: "Global design and engineering software leader automated technical support",
+    category: "Customer Story",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+    slug: "engineering-software-support",
+  },
+  {
+    id: "6",
+    title: "How a leading confectionary manufacturer automated B2B retail ordering",
+    category: "Customer Story",
+    image: "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=800&q=80",
+    slug: "confectionary-manufacturer-b2b",
+  },
+  {
+    id: "7",
+    title: "Empowering a Global Frontline Workforce with AI-Driven Employee Assistance",
+    category: "Customer Story",
+    image: "https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=800&q=80",
+    slug: "frontline-workforce-assistance",
+  },
+  {
+    id: "8",
+    title: "Transforming Live Event Support with Intelligent Digital Self-Service",
+    category: "Customer Story",
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80",
+    slug: "live-event-self-service",
+  },
+  {
+    id: "9",
+    title: "Modernizing Digital Self-Service for Corporate Travel & Mobility",
+    category: "Customer Story",
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80",
+    slug: "corporate-travel-self-service",
+  },
+  {
+    id: "10",
+    title: "Scaling Developer Velocity with Autonomous Code Assist & Workflows",
+    category: "Customer Story",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    slug: "developer-velocity-assist",
+  },
+];
 
 export function CaseStudies() {
-  const cases = caseStudies;
-  return (
-    <section className="relative bg-white text-neutral-900">
-      <div className="container-pad mx-auto max-w-[1400px] py-24 md:py-32">
-        <SectionHeading
-          title="Results our clients can measure"
-          description="Real outcomes, verified metrics, and production-grade architectures built for growth-stage teams."
-        />
+  const [searchQuery, setSearchQuery] = useState("");
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {cases.map((c, i) => (
-            <motion.article
-              key={c.company}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ delay: i * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-neutral-200 bg-white p-7 shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition duration-500 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-[0_25px_60px_-20px_rgba(0,0,0,0.15)]"
+  const filteredStories = STORIES.filter((story) =>
+    story.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
+    <section className="relative bg-[#F2F7FA] text-neutral-900 min-h-screen py-10 sm:py-16">
+      <div className="container-pad mx-auto max-w-[1500px]">
+        {/* Top Header Row with Title & Search Input */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 sm:mb-12">
+          <h1 className="font-display text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl lg:text-[44px] leading-tight">
+            Our customers, their stories
+          </h1>
+
+          {/* Search Input Bar */}
+          <div className="relative w-full sm:w-[280px] md:w-[320px]">
+            <input
+              type="text"
+              placeholder="Search articles"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full rounded-none border border-neutral-300/80 bg-white py-2 pl-3.5 pr-9 text-xs text-neutral-900 placeholder:text-neutral-400 focus:border-neutral-800 focus:outline-none shadow-2xs transition"
+            />
+            <Search className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-neutral-400 pointer-events-none" />
+          </div>
+        </div>
+
+        {/* 3-Column Stories Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          {filteredStories.map((story) => (
+            <Link
+              key={story.id}
+              to="/case-studies/$slug"
+              params={{ slug: story.slug }}
+              className="group flex flex-col justify-between rounded-none border border-neutral-200/90 bg-white overflow-hidden shadow-2xs transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
               <div>
-                {/* Header Row */}
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#ff7a00]">
-                      {c.industry}
-                    </span>
-                    <h3 className="mt-1 font-display text-2xl font-bold text-neutral-900 tracking-tight">
-                      {c.company}
+                {/* Image Thumbnail */}
+                <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-neutral-100">
+                  <img
+                    src={story.image}
+                    alt={story.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Content Box */}
+                <div className="p-5 sm:p-6">
+                  {/* Dashed Left Border Accent Title */}
+                  <div className="border-l-2 border-dashed border-neutral-800 pl-3">
+                    <h3 className="font-display text-sm sm:text-base font-semibold text-neutral-900 leading-snug line-clamp-3 group-hover:text-black">
+                      {story.title}
                     </h3>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-orange-200 bg-orange-50/80 px-2.5 py-1 text-[11px] font-semibold text-[#ff7a00]">
-                    <span className="size-1.5 rounded-full bg-[#ff7a00] animate-pulse" />
-                    LIVE
-                  </span>
-                </div>
-
-                {/* Key Metrics Chips */}
-                <div className="mt-5 grid grid-cols-2 gap-2">
-                  <div className="rounded-xl bg-orange-50/70 border border-orange-100 p-2.5 text-center">
-                    <div className="flex items-center justify-center gap-1 text-base font-extrabold text-[#ff7a00]">
-                      <Clock className="size-4" />
-                      <span>{c.metrics[0]?.v.toLocaleString()} {c.metrics[0]?.s}</span>
-                    </div>
-                    <div className="text-[10px] font-medium text-neutral-600 mt-0.5">{c.metrics[0]?.l}</div>
-                  </div>
-
-                  <div className="rounded-xl bg-neutral-100/80 border border-neutral-200 p-2.5 text-center">
-                    <div className="flex items-center justify-center gap-1 text-base font-extrabold text-neutral-900">
-                      <TrendingUp className="size-4 text-[#ff7a00]" />
-                      <span>{c.metrics[1]?.v}{c.metrics[1]?.s}</span>
-                    </div>
-                    <div className="text-[10px] font-medium text-neutral-600 mt-0.5">{c.metrics[1]?.l}</div>
-                  </div>
-                </div>
-
-                {/* Before & After Details */}
-                <div className="mt-5 space-y-2.5 text-xs md:text-sm">
-                  <div className="rounded-xl border border-neutral-200/80 bg-neutral-50/80 p-3">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">
-                      BEFORE AUTOMATION
-                    </div>
-                    <div className="mt-1 text-neutral-700 leading-snug">{c.before}</div>
-                  </div>
-
-                  <div className="rounded-xl border border-orange-200/70 bg-orange-50/30 p-3">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#ff7a00] flex items-center gap-1">
-                      <ShieldCheck className="size-3 text-[#ff7a00]" />
-                      PRONETHESEUS ARCHITECTURE
-                    </div>
-                    <div className="mt-1 text-neutral-900 font-medium leading-snug">{c.after}</div>
-                  </div>
-                </div>
-
-                {/* Testimonial Quote */}
-                <blockquote className="mt-5 text-xs md:text-sm text-neutral-700 italic border-l-2 border-[#ff7a00] pl-3 py-0.5">
-                  &ldquo;{c.quote}&rdquo;
-                </blockquote>
-                <div className="mt-2 text-xs font-medium text-neutral-500">— {c.who}, <span className="text-neutral-700">{c.role}</span></div>
-
-                {/* Tech Stack Pills */}
-                <div className="mt-5 flex flex-wrap gap-1.5 border-t border-neutral-100 pt-4">
-                  {c.customer.stack.map((tech) => (
-                    <span key={tech} className="rounded-md bg-neutral-100 border border-neutral-200/60 px-2 py-0.5 text-[10px] font-medium text-neutral-600">
-                      {tech}
-                    </span>
-                  ))}
                 </div>
               </div>
 
-              {/* Action Button */}
-              <div className="mt-6 pt-2">
-                <Link
-                  to="/case-studies/$slug"
-                  params={{ slug: c.slug }}
-                  className="group inline-flex w-full items-center justify-between rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-xs font-semibold text-neutral-900 transition hover:bg-neutral-900 hover:text-white hover:border-neutral-900"
-                >
-                  <span>Read Full Case Study</span>
-                  <ArrowRight className="size-3.5 transition group-hover:translate-x-1" />
-                </Link>
+              {/* Bottom Footer Row */}
+              <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-2 flex items-center justify-between border-t border-neutral-100/80">
+                <span className="text-xs font-semibold text-neutral-500">
+                  {story.category}
+                </span>
+                <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-neutral-900 group-hover:underline">
+                  READ NOW <span className="size-1 rounded-full bg-neutral-900" />
+                </span>
               </div>
-            </motion.article>
+            </Link>
           ))}
         </div>
       </div>

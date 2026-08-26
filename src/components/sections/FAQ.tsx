@@ -1,4 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ScrollReveal } from "@/components/fx/ScrollReveal";
 import { SectionHeading } from "./SectionHeading";
 
 const agencyFaqs = [
@@ -30,34 +31,31 @@ const agencyFaqs = [
 
 export function FAQ() {
   return (
-    <section className="relative overflow-hidden bg-neutral-950 text-white container-pad mx-auto max-w-[1400px] py-10 md:py-14 my-4 rounded-3xl border border-white/10 shadow-[0_30px_90px_-20px_rgba(0,0,0,0.8)]">
-      {/* Wave texture background image with Orange Hue Rotation */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 transition-all duration-700"
-        style={{
-          backgroundImage: "url('/850f23bca065e10b91701e39df67723f.jpg')",
-          filter: "hue-rotate(-95deg) saturate(240%) brightness(1.05)",
-        }}
-      />
-      {/* Orange Ambient Light Glow Overlay */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[#ff7a00]/30 via-orange-600/15 to-transparent mix-blend-color-dodge" />
-
-      {/* Dark vignette glass gradient overlay for high-contrast readability */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-neutral-950/85 via-neutral-950/75 to-neutral-950/90 backdrop-blur-[2px]" />
-
-      <div className="relative z-10">
+    <section id="faq" className="relative bg-white py-16 sm:py-24 text-neutral-900 border-t border-neutral-200">
+      <div className="container-pad mx-auto max-w-[1400px]">
         <SectionHeading
+          eyebrow="FAQ"
           title="Frequently Asked Infrastructure Questions"
           description="Clear answers about our engineering process, guarantees, and technology stack."
         />
-        <div className="mx-auto mt-7 max-w-3xl">
-          <Accordion type="single" collapsible className="space-y-2.5">
+
+        {/* Accordion List with ScrollReveal */}
+        <div className="mx-auto mt-12 max-w-3xl">
+          <Accordion type="single" collapsible className="space-y-3.5">
             {agencyFaqs.map((f, i) => (
-              <AccordionItem key={i} value={`i${i}`} className="overflow-hidden rounded-2xl border border-white/15 bg-neutral-950/80 backdrop-blur-xl px-5 sm:px-6 transition duration-300 hover:border-brand/50 hover:bg-neutral-900/90">
-                <AccordionTrigger className="py-3.5 sm:py-4 text-left text-base font-semibold text-white hover:no-underline">{f.q}</AccordionTrigger>
-                <AccordionContent className="pb-4 text-sm text-neutral-300 leading-relaxed">{f.a}</AccordionContent>
-              </AccordionItem>
+              <ScrollReveal key={i} variant="card" staggerIndex={i} staggerStep={0.07}>
+                <AccordionItem
+                  value={`i${i}`}
+                  className="rounded-lg border border-neutral-200 bg-white px-5 sm:px-6 transition duration-300 hover:border-[#ff7a00]/50 shadow-2xs"
+                >
+                  <AccordionTrigger className="py-4.5 text-left text-base font-semibold text-neutral-900 hover:no-underline hover:text-brand transition-colors cursor-pointer">
+                    {f.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 text-sm text-neutral-600 leading-relaxed font-normal">
+                    {f.a}
+                  </AccordionContent>
+                </AccordionItem>
+              </ScrollReveal>
             ))}
           </Accordion>
         </div>

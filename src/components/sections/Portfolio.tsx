@@ -30,7 +30,7 @@ export function Portfolio() {
           <button
             key={label}
             onClick={() => setActiveFilter(label)}
-            className={`rounded-full border px-5 py-2.5 text-sm font-medium transition duration-300 ${
+            className={`rounded-none border px-5 py-2.5 text-sm font-medium transition duration-300 ${
               activeFilter === label
                 ? "border-brand/50 bg-gradient-to-r from-orange-500/20 to-rose-500/20 text-brand shadow-[0_0_20px_rgba(255,122,0,0.3)]"
                 : "border-white/10 bg-white/[0.03] text-foreground/70 hover:border-white/20 hover:text-foreground"
@@ -54,11 +54,11 @@ export function Portfolio() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="group"
             >
-              <TiltCard intensity={6} className="relative rounded-3xl">
+              <TiltCard intensity={6} className="relative rounded-none">
                 <Link
                   to="/portfolio/$slug"
                   params={{ slug: it.slug }}
-                  className="relative block aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 transition duration-500 group-hover:border-orange-500/50 group-hover:shadow-[0_30px_90px_-20px_rgba(255,122,0,0.45)]"
+                  className="relative block aspect-[4/3] overflow-hidden rounded-none border border-white/10 transition duration-500 group-hover:border-orange-500/50 group-hover:shadow-[0_30px_90px_-20px_rgba(255,122,0,0.45)]"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${it.gradient} opacity-90 transition duration-1000 group-hover:scale-110 group-hover:opacity-100`} />
                   {it.showcase && (
@@ -83,7 +83,7 @@ export function Portfolio() {
                   <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-6">
                     <div className="translate-y-1 transition duration-500 group-hover:translate-y-0">
                       <div className="flex items-center gap-2">
-                        <span className="rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] uppercase tracking-wider text-white/90 backdrop-blur-md">
+                        <span className="rounded-none bg-white/15 px-2.5 py-0.5 text-[11px] uppercase tracking-wider text-white/90 backdrop-blur-md">
                           {it.category}
                         </span>
                         <span className="text-xs tracking-widest text-white/70">{it.tag}</span>
@@ -91,7 +91,7 @@ export function Portfolio() {
                       <div className="mt-2 font-display text-2xl font-semibold text-white">{it.title}</div>
                       <p className="mt-1 line-clamp-1 text-xs text-white/70">{it.summary}</p>
                     </div>
-                    <div className="grid size-11 shrink-0 place-items-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition duration-500 group-hover:border-white/50 group-hover:bg-orange-500/40">
+                    <div className="grid size-11 shrink-0 place-items-center rounded-none border border-white/20 bg-white/10 backdrop-blur-md transition duration-500 group-hover:border-white/50 group-hover:bg-orange-500/40">
                       <ArrowUpRight className="size-5 text-white transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>
                   </div>

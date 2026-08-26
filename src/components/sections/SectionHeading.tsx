@@ -1,4 +1,5 @@
-import { Reveal } from "@/components/ui/reveal";
+import { ScrollReveal } from "@/components/fx/ScrollReveal";
+import { SplitText } from "@/components/fx/SplitText";
 import { cn } from "@/lib/utils";
 
 export function SectionHeading({
@@ -7,32 +8,53 @@ export function SectionHeading({
   description,
   center = true,
   className,
+  dark = false,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   center?: boolean;
   className?: string;
+  dark?: boolean;
 }) {
   return (
     <div className={cn(center && "mx-auto max-w-3xl text-center", className)}>
       {eyebrow && (
-        <Reveal>
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-widest text-foreground/70">
-            <span className="size-1.5 rounded-full bg-brand" />
+        <ScrollReveal variant="badge" className="mb-2">
+          <div
+            className={cn(
+              "inline-flex items-center gap-2 rounded-full px-3 py-0.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-widest backdrop-blur-md shadow-xs",
+              dark
+                ? "border border-white/30 bg-white/20 text-white"
+                : "border border-black/10 bg-black/5 text-neutral-800"
+            )}
+          >
+            <span className={cn("size-1.5 rounded-full animate-pulse", dark ? "bg-white" : "bg-brand")} />
             {eyebrow}
           </div>
-        </Reveal>
+        </ScrollReveal>
       )}
-      <Reveal delay={0.1}>
-        <h2 className="mt-4 font-display text-4xl leading-[1.05] tracking-tight md:text-6xl">
-          <span className="text-gradient">{title}</span>
-        </h2>
-      </Reveal>
+      
+      <h2
+        className={cn(
+          "font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1]",
+          dark ? "text-white drop-shadow-xs" : "text-neutral-950"
+        )}
+      >
+        <SplitText text={title} delay={0.05} />
+      </h2>
+
       {description && (
-        <Reveal delay={0.2}>
-          <p className="mt-4 text-base text-muted-foreground md:text-lg">{description}</p>
-        </Reveal>
+        <ScrollReveal variant="text" delay={0.15} className="mt-2.5">
+          <p
+            className={cn(
+              "text-sm sm:text-base font-normal leading-relaxed",
+              dark ? "text-white/90" : "text-neutral-600"
+            )}
+          >
+            {description}
+          </p>
+        </ScrollReveal>
       )}
     </div>
   );

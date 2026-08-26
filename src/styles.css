@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,400..800;1,400..800&family=Instrument+Serif:ital@0;1&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -51,14 +51,15 @@
   --color-brand-glow: var(--brand-glow);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
-  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
-  --font-mono: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-serif: "Instrument Serif", serif;
 }
 
 :root {
   --radius: 0.9rem;
-  /* Black · White · Orange */
+  /* Obsidian Black · Pure White · Electric Orange */
   --background: oklch(0.10 0 0);
   --foreground: oklch(0.98 0 0);
   --surface: oklch(0.14 0 0);
@@ -107,32 +108,38 @@
 
 @layer base {
   html {
-    color-scheme: dark;
+    color-scheme: light dark;
     background-color: var(--color-background);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
     scroll-behavior: smooth;
+    letter-spacing: -0.01em;
   }
   * {
     border-color: var(--color-border);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Inter", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    letter-spacing: -0.025em;
+  }
   ::selection {
-    background: oklch(0.72 0.19 55 / 0.4);
-    color: var(--color-foreground);
+    background: #ff7a00;
+    color: #ffffff;
   }
 
   /* Custom Ultra-Sleek Scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
   }
   ::-webkit-scrollbar-track {
     background: #000000;
@@ -157,6 +164,13 @@
   background: linear-gradient(135deg, oklch(1 0 0 / 0.08), oklch(1 0 0 / 0.03));
   border: 1px solid oklch(1 0 0 / 0.12);
   backdrop-filter: blur(24px) saturate(160%);
+}
+
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(16px);
 }
 
 @utility text-gradient {

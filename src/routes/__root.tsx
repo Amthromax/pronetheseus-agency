@@ -112,7 +112,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,400..800;1,400..800&family=Instrument+Serif:ital@0;1&display=swap",
       },
     ],
     scripts: [
@@ -153,6 +153,8 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+import { CookieConsent } from "@/components/ui/CookieConsent";
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -167,6 +169,7 @@ function RootComponent() {
       </main>
       <Footer />
       <FloatingCTA />
+      <CookieConsent />
       <Toaster />
     </QueryClientProvider>
   );
