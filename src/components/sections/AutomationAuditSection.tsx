@@ -15,7 +15,9 @@ import {
   Calendar, 
   Zap,
   BarChart,
-  Cpu
+  Cpu,
+  ChevronDown,
+  Check
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
@@ -53,6 +55,66 @@ const AUDIT_FLOW_STEPS = [
   { label: "Personalized Follow-up", icon: Mail },
   { label: "Calendar", icon: Calendar },
 ];
+
+interface CustomSelectProps {
+  value: string;
+  options: string[];
+  onChange: (val: string) => void;
+}
+
+function CustomSelect({ value, options, onChange }: CustomSelectProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between rounded-xl border border-sandel-border bg-sandel px-4 py-3 text-xs sm:text-sm font-semibold text-neutral-900 shadow-2xs transition-all hover:border-neutral-400 hover:bg-white focus:border-[#ff7a00] focus:outline-none cursor-pointer"
+      >
+        <span>{value}</span>
+        <ChevronDown className={`size-4 text-neutral-500 transition-transform duration-200 ${isOpen ? "rotate-180 text-[#ff7a00]" : ""}`} />
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+            <motion.div
+              initial={{ opacity: 0, y: -6, scale: 0.98 }}
+              animate={{ opacity: 1, y: 4, scale: 1 }}
+              exit={{ opacity: 0, y: -6, scale: 0.98 }}
+              transition={{ duration: 0.15 }}
+              className="absolute left-0 right-0 top-full z-50 rounded-xl border border-sandel-border bg-sandel-card p-1.5 shadow-xl max-h-60 overflow-y-auto"
+            >
+              {options.map((option) => {
+                const isSelected = option === value;
+                return (
+                  <button
+                    key={option}
+                    type="button"
+                    onClick={() => {
+                      onChange(option);
+                      setIsOpen(false);
+                    }}
+                    className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-semibold font-sans transition-colors cursor-pointer text-left ${
+                      isSelected 
+                        ? "bg-[#ff7a00]/10 text-[#ff7a00] font-bold" 
+                        : "text-neutral-800 hover:bg-sandel hover:text-neutral-900"
+                    }`}
+                  >
+                    <span>{option}</span>
+                    {isSelected && <Check className="size-3.5 text-[#ff7a00] shrink-0" />}
+                  </button>
+                );
+              })}
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export function AutomationAuditSection() {
   const [step, setStep] = useState(1);
@@ -227,30 +289,22 @@ export function AutomationAuditSection() {
                       <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
                         Business Type
                       </label>
-                      <select
+                      <CustomSelect
                         value={formData.businessType}
-                        onChange={(e) => handleChange("businessType", e.target.value)}
-                        className="w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-4 py-3 text-sm text-neutral-900 focus:border-[#ff7a00] focus:bg-white focus:outline-none transition cursor-pointer"
-                      >
-                        {BUSINESS_TYPES.map((b) => (
-                          <option key={b} value={b}>{b}</option>
-                        ))}
-                      </select>
+                        options={BUSINESS_TYPES}
+                        onChange={(val) => handleChange("businessType", val)}
+                      />
                     </div>
 
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
                         Number of Employees
                       </label>
-                      <select
+                      <CustomSelect
                         value={formData.employeeCount}
-                        onChange={(e) => handleChange("employeeCount", e.target.value)}
-                        className="w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-4 py-3 text-sm text-neutral-900 focus:border-[#ff7a00] focus:bg-white focus:outline-none transition cursor-pointer"
-                      >
-                        {EMPLOYEE_RANGES.map((e) => (
-                          <option key={e} value={e}>{e}</option>
-                        ))}
-                      </select>
+                        options={EMPLOYEE_RANGES}
+                        onChange={(val) => handleChange("employeeCount", val)}
+                      />
                     </div>
                   </div>
 
@@ -273,30 +327,22 @@ export function AutomationAuditSection() {
                       <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
                         Current CRM
                       </label>
-                      <select
+                      <CustomSelect
                         value={formData.currentCrm}
-                        onChange={(e) => handleChange("currentCrm", e.target.value)}
-                        className="w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-4 py-3 text-sm text-neutral-900 focus:border-[#ff7a00] focus:bg-white focus:outline-none transition cursor-pointer"
-                      >
-                        {CRM_OPTIONS.map((c) => (
-                          <option key={c} value={c}>{c}</option>
-                        ))}
-                      </select>
+                        options={CRM_OPTIONS}
+                        onChange={(val) => handleChange("currentCrm", val)}
+                      />
                     </div>
 
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
                         Approximate Leads / Month
                       </label>
-                      <select
+                      <CustomSelect
                         value={formData.leadVolume}
-                        onChange={(e) => handleChange("leadVolume", e.target.value)}
-                        className="w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-4 py-3 text-sm text-neutral-900 focus:border-[#ff7a00] focus:bg-white focus:outline-none transition cursor-pointer"
-                      >
-                        {LEAD_VOLUMES.map((l) => (
-                          <option key={l} value={l}>{l}</option>
-                        ))}
-                      </select>
+                        options={LEAD_VOLUMES}
+                        onChange={(val) => handleChange("leadVolume", val)}
+                      />
                     </div>
                   </div>
 
@@ -304,15 +350,11 @@ export function AutomationAuditSection() {
                     <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
                       Biggest Operational Problem *
                     </label>
-                    <select
+                    <CustomSelect
                       value={formData.biggestProblem}
-                      onChange={(e) => handleChange("biggestProblem", e.target.value)}
-                      className="w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-4 py-3 text-sm text-neutral-900 focus:border-[#ff7a00] focus:bg-white focus:outline-none transition cursor-pointer"
-                    >
-                      {OPERATIONAL_PROBLEMS.map((p) => (
-                        <option key={p} value={p}>{p}</option>
-                      ))}
-                    </select>
+                      options={OPERATIONAL_PROBLEMS}
+                      onChange={(val) => handleChange("biggestProblem", val)}
+                    />
                   </div>
 
                   <div className="flex gap-4">
