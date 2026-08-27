@@ -8,162 +8,288 @@ import {
   Star, 
   RotateCcw, 
   ArrowRight,
-  Check
+  CheckCircle2,
+  Zap,
+  Activity,
+  ChevronRight,
+  Sliders
 } from "lucide-react";
 
 const LIFECYCLE_STEPS = [
-  { name: "Inquiry", desc: "Form/phone" },
-  { name: "AI Reply", desc: "Sub-60s" },
-  { name: "Qualify", desc: "Intent check" },
-  { name: "CRM", desc: "Auto sync" },
-  { name: "Follow-up", desc: "Cadence" },
-  { name: "Booking", desc: "Calendar" },
-  { name: "Reminder", desc: "SMS/WA" },
-  { name: "Customer", desc: "Onboarding" },
-  { name: "Reviews", desc: "5-Star" },
+  { step: "01", name: "Inquiry", desc: "Form, Chat & Call", status: "Instant" },
+  { step: "02", name: "AI Reply", desc: "Sub-60s Response", status: "< 60s" },
+  { step: "03", name: "Qualify", desc: "Intent Evaluation", status: "Smart" },
+  { step: "04", name: "CRM Sync", desc: "Bi-directional", status: "Auto" },
+  { step: "05", name: "Follow-up", desc: "Multi-channel", status: "Active" },
+  { step: "06", name: "Booking", desc: "Direct Calendar", status: "2-Way" },
+  { step: "07", name: "Reminder", desc: "SMS & WhatsApp", status: "Zero-No-Show" },
+  { step: "08", name: "Onboard", desc: "Instant Welcome", status: "Seamless" },
+  { step: "09", name: "5-Star Review", desc: "Automated Loop", status: "+4.9 Avg" },
 ];
 
 const ADDON_MODULES = [
-  { icon: Bot, title: "AI Voice Agent", desc: "24/7 inbound & outbound phone calls", iconColor: "text-[#ff7a00]" },
-  { icon: MessageSquare, title: "WhatsApp Automation", desc: "2-way chat support & quotes", iconColor: "text-emerald-600" },
-  { icon: Database, title: "CRM Automation", desc: "HubSpot, HighLevel, Zoho, Salesforce", iconColor: "text-blue-600" },
-  { icon: Star, title: "Review Engine", desc: "Automated post-service Google reviews", iconColor: "text-amber-500" },
-  { icon: RotateCcw, title: "Reactivation Bot", desc: "Turn cold contacts into bookings", iconColor: "text-purple-600" },
+  { 
+    icon: Bot, 
+    title: "AI Voice Agent", 
+    desc: "24/7 inbound phone reception & outbound calling", 
+    tag: "Voice AI",
+    badgeBg: "bg-orange-500/10 text-orange-600 border-orange-200" 
+  },
+  { 
+    icon: MessageSquare, 
+    title: "WhatsApp Automation", 
+    desc: "2-way chat support, instant quotes & media", 
+    tag: "Messaging",
+    badgeBg: "bg-emerald-500/10 text-emerald-700 border-emerald-200" 
+  },
+  { 
+    icon: Database, 
+    title: "CRM Automation", 
+    desc: "Bi-directional sync for HighLevel, HubSpot & Salesforce", 
+    tag: "Pipeline",
+    badgeBg: "bg-blue-500/10 text-blue-700 border-blue-200" 
+  },
+  { 
+    icon: Star, 
+    title: "Review Engine", 
+    desc: "Automated post-service Google 5-star review collector", 
+    tag: "Reputation",
+    badgeBg: "bg-amber-500/10 text-amber-700 border-amber-200" 
+  },
+  { 
+    icon: RotateCcw, 
+    title: "Reactivation Bot", 
+    desc: "Turn inactive CRM leads into active bookings", 
+    tag: "Growth",
+    badgeBg: "bg-purple-500/10 text-purple-700 border-purple-200" 
+  },
 ];
 
 export function FlagshipProduct() {
   return (
-    <section id="flagship-product" className="relative bg-sandel py-10 sm:py-14 text-neutral-900 overflow-hidden">
-      <div className="relative z-10 container-pad mx-auto max-w-[1400px]">
+    <section id="flagship-product" className="relative bg-sandel py-16 sm:py-24 text-neutral-900 overflow-hidden">
+      <div className="relative z-10 container-pad mx-auto max-w-[1440px]">
+        
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-sandel-border bg-sandel-card px-3.5 py-1 text-xs font-mono font-semibold text-neutral-800 shadow-2xs mb-4">
+            <Sparkles className="size-3.5 text-[#ff7a00]" />
+            <span>FLAGSHIP ARCHITECTURE</span>
+          </div>
           <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900">
             Pronetheseus AI Revenue Engine
           </h2>
-          <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-sans max-w-2xl mx-auto leading-relaxed">
-            The all-in-one autonomous system for service businesses. Replace fragmented tools with a single unified lead-to-customer automation infrastructure.
+          <p className="mt-3 text-sm sm:text-base text-neutral-600 font-sans max-w-2xl mx-auto leading-relaxed">
+            The complete autonomous operating system for service businesses. Replaces fragmented tools with a single unified lead-to-customer automation infrastructure.
           </p>
         </div>
 
-        {/* 9-STEP CUSTOMER LIFECYCLE FLOW */}
-        <div className="mt-7 rounded-2xl border border-sandel-border bg-sandel-card p-4 sm:p-6 shadow-sm">
-          <div className="flex items-center justify-between mb-4 pb-3 border-b border-sandel-border/80">
+        {/* 9-STEP INTERACTIVE LIFECYCLE PIPELINE */}
+        <div className="mt-10 rounded-2xl border border-sandel-border bg-sandel-card p-5 sm:p-7 shadow-sm">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-sandel-border">
             <div>
-              <h3 className="font-sans text-lg sm:text-xl font-bold text-neutral-900">
-                The 9-Step Automated Customer Lifecycle
-              </h3>
+              <div className="flex items-center gap-2">
+                <Activity className="size-4 text-[#ff7a00]" />
+                <h3 className="font-sans text-lg sm:text-xl font-bold text-neutral-900">
+                  The 9-Step Automated Customer Lifecycle
+                </h3>
+              </div>
+              <p className="text-xs text-neutral-500 mt-0.5 font-sans">
+                Continuous autonomous execution from first lead touchpoint to 5-star review.
+              </p>
             </div>
-            <div className="hidden sm:inline-flex items-center gap-1.5 text-xs font-sans text-emerald-700 font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              100% Autonomous
+            
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-mono font-semibold text-emerald-800">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+              </span>
+              <span>100% Autonomous Pipeline Active</span>
             </div>
           </div>
 
-          {/* Steps Grid */}
-          <div className="grid grid-cols-3 xs:grid-cols-5 lg:grid-cols-9 gap-2">
-            {LIFECYCLE_STEPS.map((step, idx) => (
-              <div key={step.name} className="relative flex flex-col items-center text-center p-2 rounded-lg bg-sandel border border-sandel-border hover:border-neutral-400 transition-colors">
-                <span className="text-xs font-sans font-bold text-[#ff7a00] mb-1">
-                  {idx + 1}
-                </span>
-                <span className="text-xs font-semibold text-neutral-900 leading-tight font-sans">
-                  {step.name}
-                </span>
-                <span className="text-[9px] text-neutral-500 mt-0.5 leading-tight">
-                  {step.desc}
-                </span>
+          {/* Connected Pipeline Grid */}
+          <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-2.5">
+            {LIFECYCLE_STEPS.map((item, idx) => (
+              <div 
+                key={item.name} 
+                className="group relative flex flex-col justify-between p-3 rounded-xl bg-sandel border border-sandel-border transition-all duration-200 hover:bg-white hover:border-[#ff7a00]/50 hover:shadow-md cursor-default"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-mono text-[10px] font-bold text-[#ff7a00] bg-[#ff7a00]/10 px-1.5 py-0.5 rounded-md">
+                      {item.step}
+                    </span>
+                    {idx < LIFECYCLE_STEPS.length - 1 && (
+                      <ChevronRight className="hidden lg:block size-3 text-neutral-400 group-hover:text-[#ff7a00] transition-colors" />
+                    )}
+                  </div>
+                  <h4 className="text-xs font-bold text-neutral-900 leading-tight font-sans">
+                    {item.name}
+                  </h4>
+                  <p className="text-[10px] text-neutral-500 mt-0.5 leading-tight font-sans">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="mt-3 pt-2 border-t border-sandel-border/60 flex items-center justify-between">
+                  <span className="text-[9px] font-mono font-medium text-neutral-600">
+                    {item.status}
+                  </span>
+                  <div className="size-1.5 rounded-full bg-neutral-300 group-hover:bg-[#ff7a00] transition-colors" />
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         {/* CORE vs ADD-ONS ARCHITECTURE */}
-        <div className="mt-6 grid gap-5 lg:grid-cols-12">
-          {/* Left Column: Core System (7 Cols) */}
-          <div className="lg:col-span-7 flex flex-col justify-between rounded-2xl border-2 border-[#ff7a00]/40 bg-sandel-card p-5 sm:p-6 shadow-md">
+        <div className="mt-8 grid gap-8 lg:grid-cols-12 items-stretch">
+          
+          {/* Left Column: Core System (Obsidian Dark High-Impact Card - 7 Cols) */}
+          <div className="lg:col-span-7 rounded-2xl bg-neutral-900 text-white p-6 sm:p-8 shadow-xl relative overflow-hidden flex flex-col justify-between border border-neutral-800">
+            {/* Ambient Orange Glow Effect */}
+            <div className="absolute -right-20 -top-20 size-60 rounded-full bg-[#ff7a00]/15 blur-3xl pointer-events-none" />
+
             <div>
-              <div className="flex items-center justify-between">
-                <span className="px-2.5 py-0.5 rounded-full bg-[#ff7a00] text-white font-mono text-[10px] font-bold uppercase tracking-wider shadow-2xs">
-                  CORE SYSTEM
+              {/* Header Badges */}
+              <div className="flex items-center justify-between border-b border-neutral-800 pb-4">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ff7a00] px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-white shadow-xs">
+                  <Zap className="size-3 fill-current" />
+                  CORE REVENUE SYSTEM
                 </span>
-                <span className="text-xs font-mono text-neutral-500">Primary Product</span>
+                <span className="text-xs font-mono text-neutral-400 flex items-center gap-1.5">
+                  <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Primary Infrastructure
+                </span>
               </div>
 
-              <h3 className="mt-4 font-sans text-xl sm:text-2xl font-bold text-neutral-900">
-                AI Lead-to-Appointment System
-              </h3>
-              <p className="mt-1.5 text-xs sm:text-sm text-neutral-600 leading-relaxed font-sans">
-                Handles inbound lead capture, 60-second AI qualification, CRM creation, and automated calendar scheduling out of the box.
-              </p>
+              <div className="mt-6">
+                <h3 className="font-sans text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                  AI Lead-to-Appointment System
+                </h3>
+                <p className="mt-2 text-xs sm:text-sm text-neutral-300 leading-relaxed font-sans max-w-xl">
+                  Captures inbound leads instantly, qualifies prospect intent in under 60 seconds, logs deals to your CRM, and books qualified calls straight into your calendar.
+                </p>
+              </div>
 
-              <div className="mt-4 space-y-2 border-t border-sandel-border/80 pt-4">
+              {/* Feature Checklist */}
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-neutral-800/80">
                 {[
-                  "AI lead capture across forms, web, phone & chat",
-                  "Sub-60s AI qualification & intent evaluation",
-                  "Multi-channel automated follow-up cadences",
-                  "Instant bi-directional CRM automation & deal creation",
-                  "Direct 2-way Google & Outlook appointment booking",
-                  "Unified WhatsApp, SMS, and email communication engine",
-                  "24/7 AI Voice Agent inbound & outbound call handling",
-                  "Automated Google reviews & cold lead reactivation bot",
+                  "Multi-channel lead capture (web, phone, chat)",
+                  "Sub-60s AI intent & budget qualification",
+                  "Automated multi-touch follow-up cadences",
+                  "2-way Google & Outlook calendar booking",
+                  "Bi-directional CRM creation & deal sync",
+                  "Unified WhatsApp, SMS & email engine",
+                  "24/7 AI Voice reception & outbound calling",
+                  "Automated Google reviews & lead reactivation",
                 ].map((feature) => (
-                  <div key={feature} className="flex items-start gap-2">
-                    <Check className="size-3.5 text-[#ff7a00] shrink-0 mt-0.5" />
-                    <span className="text-xs font-semibold text-neutral-800 font-sans">
+                  <div key={feature} className="flex items-start gap-2.5">
+                    <CheckCircle2 className="size-4 text-[#ff7a00] shrink-0 mt-0.5" />
+                    <span className="text-xs font-medium text-neutral-200 font-sans leading-tight">
                       {feature}
                     </span>
                   </div>
                 ))}
               </div>
+
+              {/* Performance Metrics Pill Bar */}
+              <div className="mt-6 p-3.5 rounded-xl bg-neutral-800/60 border border-neutral-700/60 grid grid-cols-3 gap-2 text-center">
+                <div>
+                  <span className="block font-sans text-base sm:text-lg font-bold text-white">&lt; 60s</span>
+                  <span className="text-[10px] font-mono text-neutral-400 uppercase">Response Time</span>
+                </div>
+                <div className="border-x border-neutral-700/60 px-2">
+                  <span className="block font-sans text-base sm:text-lg font-bold text-[#ff7a00]">3.4x</span>
+                  <span className="text-[10px] font-mono text-neutral-400 uppercase">Booking Rate</span>
+                </div>
+                <div>
+                  <span className="block font-sans text-base sm:text-lg font-bold text-white">24/7</span>
+                  <span className="text-[10px] font-mono text-neutral-400 uppercase">Coverage</span>
+                </div>
+              </div>
             </div>
 
-            <div className="mt-5 pt-2">
-              <Link to="/book">
-                <button className="w-full rounded-xl bg-[#18181b] px-5 py-3 text-xs sm:text-sm font-semibold text-white shadow-md transition-all duration-200 hover:bg-black hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2">
+            {/* CTA Button */}
+            <div className="mt-8">
+              <Link to="/contact">
+                <button className="w-full rounded-xl bg-[#ff7a00] hover:bg-[#e06b00] text-white px-6 py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-lg transition-all duration-200 hover:scale-[1.01] active:scale-[0.99] cursor-pointer flex items-center justify-center gap-2">
                   <span>Get Core Revenue Engine</span>
-                  <ArrowRight className="size-4 text-white" />
+                  <ArrowRight className="size-4" />
                 </button>
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Modular Add-ons (5 Cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl border border-sandel-border bg-sandel-card p-5 sm:p-6 shadow-sm">
+          {/* Right Column: Modular Power Add-ons (5 Cols) */}
+          <div className="lg:col-span-5 rounded-2xl border border-sandel-border bg-sandel-card p-6 sm:p-8 shadow-sm flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between">
-                <span className="px-2.5 py-0.5 rounded-full bg-sandel text-neutral-700 font-mono text-[10px] font-semibold uppercase tracking-wider border border-sandel-border">
-                  ADD-ON MODULES
+              <div className="flex items-center justify-between border-b border-sandel-border pb-4">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sandel border border-sandel-border font-mono text-[11px] font-bold text-neutral-800 uppercase tracking-wider">
+                  <Sliders className="size-3 text-[#ff7a00]" />
+                  MODULAR ADD-ONS
                 </span>
-                <span className="text-xs font-mono text-neutral-500">Expandable</span>
+                <span className="text-xs font-mono text-neutral-500">Plug &amp; Play</span>
               </div>
 
-              <h3 className="mt-4 font-sans text-xl font-bold text-neutral-900">
-                Modular Power Add-ons
-              </h3>
+              <div className="mt-6">
+                <h3 className="font-sans text-xl sm:text-2xl font-bold text-neutral-900">
+                  Modular Power Add-ons
+                </h3>
+                <p className="mt-1 text-xs text-neutral-600 font-sans">
+                  Expand your core revenue engine with specialized AI capabilities.
+                </p>
+              </div>
 
-              <div className="mt-3 space-y-2">
+              {/* Module Cards */}
+              <div className="mt-5 space-y-3">
                 {ADDON_MODULES.map((addon) => {
                   const Icon = addon.icon;
                   return (
-                    <div key={addon.title} className="flex items-center gap-2.5 p-2 rounded-lg bg-sandel border border-sandel-border hover:bg-sandel-card hover:border-neutral-400 transition">
-                      <Icon className={`size-4 shrink-0 ${addon.iconColor}`} />
-                      <div className="min-w-0 flex-1">
-                        <h4 className="text-xs font-semibold text-neutral-900 font-sans truncate">{addon.title}</h4>
-                        <p className="text-[10px] text-neutral-500 font-sans truncate">{addon.desc}</p>
+                    <div 
+                      key={addon.title} 
+                      className="group flex items-center justify-between p-3.5 rounded-xl bg-sandel border border-sandel-border hover:bg-white hover:border-neutral-400 hover:shadow-md transition-all duration-200"
+                    >
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="size-10 rounded-xl bg-neutral-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                          <Icon className="size-5 text-[#ff7a00]" />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="flex items-center gap-2">
+                            <h4 className="text-xs font-bold text-neutral-900 font-sans truncate">
+                              {addon.title}
+                            </h4>
+                            <span className={`px-1.5 py-0.5 rounded text-[9px] font-mono font-semibold border ${addon.badgeBg}`}>
+                              {addon.tag}
+                            </span>
+                          </div>
+                          <p className="text-[11px] text-neutral-600 font-sans truncate mt-0.5">
+                            {addon.desc}
+                          </p>
+                        </div>
                       </div>
+
+                      <ArrowRight className="size-4 text-neutral-400 group-hover:text-neutral-900 group-hover:translate-x-0.5 transition-all shrink-0 ml-2" />
                     </div>
                   );
                 })}
               </div>
             </div>
 
-            <div className="mt-4 pt-2">
-              <Link to="/book" className="block text-center text-xs font-mono font-semibold text-[#ff7a00] hover:underline">
-                Customize Your Automation Stack →
+            <div className="mt-6 pt-4 border-t border-sandel-border">
+              <Link 
+                to="/contact" 
+                className="w-full inline-flex items-center justify-center gap-2 text-xs font-mono font-bold text-[#ff7a00] hover:text-[#d96800] transition-colors py-2"
+              >
+                <span>CUSTOMIZE YOUR AUTOMATION STACK</span>
+                <ArrowRight className="size-3.5" />
               </Link>
             </div>
           </div>
+
         </div>
+
       </div>
     </section>
   );
