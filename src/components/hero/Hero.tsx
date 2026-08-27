@@ -95,7 +95,7 @@ export function Hero() {
             className="mt-7 sm:mt-9 w-full max-w-2xl bg-sandel-card/95 backdrop-blur-xl border border-sandel-border rounded-2xl p-4 sm:p-5.5 shadow-lg shadow-neutral-900/5"
           >
             {/* Header Badge */}
-            <div className="flex items-center justify-between mb-3 pb-2 border-b border-sandel-border/70">
+            <div className="flex items-center justify-between mb-3">
               <span className="text-[10px] sm:text-xs font-semibold tracking-wider text-neutral-600 uppercase font-sans">
                 Automated Customer Engine
               </span>
