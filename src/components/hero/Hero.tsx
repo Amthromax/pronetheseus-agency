@@ -67,22 +67,22 @@ export function Hero() {
             We build AI-powered systems that automate lead capture, customer conversations, appointment booking, follow-ups, and repetitive business operations.
           </motion.p>
 
-          {/* Action Buttons CTAs */}
+          {/* Action Buttons CTAs: Reduced size on web and laptop view ONLY, full width on mobile view */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 sm:mt-8 flex flex-col xs:flex-row items-stretch xs:items-center gap-3 w-full xs:w-auto justify-center lg:justify-start"
+            className="mt-5 sm:mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto justify-center lg:justify-start"
           >
-            <Link to="/book" className="w-full xs:w-auto">
-              <button className="w-full xs:w-auto rounded-xl bg-[#18181b] px-6 py-3.5 text-xs sm:text-base font-semibold text-white shadow-md transition-all duration-200 hover:bg-black hover:scale-[1.01] active:scale-[0.99] cursor-pointer">
+            <Link to="/book" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto rounded-full bg-[#18181b] px-5 sm:px-5 py-3 sm:py-2.5 text-sm sm:text-xs md:text-sm font-semibold text-white shadow-md transition-all duration-200 hover:bg-black hover:scale-[1.02] active:scale-[0.98] cursor-pointer whitespace-nowrap">
                 Get Your Free Automation Audit
               </button>
             </Link>
-            <a href="#services" className="w-full xs:w-auto">
-              <button className="w-full xs:w-auto rounded-xl bg-white/95 backdrop-blur-md border border-neutral-300 text-neutral-800 px-6 py-3.5 text-xs sm:text-base font-semibold shadow-xs transition-all duration-200 hover:bg-neutral-100 hover:border-neutral-400 hover:scale-[1.01] active:scale-[0.99] cursor-pointer flex items-center justify-center gap-2">
-                See How It Works
-                <ArrowRight className="w-4 h-4 text-neutral-600" />
+            <a href="#services" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto rounded-full bg-white/95 backdrop-blur-md border border-neutral-300 text-neutral-800 px-5 sm:px-5 py-3 sm:py-2.5 text-sm sm:text-xs md:text-sm font-semibold shadow-xs transition-all duration-200 hover:bg-neutral-100 hover:border-neutral-400 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5 whitespace-nowrap">
+                <span>See How It Works</span>
+                <ArrowRight className="w-3.5 h-3.5 text-neutral-600" />
               </button>
             </a>
           </motion.div>
