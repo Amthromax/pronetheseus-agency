@@ -9,7 +9,12 @@ export function Footer() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  if (location.pathname === "/contact" || location.pathname === "/contact/") {
+  if (
+    location.pathname === "/contact" ||
+    location.pathname === "/contact/" ||
+    location.pathname === "/book" ||
+    location.pathname === "/book/"
+  ) {
     return null;
   }
 
