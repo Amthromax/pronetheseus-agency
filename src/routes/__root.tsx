@@ -168,7 +168,6 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
-      <FloatingCTA />
       <CookieConsent />
       <Toaster />
     </QueryClientProvider>

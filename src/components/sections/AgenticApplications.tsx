@@ -19,11 +19,11 @@ export function AgenticApplications() {
         {/* Main Top Header */}
         <div className="max-w-3xl mb-8 sm:mb-12">
           <h2 className="font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-[42px] leading-[1.12]">
-            <SplitText text="Autonomous AI Automation Systems for Enterprise Scale & Efficiency." />
+            <SplitText text="Proven AI Automation Systems Built for Business Growth." />
           </h2>
         </div>
 
-        {/* 3 Clean Showcase Application Category Cards: Horizontal Scroll on Mobile ONLY, Grid on Desktop */}
+        {/* 3 Clean Showcase Application Category Cards */}
         <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-6 mb-8 sm:mb-12 md:pb-0">
           {/* Card 1: Pre-built Applications */}
           <div className="shrink-0 w-[280px] xs:w-[310px] md:w-auto snap-center flex flex-col">
@@ -41,37 +41,35 @@ export function AgenticApplications() {
                 <div>
                   <div className="flex items-center justify-between">
                     <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
-                      Pre-Built AI Automations
+                      Pre-Built Revenue Engines
                     </h3>
                     <div className="size-8 rounded-md bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-800 transition-colors group-hover:bg-[#ff7a00] group-hover:text-white group-hover:border-[#ff7a00]">
                       <ArrowRight className="size-4" />
                     </div>
                   </div>
                   <p className="mt-2.5 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                    Deploy battle-tested AI agents for Finance, IT, HR, E-Commerce, and Recruiting in minutes.
+                    Deploy turnkey AI agents for lead response, customer support, booking, and reviews in days.
                   </p>
                 </div>
 
                 {/* Graphic Mock Preview */}
                 <div className="mt-6 rounded-md border border-neutral-200/80 bg-neutral-50/80 p-4 space-y-3 text-neutral-900 shadow-2xs">
-                  {/* Search Bar */}
                   <div className="flex items-center gap-2 rounded-sm border border-neutral-200 bg-white px-3.5 py-2 shadow-2xs">
                     <Search className="size-4 text-neutral-400" />
-                    <span className="text-xs sm:text-sm font-semibold text-neutral-900">Finance & Sales Automation</span>
+                    <span className="text-xs sm:text-sm font-semibold text-neutral-900">Speed-to-Lead & Follow-up</span>
                   </div>
 
                   <div className="text-[10px] sm:text-xs font-semibold text-neutral-400 uppercase tracking-wider pt-0.5">
-                    Matching applications
+                    Active System Modules
                   </div>
 
-                  {/* Tags Grid with Pointer */}
                   <div className="flex flex-wrap gap-1.5 relative">
                     <span className="rounded-sm border border-neutral-900 bg-neutral-900 px-2.5 py-1 text-xs font-semibold text-white shadow-2xs relative">
-                      Financial Operations
+                      Instant SMS Response
                       <MousePointer2 className="size-3.5 text-neutral-900 absolute -bottom-2 -right-1 fill-neutral-900" />
                     </span>
                     <span className="rounded-sm border border-neutral-200 bg-white px-2.5 py-1 text-xs font-medium text-neutral-600">
-                      ERP Integration
+                      CRM Sync
                     </span>
                   </div>
                 </div>
@@ -95,18 +93,17 @@ export function AgenticApplications() {
                 <div>
                   <div className="flex items-center justify-between">
                     <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
-                      Workflow Accelerators
+                      Workflow Connectors
                     </h3>
                     <div className="size-8 rounded-md bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-800 transition-colors group-hover:bg-[#ff7a00] group-hover:text-white group-hover:border-[#ff7a00]">
                       <ArrowRight className="size-4" />
                     </div>
                   </div>
                   <p className="mt-2.5 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                    Leverage modular AI templates, custom API connectors, and automated logic flows.
+                    Bi-directional sync between your CRM, calendar, Slack, WhatsApp, and email platforms.
                   </p>
                 </div>
 
-                {/* Graphic Mock Stack */}
                 <div className="mt-6 space-y-2 relative text-neutral-900">
                   <div className="rounded-sm border border-neutral-200 bg-neutral-50 p-2.5 opacity-60 transform scale-[0.98]">
                     <div className="flex items-center gap-1.5">
@@ -117,8 +114,8 @@ export function AgenticApplications() {
 
                   <div className="rounded-md border border-neutral-200 bg-neutral-50 p-3.5 shadow-2xs relative">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="size-5 rounded-sm bg-[#ff7a00] text-white font-bold text-[9px] flex items-center justify-center">Hub</span>
-                      <span className="size-5 rounded-sm bg-blue-600 text-white font-bold text-[9px] flex items-center justify-center">MS</span>
+                      <span className="size-5 rounded-sm bg-[#ff7a00] text-white font-bold text-[9px] flex items-center justify-center">CRM</span>
+                      <span className="size-5 rounded-sm bg-blue-600 text-white font-bold text-[9px] flex items-center justify-center">SMS</span>
                       <span className="size-5 rounded-sm bg-neutral-900 text-white font-bold text-[9px] flex items-center justify-center">AI</span>
                     </div>
                     <div className="h-2 w-3/4 rounded-sm bg-neutral-200 mb-1" />
@@ -146,32 +143,31 @@ export function AgenticApplications() {
                 <div>
                   <div className="flex items-center justify-between">
                     <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
-                      Custom AI Agency Solutions
+                      Custom AI Solutions
                     </h3>
                     <div className="size-8 rounded-md bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-800 transition-colors group-hover:bg-[#ff7a00] group-hover:text-white group-hover:border-[#ff7a00]">
                       <ArrowRight className="size-4" />
                     </div>
                   </div>
                   <p className="mt-2.5 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                    End-to-end bespoke AI agent development tailored specifically to your business operations.
+                    Custom-built AI workflows engineered around your specific agency or business operations.
                   </p>
                 </div>
 
-                {/* Graphic Code Preview Window */}
                 <div className="mt-6 flex flex-col items-center">
                   <div className="w-full rounded-md border border-neutral-200 bg-neutral-900 p-4 font-mono text-xs leading-relaxed text-neutral-200 shadow-md">
                     <div className="flex items-center gap-3 text-neutral-500 select-none">
                       <span>1</span>
-                      <span><span className="text-sky-400 font-semibold">def</span> <span className="text-amber-400 font-semibold">auto_reply</span>(email):</span>
+                      <span><span className="text-sky-400 font-semibold">def</span> <span className="text-amber-400 font-semibold">qualify_lead</span>(inquiry):</span>
                     </div>
                     <div className="flex items-center gap-3 text-neutral-500 select-none pl-4">
                       <span>2</span>
-                      <span><span className="text-sky-400 font-semibold">if</span> <span className="text-emerald-400">"invoice"</span> <span className="text-sky-400 font-semibold">in</span></span>
+                      <span><span className="text-sky-400 font-semibold">if</span> <span className="text-emerald-400">"booking"</span> <span className="text-sky-400 font-semibold">in</span></span>
                     </div>
                   </div>
 
                   <span className="mt-3 rounded-sm border border-neutral-200 bg-neutral-100 px-3 py-1 text-xs font-bold text-neutral-700 shadow-2xs">
-                    CODE BUILDER
+                    CUSTOM SYSTEM
                   </span>
                 </div>
               </motion.div>
@@ -181,7 +177,7 @@ export function AgenticApplications() {
 
         {/* Sidebar & Content Detail Section */}
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] xl:grid-cols-[280px_1fr] gap-6 lg:gap-8 pt-4">
-          {/* Left Sidebar Navigation: Horizontal Scroll on Mobile ONLY, Vertical List on Desktop */}
+          {/* Left Sidebar Navigation */}
           <ScrollReveal variant="card" className="flex flex-row overflow-x-auto snap-x scrollbar-none pb-2 gap-2 lg:flex-col lg:space-y-2 lg:gap-0 lg:pb-0">
             <div className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-1.5 flex items-center gap-1 shrink-0 lg:shrink">
               Select Category <span className="text-[10px]">▼</span>
@@ -246,10 +242,10 @@ export function AgenticApplications() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-neutral-900">
-                  Enterprise AI Automation Systems
+                  Ready-to-Deploy AI Systems
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm text-neutral-600 font-normal">
-                  Turnkey autonomous AI agents custom-engineered to automate high-volume business workflows.
+                  Custom-engineered AI agents built to handle high-volume customer & revenue workflows.
                 </p>
               </div>
 
@@ -265,20 +261,20 @@ export function AgenticApplications() {
                   onClick={() => setCategoryFilter("CUSTOMER_SERVICE")}
                   className={`px-3 py-1 rounded-sm transition duration-200 cursor-pointer whitespace-nowrap ${categoryFilter === "CUSTOMER_SERVICE" ? "bg-neutral-900 text-white font-bold" : "text-neutral-600 hover:text-neutral-900"}`}
                 >
-                  Customer Service
+                  Lead & Customer AI
                 </button>
                 <button
                   onClick={() => setCategoryFilter("EMPLOYEE_PRODUCTIVITY")}
                   className={`px-3 py-1 rounded-sm transition duration-200 cursor-pointer whitespace-nowrap ${categoryFilter === "EMPLOYEE_PRODUCTIVITY" ? "bg-neutral-900 text-white font-bold" : "text-neutral-600 hover:text-neutral-900"}`}
                 >
-                  Employee Productivity
+                  Ops & Revenue
                 </button>
               </div>
             </div>
 
-            {/* 2-Column Grid of Ultra-Clean Professional AI Applications Boxes: Horizontal Scroll on Mobile ONLY, Grid on Desktop */}
+            {/* 2-Column Grid of Ultra-Clean Professional AI Applications Boxes */}
             <div className="mt-6 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 md:gap-6 md:pb-0">
-              {/* Card 1: Banking */}
+              {/* Card 1: Speed to lead */}
               {(categoryFilter === "ALL" || categoryFilter === "CUSTOMER_SERVICE") && (
                 <div className="shrink-0 w-[290px] xs:w-[320px] md:w-auto snap-center flex flex-col">
                   <ScrollReveal variant="card" staggerIndex={0} className="h-full w-full">
@@ -290,21 +286,21 @@ export function AgenticApplications() {
                       <div>
                         <div className="flex items-center justify-between">
                           <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
-                            Financial Operations Automation
+                            Instant Speed-to-Lead Agent
                           </h4>
                           <span className="text-[10px] sm:text-xs font-bold text-[#ff7a00] uppercase tracking-wider">
-                            ENTERPRISE
+                            REVENUE ENGINE
                           </span>
                         </div>
                         <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                          Automate invoice processing, compliance checks, and ERP financial reconciliation.
+                          Respond to form fills, ads, and missed calls in under 60 seconds via SMS and WhatsApp.
                         </p>
                         <div className="mt-3 flex items-center gap-2">
                           <Link
-                            to="/contact"
+                            to="/book"
                             className="inline-flex items-center gap-1.5 rounded-sm bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-[#ff7a00]"
                           >
-                            <span>LEARN MORE</span>
+                            <span>GET THIS SYSTEM</span>
                             <ArrowRight className="size-3" />
                           </Link>
                         </div>
@@ -317,13 +313,13 @@ export function AgenticApplications() {
                               o
                             </div>
                             <div className="rounded-xl bg-white p-2.5 border border-neutral-200/80 text-neutral-800 shadow-2xs leading-relaxed max-w-[88%] text-xs">
-                              Hi Alex, invoice #INV-4092 ($1,250.00) is ready for automated approval & ERP logging.
+                              Hi Alex! Thanks for requesting a consultation quote. I can book your appointment right now.
                             </div>
                           </div>
 
                           <div className="flex items-center justify-end gap-2">
                             <div className="rounded-xl bg-[#FFF6F0] border border-[#FFE4D4] text-[#4A2408] px-3 py-2 text-xs font-medium shadow-2xs">
-                              Approve invoice and trigger payment disbursement.
+                              Awesome, is tomorrow at 2 PM open?
                             </div>
                             <img
                               src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80"
@@ -337,12 +333,11 @@ export function AgenticApplications() {
                               o
                             </div>
                             <div className="rounded-xl bg-white p-2.5 border border-neutral-200/80 text-neutral-700 shadow-2xs leading-relaxed max-w-[88%] text-xs">
-                              Approved! Payment logged in QuickBooks and confirmation sent.
+                              Confirmed! Tomorrow at 2:00 PM is locked in. Calendar invite sent!
                             </div>
                           </div>
                         </div>
 
-                        {/* Progressive Glass Blur Overlay */}
                         <div
                           className="absolute left-0 right-0 bottom-0 h-[30%] pointer-events-none z-10 rounded-b-2xl"
                           style={{
@@ -358,7 +353,7 @@ export function AgenticApplications() {
                 </div>
               )}
 
-              {/* Card 2: Healthcare */}
+              {/* Card 2: Smart Triage */}
               {(categoryFilter === "ALL" || categoryFilter === "CUSTOMER_SERVICE") && (
                 <div className="shrink-0 w-[290px] xs:w-[320px] md:w-auto snap-center flex flex-col">
                   <ScrollReveal variant="card" staggerIndex={1} className="h-full w-full">
@@ -370,21 +365,21 @@ export function AgenticApplications() {
                       <div>
                         <div className="flex items-center justify-between">
                           <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
-                            Intelligent Intake & Triage
+                            Smart Intake & Calendar Booking
                           </h4>
                           <span className="text-[10px] sm:text-xs font-bold text-emerald-700 uppercase tracking-wider">
-                            TRIAGE
+                            SCHEDULING
                           </span>
                         </div>
                         <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                          Automate client intake, inquiry categorization, and smart priority routing 24/7.
+                          Qualify customer budget and timeline before placing appointments directly onto your calendar.
                         </p>
                         <div className="mt-3 flex items-center gap-2">
                           <Link
-                            to="/contact"
+                            to="/book"
                             className="inline-flex items-center gap-1.5 rounded-sm bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-[#ff7a00]"
                           >
-                            <span>LEARN MORE</span>
+                            <span>GET THIS SYSTEM</span>
                             <ArrowRight className="size-3" />
                           </Link>
                         </div>
@@ -398,14 +393,14 @@ export function AgenticApplications() {
                             </div>
                             <div className="space-y-2 max-w-[90%]">
                               <div className="rounded-xl bg-white p-2.5 border border-neutral-200/80 text-neutral-800 shadow-2xs leading-relaxed text-xs">
-                                Welcome! What type of technical inquiry can I assist you with today?
+                                Welcome! What service are you looking to automate today?
                               </div>
                               <div className="flex gap-1.5 pl-1">
                                 <button className="rounded-full bg-[#FF6B00] text-white px-3 py-1 text-[10px] font-semibold shadow-2xs">
-                                  API Integration
+                                  Lead Capture & Booking
                                 </button>
                                 <button className="rounded-full border border-neutral-300 bg-white px-3 py-1 text-[10px] font-medium text-neutral-600">
-                                  Account Access
+                                  Customer Support Bot
                                 </button>
                               </div>
                             </div>
@@ -413,7 +408,7 @@ export function AgenticApplications() {
 
                           <div className="flex items-center justify-end gap-2">
                             <div className="rounded-xl bg-[#FFF6F0] border border-[#FFE4D4] text-[#4A2408] px-3 py-2 text-xs font-medium shadow-2xs">
-                              API Integration setup assistance
+                              Lead Capture & Booking system
                             </div>
                             <img
                               src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80"
@@ -423,7 +418,6 @@ export function AgenticApplications() {
                           </div>
                         </div>
 
-                        {/* Progressive Glass Blur Overlay */}
                         <div
                           className="absolute left-0 right-0 bottom-0 h-[30%] pointer-events-none z-10 rounded-b-2xl"
                           style={{
@@ -439,7 +433,7 @@ export function AgenticApplications() {
                 </div>
               )}
 
-              {/* Card 3: Retail */}
+              {/* Card 3: 24/7 AI Agent */}
               {(categoryFilter === "ALL" || categoryFilter === "CUSTOMER_SERVICE") && (
                 <div className="shrink-0 w-[290px] xs:w-[320px] md:w-auto snap-center flex flex-col">
                   <ScrollReveal variant="card" staggerIndex={2} className="h-full w-full">
@@ -451,21 +445,21 @@ export function AgenticApplications() {
                       <div>
                         <div className="flex items-center justify-between">
                           <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
-                            E-Commerce & Sales Automation
+                            24/7 Customer Service Agent
                           </h4>
                           <span className="text-[10px] sm:text-xs font-bold text-blue-700 uppercase tracking-wider">
-                            SALES
+                            24/7 SUPPORT
                           </span>
                         </div>
                         <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                          Deliver instant 24/7 product recommendations, cart recovery, and real-time order tracking.
+                          Provide instant 24/7 answers, order status updates, and service triage across web and SMS.
                         </p>
                         <div className="mt-3 flex items-center gap-2">
                           <Link
-                            to="/contact"
+                            to="/book"
                             className="inline-flex items-center gap-1.5 rounded-sm bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-[#ff7a00]"
                           >
-                            <span>LEARN MORE</span>
+                            <span>GET THIS SYSTEM</span>
                             <ArrowRight className="size-3" />
                           </Link>
                         </div>
@@ -475,7 +469,7 @@ export function AgenticApplications() {
                         <div className="space-y-2.5">
                           <div className="flex items-center justify-end gap-2">
                             <div className="rounded-xl bg-[#FFF6F0] border border-[#FFE4D4] text-[#4A2408] px-3 py-2 text-xs font-medium shadow-2xs">
-                              I need server nodes for AI workloads.
+                              What are your weekend service hours?
                             </div>
                             <div className="size-5 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-[10px] shrink-0">
                               U
@@ -487,12 +481,11 @@ export function AgenticApplications() {
                               o
                             </div>
                             <div className="rounded-xl bg-white p-2.5 border border-neutral-200/80 text-neutral-800 shadow-2xs leading-relaxed max-w-[88%] text-xs">
-                              Nvidia H100 Node with 80GB HBM3 is ready for setup.
+                              We offer 24/7 emergency scheduling! Regular appointments are available Sat 8am-4pm.
                             </div>
                           </div>
                         </div>
 
-                        {/* Progressive Glass Blur Overlay */}
                         <div
                           className="absolute left-0 right-0 bottom-0 h-[30%] pointer-events-none z-10 rounded-b-2xl"
                           style={{
@@ -508,8 +501,8 @@ export function AgenticApplications() {
                 </div>
               )}
 
-              {/* Card 4: IT */}
-              {(categoryFilter === "ALL" || categoryFilter === "CUSTOMER_SERVICE") && (
+              {/* Card 4: Automated Onboarding */}
+              {(categoryFilter === "ALL" || categoryFilter === "EMPLOYEE_PRODUCTIVITY") && (
                 <div className="shrink-0 w-[290px] xs:w-[320px] md:w-auto snap-center flex flex-col">
                   <ScrollReveal variant="card" staggerIndex={3} className="h-full w-full">
                     <motion.div
@@ -520,21 +513,21 @@ export function AgenticApplications() {
                       <div>
                         <div className="flex items-center justify-between">
                           <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
-                            IT Infrastructure & Incident AI
+                            Automated Client Onboarding
                           </h4>
                           <span className="text-[10px] sm:text-xs font-bold text-purple-700 uppercase tracking-wider">
-                            INFRASTRUCTURE
+                            CLIENT PORTAL
                           </span>
                         </div>
                         <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                          Automate incident triage, password resets, and system health checks to reduce MTTR.
+                          Replace 2-week email drag with a 15-minute intake portal, document collection, and contract flow.
                         </p>
                         <div className="mt-3 flex items-center gap-2">
                           <Link
-                            to="/contact"
+                            to="/book"
                             className="inline-flex items-center gap-1.5 rounded-sm bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-[#ff7a00]"
                           >
-                            <span>LEARN MORE</span>
+                            <span>GET THIS SYSTEM</span>
                             <ArrowRight className="size-3" />
                           </Link>
                         </div>
@@ -544,7 +537,7 @@ export function AgenticApplications() {
                         <div className="space-y-2.5">
                           <div className="flex items-center justify-end gap-2">
                             <div className="rounded-xl bg-[#FFF6F0] border border-[#FFE4D4] text-[#4A2408] px-3 py-2 text-xs font-medium shadow-2xs">
-                              Status of incident #INC-9821?
+                              Onboarding intake submitted!
                             </div>
                             <div className="size-5 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-[10px] shrink-0">
                               U
@@ -556,12 +549,11 @@ export function AgenticApplications() {
                               o
                             </div>
                             <div className="rounded-xl bg-white p-2.5 border border-neutral-200/80 text-neutral-800 shadow-2xs leading-relaxed max-w-[88%] text-xs">
-                              Incident #INC-9821 auto-mitigated. All services healthy.
+                              Project board created, Slack channel invited, and welcome email sent!
                             </div>
                           </div>
                         </div>
 
-                        {/* Progressive Glass Blur Overlay */}
                         <div
                           className="absolute left-0 right-0 bottom-0 h-[30%] pointer-events-none z-10 rounded-b-2xl"
                           style={{
@@ -577,7 +569,7 @@ export function AgenticApplications() {
                 </div>
               )}
 
-              {/* Card 5: HR */}
+              {/* Card 5: Invoicing */}
               {(categoryFilter === "ALL" || categoryFilter === "EMPLOYEE_PRODUCTIVITY") && (
                 <div className="shrink-0 w-[290px] xs:w-[320px] md:w-auto snap-center flex flex-col">
                   <ScrollReveal variant="card" staggerIndex={4} className="h-full w-full">
@@ -589,21 +581,21 @@ export function AgenticApplications() {
                       <div>
                         <div className="flex items-center justify-between">
                           <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
-                            HR & Workforce Productivity
+                            Automated Invoicing & Payments
                           </h4>
                           <span className="text-[10px] sm:text-xs font-bold text-indigo-700 uppercase tracking-wider">
-                            WORKFLOW
+                            FINANCE OPS
                           </span>
                         </div>
                         <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                          Streamline employee onboarding, policy access, and automated performance analytics.
+                          Automate invoice creation, payment follow-up reminders, and accounting software sync.
                         </p>
                         <div className="mt-3 flex items-center gap-2">
                           <Link
-                            to="/contact"
+                            to="/book"
                             className="inline-flex items-center gap-1.5 rounded-sm bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-[#ff7a00]"
                           >
-                            <span>LEARN MORE</span>
+                            <span>GET THIS SYSTEM</span>
                             <ArrowRight className="size-3" />
                           </Link>
                         </div>
@@ -612,18 +604,17 @@ export function AgenticApplications() {
                       <div className="relative mt-4 rounded-2xl border border-neutral-200/80 bg-[#FAFAFC] p-3 text-xs grid grid-cols-2 gap-2 font-sans content-center shadow-inner overflow-hidden">
                         <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-2xs">
                           <div className="text-[10px] font-semibold text-neutral-500 flex items-center gap-1">
-                            <span>🔔</span> Alerts
+                            <span>💳</span> Status
                           </div>
-                          <div className="mt-1 text-xs font-semibold text-neutral-800 truncate">Onboarding Assigned</div>
+                          <div className="mt-1 text-xs font-semibold text-neutral-800 truncate">Auto-Invoiced</div>
                         </div>
                         <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-2xs">
-                          <div className="text-[10px] font-semibold text-neutral-500">Offer acceptance</div>
+                          <div className="text-[10px] font-semibold text-neutral-500">Collected</div>
                           <div className="mt-0.5 text-sm font-bold text-neutral-900">
-                            88% <span className="text-[10px] text-emerald-600 font-bold">↑ 12%</span>
+                            100% <span className="text-[10px] text-emerald-600 font-bold">↑ 24%</span>
                           </div>
                         </div>
 
-                        {/* Progressive Glass Blur Overlay */}
                         <div
                           className="absolute left-0 right-0 bottom-0 h-[30%] pointer-events-none z-10 rounded-b-2xl"
                           style={{
@@ -639,7 +630,7 @@ export function AgenticApplications() {
                 </div>
               )}
 
-              {/* Card 6: Recruiting */}
+              {/* Card 6: Review & Reactivation */}
               {(categoryFilter === "ALL" || categoryFilter === "EMPLOYEE_PRODUCTIVITY") && (
                 <div className="shrink-0 w-[290px] xs:w-[320px] md:w-auto snap-center flex flex-col">
                   <ScrollReveal variant="card" staggerIndex={5} className="h-full w-full">
@@ -651,21 +642,21 @@ export function AgenticApplications() {
                       <div>
                         <div className="flex items-center justify-between">
                           <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
-                            Talent Acquisition & Hiring
+                            5-Star Reviews & Database Reactivation
                           </h4>
                           <span className="text-[10px] sm:text-xs font-bold text-emerald-700 uppercase tracking-wider">
-                            TALENT
+                            GROWTH ENGINE
                           </span>
                         </div>
                         <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                          Automate candidate sourcing, resume screening, and interview scheduling effortlessly.
+                          Automate post-service Google reviews and reactivate cold lead databases into bookings.
                         </p>
                         <div className="mt-3 flex items-center gap-2">
                           <Link
-                            to="/contact"
+                            to="/book"
                             className="inline-flex items-center gap-1.5 rounded-sm bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-[#ff7a00]"
                           >
-                            <span>LEARN MORE</span>
+                            <span>GET THIS SYSTEM</span>
                             <ArrowRight className="size-3" />
                           </Link>
                         </div>
@@ -675,7 +666,7 @@ export function AgenticApplications() {
                         <div className="space-y-2.5">
                           <div className="flex items-center justify-end gap-2">
                             <div className="rounded-xl bg-[#FFF6F0] border border-[#FFE4D4] text-[#4A2408] px-3 py-2 text-xs font-medium shadow-2xs">
-                              Candidate match summary for AI Architect
+                              Reactivate 450 past contacts
                             </div>
                             <div className="size-5 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-[10px] shrink-0">
                               R
@@ -684,15 +675,14 @@ export function AgenticApplications() {
 
                           <div className="rounded-xl border border-neutral-200 bg-white p-3 text-xs space-y-1 shadow-2xs">
                             <div className="font-bold text-neutral-900 flex items-center gap-1 text-xs">
-                              <span>⚡</span> AI Architect Pipeline
+                              <span>⭐</span> Google Review & Reactivation Flow
                             </div>
                             <div className="text-neutral-500 font-medium text-[11px]">
-                              💼 18 candidates matched • 4 ready
+                              📈 28 new 5-star reviews • 16 new bookings
                             </div>
                           </div>
                         </div>
 
-                        {/* Progressive Glass Blur Overlay */}
                         <div
                           className="absolute left-0 right-0 bottom-0 h-[30%] pointer-events-none z-10 rounded-b-2xl"
                           style={{
@@ -716,13 +706,13 @@ export function AgenticApplications() {
                   to="/services"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-neutral-950 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-md transition-all duration-300 hover:bg-[#ff7a00] hover:scale-[1.02]"
                 >
-                  <span>EXPLORE ALL APPLICATIONS</span>
+                  <span>EXPLORE ALL AUTOMATIONS</span>
                   <ArrowRight className="size-4" />
                 </Link>
               </ScrollReveal>
 
               <div className="text-xs sm:text-sm text-neutral-600 font-semibold hidden sm:block">
-                Showing {categoryFilter === "ALL" ? "6 of 6" : categoryFilter === "CUSTOMER_SERVICE" ? "4 Customer Service" : "2 Employee Productivity"} AI Applications
+                Showing {categoryFilter === "ALL" ? "6 of 6" : categoryFilter === "CUSTOMER_SERVICE" ? "3 Customer AI" : "3 Ops & Revenue"} Automation Systems
               </div>
             </div>
           </div>
