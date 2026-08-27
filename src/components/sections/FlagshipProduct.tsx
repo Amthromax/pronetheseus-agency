@@ -24,11 +24,11 @@ const LIFECYCLE_STEPS = [
 ];
 
 const ADDON_MODULES = [
-  { icon: Bot, title: "AI Voice Agent", desc: "24/7 inbound & outbound phone calls", color: "text-amber-700 bg-amber-500/10 border-amber-500/20" },
-  { icon: MessageSquare, title: "WhatsApp Automation", desc: "2-way chat support & quotes", color: "text-emerald-700 bg-emerald-500/10 border-emerald-500/20" },
-  { icon: Database, title: "CRM Automation", desc: "HubSpot, HighLevel, Zoho, Salesforce", color: "text-blue-700 bg-blue-500/10 border-blue-500/20" },
-  { icon: Star, title: "Review Engine", desc: "Automated post-service Google reviews", color: "text-yellow-700 bg-yellow-500/10 border-yellow-500/20" },
-  { icon: RotateCcw, title: "Reactivation Bot", desc: "Turn cold contacts into bookings", color: "text-purple-700 bg-purple-500/10 border-purple-500/20" },
+  { icon: Bot, title: "AI Voice Agent", desc: "24/7 inbound & outbound phone calls", iconColor: "text-[#ff7a00]" },
+  { icon: MessageSquare, title: "WhatsApp Automation", desc: "2-way chat support & quotes", iconColor: "text-emerald-600" },
+  { icon: Database, title: "CRM Automation", desc: "HubSpot, HighLevel, Zoho, Salesforce", iconColor: "text-blue-600" },
+  { icon: Star, title: "Review Engine", desc: "Automated post-service Google reviews", iconColor: "text-amber-500" },
+  { icon: RotateCcw, title: "Reactivation Bot", desc: "Turn cold contacts into bookings", iconColor: "text-purple-600" },
 ];
 
 export function FlagshipProduct() {
@@ -49,24 +49,21 @@ export function FlagshipProduct() {
         <div className="mt-7 rounded-2xl border border-neutral-200/90 bg-white p-4 sm:p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4 pb-3 border-b border-neutral-200/80">
             <div>
-              <span className="text-[10px] font-sans font-semibold text-[#ff7a00] uppercase tracking-widest block">
-                END-TO-END AUTOMATION FLOW
-              </span>
-              <h3 className="font-sans text-lg sm:text-xl font-bold text-neutral-900 mt-0.5">
+              <h3 className="font-sans text-lg sm:text-xl font-bold text-neutral-900">
                 The 9-Step Automated Customer Lifecycle
               </h3>
             </div>
-            <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-sans text-emerald-700 font-medium">
+            <div className="hidden sm:inline-flex items-center gap-1.5 text-xs font-sans text-emerald-700 font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               100% Autonomous
-            </span>
+            </div>
           </div>
 
           {/* Steps Grid */}
           <div className="grid grid-cols-3 xs:grid-cols-5 lg:grid-cols-9 gap-2">
             {LIFECYCLE_STEPS.map((step, idx) => (
               <div key={step.name} className="relative flex flex-col items-center text-center p-2 rounded-lg bg-[#fafafa] border border-neutral-200/80 hover:border-neutral-300 transition-colors">
-                <span className="flex size-5 items-center justify-center rounded-full bg-orange-500/10 text-[#ff7a00] text-[10px] font-mono font-bold mb-1 border border-orange-500/20">
+                <span className="text-xs font-sans font-bold text-[#ff7a00] mb-1">
                   {idx + 1}
                 </span>
                 <span className="text-xs font-semibold text-neutral-900 leading-tight font-sans">
@@ -148,9 +145,7 @@ export function FlagshipProduct() {
                   const Icon = addon.icon;
                   return (
                     <div key={addon.title} className="flex items-center gap-2.5 p-2 rounded-lg bg-[#fafafa] border border-neutral-200/90 hover:bg-white hover:border-neutral-300 transition">
-                      <div className={`p-1.5 rounded-md border ${addon.color} shrink-0`}>
-                        <Icon className="size-3.5" />
-                      </div>
+                      <Icon className={`size-4 shrink-0 ${addon.iconColor}`} />
                       <div className="min-w-0 flex-1">
                         <h4 className="text-xs font-semibold text-neutral-900 font-sans truncate">{addon.title}</h4>
                         <p className="text-[10px] text-neutral-500 font-sans truncate">{addon.desc}</p>

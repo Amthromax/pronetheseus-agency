@@ -304,7 +304,6 @@ const INTEGRATION_APPS: AppIcon[] = [
 ];
 
 export function FloatingAppIntegrations() {
-  const [hoveredApp, setHoveredApp] = useState<AppIcon | null>(null);
   const [plusHovered, setPlusHovered] = useState(false);
 
   return (
@@ -326,62 +325,6 @@ export function FloatingAppIntegrations() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 min-h-[480px] sm:min-h-[560px] flex flex-col items-center justify-center">
-        {/* Scattered Dynamic Animated App Badges */}
-        {INTEGRATION_APPS.map((app) => {
-          const isCurrentHovered = hoveredApp?.id === app.id;
-          return (
-            <motion.div
-              key={app.id}
-              initial={{ y: 0, x: 0, rotate: 0 }}
-              animate={{
-                y: [0, app.yOffset, 0, -app.yOffset * 0.7, 0],
-                x: [0, app.xOffset, 0, -app.xOffset * 0.8, 0],
-                rotate: app.rotateRange,
-                scale: [1, 1.04, 0.98, 1.02, 1],
-              }}
-              transition={{
-                duration: app.floatDuration,
-                repeat: Infinity,
-                repeatType: "mirror",
-                ease: "easeInOut",
-                delay: app.floatDelay,
-              }}
-              onMouseEnter={() => setHoveredApp(app)}
-              onMouseLeave={() => setHoveredApp(null)}
-              className={`absolute ${app.position} ${app.size} cursor-pointer z-10 transition-transform duration-300 ${
-                isCurrentHovered ? "z-40 scale-125" : "hover:z-30 hover:scale-115"
-              }`}
-            >
-              {/* App Icon Container */}
-              <div
-                className={`relative w-full h-full rounded-2xl ${app.bgColor} flex items-center justify-center transition-all duration-300 overflow-hidden ${
-                  isCurrentHovered
-                    ? "shadow-[0_20px_40px_rgba(255,122,0,0.35)] ring-2 ring-[#ff7a00]"
-                    : "hover:shadow-2xl"
-                }`}
-              >
-                {app.svgIcon}
-              </div>
-
-              {/* Floating Tooltip Banner on Hover */}
-              <AnimatePresence>
-                {isCurrentHovered && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.8 }}
-                    animate={{ opacity: 1, y: -12, scale: 1 }}
-                    exit={{ opacity: 0, y: 5, scale: 0.8 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute -top-12 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-neutral-900 px-3 py-1 text-[10px] font-semibold text-white shadow-xl pointer-events-none flex items-center gap-1.5 border border-neutral-700 z-50"
-                  >
-                    <Sparkles className="size-3 text-[#ff7a00]" />
-                    <span>{app.name}</span>
-                    <span className="text-[9px] text-neutral-400 font-mono">({app.category})</span>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          );
-        })}
 
         {/* Central Headline Box with Glassmorphism & Subtle Shimmer Border */}
         <motion.div

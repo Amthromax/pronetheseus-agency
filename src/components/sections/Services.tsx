@@ -99,11 +99,11 @@ export function Services() {
                 <div>
                   {/* Category Card Top Row */}
                   <div className="flex items-center justify-between">
-                    <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg border font-mono text-xs font-semibold ${cat.iconBg}`}>
-                      <Icon className="size-3.5" />
+                    <div className="flex items-center gap-1.5 font-sans text-xs sm:text-sm font-bold text-neutral-900">
+                      <Icon className="size-4 text-[#ff7a00]" />
                       <span>{cat.title}</span>
                     </div>
-                    <span className="text-[10px] font-mono font-medium tracking-wide uppercase px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600 border border-neutral-200">
+                    <span className="text-[10px] font-sans font-semibold tracking-wide uppercase text-neutral-500">
                       {cat.badge}
                     </span>
                   </div>

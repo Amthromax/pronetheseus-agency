@@ -60,7 +60,7 @@ export function ContactCTA() {
           </div>
           <div className="flex items-center gap-1.5">
             <span className="size-2 rounded-full bg-emerald-400" />
-            <span>SOC2 Security Standards</span>
+            <span>Enterprise Security Standards</span>
           </div>
         </ScrollReveal>
       </div>

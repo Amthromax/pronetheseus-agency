@@ -96,7 +96,7 @@ export function ExpectedOutcomes() {
           </div>
           <div className="flex items-center gap-2 text-xs font-semibold text-neutral-800">
             <Lock className="size-4 text-blue-600" />
-            <span>SOC2 Security & Privacy Compliant</span>
+            <span>Enterprise Data Security & Privacy</span>
           </div>
           <div className="text-[11px] font-mono text-neutral-500">
             *Verified client telemetry metrics

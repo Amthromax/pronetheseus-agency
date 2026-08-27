@@ -22,7 +22,7 @@ const groups: Group[] = [
       { label: "24/7 Automated Workflow Monitoring", hint: "Real-time error alerts & auto-retry", setup: "30 Days", monthly: true, enterprise: true },
       { label: "Monthly Workflow Optimizations", hint: "Continuous system tuning", setup: false, monthly: true, enterprise: true },
       { label: "API Version Maintenance", hint: "Handling tool breaking changes", setup: false, monthly: true, enterprise: true },
-      { label: "SOC2 Action Firewall Security", hint: "Bank-grade data encryption & privacy", setup: false, monthly: false, enterprise: true },
+      { label: "Enterprise Action Firewall Security", hint: "Bank-grade data encryption & privacy", setup: false, monthly: false, enterprise: true },
     ],
   },
   {
