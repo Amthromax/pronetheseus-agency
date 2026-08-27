@@ -96,7 +96,7 @@ export function Process() {
   };
 
   return (
-    <section id="global-enterprises" className="relative bg-black py-16 text-white md:py-24 overflow-hidden border-y border-neutral-800">
+    <section id="global-enterprises" className="relative bg-black py-16 text-white md:py-24 overflow-hidden">
       <div className="w-full pl-6 sm:pl-10 md:pl-16 lg:pl-20 pr-0">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[380px_1fr] xl:grid-cols-[420px_1fr]">
           {/* Left Column */}
@@ -176,7 +176,7 @@ export function Process() {
                       onClick={() => setActiveTab(card.id)}
                       whileHover={{ scale: 1.015, y: -4 }}
                       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                      className={`group relative flex min-h-[500px] w-[320px] xs:w-[420px] sm:w-[540px] md:w-[580px] lg:w-[640px] shrink-0 snap-start flex-col justify-between rounded-3xl p-8 sm:p-9 bg-white border border-neutral-200 shadow-xl transition-all duration-500 cursor-pointer overflow-hidden ${
+                      className={`group relative flex min-h-[500px] w-[320px] xs:w-[420px] sm:w-[540px] md:w-[580px] lg:w-[640px] shrink-0 snap-start flex-col justify-between rounded-3xl p-8 sm:p-9 bg-sandel-card border border-sandel-border shadow-xl transition-all duration-500 cursor-pointer overflow-hidden ${
                         isSelected ? "ring-2 ring-black" : "opacity-95 hover:opacity-100"
                       }`}
                     >
@@ -187,7 +187,7 @@ export function Process() {
                           alt={`${card.title} Architectural Sketch`}
                           className="w-full h-full object-cover object-right sm:object-center mix-blend-multiply filter contrast-125 brightness-95"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-sandel-card/90 via-sandel-card/50 to-transparent pointer-events-none" />
                       </div>
 
                       <div className="relative z-10 max-w-md">
@@ -199,7 +199,7 @@ export function Process() {
                         </p>
                       </div>
 
-                      <div className="relative z-10 rounded-2xl border border-neutral-200/80 bg-white/70 p-4.5 backdrop-blur-md max-w-lg mt-auto shadow-sm">
+                      <div className="relative z-10 rounded-2xl border border-sandel-border/80 bg-sandel-card/85 p-4.5 backdrop-blur-md max-w-lg mt-auto shadow-sm">
                         <div className="text-[10px] font-bold uppercase tracking-wider text-neutral-500">
                           {card.trustedLabel}
                         </div>
@@ -207,7 +207,7 @@ export function Process() {
                           {card.logos.map((logo, lIdx) => (
                             <span
                               key={lIdx}
-                              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-1 text-[11px] font-medium text-neutral-800 shadow-2xs"
+                              className="rounded-lg border border-sandel-border bg-sandel px-3 py-1 text-[11px] font-medium text-neutral-800 shadow-2xs"
                             >
                               {logo}
                             </span>

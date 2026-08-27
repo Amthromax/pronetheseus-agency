@@ -307,7 +307,7 @@ export function FloatingAppIntegrations() {
   const [plusHovered, setPlusHovered] = useState(false);
 
   return (
-    <section className="relative w-full bg-[#FAFAFA] py-20 sm:py-28 overflow-hidden border-t border-b border-neutral-200 select-none">
+    <section className="relative w-full bg-sandel py-20 sm:py-28 overflow-hidden select-none">
       {/* Full Royal Feast Architectural Background Sketch */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden select-none">
         <img
@@ -332,7 +332,7 @@ export function FloatingAppIntegrations() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-20 text-center max-w-2xl mx-auto px-6 py-8 sm:py-10 bg-white/80 backdrop-blur-xl rounded-[32px] border border-neutral-200/90 shadow-[0_10px_40px_rgba(0,0,0,0.06)] group"
+          className="relative z-20 text-center max-w-2xl mx-auto px-6 py-8 sm:py-10 bg-sandel-card/90 backdrop-blur-xl rounded-[32px] border border-sandel-border shadow-[0_10px_40px_rgba(0,0,0,0.06)] group"
         >
           {/* Top Pill Badge */}
           <div className="flex justify-center mb-3">

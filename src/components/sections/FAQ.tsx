@@ -35,10 +35,10 @@ const SYSTEM_FAQS = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="relative bg-white py-10 sm:py-14 text-neutral-900 border-t border-neutral-200">
+    <section id="faq" className="relative bg-sandel py-10 sm:py-14 text-neutral-900">
       <div className="container-pad mx-auto max-w-[1400px]">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-neutral-100 px-3.5 py-1 text-xs font-mono font-semibold text-neutral-700 border border-neutral-200 uppercase">
+          <div className="inline-flex items-center gap-2 rounded-full bg-sandel-card px-3.5 py-1 text-xs font-mono font-semibold text-neutral-700 border border-sandel-border uppercase">
             <HelpCircle className="size-3.5 text-[#ff7a00]" />
             Frequently Asked Questions
           </div>
@@ -57,7 +57,7 @@ export function FAQ() {
               <ScrollReveal key={i} variant="card" staggerIndex={i} staggerStep={0.04}>
                 <AccordionItem
                   value={`i${i}`}
-                  className="rounded-2xl border border-neutral-200/90 bg-[#fafafa] px-5 sm:px-6 transition duration-300 hover:border-neutral-300 hover:bg-white shadow-2xs"
+                  className="rounded-2xl border border-sandel-border bg-sandel-card px-5 sm:px-6 transition duration-300 hover:border-neutral-400 hover:bg-[#FFFBF5] shadow-2xs"
                 >
                   <AccordionTrigger className="py-4 text-left text-sm sm:text-base font-semibold text-neutral-900 hover:no-underline hover:text-[#ff7a00] transition-colors cursor-pointer font-sans">
                     {f.q}

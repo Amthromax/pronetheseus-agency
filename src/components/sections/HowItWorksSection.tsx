@@ -42,7 +42,7 @@ const STEPS = [
 
 export function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="relative bg-white py-16 text-neutral-900 md:py-24 border-b border-neutral-200">
+    <section id="how-it-works" className="relative bg-sandel py-16 text-neutral-900 md:py-24">
       <div className="container-pad mx-auto max-w-[1400px]">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
@@ -70,14 +70,14 @@ export function HowItWorksSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
                 whileHover={{ y: -4 }}
-                className="group relative flex flex-col justify-between rounded-2xl border border-neutral-200/90 bg-[#fafafa] p-6 shadow-xs transition-all duration-300 hover:border-neutral-300 hover:bg-white hover:shadow-md"
+                className="group relative flex flex-col justify-between rounded-2xl border border-sandel-border bg-sandel-card p-6 shadow-xs transition-all duration-300 hover:border-neutral-400 hover:bg-[#FFFBF5] hover:shadow-md"
               >
                 <div>
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xl font-bold text-[#ff7a00] tracking-tight">
                       {step.number}
                     </span>
-                    <div className="flex size-10 items-center justify-center rounded-xl bg-neutral-100 text-neutral-900 group-hover:bg-[#18181b] group-hover:text-white transition-colors duration-300">
+                    <div className="flex size-10 items-center justify-center rounded-xl bg-sandel text-neutral-900 group-hover:bg-[#18181b] group-hover:text-white transition-colors duration-300">
                       <Icon className="size-5" />
                     </div>
                   </div>
@@ -90,7 +90,7 @@ export function HowItWorksSection() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-neutral-200/60">
+                <div className="mt-6 pt-4 border-t border-sandel-border/60">
                   <span className="text-[10px] font-mono font-medium uppercase tracking-wider text-neutral-500 block">
                     {step.badge}
                   </span>

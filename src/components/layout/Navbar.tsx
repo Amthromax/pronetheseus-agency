@@ -34,7 +34,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-[100] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
         scrolled
-          ? "py-2 px-4 sm:px-8 bg-white/85 backdrop-blur-xl border-b border-black/[0.08] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)]"
+          ? "py-2 px-4 sm:px-8 bg-sandel-card/90 backdrop-blur-xl border-b border-sandel-border shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)]"
           : "py-4 px-6 sm:px-10 bg-transparent border-b border-transparent",
       )}
     >

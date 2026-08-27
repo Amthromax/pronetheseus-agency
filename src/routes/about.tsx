@@ -31,28 +31,30 @@ const team = [
 
 function Page() {
   return (
-    <div className="pt-40">
+    <div className="min-h-screen bg-sandel text-neutral-900 pt-36 pb-20">
       <div className="container-pad mx-auto max-w-[1400px]">
         <SectionHeading title="We build the AI backbone of ambitious companies" description="A boutique studio of senior engineers, designers, and operators. We take on a limited number of engagements each quarter." />
       </div>
-      <section className="container-pad mx-auto mt-20 max-w-[1400px]">
+      <section className="container-pad mx-auto mt-16 max-w-[1400px]">
         <Stagger className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {values.map((v) => (
-            <motion.div key={v.title} variants={staggerItem} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-              <div className="font-display text-2xl">{v.title}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{v.desc}</p>
+            <motion.div key={v.title} variants={staggerItem} className="rounded-2xl border border-sandel-border bg-sandel-card p-6 shadow-xs">
+              <div className="font-display text-xl font-bold text-neutral-900">{v.title}</div>
+              <p className="mt-2 text-sm text-neutral-600 font-sans leading-relaxed">{v.desc}</p>
             </motion.div>
           ))}
         </Stagger>
       </section>
-      <section className="container-pad mx-auto mt-24 max-w-[1400px]">
+      <section className="container-pad mx-auto mt-20 max-w-[1400px]">
         <SectionHeading title="The humans behind Pronetheseus" />
-        <div className="mt-14 flex flex-wrap justify-center gap-6">
+        <div className="mt-12 flex flex-wrap justify-center gap-6">
           {team.map((m, i) => (
-            <motion.div key={m.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group w-full rounded-3xl border border-white/10 bg-white/[0.03] p-4 sm:w-[320px]">
-              <div className="aspect-square w-full rounded-2xl bg-gradient-to-br from-[#ff7a00]/40 via-[#c2410c]/20 to-black" />
-              <div className="mt-4 font-display text-xl">{m.name}</div>
-              <div className="text-sm text-muted-foreground">{m.role}</div>
+            <motion.div key={m.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group w-full rounded-2xl border border-sandel-border bg-sandel-card p-5 sm:w-[320px] shadow-xs">
+              <div className="aspect-square w-full rounded-xl bg-gradient-to-br from-[#ff7a00]/30 via-[#c2410c]/20 to-neutral-800 flex items-center justify-center text-4xl font-serif text-white font-bold">
+                {m.name.charAt(0)}
+              </div>
+              <div className="mt-4 font-display text-xl font-bold text-neutral-900">{m.name}</div>
+              <div className="text-sm font-medium text-neutral-600">{m.role}</div>
             </motion.div>
           ))}
         </div>

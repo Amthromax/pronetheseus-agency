@@ -51,6 +51,9 @@
   --color-brand-glow: var(--brand-glow);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
+  --color-sandel: #F5ECE0;
+  --color-sandel-card: #FAF5EE;
+  --color-sandel-border: #E6D7C3;
   --font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "JetBrains Mono", monospace;

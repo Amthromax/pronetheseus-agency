@@ -13,7 +13,7 @@ export function AgenticApplications() {
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>("ALL");
 
   return (
-    <section id="agentic-applications" className="relative bg-[#FAFAFA] py-10 sm:py-16 text-neutral-900 overflow-hidden border-y border-neutral-200/80">
+    <section id="agentic-applications" className="relative bg-sandel py-10 sm:py-16 text-neutral-900 overflow-hidden">
       <div className="container-pad mx-auto max-w-[1440px] relative z-10">
         
         {/* Main Top Header */}
@@ -32,10 +32,10 @@ export function AgenticApplications() {
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => setActiveTab("PRE-BUILT")}
-                className={`group flex flex-col justify-between h-full min-h-[340px] rounded-lg border p-5 sm:p-7 bg-white transition-all duration-300 cursor-pointer ${
+                className={`group flex flex-col justify-between h-full min-h-[340px] rounded-lg border p-5 sm:p-7 bg-sandel-card transition-all duration-300 cursor-pointer ${
                   activeTab === "PRE-BUILT"
                     ? "border-t-4 border-t-[#ff7a00] border-neutral-300 shadow-xl ring-1 ring-black/5"
-                    : "border-t-2 border-t-transparent border-neutral-200/90 shadow-sm hover:border-neutral-300 hover:shadow-md"
+                    : "border-t-2 border-t-transparent border-sandel-border shadow-sm hover:border-neutral-400 hover:shadow-md"
                 }`}
               >
                 <div>

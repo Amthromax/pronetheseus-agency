@@ -36,7 +36,7 @@ const METRICS_LIST = [
 
 export function ExpectedOutcomes() {
   return (
-    <section id="expected-outcomes" className="relative bg-white py-12 text-neutral-900 md:py-16 border-y border-neutral-200">
+    <section id="expected-outcomes" className="relative bg-sandel py-12 text-neutral-900 md:py-16">
       <div className="container-pad mx-auto max-w-[1400px]">
         <SectionHeading
           title="Measurable Operational Proof"
@@ -53,7 +53,7 @@ export function ExpectedOutcomes() {
                   <motion.div
                     whileHover={{ scale: 1.02, y: -4 }}
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    className="group relative rounded-2xl border border-neutral-200/90 bg-[#fafafa] p-5 md:p-6 transition-all duration-300 hover:border-neutral-300 hover:bg-white hover:shadow-md h-full flex flex-col justify-between"
+                    className="group relative rounded-2xl border border-sandel-border bg-sandel-card p-5 md:p-6 transition-all duration-300 hover:border-neutral-400 hover:bg-[#FFFBF5] hover:shadow-md h-full flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-3">
@@ -80,25 +80,6 @@ export function ExpectedOutcomes() {
               </div>
             );
           })}
-        </div>
-
-        {/* Verified Trust Badges Bar (Fixing Trust Audit Score 4/10 -> 9/10) */}
-        <div className="mt-10 rounded-2xl border border-neutral-200 bg-[#fbfbfb] p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-xs font-semibold text-neutral-800">
-            <ShieldCheck className="size-4 text-[#ff7a00]" />
-            <span>100% Client System Ownership</span>
-          </div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-neutral-800">
-            <CheckCircle2 className="size-4 text-emerald-600" />
-            <span>30-Day SLA Delivery Guarantee</span>
-          </div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-neutral-800">
-            <Lock className="size-4 text-blue-600" />
-            <span>Enterprise Data Security & Privacy</span>
-          </div>
-          <div className="text-[11px] font-mono text-neutral-500">
-            *Verified client telemetry metrics
-          </div>
         </div>
       </div>
     </section>

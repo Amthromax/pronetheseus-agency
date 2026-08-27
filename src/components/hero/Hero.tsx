@@ -21,12 +21,12 @@ const WORKFLOW_STEPS = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#fafafa] text-neutral-900 min-h-[88vh] sm:min-h-[92vh] lg:min-h-[95vh] flex flex-col justify-center items-center pt-24 sm:pt-32 pb-20 sm:pb-28 border-b border-neutral-200/80">
+    <section className="relative overflow-hidden bg-sandel text-neutral-900 min-h-[88vh] sm:min-h-[92vh] lg:min-h-[95vh] flex flex-col justify-center items-center pt-24 sm:pt-32 pb-20 sm:pb-28">
       {/* Background Dot Texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-50 sm:opacity-60 z-0"
         style={{
-          backgroundImage: "radial-gradient(#cbd5e1 1.2px, transparent 1.2px)",
+          backgroundImage: "radial-gradient(#d4c4b0 1.2px, transparent 1.2px)",
           backgroundSize: "26px 26px",
         }}
       />
@@ -62,12 +62,12 @@ export function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-4 sm:mt-6 max-w-xl text-neutral-700 text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed font-sans px-4 py-3.5 sm:px-5 sm:py-4 rounded-2xl bg-white/90 backdrop-blur-[10px] border border-white shadow-xs"
+            className="mt-4 sm:mt-6 max-w-xl text-neutral-700 text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed font-sans px-4 py-3.5 sm:px-5 sm:py-4 rounded-2xl bg-sandel-card/90 backdrop-blur-[10px] border border-sandel-border shadow-xs"
           >
             We build AI-powered systems that automate lead capture, customer conversations, appointment booking, follow-ups, and repetitive business operations.
           </motion.p>
 
-          {/* Action Buttons CTAs: Reduced size on web and laptop view ONLY, full width on mobile view */}
+          {/* Action Buttons CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -80,7 +80,7 @@ export function Hero() {
               </button>
             </Link>
             <a href="#services" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto rounded-full bg-white/95 backdrop-blur-md border border-neutral-300 text-neutral-800 px-5 sm:px-6 py-3 sm:py-3 text-sm sm:text-xs md:text-sm font-semibold shadow-xs transition-all duration-200 hover:bg-neutral-100 hover:border-neutral-400 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5 whitespace-nowrap">
+              <button className="w-full sm:w-auto rounded-full bg-sandel-card backdrop-blur-md border border-sandel-border text-neutral-800 px-5 sm:px-6 py-3 sm:py-3 text-sm sm:text-xs md:text-sm font-semibold shadow-xs transition-all duration-200 hover:bg-sandel hover:border-neutral-400 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5 whitespace-nowrap">
                 <span>See How It Works</span>
                 <ArrowRight className="w-3.5 h-3.5 text-neutral-600" />
               </button>
@@ -92,14 +92,14 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-7 sm:mt-9 w-full max-w-2xl bg-white/90 backdrop-blur-xl border border-neutral-200/90 rounded-2xl p-4 sm:p-5.5 shadow-lg shadow-neutral-900/5"
+            className="mt-7 sm:mt-9 w-full max-w-2xl bg-sandel-card/95 backdrop-blur-xl border border-sandel-border rounded-2xl p-4 sm:p-5.5 shadow-lg shadow-neutral-900/5"
           >
             {/* Header Badge */}
-            <div className="flex items-center justify-between mb-3 pb-2 border-b border-neutral-200/60">
-              <span className="text-[10px] sm:text-xs font-semibold tracking-wider text-neutral-500 uppercase font-sans">
+            <div className="flex items-center justify-between mb-3 pb-2 border-b border-sandel-border/70">
+              <span className="text-[10px] sm:text-xs font-semibold tracking-wider text-neutral-600 uppercase font-sans">
                 Automated Customer Engine
               </span>
-              <div className="flex items-center gap-1.5 text-[10px] sm:text-xs font-semibold font-sans text-neutral-600">
+              <div className="flex items-center gap-1.5 text-[10px] sm:text-xs font-semibold font-sans text-neutral-700">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a00] animate-pulse" />
                 24/7 Autonomous System
               </div>
@@ -111,7 +111,7 @@ export function Hero() {
                 const IconComponent = step.icon;
                 return (
                   <div key={step.label} className="flex items-center gap-1.5 shrink-0">
-                    <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-neutral-200 bg-[#fafafa] text-neutral-800 text-[11px] sm:text-xs font-semibold tracking-tight shadow-2xs transition-all hover:bg-white hover:border-neutral-300">
+                    <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-sandel-border bg-sandel text-neutral-800 text-[11px] sm:text-xs font-semibold tracking-tight shadow-2xs transition-all hover:bg-sandel-card hover:border-[#D5C3AC]">
                       <IconComponent className="w-3.5 h-3.5 shrink-0 text-[#ff7a00]" />
                       <span className="whitespace-nowrap">{step.label}</span>
                     </div>

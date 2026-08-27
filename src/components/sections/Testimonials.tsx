@@ -59,7 +59,7 @@ export function Testimonials() {
   };
 
   return (
-    <section id="customer-testimonials" className="relative bg-[#FAFAFA] py-16 sm:py-24 text-neutral-900 overflow-hidden border-y border-neutral-200">
+    <section id="customer-testimonials" className="relative bg-sandel py-16 sm:py-24 text-neutral-900 overflow-hidden border-y border-sandel-border">
       <div className="container-pad mx-auto max-w-[1400px]">
         {/* Header Container */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
@@ -83,7 +83,7 @@ export function Testimonials() {
               whileTap={{ scale: 0.95 }}
               onClick={() => scroll("left")}
               aria-label="Previous story"
-              className="size-11 rounded-xl border border-neutral-300 bg-white flex items-center justify-center text-neutral-800 shadow-2xs transition-all duration-200 hover:bg-neutral-100 cursor-pointer"
+              className="size-11 rounded-xl border border-sandel-border bg-sandel-card flex items-center justify-center text-neutral-800 shadow-2xs transition-all duration-200 hover:bg-sandel cursor-pointer"
             >
               <ChevronLeft className="size-5" />
             </motion.button>
@@ -92,7 +92,7 @@ export function Testimonials() {
               whileTap={{ scale: 0.95 }}
               onClick={() => scroll("right")}
               aria-label="Next story"
-              className="size-11 rounded-xl border border-neutral-300 bg-white flex items-center justify-center text-neutral-800 shadow-2xs transition-all duration-200 hover:bg-neutral-100 cursor-pointer"
+              className="size-11 rounded-xl border border-sandel-border bg-sandel-card flex items-center justify-center text-neutral-800 shadow-2xs transition-all duration-200 hover:bg-sandel cursor-pointer"
             >
               <ChevronRight className="size-5" />
             </motion.button>
@@ -110,11 +110,11 @@ export function Testimonials() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative flex min-h-[460px] w-[340px] sm:w-[420px] md:w-[440px] shrink-0 snap-start flex-col justify-between rounded-3xl border border-neutral-200 bg-white p-7 sm:p-8 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md cursor-pointer"
+                className="group relative flex min-h-[460px] w-[340px] sm:w-[420px] md:w-[440px] shrink-0 snap-start flex-col justify-between rounded-3xl border border-sandel-border bg-sandel-card p-7 sm:p-8 shadow-sm transition-all duration-300 hover:border-neutral-400 hover:shadow-md cursor-pointer"
               >
                 <div>
                   {/* Top Client & Industry */}
-                  <div className="flex items-center justify-between pb-4 border-b border-neutral-100">
+                  <div className="flex items-center justify-between pb-4 border-b border-sandel-border/60">
                     <div>
                       <h3 className="font-sans text-lg font-bold text-neutral-900 tracking-tight">
                         {item.client}
@@ -148,7 +148,7 @@ export function Testimonials() {
                   </div>
 
                   {/* Testimonial Quote */}
-                  <div className="mt-5 pt-4 border-t border-neutral-100">
+                  <div className="mt-5 pt-4 border-t border-sandel-border/60">
                     <p className="text-xs sm:text-sm text-neutral-700 font-normal italic leading-relaxed">
                       "{item.testimonial}"
                     </p>
@@ -156,7 +156,7 @@ export function Testimonials() {
                 </div>
 
                 {/* Author Info */}
-                <div className="mt-6 pt-3 border-t border-neutral-100 flex items-center justify-between">
+                <div className="mt-6 pt-3 border-t border-sandel-border/60 flex items-center justify-between">
                   <div>
                     <span className="text-xs font-bold text-neutral-900 block font-sans">
                       {item.author}

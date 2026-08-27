@@ -79,7 +79,7 @@ export function AutomationAuditSection() {
   };
 
   return (
-    <section id="automation-audit" className="relative bg-[#fafafa] py-20 text-neutral-900 md:py-28 border-b border-neutral-200">
+    <section id="automation-audit" className="relative bg-sandel py-20 text-neutral-900 md:py-28">
       <div className="container-pad mx-auto max-w-[1400px]">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
@@ -91,8 +91,8 @@ export function AutomationAuditSection() {
           </p>
         </div>
 
-        {/* VISUAL AUDIT MECHANISM DIAGRAM (SHOWCASED ABOVE FORM) */}
-        <div className="mt-12 rounded-2xl border border-neutral-200/80 bg-white p-5 shadow-xs max-w-5xl mx-auto">
+        {/* VISUAL AUDIT MECHANISM DIAGRAM */}
+        <div className="mt-12 rounded-2xl border border-sandel-border bg-sandel-card p-5 shadow-xs max-w-5xl mx-auto">
           <div className="text-center mb-3">
             <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-neutral-500">
               How Your Automated Audit Pipeline Works
@@ -102,7 +102,7 @@ export function AutomationAuditSection() {
             {AUDIT_FLOW_STEPS.map((s, idx) => {
               const Icon = s.icon;
               return (
-                <div key={s.label} className="flex flex-col items-center text-center p-2 rounded-xl bg-neutral-50 border border-neutral-200/60">
+                <div key={s.label} className="flex flex-col items-center text-center p-2 rounded-xl bg-sandel border border-sandel-border">
                   <div className="flex size-7 items-center justify-center rounded-lg bg-[#ff7a00]/10 text-[#ff7a00] mb-1.5">
                     <Icon className="size-3.5" />
                   </div>
@@ -116,7 +116,7 @@ export function AutomationAuditSection() {
         </div>
 
         {/* AUDIT FORM CONTAINER */}
-        <div className="mt-10 max-w-3xl mx-auto rounded-3xl border border-neutral-200 bg-white p-6 sm:p-10 shadow-lg">
+        <div className="mt-10 max-w-3xl mx-auto rounded-3xl border border-sandel-border bg-sandel-card p-6 sm:p-10 shadow-lg">
           {submitted ? (
             /* SUBMITTED RESULT VIEW */
             <motion.div

@@ -65,14 +65,14 @@ const SIDE_POSTS: InsightPost[] = [
 
 export function AIInsights() {
   return (
-    <section id="insights" className="relative w-full bg-white py-10 sm:py-16 border-t border-neutral-200 text-neutral-900">
+    <section id="insights" className="relative w-full bg-sandel py-10 sm:py-16 text-neutral-900">
       <div className="container-pad mx-auto max-w-[1400px]">
         {/* Section Header */}
         <div className="flex items-center justify-between mb-6 sm:mb-10">
           <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900">
             <SplitText text="AI Insights" />
           </h2>
-          <button className="group inline-flex items-center gap-1.5 rounded-lg border border-neutral-300 bg-white px-3.5 py-1.5 text-xs font-mono font-semibold tracking-wider text-neutral-900 transition-all duration-300 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 cursor-pointer">
+          <button className="group inline-flex items-center gap-1.5 rounded-lg border border-sandel-border bg-sandel-card px-3.5 py-1.5 text-xs font-mono font-semibold tracking-wider text-neutral-900 transition-all duration-300 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 cursor-pointer">
             <span>VIEW ALL</span>
             <span className="text-neutral-400 group-hover:text-white">•</span>
           </button>
@@ -86,7 +86,7 @@ export function AIInsights() {
               <motion.div
                 whileHover={{ scale: 1.01, y: -4 }}
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative overflow-hidden rounded-lg border border-neutral-200 shadow-sm transition-all duration-300 hover:shadow-xl min-h-[340px] sm:min-h-[440px] flex flex-col justify-end p-5 sm:p-7 cursor-pointer h-full"
+                className="group relative overflow-hidden rounded-lg border border-sandel-border shadow-sm transition-all duration-300 hover:shadow-xl min-h-[340px] sm:min-h-[440px] flex flex-col justify-end p-5 sm:p-7 cursor-pointer h-full"
               >
                 {/* 3D Gradient Background Art */}
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 via-teal-700 to-indigo-900 overflow-hidden">
@@ -98,7 +98,7 @@ export function AIInsights() {
                 </div>
 
                 {/* Frosted Glass Card Box at Bottom */}
-                <div className="relative z-10 w-full sm:max-w-xl rounded-md bg-white/85 backdrop-blur-md p-4 sm:p-6 border border-white/80 shadow-xl transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="relative z-10 w-full sm:max-w-xl rounded-md bg-sandel-card/90 backdrop-blur-md p-4 sm:p-6 border border-sandel-border shadow-xl transition-transform duration-300 group-hover:-translate-y-1">
                   <div className="font-mono text-[10px] sm:text-xs font-semibold text-neutral-600 uppercase tracking-wider flex items-center gap-1">
                     <span>MAY 15, 2026</span>
                     <span>•</span>
@@ -119,7 +119,7 @@ export function AIInsights() {
                   <motion.div
                     whileHover={{ scale: 1.015, x: 4 }}
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    className="group flex items-center gap-3 sm:gap-4 p-3 rounded-md border border-neutral-200 lg:border-transparent bg-white lg:bg-transparent hover:border-neutral-200 hover:bg-neutral-50/90 transition-all duration-300 cursor-pointer h-full"
+                    className="group flex items-center gap-3 sm:gap-4 p-3 rounded-md border border-sandel-border lg:border-transparent bg-sandel-card lg:bg-transparent hover:border-sandel-border hover:bg-sandel transition-all duration-300 cursor-pointer h-full"
                   >
                     <div className="size-16 sm:size-20 rounded-md shrink-0 overflow-hidden shadow-2xs transition-transform duration-300 group-hover:scale-105">
                       {post.graphicSvg}

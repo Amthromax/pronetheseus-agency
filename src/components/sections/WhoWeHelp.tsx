@@ -44,7 +44,7 @@ const INDUSTRIES = [
 
 export function WhoWeHelp() {
   return (
-    <section id="who-we-help" className="relative bg-[#fafafa] py-8 text-neutral-900 sm:py-10 border-b border-neutral-200">
+    <section id="who-we-help" className="relative bg-sandel py-8 text-neutral-900 sm:py-10">
       <div className="container-pad mx-auto max-w-[1400px]">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
@@ -67,11 +67,11 @@ export function WhoWeHelp() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: idx * 0.05 }}
-                className="group relative flex flex-col justify-between rounded-xl border border-neutral-200/90 bg-white p-4 shadow-2xs transition-all duration-300 hover:border-neutral-400 hover:shadow-md shrink-0 w-[250px] xs:w-[270px] sm:w-auto snap-center"
+                className="group relative flex flex-col justify-between rounded-xl border border-sandel-border bg-sandel-card p-4 shadow-2xs transition-all duration-300 hover:border-neutral-400 hover:shadow-md shrink-0 w-[250px] xs:w-[270px] sm:w-auto snap-center"
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <div className="flex size-8 items-center justify-center rounded-lg bg-neutral-100 text-neutral-900 group-hover:bg-[#18181b] group-hover:text-white transition-colors duration-300">
+                    <div className="flex size-8 items-center justify-center rounded-lg bg-sandel text-neutral-900 group-hover:bg-[#18181b] group-hover:text-white transition-colors duration-300">
                       <Icon className="size-4" />
                     </div>
                   </div>
@@ -83,9 +83,9 @@ export function WhoWeHelp() {
                     {ind.desc}
                   </p>
 
-                  <div className="mt-2.5 pt-2.5 border-t border-neutral-100 space-y-1">
+                  <div className="mt-2.5 pt-2.5 border-t border-sandel-border/60 space-y-1">
                     {ind.features.map((feat) => (
-                      <div key={feat} className="flex items-center gap-1.5 text-[11px] text-neutral-500">
+                      <div key={feat} className="flex items-center gap-1.5 text-[11px] text-neutral-600">
                         <span className="w-1 h-1 rounded-full bg-[#ff7a00]" />
                         <span>{feat}</span>
                       </div>
@@ -96,7 +96,7 @@ export function WhoWeHelp() {
                 <div className="mt-4 pt-1">
                   <Link
                     to="/book"
-                    className="inline-flex w-full items-center justify-between rounded-md bg-neutral-50 px-3 py-1.5 text-xs font-semibold text-neutral-800 transition duration-200 group-hover:bg-[#18181b] group-hover:text-white"
+                    className="inline-flex w-full items-center justify-between rounded-md bg-sandel px-3 py-1.5 text-xs font-semibold text-neutral-800 transition duration-200 group-hover:bg-[#18181b] group-hover:text-white"
                   >
                     <span>Automate My Business</span>
                     <ArrowRight className="size-3" />
@@ -125,7 +125,7 @@ export function WhoWeHelp() {
           </div>
 
           <Link to="/book" className="shrink-0">
-            <button className="rounded-lg bg-white px-4 py-2 text-xs font-semibold text-neutral-900 shadow-xs transition-all duration-200 hover:bg-neutral-100 hover:scale-[1.02] cursor-pointer flex items-center gap-1.5">
+            <button className="rounded-lg bg-sandel-card px-4 py-2 text-xs font-semibold text-neutral-900 shadow-xs transition-all duration-200 hover:bg-sandel hover:scale-[1.02] cursor-pointer flex items-center gap-1.5">
               <span>Get Free Automation Audit</span>
               <ArrowRight className="size-3.5 text-neutral-900" />
             </button>

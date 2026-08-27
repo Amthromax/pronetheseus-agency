@@ -25,59 +25,59 @@ interface CategoryData {
 const PRICING_CATEGORIES: CategoryData[] = [
   {
     id: "all",
-    label: "All Tiers",
+    label: "All Packages",
     cards: [
       {
-        id: "setup",
-        badge: "One-Time Build",
-        type: "IMPLEMENTATION FEE",
-        title: "Setup",
-        priceRange: "$2,000 – $10,000+",
-        priceNote: "One-time fee depending on workflow complexity",
-        description: "Ideal for agencies needing a single core operational engine engineered and integrated into their stack.",
+        id: "starter",
+        badge: "Essential Engine",
+        type: "STARTER PACKAGE",
+        title: "Starter",
+        priceRange: "$1,500 – $2,500",
+        priceNote: "Setup + $500–$750/mo retainer",
+        description: "Essential AI lead capture, intent qualification, and direct calendar booking for growing service businesses.",
         features: [
-          "Full Operations Audit & Infrastructure Blueprint",
-          "1 Core Engine (e.g. 15-Min Onboarding or Auto-Reporting)",
-          "Custom n8n workflow engineering & API integrations",
-          "Hands-on team training & technical runbooks",
-          "100% Code Ownership (Zero Lock-in)",
+          "AI Lead Capture & Intent Qualification",
+          "Sub-60s Email & SMS Automated Follow-up",
+          "Direct Google & Outlook Calendar Booking",
+          "Core CRM Automation & Contact Sync",
+          "100% System & Code Ownership",
         ],
-        ctaText: "Book Setup Audit Call",
+        ctaText: "Book Starter Strategy Call",
       },
       {
-        id: "monthly",
+        id: "growth",
         badge: "Most Popular",
-        type: "RETAINER & INFRA",
-        title: "Monthly Support",
-        priceRange: "$500 – $3,000+",
-        priceNote: "per month (recurring maintenance & improvements)",
-        description: "24/7 server monitoring, proactive workflow optimization, and ongoing improvements as you scale.",
+        type: "FLAGSHIP ENGINE",
+        title: "Growth",
+        priceRange: "$3,500 – $6,000",
+        priceNote: "Setup + $1,000–$1,500/mo retainer",
+        description: "Complete multi-channel AI Revenue Engine with WhatsApp chat, AI Voice Agents, and automated follow-up cadences.",
         highlight: true,
         features: [
-          "24/7 Automated workflow monitoring & error alerts",
-          "Proactive monthly system tuning & feature rollouts",
-          "API version maintenance & security updates",
-          "Priority Slack channel with Senior Systems Architect",
-          "30-Day SLA & ROI performance guarantee",
+          "Everything in Starter Package +",
+          "WhatsApp 2-Way Chat & Quote Automation",
+          "24/7 AI Voice Agent (Inbound/Outbound)",
+          "Multi-Channel Automated Nurture Cadences",
+          "Priority Slack Channel & Proactive Support",
         ],
-        ctaText: "Start Monthly Retainer",
+        ctaText: "Get Growth Revenue Engine",
       },
       {
-        id: "enterprise",
-        badge: "Full Transformation",
-        type: "CUSTOM IMPLEMENTATION",
-        title: "Enterprise",
-        priceRange: "$10,000 – $50,000+",
-        priceNote: "Custom full-agency system build",
-        description: "End-to-end multi-department agency transformation for high-volume firms ($150k–$500k+/mo).",
+        id: "scale",
+        badge: "Full Automation OS",
+        type: "SCALE PACKAGE",
+        title: "Scale",
+        priceRange: "$7,500 – $10,000+",
+        priceNote: "Setup + $2,000–$3,000+/mo retainer",
+        description: "End-to-end multi-department automation suite with automated review generation & cold database lead reactivation.",
         features: [
-          "Multi-department audit (Sales, Onboarding, Delivery, Reporting)",
-          "Complete Agency OS (Onboarding + Delivery + AI SDRs + CRM)",
-          "SOC2-compliant Action Firewall & bank-grade encryption",
-          "Dedicated Principal Systems Architect team",
-          "Custom BI dashboards & executive ROI reporting",
+          "Everything in Growth Package +",
+          "Automated Google Review Generation Engine",
+          "Cold Database Lead Reactivation Bot",
+          "Multi-Branch CRM & Enterprise Data Sync",
+          "Dedicated Principal Engineer Team",
         ],
-        ctaText: "Request Enterprise Blueprint",
+        ctaText: "Request Scale Blueprint",
       },
       {
         id: "guarantee",
@@ -85,16 +85,15 @@ const PRICING_CATEGORIES: CategoryData[] = [
         type: "VALUE GUARANTEE",
         title: "100% IP Ownership",
         priceRange: "Included Free",
-        priceNote: "Guaranteed on all builds & retainers",
+        priceNote: "Guaranteed on all packages & retainers",
         description: "You retain full IP and source code repository ownership with zero proprietary platform dependencies.",
         features: [
           "Full source code & GitHub repository transfer",
           "Self-hosted infrastructure configuration",
           "Comprehensive technical runbooks & SOPs",
-          "Dedicated Principal Architect guidance",
-          "30-Day Money-Back Performance Guarantee",
+          "30-Day SLA & Performance Assurance",
         ],
-        ctaText: "Explore Agency Blueprint",
+        ctaText: "Explore Package Scope",
       },
     ],
   },
@@ -319,7 +318,7 @@ export function TabbedImpactCards() {
   const currentCategory = PRICING_CATEGORIES.find((cat) => cat.id === activeCategory) || PRICING_CATEGORIES[0];
 
   return (
-    <div className="w-full bg-[#FAFAFA] text-neutral-900 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-neutral-200">
+    <div className="w-full bg-sandel text-neutral-900 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-sandel-border">
       <div className="mx-auto max-w-7xl">
         {/* Top Badge */}
         <div className="flex justify-center">
@@ -328,22 +327,22 @@ export function TabbedImpactCards() {
           </span>
         </div>
 
-        {/* Main Title (Matching Image 1 typography) */}
+        {/* Main Title */}
         <div className="mt-4 text-center">
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-neutral-900 leading-tight">
             Simple, Value-Based
           </h2>
-          <p className="font-display text-4xl sm:text-5xl lg:text-6xl font-light text-neutral-400 tracking-tight leading-tight mt-1">
-            Agency Pricing <span className="text-neutral-500 font-normal">& Tiers</span>
+          <p className="font-display text-4xl sm:text-5xl lg:text-6xl font-light text-neutral-500 tracking-tight leading-tight mt-1">
+            Agency Pricing <span className="text-neutral-600 font-normal">& Tiers</span>
           </p>
-          <p className="mt-4 text-sm sm:text-base text-neutral-500 max-w-2xl mx-auto font-normal">
+          <p className="mt-4 text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto font-normal">
             No bloated retainers. No junior handoffs. 100% code ownership guaranteed on every build.
           </p>
         </div>
 
-        {/* Filter Category Pills Bar (Matching Image 1) */}
+        {/* Filter Category Pills Bar */}
         <div className="mt-10 flex justify-center">
-          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 rounded-full border border-neutral-200 bg-white p-1.5 shadow-sm">
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 rounded-full border border-sandel-border bg-sandel-card p-1.5 shadow-sm">
             {PRICING_CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
@@ -353,7 +352,7 @@ export function TabbedImpactCards() {
                   className={`rounded-full px-4 sm:px-5 py-2 text-xs font-semibold transition-all duration-200 cursor-pointer ${
                     isActive
                       ? "bg-[#111827] text-white shadow-md"
-                      : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                      : "text-neutral-700 hover:text-neutral-900 hover:bg-sandel"
                   }`}
                 >
                   {cat.label}
@@ -363,7 +362,7 @@ export function TabbedImpactCards() {
           </div>
         </div>
 
-        {/* 4 Cards Grid (Exact matching Image 1 geometry with Image 2 Content) */}
+        {/* 4 Cards Grid */}
         <div className="mt-12">
           <AnimatePresence mode="wait">
             <motion.div
@@ -382,7 +381,7 @@ export function TabbedImpactCards() {
                     className={`relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 transition-all duration-500 min-h-[440px] ${
                       isHighlight
                         ? "bg-gradient-to-b from-neutral-800 via-neutral-900 to-black text-white shadow-2xl scale-[1.02] border-2 border-[#ff7a00] z-10"
-                        : "bg-white border border-neutral-200 text-neutral-900 shadow-sm hover:shadow-xl hover:border-neutral-300"
+                        : "bg-sandel-card border border-sandel-border text-neutral-900 shadow-sm hover:shadow-xl hover:border-neutral-400"
                     }`}
                   >
                     <div>
@@ -397,7 +396,7 @@ export function TabbedImpactCards() {
                           className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-semibold ${
                             isHighlight
                               ? "bg-[#ff7a00] text-white font-semibold shadow-xs"
-                              : "bg-neutral-100 text-neutral-600 font-medium"
+                              : "bg-sandel text-neutral-700 font-medium"
                           }`}
                         >
                           {card.badge}
@@ -436,7 +435,7 @@ export function TabbedImpactCards() {
                         {card.description}
                       </p>
 
-                      <hr className={`my-4 ${isHighlight ? "border-neutral-800" : "border-neutral-100"}`} />
+                      <hr className={`my-4 ${isHighlight ? "border-neutral-800" : "border-sandel-border/60"}`} />
 
                       {/* Feature Bullet List */}
                       <ul className="space-y-2 text-xs">

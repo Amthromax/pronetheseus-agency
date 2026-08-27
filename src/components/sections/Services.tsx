@@ -71,7 +71,7 @@ const SERVICE_CATEGORIES = [
 
 export function Services() {
   return (
-    <section id="services" className="relative bg-white py-8 text-neutral-900 sm:py-12 border-b border-neutral-200 overflow-hidden">
+    <section id="services" className="relative bg-sandel py-8 text-neutral-900 sm:py-12 overflow-hidden">
       <div className="container-pad mx-auto max-w-[1400px]">
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
@@ -94,7 +94,7 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: idx * 0.06 }}
-                className="group relative flex flex-col justify-between rounded-xl border border-neutral-200/90 bg-[#fafafa] p-4 sm:p-5 shadow-2xs transition-all duration-300 hover:border-neutral-300 hover:bg-white hover:shadow-md shrink-0 w-[280px] xs:w-[310px] md:w-auto snap-center"
+                className="group relative flex flex-col justify-between rounded-xl border border-sandel-border bg-sandel-card p-4 sm:p-5 shadow-2xs transition-all duration-300 hover:border-neutral-400 hover:bg-[#FFFBF5] hover:shadow-md shrink-0 w-[280px] xs:w-[310px] md:w-auto snap-center"
               >
                 <div>
                   {/* Category Card Top Row */}
@@ -113,7 +113,7 @@ export function Services() {
                   </p>
 
                   {/* List of Capabilities */}
-                  <div className="mt-3 pt-2.5 border-t border-neutral-200/70 space-y-1.5">
+                  <div className="mt-3 pt-2.5 border-t border-sandel-border/70 space-y-1.5">
                     {cat.services.map((item) => (
                       <div key={item.name} className="flex items-start gap-2">
                         <CheckCircle2 className="size-3 shrink-0 text-[#ff7a00] mt-0.5" />

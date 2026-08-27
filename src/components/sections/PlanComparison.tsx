@@ -37,9 +37,9 @@ const groups: Group[] = [
 ];
 
 const plans = [
-  { key: "setup", name: "Setup", price: "$2,000–$10k+", suffix: "one-time", best: "Single Core Engine Build", cta: "Book Setup Audit", highlight: false },
-  { key: "monthly", name: "Monthly Support", price: "$500–$3k+", suffix: "/month", best: "24/7 Retainer & Improvements", cta: "Start Retainer", highlight: true, badge: "Most popular" },
-  { key: "enterprise", name: "Enterprise", price: "$10k–$50k+", suffix: "custom", best: "End-to-End Agency OS", cta: "Request Blueprint", highlight: false },
+  { key: "setup", name: "Starter", price: "$1.5k–$2.5k", suffix: "setup + $500–$750/mo", best: "Core AI Lead Engine", cta: "Book Starter Audit", highlight: false },
+  { key: "monthly", name: "Growth", price: "$3.5k–$6k", suffix: "setup + $1k–$1.5k/mo", best: "Multi-Channel AI Revenue Engine", cta: "Get Growth Engine", highlight: true, badge: "Most popular" },
+  { key: "enterprise", name: "Scale", price: "$7.5k–$10k+", suffix: "setup + $2k–$3k+/mo", best: "End-to-End Enterprise OS Suite", cta: "Request Scale Blueprint", highlight: false },
 ] as const;
 
 function CellView({ v }: { v: Cell }) {

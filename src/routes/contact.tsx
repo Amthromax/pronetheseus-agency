@@ -37,7 +37,7 @@ function Page() {
     reset();
   };
   return (
-    <div className="pt-40">
+    <div className="min-h-screen bg-sandel text-neutral-900 pt-36 pb-20">
       <div className="container-pad mx-auto max-w-[1400px]">
         <SectionHeading title="Let's talk about your automation stack" description="Book a call or send a note — we reply within a business day." />
       </div>
@@ -45,7 +45,7 @@ function Page() {
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
           {/* Left Column: Contact Form + Company Background Cards */}
           <div className="space-y-4">
-            <form onSubmit={handleSubmit(onSubmit)} className="rounded-2xl border border-white/10 glass p-6 md:p-7 backdrop-blur-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+            <form onSubmit={handleSubmit(onSubmit)} className="rounded-2xl border border-sandel-border bg-sandel-card p-6 md:p-7 shadow-xs">
               <div className="grid gap-3.5 sm:grid-cols-2">
                 <Field label="Name" error={errors.name?.message}><input {...register("name")} className="cf-input" placeholder="Your name" /></Field>
                 <Field label="Email" error={errors.email?.message}><input {...register("email")} type="email" className="cf-input" placeholder="you@company.com" /></Field>
@@ -58,10 +58,10 @@ function Page() {
                   </Field>
                 </div>
               </div>
-              <button disabled={isSubmitting} className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-6 py-3 text-sm font-medium text-white transition hover:scale-[1.01] disabled:opacity-60 shadow-[0_8px_20px_-8px_rgba(255,122,0,0.6)]">
+              <button disabled={isSubmitting} className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-6 py-3 text-sm font-medium text-white transition hover:scale-[1.01] disabled:opacity-60 shadow-[0_8px_20px_-8px_rgba(255,122,0,0.6)] cursor-pointer">
                 {isSubmitting ? "Sending..." : "Send message"}
               </button>
-              <style>{`.cf-input{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:10px 12px;font-size:13.5px;outline:none;color:inherit}.cf-input::placeholder{color:rgb(148,148,158)}.cf-input:focus{border-color:rgba(255,122,0,0.5);box-shadow:0 0 0 4px rgba(255,122,0,0.1)}`}</style>
+              <style>{`.cf-input{width:100%;background:#F5EBE6;border:1px solid #E5D5CB;border-radius:10px;padding:10px 12px;font-size:13.5px;outline:none;color:#18181b}.cf-input::placeholder{color:rgb(120,120,128)}.cf-input:focus{border-color:rgba(255,122,0,0.8);box-shadow:0 0 0 3px rgba(255,122,0,0.15)}`}</style>
             </form>
             <InfoCard Icon={Building2} title="Pronetheseus Technologies" body="An AI automation studio building AI Employees, n8n workflows, CRM automations and voice agents for growing teams worldwide." />
             <InfoCard Icon={MapPin} title="Headquartered in India" body="Registered office · Mumbai, Maharashtra, India — with a fully remote delivery team across London, New York, Dubai and Singapore." />
@@ -76,34 +76,33 @@ function Page() {
           </div>
         </div>
       </section>
-      <div className="h-24" />
     </div>
   );
 }
 
 function Field({ label, error, children }: { label: string; error?: string; children: ReactNode }) {
   return (
-    <label className="block text-sm">
-      <div className="mb-2 text-foreground/80">{label}</div>
+    <label className="block text-sm font-medium text-neutral-800">
+      <div className="mb-1.5">{label}</div>
       {children}
-      {error && <div className="mt-1 text-xs text-brand">{error}</div>}
+      {error && <div className="mt-1 text-xs text-red-600">{error}</div>}
     </label>
   );
 }
 
 function InfoCard({ Icon, title, body, cta, ctaTo }: { Icon: ComponentType<{ className?: string }>; title: string; body: string; cta?: string; ctaTo?: string; }) {
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-      <div className="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-[#ff7a00]/25 to-[#c2410c]/10 text-brand ring-1 ring-inset ring-white/10">
+    <div className="rounded-2xl border border-sandel-border bg-sandel-card p-6 shadow-xs">
+      <div className="grid size-10 place-items-center rounded-xl bg-[#ff7a00]/10 text-[#ff7a00] border border-[#ff7a00]/20">
         <Icon className="size-4" />
       </div>
-      <div className="mt-4 font-display text-2xl">{title}</div>
-      <p className="mt-1 text-sm text-muted-foreground">{body}</p>
+      <div className="mt-4 font-display text-xl font-bold text-neutral-900">{title}</div>
+      <p className="mt-1.5 text-sm text-neutral-600 font-sans leading-relaxed">{body}</p>
       {cta && (
         ctaTo ? (
-          <Link to={ctaTo} className="mt-3 inline-block text-sm text-brand hover:underline">{cta} →</Link>
+          <Link to={ctaTo} className="mt-3 inline-block text-sm font-semibold text-[#ff7a00] hover:underline">{cta} →</Link>
         ) : (
-          <button className="mt-3 text-sm text-brand hover:underline">{cta} →</button>
+          <button className="mt-3 text-sm font-semibold text-[#ff7a00] hover:underline cursor-pointer">{cta} →</button>
         )
       )}
     </div>
