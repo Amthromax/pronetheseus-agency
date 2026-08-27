@@ -1,168 +1,148 @@
-import { SectionHeading } from "./SectionHeading";
-import { Check, X, Building2, Code2, Target, Home, ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
+import { 
+  Home, 
+  Stethoscope, 
+  Building2, 
+  Scale, 
+  TrendingUp, 
+  ArrowRight,
+  Sparkles
+} from "lucide-react";
 
-const ICP_CARDS = [
+const INDUSTRIES = [
   {
-    icon: Target,
-    title: "B2B Marketing & Growth Agencies",
-    range: "$50k–$300k+/mo",
-    teamSize: "5 to 40 employees",
-    pain: "Spent 20+ hrs/week compiling manual client reports, tracking ad performance, and chasing clients for assets.",
-    solution: "Automated real-time client dashboards, autonomous ad-spend alerts, and 15-minute onboarding flows."
+    icon: Home,
+    title: "Home Services",
+    emoji: "🏠",
+    desc: "Capture and convert more inbound leads.",
+    features: ["Instant phone & form response", "24/7 emergency lead capture", "Automated quote scheduling"]
   },
   {
-    icon: Code2,
-    title: "Dev & Design Studios",
-    range: "$60k–$400k+/mo",
-    teamSize: "8 to 50 employees",
-    pain: "Scope creep, chaotic client feedback loops, manual ticket triage, and delayed project milestone sign-offs.",
-    solution: "AI ticket routing, automated client sign-off pipelines, and Slack-to-Linear/ClickUp sync."
+    icon: Stethoscope,
+    title: "Dental Clinics",
+    emoji: "🦷",
+    desc: "Automate inquiries, bookings and reminders.",
+    features: ["Appointment booking bot", "SMS confirmation & reminders", "Patient reactivation campaigns"]
   },
   {
     icon: Building2,
-    title: "High-Ticket Lead Gen & Sales Firms",
-    range: "$40k–$500k+/mo",
-    teamSize: "4 to 30 employees",
-    pain: "Inbound leads turning cold while waiting for human SDRs to manually qualify and respond hours later.",
-    solution: "Sub-second WhatsApp/SMS AI qualifying agents with 2-way Google/Outlook calendar booking."
+    title: "Real Estate",
+    emoji: "🏢",
+    desc: "Respond to and nurture leads automatically.",
+    features: ["Property inquiry response", "Lead qualification & routing", "Long-term drip nurturing"]
   },
   {
-    icon: Home,
-    title: "Real Estate & Professional Services",
-    range: "$50k–$250k+/mo",
-    teamSize: "5 to 25 employees",
-    pain: "Manual document collection, signature chasing, listing updates, and fragmented client communications.",
-    solution: "Autonomous intake agents, automated contract distribution, and real-time CRM updates."
+    icon: Scale,
+    title: "Professional Services",
+    emoji: "⚖️",
+    desc: "Automate lead handling and administrative workflows.",
+    features: ["Client intake & document collection", "SOP & contract distribution", "Automated billing reminders"]
+  },
+  {
+    icon: TrendingUp,
+    title: "Marketing Agencies",
+    emoji: "📈",
+    desc: "Automate sales, onboarding and client operations.",
+    features: ["Automated client onboarding", "Slack & PM tool integration", "Real-time client reporting"]
   }
 ];
 
 export function WhoWeHelp() {
   return (
-    <section id="who-we-help" className="relative bg-white py-16 text-neutral-900 md:py-24">
+    <section id="who-we-help" className="relative bg-[#fafafa] py-10 text-neutral-900 md:py-14 border-b border-neutral-200">
       <div className="container-pad mx-auto max-w-[1400px]">
+        {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <div className="text-xs font-mono font-bold tracking-wider text-brand uppercase">
-            QUESTION 01 • TARGET ICP
+          <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-3.5 py-1 text-xs font-mono font-semibold text-[#ff7a00] border border-orange-200/60 uppercase">
+            <Sparkles className="size-3.5" />
+            Who We Help
           </div>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
-            Who do we help?
+          <h2 className="mt-3 font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900">
+            Built for service businesses
           </h2>
-          <p className="mt-4 text-base text-neutral-600 md:text-lg">
-            We work exclusively with high-growth B2B agencies and service providers who have outgrown manual operations and need enterprise-grade AI infrastructure.
+          <p className="mt-2 text-sm sm:text-base text-neutral-600 font-sans max-w-2xl mx-auto">
+            We engineer tailored AI automation systems for service-driven companies ready to capture leads faster and streamline operations.
           </p>
         </div>
 
-        {/* ICP Cards Grid */}
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {ICP_CARDS.map((card, idx) => {
-            const Icon = card.icon;
+        {/* 5 Industry Cards Grid: Horizontal Scroll on Mobile ONLY, Grid on Desktop */}
+        <div className="mt-8 sm:mt-10 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 sm:gap-5 sm:pb-0">
+          {INDUSTRIES.map((ind, idx) => {
+            const Icon = ind.icon;
             return (
-              <div
-                key={idx}
-                className="group relative flex flex-col justify-between rounded-3xl border border-neutral-200 bg-white p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_20px_50px_-15px_rgba(255,122,0,0.15)]"
+              <motion.div
+                key={ind.title}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.06 }}
+                whileHover={{ y: -4 }}
+                className="group relative flex flex-col justify-between rounded-2xl border border-neutral-200/90 bg-white p-5 shadow-2xs transition-all duration-300 hover:border-neutral-400 hover:shadow-md shrink-0 w-[270px] xs:w-[290px] sm:w-auto snap-center"
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <div className="grid size-12 place-items-center rounded-2xl bg-gradient-to-br from-orange-500/15 to-orange-900/5 text-brand ring-1 ring-inset ring-neutral-200">
-                      <Icon className="size-6" />
+                    <div className="flex size-10 items-center justify-center rounded-xl bg-neutral-100 text-neutral-900 group-hover:bg-[#18181b] group-hover:text-white transition-colors duration-300">
+                      <Icon className="size-5" />
                     </div>
-                    <span className="font-mono text-xs font-bold text-neutral-400">{card.range}</span>
+                    <span className="text-xl select-none">{ind.emoji}</span>
                   </div>
 
-                  <h3 className="mt-6 font-display text-xl font-semibold text-neutral-900 leading-tight">
-                    {card.title}
+                  <h3 className="mt-4 font-sans text-base font-semibold text-neutral-900">
+                    {ind.title}
                   </h3>
-                  <div className="mt-1 text-xs font-medium text-neutral-500">
-                    Team: {card.teamSize}
-                  </div>
+                  <p className="mt-1.5 text-xs text-neutral-600 leading-relaxed font-normal">
+                    {ind.desc}
+                  </p>
 
-                  <hr className="my-4 border-neutral-100" />
-
-                  <div className="space-y-3">
-                    <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-red-500">The Problem:</span>
-                      <p className="mt-1 text-xs text-neutral-600 leading-relaxed">{card.pain}</p>
-                    </div>
-                    <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-600">The Infrastructure:</span>
-                      <p className="mt-1 text-xs text-neutral-800 font-medium leading-relaxed">{card.solution}</p>
-                    </div>
+                  <div className="mt-3 pt-3 border-t border-neutral-100 space-y-1">
+                    {ind.features.map((feat) => (
+                      <div key={feat} className="flex items-center gap-1.5 text-[11px] text-neutral-500">
+                        <span className="w-1 h-1 rounded-full bg-[#ff7a00]" />
+                        <span>{feat}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <Link
-                  to="/book"
-                  className="mt-6 flex items-center justify-between rounded-xl bg-neutral-50 p-3 text-xs font-semibold text-neutral-900 transition hover:bg-brand hover:text-white"
-                >
-                  <span>Build For My Agency</span>
-                  <ArrowRight className="size-4" />
-                </Link>
-              </div>
+                <div className="mt-5 pt-2">
+                  <Link
+                    to="/book"
+                    className="inline-flex w-full items-center justify-between rounded-lg bg-neutral-50 px-3 py-2 text-xs font-semibold text-neutral-800 transition duration-200 group-hover:bg-[#18181b] group-hover:text-white"
+                  >
+                    <span>Automate My Business</span>
+                    <ArrowRight className="size-3.5" />
+                  </Link>
+                </div>
+              </motion.div>
             );
           })}
         </div>
 
-        {/* Who This Is For vs Who This Is NOT For */}
-        <div className="mt-16 rounded-3xl border border-neutral-200 bg-neutral-50 p-6 md:p-10 shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
-          <div className="grid gap-8 lg:grid-cols-2">
-            {/* Left: Who This IS For */}
-            <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.03] p-6 md:p-8">
-              <div className="flex items-center gap-3">
-                <div className="grid size-8 place-items-center rounded-full bg-emerald-500 text-white">
-                  <Check className="size-5" />
-                </div>
-                <h3 className="font-display text-xl font-bold text-neutral-900">Who This IS Built For</h3>
-              </div>
-              <ul className="mt-6 space-y-3 text-sm text-neutral-700">
-                <li className="flex items-start gap-2.5">
-                  <Check className="size-4 shrink-0 text-emerald-600 mt-0.5" />
-                  <span>Agencies doing <strong>$50k to $500k+/month</strong> with established service offerings</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Check className="size-4 shrink-0 text-emerald-600 mt-0.5" />
-                  <span>Teams with 10–50+ clients suffering from manual delivery and onboarding bottlenecks</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Check className="size-4 shrink-0 text-emerald-600 mt-0.5" />
-                  <span>Founders who want to scale revenue 3x without doubling operational headcount</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Check className="size-4 shrink-0 text-emerald-600 mt-0.5" />
-                  <span>Operators who demand 100% code ownership with zero proprietary vendor lock-in</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Right: Who This IS NOT For */}
-            <div className="rounded-2xl border border-rose-500/20 bg-rose-500/[0.03] p-6 md:p-8">
-              <div className="flex items-center gap-3">
-                <div className="grid size-8 place-items-center rounded-full bg-rose-500 text-white">
-                  <X className="size-5" />
-                </div>
-                <h3 className="font-display text-xl font-bold text-neutral-900">Who This IS NOT For</h3>
-              </div>
-              <ul className="mt-6 space-y-3 text-sm text-neutral-700">
-                <li className="flex items-start gap-2.5">
-                  <X className="size-4 shrink-0 text-rose-500 mt-0.5" />
-                  <span>Pre-revenue freelancers looking for $50 ChatGPT prompt tricks</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <X className="size-4 shrink-0 text-rose-500 mt-0.5" />
-                  <span>Businesses looking for a generic offshore dev shop to outsource basic coding</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <X className="size-4 shrink-0 text-rose-500 mt-0.5" />
-                  <span>Teams expecting magical &ldquo;1-click AI button&rdquo; solutions without proper process mapping</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <X className="size-4 shrink-0 text-rose-500 mt-0.5" />
-                  <span>Companies refusing to standardize their core client onboarding and delivery SOPs</span>
-                </li>
-              </ul>
-            </div>
+        {/* Bottom Industry Callout Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-8 rounded-2xl border border-neutral-200 bg-gradient-to-r from-neutral-900 via-neutral-900 to-neutral-800 p-5 sm:p-6 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-5"
+        >
+          <div className="text-center sm:text-left">
+            <h4 className="font-sans text-base sm:text-lg font-bold tracking-tight">
+              Don't see your industry?
+            </h4>
+            <p className="mt-1 text-xs sm:text-sm text-neutral-300 font-sans max-w-xl">
+              We can still identify your best automation opportunities and build custom workflow engines tailored to your exact business needs.
+            </p>
           </div>
-        </div>
+
+          <Link to="/book" className="shrink-0">
+            <button className="rounded-xl bg-white px-5 py-2.5 text-xs sm:text-sm font-semibold text-neutral-900 shadow-xs transition-all duration-200 hover:bg-neutral-100 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center gap-2">
+              <span>Get Free Automation Audit</span>
+              <ArrowRight className="size-3.5 text-neutral-900" />
+            </button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

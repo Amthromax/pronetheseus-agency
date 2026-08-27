@@ -1,59 +1,50 @@
 import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { ScrollReveal } from "@/components/fx/ScrollReveal";
-import { SplitText } from "@/components/fx/SplitText";
 
-interface TestimonialCard {
-  company: string;
-  quote: string;
+interface CaseStudyCard {
+  client: string;
+  industry: string;
+  problem: string;
+  system: string;
+  result: string;
+  testimonial: string;
   author: string;
   authorTitle: string;
 }
 
-const TESTIMONIALS: TestimonialCard[] = [
+const CASE_STUDIES: CaseStudyCard[] = [
   {
-    company: "Boardwalk REIT",
-    quote:
-      "At Boardwalk, our commitment has always been to put residents first. Partnering with Pronetheseus amplified our ability to deliver empathetic, timely service at scale. This is more than technology; it's a foundation for a smarter, more connected community experience.",
-    author: "Karine Dal Collo",
-    authorTitle: "VP, Resident Experience",
+    client: "Apex Plumbing & HVAC",
+    industry: "Home Services (12 Techs)",
+    problem: "40% of emergency inbound calls after 6 PM went to voicemail, missing lucrative repair contracts.",
+    system: "Voice AI Call Assistant & SMS Speed-to-Lead Agent",
+    result: "47 hours/month saved • +18 emergency jobs booked/mo",
+    testimonial: "We used to lose high-value weekend service calls because no one answered immediately. The AI agent now qualifies and books emergency slots directly into our dispatch calendar in under 45 seconds.",
+    author: "Dave Reynolds",
+    authorTitle: "Operations Director",
   },
   {
-    company: "Autodoc",
-    quote:
-      "We are passionate about using technology to empower our people. That's why we partnered with Pronetheseus to integrate AI into our customer and employee support operations. We have observed 74% first-call resolution and significant savings. Our people are happier. We are excited about the simplicity, potential, and benefits AI for Work bring to the table.",
-    author: "Dmitri Rosenberg",
-    authorTitle: "Head of Customer Operations",
+    client: "BrightSmile Dental Studio",
+    industry: "Dental Practice (3 Locations)",
+    problem: "25% patient appointment no-show rate and staff spent 15+ hours/week making manual phone reminder calls.",
+    system: "Automated WhatsApp & SMS Cadence with 2-way Rescheduling",
+    result: "32% faster lead response • 94% patient attendance rate",
+    testimonial: "Our front desk staff can finally focus on patient care instead of spending hours on the phone chasing confirmations. No-shows dropped almost to zero within 30 days.",
+    author: "Dr. Sarah Lin",
+    authorTitle: "Managing Partner",
   },
   {
-    company: "AMD",
-    quote:
-      "We knew this wasn't just about automating tasks — it was about creating a smarter, more intuitive HR experience. By designing with our employees in mind, we've built a solution that's fast, reliable, and ready to evolve with our business.",
-    author: "Sarah Lin",
-    authorTitle: "Global HR Technology Lead",
-  },
-  {
-    company: "Guidewell",
-    quote:
-      "This is about raising the bar—not just implementing technology, but evolving how we deliver healthcare support. With Pronetheseus, we've moved from siloed experiences to a true ecosystem that's modern, scalable, and member-centric.",
-    author: "Anne Hoverson",
-    authorTitle: "VP, Digital Transformation & Strategy",
-  },
-  {
-    company: "Inception",
-    quote:
-      "Partnering with Pronetheseus aligns perfectly with our mission to develop AI-powered solutions that drive real business value to the customers in UAE and rest of the world.",
-    author: "Dr. Tariq Al Mansoori",
-    authorTitle: "Chief AI Architect",
-  },
-  {
-    company: "Deutsche Bank",
-    quote:
-      "I have the privilege of leading Deutsche Bank's AI transformation journey—from initial pilots in one region to cross-border jurisdiction deployments in 2025.",
-    author: "Marcus Weber",
-    authorTitle: "Global Head of AI Operations",
+    client: "Vanguard Realty Group",
+    industry: "Real Estate Brokerage (18 Agents)",
+    problem: "Inbound portal leads sat uncontacted for hours, causing high lead decay and lost property commissions.",
+    system: "Sub-minute WhatsApp Qualifying Bot & CRM Auto-Sync Engine",
+    result: "3.2× ROI on ad spend • 14 extra buyer tours booked/mo",
+    testimonial: "Speed is everything in real estate. Having an autonomous AI SDR qualify buyers on WhatsApp in 30 seconds doubled our agent tour bookings in the first month.",
+    author: "Marcus Vance",
+    authorTitle: "Principal Broker",
   },
 ];
 
@@ -68,93 +59,129 @@ export function Testimonials() {
   };
 
   return (
-    <section id="customer-testimonials" className="relative bg-[#FAFAFA] py-14 sm:py-20 text-neutral-900 overflow-hidden border-y border-neutral-200/80">
-      {/* Header Container */}
-      <div className="mx-auto max-w-[1600px] px-6 sm:px-10 lg:px-16">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+    <section id="customer-testimonials" className="relative bg-[#FAFAFA] py-16 sm:py-24 text-neutral-900 overflow-hidden border-y border-neutral-200">
+      <div className="container-pad mx-auto max-w-[1400px]">
+        {/* Header Container */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
-            <ScrollReveal variant="heading">
-              <h2 className="font-display text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-[44px] leading-tight">
-                <SplitText text="Customer testimonials" />
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal variant="text" delay={0.15}>
-              <p className="mt-2 text-sm font-normal text-neutral-600 sm:text-base">
-                Discover how organizations deliver AI value with Pronetheseus.
-              </p>
-            </ScrollReveal>
+            <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-3.5 py-1 text-xs font-mono font-semibold text-[#ff7a00] border border-orange-200/60 uppercase">
+              <Sparkles className="size-3.5" />
+              Built for businesses ready to automate.
+            </div>
+            <h2 className="mt-3.5 font-serif text-3xl font-normal tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
+              Proven System Results & Case Studies
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-neutral-600 font-sans max-w-2xl">
+              Real problem-to-result breakdowns demonstrating how service businesses eliminate operational drag.
+            </p>
           </div>
 
           {/* Prev / Next Navigation Arrows */}
           <div className="flex items-center gap-3 shrink-0">
             <motion.button
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.94 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => scroll("left")}
-              aria-label="Previous testimonial"
-              className="size-11 rounded-md border border-neutral-300 bg-white flex items-center justify-center text-neutral-800 shadow-2xs transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:shadow-sm cursor-pointer"
+              aria-label="Previous story"
+              className="size-11 rounded-xl border border-neutral-300 bg-white flex items-center justify-center text-neutral-800 shadow-2xs transition-all duration-200 hover:bg-neutral-100 cursor-pointer"
             >
               <ChevronLeft className="size-5" />
             </motion.button>
             <motion.button
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.94 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => scroll("right")}
-              aria-label="Next testimonial"
-              className="size-11 rounded-md border border-neutral-300 bg-white flex items-center justify-center text-neutral-800 shadow-2xs transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:shadow-sm cursor-pointer"
+              aria-label="Next story"
+              className="size-11 rounded-xl border border-neutral-300 bg-white flex items-center justify-center text-neutral-800 shadow-2xs transition-all duration-200 hover:bg-neutral-100 cursor-pointer"
             >
               <ChevronRight className="size-5" />
             </motion.button>
           </div>
         </div>
-      </div>
 
-      {/* Edge-to-Edge Cards Carousel */}
-      <div
-        ref={scrollRef}
-        className="flex gap-5 sm:gap-6 overflow-x-auto pb-8 pt-2 scrollbar-none snap-x snap-mandatory min-w-0 pl-6 sm:pl-10 lg:pl-16 pr-6 sm:pr-10 lg:pr-16"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-      >
-        {TESTIMONIALS.map((item, idx) => (
-          <ScrollReveal key={idx} variant="card" staggerIndex={idx} staggerStep={0.08}>
-            <motion.div
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative flex min-h-[360px] w-[310px] sm:w-[350px] md:w-[380px] shrink-0 snap-start flex-col justify-between rounded-lg border border-neutral-200 bg-white p-7 sm:p-8 shadow-sm transition-all duration-300 hover:border-[#ff7a00]/50 hover:shadow-xl cursor-pointer"
-            >
-              <div>
-                <h3 className="font-display text-2xl font-bold text-neutral-900 tracking-tight transition-colors group-hover:text-black">
-                  {item.company}
-                </h3>
-                <p className="mt-6 text-xs sm:text-sm text-neutral-700 font-normal leading-relaxed transition-colors group-hover:text-neutral-800">
-                  "{item.quote}"
-                </p>
-              </div>
+        {/* Client -> Problem -> System -> Result -> Testimonial Grid */}
+        <div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto pb-8 pt-2 scrollbar-none snap-x snap-mandatory min-w-0"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {CASE_STUDIES.map((item, idx) => (
+            <ScrollReveal key={idx} variant="card" staggerIndex={idx} staggerStep={0.1}>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative flex min-h-[460px] w-[340px] sm:w-[420px] md:w-[440px] shrink-0 snap-start flex-col justify-between rounded-3xl border border-neutral-200 bg-white p-7 sm:p-8 shadow-sm transition-all duration-300 hover:border-neutral-300 hover:shadow-md cursor-pointer"
+              >
+                <div>
+                  {/* Top Client & Industry */}
+                  <div className="flex items-center justify-between pb-4 border-b border-neutral-100">
+                    <div>
+                      <h3 className="font-sans text-lg font-bold text-neutral-900 tracking-tight">
+                        {item.client}
+                      </h3>
+                      <span className="text-xs text-neutral-500 font-mono">{item.industry}</span>
+                    </div>
+                  </div>
 
-              <div className="mt-6 pt-4 border-t border-black/5">
-                <span className="text-xs font-bold text-neutral-900 block tracking-tight">
-                  {item.author}
-                </span>
-                <span className="text-[11px] font-medium text-neutral-500 block leading-tight mt-0.5">
-                  {item.authorTitle}
-                </span>
-              </div>
-            </motion.div>
-          </ScrollReveal>
-        ))}
-      </div>
+                  {/* 4-Step Breakdown Stack */}
+                  <div className="mt-5 space-y-3 font-sans text-xs">
+                    <div className="p-2.5 rounded-xl bg-red-50/60 border border-red-100">
+                      <span className="font-mono font-bold text-red-600 uppercase text-[10px] block mb-0.5">
+                        Problem
+                      </span>
+                      <span className="text-neutral-700 leading-snug block">{item.problem}</span>
+                    </div>
 
-      {/* Bottom CTA Button Container */}
-      <div className="mx-auto max-w-[1600px] px-6 sm:px-10 lg:px-16 mt-6">
-        <ScrollReveal variant="button">
+                    <div className="p-2.5 rounded-xl bg-blue-50/60 border border-blue-100">
+                      <span className="font-mono font-bold text-blue-600 uppercase text-[10px] block mb-0.5">
+                        Deployed System
+                      </span>
+                      <span className="text-neutral-800 font-medium leading-snug block">{item.system}</span>
+                    </div>
+
+                    <div className="p-2.5 rounded-xl bg-emerald-50/60 border border-emerald-100">
+                      <span className="font-mono font-bold text-emerald-600 uppercase text-[10px] block mb-0.5">
+                        Result
+                      </span>
+                      <span className="text-neutral-900 font-bold leading-snug block">{item.result}</span>
+                    </div>
+                  </div>
+
+                  {/* Testimonial Quote */}
+                  <div className="mt-5 pt-4 border-t border-neutral-100">
+                    <p className="text-xs sm:text-sm text-neutral-700 font-normal italic leading-relaxed">
+                      "{item.testimonial}"
+                    </p>
+                  </div>
+                </div>
+
+                {/* Author Info */}
+                <div className="mt-6 pt-3 border-t border-neutral-100 flex items-center justify-between">
+                  <div>
+                    <span className="text-xs font-bold text-neutral-900 block font-sans">
+                      {item.author}
+                    </span>
+                    <span className="text-[11px] font-medium text-neutral-500 block leading-tight">
+                      {item.authorTitle}
+                    </span>
+                  </div>
+                  <CheckCircle2 className="size-4 text-emerald-600" />
+                </div>
+              </motion.div>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        {/* Bottom Callout Button */}
+        <div className="mt-8 text-center">
           <Link
-            to="/case-studies"
-            className="inline-flex items-center gap-2 rounded-lg bg-neutral-950 px-5 py-3 text-xs font-semibold uppercase tracking-wider text-white shadow-xs transition-all duration-300 hover:bg-neutral-800 hover:scale-[1.02]"
+            to="/book"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#18181b] px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-white shadow-xs transition-all duration-200 hover:bg-black hover:scale-[1.01]"
           >
-            <span>MORE CUSTOMER STORIES</span>
-            <span className="size-1.5 rounded-full bg-white ml-0.5" />
+            <span>Get Your Free Automation Audit</span>
+            <ArrowRight className="size-4 text-white" />
           </Link>
-        </ScrollReveal>
+        </div>
       </div>
     </section>
   );

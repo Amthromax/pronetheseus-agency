@@ -1,60 +1,87 @@
 import { ScrollReveal } from "@/components/fx/ScrollReveal";
 import { SectionHeading } from "./SectionHeading";
 import { motion } from "motion/react";
+import { Clock, Zap, CalendarCheck, TrendingUp } from "lucide-react";
 
 const METRICS_LIST = [
   {
-    value: "300%",
-    label: "Client Capacity Boost",
-    desc: "Scale active client retainers from 15 to 45 with zero extra operations hires."
+    value: "47 hrs/mo",
+    label: "Monthly Hours Saved",
+    desc: "Reclaim founder and staff time previously lost to manual lead triage & repetitive data entry.",
+    icon: Clock,
+    badge: "Time Reclaimed"
   },
   {
-    value: "90%",
-    label: "Faster Client Onboarding",
-    desc: "Client onboarding setup time cut from 14 days down to 15 minutes automatically."
+    value: "32%",
+    label: "Faster Lead Response",
+    desc: "Sub-60s multi-channel speed-to-lead response across web forms, SMS, and WhatsApp.",
+    icon: Zap,
+    badge: "Speed to Lead"
   },
   {
-    value: "120+ Hrs",
-    label: "Monthly Hours Reclaimed",
-    desc: "Reclaim account director & founder hours previously lost to manual reporting."
+    value: "18+",
+    label: "Additional Appointments/Mo",
+    desc: "Capture after-hours leads and automatically qualify and schedule them directly onto calendars.",
+    icon: CalendarCheck,
+    badge: "Pipeline Growth"
   },
   {
-    value: "40%+",
-    label: "Net Margin Expansion",
-    desc: "Drastically increase profit margins by eliminating operational labor redundancy."
+    value: "3.2×",
+    label: "Measured ROI",
+    desc: "Demonstrated return on investment within 90 days of deploying core AI revenue systems.",
+    icon: TrendingUp,
+    badge: "P&L Impact"
   }
 ];
 
 export function ExpectedOutcomes() {
   return (
-    <section id="expected-outcomes" className="relative bg-white py-16 text-neutral-900 md:py-24 border-y border-black/[0.05]">
+    <section id="expected-outcomes" className="relative bg-white py-10 text-neutral-900 md:py-14 border-y border-neutral-200">
       <div className="container-pad mx-auto max-w-[1400px]">
         <SectionHeading
-          title="What outcome can your agency expect?"
-          description="Hard, measurable operational benchmarks delivered directly to your P&L within 30 days of deployment."
+          title="Measurable Operational Proof"
+          description="Concrete benchmarks observed across active service business automation deployments."
         />
 
-        {/* 4 Metrics Cards */}
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {METRICS_LIST.map((m, idx) => (
-            <ScrollReveal key={idx} variant="card" staggerIndex={idx} staggerStep={0.09}>
-              <motion.div
-                whileHover={{ scale: 1.03, y: -5 }}
-                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative rounded-lg border border-neutral-200/90 bg-neutral-50/90 p-6 md:p-8 transition-all duration-300 hover:border-brand/40 hover:bg-white hover:shadow-[0_20px_50px_-15px_rgba(255,122,0,0.15)] backdrop-blur-md h-full flex flex-col justify-between"
-              >
-                <div>
-                  <div className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-gradient-brand tabular-nums">
-                    {m.value}
-                  </div>
-                  <h3 className="mt-4 font-display text-lg font-semibold tracking-tight text-neutral-900">{m.label}</h3>
-                  <p className="mt-2 text-xs md:text-sm text-neutral-600 leading-relaxed font-normal">{m.desc}</p>
-                </div>
+        {/* 4 Measurable Proof Metrics Cards: Horizontal Scroll on Mobile ONLY, Grid on Desktop */}
+        <div className="mt-8 sm:mt-10 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 sm:pb-0">
+          {METRICS_LIST.map((m, idx) => {
+            const Icon = m.icon;
+            return (
+              <div key={idx} className="shrink-0 w-[260px] xs:w-[280px] sm:w-auto snap-center flex flex-col">
+                <ScrollReveal variant="card" staggerIndex={idx} staggerStep={0.09} className="h-full w-full">
+                  <motion.div
+                    whileHover={{ scale: 1.02, y: -4 }}
+                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    className="group relative rounded-2xl border border-neutral-200/90 bg-[#fafafa] p-5 md:p-6 transition-all duration-300 hover:border-neutral-300 hover:bg-white hover:shadow-md h-full flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex size-9 items-center justify-center rounded-xl bg-orange-500/10 text-[#ff7a00] border border-orange-500/20">
+                          <Icon className="size-4" />
+                        </div>
+                        <span className="text-[10px] font-mono font-medium tracking-wide uppercase px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600 border border-neutral-200">
+                          {m.badge}
+                        </span>
+                      </div>
 
-                <div className="mt-6 h-1 w-0 bg-gradient-to-r from-[#ff7a00] to-[#c2410c] transition-all duration-500 group-hover:w-full rounded-full" />
-              </motion.div>
-            </ScrollReveal>
-          ))}
+                      <div className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 tabular-nums">
+                        {m.value}
+                      </div>
+                      <h3 className="mt-2 font-sans text-sm sm:text-base font-semibold tracking-tight text-neutral-900">
+                        {m.label}
+                      </h3>
+                      <p className="mt-1.5 text-xs text-neutral-600 leading-relaxed font-normal">
+                        {m.desc}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 h-1 w-0 bg-[#ff7a00] transition-all duration-300 group-hover:w-full rounded-full" />
+                  </motion.div>
+                </ScrollReveal>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

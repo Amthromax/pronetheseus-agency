@@ -1,24 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { CaseStudies } from "@/components/sections/CaseStudies";
 import { ContactCTA } from "@/components/sections/ContactCTA";
-import { SectionHeading } from "@/components/sections/SectionHeading";
 
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
     meta: [
-      { title: "Case Studies — Pronetheseus" },
-      { name: "description", content: "Measurable results from teams who chose to build with us." },
-      { property: "og:title", content: "Case Studies — Pronetheseus" },
-      { property: "og:description", content: "ROI, hours saved, and revenue lift — the outcomes we deliver." },
+      { title: "Proven System Results & Case Studies — Pronetheseus" },
+      { name: "description", content: "Real problem-to-result breakdowns demonstrating how service businesses eliminate operational drag." },
+      { property: "og:title", content: "Case Studies & Results — Pronetheseus" },
+      { property: "og:description", content: "ROI, hours saved, and lead response benchmarks for service businesses." },
       { property: "og:url", content: "/case-studies" },
     ],
     links: [{ rel: "canonical", href: "/case-studies" }],
   }),
-  component: () => (
+  component: CaseStudiesPage,
+});
+
+function CaseStudiesPage() {
+  return (
     <>
-      <div className="pt-20" />
+      <div className="pt-20 md:pt-28" />
+      <Testimonials />
       <CaseStudies />
       <ContactCTA />
     </>
-  ),
-});
+  );
+}

@@ -1,24 +1,31 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { WhoWeHelp } from "@/components/sections/WhoWeHelp";
+import { FlagshipProduct } from "@/components/sections/FlagshipProduct";
 import { Industries } from "@/components/sections/Industries";
 import { ContactCTA } from "@/components/sections/ContactCTA";
-import { SectionHeading } from "@/components/sections/SectionHeading";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
-      { title: "Industries — Pronetheseus" },
-      { name: "description", content: "AI automation playbooks tuned to your industry." },
-      { property: "og:title", content: "Industries — Pronetheseus" },
-      { property: "og:description", content: "Playbooks for healthcare, real estate, finance, SaaS, and more." },
+      { title: "Industries & AI Revenue Engine — Pronetheseus" },
+      { name: "description", content: "AI automation systems and flagships tailored for Home Services, Dental Clinics, Real Estate, Professional Services, and Marketing Agencies." },
+      { property: "og:title", content: "Industries & AI Revenue Engine — Pronetheseus" },
+      { property: "og:description", content: "Playbooks and AI systems engineered for service businesses." },
       { property: "og:url", content: "/industries" },
     ],
     links: [{ rel: "canonical", href: "/industries" }],
   }),
-  component: () => (
+  component: IndustriesPage,
+});
+
+function IndustriesPage() {
+  return (
     <>
       <div className="pt-24 md:pt-32" />
+      <WhoWeHelp />
+      <FlagshipProduct />
       <Industries />
       <ContactCTA />
     </>
-  ),
-});
+  );
+}

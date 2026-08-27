@@ -1,24 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Services } from "@/components/sections/Services";
+import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { ContactCTA } from "@/components/sections/ContactCTA";
-import { SectionHeading } from "@/components/sections/SectionHeading";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Pronetheseus" },
-      { name: "description", content: "AI agents, n8n automation, CRM automation, voice AI, custom software — and more." },
-      { property: "og:title", content: "Services — Pronetheseus" },
+      { title: "Services & How It Works — Pronetheseus" },
+      { name: "description", content: "AI Revenue Automation, AI Customer Service, AI Operations, and our 5-step automation methodology." },
+      { property: "og:title", content: "Services & Automation Methodology — Pronetheseus" },
       { property: "og:description", content: "Everything we ship. From single-agent deployments to end-to-end business automation." },
       { property: "og:url", content: "/services" },
     ],
     links: [{ rel: "canonical", href: "/services" }],
   }),
-  component: () => (
+  component: ServicesPage,
+});
+
+function ServicesPage() {
+  return (
     <>
       <div className="pt-24 md:pt-32" />
       <Services />
+      <HowItWorksSection />
       <ContactCTA />
     </>
-  ),
-});
+  );
+}

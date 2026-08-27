@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { SectionHeading } from "@/components/sections/SectionHeading";
+import { AutomationAuditSection } from "@/components/sections/AutomationAuditSection";
 import {
   ArrowLeft,
   ArrowRight,
@@ -17,10 +18,10 @@ import {
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Book a Strategy Call — Pronetheseus" },
-      { name: "description", content: "Pick a date and time for your free 30-minute strategy call with the Pronetheseus team." },
-      { property: "og:title", content: "Book a Strategy Call — Pronetheseus" },
-      { property: "og:description", content: "Free 30-minute call. Direct Google Calendar scheduling." },
+      { title: "Get Your Free Automation Audit & Book Call — Pronetheseus" },
+      { name: "description", content: "Get your free AI automation audit and schedule a 30-minute strategy session." },
+      { property: "og:title", content: "Free Automation Audit — Pronetheseus" },
+      { property: "og:description", content: "Free AI automation diagnosis and calendar booking." },
       { property: "og:url", content: "/book" },
     ],
     links: [{ rel: "canonical", href: "/book" }],
@@ -49,15 +50,18 @@ function BookPage() {
   }, []);
 
   return (
-    <div className="pt-36 md:pt-40">
-      <div className="container-pad mx-auto max-w-[1400px]">
+    <div className="pt-28 md:pt-32">
+      {/* Interactive Free Automation Audit Section */}
+      <AutomationAuditSection />
+
+      <div className="container-pad mx-auto max-w-[1400px] mt-12">
         <Link to="/contact" className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition">
           <ArrowLeft className="size-4" /> Back to contact
         </Link>
 
         <div className="mt-4">
           <SectionHeading
-            title={isBooked ? "Booking Confirmed!" : "Book a strategy call"}
+            title={isBooked ? "Booking Confirmed!" : "Schedule Your Audit Review Call"}
             description={
               isBooked
                 ? "Thank you for scheduling a strategy session with Pronetheseus. Here is what happens next."
