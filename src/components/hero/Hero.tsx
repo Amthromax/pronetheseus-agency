@@ -87,43 +87,6 @@ export function Hero() {
             </a>
           </motion.div>
 
-          {/* VISUAL AUTOMATION PROCESS FLOW */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-7 sm:mt-9 w-full max-w-2xl bg-sandel-card/95 backdrop-blur-xl border border-sandel-border rounded-2xl p-4 sm:p-5.5 shadow-lg shadow-neutral-900/5"
-          >
-            {/* Header Badge */}
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-[10px] sm:text-xs font-semibold tracking-wider text-neutral-600 uppercase font-sans">
-                Automated Customer Engine
-              </span>
-              <div className="flex items-center gap-1.5 text-[10px] sm:text-xs font-semibold font-sans text-neutral-700">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a00] animate-pulse" />
-                24/7 Autonomous System
-              </div>
-            </div>
-
-            {/* Clean Monochrome/Orange Workflow Step Badges */}
-            <div className="flex items-center justify-start sm:justify-between gap-1.5 overflow-x-auto py-1 scrollbar-none touch-pan-x">
-              {WORKFLOW_STEPS.map((step, idx) => {
-                const IconComponent = step.icon;
-                return (
-                  <div key={step.label} className="flex items-center gap-1.5 shrink-0">
-                    <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-sandel-border bg-sandel text-neutral-800 text-[11px] sm:text-xs font-semibold tracking-tight shadow-2xs transition-all hover:bg-sandel-card hover:border-[#D5C3AC]">
-                      <IconComponent className="w-3.5 h-3.5 shrink-0 text-[#ff7a00]" />
-                      <span className="whitespace-nowrap">{step.label}</span>
-                    </div>
-                    {idx < WORKFLOW_STEPS.length - 1 && (
-                      <ArrowRight className="w-3.5 h-3.5 text-neutral-400 shrink-0 mx-0.5 opacity-80" />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </motion.div>
-
         </div>
       </div>
     </section>
