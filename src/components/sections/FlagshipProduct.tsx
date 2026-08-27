@@ -72,10 +72,6 @@ export function FlagshipProduct() {
         
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-sandel-border bg-sandel-card px-3 py-0.5 text-xs font-mono font-semibold text-neutral-800 shadow-2xs mb-2.5">
-            <Sparkles className="size-3 text-[#ff7a00]" />
-            <span>FLAGSHIP ARCHITECTURE</span>
-          </div>
           <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">
             Pronetheseus AI Revenue Engine
           </h2>
