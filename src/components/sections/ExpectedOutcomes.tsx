@@ -57,10 +57,8 @@ export function ExpectedOutcomes() {
                   >
                     <div>
                       <div className="flex items-center justify-between mb-3">
-                        <div className="flex size-9 items-center justify-center rounded-xl bg-orange-500/10 text-[#ff7a00] border border-orange-500/20">
-                          <Icon className="size-4" />
-                        </div>
-                        <span className="text-[10px] font-mono font-medium tracking-wide uppercase px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-600 border border-neutral-200">
+                        <Icon className="size-5 text-[#ff7a00]" />
+                        <span className="text-[10px] font-mono font-medium tracking-wide uppercase text-neutral-500">
                           {m.badge}
                         </span>
                       </div>
