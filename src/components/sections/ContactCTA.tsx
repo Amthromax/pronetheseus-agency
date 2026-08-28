@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/fx/ScrollReveal";
 import { SplitText } from "@/components/fx/SplitText";
 import { MagneticButton } from "@/components/fx/MagneticButton";
@@ -13,13 +13,6 @@ export function ContactCTA() {
       </div>
 
       <div className="container-pad relative mx-auto max-w-[1400px] text-center">
-        <ScrollReveal variant="badge" className="mb-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-neutral-300 backdrop-blur-md">
-            <span className="size-1.5 rounded-full bg-brand animate-ping" />
-            Ready for Zero-Touch Operations?
-          </div>
-        </ScrollReveal>
-
         <h2 className="mx-auto max-w-4xl font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
           <SplitText text="Transform Your Agency Delivery Infrastructure in 3 Weeks." />
         </h2>
@@ -47,21 +40,6 @@ export function ContactCTA() {
           >
             <span>Explore Pricing & SLAs</span>
           </Link>
-        </ScrollReveal>
-
-        <ScrollReveal variant="text" delay={0.45} className="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs text-neutral-400 font-medium">
-          <div className="flex items-center gap-1.5">
-            <ShieldCheck className="size-4 text-brand" />
-            <span>100% Code Ownership</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <Zap className="size-4 text-brand" />
-            <span>30-Day SLA Guarantee</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="size-2 rounded-full bg-emerald-400" />
-            <span>Enterprise Security Standards</span>
-          </div>
         </ScrollReveal>
       </div>
     </section>
