@@ -199,15 +199,15 @@ export function Process() {
                         </p>
                       </div>
 
-                      <div className="relative z-10 rounded-2xl border border-sandel-border/80 bg-sandel-card/85 p-4.5 backdrop-blur-md max-w-lg mt-auto shadow-sm">
-                        <div className="text-[10px] font-bold uppercase tracking-wider text-neutral-500">
+                      <div className="relative z-10 rounded-2xl border border-sandel-border bg-sandel-card p-5 max-w-lg mt-auto shadow-md antialiased">
+                        <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-700 font-sans">
                           {card.trustedLabel}
                         </div>
                         <div className="mt-2.5 flex flex-wrap items-center gap-2">
                           {card.logos.map((logo, lIdx) => (
                             <span
                               key={lIdx}
-                              className="rounded-lg border border-sandel-border bg-sandel px-3 py-1 text-[11px] font-medium text-neutral-800 shadow-2xs"
+                              className="rounded-full border border-sandel-border bg-sandel px-3.5 py-1.5 text-xs font-semibold text-neutral-900 shadow-2xs transition-colors hover:border-neutral-400"
                             >
                               {logo}
                             </span>
