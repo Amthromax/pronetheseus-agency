@@ -334,14 +334,6 @@ export function FloatingAppIntegrations() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-20 text-center max-w-2xl mx-auto px-6 py-8 sm:py-10 bg-sandel-card/90 backdrop-blur-xl rounded-[32px] border border-sandel-border shadow-[0_10px_40px_rgba(0,0,0,0.06)] group"
         >
-          {/* Top Pill Badge */}
-          <div className="flex justify-center mb-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-orange-200 bg-orange-50 px-3.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-wider text-[#ff7a00]">
-              <Zap className="size-3 text-[#ff7a00]" />
-              UNIVERSAL INTEGRATION ENGINE
-            </span>
-          </div>
-
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-900 leading-tight sm:leading-none">
             All your go-to apps
           </h2>

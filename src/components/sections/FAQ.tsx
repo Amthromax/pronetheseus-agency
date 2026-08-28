@@ -38,11 +38,7 @@ export function FAQ() {
     <section id="faq" className="relative bg-sandel py-10 sm:py-14 text-neutral-900">
       <div className="container-pad mx-auto max-w-[1400px]">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-sandel-card px-3.5 py-1 text-xs font-mono font-semibold text-neutral-700 border border-sandel-border uppercase">
-            <HelpCircle className="size-3.5 text-[#ff7a00]" />
-            Frequently Asked Questions
-          </div>
-          <h2 className="mt-3 font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900">
+          <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900">
             Frequently Asked Questions
           </h2>
           <p className="mt-2 text-sm sm:text-base text-neutral-600 font-sans max-w-xl mx-auto">
