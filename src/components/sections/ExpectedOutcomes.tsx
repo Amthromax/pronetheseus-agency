@@ -43,8 +43,8 @@ export function ExpectedOutcomes() {
           description="Concrete benchmarks observed across active service business and agency automation deployments."
         />
 
-        {/* 4 Measurable Proof Metrics Cards: Horizontal Scroll on Mobile ONLY, Grid on Desktop */}
-        <div className="mt-8 sm:mt-10 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 sm:pb-0">
+        {/* 4 Measurable Proof Metrics Cards: Apple Design System (rounded-32px squircle, pill badges) */}
+        <div className="mt-8 sm:mt-10 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 sm:pb-0 font-sans">
           {METRICS_LIST.map((m, idx) => {
             const Icon = m.icon;
             return (
@@ -53,20 +53,22 @@ export function ExpectedOutcomes() {
                   <motion.div
                     whileHover={{ scale: 1.02, y: -4 }}
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    className="group relative rounded-2xl border border-sandel-border bg-sandel-card p-5 md:p-6 transition-all duration-300 hover:border-neutral-400 hover:bg-[#FFFBF5] hover:shadow-md h-full flex flex-col justify-between"
+                    className="group relative rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card p-6 md:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.09)] hover:border-neutral-300/80 transition-all duration-300 h-full flex flex-col justify-between"
                   >
                     <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <Icon className="size-5 text-[#ff7a00]" />
-                        <span className="text-[10px] font-mono font-medium tracking-wide uppercase text-neutral-500">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex size-9 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-black/5 text-[#ff7a00] shadow-2xs">
+                          <Icon className="size-4" />
+                        </div>
+                        <span className="rounded-full bg-white/80 backdrop-blur-sm px-3 py-1 text-[10px] font-mono font-semibold tracking-wide uppercase text-neutral-600 border border-black/5 shadow-2xs">
                           {m.badge}
                         </span>
                       </div>
 
-                      <div className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 tabular-nums">
+                      <div className="font-sans text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 tabular-nums">
                         {m.value}
                       </div>
-                      <h3 className="mt-2 font-sans text-sm sm:text-base font-semibold tracking-tight text-neutral-900">
+                      <h3 className="mt-2 font-sans text-sm sm:text-base font-bold tracking-tight text-neutral-900">
                         {m.label}
                       </h3>
                       <p className="mt-1.5 text-xs text-neutral-600 leading-relaxed font-normal">
@@ -74,7 +76,7 @@ export function ExpectedOutcomes() {
                       </p>
                     </div>
 
-                    <div className="mt-4 h-1 w-0 bg-[#ff7a00] transition-all duration-300 group-hover:w-full rounded-full" />
+                    <div className="mt-5 h-1 w-0 bg-[#ff7a00] transition-all duration-300 group-hover:w-full rounded-full" />
                   </motion.div>
                 </ScrollReveal>
               </div>
