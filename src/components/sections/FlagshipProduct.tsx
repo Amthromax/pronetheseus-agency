@@ -95,10 +95,10 @@ export function FlagshipProduct() {
               </p>
             </div>
             
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-mono font-semibold text-emerald-800">
+            <div className="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold text-neutral-600">
               <span className="relative flex size-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex size-1.5 rounded-full bg-emerald-500"></span>
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff7a00] opacity-75"></span>
+                <span className="relative inline-flex size-1.5 rounded-full bg-[#ff7a00]"></span>
               </span>
               <span>100% Autonomous Pipeline Active</span>
             </div>
