@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
-import { Search, Compass, Cpu, Rocket, Sliders, ArrowRight, Sparkles } from "lucide-react";
+import { Search, Compass, Cpu, Rocket, Sliders, ArrowRight } from "lucide-react";
 
 const STEPS = [
   {
@@ -46,10 +46,6 @@ export function HowItWorksSection() {
       <div className="container-pad mx-auto max-w-[1400px]">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-3.5 py-1 text-xs font-mono font-semibold text-[#ff7a00] border border-orange-200/60 uppercase">
-            <Sparkles className="size-3.5" />
-            From manual work to automated systems
-          </div>
           <h2 className="mt-4 font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-neutral-900">
             How It Works
           </h2>
