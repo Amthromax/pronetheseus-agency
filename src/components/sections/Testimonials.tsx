@@ -13,6 +13,7 @@ interface CaseStudyCard {
   testimonial: string;
   author: string;
   authorTitle: string;
+  slug: string;
 }
 
 const CASE_STUDIES: CaseStudyCard[] = [
@@ -25,6 +26,7 @@ const CASE_STUDIES: CaseStudyCard[] = [
     testimonial: "We used to lose high-value weekend service calls because no one answered immediately. The AI agent now qualifies and books emergency slots directly into our dispatch calendar in under 45 seconds.",
     author: "Dave Reynolds",
     authorTitle: "Operations Director",
+    slug: "energy-giant-ai-voice",
   },
   {
     client: "BrightSmile Dental Studio",
@@ -35,6 +37,7 @@ const CASE_STUDIES: CaseStudyCard[] = [
     testimonial: "Our front desk staff can finally focus on patient care instead of spending hours on the phone chasing confirmations. No-shows dropped almost to zero within 30 days.",
     author: "Dr. Sarah Lin",
     authorTitle: "Managing Partner",
+    slug: "ecuador-insurer-transformation",
   },
   {
     client: "Vanguard Realty Group",
@@ -45,6 +48,7 @@ const CASE_STUDIES: CaseStudyCard[] = [
     testimonial: "Speed is everything in real estate. Having an autonomous AI SDR qualify buyers on WhatsApp in 30 seconds doubled our agent tour bookings in the first month.",
     author: "Marcus Vance",
     authorTitle: "Principal Broker",
+    slug: "financial-institution-modernization",
   },
 ];
 
@@ -103,67 +107,76 @@ export function Testimonials() {
         >
           {CASE_STUDIES.map((item, idx) => (
             <ScrollReveal key={idx} variant="card" staggerIndex={idx} staggerStep={0.1}>
-              <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative flex min-h-[460px] w-[340px] sm:w-[420px] md:w-[440px] shrink-0 snap-start flex-col justify-between rounded-3xl border border-sandel-border bg-sandel-card p-7 sm:p-8 shadow-sm transition-all duration-300 hover:border-neutral-400 hover:shadow-md cursor-pointer"
+              <Link
+                to="/case-studies/$slug"
+                params={{ slug: item.slug }}
+                className="block cursor-pointer h-full"
               >
-                <div>
-                  {/* Top Client & Industry */}
-                  <div className="flex items-center justify-between pb-4 border-b border-sandel-border/60">
-                    <div>
-                      <h3 className="font-sans text-lg font-bold text-neutral-900 tracking-tight">
-                        {item.client}
-                      </h3>
-                      <span className="text-xs text-neutral-500 font-mono">{item.industry}</span>
-                    </div>
-                  </div>
-
-                  {/* 4-Step Breakdown Stack */}
-                  <div className="mt-5 space-y-3 font-sans text-xs">
-                    <div className="p-2.5 rounded-xl bg-red-50/60 border border-red-100">
-                      <span className="font-mono font-bold text-red-600 uppercase text-[10px] block mb-0.5">
-                        Problem
-                      </span>
-                      <span className="text-neutral-700 leading-snug block">{item.problem}</span>
-                    </div>
-
-                    <div className="p-2.5 rounded-xl bg-blue-50/60 border border-blue-100">
-                      <span className="font-mono font-bold text-blue-600 uppercase text-[10px] block mb-0.5">
-                        Deployed System
-                      </span>
-                      <span className="text-neutral-800 font-medium leading-snug block">{item.system}</span>
-                    </div>
-
-                    <div className="p-2.5 rounded-xl bg-emerald-50/60 border border-emerald-100">
-                      <span className="font-mono font-bold text-emerald-600 uppercase text-[10px] block mb-0.5">
-                        Result
-                      </span>
-                      <span className="text-neutral-900 font-bold leading-snug block">{item.result}</span>
-                    </div>
-                  </div>
-
-                  {/* Testimonial Quote */}
-                  <div className="mt-5 pt-4 border-t border-sandel-border/60">
-                    <p className="text-xs sm:text-sm text-neutral-700 font-normal italic leading-relaxed">
-                      "{item.testimonial}"
-                    </p>
-                  </div>
-                </div>
-
-                {/* Author Info */}
-                <div className="mt-6 pt-3 border-t border-sandel-border/60 flex items-center justify-between">
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  className="group relative flex min-h-[460px] w-[340px] sm:w-[420px] md:w-[440px] shrink-0 snap-start flex-col justify-between rounded-3xl border border-sandel-border bg-sandel-card p-7 sm:p-8 shadow-sm transition-all duration-300 hover:border-neutral-400 hover:shadow-md cursor-pointer h-full"
+                >
                   <div>
-                    <span className="text-xs font-bold text-neutral-900 block font-sans">
-                      {item.author}
-                    </span>
-                    <span className="text-[11px] font-medium text-neutral-500 block leading-tight">
-                      {item.authorTitle}
-                    </span>
+                    {/* Top Client & Industry */}
+                    <div className="flex items-center justify-between pb-4 border-b border-sandel-border/60">
+                      <div>
+                        <h3 className="font-sans text-lg font-bold text-neutral-900 tracking-tight group-hover:text-[#ff7a00] transition-colors">
+                          {item.client}
+                        </h3>
+                        <span className="text-xs text-neutral-500 font-mono">{item.industry}</span>
+                      </div>
+                    </div>
+
+                    {/* 4-Step Breakdown Stack */}
+                    <div className="mt-5 space-y-3 font-sans text-xs">
+                      <div className="p-2.5 rounded-xl bg-red-50/60 border border-red-100">
+                        <span className="font-mono font-bold text-red-600 uppercase text-[10px] block mb-0.5">
+                          Problem
+                        </span>
+                        <span className="text-neutral-700 leading-snug block">{item.problem}</span>
+                      </div>
+
+                      <div className="p-2.5 rounded-xl bg-blue-50/60 border border-blue-100">
+                        <span className="font-mono font-bold text-blue-600 uppercase text-[10px] block mb-0.5">
+                          Deployed System
+                        </span>
+                        <span className="text-neutral-800 font-medium leading-snug block">{item.system}</span>
+                      </div>
+
+                      <div className="p-2.5 rounded-xl bg-emerald-50/60 border border-emerald-100">
+                        <span className="font-mono font-bold text-emerald-600 uppercase text-[10px] block mb-0.5">
+                          Result
+                        </span>
+                        <span className="text-neutral-900 font-bold leading-snug block">{item.result}</span>
+                      </div>
+                    </div>
+
+                    {/* Testimonial Quote */}
+                    <div className="mt-5 pt-4 border-t border-sandel-border/60">
+                      <p className="text-xs sm:text-sm text-neutral-700 font-normal italic leading-relaxed">
+                        "{item.testimonial}"
+                      </p>
+                    </div>
                   </div>
-                  <CheckCircle2 className="size-4 text-emerald-600" />
-                </div>
-              </motion.div>
+
+                  {/* Author Info */}
+                  <div className="mt-6 pt-3 border-t border-sandel-border/60 flex items-center justify-between">
+                    <div>
+                      <span className="text-xs font-bold text-neutral-900 block font-sans">
+                        {item.author}
+                      </span>
+                      <span className="text-[11px] font-medium text-neutral-500 block leading-tight">
+                        {item.authorTitle}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1 text-xs font-bold text-[#ff7a00]">
+                      <span>Read Story</span>
+                      <ArrowRight className="size-3.5" />
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
             </ScrollReveal>
           ))}
         </div>
