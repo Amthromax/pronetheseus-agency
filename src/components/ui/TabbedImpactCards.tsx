@@ -340,19 +340,19 @@ export function TabbedImpactCards() {
           </p>
         </div>
 
-        {/* Filter Category Pills Bar */}
-        <div className="mt-10 flex justify-center">
-          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 rounded-full border border-sandel-border bg-sandel-card p-1.5 shadow-sm">
+        {/* Filter Category Pills Bar - Apple HIG */}
+        <div className="mt-10 flex justify-center font-sans">
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 rounded-full border border-white/80 bg-sandel-card p-1.5 shadow-[0_8px_25px_rgb(0,0,0,0.04)] backdrop-blur-md">
             {PRICING_CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`rounded-full px-4 sm:px-5 py-2 text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                  className={`rounded-full px-4 sm:px-5 py-2 text-xs font-bold transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? "bg-[#111827] text-white shadow-md"
-                      : "text-neutral-700 hover:text-neutral-900 hover:bg-sandel"
+                      ? "bg-neutral-900 text-white shadow-md"
+                      : "text-neutral-700 hover:text-neutral-900 hover:bg-white/80"
                   }`}
                 >
                   {cat.label}
@@ -362,8 +362,8 @@ export function TabbedImpactCards() {
           </div>
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="mt-12">
+        {/* 4 Cards Grid - Apple Design System */}
+        <div className="mt-12 font-sans">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
@@ -378,25 +378,23 @@ export function TabbedImpactCards() {
                 return (
                   <div
                     key={card.id}
-                    className={`relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 transition-all duration-500 min-h-[440px] ${
+                    className={`relative flex flex-col justify-between rounded-[28px] sm:rounded-[32px] p-6 sm:p-7 transition-all duration-300 min-h-[440px] ${
                       isHighlight
-                        ? "bg-gradient-to-b from-neutral-800 via-neutral-900 to-black text-white shadow-2xl scale-[1.02] border-2 border-[#ff7a00] z-10"
-                        : "bg-sandel-card border border-sandel-border text-neutral-900 shadow-sm hover:shadow-xl hover:border-neutral-400"
+                        ? "bg-neutral-900 text-white shadow-2xl scale-[1.02] border-2 border-[#ff7a00] z-10"
+                        : "bg-sandel-card border border-white/80 text-neutral-900 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.09)] hover:border-neutral-300/80"
                     }`}
                   >
                     <div>
                       {/* Top Header Row: Type Label & Badge Pill */}
                       <div className="flex items-center justify-between gap-2">
-                        <span className={`text-[10px] font-mono font-semibold uppercase tracking-wider ${
-                          isHighlight ? "text-[#ff7a00]" : "text-[#ff7a00]"
-                        }`}>
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#ff7a00]">
                           {card.type}
                         </span>
                         <span
-                          className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-semibold ${
+                          className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-[10px] font-bold ${
                             isHighlight
-                              ? "bg-[#ff7a00] text-white font-semibold shadow-xs"
-                              : "bg-sandel text-neutral-700 font-medium"
+                              ? "bg-[#ff7a00] text-white shadow-2xs"
+                              : "bg-white/80 backdrop-blur-sm text-neutral-700 border border-black/5 shadow-2xs"
                           }`}
                         >
                           {card.badge}
@@ -405,7 +403,7 @@ export function TabbedImpactCards() {
 
                       {/* Card Title */}
                       <h3
-                        className={`mt-4 font-display text-2xl font-bold tracking-tight ${
+                        className={`mt-4 font-sans text-2xl font-bold tracking-tight ${
                           isHighlight ? "text-white" : "text-neutral-900"
                         }`}
                       >
@@ -414,7 +412,7 @@ export function TabbedImpactCards() {
 
                       {/* Pricing Range & Note */}
                       <div className="mt-3">
-                        <div className={`font-display text-xl sm:text-2xl font-bold tracking-tight ${
+                        <div className={`font-sans text-xl sm:text-2xl font-bold tracking-tight ${
                           isHighlight ? "text-white" : "text-neutral-900"
                         }`}>
                           {card.priceRange}
@@ -435,14 +433,14 @@ export function TabbedImpactCards() {
                         {card.description}
                       </p>
 
-                      <hr className={`my-4 ${isHighlight ? "border-neutral-800" : "border-sandel-border/60"}`} />
+                      <hr className={`my-4 ${isHighlight ? "border-neutral-800" : "border-black/5"}`} />
 
                       {/* Feature Bullet List */}
                       <ul className="space-y-2 text-xs">
                         {card.features.map((feat, fIdx) => (
                           <li key={fIdx} className="flex items-start gap-2 leading-snug">
                             <Check className="size-3.5 shrink-0 text-[#ff7a00] mt-0.5" />
-                            <span className={isHighlight ? "text-neutral-200" : "text-neutral-700"}>
+                            <span className={isHighlight ? "text-neutral-200 font-medium" : "text-neutral-700 font-medium"}>
                               {feat}
                             </span>
                           </li>
@@ -450,14 +448,14 @@ export function TabbedImpactCards() {
                       </ul>
                     </div>
 
-                    {/* Bottom CTA Button */}
+                    {/* Bottom CTA Button - Apple Pill */}
                     <div className="mt-6 pt-2">
                       <Link
                         to="/book"
-                        className={`group inline-flex w-full items-center justify-center gap-2 rounded-full py-3 text-xs font-semibold transition-all ${
+                        className={`group inline-flex w-full items-center justify-center gap-2 rounded-full py-3 text-xs font-bold transition-all duration-300 ${
                           isHighlight
-                            ? "bg-gradient-to-r from-[#ff7a00] to-[#ea580c] text-white shadow-lg hover:scale-[1.01]"
-                            : "bg-[#111111] text-white hover:bg-neutral-800 shadow-xs"
+                            ? "bg-[#ff7a00] text-white shadow-lg hover:bg-[#e06b00] hover:scale-[1.02] active:scale-[0.98]"
+                            : "bg-neutral-900 text-white hover:bg-black shadow-sm"
                         }`}
                       >
                         <Sparkles className="size-3.5 text-orange-200" />

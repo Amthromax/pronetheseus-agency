@@ -55,44 +55,45 @@ function CellView({ v }: { v: Cell }) {
 
 export function PlanComparison() {
   return (
-    <section className="relative py-16 md:py-24 bg-white text-neutral-900">
+    <section className="relative py-16 md:py-24 bg-sandel text-neutral-900 font-sans">
       <div className="container-pad mx-auto max-w-[1400px]">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="text-xs uppercase tracking-[0.2em] text-neutral-500">Compare Offer Scope</div>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
+          <div className="text-xs uppercase tracking-[0.2em] font-mono font-semibold text-[#ff7a00]">Compare Offer Scope</div>
+          <h2 className="mt-3 font-sans text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
             Detailed Capability Comparison
           </h2>
-          <p className="mt-3 text-sm text-neutral-600 md:text-base">
+          <p className="mt-3 text-sm text-neutral-600 md:text-base font-normal">
             All builds include senior principal engineers, weekly demos, and 100% code ownership.
           </p>
         </div>
 
-        <div className="mt-12 overflow-x-auto rounded-3xl border border-neutral-200 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
-          <table className="w-full min-w-[760px] border-collapse text-sm">
-            <thead className="sticky top-0 z-10 bg-white">
-              <tr className="border-b border-neutral-200">
+        {/* Detailed Capability Comparison - Apple Squircle Container */}
+        <div className="mt-12 overflow-x-auto rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+          <table className="w-full min-w-[760px] border-collapse text-sm font-sans">
+            <thead className="sticky top-0 z-10 bg-white/90 backdrop-blur-md">
+              <tr className="border-b border-black/5">
                 <th className="w-[34%] p-5 text-left align-bottom">
-                  <div className="text-xs uppercase tracking-[0.18em] text-neutral-500">Offer Tier</div>
-                  <div className="mt-2 text-base font-semibold text-neutral-900">Capabilities & Deliverables</div>
+                  <div className="text-xs uppercase tracking-[0.18em] font-mono font-semibold text-neutral-500">Offer Tier</div>
+                  <div className="mt-2 text-base font-bold text-neutral-900">Capabilities & Deliverables</div>
                 </th>
                 {plans.map((p) => (
                   <th
                     key={p.key}
-                    className={`w-[22%] p-5 text-center align-bottom ${p.highlight ? "bg-brand/5" : ""}`}
+                    className={`w-[22%] p-5 text-center align-bottom ${p.highlight ? "bg-[#ff7a00]/[0.05]" : ""}`}
                   >
                     <div className="flex items-center justify-center gap-2">
-                      <span className={`text-base font-semibold ${p.highlight ? "text-brand" : "text-neutral-900"}`}>{p.name}</span>
+                      <span className={`text-base font-bold ${p.highlight ? "text-[#ff7a00]" : "text-neutral-900"}`}>{p.name}</span>
                       {p.highlight && "badge" in p && (
-                        <span className="rounded-full bg-brand px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-white">
+                        <span className="rounded-full bg-[#ff7a00] px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider text-white shadow-2xs">
                           {p.badge}
                         </span>
                       )}
                     </div>
                     <div className="mt-2 flex items-baseline justify-center gap-1">
-                      <span className="font-display text-xl md:text-2xl font-bold text-neutral-900">{p.price}</span>
-                      {p.suffix && <span className="text-xs text-neutral-500">{p.suffix}</span>}
+                      <span className="font-sans text-xl md:text-2xl font-bold text-neutral-900">{p.price}</span>
+                      {p.suffix && <span className="text-xs text-neutral-500 font-normal">{p.suffix}</span>}
                     </div>
-                    <div className="mt-1 text-[11px] text-neutral-500">{p.best}</div>
+                    <div className="mt-1 text-[11px] text-neutral-500 font-normal">{p.best}</div>
                   </th>
                 ))}
               </tr>
@@ -104,38 +105,38 @@ export function PlanComparison() {
                   <tr>
                     <td
                       colSpan={4}
-                      className="border-y border-neutral-200 bg-neutral-50 px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-600"
+                      className="border-y border-black/5 bg-neutral-100/70 px-5 py-3 text-xs font-mono font-bold uppercase tracking-[0.16em] text-neutral-700"
                     >
                       {g.title}
                     </td>
                   </tr>
                   {g.rows.map((r, i) => (
-                    <tr key={`${g.title}-${i}`} className="border-b border-neutral-100 last:border-b-0">
+                    <tr key={`${g.title}-${i}`} className="border-b border-black/5 last:border-b-0">
                       <td className="p-5 align-top">
-                        <div className="font-medium text-neutral-900">{r.label}</div>
-                        {r.hint && <div className="mt-0.5 text-xs text-neutral-500">{r.hint}</div>}
+                        <div className="font-bold text-neutral-900">{r.label}</div>
+                        {r.hint && <div className="mt-0.5 text-xs text-neutral-500 font-normal">{r.hint}</div>}
                       </td>
                       <td className="p-5 text-center align-middle"><CellView v={r.setup} /></td>
-                      <td className="bg-brand/[0.04] p-5 text-center align-middle"><CellView v={r.monthly} /></td>
+                      <td className="bg-[#ff7a00]/[0.04] p-5 text-center align-middle"><CellView v={r.monthly} /></td>
                       <td className="p-5 text-center align-middle"><CellView v={r.enterprise} /></td>
                     </tr>
                   ))}
                 </Fragment>
               ))}
 
-              <tr className="border-t border-neutral-200 bg-neutral-50/60">
+              <tr className="border-t border-black/5 bg-white/60">
                 <td className="p-5 align-middle">
-                  <div className="text-sm font-medium text-neutral-900">Ready to build your agency OS?</div>
-                  <div className="mt-0.5 text-xs text-neutral-500">Free 30-min strategy call. Concrete plan, no fluff.</div>
+                  <div className="text-sm font-bold text-neutral-900">Ready to build your agency OS?</div>
+                  <div className="mt-0.5 text-xs text-neutral-500 font-normal">Free 30-min strategy call. Concrete plan, no fluff.</div>
                 </td>
                 {plans.map((p) => (
-                  <td key={`cta-${p.key}`} className={`p-4 text-center align-middle ${p.highlight ? "bg-brand/5" : ""}`}>
+                  <td key={`cta-${p.key}`} className={`p-4 text-center align-middle ${p.highlight ? "bg-[#ff7a00]/[0.05]" : ""}`}>
                     <Link
                       to="/book"
-                      className={`inline-flex w-full items-center justify-center gap-1.5 rounded-full px-4 py-2.5 text-xs font-medium transition ${
+                      className={`inline-flex w-full items-center justify-center gap-1.5 rounded-full px-4 py-2.5 text-xs font-bold transition-all duration-300 ${
                         p.highlight
-                          ? "bg-gradient-to-r from-[#ff7a00] to-[#c2410c] text-white hover:scale-105"
-                          : "border border-neutral-200 bg-white text-neutral-900 hover:border-neutral-300 hover:shadow-sm"
+                          ? "bg-[#ff7a00] text-white hover:bg-[#e06b00] shadow-md hover:scale-[1.02]"
+                          : "border border-black/5 bg-white/80 text-neutral-900 hover:bg-neutral-900 hover:text-white shadow-2xs"
                       }`}
                     >
                       <Sparkles className="size-3" />
@@ -148,7 +149,7 @@ export function PlanComparison() {
           </table>
         </div>
 
-        <div className="mt-8 text-center text-xs text-neutral-500">
+        <div className="mt-8 text-center text-xs text-neutral-500 font-normal">
           * Note: Exact numbers depend heavily on market segment, workflow complexity, and measurable financial value created.
         </div>
       </div>
