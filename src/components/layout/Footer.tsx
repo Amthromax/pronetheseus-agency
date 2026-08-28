@@ -227,28 +227,26 @@ export function Footer() {
                 </div>
 
                 {/* Multi Verified Trust Badges */}
-                <div className="flex flex-wrap items-center gap-2 mt-1">
-                  <div className="rounded-xl bg-neutral-900 text-white px-3 py-1.5 flex flex-col items-center justify-center text-center shadow-xs">
-                    <div className="flex items-center gap-1 text-amber-400">
-                      <div className="flex gap-0.5">
-                        <Star className="size-2.5 fill-current" />
-                        <Star className="size-2.5 fill-current" />
-                        <Star className="size-2.5 fill-current" />
-                        <Star className="size-2.5 fill-current" />
-                        <Star className="size-2.5 fill-current" />
-                      </div>
+                <div className="flex flex-wrap items-center gap-2.5 mt-3 pt-3 border-t border-sandel-border/80">
+                  <div className="rounded-xl border border-sandel-border bg-white px-3 py-2 flex items-center gap-2 shadow-2xs antialiased">
+                    <div className="flex gap-0.5 text-amber-500">
+                      <Star className="size-3.5 fill-amber-400 text-amber-400" />
+                      <Star className="size-3.5 fill-amber-400 text-amber-400" />
+                      <Star className="size-3.5 fill-amber-400 text-amber-400" />
+                      <Star className="size-3.5 fill-amber-400 text-amber-400" />
+                      <Star className="size-3.5 fill-amber-400 text-amber-400" />
                     </div>
-                    <span className="text-[9px] font-mono tracking-tight text-white/90 mt-0.5">VERIFIED AGENCY ROI</span>
+                    <span className="text-xs font-semibold font-sans text-neutral-900 tracking-tight">VERIFIED AGENCY ROI</span>
                   </div>
 
-                  <div className="rounded-xl bg-neutral-900 text-white px-2.5 py-1.5 flex items-center gap-1.5 shadow-xs">
-                    <ShieldCheck className="size-3.5 text-[#ff7a00] shrink-0" />
-                    <span className="text-[9px] font-mono tracking-tight text-white/90">VERIFIED SOC2 COMPLIANT</span>
+                  <div className="rounded-xl border border-sandel-border bg-white px-3 py-2 flex items-center gap-2 shadow-2xs antialiased">
+                    <ShieldCheck className="size-4 text-[#ff7a00] shrink-0" />
+                    <span className="text-xs font-semibold font-sans text-neutral-900 tracking-tight">VERIFIED SOC2 COMPLIANT</span>
                   </div>
 
-                  <div className="rounded-xl bg-neutral-900 text-white px-2.5 py-1.5 flex items-center gap-1.5 shadow-xs">
-                    <Award className="size-3.5 text-emerald-400 shrink-0" />
-                    <span className="text-[9px] font-mono tracking-tight text-white/90">VERIFIED CODE OWNERSHIP</span>
+                  <div className="rounded-xl border border-sandel-border bg-white px-3 py-2 flex items-center gap-2 shadow-2xs antialiased">
+                    <Award className="size-4 text-emerald-600 shrink-0" />
+                    <span className="text-xs font-semibold font-sans text-neutral-900 tracking-tight">VERIFIED CODE OWNERSHIP</span>
                   </div>
                 </div>
               </div>
