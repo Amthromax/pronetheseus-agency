@@ -1,13 +1,22 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Search, ArrowRight, Sparkles, TrendingUp, ShieldCheck, Zap } from "lucide-react";
+import { Search, ArrowRight, CheckCircle2, Cpu, FileText, Layers, ShieldCheck, Zap } from "lucide-react";
 import { motion } from "motion/react";
+
+interface ImplementationStep {
+  step: string;
+  label: string;
+  desc: string;
+}
 
 interface StoryItem {
   id: string;
   title: string;
   category: string;
   metric: string;
+  summary: string;
+  steps: ImplementationStep[];
+  tags: string[];
   image: string;
   slug: string;
 }
@@ -20,6 +29,13 @@ const STORIES: StoryItem[] = [
     title: "How an 80-million-customer energy giant replaced voice with AI-driven self-service",
     category: "Voice AI & Ops",
     metric: "90% Deflection",
+    summary: "Eliminated long phone queues by deploying conversational voice AI to handle high-frequency utility inquiries, billing updates, and meter readouts.",
+    steps: [
+      { step: "01", label: "Challenge", desc: "45,000+ daily inbound calls created 18-minute wait times during peak hours." },
+      { step: "02", label: "AI Execution", desc: "Deployed conversational voice agent integrated with SAP billing & webhook triggers." },
+      { step: "03", label: "Result", desc: "90% automated deflection with sub-10 second resolution times." },
+    ],
+    tags: ["Voice AI", "SAP Integration", "Webhook Auto"],
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
     slug: "energy-giant-ai-voice",
   },
@@ -28,6 +44,13 @@ const STORIES: StoryItem[] = [
     title: "Fortune 50 Financial Institution Modernizes Global Banking Service Operations",
     category: "Financial Services",
     metric: "$2.4M Saved",
+    summary: "Modernized global wire transfer verification and account compliance checks using sub-second document scanning and automated KYC agents.",
+    steps: [
+      { step: "01", label: "Challenge", desc: "Manual compliance reviews delayed international wire approvals by up to 48 hours." },
+      { step: "02", label: "AI Execution", desc: "Engineered OCR & document parsing agents synced with core banking ledger." },
+      { step: "03", label: "Result", desc: "$2.4M operational cost reduction and 98% faster transaction approvals." },
+    ],
+    tags: ["Financial AI", "OCR Engine", "Core Banking API"],
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
     slug: "financial-institution-modernization",
   },
@@ -36,6 +59,13 @@ const STORIES: StoryItem[] = [
     title: "Ecuador's largest insurer transforms contact center operations with generative AI",
     category: "Customer Service",
     metric: "<30s Response",
+    summary: "Replaced legacy contact center IVRs with multi-lingual generative AI agents capable of handling claims processing and policy adjustments.",
+    steps: [
+      { step: "01", label: "Challenge", desc: "High agent turnover and peak call surges caused high customer churn during claims." },
+      { step: "02", label: "AI Execution", desc: "Deployed 24/7 omni-channel generative AI agents across WhatsApp & web chat." },
+      { step: "03", label: "Result", desc: "<30s instant response rate and 42% decrease in support operating costs." },
+    ],
+    tags: ["Claims AI", "Generative Agents", "WhatsApp API"],
     image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
     slug: "ecuador-insurer-transformation",
   },
@@ -44,6 +74,13 @@ const STORIES: StoryItem[] = [
     title: "Insurance provider transforms customer service with autonomous AI agents",
     category: "AI Support Agents",
     metric: "99.4% Accuracy",
+    summary: "Automated policy underwriting, customer inquiry triage, and policy renewal reminders with zero human intervention required.",
+    steps: [
+      { step: "01", label: "Challenge", desc: "Manual policy underwriting caused a 4-day lag between inquiry and quote delivery." },
+      { step: "02", label: "AI Execution", desc: "Configured automated underwriting rules engine paired with LLM document parser." },
+      { step: "03", label: "Result", desc: "99.4% decision accuracy with quote turnaround reduced from 4 days to 45s." },
+    ],
+    tags: ["Underwriting Bot", "LLM Parser", "HubSpot CRM"],
     image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80",
     slug: "insurance-provider-ai-agents",
   },
@@ -52,6 +89,13 @@ const STORIES: StoryItem[] = [
     title: "Global design and engineering software leader automated technical support",
     category: "Tech Support AI",
     metric: "4.2x Throughput",
+    summary: "Accelerated technical support tickets for complex CAD software by routing log files and error diagnostics directly to autonomous code assist agents.",
+    steps: [
+      { step: "01", label: "Challenge", desc: "Tier-1 support engineers spent 60% of their time reading raw error log files." },
+      { step: "02", label: "AI Execution", desc: "Built automated log parsing AI that diagnoses stack traces and recommends fixes." },
+      { step: "03", label: "Result", desc: "4.2x ticket resolution throughput and 75% reduction in escalation rates." },
+    ],
+    tags: ["Log AI", "Ticket Router", "Zendesk API"],
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
     slug: "engineering-software-support",
   },
@@ -60,6 +104,13 @@ const STORIES: StoryItem[] = [
     title: "How a leading confectionary manufacturer automated B2B retail ordering",
     category: "B2B Revenue AI",
     metric: "100% Order Sync",
+    summary: "Transformed manual wholesale order entry from PDF invoices into automated n8n database sync, eliminating order fulfillment errors.",
+    steps: [
+      { step: "01", label: "Challenge", desc: "Retail distributors sent unstructured PDF orders via email, causing entry delays." },
+      { step: "02", label: "AI Execution", desc: "Implemented automated email parser and ERP database synchronization engine." },
+      { step: "03", label: "Result", desc: "100% order synchronization accuracy and 12 hours saved daily per rep." },
+    ],
+    tags: ["ERP Auto-Sync", "Email OCR", "n8n Workflows"],
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
     slug: "confectionary-manufacturer-b2b",
   },
@@ -68,6 +119,13 @@ const STORIES: StoryItem[] = [
     title: "Empowering a Global Frontline Workforce with AI-Driven Employee Assistance",
     category: "Enterprise Ops",
     metric: "45k Users",
+    summary: "Empowered 45,000 global field technicians with an instant voice-activated mobile AI assistant for equipment manuals and safety compliance.",
+    steps: [
+      { step: "01", label: "Challenge", desc: "Field technicians lost 2+ hours daily searching through paper maintenance manuals." },
+      { step: "02", label: "AI Execution", desc: "Created RAG vector database assistant accessible via mobile app and voice." },
+      { step: "03", label: "Result", desc: "45,000 active daily users with 35% improvement in first-time fix rates." },
+    ],
+    tags: ["Vector RAG", "Mobile Voice AI", "Safety Compliance"],
     image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
     slug: "frontline-workforce-assistance",
   },
@@ -76,6 +134,13 @@ const STORIES: StoryItem[] = [
     title: "Transforming Live Event Support with Intelligent Digital Self-Service",
     category: "Event Automation",
     metric: "24/7 Availability",
+    summary: "Handled 100,000+ attendee ticket changes, venue navigation, and VIP upgrades during major international sports tournaments using automated AI bots.",
+    steps: [
+      { step: "01", label: "Challenge", desc: "Event staff overwhelmed by 10,000+ simultaneous inquiries during peak event hours." },
+      { step: "02", label: "AI Execution", desc: "Deployed multi-platform self-service bot integrated with ticketing APIs." },
+      { step: "03", label: "Result", desc: "24/7 instant resolution with 96% attendee satisfaction score." },
+    ],
+    tags: ["Event Bot", "Ticketing API", "Real-Time AI"],
     image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
     slug: "live-event-self-service",
   },
@@ -84,6 +149,13 @@ const STORIES: StoryItem[] = [
     title: "Modernizing Digital Self-Service for Corporate Travel & Mobility",
     category: "Travel & Mobility",
     metric: "60% Cost Reduction",
+    summary: "Streamlined corporate flight rebooking, hotel cancellation, and expense reporting into a single automated Slack & Teams conversational bot.",
+    steps: [
+      { step: "01", label: "Challenge", desc: "Flight disruptions required manual phone calls to travel agents, causing missed connections." },
+      { step: "02", label: "AI Execution", desc: "Built automated rebooking bot connected to Amadeus & Sabre travel GDS." },
+      { step: "03", label: "Result", desc: "60% operational cost reduction and instant sub-1 minute flight rebooking." },
+    ],
+    tags: ["Amadeus GDS", "Slack Bot", "Rebooking Engine"],
     image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80",
     slug: "corporate-travel-self-service",
   },
@@ -92,6 +164,13 @@ const STORIES: StoryItem[] = [
     title: "Scaling Developer Velocity with Autonomous Code Assist & Workflows",
     category: "Developer Ops",
     metric: "3x Shipping Speed",
+    summary: "Scaled software team output by introducing autonomous code review agents and automated pull request testing workflows.",
+    steps: [
+      { step: "01", label: "Challenge", desc: "Senior engineers spent 15+ hours weekly reviewing repetitive PR boilerplate code." },
+      { step: "02", label: "AI Execution", desc: "Integrated automated AI code reviewer into GitHub CI/CD pipeline." },
+      { step: "03", label: "Result", desc: "3x feature shipping speed with 50% fewer production bug regressions." },
+    ],
+    tags: ["GitHub CI/CD", "AI Code Review", "DevOps Auto"],
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
     slug: "developer-velocity-assist",
   },
@@ -105,7 +184,8 @@ export function CaseStudies() {
 
   const filteredStories = STORIES.filter((story) => {
     const matchesSearch = story.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          story.category.toLowerCase().includes(searchQuery.toLowerCase());
+                          story.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          story.summary.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCat = selectedCategory === "All" || story.category === selectedCategory;
     return matchesSearch && matchesCat;
   });
@@ -121,7 +201,7 @@ export function CaseStudies() {
               Our customers, their stories
             </h1>
             <p className="mt-2 text-sm sm:text-base text-neutral-600 font-sans max-w-xl">
-              Explore how global enterprises and fast-growing companies replace manual processes with autonomous AI systems.
+              Step-by-step implementation breakdowns demonstrating how global enterprises replace manual bottlenecks with autonomous AI engines.
             </p>
           </div>
 
@@ -129,7 +209,7 @@ export function CaseStudies() {
           <div className="relative w-full md:w-[320px]">
             <input
               type="text"
-              placeholder="Search by topic, industry..."
+              placeholder="Search by topic, workflow..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full rounded-xl border border-sandel-border bg-sandel-card py-2.5 pl-4 pr-10 text-xs sm:text-sm text-neutral-900 placeholder:text-neutral-500 focus:border-neutral-900 focus:outline-none shadow-2xs transition"
@@ -156,7 +236,7 @@ export function CaseStudies() {
         </div>
 
         {/* 3-Column Premium Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
           {filteredStories.map((story, idx) => (
             <motion.div
               key={story.id}
@@ -182,7 +262,7 @@ export function CaseStudies() {
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-90" />
                     
                     {/* Top Badges overlay */}
                     <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
@@ -196,20 +276,58 @@ export function CaseStudies() {
                   </div>
 
                   {/* Card Content Body */}
-                  <div className="p-5 sm:p-6">
-                    <h3 className="font-sans text-base sm:text-lg font-bold text-neutral-900 leading-snug line-clamp-3 group-hover:text-[#ff7a00] transition-colors duration-200">
+                  <div className="p-5 sm:p-6 space-y-4">
+                    {/* Title */}
+                    <h3 className="font-sans text-base sm:text-lg font-bold text-neutral-900 leading-snug line-clamp-2 group-hover:text-[#ff7a00] transition-colors duration-200">
                       {story.title}
                     </h3>
+
+                    {/* Executive Summary Paragraph */}
+                    <p className="text-xs text-neutral-600 font-sans leading-relaxed line-clamp-2">
+                      {story.summary}
+                    </p>
+
+                    {/* Step-by-Step Reading Breakdown Box */}
+                    <div className="rounded-lg bg-sandel/80 border border-sandel-border/70 p-3 space-y-2">
+                      <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-500 border-b border-sandel-border/60 pb-1 flex items-center justify-between">
+                        <span>Implementation Pathway</span>
+                        <span className="text-[#ff7a00]">3 Steps</span>
+                      </div>
+
+                      {story.steps.map((st) => (
+                        <div key={st.step} className="flex items-start gap-2 text-[11px] font-sans">
+                          <span className="font-mono font-bold text-[#ff7a00] text-[10px] bg-orange-50 px-1.5 py-0.5 rounded border border-orange-200/60 shrink-0">
+                            {st.step}
+                          </span>
+                          <div>
+                            <span className="font-semibold text-neutral-900 mr-1">{st.label}:</span>
+                            <span className="text-neutral-600 font-normal leading-tight">{st.desc}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Tech Stack Badges */}
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {story.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-md bg-neutral-100 px-2 py-0.5 text-[10px] font-mono font-medium text-neutral-600 border border-neutral-200/80"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
                 {/* Card Footer Action Row */}
-                <div className="px-5 sm:px-6 pb-5 pt-2 flex items-center justify-between border-t border-sandel-border/60">
+                <div className="px-5 sm:px-6 pb-5 pt-3 flex items-center justify-between border-t border-sandel-border/60 mt-2">
                   <span className="text-xs font-semibold text-neutral-500 font-sans">
                     Customer Story
                   </span>
                   <span className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
-                    <span>Read Story</span>
+                    <span>Read Full Story</span>
                     <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                 </div>
