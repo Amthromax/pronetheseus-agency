@@ -195,27 +195,33 @@ export function Footer() {
                       target="_blank"
                       rel="noreferrer"
                       aria-label="LinkedIn"
-                      className="size-7 rounded-lg bg-neutral-900 text-white flex items-center justify-center text-xs font-bold transition-transform hover:scale-105"
+                      className="size-8 rounded-lg bg-neutral-900 text-white flex items-center justify-center transition-all duration-200 hover:bg-[#0A66C2] hover:scale-105 shadow-xs"
                     >
-                      in
+                      <svg className="size-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                      </svg>
                     </a>
                     <a
                       href="https://youtube.com"
                       target="_blank"
                       rel="noreferrer"
                       aria-label="YouTube"
-                      className="size-7 rounded-lg bg-neutral-900 text-white flex items-center justify-center text-xs transition-transform hover:scale-105"
+                      className="size-8 rounded-lg bg-neutral-900 text-white flex items-center justify-center transition-all duration-200 hover:bg-[#FF0000] hover:scale-105 shadow-xs"
                     >
-                      ▶
+                      <svg className="size-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                      </svg>
                     </a>
                     <a
                       href="https://twitter.com"
                       target="_blank"
                       rel="noreferrer"
                       aria-label="X Twitter"
-                      className="size-7 rounded-lg bg-neutral-900 text-white flex items-center justify-center text-xs transition-transform hover:scale-105"
+                      className="size-8 rounded-lg bg-neutral-900 text-white flex items-center justify-center transition-all duration-200 hover:bg-neutral-700 hover:scale-105 shadow-xs"
                     >
-                      ✕
+                      <svg className="size-3.5 fill-current" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                      </svg>
                     </a>
                   </div>
                 </div>
