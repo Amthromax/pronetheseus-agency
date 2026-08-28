@@ -17,10 +17,7 @@ export function ServicesCenterDetails() {
         
         {/* Section Header */}
         <div className="mx-auto max-w-3xl">
-          <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#ff7a00]">
-            Service Standards & Infrastructure Specs
-          </span>
-          <h2 className="mt-2 font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-neutral-900">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-neutral-900">
             Engineered for Precision & Scalability
           </h2>
           <p className="mt-3 text-sm sm:text-base text-neutral-600 font-sans max-w-2xl mx-auto leading-relaxed">
