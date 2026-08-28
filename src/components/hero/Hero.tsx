@@ -57,30 +57,30 @@ export function Hero() {
             <span className="text-neutral-900">Capture More Customers.</span>
           </motion.h1>
 
-          {/* Subheadline Paragraph */}
+          {/* Apple Design Subheadline Paragraph Box */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-4 sm:mt-6 max-w-xl text-neutral-800 text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed font-sans px-4 py-3.5 sm:px-5 sm:py-4 rounded-2xl bg-sandel-card border border-sandel-border shadow-xs antialiased"
+            className="mt-5 sm:mt-7 max-w-xl text-neutral-800 text-sm sm:text-base md:text-lg leading-relaxed font-sans px-6 py-5 sm:px-7 sm:py-6 rounded-[24px] sm:rounded-[28px] bg-white/75 backdrop-blur-2xl border border-white/80 shadow-[0_10px_35px_rgba(0,0,0,0.05)] ring-1 ring-black/5 tracking-tight antialiased"
           >
             We build AI-powered systems that automate lead capture, customer conversations, appointment booking, follow-ups, and repetitive business operations.
           </motion.p>
 
-          {/* Action Buttons CTAs */}
+          {/* Apple Action Pill Buttons CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto justify-center lg:justify-start"
+            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5 w-full sm:w-auto justify-center lg:justify-start"
           >
             <Link to="/book" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto rounded-full bg-[#18181b] px-5 sm:px-6 py-3 sm:py-3 text-sm sm:text-xs md:text-sm font-semibold text-white shadow-md transition-all duration-200 hover:bg-black hover:scale-[1.02] active:scale-[0.98] cursor-pointer whitespace-nowrap antialiased">
+              <button className="w-full sm:w-auto rounded-full bg-neutral-900 px-6 sm:px-7 py-3.5 text-xs sm:text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-black hover:scale-[1.03] active:scale-[0.97] cursor-pointer whitespace-nowrap tracking-wide antialiased">
                 Get Your Free Automation Audit
               </button>
             </Link>
             <a href="#services" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto rounded-full bg-sandel-card border border-sandel-border text-neutral-800 px-5 sm:px-6 py-3 sm:py-3 text-sm sm:text-xs md:text-sm font-semibold shadow-xs transition-all duration-200 hover:bg-sandel hover:border-neutral-400 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5 whitespace-nowrap antialiased">
+              <button className="w-full sm:w-auto rounded-full bg-white/80 backdrop-blur-md border border-black/5 hover:bg-white text-neutral-800 hover:border-black/15 px-6 sm:px-7 py-3.5 text-xs sm:text-sm font-semibold shadow-xs transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap tracking-wide antialiased">
                 <span>See How It Works</span>
                 <ArrowRight className="w-3.5 h-3.5 text-neutral-600" />
               </button>
