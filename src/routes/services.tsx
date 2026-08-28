@@ -20,12 +20,12 @@ export const Route = createFileRoute("/services")({
 
 function ServicesPage() {
   return (
-    <>
-      <div className="pt-24 md:pt-32" />
+    <div className="bg-sandel min-h-screen">
+      <div className="pt-20 md:pt-28" />
       <Services />
       <ServicesCenterDetails />
       <HowItWorksSection />
       <ContactCTA />
-    </>
+    </div>
   );
 }
