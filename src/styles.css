@@ -56,7 +56,7 @@
   --color-sandel-border: #E6D7C3;
   --font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-mono: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 

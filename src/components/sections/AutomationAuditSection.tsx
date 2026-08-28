@@ -156,7 +156,7 @@ export function AutomationAuditSection() {
         {/* VISUAL AUDIT MECHANISM DIAGRAM */}
         <div className="mt-12 rounded-2xl border border-sandel-border bg-sandel-card p-5 shadow-xs max-w-5xl mx-auto">
           <div className="text-center mb-3">
-            <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-neutral-500">
+            <span className="text-[11px] font-sans font-semibold uppercase tracking-wider text-neutral-500">
               How Your Automated Audit Pipeline Works
             </span>
           </div>
@@ -249,7 +249,7 @@ export function AutomationAuditSection() {
             <form onSubmit={handleSubmit}>
               {/* Form Step Indicator */}
               <div className="flex items-center justify-between mb-8 pb-4 border-b border-neutral-100">
-                <span className="text-xs font-mono font-bold text-[#ff7a00] uppercase tracking-wider">
+                <span className="text-xs font-sans font-bold text-[#ff7a00] uppercase tracking-wider">
                   Step {step} of 3 — {step === 1 ? "Business Profile" : step === 2 ? "Operational Stack" : "Deliver My Audit"}
                 </span>
                 <div className="flex items-center gap-1.5">
@@ -268,7 +268,7 @@ export function AutomationAuditSection() {
               {step === 1 && (
                 <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="space-y-6">
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-sans mb-2">
                       Company Website URL *
                     </label>
                     <div className="relative">
@@ -286,7 +286,7 @@ export function AutomationAuditSection() {
 
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-sans mb-2">
                         Business Type
                       </label>
                       <CustomSelect
@@ -297,7 +297,7 @@ export function AutomationAuditSection() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-sans mb-2">
                         Number of Employees
                       </label>
                       <CustomSelect
@@ -324,7 +324,7 @@ export function AutomationAuditSection() {
                 <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="space-y-6">
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-sans mb-2">
                         Current CRM
                       </label>
                       <CustomSelect
@@ -335,7 +335,7 @@ export function AutomationAuditSection() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-sans mb-2">
                         Approximate Leads / Month
                       </label>
                       <CustomSelect
@@ -347,7 +347,7 @@ export function AutomationAuditSection() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-sans mb-2">
                       Biggest Operational Problem *
                     </label>
                     <CustomSelect
@@ -381,7 +381,7 @@ export function AutomationAuditSection() {
               {step === 3 && (
                 <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="space-y-6">
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-sans mb-2">
                       Your Name *
                     </label>
                     <div className="relative">
@@ -398,7 +398,7 @@ export function AutomationAuditSection() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-mono mb-2">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-sans mb-2">
                       Work Email *
                     </label>
                     <div className="relative">

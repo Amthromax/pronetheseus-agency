@@ -40,7 +40,7 @@ const ADDON_MODULES = [
     title: "WhatsApp Automation", 
     desc: "2-way chat support, instant quotes & media", 
     tag: "Messaging",
-    badgeBg: "bg-emerald-500/10 text-emerald-700 border-emerald-200" 
+    badgeBg: "bg-sky-500/10 text-sky-700 border-sky-200" 
   },
   { 
     icon: Database, 
@@ -155,7 +155,7 @@ export function FlagshipProduct() {
                   CORE REVENUE SYSTEM
                 </span>
                 <span className="text-[11px] font-mono text-neutral-400 flex items-center gap-1.5">
-                  <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="size-1.5 rounded-full bg-[#ff7a00] animate-pulse" />
                   Primary Infrastructure
                 </span>
               </div>
