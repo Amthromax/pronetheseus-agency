@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Services } from "@/components/sections/Services";
+import { ServicesCenterDetails } from "@/components/sections/ServicesCenterDetails";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
@@ -22,6 +23,7 @@ function ServicesPage() {
     <>
       <div className="pt-24 md:pt-32" />
       <Services />
+      <ServicesCenterDetails />
       <HowItWorksSection />
       <ContactCTA />
     </>
