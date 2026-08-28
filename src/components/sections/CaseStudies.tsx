@@ -387,15 +387,15 @@ export function CaseStudies() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.25 }}
-              className="relative w-full max-w-3xl rounded-2xl border border-sandel-border bg-sandel-card shadow-2xl overflow-hidden z-10 my-8 max-h-[90vh] flex flex-col"
+              className="relative w-full max-w-2xl sm:max-w-3xl rounded-2xl border border-sandel-border bg-sandel-card shadow-2xl overflow-hidden z-10 my-4 max-h-[80vh] flex flex-col"
             >
               {/* Modal Header Bar */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-sandel-border/70 bg-sandel shrink-0">
+              <div className="flex items-center justify-between px-5 sm:px-6 py-3 border-b border-sandel-border/70 bg-sandel shrink-0">
                 <div className="flex items-center gap-2">
-                  <span className="rounded-md bg-black/80 text-white px-2.5 py-1 text-[10px] font-mono font-bold uppercase">
+                  <span className="rounded-md bg-black/80 text-white px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase">
                     {activeStoryModal.category}
                   </span>
-                  <span className="rounded-md bg-[#ff7a00] text-white px-2.5 py-1 text-[10px] font-mono font-bold">
+                  <span className="rounded-md bg-[#ff7a00] text-white px-2.5 py-0.5 text-[10px] font-mono font-bold">
                     {activeStoryModal.metric}
                   </span>
                 </div>
@@ -408,9 +408,9 @@ export function CaseStudies() {
               </div>
 
               {/* Scrollable Modal Content */}
-              <div className="p-6 sm:p-8 space-y-6 overflow-y-auto">
+              <div className="p-5 sm:p-6 space-y-4 overflow-y-auto">
                 {/* Hero Banner */}
-                <div className="relative h-56 sm:h-64 w-full rounded-xl overflow-hidden bg-neutral-200">
+                <div className="relative h-40 sm:h-48 w-full rounded-xl overflow-hidden bg-neutral-200">
                   <img
                     src={activeStoryModal.image}
                     alt={activeStoryModal.title}
@@ -420,11 +420,11 @@ export function CaseStudies() {
                     className="h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <span className="text-xs font-mono font-semibold text-emerald-400 uppercase tracking-widest block mb-1">
+                  <div className="absolute bottom-3 left-4 right-4">
+                    <span className="text-[10px] font-mono font-semibold text-emerald-400 uppercase tracking-widest block mb-0.5">
                       Verified Case Study
                     </span>
-                    <h2 className="text-xl sm:text-2xl font-bold text-white font-sans leading-tight">
+                    <h2 className="text-lg sm:text-xl font-bold text-white font-sans leading-tight">
                       {activeStoryModal.title}
                     </h2>
                   </div>
@@ -432,24 +432,24 @@ export function CaseStudies() {
 
                 {/* Executive Summary */}
                 <div>
-                  <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-500 mb-1">
+                  <h4 className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-500 mb-1">
                     Executive Summary
                   </h4>
-                  <p className="text-sm sm:text-base text-neutral-800 font-sans leading-relaxed">
+                  <p className="text-xs sm:text-sm text-neutral-800 font-sans leading-relaxed">
                     {activeStoryModal.summary}
                   </p>
                 </div>
 
                 {/* Step by Step Breakdown */}
-                <div className="rounded-xl bg-sandel/90 border border-sandel-border p-5 space-y-3">
-                  <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-600 flex items-center justify-between pb-2 border-b border-sandel-border">
+                <div className="rounded-xl bg-sandel/90 border border-sandel-border p-4 space-y-2.5">
+                  <h4 className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-600 flex items-center justify-between pb-1.5 border-b border-sandel-border">
                     <span>3-Step Implementation Breakdown</span>
                     <span className="text-[#ff7a00]">Step-by-Step</span>
                   </h4>
-                  <div className="space-y-3 pt-1">
+                  <div className="space-y-2 pt-0.5">
                     {activeStoryModal.steps.map((st) => (
-                      <div key={st.step} className="flex items-start gap-3 text-xs sm:text-sm font-sans">
-                        <span className="font-mono font-bold text-[#ff7a00] text-xs bg-orange-100/80 px-2 py-0.5 rounded border border-orange-200 shrink-0">
+                      <div key={st.step} className="flex items-start gap-2.5 text-xs font-sans">
+                        <span className="font-mono font-bold text-[#ff7a00] text-[10px] bg-orange-100/80 px-1.5 py-0.5 rounded border border-orange-200 shrink-0">
                           {st.step}
                         </span>
                         <div>
@@ -463,13 +463,13 @@ export function CaseStudies() {
 
                 {/* Testimonial Quote */}
                 {activeStoryModal.quote && (
-                  <div className="rounded-xl border border-orange-200/80 bg-orange-50/50 p-5 space-y-2">
-                    <Quote className="size-6 text-[#ff7a00]" />
-                    <p className="text-sm font-bold text-neutral-900 font-sans italic">
+                  <div className="rounded-xl border border-orange-200/80 bg-orange-50/50 p-4 space-y-1.5">
+                    <Quote className="size-5 text-[#ff7a00]" />
+                    <p className="text-xs sm:text-sm font-bold text-neutral-900 font-sans italic">
                       "{activeStoryModal.quote}"
                     </p>
                     {activeStoryModal.author && (
-                      <div className="text-xs font-semibold text-neutral-600 font-sans">
+                      <div className="text-[11px] font-semibold text-neutral-600 font-sans">
                         — {activeStoryModal.author}, {activeStoryModal.authorTitle}
                       </div>
                     )}
@@ -478,14 +478,14 @@ export function CaseStudies() {
 
                 {/* Tech Stack Badges */}
                 <div>
-                  <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-500 mb-2">
+                  <h4 className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-500 mb-1.5">
                     Deployed Stack & Integrations
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {activeStoryModal.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md bg-neutral-100 px-3 py-1 text-xs font-mono font-semibold text-neutral-700 border border-neutral-200"
+                        className="rounded-md bg-neutral-100 px-2.5 py-0.5 text-[11px] font-mono font-semibold text-neutral-700 border border-neutral-200"
                       >
                         {tag}
                       </span>
@@ -495,7 +495,7 @@ export function CaseStudies() {
               </div>
 
               {/* Modal Footer Bar */}
-              <div className="flex items-center justify-between px-6 py-4 border-t border-sandel-border/70 bg-sandel shrink-0">
+              <div className="flex items-center justify-between px-5 sm:px-6 py-3 border-t border-sandel-border/70 bg-sandel shrink-0">
                 <button
                   onClick={() => setActiveStoryModal(null)}
                   className="px-4 py-2 rounded-xl text-xs font-semibold text-neutral-700 hover:bg-neutral-200/60 transition"
@@ -506,7 +506,7 @@ export function CaseStudies() {
                 <Link
                   to="/case-studies/$slug"
                   params={{ slug: activeStoryModal.slug }}
-                  className="inline-flex items-center gap-2 rounded-xl bg-neutral-900 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-black transition shadow-sm"
+                  className="inline-flex items-center gap-2 rounded-xl bg-neutral-900 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white hover:bg-black transition shadow-sm"
                 >
                   <span>Open Dedicated Page</span>
                   <ArrowUpRight className="size-4 text-[#ff7a00]" />
