@@ -368,49 +368,50 @@ export function CaseStudies() {
 
       </div>
 
-      {/* FULL INFORMATION POPUP MODAL */}
+      {/* APPLE DESIGN FULL INFORMATION POPUP MODAL */}
       <AnimatePresence>
         {activeStoryModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-            {/* Backdrop */}
+            {/* Apple Frosted Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setActiveStoryModal(null)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+              className="fixed inset-0 bg-black/45 backdrop-blur-xl transition-opacity"
             />
 
-            {/* Modal Dialog Card */}
+            {/* Apple Super-Ellipse Card Dialog */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              initial={{ opacity: 0, scale: 0.94, y: 16 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.25 }}
-              className="relative w-full max-w-2xl sm:max-w-3xl rounded-2xl border border-sandel-border bg-sandel-card shadow-2xl overflow-hidden z-10 my-4 max-h-[80vh] flex flex-col"
+              exit={{ opacity: 0, scale: 0.94, y: 16 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="relative w-full max-w-2xl sm:max-w-3xl rounded-[28px] sm:rounded-[34px] border border-white/60 bg-[#F5ECE0]/95 backdrop-blur-3xl shadow-[0_25px_70px_-15px_rgba(0,0,0,0.35)] ring-1 ring-black/5 overflow-hidden z-10 my-4 max-h-[82vh] flex flex-col font-sans"
             >
-              {/* Modal Header Bar */}
-              <div className="flex items-center justify-between px-5 sm:px-6 py-3 border-b border-sandel-border/70 bg-sandel shrink-0">
+              {/* Apple Header Bar */}
+              <div className="flex items-center justify-between px-6 py-3.5 border-b border-black/5 bg-[#F5ECE0]/80 backdrop-blur-md shrink-0">
                 <div className="flex items-center gap-2">
-                  <span className="rounded-md bg-black/80 text-white px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase">
+                  <span className="rounded-full bg-neutral-900 text-white px-3 py-1 text-[11px] font-sans font-medium shadow-2xs">
                     {activeStoryModal.category}
                   </span>
-                  <span className="rounded-md bg-[#ff7a00] text-white px-2.5 py-0.5 text-[10px] font-mono font-bold">
+                  <span className="rounded-full bg-[#ff7a00] text-white px-3 py-1 text-[11px] font-sans font-bold shadow-2xs">
                     {activeStoryModal.metric}
                   </span>
                 </div>
                 <button
                   onClick={() => setActiveStoryModal(null)}
-                  className="rounded-full p-1.5 text-neutral-500 hover:bg-neutral-200 hover:text-neutral-900 transition-colors"
+                  className="size-8 rounded-full bg-black/5 hover:bg-black/10 text-neutral-600 hover:text-neutral-900 flex items-center justify-center transition-all cursor-pointer"
+                  aria-label="Close dialog"
                 >
-                  <X className="size-5" />
+                  <X className="size-4" />
                 </button>
               </div>
 
-              {/* Scrollable Modal Content */}
-              <div className="p-5 sm:p-6 space-y-4 overflow-y-auto">
-                {/* Hero Banner */}
-                <div className="relative h-40 sm:h-48 w-full rounded-xl overflow-hidden bg-neutral-200">
+              {/* Scrollable Apple Modal Content Body */}
+              <div className="p-5 sm:p-7 space-y-5 overflow-y-auto scrollbar-none">
+                {/* Hero Banner with Apple Curved Superellipse */}
+                <div className="relative h-44 sm:h-52 w-full rounded-[22px] overflow-hidden shadow-sm bg-neutral-200">
                   <img
                     src={activeStoryModal.image}
                     alt={activeStoryModal.title}
@@ -419,73 +420,73 @@ export function CaseStudies() {
                     }}
                     className="h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                  <div className="absolute bottom-3 left-4 right-4">
-                    <span className="text-[10px] font-mono font-semibold text-emerald-400 uppercase tracking-widest block mb-0.5">
-                      Verified Case Study
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                  <div className="absolute bottom-4 left-5 right-5">
+                    <span className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-widest block mb-1">
+                      VERIFIED CASE STUDY
                     </span>
-                    <h2 className="text-lg sm:text-xl font-bold text-white font-sans leading-tight">
+                    <h2 className="text-lg sm:text-2xl font-bold text-white font-sans tracking-tight leading-snug">
                       {activeStoryModal.title}
                     </h2>
                   </div>
                 </div>
 
-                {/* Executive Summary */}
-                <div>
-                  <h4 className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-500 mb-1">
+                {/* Executive Summary Block */}
+                <div className="px-1">
+                  <h4 className="text-[11px] font-mono font-semibold uppercase tracking-wider text-neutral-500 mb-1.5">
                     Executive Summary
                   </h4>
-                  <p className="text-xs sm:text-sm text-neutral-800 font-sans leading-relaxed">
+                  <p className="text-sm sm:text-base text-neutral-800 font-sans leading-relaxed">
                     {activeStoryModal.summary}
                   </p>
                 </div>
 
-                {/* Step by Step Breakdown */}
-                <div className="rounded-xl bg-sandel/90 border border-sandel-border p-4 space-y-2.5">
-                  <h4 className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-600 flex items-center justify-between pb-1.5 border-b border-sandel-border">
-                    <span>3-Step Implementation Breakdown</span>
-                    <span className="text-[#ff7a00]">Step-by-Step</span>
+                {/* Step by Step Implementation Box (Apple Frosted Glass Container) */}
+                <div className="rounded-[20px] bg-white/75 backdrop-blur-md border border-black/5 p-4 sm:p-5 space-y-3 shadow-2xs">
+                  <h4 className="text-[11px] font-mono font-bold uppercase tracking-wider text-neutral-500 flex items-center justify-between pb-2 border-b border-black/5">
+                    <span>3-Step Implementation Pathway</span>
+                    <span className="text-[#ff7a00]">Execution Plan</span>
                   </h4>
-                  <div className="space-y-2 pt-0.5">
+                  <div className="space-y-2.5 pt-1">
                     {activeStoryModal.steps.map((st) => (
-                      <div key={st.step} className="flex items-start gap-2.5 text-xs font-sans">
-                        <span className="font-mono font-bold text-[#ff7a00] text-[10px] bg-orange-100/80 px-1.5 py-0.5 rounded border border-orange-200 shrink-0">
+                      <div key={st.step} className="flex items-start gap-3 text-xs sm:text-sm font-sans">
+                        <span className="font-mono font-bold text-white text-[10px] bg-[#ff7a00] px-2 py-0.5 rounded-full shrink-0 shadow-2xs">
                           {st.step}
                         </span>
                         <div>
                           <span className="font-bold text-neutral-900 mr-1.5">{st.label}:</span>
-                          <span className="text-neutral-700">{st.desc}</span>
+                          <span className="text-neutral-700 leading-normal">{st.desc}</span>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Testimonial Quote */}
+                {/* Testimonial Quote Box */}
                 {activeStoryModal.quote && (
-                  <div className="rounded-xl border border-orange-200/80 bg-orange-50/50 p-4 space-y-1.5">
+                  <div className="rounded-[20px] bg-white/80 backdrop-blur-md border border-orange-200/60 p-4 sm:p-5 space-y-2 shadow-2xs">
                     <Quote className="size-5 text-[#ff7a00]" />
-                    <p className="text-xs sm:text-sm font-bold text-neutral-900 font-sans italic">
+                    <p className="text-xs sm:text-sm font-bold text-neutral-900 font-sans italic leading-relaxed">
                       "{activeStoryModal.quote}"
                     </p>
                     {activeStoryModal.author && (
-                      <div className="text-[11px] font-semibold text-neutral-600 font-sans">
+                      <div className="text-[11px] font-semibold text-neutral-600 font-sans pt-1">
                         — {activeStoryModal.author}, {activeStoryModal.authorTitle}
                       </div>
                     )}
                   </div>
                 )}
 
-                {/* Tech Stack Badges */}
-                <div>
-                  <h4 className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-500 mb-1.5">
-                    Deployed Stack & Integrations
+                {/* Tech Stack & Integration Badges */}
+                <div className="px-1 pt-1">
+                  <h4 className="text-[11px] font-mono font-semibold uppercase tracking-wider text-neutral-500 mb-2">
+                    Deployed Stack & Infrastructure
                   </h4>
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-2">
                     {activeStoryModal.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md bg-neutral-100 px-2.5 py-0.5 text-[11px] font-mono font-semibold text-neutral-700 border border-neutral-200"
+                        className="rounded-full bg-white/80 backdrop-blur-sm px-3 py-1 text-xs font-mono font-medium text-neutral-700 border border-black/5 shadow-2xs"
                       >
                         {tag}
                       </span>
@@ -494,11 +495,11 @@ export function CaseStudies() {
                 </div>
               </div>
 
-              {/* Modal Footer Bar */}
-              <div className="flex items-center justify-between px-5 sm:px-6 py-3 border-t border-sandel-border/70 bg-sandel shrink-0">
+              {/* Apple Footer Bar */}
+              <div className="flex items-center justify-between px-6 py-3.5 border-t border-black/5 bg-[#F5ECE0]/80 backdrop-blur-md shrink-0">
                 <button
                   onClick={() => setActiveStoryModal(null)}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold text-neutral-700 hover:bg-neutral-200/60 transition"
+                  className="text-xs font-semibold text-neutral-600 hover:text-neutral-900 transition-colors font-sans cursor-pointer"
                 >
                   Close
                 </button>
@@ -506,7 +507,7 @@ export function CaseStudies() {
                 <Link
                   to="/case-studies/$slug"
                   params={{ slug: activeStoryModal.slug }}
-                  className="inline-flex items-center gap-2 rounded-xl bg-neutral-900 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white hover:bg-black transition shadow-sm"
+                  className="inline-flex items-center gap-2 rounded-full bg-neutral-900 hover:bg-black px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-all shadow-sm hover:scale-[1.02]"
                 >
                   <span>Open Dedicated Page</span>
                   <ArrowUpRight className="size-4 text-[#ff7a00]" />
