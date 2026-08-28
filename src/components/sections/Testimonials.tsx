@@ -115,11 +115,11 @@ export function Testimonials() {
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative flex min-h-[460px] w-[340px] sm:w-[420px] md:w-[440px] shrink-0 snap-start flex-col justify-between rounded-3xl border border-sandel-border bg-sandel-card p-7 sm:p-8 shadow-sm transition-all duration-300 hover:border-neutral-400 hover:shadow-md cursor-pointer h-full"
+                  className="group relative flex min-h-[460px] w-[340px] sm:w-[420px] md:w-[440px] shrink-0 snap-start flex-col justify-between rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card p-7 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:border-neutral-300/80 transition-all duration-300 cursor-pointer h-full font-sans"
                 >
                   <div>
                     {/* Top Client & Industry */}
-                    <div className="flex items-center justify-between pb-4 border-b border-sandel-border/60">
+                    <div className="flex items-center justify-between pb-4 border-b border-black/5">
                       <div>
                         <h3 className="font-sans text-lg font-bold text-neutral-900 tracking-tight group-hover:text-[#ff7a00] transition-colors">
                           {item.client}
@@ -129,23 +129,23 @@ export function Testimonials() {
                     </div>
 
                     {/* 4-Step Breakdown Stack */}
-                    <div className="mt-5 space-y-3 font-sans text-xs">
-                      <div className="p-2.5 rounded-xl bg-red-50/60 border border-red-100">
-                        <span className="font-mono font-bold text-red-600 uppercase text-[10px] block mb-0.5">
+                    <div className="mt-5 space-y-2.5 font-sans text-xs">
+                      <div className="p-3 rounded-[16px] bg-red-50/70 border border-red-100/80">
+                        <span className="font-mono font-bold text-red-600 uppercase text-[10px] block mb-0.5 tracking-wider">
                           Problem
                         </span>
                         <span className="text-neutral-700 leading-snug block">{item.problem}</span>
                       </div>
 
-                      <div className="p-2.5 rounded-xl bg-blue-50/60 border border-blue-100">
-                        <span className="font-mono font-bold text-blue-600 uppercase text-[10px] block mb-0.5">
+                      <div className="p-3 rounded-[16px] bg-blue-50/70 border border-blue-100/80">
+                        <span className="font-mono font-bold text-blue-600 uppercase text-[10px] block mb-0.5 tracking-wider">
                           Deployed System
                         </span>
                         <span className="text-neutral-800 font-medium leading-snug block">{item.system}</span>
                       </div>
 
-                      <div className="p-2.5 rounded-xl bg-emerald-50/60 border border-emerald-100">
-                        <span className="font-mono font-bold text-emerald-600 uppercase text-[10px] block mb-0.5">
+                      <div className="p-3 rounded-[16px] bg-emerald-50/70 border border-emerald-100/80">
+                        <span className="font-mono font-bold text-emerald-600 uppercase text-[10px] block mb-0.5 tracking-wider">
                           Result
                         </span>
                         <span className="text-neutral-900 font-bold leading-snug block">{item.result}</span>
@@ -153,7 +153,7 @@ export function Testimonials() {
                     </div>
 
                     {/* Testimonial Quote */}
-                    <div className="mt-5 pt-4 border-t border-sandel-border/60">
+                    <div className="mt-5 pt-4 border-t border-black/5">
                       <p className="text-xs sm:text-sm text-neutral-700 font-normal italic leading-relaxed">
                         "{item.testimonial}"
                       </p>
@@ -161,7 +161,7 @@ export function Testimonials() {
                   </div>
 
                   {/* Author Info */}
-                  <div className="mt-6 pt-3 border-t border-sandel-border/60 flex items-center justify-between">
+                  <div className="mt-6 pt-3.5 border-t border-black/5 flex items-center justify-between">
                     <div>
                       <span className="text-xs font-bold text-neutral-900 block font-sans">
                         {item.author}
@@ -170,9 +170,9 @@ export function Testimonials() {
                         {item.authorTitle}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1 text-xs font-bold text-[#ff7a00]">
+                    <div className="flex items-center gap-1 text-xs font-bold text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
                       <span>Read Story</span>
-                      <ArrowRight className="size-3.5" />
+                      <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>
                 </motion.div>

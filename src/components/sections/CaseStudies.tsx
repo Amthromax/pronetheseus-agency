@@ -269,7 +269,7 @@ export function CaseStudies() {
           ))}
         </div>
 
-        {/* 3-Column Premium Cards Grid */}
+        {/* 3-Column Premium Apple-Design Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
           {filteredStories.map((story, idx) => (
             <motion.div
@@ -279,7 +279,7 @@ export function CaseStudies() {
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: idx * 0.05 }}
               onClick={() => setActiveStoryModal(story)}
-              className="cursor-pointer group flex flex-col justify-between rounded-xl border border-sandel-border bg-sandel-card overflow-hidden shadow-2xs transition-all duration-300 hover:border-neutral-400 hover:shadow-xl hover:-translate-y-1.5 h-full"
+              className="cursor-pointer group flex flex-col justify-between rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:border-neutral-300/80 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden h-full font-sans"
             >
               <div>
                 {/* Thumbnail Image Container */}
@@ -293,14 +293,14 @@ export function CaseStudies() {
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-90" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-90" />
                   
-                  {/* Top Badges overlay */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-                    <span className="rounded-md bg-black/60 backdrop-blur-md px-2.5 py-1 text-[10px] font-sans font-semibold text-white tracking-wide uppercase">
+                  {/* Top Apple Badges overlay */}
+                  <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none">
+                    <span className="rounded-full bg-black/65 backdrop-blur-md px-3 py-1 text-[10px] font-sans font-medium text-white tracking-wide uppercase shadow-2xs">
                       {story.category}
                     </span>
-                    <span className="rounded-md bg-[#ff7a00] text-white px-2.5 py-1 text-[10px] font-sans font-bold shadow-sm">
+                    <span className="rounded-full bg-[#ff7a00] text-white px-3 py-1 text-[10px] font-sans font-bold shadow-2xs">
                       {story.metric}
                     </span>
                   </div>
@@ -309,7 +309,7 @@ export function CaseStudies() {
                 {/* Card Content Body */}
                 <div className="p-5 sm:p-6 space-y-4">
                   {/* Title */}
-                  <h3 className="font-sans text-base sm:text-lg font-bold text-neutral-900 leading-snug line-clamp-2 group-hover:text-[#ff7a00] transition-colors duration-200">
+                  <h3 className="font-sans text-base sm:text-lg font-bold text-neutral-900 leading-snug line-clamp-2 group-hover:text-[#ff7a00] transition-colors duration-200 tracking-tight">
                     {story.title}
                   </h3>
 
@@ -318,32 +318,32 @@ export function CaseStudies() {
                     {story.summary}
                   </p>
 
-                  {/* Step-by-Step Reading Breakdown Box */}
-                  <div className="rounded-lg bg-sandel/80 border border-sandel-border/70 p-3 space-y-2">
-                    <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-500 border-b border-sandel-border/60 pb-1 flex items-center justify-between">
+                  {/* Apple Glass Implementation Pathway Box */}
+                  <div className="rounded-[18px] bg-white/70 backdrop-blur-md border border-black/5 p-3.5 space-y-2.5 shadow-2xs">
+                    <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-500 border-b border-black/5 pb-1.5 flex items-center justify-between">
                       <span>Implementation Pathway</span>
                       <span className="text-[#ff7a00]">3 Steps</span>
                     </div>
 
                     {story.steps.map((st) => (
-                      <div key={st.step} className="flex items-start gap-2 text-[11px] font-sans">
-                        <span className="font-mono font-bold text-[#ff7a00] text-[10px] bg-orange-50 px-1.5 py-0.5 rounded border border-orange-200/60 shrink-0">
+                      <div key={st.step} className="flex items-start gap-2.5 text-[11px] font-sans">
+                        <span className="font-mono font-bold text-white text-[9px] bg-[#ff7a00] px-2 py-0.5 rounded-full shrink-0 shadow-2xs">
                           {st.step}
                         </span>
                         <div>
-                          <span className="font-semibold text-neutral-900 mr-1">{st.label}:</span>
+                          <span className="font-bold text-neutral-900 mr-1">{st.label}:</span>
                           <span className="text-neutral-600 font-normal leading-tight">{st.desc}</span>
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  {/* Tech Stack Badges */}
+                  {/* Tech Stack Floating Apple Badges */}
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {story.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md bg-neutral-100 px-2 py-0.5 text-[10px] font-mono font-medium text-neutral-600 border border-neutral-200/80"
+                        className="rounded-full bg-white/80 backdrop-blur-sm px-2.5 py-1 text-[10px] font-mono font-medium text-neutral-700 border border-black/5 shadow-2xs"
                       >
                         {tag}
                       </span>
@@ -352,12 +352,12 @@ export function CaseStudies() {
                 </div>
               </div>
 
-              {/* Card Footer Action Row */}
-              <div className="px-5 sm:px-6 pb-5 pt-3 flex items-center justify-between border-t border-sandel-border/60 mt-2">
+              {/* Apple Card Footer Action Row */}
+              <div className="px-5 sm:px-6 pb-5 pt-3.5 flex items-center justify-between border-t border-black/5 mt-2">
                 <span className="text-xs font-semibold text-neutral-500 font-sans">
                   Customer Story
                 </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff7a00] group-hover:text-[#ff7a00]">
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
                   <span>Read Full Story</span>
                   <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
