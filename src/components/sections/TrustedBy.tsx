@@ -4,7 +4,7 @@ const logos = ["NORTHWIND","ATLAS·CO","HELIOS","QUANTA","APEX/LAB","MERIDIAN","
 
 export function TrustedBy() {
   return (
-    <section className="relative bg-neutral-950 py-12 backdrop-blur-xl overflow-hidden">
+    <section className="relative bg-neutral-950 py-12 overflow-hidden antialiased">
       {/* edge fades */}
       <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-neutral-950 to-transparent" />
       <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-neutral-950 to-transparent" />
