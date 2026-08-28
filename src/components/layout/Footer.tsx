@@ -1,7 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
-import { Loader2, MessageSquare, Star, ArrowRight } from "lucide-react";
+import { Loader2, MessageSquare, Star, ArrowRight, ShieldCheck, Award } from "lucide-react";
 import { FooterArtLandscape } from "./FooterArtLandscape";
 
 export function Footer() {
@@ -226,16 +226,30 @@ export function Footer() {
                   </div>
                 </div>
 
-                {/* G2 5-Star Badge */}
-                <div className="rounded-xl bg-neutral-900 text-white px-3 py-1.5 flex flex-col items-center justify-center text-center shadow-xs">
-                  <div className="flex items-center gap-0.5 text-amber-400">
-                    <Star className="size-2.5 fill-current" />
-                    <Star className="size-2.5 fill-current" />
-                    <Star className="size-2.5 fill-current" />
-                    <Star className="size-2.5 fill-current" />
-                    <Star className="size-2.5 fill-current" />
+                {/* Multi Verified Trust Badges */}
+                <div className="flex flex-wrap items-center gap-2 mt-1">
+                  <div className="rounded-xl bg-neutral-900 text-white px-3 py-1.5 flex flex-col items-center justify-center text-center shadow-xs">
+                    <div className="flex items-center gap-1 text-amber-400">
+                      <div className="flex gap-0.5">
+                        <Star className="size-2.5 fill-current" />
+                        <Star className="size-2.5 fill-current" />
+                        <Star className="size-2.5 fill-current" />
+                        <Star className="size-2.5 fill-current" />
+                        <Star className="size-2.5 fill-current" />
+                      </div>
+                    </div>
+                    <span className="text-[9px] font-mono tracking-tight text-white/90 mt-0.5">VERIFIED AGENCY ROI</span>
                   </div>
-                  <span className="text-[9px] font-mono tracking-tight text-white/90">VERIFIED AGENCY ROI</span>
+
+                  <div className="rounded-xl bg-neutral-900 text-white px-2.5 py-1.5 flex items-center gap-1.5 shadow-xs">
+                    <ShieldCheck className="size-3.5 text-[#ff7a00] shrink-0" />
+                    <span className="text-[9px] font-mono tracking-tight text-white/90">VERIFIED SOC2 COMPLIANT</span>
+                  </div>
+
+                  <div className="rounded-xl bg-neutral-900 text-white px-2.5 py-1.5 flex items-center gap-1.5 shadow-xs">
+                    <Award className="size-3.5 text-emerald-400 shrink-0" />
+                    <span className="text-[9px] font-mono tracking-tight text-white/90">VERIFIED CODE OWNERSHIP</span>
+                  </div>
                 </div>
               </div>
 
