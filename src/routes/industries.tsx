@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { WhoWeHelp } from "@/components/sections/WhoWeHelp";
+import { IndustriesCenterDetails } from "@/components/sections/IndustriesCenterDetails";
 import { FlagshipProduct } from "@/components/sections/FlagshipProduct";
 import { Industries } from "@/components/sections/Industries";
 import { ContactCTA } from "@/components/sections/ContactCTA";
@@ -20,12 +21,13 @@ export const Route = createFileRoute("/industries")({
 
 function IndustriesPage() {
   return (
-    <>
-      <div className="pt-24 md:pt-32" />
+    <div className="bg-sandel min-h-screen">
+      <div className="pt-20 md:pt-28" />
       <WhoWeHelp />
+      <IndustriesCenterDetails />
       <FlagshipProduct />
       <Industries />
       <ContactCTA />
-    </>
+    </div>
   );
 }
