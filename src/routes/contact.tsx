@@ -44,9 +44,9 @@ function Page() {
       <section className="container-pad mx-auto mt-10 max-w-[1400px]">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
           {/* Left Column: Contact Form + Company Background Cards */}
-          <div className="space-y-4">
-            <form onSubmit={handleSubmit(onSubmit)} className="rounded-2xl border border-sandel-border bg-sandel-card p-6 md:p-7 shadow-xs">
-              <div className="grid gap-3.5 sm:grid-cols-2">
+          <div className="space-y-4 font-sans">
+            <form onSubmit={handleSubmit(onSubmit)} className="rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] font-sans">
+              <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Name" error={errors.name?.message}><input {...register("name")} className="cf-input" placeholder="Your name" /></Field>
                 <Field label="Email" error={errors.email?.message}><input {...register("email")} type="email" className="cf-input" placeholder="you@company.com" /></Field>
                 <div className="sm:col-span-2">
@@ -58,17 +58,17 @@ function Page() {
                   </Field>
                 </div>
               </div>
-              <button disabled={isSubmitting} className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-6 py-3 text-sm font-medium text-white transition hover:scale-[1.01] disabled:opacity-60 shadow-[0_8px_20px_-8px_rgba(255,122,0,0.6)] cursor-pointer">
+              <button disabled={isSubmitting} className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#ff7a00] hover:bg-[#e06b00] px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 shadow-md cursor-pointer">
                 {isSubmitting ? "Sending..." : "Send message"}
               </button>
-              <style>{`.cf-input{width:100%;background:#F5EBE6;border:1px solid #E5D5CB;border-radius:10px;padding:10px 12px;font-size:13.5px;outline:none;color:#18181b}.cf-input::placeholder{color:rgb(120,120,128)}.cf-input:focus{border-color:rgba(255,122,0,0.8);box-shadow:0 0 0 3px rgba(255,122,0,0.15)}`}</style>
+              <style>{`.cf-input{width:100%;background:rgba(255,255,255,0.85);border:1px solid rgba(0,0,0,0.06);border-radius:14px;padding:12px 14px;font-size:13.5px;outline:none;color:#18181b;transition:all 0.2s}.cf-input::placeholder{color:rgb(140,140,148)}.cf-input:focus{background:#ffffff;border-color:rgba(255,122,0,0.8);box-shadow:0 0 0 3px rgba(255,122,0,0.15)}`}</style>
             </form>
             <InfoCard Icon={Building2} title="Pronetheseus Technologies" body="An AI automation studio building AI Employees, n8n workflows, CRM automations and voice agents for growing teams worldwide." />
             <InfoCard Icon={MapPin} title="Headquartered in India" body="Registered office · Mumbai, Maharashtra, India — with a fully remote delivery team across London, New York, Dubai and Singapore." />
           </div>
 
           {/* Right Column: Direct Channels + Working Hours */}
-          <div className="space-y-4">
+          <div className="space-y-4 font-sans">
             <InfoCard Icon={CalendarDays} title="Book a strategy call" body="30-minute call with a principal engineer. Free, actionable, no sales pressure." cta="Open calendar" ctaTo="/book" />
             <InfoCard Icon={Mail} title="Email us directly" body="info@pronetheseus.com — we reply within one business day." />
             <InfoCard Icon={Phone} title="Call or WhatsApp" body="+91 86829 19009 · Mon–Fri, available across IST & GMT timezones." />
@@ -82,27 +82,27 @@ function Page() {
 
 function Field({ label, error, children }: { label: string; error?: string; children: ReactNode }) {
   return (
-    <label className="block text-sm font-medium text-neutral-800">
+    <label className="block text-xs font-bold uppercase tracking-wider text-neutral-700 font-sans">
       <div className="mb-1.5">{label}</div>
       {children}
-      {error && <div className="mt-1 text-xs text-red-600">{error}</div>}
+      {error && <div className="mt-1 text-xs text-red-600 font-normal">{error}</div>}
     </label>
   );
 }
 
 function InfoCard({ Icon, title, body, cta, ctaTo }: { Icon: ComponentType<{ className?: string }>; title: string; body: string; cta?: string; ctaTo?: string; }) {
   return (
-    <div className="rounded-2xl border border-sandel-border bg-sandel-card p-6 shadow-xs">
-      <div className="grid size-10 place-items-center rounded-xl bg-[#ff7a00]/10 text-[#ff7a00] border border-[#ff7a00]/20">
-        <Icon className="size-4" />
+    <div className="rounded-[24px] sm:rounded-[28px] border border-white/80 bg-sandel-card p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all duration-300 font-sans">
+      <div className="grid size-11 place-items-center rounded-2xl bg-[#ff7a00]/10 text-[#ff7a00] border border-[#ff7a00]/20 shadow-2xs">
+        <Icon className="size-5" />
       </div>
-      <div className="mt-4 font-display text-xl font-bold text-neutral-900">{title}</div>
-      <p className="mt-1.5 text-sm text-neutral-600 font-sans leading-relaxed">{body}</p>
+      <div className="mt-4 font-sans text-xl font-bold text-neutral-900">{title}</div>
+      <p className="mt-1.5 text-sm text-neutral-600 font-sans leading-relaxed font-normal">{body}</p>
       {cta && (
         ctaTo ? (
-          <Link to={ctaTo} className="mt-3 inline-block text-sm font-semibold text-[#ff7a00] hover:underline">{cta} →</Link>
+          <Link to={ctaTo} className="mt-3 inline-block text-xs font-mono font-bold uppercase tracking-wider text-[#ff7a00] hover:underline">{cta} →</Link>
         ) : (
-          <button className="mt-3 text-sm font-semibold text-[#ff7a00] hover:underline cursor-pointer">{cta} →</button>
+          <button className="mt-3 text-xs font-mono font-bold uppercase tracking-wider text-[#ff7a00] hover:underline cursor-pointer">{cta} →</button>
         )
       )}
     </div>

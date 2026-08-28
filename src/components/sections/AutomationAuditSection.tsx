@@ -153,22 +153,22 @@ export function AutomationAuditSection() {
           </p>
         </div>
 
-        {/* VISUAL AUDIT MECHANISM DIAGRAM */}
-        <div className="mt-12 rounded-2xl border border-sandel-border bg-sandel-card p-5 shadow-xs max-w-5xl mx-auto">
-          <div className="text-center mb-3">
-            <span className="text-[11px] font-sans font-semibold uppercase tracking-wider text-neutral-500">
+        {/* VISUAL AUDIT MECHANISM DIAGRAM - Apple HIG Squircle Card Box */}
+        <div className="mt-12 rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] max-w-5xl mx-auto font-sans">
+          <div className="text-center mb-4">
+            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-neutral-500">
               How Your Automated Audit Pipeline Works
             </span>
           </div>
-          <div className="grid grid-cols-2 xs:grid-cols-4 lg:grid-cols-8 gap-2">
-            {AUDIT_FLOW_STEPS.map((s, idx) => {
+          <div className="grid grid-cols-2 xs:grid-cols-4 lg:grid-cols-8 gap-2.5">
+            {AUDIT_FLOW_STEPS.map((s) => {
               const Icon = s.icon;
               return (
-                <div key={s.label} className="flex flex-col items-center text-center p-2 rounded-xl bg-sandel border border-sandel-border">
-                  <div className="flex size-7 items-center justify-center rounded-lg bg-[#ff7a00]/10 text-[#ff7a00] mb-1.5">
-                    <Icon className="size-3.5" />
+                <div key={s.label} className="flex flex-col items-center text-center p-3 rounded-[20px] bg-white/80 backdrop-blur-sm border border-black/5 shadow-2xs hover:border-[#ff7a00]/40 transition-colors">
+                  <div className="flex size-8 items-center justify-center rounded-xl bg-[#ff7a00]/10 text-[#ff7a00] mb-2">
+                    <Icon className="size-4" />
                   </div>
-                  <span className="text-[10px] font-semibold text-neutral-800 font-sans leading-tight">
+                  <span className="text-[10px] font-bold text-neutral-800 font-sans leading-tight">
                     {s.label}
                   </span>
                 </div>
@@ -177,8 +177,8 @@ export function AutomationAuditSection() {
           </div>
         </div>
 
-        {/* AUDIT FORM CONTAINER */}
-        <div className="mt-10 max-w-3xl mx-auto rounded-3xl border border-sandel-border bg-sandel-card p-6 sm:p-10 shadow-lg">
+        {/* AUDIT FORM CONTAINER - Apple HIG Squircle Card Box */}
+        <div className="mt-10 max-w-3xl mx-auto rounded-[28px] sm:rounded-[34px] border border-white/80 bg-sandel-card p-6 sm:p-10 shadow-[0_12px_40px_rgb(0,0,0,0.06)] font-sans">
           {submitted ? (
             /* SUBMITTED RESULT VIEW */
             <motion.div
