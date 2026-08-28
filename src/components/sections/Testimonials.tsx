@@ -64,11 +64,7 @@ export function Testimonials() {
         {/* Header Container */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-3.5 py-1 text-xs font-mono font-semibold text-[#ff7a00] border border-orange-200/60 uppercase">
-              <Sparkles className="size-3.5" />
-              Built for businesses ready to automate.
-            </div>
-            <h2 className="mt-3.5 font-serif text-3xl font-normal tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
+            <h2 className="font-serif text-3xl font-normal tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
               Proven System Results & Case Studies
             </h2>
             <p className="mt-2 text-sm sm:text-base text-neutral-600 font-sans max-w-2xl">

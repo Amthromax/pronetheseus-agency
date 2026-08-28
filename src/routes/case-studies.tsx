@@ -19,11 +19,11 @@ export const Route = createFileRoute("/case-studies")({
 
 function CaseStudiesPage() {
   return (
-    <>
+    <div className="bg-sandel min-h-screen">
       <div className="pt-20 md:pt-28" />
       <Testimonials />
       <CaseStudies />
       <ContactCTA />
-    </>
+    </div>
   );
 }
