@@ -160,9 +160,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Full-Width Compact Horizontal CTA & Verified Trust Box */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-12 mt-4">
-            <div className="rounded-2xl border border-sandel-border bg-sandel-card p-6 sm:p-7 shadow-sm flex flex-col gap-6">
+          {/* Full-Width Compact Horizontal CTA & Verified Trust Section */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-12 mt-6 pt-6 border-t border-sandel-border/80">
+            <div className="flex flex-col gap-6">
               
               <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
                 {/* Left: Message Icon & Headline */}
