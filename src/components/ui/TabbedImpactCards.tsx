@@ -320,15 +320,8 @@ export function TabbedImpactCards() {
   return (
     <div className="w-full bg-sandel text-neutral-900 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-sandel-border">
       <div className="mx-auto max-w-7xl">
-        {/* Top Badge */}
-        <div className="flex justify-center">
-          <span className="rounded-full border border-orange-200 bg-orange-50 px-3.5 py-1 text-[11px] font-mono font-semibold uppercase tracking-wider text-[#ff7a00]">
-            TRANSPARENT AGENCY PRICING
-          </span>
-        </div>
-
         {/* Main Title */}
-        <div className="mt-4 text-center">
+        <div className="mt-2 text-center">
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-neutral-900 leading-tight">
             Simple, Value-Based
           </h2>
