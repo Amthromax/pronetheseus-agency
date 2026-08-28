@@ -56,8 +56,8 @@ export function WhoWeHelp() {
           </p>
         </div>
 
-        {/* 5 Industry Cards Grid: Horizontal Scroll on Mobile ONLY, Grid on Desktop */}
-        <div className="mt-6 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-3.5 pb-3 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 sm:gap-4 sm:pb-0">
+        {/* 5 Industry Cards Grid: Apple Design System */}
+        <div className="mt-6 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-3.5 pb-3 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 sm:gap-4 sm:pb-0 font-sans">
           {INDUSTRIES.map((ind, idx) => {
             const Icon = ind.icon;
             return (
@@ -67,26 +67,26 @@ export function WhoWeHelp() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: idx * 0.05 }}
-                className="group relative flex flex-col justify-between rounded-xl border border-sandel-border bg-sandel-card p-4 shadow-2xs transition-all duration-300 hover:border-neutral-400 hover:shadow-md shrink-0 w-[250px] xs:w-[270px] sm:w-auto snap-center"
+                className="group relative flex flex-col justify-between rounded-[24px] sm:rounded-[28px] border border-white/80 bg-sandel-card p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.09)] hover:border-neutral-300/80 transition-all duration-300 hover:-translate-y-1.5 shrink-0 w-[250px] xs:w-[270px] sm:w-auto snap-center"
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <div className="flex size-8 items-center justify-center rounded-lg bg-sandel text-neutral-900 group-hover:bg-[#18181b] group-hover:text-white transition-colors duration-300">
+                    <div className="flex size-9 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-black/5 text-neutral-900 group-hover:bg-neutral-900 group-hover:text-white transition-all duration-300 shadow-2xs">
                       <Icon className="size-4" />
                     </div>
                   </div>
 
-                  <h3 className="mt-3 font-sans text-sm font-semibold text-neutral-900">
+                  <h3 className="mt-3.5 font-sans text-sm font-bold text-neutral-900 tracking-tight">
                     {ind.title}
                   </h3>
-                  <p className="mt-1 text-xs text-neutral-600 font-normal">
+                  <p className="mt-1 text-xs text-neutral-600 font-normal leading-relaxed">
                     {ind.desc}
                   </p>
 
-                  <div className="mt-2.5 pt-2.5 border-t border-sandel-border/60 space-y-1">
+                  <div className="mt-3 pt-3 border-t border-black/5 space-y-1.5">
                     {ind.features.map((feat) => (
                       <div key={feat} className="flex items-center gap-1.5 text-[11px] text-neutral-600">
-                        <span className="w-1 h-1 rounded-full bg-[#ff7a00]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a00] shrink-0" />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -96,7 +96,7 @@ export function WhoWeHelp() {
                 <div className="mt-4 pt-1">
                   <Link
                     to="/book"
-                    className="inline-flex w-full items-center justify-between rounded-md bg-sandel px-3 py-1.5 text-xs font-semibold text-neutral-800 transition duration-200 group-hover:bg-[#18181b] group-hover:text-white"
+                    className="inline-flex w-full items-center justify-between rounded-full bg-white/80 backdrop-blur-sm border border-black/5 px-4 py-2 text-xs font-semibold text-neutral-800 transition duration-300 group-hover:bg-neutral-900 group-hover:text-white shadow-2xs"
                   >
                     <span>Automate My Business</span>
                     <ArrowRight className="size-3" />
@@ -107,13 +107,13 @@ export function WhoWeHelp() {
           })}
         </div>
 
-        {/* Bottom Industry Callout Banner */}
+        {/* Bottom Industry Callout Banner - Apple Superellipse */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="mt-6 rounded-xl border border-neutral-200 bg-gradient-to-r from-neutral-900 via-neutral-900 to-neutral-800 p-4 sm:p-5 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="mt-6 rounded-[24px] sm:rounded-[28px] border border-neutral-800 bg-neutral-900 p-5 sm:p-6 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4 font-sans"
         >
           <div className="text-center sm:text-left">
             <h4 className="font-sans text-sm sm:text-base font-bold tracking-tight">
@@ -125,7 +125,7 @@ export function WhoWeHelp() {
           </div>
 
           <Link to="/book" className="shrink-0">
-            <button className="rounded-lg bg-sandel-card px-4 py-2 text-xs font-semibold text-neutral-900 shadow-xs transition-all duration-200 hover:bg-sandel hover:scale-[1.02] cursor-pointer flex items-center gap-1.5">
+            <button className="rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-neutral-900 shadow-sm transition-all duration-300 hover:bg-neutral-100 hover:scale-[1.03] cursor-pointer flex items-center gap-1.5">
               <span>Get Free Automation Audit</span>
               <ArrowRight className="size-3.5 text-neutral-900" />
             </button>

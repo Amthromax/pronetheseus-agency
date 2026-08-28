@@ -83,8 +83,8 @@ export function Services() {
           </p>
         </div>
 
-        {/* 4 Service Cards: Horizontal Scroll on Mobile ONLY, 2x2 Grid on Desktop */}
-        <div className="mt-6 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-3 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 md:gap-5 md:pb-0">
+        {/* 4 Service Cards: Apple Design System (rounded-32px squircle, pill buttons) */}
+        <div className="mt-6 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-3 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 md:gap-5 md:pb-0 font-sans">
           {SERVICE_CATEGORIES.map((cat, idx) => {
             const Icon = cat.icon;
             return (
@@ -94,31 +94,31 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: idx * 0.06 }}
-                className="group relative flex flex-col justify-between rounded-xl border border-sandel-border bg-sandel-card p-4 sm:p-5 shadow-2xs transition-all duration-300 hover:border-neutral-400 hover:bg-[#FFFBF5] hover:shadow-md shrink-0 w-[280px] xs:w-[310px] md:w-auto snap-center"
+                className="group relative flex flex-col justify-between rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card p-5 sm:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.09)] hover:border-neutral-300/80 transition-all duration-300 hover:-translate-y-1.5 shrink-0 w-[280px] xs:w-[310px] md:w-auto snap-center"
               >
                 <div>
                   {/* Category Card Top Row */}
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1.5 font-sans text-xs sm:text-sm font-bold text-neutral-900">
+                    <div className="flex items-center gap-2 font-sans text-xs sm:text-sm font-bold text-neutral-900 tracking-tight">
                       <Icon className="size-4 text-[#ff7a00]" />
                       <span>{cat.title}</span>
                     </div>
-                    <span className="text-[10px] font-sans font-semibold tracking-wide uppercase text-neutral-500">
+                    <span className="rounded-full bg-white/80 backdrop-blur-sm px-3 py-0.5 text-[10px] font-sans font-semibold tracking-wide uppercase text-neutral-600 border border-black/5 shadow-2xs">
                       {cat.badge}
                     </span>
                   </div>
 
-                  <p className="mt-2.5 text-xs text-neutral-700 font-sans leading-relaxed">
+                  <p className="mt-3 text-xs text-neutral-700 font-sans leading-relaxed">
                     {cat.tagline}
                   </p>
 
                   {/* List of Capabilities */}
-                  <div className="mt-3 pt-2.5 border-t border-sandel-border/70 space-y-1.5">
+                  <div className="mt-4 pt-3 border-t border-black/5 space-y-2">
                     {cat.services.map((item) => (
-                      <div key={item.name} className="flex items-start gap-2">
-                        <CheckCircle2 className="size-3 shrink-0 text-[#ff7a00] mt-0.5" />
+                      <div key={item.name} className="flex items-start gap-2.5">
+                        <CheckCircle2 className="size-3.5 shrink-0 text-[#ff7a00] mt-0.5" />
                         <div className="min-w-0">
-                          <span className="text-xs font-semibold text-neutral-900 inline font-sans">
+                          <span className="text-xs font-bold text-neutral-900 inline font-sans">
                             {item.name}:{" "}
                           </span>
                           <span className="text-[11px] text-neutral-600 font-normal">
@@ -130,10 +130,10 @@ export function Services() {
                   </div>
                 </div>
 
-                <div className="mt-4 pt-1">
+                <div className="mt-5 pt-1">
                   <Link
                     to="/book"
-                    className="inline-flex w-full items-center justify-between rounded-lg bg-neutral-900 px-3.5 py-2 text-xs font-semibold text-white transition duration-200 hover:bg-black"
+                    className="inline-flex w-full items-center justify-between rounded-full bg-neutral-900 px-4 py-2.5 text-xs font-semibold text-white transition duration-300 hover:bg-black shadow-sm"
                   >
                     <span>Explore {cat.title}</span>
                     <ArrowRight className="size-3.5" />
