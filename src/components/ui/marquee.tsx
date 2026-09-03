@@ -7,6 +7,7 @@ export function Marquee({
   reverse = false,
   speed = 40,
   slowFactor = 4,
+  pauseOnHover = false,
 }: {
   children: ReactNode;
   className?: string;
@@ -14,6 +15,7 @@ export function Marquee({
   speed?: number;
   /** How many times slower the marquee runs while hovered. */
   slowFactor?: number;
+  pauseOnHover?: boolean;
 }) {
   const trackStyle = {
     animation: `marquee ${speed}s linear infinite`,

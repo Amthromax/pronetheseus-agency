@@ -1,6 +1,9 @@
 import { motion } from "motion/react";
 import { ScrollReveal } from "@/components/fx/ScrollReveal";
 import { SplitText } from "@/components/fx/SplitText";
+import { Marquee } from "@/components/ui/marquee";
+import { FileText as FileTextIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface InsightPost {
   id: string;
@@ -10,6 +13,29 @@ interface InsightPost {
   gradientBg: string;
   graphicSvg: React.ReactNode;
 }
+
+const INSIGHT_FILES = [
+  {
+    name: "agent-architecture.pdf",
+    body: "Configured, not coded: The engineering discipline gap in autonomous agent development.",
+  },
+  {
+    name: "speed-to-lead.xlsx",
+    body: "Sub-60 second lead qualification and automated appointment booking pipelines.",
+  },
+  {
+    name: "crm-sync.svg",
+    body: "Bi-directional workflow synchronization across Slack, HubSpot, ClickUp, and custom APIs.",
+  },
+  {
+    name: "soc2-compliance.gpg",
+    body: "Zero-retention LLM prompts, encrypted credentials, and enterprise security compliance.",
+  },
+  {
+    name: "roi-blueprint.txt",
+    body: "Step-by-step engineering methodology that eliminates buyer uncertainty and scales revenue.",
+  },
+];
 
 const SIDE_POSTS: InsightPost[] = [
   {
@@ -88,13 +114,40 @@ export function AIInsights() {
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 className="group relative overflow-hidden rounded-[28px] sm:rounded-[34px] border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300 min-h-[340px] sm:min-h-[440px] flex flex-col justify-end p-5 sm:p-7 cursor-pointer h-full"
               >
-                {/* 3D Gradient Background Art */}
+                {/* 3D Gradient Background Art & Marquee Files */}
                 <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-slate-900 to-black overflow-hidden">
                   <div className="absolute -top-20 -left-20 size-[400px] sm:size-[550px] rounded-full bg-gradient-to-tr from-neutral-700 via-slate-600 to-neutral-800 opacity-40 blur-3xl animate-orb" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-40 sm:size-60 rounded-full bg-gradient-to-br from-neutral-950 via-slate-800 to-neutral-900 shadow-2xl border border-white/20 flex items-center justify-center">
+                  
+                  {/* Marquee File Cards in Background */}
+                  <div className="absolute inset-x-0 top-6 z-0 overflow-hidden opacity-75 pointer-events-none">
+                    <Marquee pauseOnHover speed={22} className="[mask-image:linear-gradient(to_bottom,transparent_0%,#000_50%,transparent_100%)]">
+                      {INSIGHT_FILES.map((f, idx) => (
+                        <figure
+                          key={idx}
+                          className={cn(
+                            "relative w-44 sm:w-52 cursor-pointer overflow-hidden rounded-xl border p-3.5",
+                            "border-white/15 bg-white/10 backdrop-blur-md text-white shadow-lg",
+                            "transform-gpu transition-all duration-300 ease-out"
+                          )}
+                        >
+                          <div className="flex flex-row items-center gap-2">
+                            <FileTextIcon className="size-4 text-neutral-300 shrink-0" />
+                            <figcaption className="text-xs font-semibold text-white truncate font-sans">
+                              {f.name}
+                            </figcaption>
+                          </div>
+                          <blockquote className="mt-1.5 text-[11px] text-neutral-300 leading-snug line-clamp-2 font-sans font-normal">
+                            {f.body}
+                          </blockquote>
+                        </figure>
+                      ))}
+                    </Marquee>
+                  </div>
+
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-40 sm:size-60 rounded-full bg-gradient-to-br from-neutral-950 via-slate-800 to-neutral-900 shadow-2xl border border-white/20 flex items-center justify-center pointer-events-none">
                     <div className="size-20 sm:size-28 rounded-full bg-gradient-to-tr from-neutral-500 to-neutral-300 opacity-50 blur-md animate-pulse-glow" />
                   </div>
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_0%,rgba(0,0,0,0.3)_100%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_0%,rgba(0,0,0,0.4)_100%)] pointer-events-none" />
                 </div>
 
                 {/* Apple Frosted Glass Card Box at Bottom */}
