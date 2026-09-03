@@ -77,9 +77,10 @@ function BookPage() {
           <div className="relative overflow-hidden rounded-3xl border border-sandel-border bg-sandel-card p-8 md:p-14 shadow-lg">
             <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
               {/* Glowing Icon Badge */}
-              <div className="relative flex size-20 items-center justify-center rounded-2xl bg-[#ff7a00]/10 border border-[#ff7a00]/30 shadow-md">
-                <CheckCircle2 className="size-10 text-[#ff7a00]" />
-                <Sparkles className="absolute -top-2 -right-2 size-6 text-[#ff7a00] animate-pulse" />
+              {/* Glowing Icon Badge */}
+              <div className="relative flex size-20 items-center justify-center rounded-2xl bg-neutral-200/80 border border-black/10 shadow-md">
+                <CheckCircle2 className="size-10 text-neutral-900" />
+                <Sparkles className="absolute -top-2 -right-2 size-6 text-neutral-700 animate-pulse" />
               </div>
 
               {/* Thanksgiving Title */}
@@ -93,7 +94,7 @@ function BookPage() {
               {/* 3 Next Steps Grid */}
               <div className="mt-10 grid gap-4 text-left sm:grid-cols-3 w-full">
                 <div className="rounded-2xl border border-sandel-border bg-sandel p-5">
-                  <div className="flex size-9 items-center justify-center rounded-xl bg-[#ff7a00]/10 border border-[#ff7a00]/20 text-[#ff7a00]">
+                  <div className="flex size-9 items-center justify-center rounded-xl bg-neutral-200/80 border border-black/10 text-neutral-900">
                     <Mail className="size-4" />
                   </div>
                   <h4 className="mt-3 font-sans text-base font-bold text-neutral-900">1. Check Your Inbox</h4>
@@ -103,7 +104,7 @@ function BookPage() {
                 </div>
 
                 <div className="rounded-2xl border border-sandel-border bg-sandel p-5">
-                  <div className="flex size-9 items-center justify-center rounded-xl bg-[#ff7a00]/10 border border-[#ff7a00]/20 text-[#ff7a00]">
+                  <div className="flex size-9 items-center justify-center rounded-xl bg-neutral-200/80 border border-black/10 text-neutral-900">
                     <Clock className="size-4" />
                   </div>
                   <h4 className="mt-3 font-sans text-base font-bold text-neutral-900">2. Prepare Your Stack</h4>
@@ -113,7 +114,7 @@ function BookPage() {
                 </div>
 
                 <div className="rounded-2xl border border-sandel-border bg-sandel p-5">
-                  <div className="flex size-9 items-center justify-center rounded-xl bg-[#ff7a00]/10 border border-[#ff7a00]/20 text-[#ff7a00]">
+                  <div className="flex size-9 items-center justify-center rounded-xl bg-neutral-200/80 border border-black/10 text-neutral-900">
                     <Video className="size-4" />
                   </div>
                   <h4 className="mt-3 font-sans text-base font-bold text-neutral-900">3. Live 1-on-1 Call</h4>
@@ -150,13 +151,13 @@ function BookPage() {
             <div className="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-sandel-border bg-sandel-card p-4 shadow-xs">
               <div className="flex flex-wrap items-center gap-6 text-xs md:text-sm text-neutral-800 font-sans font-medium">
                 <span className="inline-flex items-center gap-2 font-semibold">
-                  <Clock className="size-4 text-[#ff7a00]" /> 30-Minute Free Audit
+                  <Clock className="size-4 text-neutral-900" /> 30-Minute Free Audit
                 </span>
                 <span className="inline-flex items-center gap-2 font-semibold">
-                  <Video className="size-4 text-[#ff7a00]" /> Live Google Meet
+                  <Video className="size-4 text-neutral-900" /> Live Google Meet
                 </span>
                 <span className="inline-flex items-center gap-2 font-semibold">
-                  <ShieldCheck className="size-4 text-[#ff7a00]" /> Instant Calendar Sync
+                  <ShieldCheck className="size-4 text-neutral-900" /> Instant Calendar Sync
                 </span>
               </div>
 
