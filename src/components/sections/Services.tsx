@@ -6,8 +6,7 @@ import {
   Workflow, 
   Rocket, 
   CheckCircle2, 
-  ArrowRight,
-  Layers
+  ArrowRight
 } from "lucide-react";
 
 const SERVICE_CATEGORIES = [
@@ -16,8 +15,7 @@ const SERVICE_CATEGORIES = [
     title: "AI Revenue Automation",
     tagline: "Turn inbound traffic into qualified pipeline & booked appointments automatically.",
     icon: TrendingUp,
-    badge: "Revenue Driver",
-    iconBg: "bg-orange-500/10 text-orange-600 border-orange-500/20",
+    badge: "REVENUE DRIVER",
     services: [
       { name: "AI lead capture", desc: "Instantly capture leads across form fills, ads, and live chat" },
       { name: "Lead qualification", desc: "Autonomous AI scoring and budget/intent validation" },
@@ -30,8 +28,7 @@ const SERVICE_CATEGORIES = [
     title: "AI Customer Service",
     tagline: "Provide 24/7 intelligent assistance across every customer communication channel.",
     icon: Bot,
-    badge: "24/7 Support",
-    iconBg: "bg-blue-500/10 text-blue-600 border-blue-500/20",
+    badge: "24/7 SUPPORT",
     services: [
       { name: "Website AI agents", desc: "Custom-trained brand chatbots that resolve complex inquiries" },
       { name: "WhatsApp & SMS", desc: "Direct 2-way conversational support and transactional text messaging" },
@@ -44,8 +41,7 @@ const SERVICE_CATEGORIES = [
     title: "AI Operations",
     tagline: "Streamline client onboarding and internal administrative workflows to eliminate manual drag.",
     icon: Workflow,
-    badge: "Ops Efficiency",
-    iconBg: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20",
+    badge: "OPS EFFICIENCY",
     services: [
       { name: "Client onboarding", desc: "Replace 2-week email back-and-forth with a 15-minute portal" },
       { name: "Internal workflows", desc: "Bi-directional sync across Slack, ClickUp, Notion & Linear" },
@@ -58,8 +54,7 @@ const SERVICE_CATEGORIES = [
     title: "AI Growth Systems",
     tagline: "Maximize customer lifetime value, re-engage cold leads, and automate revenue reporting.",
     icon: Rocket,
-    badge: "Growth Engine",
-    iconBg: "bg-purple-500/10 text-purple-600 border-purple-500/20",
+    badge: "GROWTH ENGINE",
     services: [
       { name: "Lead nurturing", desc: "Automated multi-touch campaign cadences tailored by lead behavior" },
       { name: "Review requests", desc: "Automated post-service 5-star Google review collection flows" },
@@ -69,71 +64,86 @@ const SERVICE_CATEGORIES = [
   },
 ];
 
+const INCLUDED_FEATURES = [
+  "Access to all automation & AI work types in one subscription",
+  "Dedicated AI project manager and customer success",
+  "Fast, defined turnaround times",
+  "A shared task board to drop requests and track progress",
+  "Unlimited revisions while work is active",
+  "Built to work alongside your in-house team",
+  "Support for multiple brands or products",
+];
+
 export function Services() {
   return (
-    <section id="services" className="relative bg-sandel py-8 text-neutral-900 sm:py-12 overflow-hidden">
-      <div className="container-pad mx-auto max-w-[1400px]">
+    <section id="services" className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden">
+      <div className="mx-auto max-w-[1700px] px-4 sm:px-8 lg:px-16 xl:px-20">
+        
         {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-neutral-900">
+        <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="text-3xl xs:text-4xl sm:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.12]"
+          >
             Our Automation Services
-          </h2>
-          <p className="mt-1 text-xs sm:text-sm text-neutral-600 font-sans max-w-xl mx-auto">
+          </motion.h2>
+          <p className="mt-3 text-xs sm:text-sm text-neutral-500 font-normal leading-relaxed max-w-xl mx-auto">
             Organized around clear business outcomes that drive revenue and streamline operations.
           </p>
         </div>
 
-        {/* 4 Service Cards: Apple Design System (rounded-32px squircle, pill buttons) */}
-        <div className="mt-6 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-3 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 md:gap-5 md:pb-0 font-sans">
+        {/* 2x2 Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 mb-12 sm:mb-16">
           {SERVICE_CATEGORIES.map((cat, idx) => {
             const Icon = cat.icon;
             return (
               <motion.div
                 key={cat.id}
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: idx * 0.06 }}
-                className="group relative flex flex-col justify-between rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card p-5 sm:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.09)] hover:border-neutral-300/80 transition-all duration-300 hover:-translate-y-1.5 shrink-0 w-[280px] xs:w-[310px] md:w-auto snap-center"
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="group rounded-[24px] bg-[#f4f3ee] border border-neutral-200/90 p-4.5 sm:p-5 flex flex-col justify-between shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-neutral-300 transition duration-300"
               >
                 <div>
-                  {/* Category Card Top Row */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 font-sans text-xs sm:text-sm font-bold text-neutral-900 tracking-tight">
-                      <Icon className="size-4 text-[#ff7a00]" />
-                      <span>{cat.title}</span>
+                  {/* Category Top Row */}
+                  <div className="flex items-center justify-between pb-2.5 border-b border-black/5">
+                    <div className="flex items-center gap-2">
+                      <Icon className="size-4 sm:size-4.5 text-[#C15F3C]" />
+                      <h3 className="text-sm sm:text-base font-bold text-neutral-900 tracking-tight">
+                        {cat.title}
+                      </h3>
                     </div>
-                    <span className="rounded-full bg-white/80 backdrop-blur-sm px-3 py-0.5 text-[10px] font-sans font-semibold tracking-wide uppercase text-neutral-600 border border-black/5 shadow-2xs">
+                    <span className="rounded-full bg-white px-2.5 py-0.5 text-[9px] sm:text-[10px] font-mono font-semibold tracking-wider text-neutral-600 border border-neutral-200/80 shadow-2xs">
                       {cat.badge}
                     </span>
                   </div>
 
-                  <p className="mt-3 text-xs text-neutral-700 font-sans leading-relaxed">
+                  <p className="mt-2 text-xs text-neutral-500 font-normal leading-relaxed">
                     {cat.tagline}
                   </p>
 
                   {/* List of Capabilities */}
-                  <div className="mt-4 pt-3 border-t border-black/5 space-y-2">
+                  <div className="mt-3.5 space-y-2 pt-2.5 border-t border-black/5">
                     {cat.services.map((item) => (
-                      <div key={item.name} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="size-3.5 shrink-0 text-[#ff7a00] mt-0.5" />
-                        <div className="min-w-0">
-                          <span className="text-xs font-bold text-neutral-900 inline font-sans">
-                            {item.name}:{" "}
-                          </span>
-                          <span className="text-[11px] text-neutral-600 font-normal">
-                            {item.desc}
-                          </span>
+                      <div key={item.name} className="flex items-start gap-2">
+                        <CheckCircle2 className="size-3.5 shrink-0 text-[#C15F3C] mt-0.5" />
+                        <div className="text-xs leading-snug">
+                          <strong className="font-bold text-neutral-900">{item.name}: </strong>
+                          <span className="text-neutral-500 font-normal">{item.desc}</span>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="mt-5 pt-1">
+                <div className="mt-4.5">
                   <Link
                     to="/book"
-                    className="inline-flex w-full items-center justify-between rounded-full bg-neutral-900 px-4 py-2.5 text-xs font-semibold text-white transition duration-300 hover:bg-black shadow-sm"
+                    className="inline-flex w-full items-center justify-between rounded-full bg-neutral-900 px-4 py-2.5 text-xs font-bold text-white transition duration-300 hover:bg-black shadow-sm"
                   >
                     <span>Explore {cat.title}</span>
                     <ArrowRight className="size-3.5" />
@@ -143,6 +153,92 @@ export function Services() {
             );
           })}
         </div>
+
+        {/* Subscription Pricing Banner Box */}
+        <div className="relative">
+          {/* Top Right Pricing Tag */}
+          <div className="flex justify-end mb-2.5">
+            <span className="rounded-full bg-neutral-900 text-white px-3.5 py-0.5 text-xs font-semibold tracking-tight shadow-2xs">
+              Pricing
+            </span>
+          </div>
+
+          {/* Split Subscription Card Box */}
+          <div className="rounded-[24px] border-2 border-neutral-900 overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-xl bg-white">
+            
+            {/* Left Half (Light Background) */}
+            <div className="lg:col-span-6 p-5 sm:p-7 lg:p-8 bg-[#f7f7f3] border-b lg:border-b-0 lg:border-r border-neutral-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-neutral-900 tracking-tight">
+                    Subscription
+                  </h3>
+                  <span className="text-[11px] font-mono text-neutral-400">
+                    Amthromax®
+                  </span>
+                </div>
+
+                <div className="space-y-3 text-xs text-neutral-500 font-normal leading-relaxed max-w-lg">
+                  <p>
+                    Amthromax operates as an AI &amp; automation system you can turn on.
+                  </p>
+                  <p>
+                    Teams work with us at a defined monthly capacity, running requests through a steady, repeatable cadence.
+                  </p>
+                  <p>
+                    Whether that starts with a focused scope or continues month to month, the structure stays the same. Clear ownership. Output that compounds instead of resetting. <strong className="text-neutral-900 font-bold">Plans typically start from $5K based on the level of capacity you need.</strong>
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 sm:mt-8">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-5 py-2.5 text-xs font-bold text-white hover:bg-black transition shadow-sm cursor-pointer"
+                >
+                  Get started
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Half (Solid Black Background) */}
+            <div className="lg:col-span-6 p-5 sm:p-7 lg:p-8 bg-neutral-950 text-white flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+                  Included in every plan
+                </h3>
+                <p className="mt-1.5 text-xs text-neutral-400 font-normal leading-relaxed mb-4">
+                  Every engagement runs on the same operating system, same team, and delivery model, whether you start small or scale ongoing capacity.
+                </p>
+
+                <div className="space-y-2">
+                  {INCLUDED_FEATURES.map((feat) => (
+                    <div key={feat} className="flex items-center gap-2.5">
+                      <span className="size-1.5 rounded-full bg-neutral-400 shrink-0" />
+                      <span className="text-xs font-medium text-neutral-200">
+                        {feat}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-6 sm:mt-8 flex items-center justify-between pt-4 border-t border-neutral-800">
+                <span className="text-[11px] font-mono text-neutral-500">
+                  Amthromax®
+                </span>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-neutral-200 px-6 py-2.5 text-xs font-bold text-neutral-900 hover:bg-white transition shadow-sm cursor-pointer"
+                >
+                  Get started
+                </Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
   );

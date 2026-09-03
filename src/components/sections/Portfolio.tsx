@@ -1,105 +1,180 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { SectionHeading } from "./SectionHeading";
-import { ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
-import { portfolioItems } from "@/data/portfolio";
-import { TiltCard } from "@/components/fx/TiltCard";
 
-const filters = ["All", "Websites", "AI Agents", "Real Estate", "Automation"];
+interface ProjectItem {
+  id: string;
+  title: string;
+  category: string;
+  year: string;
+  logo: string;
+  isLogoCustom?: boolean;
+  logoElement?: React.ReactNode;
+  image: string;
+  slug: string;
+}
+
+const PROJECTS: ProjectItem[] = [
+  {
+    id: "1",
+    title: "POSH AI",
+    category: "Ad Production & UI Design",
+    year: "2025",
+    logo: "posh",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1000&auto=format&fit=crop&q=80",
+    slug: "posh-ai",
+  },
+  {
+    id: "2",
+    title: "TaxCloud",
+    category: "Ad Production & Creative",
+    year: "2025",
+    logo: "taxcloud",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1000&auto=format&fit=crop&q=80",
+    slug: "taxcloud",
+  },
+  {
+    id: "3",
+    title: "Tosoh Bioscience",
+    category: "Podcast Production & Animation",
+    year: "2025",
+    logo: "",
+    isLogoCustom: true,
+    logoElement: (
+      <div className="relative w-full h-full flex items-center justify-center bg-[#eae9e3] p-8">
+        <div className="relative max-w-[85%] max-h-[85%] flex items-center justify-center">
+          <img
+            src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80"
+            alt="MacBook Showcase"
+            className="rounded-lg shadow-xl object-cover"
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="size-8 sm:size-10 rounded-full bg-white/90 shadow-md border border-neutral-200 flex items-center justify-center">
+              <span className="size-3.5 rounded-full bg-[#e11d48] border-2 border-white" />
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+    image: "",
+    slug: "tosoh-bioscience",
+  },
+  {
+    id: "4",
+    title: "Time4Learning",
+    category: "Video Production",
+    year: "2026",
+    logo: "",
+    isLogoCustom: true,
+    logoElement: (
+      <div className="w-full h-full flex items-center justify-center bg-[#e6e5df] p-8">
+        <div className="text-center font-display tracking-tight font-extrabold text-2xl sm:text-4xl text-neutral-900 flex items-center justify-center gap-0.5">
+          <span>time</span>
+          <span className="text-[#059669]">4</span>
+          <span>learning</span>
+        </div>
+      </div>
+    ),
+    image: "",
+    slug: "time4learning",
+  },
+];
 
 export function Portfolio() {
-  const [activeFilter, setActiveFilter] = useState("All");
-
-  const shown = portfolioItems.filter((i) => {
-    if (activeFilter === "All") return true;
-    return i.category.toLowerCase().includes(activeFilter.toLowerCase()) || activeFilter.toLowerCase().includes(i.category.toLowerCase());
-  });
-
   return (
-    <section className="relative container-pad mx-auto max-w-[1400px] py-24 md:py-32">
-      <SectionHeading
-        eyebrow="Selected Work"
-        title="Project Works & Case Studies"
-        description="Explore production builds shipped across high-converting websites, autonomous AI agents, and specialized real estate systems."
-      />
+    <section id="our-work" className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden">
+      <div className="mx-auto max-w-[1700px] px-4 sm:px-8 lg:px-16 xl:px-20">
+        
+        {/* Top Section Header Divider Bar */}
+        <div className="flex items-center justify-between border-b border-black/10 pb-4 mb-6">
+          <span className="text-sm font-medium tracking-tight text-neutral-800 font-sans">
+            /Our work
+          </span>
+          <span className="text-sm font-medium text-neutral-400 font-sans">
+            (03)
+          </span>
+        </div>
 
-      {/* Filter Tabs */}
-      <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-        {filters.map((label) => (
-          <button
-            key={label}
-            onClick={() => setActiveFilter(label)}
-            className={`rounded-none border px-5 py-2.5 text-sm font-medium transition duration-300 ${
-              activeFilter === label
-                ? "border-brand/50 bg-gradient-to-r from-orange-500/20 to-rose-500/20 text-brand shadow-[0_0_20px_rgba(255,122,0,0.3)]"
-                : "border-white/10 bg-white/[0.03] text-foreground/70 hover:border-white/20 hover:text-foreground"
-            }`}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
-
-      {/* Projects Grid */}
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <AnimatePresence mode="popLayout">
-          {shown.map((it) => (
-            <motion.div
-              key={it.title}
-              layout
-              initial={{ opacity: 0, scale: 0.94, filter: "blur(12px)" }}
-              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, scale: 0.94, filter: "blur(12px)" }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="group"
+        {/* Main Section Title & Subtitle + View All Button */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
+          <div className="max-w-4xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="text-3xl xs:text-4xl sm:text-5xl lg:text-[50px] font-semibold text-neutral-900 tracking-tight leading-[1.1] font-sans"
             >
-              <TiltCard intensity={6} className="relative rounded-none">
-                <Link
-                  to="/portfolio/$slug"
-                  params={{ slug: it.slug }}
-                  className="relative block aspect-[4/3] overflow-hidden rounded-none border border-white/10 transition duration-500 group-hover:border-orange-500/50 group-hover:shadow-[0_30px_90px_-20px_rgba(255,122,0,0.45)]"
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${it.gradient} opacity-90 transition duration-1000 group-hover:scale-110 group-hover:opacity-100`} />
-                  {it.showcase && (
-                    <img
-                      src={it.showcase}
-                      alt={it.title}
-                      className="absolute inset-x-0 top-0 h-1/2 w-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
-                      draggable={false}
-                    />
-                  )}
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-600/0 to-orange-950/0 opacity-0 transition duration-700 group-hover:from-orange-600/25 group-hover:to-transparent group-hover:opacity-100" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                  
-                  {/* Light Sweep Effect */}
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 -translate-x-full skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-[1200ms] group-hover:translate-x-full"
-                  />
+              Selected projects across ad production, podcast, social, and motion.
+            </motion.h2>
 
-                  {/* Card Content */}
-                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-6">
-                    <div className="translate-y-1 transition duration-500 group-hover:translate-y-0">
-                      <div className="flex items-center gap-2">
-                        <span className="rounded-none bg-white/15 px-2.5 py-0.5 text-[11px] uppercase tracking-wider text-white/90 backdrop-blur-md">
-                          {it.category}
-                        </span>
-                        <span className="text-xs tracking-widest text-white/70">{it.tag}</span>
-                      </div>
-                      <div className="mt-2 font-display text-2xl font-semibold text-white">{it.title}</div>
-                      <p className="mt-1 line-clamp-1 text-xs text-white/70">{it.summary}</p>
+            <p className="mt-4 text-xs sm:text-sm text-neutral-500 font-normal leading-relaxed max-w-xl font-sans">
+              A curated selection of projects that reflect our commitment to simplicity and purposeful design.
+            </p>
+          </div>
+
+          <div className="shrink-0">
+            <Link
+              to="/case-studies"
+              className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-[#f4f3ee] px-4 py-2 text-xs font-semibold text-neutral-800 hover:bg-neutral-200/70 transition shadow-2xs cursor-pointer font-sans"
+            >
+              <span>View all projects</span>
+              <span className="text-sm font-normal">+</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* 2x2 Selected Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          {PROJECTS.map((project, idx) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="group rounded-[24px] bg-[#e6e5df] border border-neutral-300/80 overflow-hidden flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-neutral-400 transition duration-300 cursor-pointer"
+            >
+              {/* Full-Bleed Media Container Box */}
+              <div className="relative bg-neutral-900 overflow-hidden aspect-[16/11] min-h-[320px] sm:min-h-[410px] w-full flex items-center justify-center">
+                {project.isLogoCustom ? (
+                  project.logoElement
+                ) : (
+                  <>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition duration-500" />
+                    
+                    {/* Centered Overlay Logo */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <span className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-display opacity-95 group-hover:scale-110 transition duration-500 drop-shadow-md">
+                        {project.logo}
+                      </span>
                     </div>
-                    <div className="grid size-11 shrink-0 place-items-center rounded-none border border-white/20 bg-white/10 backdrop-blur-md transition duration-500 group-hover:border-white/50 group-hover:bg-orange-500/40">
-                      <ArrowUpRight className="size-5 text-white transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </div>
-                  </div>
-                </Link>
-              </TiltCard>
+                  </>
+                )}
+              </div>
+
+              {/* Bottom Full-Width Card Meta Details Info Row */}
+              <div className="p-4 sm:p-5 flex items-center justify-between bg-[#e6e5df] border-t border-black/5">
+                <div>
+                  <h3 className="text-sm sm:text-base font-bold text-neutral-900 tracking-tight leading-tight">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs text-neutral-600 font-normal mt-0.5">
+                    {project.category}
+                  </p>
+                </div>
+                <div className="text-xs font-semibold text-neutral-600">
+                  {project.year}
+                </div>
+              </div>
             </motion.div>
           ))}
-        </AnimatePresence>
+        </div>
+
       </div>
     </section>
   );

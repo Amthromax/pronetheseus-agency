@@ -1,7 +1,5 @@
-import { ScrollReveal } from "@/components/fx/ScrollReveal";
-import { SectionHeading } from "./SectionHeading";
 import { motion } from "motion/react";
-import { Clock, Zap, CalendarCheck, TrendingUp, ShieldCheck, CheckCircle2, Lock } from "lucide-react";
+import { Clock, Zap, CalendarCheck, TrendingUp } from "lucide-react";
 
 const METRICS_LIST = [
   {
@@ -9,80 +7,92 @@ const METRICS_LIST = [
     label: "Monthly Hours Saved",
     desc: "Reclaim founder and staff time previously lost to manual lead triage & repetitive data entry.",
     icon: Clock,
-    badge: "Time Reclaimed"
+    badge: "TIME RECLAIMED"
   },
   {
     value: "<60s",
     label: "Speed-to-Lead Response",
     desc: "Sub-60s multi-channel response across web forms, SMS, phone, and WhatsApp.",
     icon: Zap,
-    badge: "Speed to Lead"
+    badge: "SPEED TO LEAD"
   },
   {
     value: "+18/mo",
     label: "New Monthly Bookings",
     desc: "Capture after-hours leads and automatically qualify & book them directly onto calendars.",
     icon: CalendarCheck,
-    badge: "Pipeline Growth"
+    badge: "PIPELINE GROWTH"
   },
   {
     value: "3.2×",
     label: "Measured ROI",
     desc: "Demonstrated return on investment within 90 days of deploying core AI revenue systems.",
     icon: TrendingUp,
-    badge: "P&L Impact"
+    badge: "P&L IMPACT"
   }
 ];
 
 export function ExpectedOutcomes() {
   return (
-    <section id="expected-outcomes" className="relative bg-sandel py-12 text-neutral-900 md:py-16">
-      <div className="container-pad mx-auto max-w-[1400px]">
-        <SectionHeading
-          title="Measurable Operational Proof"
-          description="Concrete benchmarks observed across active service business and agency automation deployments."
-        />
+    <section id="expected-outcomes" className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden">
+      <div className="mx-auto max-w-[1700px] px-4 sm:px-8 lg:px-16 xl:px-20">
+        
+        {/* Section Header */}
+        <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="text-3xl xs:text-4xl sm:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.12]"
+          >
+            Measurable Operational Proof
+          </motion.h2>
+          <p className="mt-3 text-xs sm:text-sm text-neutral-500 font-normal leading-relaxed max-w-xl mx-auto">
+            Concrete benchmarks observed across active service business and agency automation deployments.
+          </p>
+        </div>
 
-        {/* 4 Measurable Proof Metrics Cards: Apple Design System (rounded-32px squircle, pill badges) */}
-        <div className="mt-8 sm:mt-10 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 sm:pb-0 font-sans">
+        {/* 4 Cards Grid - Direct without outer wrapper box */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {METRICS_LIST.map((m, idx) => {
             const Icon = m.icon;
             return (
-              <div key={idx} className="shrink-0 w-[260px] xs:w-[280px] sm:w-auto snap-center flex flex-col">
-                <ScrollReveal variant="card" staggerIndex={idx} staggerStep={0.09} className="h-full w-full">
-                  <motion.div
-                    whileHover={{ scale: 1.02, y: -4 }}
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    className="group relative rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card p-6 md:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.09)] hover:border-neutral-300/80 transition-all duration-300 h-full flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex size-9 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-black/5 text-[#ff7a00] shadow-2xs">
-                          <Icon className="size-4" />
-                        </div>
-                        <span className="rounded-full bg-white/80 backdrop-blur-sm px-3 py-1 text-[10px] font-mono font-semibold tracking-wide uppercase text-neutral-600 border border-black/5 shadow-2xs">
-                          {m.badge}
-                        </span>
-                      </div>
-
-                      <div className="font-sans text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 tabular-nums">
-                        {m.value}
-                      </div>
-                      <h3 className="mt-2 font-sans text-sm sm:text-base font-bold tracking-tight text-neutral-900">
-                        {m.label}
-                      </h3>
-                      <p className="mt-1.5 text-xs text-neutral-600 leading-relaxed font-normal">
-                        {m.desc}
-                      </p>
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="group rounded-[22px] bg-[#f4f3ee] border border-neutral-200/90 p-5 sm:p-6 flex flex-col justify-between shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-neutral-300 transition duration-300"
+              >
+                <div>
+                  {/* Top Badge & Icon Row */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex size-8 items-center justify-center rounded-full bg-white border border-neutral-200/80 text-[#C15F3C] shadow-2xs">
+                      <Icon className="size-4" />
                     </div>
+                    <span className="rounded-full bg-white px-3 py-1 text-[9px] sm:text-[10px] font-mono font-semibold tracking-wider uppercase text-neutral-600 border border-neutral-200/80 shadow-2xs">
+                      {m.badge}
+                    </span>
+                  </div>
 
-                    <div className="mt-5 h-1 w-0 bg-[#ff7a00] transition-all duration-300 group-hover:w-full rounded-full" />
-                  </motion.div>
-                </ScrollReveal>
-              </div>
+                  {/* Value & Labels */}
+                  <div className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 tabular-nums">
+                    {m.value}
+                  </div>
+                  <h3 className="mt-2 text-sm sm:text-base font-bold tracking-tight text-neutral-900">
+                    {m.label}
+                  </h3>
+                  <p className="mt-1.5 text-xs text-neutral-500 font-normal leading-relaxed">
+                    {m.desc}
+                  </p>
+                </div>
+              </motion.div>
             );
           })}
         </div>
+
       </div>
     </section>
   );

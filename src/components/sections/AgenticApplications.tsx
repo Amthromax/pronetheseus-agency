@@ -255,7 +255,7 @@ export function AgenticApplications() {
                   onClick={() => setCategoryFilter("ALL")}
                   className={`px-3 py-1 rounded-sm transition duration-200 cursor-pointer whitespace-nowrap ${categoryFilter === "ALL" ? "bg-neutral-900 text-white font-bold" : "text-neutral-600 hover:text-neutral-900"}`}
                 >
-                  All (6)
+                  All (4)
                 </button>
                 <button
                   onClick={() => setCategoryFilter("CUSTOMER_SERVICE")}
@@ -568,135 +568,6 @@ export function AgenticApplications() {
                   </ScrollReveal>
                 </div>
               )}
-
-              {/* Card 5: Invoicing */}
-              {(categoryFilter === "ALL" || categoryFilter === "EMPLOYEE_PRODUCTIVITY") && (
-                <div className="shrink-0 w-[290px] xs:w-[320px] md:w-auto snap-center flex flex-col">
-                  <ScrollReveal variant="card" staggerIndex={4} className="h-full w-full">
-                    <motion.div
-                      whileHover={{ y: -3 }}
-                      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="flex flex-col justify-between h-full min-h-[410px] sm:min-h-[440px] rounded-lg bg-white p-5 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl cursor-pointer group"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between">
-                          <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
-                            Automated Invoicing & Payments
-                          </h4>
-                          <span className="text-[10px] sm:text-xs font-bold text-indigo-700 uppercase tracking-wider">
-                            FINANCE OPS
-                          </span>
-                        </div>
-                        <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                          Automate invoice creation, payment follow-up reminders, and accounting software sync.
-                        </p>
-                        <div className="mt-3 flex items-center gap-2">
-                          <Link
-                            to="/book"
-                            className="inline-flex items-center gap-1.5 rounded-sm bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-[#ff7a00]"
-                          >
-                            <span>GET THIS SYSTEM</span>
-                            <ArrowRight className="size-3" />
-                          </Link>
-                        </div>
-                      </div>
-
-                      <div className="relative mt-4 rounded-2xl border border-neutral-200/80 bg-[#FAFAFC] p-3 text-xs grid grid-cols-2 gap-2 font-sans content-center shadow-inner overflow-hidden">
-                        <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-2xs">
-                          <div className="text-[10px] font-semibold text-neutral-500 flex items-center gap-1">
-                            <span>💳</span> Status
-                          </div>
-                          <div className="mt-1 text-xs font-semibold text-neutral-800 truncate">Auto-Invoiced</div>
-                        </div>
-                        <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-2xs">
-                          <div className="text-[10px] font-semibold text-neutral-500">Collected</div>
-                          <div className="mt-0.5 text-sm font-bold text-neutral-900">
-                            100% <span className="text-[10px] text-emerald-600 font-bold">↑ 24%</span>
-                          </div>
-                        </div>
-
-                        <div
-                          className="absolute left-0 right-0 bottom-0 h-[30%] pointer-events-none z-10 rounded-b-2xl"
-                          style={{
-                            backdropFilter: "blur(6px)",
-                            WebkitBackdropFilter: "blur(6px)",
-                            background:
-                              "linear-gradient(to bottom, rgba(245, 250, 255, 0), rgba(245, 250, 255, 0.7) 60%, rgba(245, 250, 255, 0.95) 100%)",
-                          }}
-                        />
-                      </div>
-                    </motion.div>
-                  </ScrollReveal>
-                </div>
-              )}
-
-              {/* Card 6: Review & Reactivation */}
-              {(categoryFilter === "ALL" || categoryFilter === "EMPLOYEE_PRODUCTIVITY") && (
-                <div className="shrink-0 w-[290px] xs:w-[320px] md:w-auto snap-center flex flex-col">
-                  <ScrollReveal variant="card" staggerIndex={5} className="h-full w-full">
-                    <motion.div
-                      whileHover={{ y: -3 }}
-                      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="flex flex-col justify-between h-full min-h-[410px] sm:min-h-[440px] rounded-lg bg-white p-5 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl cursor-pointer group"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between">
-                          <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
-                            5-Star Reviews & Database Reactivation
-                          </h4>
-                          <span className="text-[10px] sm:text-xs font-bold text-emerald-700 uppercase tracking-wider">
-                            GROWTH ENGINE
-                          </span>
-                        </div>
-                        <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                          Automate post-service Google reviews and reactivate cold lead databases into bookings.
-                        </p>
-                        <div className="mt-3 flex items-center gap-2">
-                          <Link
-                            to="/book"
-                            className="inline-flex items-center gap-1.5 rounded-sm bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-[#ff7a00]"
-                          >
-                            <span>GET THIS SYSTEM</span>
-                            <ArrowRight className="size-3" />
-                          </Link>
-                        </div>
-                      </div>
-
-                      <div className="relative mt-4 rounded-2xl border border-neutral-200/80 bg-[#FAFAFC] p-3.5 sm:p-4 text-xs font-sans shadow-inner overflow-hidden">
-                        <div className="space-y-2.5">
-                          <div className="flex items-center justify-end gap-2">
-                            <div className="rounded-xl bg-[#FFF6F0] border border-[#FFE4D4] text-[#4A2408] px-3 py-2 text-xs font-medium shadow-2xs">
-                              Reactivate 450 past contacts
-                            </div>
-                            <div className="size-5 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-[10px] shrink-0">
-                              R
-                            </div>
-                          </div>
-
-                          <div className="rounded-xl border border-neutral-200 bg-white p-3 text-xs space-y-1 shadow-2xs">
-                            <div className="font-bold text-neutral-900 flex items-center gap-1 text-xs">
-                              <span>⭐</span> Google Review & Reactivation Flow
-                            </div>
-                            <div className="text-neutral-500 font-medium text-[11px]">
-                              📈 28 new 5-star reviews • 16 new bookings
-                            </div>
-                          </div>
-                        </div>
-
-                        <div
-                          className="absolute left-0 right-0 bottom-0 h-[30%] pointer-events-none z-10 rounded-b-2xl"
-                          style={{
-                            backdropFilter: "blur(6px)",
-                            WebkitBackdropFilter: "blur(6px)",
-                            background:
-                              "linear-gradient(to bottom, rgba(245, 250, 255, 0), rgba(245, 250, 255, 0.7) 60%, rgba(245, 250, 255, 0.95) 100%)",
-                          }}
-                        />
-                      </div>
-                    </motion.div>
-                  </ScrollReveal>
-                </div>
-              )}
             </div>
 
             {/* Bottom EXPLORE MORE Button */}
@@ -712,7 +583,7 @@ export function AgenticApplications() {
               </ScrollReveal>
 
               <div className="text-xs sm:text-sm text-neutral-600 font-semibold hidden sm:block">
-                Showing {categoryFilter === "ALL" ? "6 of 6" : categoryFilter === "CUSTOMER_SERVICE" ? "3 Customer AI" : "3 Ops & Revenue"} Automation Systems
+                Showing {categoryFilter === "ALL" ? "4 of 4" : categoryFilter === "CUSTOMER_SERVICE" ? "3 Customer AI" : "1 Ops & Revenue"} Automation Systems
               </div>
             </div>
           </div>

@@ -51,9 +51,11 @@
   --color-brand-glow: var(--brand-glow);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
-  --color-sandel: #F5ECE0;
-  --color-sandel-card: #FAF5EE;
-  --color-sandel-border: #E6D7C3;
+  --color-sandel: #FFFFFF;
+  --color-sandel-card: #FFFFFF;
+  --color-sandel-border: #E5E5E5;
+  --color-crail: #C15F3C;
+  --color-crail-bg: #FDF5F0;
   --font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -62,7 +64,7 @@
 
 :root {
   --radius: 0.9rem;
-  --background: #F5ECE0;
+  --background: #FFFFFF;
   --foreground: oklch(0.18 0 0);
   --surface: oklch(0.14 0 0);
   --surface-elevated: oklch(0.18 0 0);
@@ -113,7 +115,6 @@
     color-scheme: light dark;
     background-color: var(--color-background);
     font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-    scroll-behavior: smooth;
     scroll-padding-top: 80px;
     letter-spacing: -0.01em;
     -webkit-font-smoothing: antialiased;

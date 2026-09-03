@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 import { 
-  Sparkles, 
   Bot, 
   MessageSquare, 
   Database, 
@@ -10,22 +9,8 @@ import {
   ArrowRight,
   CheckCircle2,
   Zap,
-  Activity,
-  ChevronRight,
   Sliders
 } from "lucide-react";
-
-const LIFECYCLE_STEPS = [
-  { step: "01", name: "Inquiry", desc: "Form & Phone", status: "Instant" },
-  { step: "02", name: "AI Reply", desc: "Sub-60s", status: "< 60s" },
-  { step: "03", name: "Qualify", desc: "Intent Check", status: "Smart" },
-  { step: "04", name: "CRM Sync", desc: "Bi-directional", status: "Auto" },
-  { step: "05", name: "Follow-up", desc: "Multi-channel", status: "Active" },
-  { step: "06", name: "Booking", desc: "Calendar", status: "2-Way" },
-  { step: "07", name: "Reminder", desc: "SMS & WhatsApp", status: "Zero-No-Show" },
-  { step: "08", name: "Onboard", desc: "Welcome", status: "Seamless" },
-  { step: "09", name: "5-Star Review", desc: "Automated Loop", status: "+4.9 Avg" },
-];
 
 const ADDON_MODULES = [
   { 
@@ -80,64 +65,7 @@ export function FlagshipProduct() {
           </p>
         </div>
 
-        {/* 9-STEP INTERACTIVE LIFECYCLE PIPELINE - APPLE DESIGN */}
-        <div className="mt-6 rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card p-5 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] font-sans">
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3.5 border-b border-black/5">
-            <div>
-              <div className="flex items-center gap-2">
-                <Activity className="size-4 text-[#ff7a00]" />
-                <h3 className="font-sans text-base sm:text-lg font-bold text-neutral-900 tracking-tight">
-                  The 9-Step Automated Customer Lifecycle
-                </h3>
-              </div>
-              <p className="text-[11px] text-neutral-500 mt-0.5 font-sans">
-                Continuous autonomous execution from first lead touchpoint to 5-star review.
-              </p>
-            </div>
-            
-            <div className="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold text-neutral-600 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full border border-black/5 shadow-2xs">
-              <span className="relative flex size-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff7a00] opacity-75"></span>
-                <span className="relative inline-flex size-1.5 rounded-full bg-[#ff7a00]"></span>
-              </span>
-              <span>100% Autonomous Pipeline Active</span>
-            </div>
-          </div>
 
-          {/* Connected Pipeline Grid - Apple Glass Step Pills */}
-          <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-2.5">
-            {LIFECYCLE_STEPS.map((item, idx) => (
-              <div 
-                key={item.name} 
-                className="group relative flex flex-col justify-between p-3 rounded-[16px] bg-white/70 backdrop-blur-md border border-black/5 transition-all duration-300 hover:bg-white hover:border-[#ff7a00]/50 hover:shadow-md cursor-default shadow-2xs"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="font-mono text-[9px] font-bold text-white bg-[#ff7a00] px-1.5 py-0.5 rounded-full shadow-2xs">
-                      {item.step}
-                    </span>
-                    {idx < LIFECYCLE_STEPS.length - 1 && (
-                      <ChevronRight className="hidden lg:block size-3 text-neutral-400 group-hover:text-[#ff7a00] transition-colors" />
-                    )}
-                  </div>
-                  <h4 className="text-[11px] font-bold text-neutral-900 leading-tight font-sans tracking-tight">
-                    {item.name}
-                  </h4>
-                  <p className="text-[9px] text-neutral-500 mt-0.5 leading-tight font-sans">
-                    {item.desc}
-                  </p>
-                </div>
-
-                <div className="mt-2.5 pt-1.5 border-t border-black/5 flex items-center justify-between">
-                  <span className="text-[9px] font-mono font-medium text-neutral-600">
-                    {item.status}
-                  </span>
-                  <div className="size-1 rounded-full bg-neutral-300 group-hover:bg-[#ff7a00] transition-colors" />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* CORE vs ADD-ONS ARCHITECTURE */}
         <div className="mt-6 grid gap-6 lg:grid-cols-12 items-stretch font-sans">

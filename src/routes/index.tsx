@@ -2,12 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/hero/Hero";
 import { TrustedBy } from "@/components/sections/TrustedBy";
 import { WhoWeHelp } from "@/components/sections/WhoWeHelp";
-import { FlagshipProduct } from "@/components/sections/FlagshipProduct";
 import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
 import { ExpectedOutcomes } from "@/components/sections/ExpectedOutcomes";
 import { AgenticApplications } from "@/components/sections/AgenticApplications";
-import { WhyTrustUs } from "@/components/sections/WhyTrustUs";
+import { WhyUs } from "@/components/sections/WhyUs";
+import { Portfolio } from "@/components/sections/Portfolio";
 import { AIInsights } from "@/components/sections/AIInsights";
 import { FAQ } from "@/components/sections/FAQ";
 
@@ -35,12 +35,12 @@ function Index() {
       <Hero />
       <TrustedBy />
       <WhoWeHelp />
-      <FlagshipProduct />
       <Services />
       <ExpectedOutcomes />
       <Process />
       <AgenticApplications />
-      <WhyTrustUs />
+      <WhyUs />
+      <Portfolio />
       <AIInsights />
       <FAQ />
     </>

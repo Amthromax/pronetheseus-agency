@@ -1,10 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { Plus, ArrowRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const navLinks = [
+const allNavLinks = [
   { label: "Services", to: "/services" },
   { label: "Industries", to: "/industries" },
   { label: "Case Studies", to: "/case-studies" },
@@ -14,16 +14,25 @@ const navLinks = [
 ];
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [timeStr, setTimeStr] = useState("");
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20);
+    const updateTime = () => {
+      const now = new Date();
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+      const day = now.getDate();
+      const month = months[now.getMonth()];
+      let hours = now.getHours();
+      const minutes = now.getMinutes().toString().padStart(2, "0");
+      const ampm = hours >= 12 ? "pm" : "am";
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      setTimeStr(`${day} ${month},${hours}:${minutes} ${ampm}`);
     };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -31,103 +40,99 @@ export function Navbar() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className={cn(
-        "fixed inset-x-0 top-0 z-[100] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
-        scrolled
-          ? "py-2 px-4 sm:px-8 bg-sandel-card/90 backdrop-blur-xl border-b border-sandel-border shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)]"
-          : "py-4 px-6 sm:px-10 bg-transparent border-b border-transparent",
-      )}
+      className="fixed inset-x-0 top-0 pt-2.5 sm:pt-3.5 pb-1 z-[100] px-4 sm:px-8 lg:px-12 w-full max-w-[1700px] mx-auto pointer-events-auto"
     >
-      <div className="mx-auto w-full max-w-[1500px]">
-        <nav className="relative flex items-center justify-between">
-          {/* Logo with micro hover scale */}
-          <Link to="/" className="group flex items-center pr-4" aria-label="Pronetheseus Home">
-            <motion.img
-              src="/logo.png"
-              alt="Pronetheseus Logo"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.25 }}
-              className="h-7 sm:h-8 md:h-9 w-auto object-contain filter brightness-0"
-            />
+      <div className="relative flex items-center justify-between rounded-full bg-[#f4f3ee] border border-neutral-200/80 px-4 py-2 sm:px-6 sm:py-2.5 shadow-[0_4px_25px_rgba(0,0,0,0.04)]">
+        
+        {/* Left Side: Logo & Live Time Text */}
+        <div className="flex items-center gap-6 sm:gap-10">
+          <Link
+            to="/"
+            className="font-bold text-xl sm:text-2xl leading-none tracking-tighter text-black select-none font-sans"
+            aria-label="Pronetheseus Home"
+          >
+            Ʌ
           </Link>
 
-          {/* Nav Links with animated hover pill */}
-          <div className="hidden items-center gap-1 lg:flex">
-            {navLinks.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                className="relative rounded-full px-4 py-2 text-sm font-medium text-neutral-700 transition-colors duration-200 hover:text-neutral-950"
-                activeProps={{ className: "text-neutral-950 font-semibold bg-neutral-100/90" }}
+          <span className="text-xs sm:text-sm font-normal text-neutral-500 tracking-tight whitespace-nowrap tabular-nums">
+            {timeStr || "3 Sept,4:22 pm"}
+          </span>
+        </div>
+
+        {/* Right Side: Links, Start Project Button & Plus Icon */}
+        <div className="flex items-center gap-3 sm:gap-5">
+          <Link
+            to="/contact"
+            className="text-xs sm:text-sm font-medium text-neutral-800 hover:text-black transition"
+          >
+            Partner+
+          </Link>
+          <Link
+            to="/case-studies"
+            className="text-xs sm:text-sm font-medium text-neutral-800 hover:text-black transition"
+          >
+            Our Work
+          </Link>
+          <Link
+            to="/book"
+            className="inline-flex items-center justify-center rounded-full bg-black text-white px-5 py-2 text-xs sm:text-sm font-medium hover:bg-neutral-800 transition shadow-xs whitespace-nowrap"
+          >
+            Start a project
+          </Link>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle Navigation Menu"
+            className="flex items-center justify-center size-8 sm:size-9 rounded-full border border-neutral-200 bg-white hover:bg-neutral-100 transition text-neutral-900 cursor-pointer shadow-2xs"
+          >
+            <Plus className={cn("size-4 transition-transform duration-300", open && "rotate-45")} />
+          </button>
+        </div>
+      </div>
+
+      {/* Expanded Menu Dropdown */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.98 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-2.5 rounded-3xl border border-neutral-200/90 bg-[#f4f3ee] p-5 shadow-2xl backdrop-blur-2xl max-w-md ml-auto overflow-hidden"
+          >
+            <div className="flex items-center justify-between pb-3 mb-3 border-b border-neutral-200">
+              <span className="text-xs font-semibold uppercase tracking-wider text-neutral-400">Navigation</span>
+              <button
+                onClick={() => setOpen(false)}
+                className="text-xs font-medium text-neutral-500 hover:text-black flex items-center gap-1 cursor-pointer"
               >
-                {({ isActive }) => (
-                  <>
-                    <span className="relative z-10">{l.label}</span>
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeNavBg"
-                        className="absolute inset-0 rounded-full bg-neutral-100 shadow-xs"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                      />
-                    )}
-                  </>
-                )}
-              </Link>
-            ))}
-          </div>
-
-          {/* Action CTAs */}
-          <div className="flex items-center gap-3">
-            <Link
-              to="/contact"
-              className="group relative hidden items-center gap-2 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_25px_-5px_rgba(255,122,0,0.5)] transition duration-300 hover:scale-[1.03] hover:shadow-[0_12px_35px_-5px_rgba(255,122,0,0.65)] active:scale-[0.98] md:inline-flex"
-            >
-              <span>Book Strategy Call</span>
-              <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-
-            <button
-              onClick={() => setOpen((v) => !v)}
-              aria-label="Toggle menu"
-              className="grid size-10 place-items-center rounded-full border border-black/10 bg-white/80 backdrop-blur-md transition hover:bg-neutral-100 lg:hidden"
-            >
-              {open ? <X className="size-5" /> : <Menu className="size-5" />}
-            </button>
-          </div>
-        </nav>
-
-        {/* Mobile Dropdown */}
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              initial={{ opacity: 0, y: -15, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.98 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-3 grid gap-1.5 rounded-2xl border border-black/10 bg-white/95 p-4 shadow-2xl backdrop-blur-2xl lg:hidden"
-            >
-              {navLinks.map((l) => (
+                Close <X className="size-3.5" />
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              {allNavLinks.map((l) => (
                 <Link
                   key={l.to}
                   to={l.to}
                   onClick={() => setOpen(false)}
-                  className="rounded-xl px-4 py-3 text-sm font-medium text-neutral-800 transition hover:bg-neutral-100 hover:text-neutral-950"
+                  className="rounded-xl px-3.5 py-2.5 text-sm font-medium text-neutral-800 transition hover:bg-white hover:text-black"
                 >
                   {l.label}
                 </Link>
               ))}
+            </div>
+            <div className="mt-4 pt-3 border-t border-neutral-200 flex items-center justify-between">
               <Link
-                to="/contact"
+                to="/book"
                 onClick={() => setOpen(false)}
-                className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-4 py-3 text-center text-sm font-semibold text-white shadow-md"
+                className="w-full flex items-center justify-center gap-2 rounded-xl bg-black px-4 py-2.5 text-center text-sm font-medium text-white shadow-sm hover:bg-neutral-800 transition"
               >
                 <span>Book Strategy Call</span>
                 <ArrowRight className="size-4" />
               </Link>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

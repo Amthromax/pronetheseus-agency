@@ -21,12 +21,12 @@ const WORKFLOW_STEPS = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-sandel text-neutral-900 min-h-[88vh] sm:min-h-[92vh] lg:min-h-[95vh] flex flex-col justify-center items-center pt-24 sm:pt-32 pb-20 sm:pb-28">
+    <section className="relative overflow-hidden bg-white text-neutral-900 min-h-[88vh] sm:min-h-[92vh] lg:min-h-[95vh] flex flex-col justify-center items-center pt-24 sm:pt-32 pb-20 sm:pb-28">
       {/* Background Dot Texture */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-50 sm:opacity-60 z-0"
+        className="pointer-events-none absolute inset-0 opacity-40 sm:opacity-50 z-0"
         style={{
-          backgroundImage: "radial-gradient(#d4c4b0 1.2px, transparent 1.2px)",
+          backgroundImage: "radial-gradient(#e5e7eb 1.2px, transparent 1.2px)",
           backgroundSize: "26px 26px",
         }}
       />
@@ -57,15 +57,6 @@ export function Hero() {
             <span className="text-neutral-900">Capture More Customers.</span>
           </motion.h1>
 
-          {/* Apple Design Subheadline Paragraph Box */}
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-5 sm:mt-7 max-w-xl text-neutral-800 text-sm sm:text-base md:text-lg leading-relaxed font-sans px-6 py-5 sm:px-7 sm:py-6 rounded-[24px] sm:rounded-[28px] bg-white/75 backdrop-blur-2xl border border-white/80 shadow-[0_10px_35px_rgba(0,0,0,0.05)] ring-1 ring-black/5 tracking-tight antialiased"
-          >
-            We build AI-powered systems that automate lead capture, customer conversations, appointment booking, follow-ups, and repetitive business operations.
-          </motion.p>
 
           {/* Apple Action Pill Buttons CTAs */}
           <motion.div

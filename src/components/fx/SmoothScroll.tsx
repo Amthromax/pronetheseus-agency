@@ -8,11 +8,12 @@ export function SmoothScroll() {
     if (reduced) return;
 
     const lenis = new Lenis({
-      duration: 1.3,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 0.9,
+      easing: (t) => 1 - Math.pow(1 - t, 3), // Smooth cubic out curve
       smoothWheel: true,
-      wheelMultiplier: 1.1,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.0,
+      autoResize: true,
     });
 
     let rafId = 0;
@@ -33,7 +34,7 @@ export function SmoothScroll() {
         const el = document.querySelector(href);
         if (el) {
           e.preventDefault();
-          lenis.scrollTo(el as HTMLElement, { offset: -80, duration: 1.4 });
+          lenis.scrollTo(el as HTMLElement, { offset: -80, duration: 1.0 });
         }
       }
     };

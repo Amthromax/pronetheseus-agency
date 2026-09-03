@@ -8,25 +8,40 @@ export function CursorGlow() {
     if (window.matchMedia("(pointer: coarse)").matches) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     setEnabled(true);
+
     let raf = 0;
     let x = window.innerWidth / 2;
     let y = window.innerHeight / 2;
     let tx = x;
     let ty = y;
+
     const onMove = (e: MouseEvent) => {
       tx = e.clientX;
       ty = e.clientY;
     };
-    const tick = () => {
-      x += (tx - x) * 0.18;
-      y += (ty - y) * 0.18;
-      if (ref.current) {
-        ref.current.style.transform = `translate3d(${x - 250}px, ${y - 250}px, 0)`;
-      }
+
+    const fps = 12;
+    const interval = 1000 / fps;
+    let lastTime = performance.now();
+
+    const tick = (currentTime: number) => {
       raf = requestAnimationFrame(tick);
+      const delta = currentTime - lastTime;
+
+      if (delta >= interval) {
+        lastTime = currentTime - (delta % interval);
+
+        x += (tx - x) * 0.25;
+        y += (ty - y) * 0.25;
+        if (ref.current) {
+          ref.current.style.transform = `translate3d(${x - 250}px, ${y - 250}px, 0)`;
+        }
+      }
     };
+
     window.addEventListener("mousemove", onMove);
     raf = requestAnimationFrame(tick);
+
     return () => {
       window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(raf);
