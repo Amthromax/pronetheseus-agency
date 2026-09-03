@@ -38,10 +38,23 @@ const REVIEWS = [
     body: "Best investment we made this year. High reliability, sub-second responses, and beautiful documentation.",
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=faces",
   },
+  {
+    name: "Liam Thorne",
+    username: "@liamthorne",
+    body: "Transformative results for our agency operations. The AI agents handle client intake seamlessly 24/7.",
+    img: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&h=100&fit=crop&crop=faces",
+  },
+  {
+    name: "Sophia Martinez",
+    username: "@sophiam_dev",
+    body: "Unbelievable efficiency boost! Our team focuses on high-level strategy while Amthromax handles routine tasks.",
+    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces",
+  },
 ];
 
-const firstRow = REVIEWS.slice(0, REVIEWS.length / 2);
-const secondRow = REVIEWS.slice(REVIEWS.length / 2);
+// Split reviews into 2 distinct rows and duplicate each row for dense continuous marquee coverage
+const firstRow = [...REVIEWS.slice(0, 4), ...REVIEWS.slice(0, 4)];
+const secondRow = [...REVIEWS.slice(4), ...REVIEWS.slice(4)];
 
 const ReviewCard = ({
   img,
@@ -57,7 +70,7 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative h-full w-72 sm:w-80 cursor-pointer overflow-hidden rounded-[20px] border p-4 shadow-2xs transition-all duration-300 hover:scale-[1.02] hover:shadow-md",
+        "relative h-full w-72 sm:w-80 cursor-pointer overflow-hidden rounded-[20px] border p-4 shadow-2xs transition-all duration-300 hover:scale-[1.02] hover:shadow-md shrink-0",
         "border-neutral-200/90 bg-[#f4f3ee] hover:bg-neutral-100/90"
       )}
     >
@@ -77,8 +90,8 @@ const ReviewCard = ({
 
 export function MarqueeReviews() {
   return (
-    <section className="relative w-full bg-sandel py-10 sm:py-14 text-neutral-900 overflow-hidden font-sans border-t border-b border-black/5">
-      <div className="container-pad mx-auto max-w-[1400px] mb-6 text-center">
+    <section className="relative w-full bg-sandel py-12 sm:py-16 text-neutral-900 overflow-hidden font-sans border-t border-b border-black/5">
+      <div className="container-pad mx-auto max-w-[1400px] mb-8 text-center">
         <span className="font-mono text-xs font-semibold uppercase tracking-widest text-neutral-500">
           Client Feedback & Reviews
         </span>
@@ -87,19 +100,23 @@ export function MarqueeReviews() {
         </h3>
       </div>
 
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden gap-3.5">
-        <Marquee pauseOnHover speed={32}>
-          {firstRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
+      {/* Dual Row Marquee splitting outwards in opposite directions */}
+      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden gap-4">
+        <Marquee pauseOnHover speed={35} className="w-full">
+          {firstRow.map((review, idx) => (
+            <ReviewCard key={`row1-${idx}-${review.username}`} {...review} />
           ))}
         </Marquee>
-        <Marquee reverse pauseOnHover speed={32}>
-          {secondRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
+
+        <Marquee reverse pauseOnHover speed={35} className="w-full">
+          {secondRow.map((review, idx) => (
+            <ReviewCard key={`row2-${idx}-${review.username}`} {...review} />
           ))}
         </Marquee>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-sandel via-sandel/80 to-transparent"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-sandel via-sandel/80 to-transparent"></div>
+
+        {/* Soft edge gradient fades for cinematic focus in the center */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/5 bg-gradient-to-r from-sandel via-sandel/80 to-transparent z-10"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/5 bg-gradient-to-l from-sandel via-sandel/80 to-transparent z-10"></div>
       </div>
     </section>
   );

@@ -27,7 +27,7 @@ export function Marquee({
   } as React.CSSProperties;
 
   const trackClass =
-    "flex min-w-full shrink-0 items-center gap-12 pr-12 " +
+    "flex min-w-full shrink-0 items-center gap-5 pr-5 " +
     "transition-[animation-duration] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] " +
     "group-hover:[animation-duration:var(--marquee-hover-duration)]";
 
