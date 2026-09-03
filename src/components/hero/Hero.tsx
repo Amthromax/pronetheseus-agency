@@ -9,6 +9,9 @@ import {
   Database,
   ArrowRight
 } from "lucide-react";
+import { FlipWords } from "@/components/ui/flip-words";
+
+const HERO_WORDS = ["Agencies.", "Enterprises.", "Businesses.", "Teams.", "Studios."];
 
 const WORKFLOW_STEPS = [
   { label: "LEAD", icon: UserPlus },
@@ -54,7 +57,10 @@ export function Hero() {
             className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[46px] xl:text-[54px] 2xl:text-[64px] font-bold tracking-tight text-neutral-900 leading-[1.12]"
           >
             <span className="block">Autonomous AI Infrastructure.</span>
-            <span className="block text-neutral-900 mt-1 sm:mt-1.5">Built for High-Growth Agencies.</span>
+            <span className="block text-neutral-900 mt-1 sm:mt-1.5">
+              Built for High-Growth{" "}
+              <FlipWords words={HERO_WORDS} className="text-neutral-900 font-bold p-0 px-0.5 inline-block" />
+            </span>
           </motion.h1>
 
 

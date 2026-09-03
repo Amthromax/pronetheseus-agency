@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
-import { 
-  Home, 
-  Stethoscope, 
-  Building2, 
-  Scale, 
-  TrendingUp, 
+import {
+  Home,
+  Stethoscope,
+  Building2,
+  Scale,
+  TrendingUp,
   ArrowRight
 } from "lucide-react";
 
