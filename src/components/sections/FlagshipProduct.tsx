@@ -18,7 +18,7 @@ const ADDON_MODULES = [
     title: "AI Voice Agent", 
     desc: "24/7 inbound phone reception & outbound calling", 
     tag: "Voice AI",
-    badgeBg: "bg-orange-500/10 text-orange-600 border-orange-200" 
+    badgeBg: "bg-neutral-100 text-neutral-800 border-neutral-200" 
   },
   { 
     icon: MessageSquare, 
