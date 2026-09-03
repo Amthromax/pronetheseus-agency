@@ -3,11 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { 
   Sparkles, 
   Globe, 
-  Building, 
-  Users, 
   Database, 
-  TrendingUp, 
-  AlertCircle, 
   Mail, 
   User, 
   ArrowRight, 
@@ -70,10 +66,10 @@ function CustomSelect({ value, options, onChange }: CustomSelectProps) {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between rounded-xl border border-sandel-border bg-sandel px-4 py-3 text-xs sm:text-sm font-semibold text-neutral-900 shadow-2xs transition-all hover:border-neutral-400 hover:bg-white focus:border-[#ff7a00] focus:outline-none cursor-pointer"
+        className="w-full flex items-center justify-between rounded-xl border border-sandel-border bg-sandel px-4 py-3 text-xs sm:text-sm font-semibold text-neutral-900 shadow-2xs transition-all hover:border-neutral-400 hover:bg-white focus:border-black focus:outline-none cursor-pointer"
       >
         <span>{value}</span>
-        <ChevronDown className={`size-4 text-neutral-500 transition-transform duration-200 ${isOpen ? "rotate-180 text-[#ff7a00]" : ""}`} />
+        <ChevronDown className={`size-4 text-neutral-500 transition-transform duration-200 ${isOpen ? "rotate-180 text-black" : ""}`} />
       </button>
 
       <AnimatePresence>
@@ -99,12 +95,12 @@ function CustomSelect({ value, options, onChange }: CustomSelectProps) {
                     }}
                     className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-semibold font-sans transition-colors cursor-pointer text-left ${
                       isSelected 
-                        ? "bg-[#ff7a00]/10 text-[#ff7a00] font-bold" 
+                        ? "bg-neutral-200 text-neutral-900 font-bold" 
                         : "text-neutral-800 hover:bg-sandel hover:text-neutral-900"
                     }`}
                   >
                     <span>{option}</span>
-                    {isSelected && <Check className="size-3.5 text-[#ff7a00] shrink-0" />}
+                    {isSelected && <Check className="size-3.5 text-neutral-900 shrink-0" />}
                   </button>
                 );
               })}
@@ -154,7 +150,7 @@ export function AutomationAuditSection() {
         </div>
 
         {/* VISUAL AUDIT MECHANISM DIAGRAM - Apple HIG Squircle Card Box */}
-        <div className="mt-12 rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] max-w-5xl mx-auto font-sans">
+        <div className="mt-12 rounded-[28px] sm:rounded-[32px] border border-neutral-200/90 bg-[#f4f3ee] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] max-w-5xl mx-auto font-sans">
           <div className="text-center mb-4">
             <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-neutral-500">
               How Your Automated Audit Pipeline Works
@@ -164,8 +160,8 @@ export function AutomationAuditSection() {
             {AUDIT_FLOW_STEPS.map((s) => {
               const Icon = s.icon;
               return (
-                <div key={s.label} className="flex flex-col items-center text-center p-3 rounded-[20px] bg-white/80 backdrop-blur-sm border border-black/5 shadow-2xs hover:border-[#ff7a00]/40 transition-colors">
-                  <div className="flex size-8 items-center justify-center rounded-xl bg-[#ff7a00]/10 text-[#ff7a00] mb-2">
+                <div key={s.label} className="flex flex-col items-center text-center p-3 rounded-[20px] bg-white border border-black/5 shadow-2xs hover:border-black/20 transition-colors">
+                  <div className="flex size-8 items-center justify-center rounded-xl bg-neutral-100 text-neutral-900 border border-black/5 mb-2">
                     <Icon className="size-4" />
                   </div>
                   <span className="text-[10px] font-bold text-neutral-800 font-sans leading-tight">
@@ -178,7 +174,7 @@ export function AutomationAuditSection() {
         </div>
 
         {/* AUDIT FORM CONTAINER - Apple HIG Squircle Card Box */}
-        <div className="mt-10 max-w-3xl mx-auto rounded-[28px] sm:rounded-[34px] border border-white/80 bg-sandel-card p-6 sm:p-10 shadow-[0_12px_40px_rgb(0,0,0,0.06)] font-sans">
+        <div className="mt-10 max-w-3xl mx-auto rounded-[28px] sm:rounded-[34px] border border-neutral-200/90 bg-[#f4f3ee] p-6 sm:p-10 shadow-[0_12px_40px_rgb(0,0,0,0.04)] font-sans">
           {submitted ? (
             /* SUBMITTED RESULT VIEW */
             <motion.div
@@ -198,8 +194,8 @@ export function AutomationAuditSection() {
 
               {/* Instant Score Card */}
               <div className="mt-8 grid gap-4 sm:grid-cols-3 text-left">
-                <div className="p-4 rounded-2xl bg-orange-50/70 border border-orange-200/60">
-                  <span className="text-xs font-mono font-semibold text-[#ff7a00] uppercase block">
+                <div className="p-4 rounded-2xl bg-neutral-200/60 border border-neutral-300">
+                  <span className="text-xs font-mono font-semibold text-neutral-900 uppercase block">
                     Automation Potential
                   </span>
                   <span className="text-3xl font-serif font-bold text-neutral-900 mt-1 block">
@@ -235,7 +231,7 @@ export function AutomationAuditSection() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-neutral-100 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="mt-8 pt-6 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/book">
                   <button className="w-full sm:w-auto rounded-xl bg-[#18181b] px-8 py-4 text-sm font-medium text-white shadow-md transition hover:bg-black flex items-center justify-center gap-2 cursor-pointer">
                     <span>Review Full Audit on Calendar</span>
@@ -248,8 +244,8 @@ export function AutomationAuditSection() {
             /* MULTI-STEP FORM */
             <form onSubmit={handleSubmit}>
               {/* Form Step Indicator */}
-              <div className="flex items-center justify-between mb-8 pb-4 border-b border-neutral-100">
-                <span className="text-xs font-sans font-bold text-[#ff7a00] uppercase tracking-wider">
+              <div className="flex items-center justify-between mb-8 pb-4 border-b border-neutral-200">
+                <span className="text-xs font-sans font-bold text-neutral-900 uppercase tracking-wider">
                   Step {step} of 3 — {step === 1 ? "Business Profile" : step === 2 ? "Operational Stack" : "Deliver My Audit"}
                 </span>
                 <div className="flex items-center gap-1.5">
@@ -257,7 +253,7 @@ export function AutomationAuditSection() {
                     <div
                       key={i}
                       className={`h-2 rounded-full transition-all duration-300 ${
-                        i === step ? "w-8 bg-[#ff7a00]" : i < step ? "w-3 bg-neutral-800" : "w-3 bg-neutral-200"
+                        i === step ? "w-8 bg-neutral-900" : i < step ? "w-3 bg-neutral-700" : "w-3 bg-neutral-300"
                       }`}
                     />
                   ))}
@@ -279,7 +275,7 @@ export function AutomationAuditSection() {
                         placeholder="https://yourcompany.com"
                         value={formData.website}
                         onChange={(e) => handleChange("website", e.target.value)}
-                        className="w-full rounded-xl border border-neutral-300 bg-neutral-50/50 pl-10 pr-4 py-3 text-sm text-neutral-900 focus:border-[#ff7a00] focus:bg-white focus:outline-none transition"
+                        className="w-full rounded-xl border border-neutral-300 bg-white pl-10 pr-4 py-3 text-sm text-neutral-900 focus:border-black focus:bg-white focus:outline-none transition"
                       />
                     </div>
                   </div>
@@ -311,7 +307,7 @@ export function AutomationAuditSection() {
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="w-full mt-4 rounded-xl bg-[#18181b] py-3.5 text-sm font-semibold text-white transition hover:bg-black flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full mt-4 rounded-full bg-neutral-900 hover:bg-black py-3.5 text-sm font-semibold text-white transition flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                   >
                     <span>Next: Operational Stack</span>
                     <ArrowRight className="size-4" />
@@ -361,14 +357,14 @@ export function AutomationAuditSection() {
                     <button
                       type="button"
                       onClick={() => setStep(1)}
-                      className="w-1/3 rounded-xl border border-neutral-300 py-3.5 text-sm font-semibold text-neutral-700 transition hover:bg-neutral-100 cursor-pointer"
+                      className="w-1/3 rounded-full border border-neutral-300 py-3.5 text-sm font-semibold text-neutral-700 transition hover:bg-neutral-100 cursor-pointer"
                     >
                       Back
                     </button>
                     <button
                       type="button"
                       onClick={() => setStep(3)}
-                      className="w-2/3 rounded-xl bg-[#18181b] py-3.5 text-sm font-semibold text-white transition hover:bg-black flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-2/3 rounded-full bg-neutral-900 hover:bg-black py-3.5 text-sm font-semibold text-white transition flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                     >
                       <span>Next: Deliver Report</span>
                       <ArrowRight className="size-4" />
@@ -392,7 +388,7 @@ export function AutomationAuditSection() {
                         placeholder="John Doe"
                         value={formData.name}
                         onChange={(e) => handleChange("name", e.target.value)}
-                        className="w-full rounded-xl border border-neutral-300 bg-neutral-50/50 pl-10 pr-4 py-3 text-sm text-neutral-900 focus:border-[#ff7a00] focus:bg-white focus:outline-none transition"
+                        className="w-full rounded-xl border border-neutral-300 bg-white pl-10 pr-4 py-3 text-sm text-neutral-900 focus:border-black focus:bg-white focus:outline-none transition"
                       />
                     </div>
                   </div>
@@ -409,7 +405,7 @@ export function AutomationAuditSection() {
                         placeholder="john@yourcompany.com"
                         value={formData.email}
                         onChange={(e) => handleChange("email", e.target.value)}
-                        className="w-full rounded-xl border border-neutral-300 bg-neutral-50/50 pl-10 pr-4 py-3 text-sm text-neutral-900 focus:border-[#ff7a00] focus:bg-white focus:outline-none transition"
+                        className="w-full rounded-xl border border-neutral-300 bg-white pl-10 pr-4 py-3 text-sm text-neutral-900 focus:border-black focus:bg-white focus:outline-none transition"
                       />
                     </div>
                   </div>
@@ -418,16 +414,16 @@ export function AutomationAuditSection() {
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className="w-1/3 rounded-xl border border-neutral-300 py-3.5 text-sm font-semibold text-neutral-700 transition hover:bg-neutral-100 cursor-pointer"
+                      className="w-1/3 rounded-full border border-neutral-300 py-3.5 text-sm font-semibold text-neutral-700 transition hover:bg-neutral-100 cursor-pointer"
                     >
                       Back
                     </button>
                     <button
                       type="submit"
-                      className="w-2/3 rounded-xl bg-[#ff7a00] py-3.5 text-sm font-semibold text-black shadow-md transition hover:bg-[#ff8c24] flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-2/3 rounded-full bg-neutral-900 hover:bg-black py-3.5 text-sm font-semibold text-white shadow-md transition flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <span>Generate My Audit Report</span>
-                      <Sparkles className="size-4 text-black" />
+                      <Sparkles className="size-4 text-white" />
                     </button>
                   </div>
                 </motion.div>
