@@ -91,9 +91,6 @@ export function AIInsights() {
                 {/* 3D Gradient Background Art */}
                 <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-slate-900 to-black overflow-hidden">
                   <div className="absolute -top-20 -left-20 size-[400px] sm:size-[550px] rounded-full bg-gradient-to-tr from-neutral-700 via-slate-600 to-neutral-800 opacity-40 blur-3xl animate-orb" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-40 sm:size-60 rounded-full bg-gradient-to-br from-neutral-950 via-slate-800 to-neutral-900 shadow-2xl border border-white/20 flex items-center justify-center pointer-events-none">
-                    <div className="size-20 sm:size-28 rounded-full bg-gradient-to-tr from-neutral-500 to-neutral-300 opacity-50 blur-md animate-pulse-glow" />
-                  </div>
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_0%,rgba(0,0,0,0.4)_100%)] pointer-events-none" />
                 </div>
 
