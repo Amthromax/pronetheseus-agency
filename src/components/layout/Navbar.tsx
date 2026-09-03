@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Plus, ArrowRight, X } from "lucide-react";
+import { Menu, ArrowRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const allNavLinks = [
@@ -84,7 +84,11 @@ export function Navbar() {
             aria-label="Toggle Navigation Menu"
             className="flex items-center justify-center size-8 sm:size-9 rounded-full border border-neutral-200 bg-white hover:bg-neutral-100 transition text-neutral-900 cursor-pointer shadow-2xs"
           >
-            <Plus className={cn("size-4 transition-transform duration-300", open && "rotate-45")} />
+            {open ? (
+              <X className="size-4 text-neutral-900" />
+            ) : (
+              <Menu className="size-4 text-neutral-900" />
+            )}
           </button>
         </div>
       </div>

@@ -35,7 +35,7 @@ export function ServicesCenterDetails() {
             className="flex flex-col items-center justify-center"
           >
             <div className="flex items-center gap-1 text-2xl sm:text-3xl font-bold font-sans text-neutral-900">
-              <Clock className="size-5 text-[#ff7a00]" />
+              <Clock className="size-5 text-neutral-900" />
               <span>&lt; 60s</span>
             </div>
             <span className="mt-1 text-xs font-medium text-neutral-600 font-sans">Speed-to-Lead Response</span>
@@ -49,7 +49,7 @@ export function ServicesCenterDetails() {
             className="flex flex-col items-center justify-center"
           >
             <div className="flex items-center gap-1 text-2xl sm:text-3xl font-bold font-sans text-neutral-900">
-              <Code className="size-5 text-[#ff7a00]" />
+              <Code className="size-5 text-neutral-900" />
               <span>100%</span>
             </div>
             <span className="mt-1 text-xs font-medium text-neutral-600 font-sans">Code & IP Ownership</span>
@@ -63,7 +63,7 @@ export function ServicesCenterDetails() {
             className="flex flex-col items-center justify-center"
           >
             <div className="flex items-center gap-1 text-2xl sm:text-3xl font-bold font-sans text-neutral-900">
-              <Zap className="size-5 text-[#ff7a00]" />
+              <Zap className="size-5 text-neutral-900" />
               <span>3 Weeks</span>
             </div>
             <span className="mt-1 text-xs font-medium text-neutral-600 font-sans">Avg. System Go-Live</span>
@@ -77,7 +77,7 @@ export function ServicesCenterDetails() {
             className="flex flex-col items-center justify-center"
           >
             <div className="flex items-center gap-1 text-2xl sm:text-3xl font-bold font-sans text-neutral-900">
-              <ShieldCheck className="size-5 text-[#ff7a00]" />
+              <ShieldCheck className="size-5 text-neutral-900" />
               <span>99.9%</span>
             </div>
             <span className="mt-1 text-xs font-medium text-neutral-600 font-sans">Workflow Execution Uptime</span>
@@ -88,7 +88,7 @@ export function ServicesCenterDetails() {
         <div className="mt-12 pt-8 border-t border-sandel-border/60 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
           
           <div className="flex flex-col items-center text-center">
-            <div className="size-10 rounded-full bg-orange-500/10 text-[#ff7a00] flex items-center justify-center mb-3">
+            <div className="size-10 rounded-full bg-neutral-900/10 text-neutral-900 flex items-center justify-center mb-3">
               <Cpu className="size-5" />
             </div>
             <h3 className="font-sans text-base font-bold text-neutral-900">
@@ -100,7 +100,7 @@ export function ServicesCenterDetails() {
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <div className="size-10 rounded-full bg-orange-500/10 text-[#ff7a00] flex items-center justify-center mb-3">
+            <div className="size-10 rounded-full bg-neutral-900/10 text-neutral-900 flex items-center justify-center mb-3">
               <Lock className="size-5" />
             </div>
             <h3 className="font-sans text-base font-bold text-neutral-900">
@@ -112,7 +112,7 @@ export function ServicesCenterDetails() {
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <div className="size-10 rounded-full bg-orange-500/10 text-[#ff7a00] flex items-center justify-center mb-3">
+            <div className="size-10 rounded-full bg-neutral-900/10 text-neutral-900 flex items-center justify-center mb-3">
               <RefreshCw className="size-5" />
             </div>
             <h3 className="font-sans text-base font-bold text-neutral-900">
@@ -124,7 +124,7 @@ export function ServicesCenterDetails() {
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <div className="size-10 rounded-full bg-orange-500/10 text-[#ff7a00] flex items-center justify-center mb-3">
+            <div className="size-10 rounded-full bg-neutral-900/10 text-neutral-900 flex items-center justify-center mb-3">
               <CheckCircle2 className="size-5" />
             </div>
             <h3 className="font-sans text-base font-bold text-neutral-900">

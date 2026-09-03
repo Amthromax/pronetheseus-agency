@@ -32,18 +32,18 @@ export function AgenticApplications() {
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => setActiveTab("PRE-BUILT")}
-                className={`group flex flex-col justify-between h-full min-h-[340px] rounded-lg border p-5 sm:p-7 bg-sandel-card transition-all duration-300 cursor-pointer ${
+                className={`group flex flex-col justify-between h-full min-h-[340px] rounded-2xl border p-5 sm:p-7 bg-[#f4f3ee] transition-all duration-300 cursor-pointer ${
                   activeTab === "PRE-BUILT"
-                    ? "border-t-4 border-t-[#ff7a00] border-neutral-300 shadow-xl ring-1 ring-black/5"
-                    : "border-t-2 border-t-transparent border-sandel-border shadow-sm hover:border-neutral-400 hover:shadow-md"
+                    ? "border-t-4 border-t-neutral-900 border-neutral-300 shadow-xl ring-1 ring-black/5"
+                    : "border-t-2 border-t-transparent border-neutral-200/90 shadow-sm hover:border-neutral-400 hover:shadow-md"
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
+                    <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-neutral-900 transition-colors">
                       Pre-Built Revenue Engines
                     </h3>
-                    <div className="size-8 rounded-md bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-800 transition-colors group-hover:bg-[#ff7a00] group-hover:text-white group-hover:border-[#ff7a00]">
+                    <div className="size-8 rounded-md bg-white border border-neutral-200 flex items-center justify-center text-neutral-800 transition-colors group-hover:bg-neutral-900 group-hover:text-white group-hover:border-neutral-900">
                       <ArrowRight className="size-4" />
                     </div>
                   </div>
@@ -53,8 +53,8 @@ export function AgenticApplications() {
                 </div>
 
                 {/* Graphic Mock Preview */}
-                <div className="mt-6 rounded-md border border-neutral-200/80 bg-neutral-50/80 p-4 space-y-3 text-neutral-900 shadow-2xs">
-                  <div className="flex items-center gap-2 rounded-sm border border-neutral-200 bg-white px-3.5 py-2 shadow-2xs">
+                <div className="mt-6 rounded-xl border border-neutral-200/80 bg-white/80 p-4 space-y-3 text-neutral-900 shadow-2xs">
+                  <div className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3.5 py-2 shadow-2xs">
                     <Search className="size-4 text-neutral-400" />
                     <span className="text-xs sm:text-sm font-semibold text-neutral-900">Speed-to-Lead & Follow-up</span>
                   </div>
@@ -64,11 +64,11 @@ export function AgenticApplications() {
                   </div>
 
                   <div className="flex flex-wrap gap-1.5 relative">
-                    <span className="rounded-sm border border-neutral-900 bg-neutral-900 px-2.5 py-1 text-xs font-semibold text-white shadow-2xs relative">
+                    <span className="rounded-md border border-neutral-900 bg-neutral-900 px-2.5 py-1 text-xs font-semibold text-white shadow-2xs relative">
                       Instant SMS Response
                       <MousePointer2 className="size-3.5 text-neutral-900 absolute -bottom-2 -right-1 fill-neutral-900" />
                     </span>
-                    <span className="rounded-sm border border-neutral-200 bg-white px-2.5 py-1 text-xs font-medium text-neutral-600">
+                    <span className="rounded-md border border-neutral-200 bg-white px-2.5 py-1 text-xs font-medium text-neutral-600">
                       CRM Sync
                     </span>
                   </div>
@@ -84,18 +84,18 @@ export function AgenticApplications() {
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => setActiveTab("ACCELERATORS")}
-                className={`group flex flex-col justify-between h-full min-h-[340px] rounded-lg border p-5 sm:p-7 bg-white transition-all duration-300 cursor-pointer ${
+                className={`group flex flex-col justify-between h-full min-h-[340px] rounded-2xl border p-5 sm:p-7 bg-[#f4f3ee] transition-all duration-300 cursor-pointer ${
                   activeTab === "ACCELERATORS"
-                    ? "border-t-4 border-t-[#ff7a00] border-neutral-300 shadow-xl ring-1 ring-black/5"
+                    ? "border-t-4 border-t-neutral-900 border-neutral-300 shadow-xl ring-1 ring-black/5"
                     : "border-t-2 border-t-transparent border-neutral-200/90 shadow-sm hover:border-neutral-300 hover:shadow-md"
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
+                    <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-neutral-900 transition-colors">
                       Workflow Connectors
                     </h3>
-                    <div className="size-8 rounded-md bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-800 transition-colors group-hover:bg-[#ff7a00] group-hover:text-white group-hover:border-[#ff7a00]">
+                    <div className="size-8 rounded-md bg-white border border-neutral-200 flex items-center justify-center text-neutral-800 transition-colors group-hover:bg-neutral-900 group-hover:text-white group-hover:border-neutral-900">
                       <ArrowRight className="size-4" />
                     </div>
                   </div>
@@ -105,16 +105,16 @@ export function AgenticApplications() {
                 </div>
 
                 <div className="mt-6 space-y-2 relative text-neutral-900">
-                  <div className="rounded-sm border border-neutral-200 bg-neutral-50 p-2.5 opacity-60 transform scale-[0.98]">
+                  <div className="rounded-lg border border-neutral-200 bg-white/60 p-2.5 opacity-60 transform scale-[0.98]">
                     <div className="flex items-center gap-1.5">
                       <span className="size-2 rounded-full bg-rose-400" />
                       <span className="size-2 rounded-full bg-emerald-400" />
                     </div>
                   </div>
 
-                  <div className="rounded-md border border-neutral-200 bg-neutral-50 p-3.5 shadow-2xs relative">
+                  <div className="rounded-xl border border-neutral-200 bg-white p-3.5 shadow-2xs relative">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="size-5 rounded-sm bg-[#ff7a00] text-white font-bold text-[9px] flex items-center justify-center">CRM</span>
+                      <span className="size-5 rounded-sm bg-neutral-900 text-white font-bold text-[9px] flex items-center justify-center">CRM</span>
                       <span className="size-5 rounded-sm bg-blue-600 text-white font-bold text-[9px] flex items-center justify-center">SMS</span>
                       <span className="size-5 rounded-sm bg-neutral-900 text-white font-bold text-[9px] flex items-center justify-center">AI</span>
                     </div>
@@ -134,18 +134,18 @@ export function AgenticApplications() {
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => setActiveTab("TAILORED")}
-                className={`group flex flex-col justify-between h-full min-h-[340px] rounded-lg border p-5 sm:p-7 bg-white transition-all duration-300 cursor-pointer ${
+                className={`group flex flex-col justify-between h-full min-h-[340px] rounded-2xl border p-5 sm:p-7 bg-[#f4f3ee] transition-all duration-300 cursor-pointer ${
                   activeTab === "TAILORED"
-                    ? "border-t-4 border-t-[#ff7a00] border-neutral-300 shadow-xl ring-1 ring-black/5"
+                    ? "border-t-4 border-t-neutral-900 border-neutral-300 shadow-xl ring-1 ring-black/5"
                     : "border-t-2 border-t-transparent border-neutral-200/90 shadow-sm hover:border-neutral-300 hover:shadow-md"
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
+                    <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-neutral-900 transition-colors">
                       Custom AI Solutions
                     </h3>
-                    <div className="size-8 rounded-md bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-800 transition-colors group-hover:bg-[#ff7a00] group-hover:text-white group-hover:border-[#ff7a00]">
+                    <div className="size-8 rounded-md bg-white border border-neutral-200 flex items-center justify-center text-neutral-800 transition-colors group-hover:bg-neutral-900 group-hover:text-white group-hover:border-neutral-900">
                       <ArrowRight className="size-4" />
                     </div>
                   </div>
@@ -155,7 +155,7 @@ export function AgenticApplications() {
                 </div>
 
                 <div className="mt-6 flex flex-col items-center">
-                  <div className="w-full rounded-md border border-neutral-200 bg-neutral-900 p-4 font-mono text-xs leading-relaxed text-neutral-200 shadow-md">
+                  <div className="w-full rounded-xl border border-neutral-200 bg-neutral-900 p-4 font-mono text-xs leading-relaxed text-neutral-200 shadow-md">
                     <div className="flex items-center gap-3 text-neutral-500 select-none">
                       <span>1</span>
                       <span><span className="text-sky-400 font-semibold">def</span> <span className="text-amber-400 font-semibold">qualify_lead</span>(inquiry):</span>
@@ -166,7 +166,7 @@ export function AgenticApplications() {
                     </div>
                   </div>
 
-                  <span className="mt-3 rounded-sm border border-neutral-200 bg-neutral-100 px-3 py-1 text-xs font-bold text-neutral-700 shadow-2xs">
+                  <span className="mt-3 rounded-md border border-neutral-200 bg-white px-3 py-1 text-xs font-bold text-neutral-700 shadow-2xs">
                     CUSTOM SYSTEM
                   </span>
                 </div>
@@ -185,46 +185,46 @@ export function AgenticApplications() {
 
             <button
               onClick={() => setActiveTab("PRE-BUILT")}
-              className={`shrink-0 lg:shrink lg:w-full text-left rounded-md px-4 py-3 text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 flex items-center justify-between cursor-pointer snap-center whitespace-nowrap ${
+              className={`shrink-0 lg:shrink lg:w-full text-left rounded-xl px-4 py-3 text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 flex items-center justify-between cursor-pointer snap-center whitespace-nowrap ${
                 activeTab === "PRE-BUILT"
                   ? "bg-neutral-900 text-white shadow-sm"
-                  : "bg-white border border-neutral-200 text-neutral-700 hover:bg-neutral-50 hover:text-black"
+                  : "bg-[#f4f3ee] border border-neutral-200/90 text-neutral-700 hover:bg-[#eae8e1] hover:text-black"
               }`}
             >
               <span>PRE-BUILT AUTOMATIONS</span>
-              {activeTab === "PRE-BUILT" && <span className="size-2 rounded-full bg-[#ff7a00] ml-2" />}
+              {activeTab === "PRE-BUILT" && <span className="size-2 rounded-full bg-neutral-100 ml-2" />}
             </button>
 
             <button
               onClick={() => setActiveTab("ACCELERATORS")}
-              className={`shrink-0 lg:shrink lg:w-full text-left rounded-md px-4 py-3 text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 flex items-center justify-between cursor-pointer snap-center whitespace-nowrap ${
+              className={`shrink-0 lg:shrink lg:w-full text-left rounded-xl px-4 py-3 text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 flex items-center justify-between cursor-pointer snap-center whitespace-nowrap ${
                 activeTab === "ACCELERATORS"
                   ? "bg-neutral-900 text-white shadow-sm"
-                  : "bg-white border border-neutral-200 text-neutral-700 hover:bg-neutral-50 hover:text-black"
+                  : "bg-[#f4f3ee] border border-neutral-200/90 text-neutral-700 hover:bg-[#eae8e1] hover:text-black"
               }`}
             >
               <span>WORKFLOW ACCELERATORS</span>
-              {activeTab === "ACCELERATORS" && <span className="size-2 rounded-full bg-[#ff7a00] ml-2" />}
+              {activeTab === "ACCELERATORS" && <span className="size-2 rounded-full bg-neutral-100 ml-2" />}
             </button>
 
             <button
               onClick={() => setActiveTab("TAILORED")}
-              className={`shrink-0 lg:shrink lg:w-full text-left rounded-md px-4 py-3 text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 flex items-center justify-between cursor-pointer snap-center whitespace-nowrap ${
+              className={`shrink-0 lg:shrink lg:w-full text-left rounded-xl px-4 py-3 text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 flex items-center justify-between cursor-pointer snap-center whitespace-nowrap ${
                 activeTab === "TAILORED"
                   ? "bg-neutral-900 text-white shadow-sm"
-                  : "bg-white border border-neutral-200 text-neutral-700 hover:bg-neutral-50 hover:text-black"
+                  : "bg-[#f4f3ee] border border-neutral-200/90 text-neutral-700 hover:bg-[#eae8e1] hover:text-black"
               }`}
             >
               <span>CUSTOM AI SOLUTIONS</span>
-              {activeTab === "TAILORED" && <span className="size-2 rounded-full bg-[#ff7a00] ml-2" />}
+              {activeTab === "TAILORED" && <span className="size-2 rounded-full bg-neutral-100 ml-2" />}
             </button>
 
             <button
               onClick={() => setActiveTab("ARTEMIS")}
-              className={`shrink-0 lg:shrink lg:w-full text-left rounded-md px-4 py-3 text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 flex items-center justify-between cursor-pointer snap-center whitespace-nowrap ${
+              className={`shrink-0 lg:shrink lg:w-full text-left rounded-xl px-4 py-3 text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 flex items-center justify-between cursor-pointer snap-center whitespace-nowrap ${
                 activeTab === "ARTEMIS"
                   ? "bg-neutral-900 text-white shadow-sm"
-                  : "bg-white border border-neutral-200 text-neutral-700 hover:bg-neutral-50 hover:text-black"
+                  : "bg-[#f4f3ee] border border-neutral-200/90 text-neutral-700 hover:bg-[#eae8e1] hover:text-black"
               }`}
             >
               <div className="flex items-center">
@@ -233,7 +233,7 @@ export function AgenticApplications() {
                   NEW
                 </span>
               </div>
-              {activeTab === "ARTEMIS" && <span className="size-2 rounded-full bg-[#ff7a00] ml-2" />}
+              {activeTab === "ARTEMIS" && <span className="size-2 rounded-full bg-neutral-100 ml-2" />}
             </button>
           </ScrollReveal>
 
@@ -250,22 +250,22 @@ export function AgenticApplications() {
               </div>
 
               {/* Category Quick Pills */}
-              <div className="flex items-center gap-1.5 shrink-0 overflow-x-auto scrollbar-none bg-white border border-neutral-200 p-1 rounded-md text-xs font-semibold shadow-2xs">
+              <div className="flex items-center gap-1.5 shrink-0 overflow-x-auto scrollbar-none bg-[#f4f3ee] border border-neutral-200/90 p-1 rounded-xl text-xs font-semibold shadow-2xs">
                 <button
                   onClick={() => setCategoryFilter("ALL")}
-                  className={`px-3 py-1 rounded-sm transition duration-200 cursor-pointer whitespace-nowrap ${categoryFilter === "ALL" ? "bg-neutral-900 text-white font-bold" : "text-neutral-600 hover:text-neutral-900"}`}
+                  className={`px-3 py-1 rounded-lg transition duration-200 cursor-pointer whitespace-nowrap ${categoryFilter === "ALL" ? "bg-neutral-900 text-white font-bold" : "text-neutral-600 hover:text-neutral-900"}`}
                 >
                   All (4)
                 </button>
                 <button
                   onClick={() => setCategoryFilter("CUSTOMER_SERVICE")}
-                  className={`px-3 py-1 rounded-sm transition duration-200 cursor-pointer whitespace-nowrap ${categoryFilter === "CUSTOMER_SERVICE" ? "bg-neutral-900 text-white font-bold" : "text-neutral-600 hover:text-neutral-900"}`}
+                  className={`px-3 py-1 rounded-lg transition duration-200 cursor-pointer whitespace-nowrap ${categoryFilter === "CUSTOMER_SERVICE" ? "bg-neutral-900 text-white font-bold" : "text-neutral-600 hover:text-neutral-900"}`}
                 >
                   Lead & Customer AI
                 </button>
                 <button
                   onClick={() => setCategoryFilter("EMPLOYEE_PRODUCTIVITY")}
-                  className={`px-3 py-1 rounded-sm transition duration-200 cursor-pointer whitespace-nowrap ${categoryFilter === "EMPLOYEE_PRODUCTIVITY" ? "bg-neutral-900 text-white font-bold" : "text-neutral-600 hover:text-neutral-900"}`}
+                  className={`px-3 py-1 rounded-lg transition duration-200 cursor-pointer whitespace-nowrap ${categoryFilter === "EMPLOYEE_PRODUCTIVITY" ? "bg-neutral-900 text-white font-bold" : "text-neutral-600 hover:text-neutral-900"}`}
                 >
                   Ops & Revenue
                 </button>
@@ -281,14 +281,14 @@ export function AgenticApplications() {
                     <motion.div
                       whileHover={{ y: -3 }}
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="flex flex-col justify-between h-full min-h-[410px] sm:min-h-[440px] rounded-lg bg-white p-5 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl cursor-pointer group"
+                      className="flex flex-col justify-between h-full min-h-[410px] sm:min-h-[440px] rounded-2xl bg-[#f4f3ee] border border-neutral-200/90 p-5 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl cursor-pointer group hover:border-neutral-300"
                     >
                       <div>
                         <div className="flex items-center justify-between">
-                          <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
+                          <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-neutral-900 transition-colors">
                             Instant Speed-to-Lead Agent
                           </h4>
-                          <span className="text-[10px] sm:text-xs font-bold text-[#ff7a00] uppercase tracking-wider">
+                          <span className="text-[10px] sm:text-xs font-bold text-neutral-700 uppercase tracking-wider">
                             REVENUE ENGINE
                           </span>
                         </div>
@@ -298,7 +298,7 @@ export function AgenticApplications() {
                         <div className="mt-3 flex items-center gap-2">
                           <Link
                             to="/book"
-                            className="inline-flex items-center gap-1.5 rounded-sm bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-[#ff7a00]"
+                            className="inline-flex items-center gap-1.5 rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-neutral-800"
                           >
                             <span>GET THIS SYSTEM</span>
                             <ArrowRight className="size-3" />
@@ -306,7 +306,7 @@ export function AgenticApplications() {
                         </div>
                       </div>
 
-                      <div className="relative mt-4 rounded-2xl border border-neutral-200/80 bg-[#FAFAFC] p-3.5 sm:p-4 text-xs sm:text-sm font-sans shadow-inner overflow-hidden">
+                      <div className="relative mt-4 rounded-2xl border border-neutral-200/80 bg-white/90 p-3.5 sm:p-4 text-xs sm:text-sm font-sans shadow-inner overflow-hidden">
                         <div className="space-y-2.5">
                           <div className="flex items-start gap-2">
                             <div className="size-5 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">
@@ -318,7 +318,7 @@ export function AgenticApplications() {
                           </div>
 
                           <div className="flex items-center justify-end gap-2">
-                            <div className="rounded-xl bg-[#FFF6F0] border border-[#FFE4D4] text-[#4A2408] px-3 py-2 text-xs font-medium shadow-2xs">
+                            <div className="rounded-xl bg-[#f4f3ee] border border-neutral-200 text-neutral-900 px-3 py-2 text-xs font-medium shadow-2xs">
                               Awesome, is tomorrow at 2 PM open?
                             </div>
                             <img
@@ -344,7 +344,7 @@ export function AgenticApplications() {
                             backdropFilter: "blur(6px)",
                             WebkitBackdropFilter: "blur(6px)",
                             background:
-                              "linear-gradient(to bottom, rgba(245, 250, 255, 0), rgba(245, 250, 255, 0.7) 60%, rgba(245, 250, 255, 0.95) 100%)",
+                              "linear-gradient(to bottom, rgba(244, 243, 238, 0), rgba(244, 243, 238, 0.7) 60%, rgba(244, 243, 238, 0.95) 100%)",
                           }}
                         />
                       </div>
@@ -360,11 +360,11 @@ export function AgenticApplications() {
                     <motion.div
                       whileHover={{ y: -3 }}
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="flex flex-col justify-between h-full min-h-[410px] sm:min-h-[440px] rounded-lg bg-white p-5 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl cursor-pointer group"
+                      className="flex flex-col justify-between h-full min-h-[410px] sm:min-h-[440px] rounded-2xl bg-[#f4f3ee] border border-neutral-200/90 p-5 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl cursor-pointer group hover:border-neutral-300"
                     >
                       <div>
                         <div className="flex items-center justify-between">
-                          <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
+                          <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-neutral-900 transition-colors">
                             Smart Intake & Calendar Booking
                           </h4>
                           <span className="text-[10px] sm:text-xs font-bold text-emerald-700 uppercase tracking-wider">
@@ -377,7 +377,7 @@ export function AgenticApplications() {
                         <div className="mt-3 flex items-center gap-2">
                           <Link
                             to="/book"
-                            className="inline-flex items-center gap-1.5 rounded-sm bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-[#ff7a00]"
+                            className="inline-flex items-center gap-1.5 rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-neutral-800"
                           >
                             <span>GET THIS SYSTEM</span>
                             <ArrowRight className="size-3" />
@@ -385,7 +385,7 @@ export function AgenticApplications() {
                         </div>
                       </div>
 
-                      <div className="relative mt-4 rounded-2xl border border-neutral-200/80 bg-[#FAFAFC] p-3.5 sm:p-4 text-xs sm:text-sm font-sans shadow-inner overflow-hidden">
+                      <div className="relative mt-4 rounded-2xl border border-neutral-200/80 bg-white/90 p-3.5 sm:p-4 text-xs sm:text-sm font-sans shadow-inner overflow-hidden">
                         <div className="space-y-2.5">
                           <div className="flex items-start gap-2">
                             <div className="size-5 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">
@@ -396,7 +396,7 @@ export function AgenticApplications() {
                                 Welcome! What service are you looking to automate today?
                               </div>
                               <div className="flex gap-1.5 pl-1">
-                                <button className="rounded-full bg-[#FF6B00] text-white px-3 py-1 text-[10px] font-semibold shadow-2xs">
+                                <button className="rounded-full bg-neutral-900 text-white px-3 py-1 text-[10px] font-semibold shadow-2xs">
                                   Lead Capture & Booking
                                 </button>
                                 <button className="rounded-full border border-neutral-300 bg-white px-3 py-1 text-[10px] font-medium text-neutral-600">
@@ -407,7 +407,7 @@ export function AgenticApplications() {
                           </div>
 
                           <div className="flex items-center justify-end gap-2">
-                            <div className="rounded-xl bg-[#FFF6F0] border border-[#FFE4D4] text-[#4A2408] px-3 py-2 text-xs font-medium shadow-2xs">
+                            <div className="rounded-xl bg-[#f4f3ee] border border-neutral-200 text-neutral-900 px-3 py-2 text-xs font-medium shadow-2xs">
                               Lead Capture & Booking system
                             </div>
                             <img
@@ -424,7 +424,7 @@ export function AgenticApplications() {
                             backdropFilter: "blur(6px)",
                             WebkitBackdropFilter: "blur(6px)",
                             background:
-                              "linear-gradient(to bottom, rgba(245, 250, 255, 0), rgba(245, 250, 255, 0.7) 60%, rgba(245, 250, 255, 0.95) 100%)",
+                              "linear-gradient(to bottom, rgba(244, 243, 238, 0), rgba(244, 243, 238, 0.7) 60%, rgba(244, 243, 238, 0.95) 100%)",
                           }}
                         />
                       </div>
@@ -440,11 +440,11 @@ export function AgenticApplications() {
                     <motion.div
                       whileHover={{ y: -3 }}
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="flex flex-col justify-between h-full min-h-[410px] sm:min-h-[440px] rounded-lg bg-white p-5 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl cursor-pointer group"
+                      className="flex flex-col justify-between h-full min-h-[410px] sm:min-h-[440px] rounded-2xl bg-[#f4f3ee] border border-neutral-200/90 p-5 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl cursor-pointer group hover:border-neutral-300"
                     >
                       <div>
                         <div className="flex items-center justify-between">
-                          <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
+                          <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-neutral-900 transition-colors">
                             24/7 Customer Service Agent
                           </h4>
                           <span className="text-[10px] sm:text-xs font-bold text-blue-700 uppercase tracking-wider">
@@ -457,7 +457,7 @@ export function AgenticApplications() {
                         <div className="mt-3 flex items-center gap-2">
                           <Link
                             to="/book"
-                            className="inline-flex items-center gap-1.5 rounded-sm bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-[#ff7a00]"
+                            className="inline-flex items-center gap-1.5 rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-neutral-800"
                           >
                             <span>GET THIS SYSTEM</span>
                             <ArrowRight className="size-3" />
@@ -465,10 +465,10 @@ export function AgenticApplications() {
                         </div>
                       </div>
 
-                      <div className="relative mt-4 rounded-2xl border border-neutral-200/80 bg-[#FAFAFC] p-3.5 sm:p-4 text-xs sm:text-sm font-sans shadow-inner overflow-hidden">
+                      <div className="relative mt-4 rounded-2xl border border-neutral-200/80 bg-white/90 p-3.5 sm:p-4 text-xs sm:text-sm font-sans shadow-inner overflow-hidden">
                         <div className="space-y-2.5">
                           <div className="flex items-center justify-end gap-2">
-                            <div className="rounded-xl bg-[#FFF6F0] border border-[#FFE4D4] text-[#4A2408] px-3 py-2 text-xs font-medium shadow-2xs">
+                            <div className="rounded-xl bg-[#f4f3ee] border border-neutral-200 text-neutral-900 px-3 py-2 text-xs font-medium shadow-2xs">
                               What are your weekend service hours?
                             </div>
                             <div className="size-5 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-[10px] shrink-0">
@@ -492,7 +492,7 @@ export function AgenticApplications() {
                             backdropFilter: "blur(6px)",
                             WebkitBackdropFilter: "blur(6px)",
                             background:
-                              "linear-gradient(to bottom, rgba(245, 250, 255, 0), rgba(245, 250, 255, 0.7) 60%, rgba(245, 250, 255, 0.95) 100%)",
+                              "linear-gradient(to bottom, rgba(244, 243, 238, 0), rgba(244, 243, 238, 0.7) 60%, rgba(244, 243, 238, 0.95) 100%)",
                           }}
                         />
                       </div>
@@ -508,11 +508,11 @@ export function AgenticApplications() {
                     <motion.div
                       whileHover={{ y: -3 }}
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="flex flex-col justify-between h-full min-h-[410px] sm:min-h-[440px] rounded-lg bg-white p-5 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl cursor-pointer group"
+                      className="flex flex-col justify-between h-full min-h-[410px] sm:min-h-[440px] rounded-2xl bg-[#f4f3ee] border border-neutral-200/90 p-5 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl cursor-pointer group hover:border-neutral-300"
                     >
                       <div>
                         <div className="flex items-center justify-between">
-                          <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
+                          <h4 className="font-display text-lg sm:text-xl font-bold tracking-tight text-neutral-900 group-hover:text-neutral-900 transition-colors">
                             Automated Client Onboarding
                           </h4>
                           <span className="text-[10px] sm:text-xs font-bold text-purple-700 uppercase tracking-wider">
@@ -525,7 +525,7 @@ export function AgenticApplications() {
                         <div className="mt-3 flex items-center gap-2">
                           <Link
                             to="/book"
-                            className="inline-flex items-center gap-1.5 rounded-sm bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-[#ff7a00]"
+                            className="inline-flex items-center gap-1.5 rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-neutral-800"
                           >
                             <span>GET THIS SYSTEM</span>
                             <ArrowRight className="size-3" />
@@ -533,10 +533,10 @@ export function AgenticApplications() {
                         </div>
                       </div>
 
-                      <div className="relative mt-4 rounded-2xl border border-neutral-200/80 bg-[#FAFAFC] p-3.5 sm:p-4 text-xs sm:text-sm font-sans shadow-inner overflow-hidden">
+                      <div className="relative mt-4 rounded-2xl border border-neutral-200/80 bg-white/90 p-3.5 sm:p-4 text-xs sm:text-sm font-sans shadow-inner overflow-hidden">
                         <div className="space-y-2.5">
                           <div className="flex items-center justify-end gap-2">
-                            <div className="rounded-xl bg-[#FFF6F0] border border-[#FFE4D4] text-[#4A2408] px-3 py-2 text-xs font-medium shadow-2xs">
+                            <div className="rounded-xl bg-[#f4f3ee] border border-neutral-200 text-neutral-900 px-3 py-2 text-xs font-medium shadow-2xs">
                               Onboarding intake submitted!
                             </div>
                             <div className="size-5 rounded-full bg-neutral-900 text-white flex items-center justify-center font-bold text-[10px] shrink-0">
@@ -560,7 +560,7 @@ export function AgenticApplications() {
                             backdropFilter: "blur(6px)",
                             WebkitBackdropFilter: "blur(6px)",
                             background:
-                              "linear-gradient(to bottom, rgba(245, 250, 255, 0), rgba(245, 250, 255, 0.7) 60%, rgba(245, 250, 255, 0.95) 100%)",
+                              "linear-gradient(to bottom, rgba(244, 243, 238, 0), rgba(244, 243, 238, 0.7) 60%, rgba(244, 243, 238, 0.95) 100%)",
                           }}
                         />
                       </div>
@@ -575,7 +575,7 @@ export function AgenticApplications() {
               <ScrollReveal variant="button">
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-neutral-950 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-md transition-all duration-300 hover:bg-[#ff7a00] hover:scale-[1.02]"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-neutral-950 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-md transition-all duration-300 hover:bg-neutral-800 hover:scale-[1.02]"
                 >
                   <span>EXPLORE ALL AUTOMATIONS</span>
                   <ArrowRight className="size-4" />

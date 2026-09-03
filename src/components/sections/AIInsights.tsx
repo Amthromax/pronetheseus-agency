@@ -16,11 +16,11 @@ const SIDE_POSTS: InsightPost[] = [
     id: "runtime-agents",
     title: "Can Today's AI Agents Survive Their Own Runtime?",
     date: "MAY 15, 2026",
-    gradientBg: "bg-gradient-to-tr from-[#FF7E5F] via-[#FEB47B] to-[#6A11CB]",
+    gradientBg: "bg-gradient-to-tr from-neutral-800 via-neutral-700 to-neutral-900",
     graphicSvg: (
-      <div className="relative size-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-amber-400 via-rose-400 to-indigo-600">
-        <div className="size-10 sm:size-14 rounded-full bg-white/40 backdrop-blur-md shadow-inner border border-white/60 animate-pulse" />
-        <div className="absolute size-7 sm:size-10 rounded-full bg-gradient-to-tr from-pink-500 to-orange-400 shadow-md" />
+      <div className="relative size-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-800 via-slate-800 to-neutral-950">
+        <div className="size-10 sm:size-14 rounded-full bg-white/20 backdrop-blur-md shadow-inner border border-white/30 animate-pulse" />
+        <div className="absolute size-7 sm:size-10 rounded-full bg-gradient-to-tr from-neutral-500 to-neutral-300 shadow-md" />
       </div>
     ),
   },
@@ -53,10 +53,10 @@ const SIDE_POSTS: InsightPost[] = [
     id: "productivity-paradox",
     title: "The AI productivity paradox: why employees are moving faster than enterprises",
     date: "JANUARY 12, 2026",
-    gradientBg: "bg-gradient-to-tr from-amber-200 via-orange-300 to-rose-300",
+    gradientBg: "bg-gradient-to-tr from-neutral-700 via-neutral-800 to-neutral-900",
     graphicSvg: (
-      <div className="relative size-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-tr from-amber-100 via-orange-200 to-rose-300">
-        <div className="size-8 sm:size-12 rounded-full border-4 border-white/80 bg-orange-400/20 backdrop-blur-md shadow-md" />
+      <div className="relative size-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-tr from-neutral-800 via-slate-800 to-neutral-900">
+        <div className="size-8 sm:size-12 rounded-full border-4 border-white/60 bg-white/10 backdrop-blur-md shadow-md" />
         <div className="absolute size-5 rounded-full bg-white/70" />
       </div>
     ),
@@ -89,10 +89,10 @@ export function AIInsights() {
                 className="group relative overflow-hidden rounded-[28px] sm:rounded-[34px] border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300 min-h-[340px] sm:min-h-[440px] flex flex-col justify-end p-5 sm:p-7 cursor-pointer h-full"
               >
                 {/* 3D Gradient Background Art */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 via-teal-700 to-indigo-900 overflow-hidden">
-                  <div className="absolute -top-20 -left-20 size-[400px] sm:size-[550px] rounded-full bg-gradient-to-tr from-pink-400 via-sky-300 to-emerald-400 opacity-60 blur-3xl animate-orb" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-40 sm:size-60 rounded-full bg-gradient-to-br from-indigo-950 via-slate-800 to-pink-500 shadow-2xl border border-white/20 flex items-center justify-center">
-                    <div className="size-20 sm:size-28 rounded-full bg-gradient-to-tr from-rose-400 to-indigo-300 opacity-80 blur-md animate-pulse-glow" />
+                <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-slate-900 to-black overflow-hidden">
+                  <div className="absolute -top-20 -left-20 size-[400px] sm:size-[550px] rounded-full bg-gradient-to-tr from-neutral-700 via-slate-600 to-neutral-800 opacity-40 blur-3xl animate-orb" />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-40 sm:size-60 rounded-full bg-gradient-to-br from-neutral-950 via-slate-800 to-neutral-900 shadow-2xl border border-white/20 flex items-center justify-center">
+                    <div className="size-20 sm:size-28 rounded-full bg-gradient-to-tr from-neutral-500 to-neutral-300 opacity-50 blur-md animate-pulse-glow" />
                   </div>
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_0%,rgba(0,0,0,0.3)_100%)]" />
                 </div>
@@ -103,7 +103,7 @@ export function AIInsights() {
                     <span>MAY 15, 2026</span>
                     <span>•</span>
                   </div>
-                  <h3 className="mt-1.5 font-sans text-base sm:text-xl font-bold tracking-tight text-neutral-900 leading-snug group-hover:text-[#ff7a00] transition-colors">
+                  <h3 className="mt-1.5 font-sans text-base sm:text-xl font-bold tracking-tight text-neutral-900 leading-snug group-hover:text-neutral-600 transition-colors">
                     Configured, not coded. The engineering discipline gap in agent development
                   </h3>
                 </div>
@@ -126,7 +126,7 @@ export function AIInsights() {
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-sans text-xs sm:text-sm font-bold tracking-tight text-neutral-900 leading-snug group-hover:text-[#ff7a00] transition-colors line-clamp-2">
+                      <h4 className="font-sans text-xs sm:text-sm font-bold tracking-tight text-neutral-900 leading-snug group-hover:text-neutral-600 transition-colors line-clamp-2">
                         {post.title}
                       </h4>
                       <div className="mt-1 font-mono text-[10px] font-medium text-neutral-500 uppercase tracking-wider flex items-center gap-1">

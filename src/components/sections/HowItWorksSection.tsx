@@ -66,11 +66,11 @@ export function HowItWorksSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
                 whileHover={{ y: -4 }}
-                className="group relative flex flex-col justify-between rounded-2xl border border-sandel-border bg-sandel-card p-6 shadow-xs transition-all duration-300 hover:border-neutral-400 hover:bg-[#FFFBF5] hover:shadow-md"
+                className="group relative flex flex-col justify-between rounded-2xl border border-sandel-border bg-sandel-card p-6 shadow-xs transition-all duration-300 hover:border-neutral-400 hover:bg-neutral-100/70 hover:shadow-md"
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xl font-bold text-[#ff7a00] tracking-tight">
+                    <span className="font-mono text-xl font-bold text-neutral-900 tracking-tight">
                       {step.number}
                     </span>
                     <div className="flex size-10 items-center justify-center rounded-xl bg-sandel text-neutral-900 group-hover:bg-[#18181b] group-hover:text-white transition-colors duration-300">

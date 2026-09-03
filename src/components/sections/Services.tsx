@@ -112,7 +112,7 @@ export function Services() {
                   {/* Category Top Row */}
                   <div className="flex items-center justify-between pb-2.5 border-b border-black/5">
                     <div className="flex items-center gap-2">
-                      <Icon className="size-4 sm:size-4.5 text-[#C15F3C]" />
+                      <Icon className="size-4 sm:size-4.5 text-neutral-900" />
                       <h3 className="text-sm sm:text-base font-bold text-neutral-900 tracking-tight">
                         {cat.title}
                       </h3>
@@ -130,7 +130,7 @@ export function Services() {
                   <div className="mt-3.5 space-y-2 pt-2.5 border-t border-black/5">
                     {cat.services.map((item) => (
                       <div key={item.name} className="flex items-start gap-2">
-                        <CheckCircle2 className="size-3.5 shrink-0 text-[#C15F3C] mt-0.5" />
+                        <CheckCircle2 className="size-3.5 shrink-0 text-neutral-900 mt-0.5" />
                         <div className="text-xs leading-snug">
                           <strong className="font-bold text-neutral-900">{item.name}: </strong>
                           <span className="text-neutral-500 font-normal">{item.desc}</span>

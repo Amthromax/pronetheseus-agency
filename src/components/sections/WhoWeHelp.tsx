@@ -86,7 +86,7 @@ export function WhoWeHelp() {
                   <div className="mt-3 pt-3 border-t border-black/5 space-y-1.5">
                     {ind.features.map((feat) => (
                       <div key={feat} className="flex items-center gap-1.5 text-[11px] text-neutral-600">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a00] shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 shrink-0" />
                         <span>{feat}</span>
                       </div>
                     ))}
