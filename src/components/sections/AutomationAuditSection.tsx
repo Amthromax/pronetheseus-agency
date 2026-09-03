@@ -149,30 +149,6 @@ export function AutomationAuditSection() {
           </p>
         </div>
 
-        {/* VISUAL AUDIT MECHANISM DIAGRAM - Apple HIG Squircle Card Box */}
-        <div className="mt-12 rounded-[28px] sm:rounded-[32px] border border-neutral-200/90 bg-[#f4f3ee] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] max-w-5xl mx-auto font-sans">
-          <div className="text-center mb-4">
-            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-neutral-500">
-              How Your Automated Audit Pipeline Works
-            </span>
-          </div>
-          <div className="grid grid-cols-2 xs:grid-cols-4 lg:grid-cols-8 gap-2.5">
-            {AUDIT_FLOW_STEPS.map((s) => {
-              const Icon = s.icon;
-              return (
-                <div key={s.label} className="flex flex-col items-center text-center p-3 rounded-[20px] bg-white border border-black/5 shadow-2xs hover:border-black/20 transition-colors">
-                  <div className="flex size-8 items-center justify-center rounded-xl bg-neutral-100 text-neutral-900 border border-black/5 mb-2">
-                    <Icon className="size-4" />
-                  </div>
-                  <span className="text-[10px] font-bold text-neutral-800 font-sans leading-tight">
-                    {s.label}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
         {/* AUDIT FORM CONTAINER - Apple HIG Squircle Card Box */}
         <div className="mt-10 max-w-3xl mx-auto rounded-[28px] sm:rounded-[34px] border border-neutral-200/90 bg-[#f4f3ee] p-6 sm:p-10 shadow-[0_12px_40px_rgb(0,0,0,0.04)] font-sans">
           {submitted ? (
