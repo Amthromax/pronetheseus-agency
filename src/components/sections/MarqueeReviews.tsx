@@ -100,15 +100,15 @@ export function MarqueeReviews() {
         </h3>
       </div>
 
-      {/* Dual Row Marquee splitting outwards in opposite directions */}
+      {/* Dual Row Marquee: Row 1 moves right, Row 2 moves left */}
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden gap-4">
-        <Marquee pauseOnHover speed={35} className="w-full">
+        <Marquee reverse pauseOnHover speed={35} className="w-full">
           {firstRow.map((review, idx) => (
             <ReviewCard key={`row1-${idx}-${review.username}`} {...review} />
           ))}
         </Marquee>
 
-        <Marquee reverse pauseOnHover speed={35} className="w-full">
+        <Marquee pauseOnHover speed={35} className="w-full">
           {secondRow.map((review, idx) => (
             <ReviewCard key={`row2-${idx}-${review.username}`} {...review} />
           ))}
