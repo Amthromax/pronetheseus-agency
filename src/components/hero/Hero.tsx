@@ -45,16 +45,16 @@ export function Hero() {
       {/* MAIN HERO CONTENT */}
       <div className="relative z-10 mx-auto max-w-[1700px] w-full px-4 sm:px-8 lg:px-16 xl:px-20 flex flex-col lg:flex-row justify-end items-center my-auto pt-4 pb-8 sm:pb-12">
         {/* Right-aligned text content occupying right side space */}
-        <div className="w-full lg:w-[56%] xl:w-[52%] flex flex-col items-center lg:items-start text-center lg:text-left ml-auto">
+        <div className="w-full lg:w-[64%] xl:w-[60%] 2xl:w-[56%] flex flex-col items-center lg:items-start text-center lg:text-left ml-auto">
           {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="font-sans text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-[60px] xl:text-[70px] font-bold tracking-tight text-neutral-900 leading-[1.1]"
+            className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[46px] xl:text-[54px] 2xl:text-[64px] font-bold tracking-tight text-neutral-900 leading-[1.12]"
           >
-            Automate Your Business. <br className="hidden sm:block" />
-            <span className="text-neutral-900">Capture More Customers.</span>
+            <span className="block">Autonomous AI Infrastructure.</span>
+            <span className="block text-neutral-900 mt-1 sm:mt-1.5">Built for High-Growth Agencies.</span>
           </motion.h1>
 
 

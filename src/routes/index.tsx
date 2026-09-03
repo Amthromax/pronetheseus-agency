@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
       { title: "Pronetheseus — Agency Infrastructure & AI Automation Systems" },
       { name: "description", content: "Automate lead capture, customer conversations, appointment booking, follow-ups, and repetitive business operations." },
       { property: "og:title", content: "Pronetheseus — AI Revenue Engine & Business Automation Systems" },
-      { property: "og:description", content: "Automate your business. Capture more customers." },
+      { property: "og:description", content: "Autonomous AI Infrastructure. Built for High-Growth Agencies." },
       { property: "og:url", content: "/" },
     ],
     links: [
