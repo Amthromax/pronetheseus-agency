@@ -45,7 +45,7 @@ function Page() {
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
           {/* Left Column: Contact Form + Company Background Cards */}
           <div className="space-y-4 font-sans">
-            <form onSubmit={handleSubmit(onSubmit)} className="rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] font-sans">
+            <form onSubmit={handleSubmit(onSubmit)} className="rounded-[28px] sm:rounded-[32px] border border-neutral-200/90 bg-[#f4f3ee] p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] font-sans">
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Name" error={errors.name?.message}><input {...register("name")} className="cf-input" placeholder="Your name" /></Field>
                 <Field label="Email" error={errors.email?.message}><input {...register("email")} type="email" className="cf-input" placeholder="you@company.com" /></Field>
@@ -61,7 +61,7 @@ function Page() {
               <button disabled={isSubmitting} className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-neutral-900 hover:bg-black px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 shadow-md cursor-pointer">
                 {isSubmitting ? "Sending..." : "Send message"}
               </button>
-              <style>{`.cf-input{width:100%;background:rgba(255,255,255,0.85);border:1px solid rgba(0,0,0,0.06);border-radius:14px;padding:12px 14px;font-size:13.5px;outline:none;color:#18181b;transition:all 0.2s}.cf-input::placeholder{color:rgb(140,140,148)}.cf-input:focus{background:#ffffff;border-color:rgba(0,0,0,0.4);box-shadow:0 0 0 3px rgba(0,0,0,0.05)}`}</style>
+              <style>{`.cf-input{width:100%;background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:12px 14px;font-size:13.5px;outline:none;color:#18181b;transition:all 0.2s}.cf-input::placeholder{color:rgb(140,140,148)}.cf-input:focus{background:#ffffff;border-color:rgba(0,0,0,0.4);box-shadow:0 0 0 3px rgba(0,0,0,0.05)}`}</style>
             </form>
             <InfoCard Icon={Building2} title="Amthromax Technologies" body="An AI automation studio building AI Employees, n8n workflows, CRM automations and voice agents for growing teams worldwide." />
             <InfoCard Icon={MapPin} title="Headquartered in India" body="Registered office · Mumbai, Maharashtra, India — with a fully remote delivery team across London, New York, Dubai and Singapore." />
@@ -92,8 +92,8 @@ function Field({ label, error, children }: { label: string; error?: string; chil
 
 function InfoCard({ Icon, title, body, cta, ctaTo }: { Icon: ComponentType<{ className?: string }>; title: string; body: string; cta?: string; ctaTo?: string; }) {
   return (
-    <div className="rounded-[24px] sm:rounded-[28px] border border-white/80 bg-sandel-card p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all duration-300 font-sans">
-      <div className="grid size-11 place-items-center rounded-2xl bg-neutral-200/80 text-neutral-900 border border-black/5 shadow-2xs">
+    <div className="rounded-[24px] sm:rounded-[28px] border border-neutral-200/90 bg-[#f4f3ee] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.07)] transition-all duration-300 font-sans">
+      <div className="grid size-11 place-items-center rounded-2xl bg-white text-neutral-900 border border-black/10 shadow-2xs">
         <Icon className="size-5" />
       </div>
       <div className="mt-4 font-sans text-xl font-bold text-neutral-900">{title}</div>

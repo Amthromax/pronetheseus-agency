@@ -148,7 +148,7 @@ function BookPage() {
           /* Active Booking View (Google Calendar Scheduling) */
           <div>
             {/* Top Badges */}
-            <div className="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-sandel-border bg-sandel-card p-4 shadow-xs">
+            <div className="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-neutral-200/90 bg-[#f4f3ee] p-4 shadow-xs">
               <div className="flex flex-wrap items-center gap-6 text-xs md:text-sm text-neutral-800 font-sans font-medium">
                 <span className="inline-flex items-center gap-2 font-semibold">
                   <Clock className="size-4 text-neutral-900" /> 30-Minute Free Audit
@@ -165,7 +165,7 @@ function BookPage() {
                 href={GOOGLE_CALENDAR_BOOKING_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-sandel border border-sandel-border px-4 py-1.5 text-xs font-semibold text-neutral-800 transition hover:bg-white hover:border-neutral-400"
+                className="inline-flex items-center gap-2 rounded-full bg-white border border-neutral-300 px-4 py-1.5 text-xs font-semibold text-neutral-800 transition hover:bg-neutral-100 hover:border-neutral-400"
               >
                 <span>Open in Google Calendar</span>
                 <ExternalLink className="size-3.5" />
@@ -173,7 +173,7 @@ function BookPage() {
             </div>
 
             {/* Embedded Google Calendar Appointment Schedule */}
-            <div className="relative w-full overflow-hidden rounded-3xl border border-sandel-border bg-sandel-card p-2 md:p-3 shadow-md">
+            <div className="relative w-full overflow-hidden rounded-3xl border border-neutral-200/90 bg-[#f4f3ee] p-2 md:p-3 shadow-md">
               <iframe
                 src={GOOGLE_CALENDAR_BOOKING_URL}
                 className="w-full h-[720px] md:h-[800px] rounded-2xl bg-white border-0"
