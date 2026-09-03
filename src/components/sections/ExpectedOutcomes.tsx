@@ -53,8 +53,8 @@ export function ExpectedOutcomes() {
           </p>
         </div>
 
-        {/* 4 Cards Grid - Direct without outer wrapper box */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        {/* 4 Cards Grid - Clean without outer box */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {METRICS_LIST.map((m, idx) => {
             const Icon = m.icon;
             return (
@@ -64,15 +64,15 @@ export function ExpectedOutcomes() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="group rounded-[22px] bg-[#f4f3ee] border border-neutral-200/90 p-5 sm:p-6 flex flex-col justify-between shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-neutral-300 transition duration-300"
+                className="group flex flex-col justify-between p-2"
               >
                 <div>
                   {/* Top Badge & Icon Row */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex size-8 items-center justify-center rounded-full bg-white border border-neutral-200/80 text-[#C15F3C] shadow-2xs">
+                    <div className="flex size-8 items-center justify-center rounded-full bg-neutral-100 border border-black/10 text-neutral-900 shadow-2xs">
                       <Icon className="size-4" />
                     </div>
-                    <span className="rounded-full bg-white px-3 py-1 text-[9px] sm:text-[10px] font-mono font-semibold tracking-wider uppercase text-neutral-600 border border-neutral-200/80 shadow-2xs">
+                    <span className="rounded-full bg-neutral-100/80 px-3 py-1 text-[9px] sm:text-[10px] font-mono font-semibold tracking-wider uppercase text-neutral-700 border border-black/5 shadow-2xs">
                       {m.badge}
                     </span>
                   </div>
