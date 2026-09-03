@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function CookieConsent() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,17 +48,17 @@ export function CookieConsent() {
           {/* Description Content */}
           <p className="pr-8 text-xs sm:text-[13px] text-neutral-300 leading-relaxed font-normal">
             Essential cookies keep the site working and stay on. Optional cookies help with performance and advertising — accept, reject, or manage them. Learn more in our{" "}
-            <a href="#privacy" className="font-semibold text-white underline underline-offset-2 hover:text-neutral-300 transition">
+            <Link to="/privacy" className="font-semibold text-white underline underline-offset-2 hover:text-neutral-300 transition">
               Cookie Policy
-            </a>
+            </Link>
             ,{" "}
-            <a href="#privacy" className="font-semibold text-white underline underline-offset-2 hover:text-neutral-300 transition">
+            <Link to="/privacy" className="font-semibold text-white underline underline-offset-2 hover:text-neutral-300 transition">
               Privacy Policy
-            </a>
+            </Link>
             , and{" "}
-            <a href="#terms" className="font-semibold text-white underline underline-offset-2 hover:text-neutral-300 transition">
+            <Link to="/terms" className="font-semibold text-white underline underline-offset-2 hover:text-neutral-300 transition">
               Terms of Service
-            </a>
+            </Link>
             .
           </p>
 
