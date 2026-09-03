@@ -33,7 +33,7 @@ export function CookieConsent() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 40, scale: 0.96 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed bottom-6 left-4 right-4 sm:left-6 sm:right-auto z-[9999] max-w-[640px] rounded-[24px] bg-[#0a0a0c]/95 p-6 text-white shadow-[0_20px_60px_rgba(0,0,0,0.6)] backdrop-blur-2xl border border-white/10 font-sans"
+          className="fixed bottom-6 right-4 left-4 sm:right-6 sm:left-auto z-[9999] max-w-[640px] rounded-[24px] bg-[#0a0a0c]/95 p-6 text-white shadow-[0_20px_60px_rgba(0,0,0,0.6)] backdrop-blur-2xl border border-white/10 font-sans"
         >
           {/* Top Close Button */}
           <button
