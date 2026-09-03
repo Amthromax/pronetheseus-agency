@@ -7,6 +7,7 @@ import { ExpectedOutcomes } from "@/components/sections/ExpectedOutcomes";
 import { AgenticApplications } from "@/components/sections/AgenticApplications";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { AIInsights } from "@/components/sections/AIInsights";
+import { MarqueeReviews } from "@/components/sections/MarqueeReviews";
 import { FAQ } from "@/components/sections/FAQ";
 
 import heroPeople from "@/assets/hero-people-4.png.asset.json";
@@ -38,6 +39,7 @@ function Index() {
       <AgenticApplications />
       <Portfolio />
       <AIInsights />
+      <MarqueeReviews />
       <FAQ />
     </>
   );
