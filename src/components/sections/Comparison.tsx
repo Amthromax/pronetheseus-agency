@@ -19,11 +19,11 @@ export function Comparison() {
         <SectionHeading title="Why teams switch from traditional agencies" />
         
         {/* Apple Squircle Comparison Card Box */}
-        <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card shadow-[0_8px_30px_rgb(0,0,0,0.04)] font-sans">
+        <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-[28px] sm:rounded-[32px] border border-neutral-200/90 bg-[#f4f3ee] shadow-[0_8px_30px_rgb(0,0,0,0.03)] font-sans">
           <div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-black/5 bg-white/80 backdrop-blur-md text-xs font-mono font-bold uppercase tracking-widest text-neutral-500">
             <div className="p-4 sm:p-5" />
             <div className="p-4 sm:p-5 text-center">Traditional Agency</div>
-            <div className="p-4 sm:p-5 text-center text-[#ff7a00] font-bold">Pronetheseus</div>
+            <div className="p-4 sm:p-5 text-center text-neutral-900 font-bold">Pronetheseus</div>
           </div>
           {rows.map((r, i) => (
             <div key={i} className="grid grid-cols-[1.4fr_1fr_1fr] items-center border-b border-black/5 text-sm last:border-b-0">
@@ -31,8 +31,8 @@ export function Comparison() {
               <div className="p-4 sm:p-5 text-center text-neutral-500 font-normal">
                 {typeof r.trad === "boolean" ? (r.trad ? <Check className="mx-auto size-4 text-neutral-400" /> : <X className="mx-auto size-4 text-neutral-400" />) : r.trad}
               </div>
-              <div className="bg-[#ff7a00]/[0.05] p-4 sm:p-5 text-center font-bold text-neutral-900">
-                {typeof r.us === "boolean" ? (r.us ? <Check className="mx-auto size-4 text-[#ff7a00]" /> : <X className="mx-auto size-4" />) : r.us}
+              <div className="bg-neutral-200/30 p-4 sm:p-5 text-center font-bold text-neutral-900">
+                {typeof r.us === "boolean" ? (r.us ? <Check className="mx-auto size-4 text-neutral-900" /> : <X className="mx-auto size-4" />) : r.us}
               </div>
             </div>
           ))}

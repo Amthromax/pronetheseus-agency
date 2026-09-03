@@ -373,21 +373,21 @@ export function TabbedImpactCards() {
                     key={card.id}
                     className={`relative flex flex-col justify-between rounded-[28px] sm:rounded-[32px] p-6 sm:p-7 transition-all duration-300 min-h-[440px] ${
                       isHighlight
-                        ? "bg-neutral-900 text-white shadow-2xl scale-[1.02] border-2 border-[#ff7a00] z-10"
-                        : "bg-sandel-card border border-white/80 text-neutral-900 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.09)] hover:border-neutral-300/80"
+                        ? "bg-neutral-900 text-white shadow-2xl scale-[1.02] border border-neutral-700 z-10"
+                        : "bg-[#f4f3ee] border border-neutral-200/90 text-neutral-900 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.07)] hover:border-neutral-300"
                     }`}
                   >
                     <div>
                       {/* Top Header Row: Type Label & Badge Pill */}
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#ff7a00]">
+                        <span className={`text-[10px] font-mono font-bold uppercase tracking-wider ${isHighlight ? "text-neutral-400" : "text-neutral-500"}`}>
                           {card.type}
                         </span>
                         <span
                           className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-[10px] font-bold ${
                             isHighlight
-                              ? "bg-[#ff7a00] text-white shadow-2xs"
-                              : "bg-white/80 backdrop-blur-sm text-neutral-700 border border-black/5 shadow-2xs"
+                              ? "bg-neutral-800 text-white border border-neutral-700 shadow-2xs"
+                              : "bg-white text-neutral-800 border border-black/10 shadow-2xs"
                           }`}
                         >
                           {card.badge}
@@ -432,7 +432,7 @@ export function TabbedImpactCards() {
                       <ul className="space-y-2 text-xs">
                         {card.features.map((feat, fIdx) => (
                           <li key={fIdx} className="flex items-start gap-2 leading-snug">
-                            <Check className="size-3.5 shrink-0 text-[#ff7a00] mt-0.5" />
+                            <Check className={`size-3.5 shrink-0 mt-0.5 ${isHighlight ? "text-white" : "text-neutral-900"}`} />
                             <span className={isHighlight ? "text-neutral-200 font-medium" : "text-neutral-700 font-medium"}>
                               {feat}
                             </span>
@@ -447,11 +447,11 @@ export function TabbedImpactCards() {
                         to="/book"
                         className={`group inline-flex w-full items-center justify-center gap-2 rounded-full py-3 text-xs font-bold transition-all duration-300 ${
                           isHighlight
-                            ? "bg-[#ff7a00] text-white shadow-lg hover:bg-[#e06b00] hover:scale-[1.02] active:scale-[0.98]"
+                            ? "bg-white text-neutral-900 shadow-md hover:bg-neutral-100 hover:scale-[1.02] active:scale-[0.98]"
                             : "bg-neutral-900 text-white hover:bg-black shadow-sm"
                         }`}
                       >
-                        <Sparkles className="size-3.5 text-orange-200" />
+                        <Sparkles className={`size-3.5 ${isHighlight ? "text-neutral-600" : "text-neutral-400"}`} />
                         <span>{card.ctaText}</span>
                         <ArrowRight className="size-3.5 transition group-hover:translate-x-1" />
                       </Link>

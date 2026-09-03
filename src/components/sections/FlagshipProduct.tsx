@@ -72,18 +72,15 @@ export function FlagshipProduct() {
           
           {/* Left Column: Core System (Obsidian Dark High-Impact Card - Apple Superellipse) */}
           <div className="lg:col-span-7 rounded-[28px] sm:rounded-[34px] bg-neutral-900 text-white p-6 sm:p-8 shadow-2xl relative overflow-hidden flex flex-col justify-between border border-neutral-800">
-            {/* Ambient Orange Glow Effect */}
-            <div className="absolute -right-20 -top-20 size-60 rounded-full bg-[#ff7a00]/15 blur-3xl pointer-events-none" />
-
             <div>
               {/* Header Badges */}
               <div className="flex items-center justify-between border-b border-neutral-800 pb-3.5">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ff7a00] px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-white shadow-xs">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-900 shadow-xs">
                   <Zap className="size-3 fill-current" />
                   CORE REVENUE SYSTEM
                 </span>
                 <span className="text-[11px] font-mono text-neutral-400 flex items-center gap-1.5">
-                  <span className="size-1.5 rounded-full bg-[#ff7a00] animate-pulse" />
+                  <span className="size-1.5 rounded-full bg-white animate-pulse" />
                   Primary Infrastructure
                 </span>
               </div>
@@ -110,7 +107,7 @@ export function FlagshipProduct() {
                   "Automated Google reviews & lead reactivation",
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-2">
-                    <CheckCircle2 className="size-3.5 text-[#ff7a00] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="size-3.5 text-white shrink-0 mt-0.5" />
                     <span className="text-xs font-medium text-neutral-200 font-sans leading-tight">
                       {feature}
                     </span>
@@ -125,7 +122,7 @@ export function FlagshipProduct() {
                   <span className="text-[9px] font-mono text-neutral-400 uppercase">Response Time</span>
                 </div>
                 <div className="border-x border-neutral-700/60 px-1">
-                  <span className="block font-sans text-sm sm:text-base font-bold text-[#ff7a00]">3.4x</span>
+                  <span className="block font-sans text-sm sm:text-base font-bold text-white">3.4x</span>
                   <span className="text-[9px] font-mono text-neutral-400 uppercase">Booking Rate</span>
                 </div>
                 <div>
@@ -138,7 +135,7 @@ export function FlagshipProduct() {
             {/* CTA Button */}
             <div className="mt-6">
               <Link to="/contact">
-                <button className="w-full rounded-full bg-[#ff7a00] hover:bg-[#e06b00] text-white px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2">
+                <button className="w-full rounded-full bg-white hover:bg-neutral-100 text-neutral-900 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2">
                   <span>Get Core Revenue Engine</span>
                   <ArrowRight className="size-4" />
                 </button>
@@ -147,11 +144,11 @@ export function FlagshipProduct() {
           </div>
 
           {/* Right Column: Modular Power Add-ons (Apple Superellipse) */}
-          <div className="lg:col-span-5 rounded-[28px] sm:rounded-[34px] border border-white/80 bg-sandel-card p-6 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-between">
+          <div className="lg:col-span-5 rounded-[28px] sm:rounded-[34px] border border-neutral-200/90 bg-[#f4f3ee] p-6 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between border-b border-black/5 pb-3.5">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 backdrop-blur-sm border border-black/5 font-mono text-[10px] font-bold text-neutral-800 uppercase tracking-wider shadow-2xs">
-                  <Sliders className="size-3 text-[#ff7a00]" />
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white backdrop-blur-sm border border-black/10 font-mono text-[10px] font-bold text-neutral-800 uppercase tracking-wider shadow-2xs">
+                  <Sliders className="size-3 text-neutral-900" />
                   MODULAR ADD-ONS
                 </span>
                 <span className="text-[11px] font-mono text-neutral-500">Plug &amp; Play</span>
@@ -173,11 +170,11 @@ export function FlagshipProduct() {
                   return (
                     <div 
                       key={addon.title} 
-                      className="group flex items-center justify-between p-3 rounded-[18px] bg-white/75 backdrop-blur-md border border-black/5 hover:bg-white hover:border-neutral-300 hover:shadow-md transition-all duration-300 shadow-2xs"
+                      className="group flex items-center justify-between p-3 rounded-[18px] bg-white border border-black/5 hover:border-neutral-300 hover:shadow-md transition-all duration-300 shadow-2xs"
                     >
                       <div className="flex items-center gap-3 min-w-0">
                         <div className="size-9 rounded-full bg-neutral-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                          <Icon className="size-4 text-[#ff7a00]" />
+                          <Icon className="size-4 text-white" />
                         </div>
                         <div className="min-w-0">
                           <div className="flex items-center gap-1.5">
@@ -204,7 +201,7 @@ export function FlagshipProduct() {
             <div className="mt-5 pt-3.5 border-t border-black/5">
               <Link 
                 to="/contact" 
-                className="w-full inline-flex items-center justify-center gap-1.5 text-xs font-mono font-bold text-[#ff7a00] hover:text-[#d96800] transition-colors py-1"
+                className="w-full inline-flex items-center justify-center gap-1.5 text-xs font-mono font-bold text-neutral-900 hover:text-black transition-colors py-1"
               >
                 <span>CUSTOMIZE YOUR AUTOMATION STACK</span>
                 <ArrowRight className="size-3.5" />

@@ -45,7 +45,7 @@ const plans = [
 function CellView({ v }: { v: Cell }) {
   if (typeof v === "boolean") {
     return v ? (
-      <Check className="mx-auto size-4 text-brand" aria-label="Included" />
+      <Check className="mx-auto size-4 text-neutral-900" aria-label="Included" />
     ) : (
       <Minus className="mx-auto size-4 text-neutral-300" aria-label="Not included" />
     );
@@ -58,7 +58,7 @@ export function PlanComparison() {
     <section className="relative py-16 md:py-24 bg-sandel text-neutral-900 font-sans">
       <div className="container-pad mx-auto max-w-[1400px]">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="text-xs uppercase tracking-[0.2em] font-mono font-semibold text-[#ff7a00]">Compare Offer Scope</div>
+          <div className="text-xs uppercase tracking-[0.2em] font-mono font-semibold text-neutral-500">Compare Offer Scope</div>
           <h2 className="mt-3 font-sans text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
             Detailed Capability Comparison
           </h2>
@@ -68,7 +68,7 @@ export function PlanComparison() {
         </div>
 
         {/* Detailed Capability Comparison - Apple Squircle Container */}
-        <div className="mt-12 overflow-x-auto rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+        <div className="mt-12 overflow-x-auto rounded-[28px] sm:rounded-[32px] border border-neutral-200/90 bg-[#f4f3ee] shadow-[0_8px_30px_rgb(0,0,0,0.03)]">
           <table className="w-full min-w-[760px] border-collapse text-sm font-sans">
             <thead className="sticky top-0 z-10 bg-white/90 backdrop-blur-md">
               <tr className="border-b border-black/5">
@@ -79,12 +79,12 @@ export function PlanComparison() {
                 {plans.map((p) => (
                   <th
                     key={p.key}
-                    className={`w-[22%] p-5 text-center align-bottom ${p.highlight ? "bg-[#ff7a00]/[0.05]" : ""}`}
+                    className={`w-[22%] p-5 text-center align-bottom ${p.highlight ? "bg-neutral-200/40" : ""}`}
                   >
                     <div className="flex items-center justify-center gap-2">
-                      <span className={`text-base font-bold ${p.highlight ? "text-[#ff7a00]" : "text-neutral-900"}`}>{p.name}</span>
+                      <span className="text-base font-bold text-neutral-900">{p.name}</span>
                       {p.highlight && "badge" in p && (
-                        <span className="rounded-full bg-[#ff7a00] px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider text-white shadow-2xs">
+                        <span className="rounded-full bg-neutral-900 px-2.5 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider text-white shadow-2xs">
                           {p.badge}
                         </span>
                       )}
@@ -117,7 +117,7 @@ export function PlanComparison() {
                         {r.hint && <div className="mt-0.5 text-xs text-neutral-500 font-normal">{r.hint}</div>}
                       </td>
                       <td className="p-5 text-center align-middle"><CellView v={r.setup} /></td>
-                      <td className="bg-[#ff7a00]/[0.04] p-5 text-center align-middle"><CellView v={r.monthly} /></td>
+                      <td className="bg-neutral-200/30 p-5 text-center align-middle"><CellView v={r.monthly} /></td>
                       <td className="p-5 text-center align-middle"><CellView v={r.enterprise} /></td>
                     </tr>
                   ))}
@@ -130,12 +130,12 @@ export function PlanComparison() {
                   <div className="mt-0.5 text-xs text-neutral-500 font-normal">Free 30-min strategy call. Concrete plan, no fluff.</div>
                 </td>
                 {plans.map((p) => (
-                  <td key={`cta-${p.key}`} className={`p-4 text-center align-middle ${p.highlight ? "bg-[#ff7a00]/[0.05]" : ""}`}>
+                  <td key={`cta-${p.key}`} className={`p-4 text-center align-middle ${p.highlight ? "bg-neutral-200/40" : ""}`}>
                     <Link
                       to="/book"
                       className={`inline-flex w-full items-center justify-center gap-1.5 rounded-full px-4 py-2.5 text-xs font-bold transition-all duration-300 ${
                         p.highlight
-                          ? "bg-[#ff7a00] text-white hover:bg-[#e06b00] shadow-md hover:scale-[1.02]"
+                          ? "bg-neutral-900 text-white hover:bg-black shadow-md hover:scale-[1.02]"
                           : "border border-black/5 bg-white/80 text-neutral-900 hover:bg-neutral-900 hover:text-white shadow-2xs"
                       }`}
                     >
