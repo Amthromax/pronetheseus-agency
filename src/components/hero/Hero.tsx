@@ -59,7 +59,7 @@ export function Hero() {
             <span className="block">Autonomous AI Infrastructure.</span>
             <span className="block text-neutral-900 mt-1 sm:mt-1.5">
               Built for High-Growth{" "}
-              <FlipWords words={HERO_WORDS} className="text-neutral-900 font-bold p-0 px-0.5 inline-block" />
+              <FlipWords words={HERO_WORDS} className="text-neutral-900 font-bold p-0 px-1 inline-block relative" />
             </span>
           </motion.h1>
 

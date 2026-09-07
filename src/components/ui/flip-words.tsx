@@ -90,6 +90,13 @@ export const FlipWords = ({
             <span className="inline-block">&nbsp;</span>
           </motion.span>
         ))}
+        {/* Crisp solid black line under the animated word */}
+        <motion.span
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+          className="absolute -bottom-0.5 sm:-bottom-1 left-0 right-0 h-[2px] sm:h-[2.5px] bg-black rounded-full block origin-left z-20"
+        />
       </motion.div>
     </AnimatePresence>
   );
