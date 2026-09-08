@@ -21,5 +21,31 @@ export default defineConfig({
         },
       },
     },
+    build: {
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes("node_modules")) {
+              if (id.includes("lucide-react")) {
+                return "vendor-icons";
+              }
+              if (id.includes("motion")) {
+                return "vendor-motion";
+              }
+              if (id.includes("recharts")) {
+                return "vendor-charts";
+              }
+              if (id.includes("@tanstack")) {
+                return "vendor-tanstack";
+              }
+              if (id.includes("react-dom") || id.includes("react/")) {
+                return "vendor-react";
+              }
+            }
+          },
+        },
+      },
+    },
   },
 });
