@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Plus, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 const allNavLinks = [
   { label: "Services", to: "/services" },
@@ -108,7 +108,7 @@ export function Navbar() {
             {open ? (
               <X className="size-4 text-neutral-900" />
             ) : (
-              <Plus className="size-4 text-neutral-900" />
+              <Menu className="size-4 text-neutral-900" />
             )}
           </button>
         </div>
