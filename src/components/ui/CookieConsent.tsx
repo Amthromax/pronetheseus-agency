@@ -7,9 +7,11 @@ export function CookieConsent() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Always show cookie banner when site opens
-    const timer = setTimeout(() => setIsOpen(true), 200);
-    return () => clearTimeout(timer);
+    const consent = localStorage.getItem("amthromax_cookie_consent");
+    if (!consent) {
+      const timer = setTimeout(() => setIsOpen(true), 500);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const handleAcceptAll = () => {
@@ -23,6 +25,7 @@ export function CookieConsent() {
   };
 
   const handleClose = () => {
+    localStorage.setItem("amthromax_cookie_consent", "dismissed");
     setIsOpen(false);
   };
 
