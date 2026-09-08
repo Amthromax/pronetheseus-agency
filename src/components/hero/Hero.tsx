@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
-import { 
-  UserPlus, 
-  Bot, 
-  Filter, 
-  RefreshCw, 
-  Calendar, 
+import {
+  UserPlus,
+  Bot,
+  Filter,
+  RefreshCw,
+  Calendar,
   Database,
   ArrowRight
 } from "lucide-react";
