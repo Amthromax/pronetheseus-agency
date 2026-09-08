@@ -333,16 +333,16 @@ export function TabbedImpactCards() {
           </p>
         </div>
 
-        {/* Filter Category Pills Bar - Apple HIG */}
-        <div className="mt-10 flex justify-center font-sans">
-          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 rounded-full border border-white/80 bg-sandel-card p-1.5 shadow-[0_8px_25px_rgb(0,0,0,0.04)] backdrop-blur-md">
+        {/* Filter Category Pills Bar - Apple HIG Mobile Scrollable */}
+        <div className="mt-8 sm:mt-10 flex justify-center font-sans overflow-x-auto no-scrollbar py-2 px-2 -mx-4 sm:mx-0">
+          <div className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full border border-white/80 bg-sandel-card p-1.5 shadow-[0_8px_25px_rgb(0,0,0,0.04)] backdrop-blur-md">
             {PRICING_CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`rounded-full px-4 sm:px-5 py-2 text-xs font-bold transition-all duration-300 cursor-pointer ${
+                  className={`rounded-full px-3.5 sm:px-5 py-2 text-xs font-bold transition-all duration-300 cursor-pointer whitespace-nowrap ${
                     isActive
                       ? "bg-neutral-900 text-white shadow-md"
                       : "text-neutral-700 hover:text-neutral-900 hover:bg-white/80"

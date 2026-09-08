@@ -67,12 +67,12 @@ export function ExpectedOutcomes() {
                 className="group flex flex-col justify-between p-2"
               >
                 <div>
-                  {/* Top Badge & Icon Row */}
+                  {/* Top Badge & Icon Row - Clean without outer box */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex size-8 items-center justify-center rounded-full bg-neutral-100 border border-black/10 text-neutral-900 shadow-2xs">
+                    <div className="flex items-center justify-center text-neutral-900">
                       <Icon className="size-4" />
                     </div>
-                    <span className="rounded-full bg-neutral-100/80 px-3 py-1 text-[9px] sm:text-[10px] font-mono font-semibold tracking-wider uppercase text-neutral-700 border border-black/5 shadow-2xs">
+                    <span className="text-[9px] sm:text-[10px] font-mono font-semibold tracking-wider uppercase text-neutral-500">
                       {m.badge}
                     </span>
                   </div>

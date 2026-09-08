@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { FlipWords } from "@/components/ui/flip-words";
 
-const HERO_WORDS = ["Agencies.", "Enterprises.", "Businesses.", "Teams.", "Studios."];
+const HERO_WORDS = ["Agencies.", "Businesses.", "Teams.", "Studios."];
 
 const WORKFLOW_STEPS = [
   { label: "LEAD", icon: UserPlus },
