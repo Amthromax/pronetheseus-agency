@@ -29,7 +29,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "energy-giant-ai-voice",
     company: "Global Energy & Utility Corp",
     industry: "Voice AI & Utility Ops",
-    hero: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
+    hero: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=75",
     before: "45,000+ daily call volume created 18-minute call queues and high customer frustration.",
     after: "Conversational Voice AI agent handles 90% of routine inquiries instantly with 0s wait time.",
     metrics: [
@@ -61,9 +61,9 @@ export const caseStudies: CaseStudy[] = [
       { name: "Sarah Lin", role: "Customer Experience Manager", rating: 5, text: "Customer CSAT scores jumped 34 points in the first month following cutover." },
     ],
     gallery: [
-      { src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80", caption: "Voice AI Traffic Radar" },
-      { src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80", caption: "SAP Real-Time Data Sync" },
-      { src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80", caption: "Live Analytics Dashboard" },
+      { src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=75", caption: "Voice AI Traffic Radar" },
+      { src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=75", caption: "SAP Real-Time Data Sync" },
+      { src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=75", caption: "Live Analytics Dashboard" },
     ],
     workflow: [
       { step: "01", title: "Discovery", duration: "Week 1", description: "Audited 10,000 historical call recordings and defined intent taxonomy." },
@@ -78,7 +78,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "financial-institution-modernization",
     company: "Apex Global Banking",
     industry: "Financial Services",
-    hero: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80",
+    hero: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=75",
     before: "Manual compliance reviews delayed international wire approvals by up to 48 hours.",
     after: "Autonomous OCR & document agents verify wire transfers and KYC in 45 seconds.",
     metrics: [
@@ -108,7 +108,7 @@ export const caseStudies: CaseStudy[] = [
       { name: "Michael Chang", role: "Head of Compliance", rating: 5, text: "Transaction backlogs completely disappeared within 14 days of launch." },
     ],
     gallery: [
-      { src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80", caption: "Global Compliance Console" },
+      { src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=75", caption: "Global Compliance Console" },
     ],
     workflow: [
       { step: "01", title: "Security Review", duration: "Week 1", description: "SOC2 compliance sign-off and banking API security architecture." },
@@ -120,7 +120,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "ecuador-insurer-transformation",
     company: "Seguros del Ecuador",
     industry: "Insurance & Claims",
-    hero: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1600&q=80",
+    hero: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&auto=format&fit=crop&q=75",
     before: "Claims submission processing took 5 days with manual policy verification.",
     after: "Generative AI claims bot verifies coverage and dispatches adjusters in <30 seconds.",
     metrics: [
@@ -148,7 +148,7 @@ export const caseStudies: CaseStudy[] = [
       { name: "Maria Fernandez", role: "Head of CX", rating: 5, text: "Customer satisfaction during claims reached an all-time high." },
     ],
     gallery: [
-      { src: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80", caption: "WhatsApp Claims Processing" },
+      { src: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&auto=format&fit=crop&q=75", caption: "WhatsApp Claims Processing" },
     ],
     workflow: [
       { step: "01", title: "Policy Mapping", duration: "Week 1", description: "Mapped policy terms and claims approval logic." },
@@ -160,7 +160,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "insurance-provider-ai-agents",
     company: "OmniCover Insurance",
     industry: "AI Support Agents",
-    hero: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1600&q=80",
+    hero: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&auto=format&fit=crop&q=75",
     before: "Policy underwriting inquiries suffered a 4-day lag between inquiry and quote.",
     after: "Autonomous AI agents perform quote underwriting and policy issuance in 45 seconds.",
     metrics: [
@@ -188,7 +188,7 @@ export const caseStudies: CaseStudy[] = [
       { name: "Robert Sterling", role: "VP Underwriting", rating: 5, text: "Quote speed went from days to seconds. Game changer for our growth." },
     ],
     gallery: [
-      { src: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1200&q=80", caption: "Underwriting Engine Console" },
+      { src: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&auto=format&fit=crop&q=75", caption: "Underwriting Engine Console" },
     ],
     workflow: [
       { step: "01", title: "Rules Definition", duration: "Week 1", description: "Codified underwriting risk parameters and boundaries." },
@@ -200,7 +200,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "engineering-software-support",
     company: "Cadence Design Systems",
     industry: "Tech Support AI",
-    hero: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80",
+    hero: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=75",
     before: "Engineers spent 60% of their workday manually reviewing complex stack trace logs.",
     after: "AI log parsing agent diagnoses bug traces and suggests fixes automatically.",
     metrics: [
@@ -228,7 +228,7 @@ export const caseStudies: CaseStudy[] = [
       { name: "Dr. Jonathan Vance", role: "VP Support", rating: 5, text: "Saves our engineering team hundreds of hours every week." },
     ],
     gallery: [
-      { src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80", caption: "Log Diagnostic AI Console" },
+      { src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=75", caption: "Log Diagnostic AI Console" },
     ],
     workflow: [
       { step: "01", title: "Log Indexing", duration: "Week 1", description: "Indexed 5 years of historical error logs and fixes." },
@@ -240,7 +240,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "confectionary-manufacturer-b2b",
     company: "ChocoCraft International",
     industry: "B2B Revenue AI",
-    hero: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80",
+    hero: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=75",
     before: "Wholesale retail orders submitted via PDF emails suffered 12% manual entry errors.",
     after: "n8n email OCR & ERP database pipeline syncs B2B orders with 100% precision.",
     metrics: [
@@ -268,7 +268,7 @@ export const caseStudies: CaseStudy[] = [
       { name: "Pierre Dubois", role: "Director", rating: 5, text: "Fulfillment accuracy reached 100% instantly." },
     ],
     gallery: [
-      { src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80", caption: "B2B Order Router Radar" },
+      { src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=75", caption: "B2B Order Router Radar" },
     ],
     workflow: [
       { step: "01", title: "OCR Training", duration: "Week 1", description: "Trained parser on 200 distributor PDF invoice layouts." },
@@ -280,7 +280,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "frontline-workforce-assistance",
     company: "Global Field Services",
     industry: "Enterprise Ops",
-    hero: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80",
+    hero: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=75",
     before: "45,000 field technicians lost 2+ hours daily searching paper manuals.",
     after: "Mobile voice RAG assistant delivers instant maintenance answers on site.",
     metrics: [
@@ -308,7 +308,7 @@ export const caseStudies: CaseStudy[] = [
       { name: "Samantha Reed", role: "CFOO", rating: 5, text: "Field repair efficiency increased beyond our highest expectations." },
     ],
     gallery: [
-      { src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80", caption: "Field Mobile Voice Assistant" },
+      { src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=75", caption: "Field Mobile Voice Assistant" },
     ],
     workflow: [
       { step: "01", title: "RAG Indexing", duration: "Weeks 1–2", description: "Vectorized 20,000 technical manuals." },
@@ -320,7 +320,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "live-event-self-service",
     company: "Arena Events Group",
     industry: "Event Automation",
-    hero: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&q=80",
+    hero: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format&fit=crop&q=75",
     before: "10,000+ simultaneous attendee inquiries overwhelmed event support desks.",
     after: "Omni-channel event bot handles ticket upgrades and venue navigation 24/7.",
     metrics: [
@@ -347,7 +347,7 @@ export const caseStudies: CaseStudy[] = [
       { name: "Marcus Thorne", role: "VP Ops", rating: 5, text: "Handled 150k attendees seamlessly." },
     ],
     gallery: [
-      { src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80", caption: "Arena Bot Operations Radar" },
+      { src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format&fit=crop&q=75", caption: "Arena Bot Operations Radar" },
     ],
     workflow: [
       { step: "01", title: "API Integration", duration: "Week 1", description: "Ticketing API connection." },
@@ -358,7 +358,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "corporate-travel-self-service",
     company: "Voyage Corporate Mobility",
     industry: "Travel & Mobility",
-    hero: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80",
+    hero: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&auto=format&fit=crop&q=75",
     before: "Flight rebookings required 45-minute phone hold times with travel agents.",
     after: "Slack & Teams AI bot rebooks canceled flights in under 60 seconds automatically.",
     metrics: [
@@ -385,7 +385,7 @@ export const caseStudies: CaseStudy[] = [
       { name: "Claire Dupont", role: "Director", rating: 5, text: "Essential tool for international corporate travelers." },
     ],
     gallery: [
-      { src: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80", caption: "Slack Travel Assistant Console" },
+      { src: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&auto=format&fit=crop&q=75", caption: "Slack Travel Assistant Console" },
     ],
     workflow: [
       { step: "01", title: "GDS Sync", duration: "Weeks 1–2", description: "Amadeus flight API connection." },
@@ -396,7 +396,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "developer-velocity-assist",
     company: "DevScale Technologies",
     industry: "Developer Ops",
-    hero: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=80",
+    hero: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=75",
     before: "Senior engineers spent 15+ hours weekly reviewing repetitive PR boilerplate code.",
     after: "Autonomous GitHub code review agent tests and approves PRs in 3 minutes.",
     metrics: [
@@ -423,7 +423,7 @@ export const caseStudies: CaseStudy[] = [
       { name: "Alex Chen", role: "VP Eng", rating: 5, text: "Shipping speed tripled while code quality improved significantly." },
     ],
     gallery: [
-      { src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80", caption: "GitHub AI Code Review Radar" },
+      { src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=75", caption: "GitHub AI Code Review Radar" },
     ],
     workflow: [
       { step: "01", title: "CI Integration", duration: "Week 1", description: "GitHub Actions bot setup." },
