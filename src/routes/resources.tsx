@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { RESOURCES } from "@/lib/resources";
@@ -28,7 +29,7 @@ export const Route = createFileRoute("/resources")({
               </div>
               <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">{r.tag}</div>
               <div className="mt-1 font-display text-2xl">{r.title}</div>
-              <div className="mt-4 text-sm text-brand">Free download →</div>
+              <div className="mt-4 text-sm text-brand"><RollingText>Free download →</RollingText></div>
             </Link>
           ))}
         </div>

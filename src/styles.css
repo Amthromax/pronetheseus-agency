@@ -286,3 +286,63 @@
   @media (min-width: 768px) { padding-inline: 2.5rem; }
   @media (min-width: 1280px) { padding-inline: 4rem; }
 }
+
+/* ── Rolling text hover effect (buttons / CTAs) ─────────────────────────────
+   The label slides up and out while an identical copy slides in from below.
+   Markup: <span class="roll-text" data-text="Label"><span>Label</span></span>
+   (see <RollingText /> in src/components/ui/rolling-text.tsx) */
+.roll-text {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.roll-text > span {
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.roll-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transform: translateY(110%);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.roll-text:hover > span,
+a:hover .roll-text > span,
+button:hover .roll-text > span,
+[role="button"]:hover .roll-text > span,
+.group:hover .roll-text > span {
+  transform: translateY(-110%);
+}
+.roll-text:hover::after,
+a:hover .roll-text::after,
+button:hover .roll-text::after,
+[role="button"]:hover .roll-text::after,
+.group:hover .roll-text::after {
+  transform: translateY(0);
+}
+a:disabled .roll-text::after,
+button:disabled .roll-text::after,
+button:disabled .roll-text > span,
+a[aria-disabled="true"] .roll-text > span {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .roll-text > span,
+  .roll-text::after {
+    transition: none;
+  }
+  .roll-text::after {
+    display: none;
+  }
+  .roll-text:hover > span,
+  a:hover .roll-text > span,
+  button:hover .roll-text > span,
+  [role="button"]:hover .roll-text > span,
+  .group:hover .roll-text > span {
+    transform: none;
+  }
+}

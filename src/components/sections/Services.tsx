@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 import { 
@@ -145,7 +146,7 @@ export function Services() {
                     to="/book"
                     className="inline-flex w-full items-center justify-between rounded-full bg-neutral-900 px-4 py-2.5 text-xs font-bold text-white transition duration-300 hover:bg-black shadow-sm"
                   >
-                    <span>Explore {cat.title}</span>
+                    <span><RollingText>{`Explore ${cat.title}`}</RollingText></span>
                     <ArrowRight className="size-3.5" />
                   </Link>
                 </div>
@@ -196,7 +197,7 @@ export function Services() {
                   to="/contact"
                   className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-5 py-2.5 text-xs font-bold text-white hover:bg-black transition shadow-sm cursor-pointer"
                 >
-                  Get started
+                  <RollingText>Get started</RollingText>
                 </Link>
               </div>
             </div>
@@ -231,7 +232,7 @@ export function Services() {
                   to="/contact"
                   className="inline-flex items-center justify-center rounded-full bg-neutral-200 px-6 py-2.5 text-xs font-bold text-neutral-900 hover:bg-white transition shadow-sm cursor-pointer"
                 >
-                  Get started
+                  <RollingText>Get started</RollingText>
                 </Link>
               </div>
             </div>

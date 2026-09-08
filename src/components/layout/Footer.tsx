@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { Link, useLocation } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
 
@@ -32,7 +33,7 @@ export function Footer() {
               rel="noreferrer"
               className="hover:text-black transition-colors uppercase font-medium"
             >
-              LI
+              <RollingText>LI</RollingText>
             </a>
             <span className="text-neutral-400">/</span>
             <a
@@ -41,7 +42,7 @@ export function Footer() {
               rel="noreferrer"
               className="hover:text-black transition-colors uppercase font-medium"
             >
-              IG
+              <RollingText>IG</RollingText>
             </a>
           </div>
         </div>
@@ -61,7 +62,7 @@ export function Footer() {
                 href="mailto:hello@amthromax.com"
                 className="inline-block text-xl sm:text-2xl md:text-3xl font-medium text-neutral-900 underline underline-offset-8 decoration-neutral-900/80 hover:opacity-75 transition-opacity"
               >
-                hello@amthromax.com
+                <RollingText>hello@amthromax.com</RollingText>
               </a>
             </div>
           </div>
@@ -81,7 +82,7 @@ export function Footer() {
                 to="/book"
                 className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[#d6d8d6] hover:bg-[#caccca] active:scale-[0.99] px-8 py-4 text-xs font-mono font-semibold tracking-wider uppercase text-neutral-900 transition-all shadow-2xs cursor-pointer"
               >
-                <span>Book a call</span>
+                <span><RollingText>Book a call</RollingText></span>
                 <Phone className="size-3.5 fill-current text-neutral-900" />
               </Link>
             </div>
@@ -95,13 +96,13 @@ export function Footer() {
           {/* Left Navigation Links */}
           <div className="flex items-center gap-6">
             <Link to="/services" className="hover:text-black transition-colors font-medium">
-              Our Work
+              <RollingText>Our Work</RollingText>
             </Link>
             <Link to="/pricing" className="hover:text-black transition-colors font-medium">
-              Partner +
+              <RollingText>Partner +</RollingText>
             </Link>
             <Link to="/contact" className="hover:text-black transition-colors font-medium">
-              Contact
+              <RollingText>Contact</RollingText>
             </Link>
           </div>
 
@@ -113,10 +114,10 @@ export function Footer() {
           {/* Right Policy Links */}
           <div className="flex items-center gap-6">
             <Link to="/privacy" className="hover:text-black transition-colors font-medium">
-              Privacy &amp; Policy
+              <RollingText>Privacy &amp; Policy</RollingText>
             </Link>
             <Link to="/terms" className="hover:text-black transition-colors font-medium">
-              Terms &amp; Conditions
+              <RollingText>Terms &amp; Conditions</RollingText>
             </Link>
           </div>
 

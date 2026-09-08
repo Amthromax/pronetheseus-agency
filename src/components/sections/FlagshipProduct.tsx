@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 import { 
@@ -136,7 +137,7 @@ export function FlagshipProduct() {
             <div className="mt-6">
               <Link to="/contact">
                 <button className="w-full rounded-full bg-white hover:bg-neutral-100 text-neutral-900 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2">
-                  <span>Get Core Revenue Engine</span>
+                  <span><RollingText>Get Core Revenue Engine</RollingText></span>
                   <ArrowRight className="size-4" />
                 </button>
               </Link>
@@ -203,7 +204,7 @@ export function FlagshipProduct() {
                 to="/contact" 
                 className="w-full inline-flex items-center justify-center gap-1.5 text-xs font-mono font-bold text-neutral-900 hover:text-black transition-colors py-1"
               >
-                <span>CUSTOMIZE YOUR AUTOMATION STACK</span>
+                <span><RollingText>CUSTOMIZE YOUR AUTOMATION STACK</RollingText></span>
                 <ArrowRight className="size-3.5" />
               </Link>
             </div>

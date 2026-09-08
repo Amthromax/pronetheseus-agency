@@ -3,6 +3,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+import { RollingText } from "@/components/ui/rolling-text";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
@@ -34,13 +35,25 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  /** Opt out of the rolling-label hover effect. */
+  noRoll?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, noRoll = false, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
+    // Plain-text labels get the rolling hover effect automatically; anything
+    // else (icons, nested markup, `asChild`) is rendered untouched.
+    const content =
+      !asChild && !noRoll && size !== "icon" && typeof children === "string" ? (
+        <RollingText>{children}</RollingText>
+      ) : (
+        children
+      );
     return (
-      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
+      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
+        {content}
+      </Comp>
     );
   },
 );

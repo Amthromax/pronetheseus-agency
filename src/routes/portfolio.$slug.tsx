@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Lock } from "lucide-react";
 import { getPortfolioItem, portfolioItems, type PortfolioItem } from "@/data/portfolio";
+import { RollingText } from "@/components/ui/rolling-text";
 
 export const Route = createFileRoute("/portfolio/$slug")({
   loader: ({ params }) => {
@@ -33,7 +34,7 @@ export const Route = createFileRoute("/portfolio/$slug")({
     <main className="container-pad mx-auto max-w-3xl py-32 text-center">
       <h1 className="font-display text-3xl">Something went wrong</h1>
       <p className="mt-3 text-muted-foreground">{(error as Error)?.message}</p>
-      <button onClick={reset} className="mt-6 rounded-full border border-white/10 px-5 py-2 text-sm">Try again</button>
+      <button onClick={reset} className="mt-6 rounded-full border border-white/10 px-5 py-2 text-sm"><RollingText>Try again</RollingText></button>
     </main>
   ),
   component: ProjectPage,
@@ -82,7 +83,7 @@ function ProjectPage() {
             className="inline-flex cursor-not-allowed items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-medium text-foreground/70"
           >
             <Lock className="size-4" />
-            Load more
+            <RollingText>Load more</RollingText>
           </button>
         </div>
         <div className="grid gap-4 md:grid-cols-3">

@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { Accordion, AccordionContent, AccordionItem } from "@/components/ui/accordion";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { motion } from "motion/react";
@@ -49,12 +50,6 @@ export function FAQ() {
         
         {/* Top Section Header Divider Bar */}
         <div className="flex items-center justify-between border-b border-black/10 pb-4 mb-8 sm:mb-12">
-          <span className="text-sm font-medium tracking-tight text-neutral-800 font-sans">
-            /FAQs
-          </span>
-          <span className="text-sm font-medium text-neutral-400 font-sans">
-            (08)
-          </span>
         </div>
 
         {/* 2 Column FAQ Layout */}
@@ -83,7 +78,7 @@ export function FAQ() {
                 to="/contact"
                 className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-[#f4f3ee] px-4 py-2 text-xs font-semibold text-neutral-800 hover:bg-neutral-200/70 transition shadow-2xs cursor-pointer font-sans"
               >
-                <span>Contact us</span>
+                <span><RollingText>Contact us</RollingText></span>
                 <span className="text-sm font-normal">+</span>
               </Link>
             </div>
@@ -108,7 +103,7 @@ export function FAQ() {
                       <AccordionPrimitive.Header className="flex">
                         <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-between py-3.5 sm:py-4 text-left text-xs sm:text-sm font-bold text-neutral-900 cursor-pointer font-sans [&[data-state=open]>svg]:rotate-45">
                           <span className="leading-snug">
-                            {f.number}. {f.q}
+                            <RollingText>{`${f.number}. ${f.q}`}</RollingText>
                           </span>
                           <PlusCircle className="size-4.5 text-neutral-800 shrink-0 transition-transform duration-200" />
                         </AccordionPrimitive.Trigger>

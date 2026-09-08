@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
@@ -192,7 +193,7 @@ export function Testimonials({ className = "", hideBorders = false }: Testimonia
             to="/book"
             className="inline-flex items-center gap-2 rounded-xl bg-[#18181b] px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-white shadow-xs transition-all duration-200 hover:bg-black hover:scale-[1.01]"
           >
-            <span>Get Your Free Automation Audit</span>
+            <span><RollingText>Get Your Free Automation Audit</RollingText></span>
             <ArrowRight className="size-4 text-white" />
           </Link>
         </div>

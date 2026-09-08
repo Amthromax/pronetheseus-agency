@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { ContactCTA } from "@/components/sections/ContactCTA";
+import { RollingText } from "@/components/ui/rolling-text";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
@@ -35,7 +36,7 @@ function Page() {
                 <div className="font-display text-2xl">{r.title}</div>
                 <div className="mt-1 text-sm text-muted-foreground">{r.location}</div>
               </div>
-              <button className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm hover:bg-white/10">Apply</button>
+              <button className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm hover:bg-white/10"><RollingText>Apply</RollingText></button>
             </div>
           ))}
         </div>

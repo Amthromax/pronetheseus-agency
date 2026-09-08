@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight, BookOpen, CheckCircle2, Clock, Globe, Lightbulb, MapPin, Quote, Shield, Star, Target, TrendingUp, Users } from "lucide-react";
 import { caseStudies, getCaseStudy, type CaseStudy } from "@/data/case-studies";
 import { ContactCTA } from "@/components/sections/ContactCTA";
+import { RollingText } from "@/components/ui/rolling-text";
 
 export const Route = createFileRoute("/case-studies/$slug")({
   loader: ({ params }) => {
@@ -34,7 +35,7 @@ export const Route = createFileRoute("/case-studies/$slug")({
     <div className="container-pad mx-auto max-w-2xl py-40 text-center bg-sandel min-h-screen">
       <h1 className="font-sans text-3xl font-bold">Something went wrong</h1>
       <p className="mt-3 text-neutral-600">{error.message}</p>
-      <button onClick={reset} className="mt-6 rounded-full border border-neutral-300 px-5 py-2">Try again</button>
+      <button onClick={reset} className="mt-6 rounded-full border border-neutral-300 px-5 py-2"><RollingText>Try again</RollingText></button>
     </div>
   ),
   component: CaseStudyPage,

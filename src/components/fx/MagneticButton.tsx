@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { forwardRef, useRef, type ButtonHTMLAttributes, type ReactNode } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -32,7 +33,7 @@ export const MagneticButton = forwardRef<HTMLButtonElement, Props>(
         className={cn("relative inline-flex will-change-transform", className)}
         {...(props as React.ComponentProps<typeof motion.button>)}
       >
-        {children}
+        {typeof children === "string" ? <RollingText>{children}</RollingText> : children}
       </motion.button>
     );
   },

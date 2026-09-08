@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 import { Zap, RefreshCw, Clock, Star, ArrowRight } from "lucide-react";
+import { RollingText } from "@/components/ui/rolling-text";
 
 const BULLET_POINTS = [
   "Collaborative Approach",
@@ -76,7 +77,7 @@ export function WhyUs() {
                 <span className="text-xs font-medium text-neutral-300">© 2026</span>
                 <Link to="/book">
                   <button className="rounded-full bg-white text-neutral-950 px-4 py-2 text-xs font-semibold hover:bg-neutral-100 transition shadow-sm cursor-pointer">
-                    Get started
+                    <RollingText>Get started</RollingText>
                   </button>
                 </Link>
               </div>

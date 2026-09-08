@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { SectionHeading } from "./SectionHeading";
@@ -296,7 +297,7 @@ export function Agency6Framework() {
                       to="/book"
                       className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-5 py-3 text-xs font-bold text-white shadow-[0_8px_25px_-5px_rgba(255,122,0,0.4)] transition duration-300 hover:scale-[1.02] active:scale-[0.98]"
                     >
-                      <span>Book Strategy Call to Discuss This</span>
+                      <span><RollingText>Book Strategy Call to Discuss This</RollingText></span>
                       <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                     </Link>
                     

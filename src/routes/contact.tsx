@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -59,7 +60,7 @@ function Page() {
                 </div>
               </div>
               <button disabled={isSubmitting} className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-neutral-900 hover:bg-black px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 shadow-md cursor-pointer">
-                {isSubmitting ? "Sending..." : "Send message"}
+                <RollingText>{isSubmitting ? "Sending..." : "Send message"}</RollingText>
               </button>
               <style>{`.cf-input{width:100%;background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:12px 14px;font-size:13.5px;outline:none;color:#18181b;transition:all 0.2s}.cf-input::placeholder{color:rgb(140,140,148)}.cf-input:focus{background:#ffffff;border-color:rgba(0,0,0,0.4);box-shadow:0 0 0 3px rgba(0,0,0,0.05)}`}</style>
             </form>
@@ -100,9 +101,9 @@ function InfoCard({ Icon, title, body, cta, ctaTo }: { Icon: ComponentType<{ cla
       <p className="mt-1.5 text-sm text-neutral-600 font-sans leading-relaxed font-normal">{body}</p>
       {cta && (
         ctaTo ? (
-          <Link to={ctaTo} className="mt-3 inline-block text-xs font-mono font-bold uppercase tracking-wider text-neutral-900 hover:underline">{cta} →</Link>
+          <Link to={ctaTo} className="mt-3 inline-block text-xs font-mono font-bold uppercase tracking-wider text-neutral-900 hover:underline"><RollingText>{cta + " →"}</RollingText></Link>
         ) : (
-          <button className="mt-3 text-xs font-mono font-bold uppercase tracking-wider text-neutral-900 hover:underline cursor-pointer">{cta} →</button>
+          <button className="mt-3 text-xs font-mono font-bold uppercase tracking-wider text-neutral-900 hover:underline cursor-pointer"><RollingText>{cta + " →"}</RollingText></button>
         )
       )}
     </div>

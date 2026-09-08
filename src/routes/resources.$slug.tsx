@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { getResource, RESOURCES } from "@/lib/resources";
+import { RollingText } from "@/components/ui/rolling-text";
 
 export const Route = createFileRoute("/resources/$slug")({
   loader: ({ params }) => {
@@ -40,7 +41,7 @@ export const Route = createFileRoute("/resources/$slug")({
       <div className="container-pad mx-auto max-w-3xl pb-24 text-center">
         <h1 className="font-display text-3xl">Something went wrong</h1>
         <p className="mt-3 text-sm text-muted-foreground">{error.message}</p>
-        <button onClick={reset} className="mt-6 text-sm text-brand">Try again</button>
+        <button onClick={reset} className="mt-6 text-sm text-brand"><RollingText>Try again</RollingText></button>
       </div>
     </div>
   ),

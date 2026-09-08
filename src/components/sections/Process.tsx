@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 
@@ -37,12 +38,6 @@ export function Process() {
         
         {/* Top Section Header Divider Bar */}
         <div className="flex items-center justify-between border-b border-black/10 pb-4 mb-8 sm:mb-12">
-          <span className="text-sm font-medium tracking-tight text-neutral-800 font-sans">
-            /Process
-          </span>
-          <span className="text-sm font-medium text-neutral-400 font-sans">
-            (05)
-          </span>
         </div>
 
         {/* 2 Column Process Layout */}
@@ -71,7 +66,7 @@ export function Process() {
                 to="/contact"
                 className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-[#f4f3ee] px-4 py-2 text-xs font-semibold text-neutral-800 hover:bg-neutral-200/70 transition shadow-2xs cursor-pointer font-sans"
               >
-                <span>Let's talk</span>
+                <span><RollingText>Let's talk</RollingText></span>
                 <span className="text-sm font-normal">+</span>
               </Link>
             </div>

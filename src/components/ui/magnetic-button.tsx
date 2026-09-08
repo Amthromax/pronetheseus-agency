@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { useRef, type ButtonHTMLAttributes, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -25,7 +26,7 @@ export function MagneticButton({ children, className, strength = 0.35, ...rest }
       className={cn("transition-transform duration-300 ease-out will-change-transform", className)}
       {...rest}
     >
-      {children}
+      {typeof children === "string" ? <RollingText>{children}</RollingText> : children}
     </button>
   );
 }

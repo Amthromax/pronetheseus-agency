@@ -10,6 +10,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import { FlipWords } from "@/components/ui/flip-words";
+import { RollingText } from "@/components/ui/rolling-text";
 
 const HERO_WORDS = ["Agencies.", "Businesses.", "Teams.", "Studios."];
 
@@ -72,16 +73,16 @@ export function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5 w-full sm:w-auto justify-center lg:justify-start"
+            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5 w-full sm:w-auto lg:w-full justify-center lg:justify-end"
           >
             <Link to="/book" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto rounded-full bg-neutral-900 px-6 sm:px-7 py-3.5 text-xs sm:text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-black hover:scale-[1.03] active:scale-[0.97] cursor-pointer whitespace-nowrap tracking-wide antialiased">
-                Get Your Free Automation Audit
+                <RollingText>Get Your Free Automation Audit</RollingText>
               </button>
             </Link>
             <Link to="/how-it-works" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto rounded-full bg-white hover:bg-neutral-50 text-neutral-900 border border-neutral-900 px-6 sm:px-7 py-3.5 text-xs sm:text-sm font-semibold shadow-xs transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap tracking-wide antialiased">
-                <span>See How It Works</span>
+                <span><RollingText>See How It Works</RollingText></span>
                 <ArrowRight className="w-3.5 h-3.5 text-neutral-900" />
               </button>
             </Link>

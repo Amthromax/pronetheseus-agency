@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { SectionHeading } from "@/components/sections/SectionHeading";
@@ -207,7 +208,7 @@ function DemoPage() {
                 onClick={reset}
                 className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-muted-foreground transition hover:text-foreground"
               >
-                <RefreshCw className="size-3.5" /> Reset
+                <RefreshCw className="size-3.5" /> <RollingText>Reset</RollingText>
               </button>
             </div>
 
@@ -227,7 +228,7 @@ function DemoPage() {
                       to="/book"
                       className="inline-flex items-center gap-1.5 rounded-full bg-brand px-3 py-1.5 text-xs font-medium text-background transition hover:opacity-90"
                     >
-                      <Sparkles className="size-3.5" /> {s}
+                      <Sparkles className="size-3.5" /> <RollingText>{s}</RollingText>
                     </Link>
                   ) : (
                     <button
@@ -236,7 +237,7 @@ function DemoPage() {
                       onClick={() => send(s)}
                       className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-muted-foreground transition hover:border-brand/40 hover:text-foreground"
                     >
-                      {s}
+                      <RollingText>{s}</RollingText>
                     </button>
                   ),
                 )}
@@ -293,7 +294,7 @@ function DemoPage() {
                 to="/book"
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-background transition hover:opacity-90"
               >
-                Book a consult <ArrowRight className="size-4" />
+                <RollingText>Book a consult</RollingText> <ArrowRight className="size-4" />
               </Link>
               <div className="mt-3 text-xs text-muted-foreground">Free · 30 min · no obligation</div>
             </div>

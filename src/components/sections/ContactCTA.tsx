@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/fx/ScrollReveal";
@@ -27,7 +28,7 @@ export function ContactCTA() {
           <Link to="/book">
             <MagneticButton className="group relative overflow-hidden rounded-full bg-white text-neutral-950 px-8 py-4 text-base font-semibold shadow-md transition duration-300 hover:bg-neutral-100 hover:scale-105">
               <span className="relative z-10 inline-flex items-center gap-2">
-                Book Strategy Call
+                <RollingText>Book Strategy Call</RollingText>
                 <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
               <span aria-hidden className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
@@ -38,7 +39,7 @@ export function ContactCTA() {
             to="/pricing"
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-base font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-white/10"
           >
-            <span>Explore Pricing & SLAs</span>
+            <span><RollingText>Explore Pricing & SLAs</RollingText></span>
           </Link>
         </ScrollReveal>
       </div>

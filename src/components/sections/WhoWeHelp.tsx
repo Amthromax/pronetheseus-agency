@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 import {
@@ -98,7 +99,7 @@ export function WhoWeHelp() {
                     to="/book"
                     className="inline-flex w-full items-center justify-between rounded-full bg-white/80 backdrop-blur-sm border border-black/5 px-4 py-2 text-xs font-semibold text-neutral-800 transition duration-300 group-hover:bg-neutral-900 group-hover:text-white shadow-2xs"
                   >
-                    <span>Automate My Business</span>
+                    <span><RollingText>Automate My Business</RollingText></span>
                     <ArrowRight className="size-3" />
                   </Link>
                 </div>
@@ -126,7 +127,7 @@ export function WhoWeHelp() {
 
           <Link to="/book" className="shrink-0">
             <button className="rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-neutral-900 shadow-sm transition-all duration-300 hover:bg-neutral-100 hover:scale-[1.03] cursor-pointer flex items-center gap-1.5">
-              <span>Get Free Automation Audit</span>
+              <span><RollingText>Get Free Automation Audit</RollingText></span>
               <ArrowRight className="size-3.5 text-neutral-900" />
             </button>
           </Link>

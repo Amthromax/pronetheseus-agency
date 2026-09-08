@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { ArrowRight, CheckCircle2, XCircle, Clock, Zap, Shield, Layers } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
@@ -96,7 +97,7 @@ export function ProblemSolution() {
             to="/book"
             className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-5 py-2.5 text-xs font-semibold text-white shadow-[0_8px_20px_-8px_rgba(255,122,0,0.6)] transition hover:scale-105"
           >
-            Schedule Free Audit Call
+            <RollingText>Schedule Free Audit Call</RollingText>
             <ArrowRight className="size-3.5 transition group-hover:translate-x-1" />
           </Link>
         </div>

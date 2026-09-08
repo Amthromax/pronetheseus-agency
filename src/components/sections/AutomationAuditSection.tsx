@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { 
@@ -99,7 +100,7 @@ function CustomSelect({ value, options, onChange }: CustomSelectProps) {
                         : "text-neutral-800 hover:bg-sandel hover:text-neutral-900"
                     }`}
                   >
-                    <span>{option}</span>
+                    <span><RollingText>{option}</RollingText></span>
                     {isSelected && <Check className="size-3.5 text-neutral-900 shrink-0" />}
                   </button>
                 );
@@ -210,7 +211,7 @@ export function AutomationAuditSection() {
               <div className="mt-8 pt-6 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/book">
                   <button className="w-full sm:w-auto rounded-xl bg-[#18181b] px-8 py-4 text-sm font-medium text-white shadow-md transition hover:bg-black flex items-center justify-center gap-2 cursor-pointer">
-                    <span>Review Full Audit on Calendar</span>
+                    <span><RollingText>Review Full Audit on Calendar</RollingText></span>
                     <Calendar className="size-4" />
                   </button>
                 </Link>
@@ -285,7 +286,7 @@ export function AutomationAuditSection() {
                     onClick={() => setStep(2)}
                     className="w-full mt-4 rounded-full bg-neutral-900 hover:bg-black py-3.5 text-sm font-semibold text-white transition flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                   >
-                    <span>Next: Operational Stack</span>
+                    <span><RollingText>Next: Operational Stack</RollingText></span>
                     <ArrowRight className="size-4" />
                   </button>
                 </motion.div>
@@ -335,14 +336,14 @@ export function AutomationAuditSection() {
                       onClick={() => setStep(1)}
                       className="w-1/3 rounded-full border border-neutral-300 py-3.5 text-sm font-semibold text-neutral-700 transition hover:bg-neutral-100 cursor-pointer"
                     >
-                      Back
+                      <RollingText>Back</RollingText>
                     </button>
                     <button
                       type="button"
                       onClick={() => setStep(3)}
                       className="w-2/3 rounded-full bg-neutral-900 hover:bg-black py-3.5 text-sm font-semibold text-white transition flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                     >
-                      <span>Next: Deliver Report</span>
+                      <span><RollingText>Next: Deliver Report</RollingText></span>
                       <ArrowRight className="size-4" />
                     </button>
                   </div>
@@ -392,13 +393,13 @@ export function AutomationAuditSection() {
                       onClick={() => setStep(2)}
                       className="w-1/3 rounded-full border border-neutral-300 py-3.5 text-sm font-semibold text-neutral-700 transition hover:bg-neutral-100 cursor-pointer"
                     >
-                      Back
+                      <RollingText>Back</RollingText>
                     </button>
                     <button
                       type="submit"
                       className="w-2/3 rounded-full bg-neutral-900 hover:bg-black py-3.5 text-sm font-semibold text-white shadow-md transition flex items-center justify-center gap-2 cursor-pointer"
                     >
-                      <span>Generate My Audit Report</span>
+                      <span><RollingText>Generate My Audit Report</RollingText></span>
                       <Sparkles className="size-4 text-white" />
                     </button>
                   </div>

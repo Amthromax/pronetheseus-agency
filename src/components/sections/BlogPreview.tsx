@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
@@ -14,7 +15,7 @@ export function BlogPreview() {
     <section className="relative container-pad mx-auto max-w-[1400px] py-24 md:py-32">
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <SectionHeading center={false} title="Field notes from the frontlines of AI" description="Written by the engineers actually shipping these systems into production." />
-        <Link to="/blog" className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm hover:bg-white/10">Read all posts <ArrowUpRight className="size-4" /></Link>
+        <Link to="/blog" className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm hover:bg-white/10"><RollingText>Read all posts</RollingText> <ArrowUpRight className="size-4" /></Link>
       </div>
       <div className="mt-14 grid gap-4 md:grid-cols-3">
         {posts.map((p, i) => (

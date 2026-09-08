@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { motion } from "motion/react";
 import { ScrollReveal } from "@/components/fx/ScrollReveal";
 import { SplitText } from "@/components/fx/SplitText";
@@ -73,7 +74,7 @@ export function AIInsights() {
             <SplitText text="AI Insights" />
           </h2>
           <button className="group inline-flex items-center gap-1.5 rounded-full border border-black/5 bg-white/80 backdrop-blur-sm px-4 py-2 text-xs font-mono font-semibold tracking-wider text-neutral-900 shadow-2xs transition-all duration-300 hover:bg-neutral-900 hover:text-white cursor-pointer">
-            <span>VIEW ALL</span>
+            <span><RollingText>VIEW ALL</RollingText></span>
             <span className="text-neutral-400 group-hover:text-white">•</span>
           </button>
         </div>

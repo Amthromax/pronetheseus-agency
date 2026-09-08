@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { RollingText } from "@/components/ui/rolling-text";
 
 const allNavLinks = [
   { label: "Services", to: "/services" },
@@ -86,19 +87,19 @@ export function Navbar() {
             to="/services"
             className="hidden md:inline-flex text-xs sm:text-sm font-medium text-neutral-800 hover:text-black transition"
           >
-            Revenue Engines
+            <RollingText>Revenue Engines</RollingText>
           </Link>
           <Link
             to="/case-studies"
             className="hidden md:inline-flex text-xs sm:text-sm font-medium text-neutral-800 hover:text-black transition"
           >
-            Our Work
+            <RollingText>Our Work</RollingText>
           </Link>
           <Link
             to="/book"
             className="inline-flex items-center justify-center rounded-full bg-black text-white px-3.5 sm:px-5 py-1.5 sm:py-2 text-[11px] sm:text-sm font-semibold hover:bg-neutral-800 transition shadow-xs whitespace-nowrap"
           >
-            Start a project
+            <RollingText>Start a project</RollingText>
           </Link>
           <button
             onClick={() => setOpen((v) => !v)}
@@ -141,7 +142,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className="rounded-xl px-3.5 py-2.5 text-sm font-medium text-neutral-800 transition hover:bg-white hover:text-black"
                 >
-                  {l.label}
+                  <RollingText>{l.label}</RollingText>
                 </Link>
               ))}
             </div>
@@ -151,7 +152,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="w-full flex items-center justify-center gap-2 rounded-xl bg-black px-4 py-2.5 text-center text-sm font-medium text-white shadow-sm hover:bg-neutral-800 transition"
               >
-                <span>Book Strategy Call</span>
+                <RollingText>Book Strategy Call</RollingText>
                 <ArrowRight className="size-4" />
               </Link>
             </div>

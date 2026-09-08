@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { SectionHeading } from "@/components/sections/SectionHeading";
@@ -56,7 +57,7 @@ function BookPage() {
 
       <div className="container-pad mx-auto max-w-[1400px] mt-12">
         <Link to="/contact" className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-600 hover:text-neutral-900 transition">
-          <ArrowLeft className="size-4" /> Back to contact
+          <ArrowLeft className="size-4" /> <RollingText>Back to contact</RollingText>
         </Link>
 
         <div className="mt-4">
@@ -130,7 +131,7 @@ function BookPage() {
                   to="/"
                   className="group inline-flex items-center gap-2 rounded-full bg-[#18181b] px-7 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-black hover:scale-105 cursor-pointer"
                 >
-                  <span>Return to Home</span>
+                  <span><RollingText>Return to Home</RollingText></span>
                   <ArrowRight className="size-4 transition group-hover:translate-x-1" />
                 </Link>
 
@@ -139,7 +140,7 @@ function BookPage() {
                   className="inline-flex items-center gap-2 rounded-full border border-sandel-border bg-sandel px-6 py-3 text-sm font-semibold text-neutral-800 transition hover:bg-white hover:border-neutral-400 cursor-pointer"
                 >
                   <RotateCcw className="size-4" />
-                  <span>Book Another Appointment</span>
+                  <span><RollingText>Book Another Appointment</RollingText></span>
                 </button>
               </div>
             </div>
@@ -167,7 +168,7 @@ function BookPage() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white border border-neutral-300 px-4 py-1.5 text-xs font-semibold text-neutral-800 transition hover:bg-neutral-100 hover:border-neutral-400"
               >
-                <span>Open in Google Calendar</span>
+                <span><RollingText>Open in Google Calendar</RollingText></span>
                 <ExternalLink className="size-3.5" />
               </a>
             </div>

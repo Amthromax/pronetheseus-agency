@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 
@@ -86,12 +87,6 @@ export function Portfolio() {
         
         {/* Top Section Header Divider Bar */}
         <div className="flex items-center justify-between border-b border-black/10 pb-4 mb-6">
-          <span className="text-sm font-medium tracking-tight text-neutral-800 font-sans">
-            /Our work
-          </span>
-          <span className="text-sm font-medium text-neutral-400 font-sans">
-            (03)
-          </span>
         </div>
 
         {/* Main Section Title & Subtitle + View All Button */}
@@ -117,7 +112,7 @@ export function Portfolio() {
               to="/case-studies"
               className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-[#f4f3ee] px-4 py-2 text-xs font-semibold text-neutral-800 hover:bg-neutral-200/70 transition shadow-2xs cursor-pointer font-sans"
             >
-              <span>View all projects</span>
+              <span><RollingText>View all projects</RollingText></span>
               <span className="text-sm font-normal">+</span>
             </Link>
           </div>
@@ -132,10 +127,10 @@ export function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group rounded-[24px] bg-[#e6e5df] border border-neutral-300/80 overflow-hidden flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-neutral-400 transition duration-300 cursor-pointer"
+              className="group rounded-2xl bg-[#f1f0ec] border border-black/[0.07] p-1.5 flex flex-col justify-between shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:border-black/15 transition duration-300 cursor-pointer"
             >
               {/* Full-Bleed Media Container Box */}
-              <div className="relative bg-neutral-900 overflow-hidden aspect-[16/11] min-h-[320px] sm:min-h-[410px] w-full flex items-center justify-center">
+              <div className="relative bg-neutral-900 overflow-hidden rounded-xl aspect-[16/10] min-h-[300px] sm:min-h-[390px] w-full flex items-center justify-center">
                 {project.isLogoCustom ? (
                   project.logoElement
                 ) : (
@@ -145,7 +140,7 @@ export function Portfolio() {
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
                     />
-                    <div className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition duration-500" />
+                    <div className="absolute inset-0 bg-black/15 group-hover:bg-black/5 transition duration-500" />
                     
                     {/* Centered Overlay Logo */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -158,16 +153,16 @@ export function Portfolio() {
               </div>
 
               {/* Bottom Full-Width Card Meta Details Info Row */}
-              <div className="p-4 sm:p-5 flex items-center justify-between bg-[#e6e5df] border-t border-black/5">
+              <div className="px-2.5 sm:px-3 pt-2.5 pb-1.5 flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-sm sm:text-base font-bold text-neutral-900 tracking-tight leading-tight">
+                  <h3 className="text-[13px] sm:text-sm font-bold text-neutral-900 tracking-tight leading-tight">
                     {project.title}
                   </h3>
-                  <p className="text-xs text-neutral-600 font-normal mt-0.5">
+                  <p className="text-[11px] sm:text-xs text-neutral-500 font-normal mt-0.5">
                     {project.category}
                   </p>
                 </div>
-                <div className="text-xs font-semibold text-neutral-600">
+                <div className="text-[11px] sm:text-xs font-medium text-neutral-500 shrink-0">
                   {project.year}
                 </div>
               </div>

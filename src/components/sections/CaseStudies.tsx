@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Search, ArrowRight, X, Sparkles, CheckCircle2, Star, Quote, ArrowUpRight } from "lucide-react";
@@ -509,7 +510,7 @@ export function CaseStudies() {
                   params={{ slug: activeStoryModal.slug }}
                   className="inline-flex items-center gap-2 rounded-full bg-neutral-900 hover:bg-black px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-all shadow-sm hover:scale-[1.02]"
                 >
-                  <span>Open Dedicated Page</span>
+                  <span><RollingText>Open Dedicated Page</RollingText></span>
                   <ArrowUpRight className="size-4 text-blue-400" />
                 </Link>
               </div>

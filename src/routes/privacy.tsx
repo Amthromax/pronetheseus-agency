@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ShieldCheck, Lock, Eye, FileText, ArrowLeft } from "lucide-react";
 
@@ -19,7 +20,7 @@ function PrivacyPage() {
     <div className="bg-white text-neutral-900 min-h-screen pt-32 pb-24 border-b border-neutral-200">
       <div className="container-pad mx-auto max-w-4xl">
         <Link to="/" className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500 hover:text-black mb-8 transition">
-          <ArrowLeft className="size-4" /> Back to Home
+          <ArrowLeft className="size-4" /> <RollingText>Back to Home</RollingText>
         </Link>
 
         <div className="border-b border-neutral-200 pb-8">

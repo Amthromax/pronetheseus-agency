@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { ContactCTA } from "@/components/sections/ContactCTA";
@@ -186,7 +187,7 @@ function CaseStudiesPage() {
                     to="/how-it-works"
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-700 font-sans"
                   >
-                    <span>See Methodology</span>
+                    <span><RollingText>See Methodology</RollingText></span>
                     <ArrowRight className="size-3.5" />
                   </Link>
                 </div>
@@ -229,13 +230,13 @@ function CaseStudiesPage() {
                 to="/book"
                 className="w-full text-center rounded-xl bg-neutral-900 px-6 py-4 text-xs font-semibold uppercase tracking-wider text-white shadow-xs transition-all duration-200 hover:bg-black"
               >
-                Request Free Automation Audit
+                <RollingText>Request Free Automation Audit</RollingText>
               </Link>
               <Link
                 to="/services"
                 className="w-full text-center rounded-xl border border-neutral-300 bg-white px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-neutral-800 shadow-2xs hover:bg-neutral-50"
               >
-                View Revenue Engines
+                <RollingText>View Revenue Engines</RollingText>
               </Link>
             </div>
           </div>

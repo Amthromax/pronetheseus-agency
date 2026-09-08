@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Sparkles, Check, ArrowRight } from "lucide-react";
@@ -348,7 +349,7 @@ export function TabbedImpactCards() {
                       : "text-neutral-700 hover:text-neutral-900 hover:bg-white/80"
                   }`}
                 >
-                  {cat.label}
+                  <RollingText>{cat.label}</RollingText>
                 </button>
               );
             })}

@@ -1,3 +1,4 @@
+import { RollingText } from "@/components/ui/rolling-text";
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 import { Search, Compass, Cpu, Rocket, Sliders, ArrowRight } from "lucide-react";
@@ -100,7 +101,7 @@ export function HowItWorksSection() {
         <div className="mt-12 text-center">
           <Link to="/book">
             <button className="rounded-xl bg-[#18181b] px-8 py-3.5 text-sm font-semibold text-white shadow-md transition duration-200 hover:bg-black hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2 mx-auto">
-              <span>Start Step 01 — Get Free Audit</span>
+              <span><RollingText>Start Step 01 — Get Free Audit</RollingText></span>
               <ArrowRight className="size-4 text-white" />
             </button>
           </Link>
