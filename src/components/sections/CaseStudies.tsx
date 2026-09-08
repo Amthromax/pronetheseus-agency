@@ -283,7 +283,7 @@ export function CaseStudies() {
             >
               <div>
                 {/* Thumbnail Image Container */}
-                <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-neutral-200">
+                <div className="relative h-36 sm:h-40 w-full overflow-hidden bg-neutral-200">
                   <img
                     src={story.image}
                     alt={story.title}
@@ -296,38 +296,38 @@ export function CaseStudies() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-90" />
                   
                   {/* Top Apple Badges overlay */}
-                  <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none">
-                    <span className="rounded-full bg-black/65 backdrop-blur-md px-3 py-1 text-[10px] font-sans font-medium text-white tracking-wide uppercase shadow-2xs">
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                    <span className="rounded-full bg-black/65 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-sans font-medium text-white tracking-wide uppercase shadow-2xs">
                       {story.category}
                     </span>
-                    <span className="rounded-full bg-[#ff7a00] text-white px-3 py-1 text-[10px] font-sans font-bold shadow-2xs">
+                    <span className="rounded-full bg-blue-600 text-white px-2.5 py-0.5 text-[10px] font-sans font-bold shadow-2xs">
                       {story.metric}
                     </span>
                   </div>
                 </div>
 
                 {/* Card Content Body */}
-                <div className="p-5 sm:p-6 space-y-4">
+                <div className="p-4 sm:p-5 space-y-3">
                   {/* Title */}
-                  <h3 className="font-sans text-base sm:text-lg font-bold text-neutral-900 leading-snug line-clamp-2 group-hover:text-[#ff7a00] transition-colors duration-200 tracking-tight">
+                  <h3 className="font-sans text-sm sm:text-base font-bold text-neutral-900 leading-snug line-clamp-2 group-hover:text-blue-600 transition-colors duration-200 tracking-tight">
                     {story.title}
                   </h3>
 
                   {/* Executive Summary Paragraph */}
-                  <p className="text-xs text-neutral-600 font-sans leading-relaxed line-clamp-2">
+                  <p className="text-[11px] sm:text-xs text-neutral-600 font-sans leading-relaxed line-clamp-2">
                     {story.summary}
                   </p>
 
                   {/* Apple Glass Implementation Pathway Box */}
-                  <div className="rounded-[18px] bg-white/70 backdrop-blur-md border border-black/5 p-3.5 space-y-2.5 shadow-2xs">
-                    <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-500 border-b border-black/5 pb-1.5 flex items-center justify-between">
+                  <div className="rounded-[16px] bg-white/70 backdrop-blur-md border border-black/5 p-2.5 space-y-1.5 shadow-2xs">
+                    <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-500 border-b border-black/5 pb-1 flex items-center justify-between">
                       <span>Implementation Pathway</span>
-                      <span className="text-[#ff7a00]">3 Steps</span>
+                      <span className="text-blue-600">3 Steps</span>
                     </div>
 
                     {story.steps.map((st) => (
-                      <div key={st.step} className="flex items-start gap-2.5 text-[11px] font-sans">
-                        <span className="font-mono font-bold text-white text-[9px] bg-[#ff7a00] px-2 py-0.5 rounded-full shrink-0 shadow-2xs">
+                      <div key={st.step} className="flex items-start gap-2 text-[11px] font-sans">
+                        <span className="font-mono font-bold text-white text-[9px] bg-neutral-900 px-1.5 py-0.5 rounded-full shrink-0 shadow-2xs">
                           {st.step}
                         </span>
                         <div>
@@ -357,7 +357,7 @@ export function CaseStudies() {
                 <span className="text-xs font-semibold text-neutral-500 font-sans">
                   Customer Story
                 </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-900 group-hover:text-blue-600 transition-colors">
                   <span>Read Full Story</span>
                   <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
@@ -395,7 +395,7 @@ export function CaseStudies() {
                   <span className="rounded-full bg-neutral-900 text-white px-3 py-1 text-[11px] font-sans font-medium shadow-2xs">
                     {activeStoryModal.category}
                   </span>
-                  <span className="rounded-full bg-[#ff7a00] text-white px-3 py-1 text-[11px] font-sans font-bold shadow-2xs">
+                  <span className="rounded-full bg-blue-600 text-white px-3 py-1 text-[11px] font-sans font-bold shadow-2xs">
                     {activeStoryModal.metric}
                   </span>
                 </div>
@@ -445,12 +445,12 @@ export function CaseStudies() {
                 <div className="rounded-[20px] bg-white/75 backdrop-blur-md border border-black/5 p-4 sm:p-5 space-y-3 shadow-2xs">
                   <h4 className="text-[11px] font-mono font-bold uppercase tracking-wider text-neutral-500 flex items-center justify-between pb-2 border-b border-black/5">
                     <span>3-Step Implementation Pathway</span>
-                    <span className="text-[#ff7a00]">Execution Plan</span>
+                    <span className="text-blue-600">Execution Plan</span>
                   </h4>
                   <div className="space-y-2.5 pt-1">
                     {activeStoryModal.steps.map((st) => (
                       <div key={st.step} className="flex items-start gap-3 text-xs sm:text-sm font-sans">
-                        <span className="font-mono font-bold text-white text-[10px] bg-[#ff7a00] px-2 py-0.5 rounded-full shrink-0 shadow-2xs">
+                        <span className="font-mono font-bold text-white text-[10px] bg-neutral-900 px-2 py-0.5 rounded-full shrink-0 shadow-2xs">
                           {st.step}
                         </span>
                         <div>
@@ -464,8 +464,8 @@ export function CaseStudies() {
 
                 {/* Testimonial Quote Box */}
                 {activeStoryModal.quote && (
-                  <div className="rounded-[20px] bg-white/80 backdrop-blur-md border border-orange-200/60 p-4 sm:p-5 space-y-2 shadow-2xs">
-                    <Quote className="size-5 text-[#ff7a00]" />
+                  <div className="rounded-[20px] bg-white/80 backdrop-blur-md border border-neutral-200/80 p-4 sm:p-5 space-y-2 shadow-2xs">
+                    <Quote className="size-5 text-blue-600" />
                     <p className="text-xs sm:text-sm font-bold text-neutral-900 font-sans italic leading-relaxed">
                       "{activeStoryModal.quote}"
                     </p>
@@ -510,7 +510,7 @@ export function CaseStudies() {
                   className="inline-flex items-center gap-2 rounded-full bg-neutral-900 hover:bg-black px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-all shadow-sm hover:scale-[1.02]"
                 >
                   <span>Open Dedicated Page</span>
-                  <ArrowUpRight className="size-4 text-[#ff7a00]" />
+                  <ArrowUpRight className="size-4 text-blue-400" />
                 </Link>
               </div>
             </motion.div>

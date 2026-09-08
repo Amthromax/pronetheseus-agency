@@ -148,11 +148,11 @@ function CaseStudyPage() {
               </div>
             </div>
             <div className="mt-10 grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-red-200/80 bg-red-50/50 p-5">
+              <div className="rounded-2xl border border-neutral-300/70 bg-[#f4f3ee] p-5">
                 <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-red-600">Before AI System</div>
                 <p className="mt-2 text-xs sm:text-sm text-neutral-800 font-sans">{study.before}</p>
               </div>
-              <div className="rounded-2xl border border-emerald-200/80 bg-emerald-50/50 p-5">
+              <div className="rounded-2xl border border-neutral-300/70 bg-[#f4f3ee] p-5">
                 <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-700">After AI System</div>
                 <p className="mt-2 text-xs sm:text-sm text-neutral-900 font-bold font-sans">{study.after}</p>
               </div>

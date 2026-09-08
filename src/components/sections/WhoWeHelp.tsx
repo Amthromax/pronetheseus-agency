@@ -67,7 +67,7 @@ export function WhoWeHelp() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: idx * 0.05 }}
-                className="group relative flex flex-col justify-between rounded-[24px] sm:rounded-[28px] border border-white/80 bg-sandel-card p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.09)] hover:border-neutral-300/80 transition-all duration-300 hover:-translate-y-1.5 shrink-0 w-[250px] xs:w-[270px] sm:w-auto snap-center"
+                className="group relative flex flex-col justify-between rounded-[24px] sm:rounded-[28px] border border-neutral-200/80 bg-[#f4f3ee] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.09)] hover:border-neutral-300/80 transition-all duration-300 hover:-translate-y-1.5 shrink-0 w-[250px] xs:w-[270px] sm:w-auto snap-center"
               >
                 <div>
                   <div className="flex items-center justify-between">

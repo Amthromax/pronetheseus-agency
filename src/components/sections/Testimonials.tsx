@@ -52,7 +52,12 @@ const CASE_STUDIES: CaseStudyCard[] = [
   },
 ];
 
-export function Testimonials() {
+interface TestimonialsProps {
+  className?: string;
+  hideBorders?: boolean;
+}
+
+export function Testimonials({ className = "", hideBorders = false }: TestimonialsProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -63,7 +68,7 @@ export function Testimonials() {
   };
 
   return (
-    <section id="customer-testimonials" className="relative bg-sandel py-16 sm:py-24 text-neutral-900 overflow-hidden border-y border-sandel-border">
+    <section id="customer-testimonials" className={`relative bg-sandel py-12 sm:py-16 text-neutral-900 overflow-hidden ${hideBorders ? "" : "border-y border-sandel-border"} ${className}`}>
       <div className="container-pad mx-auto max-w-[1400px]">
         {/* Header Container */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
@@ -121,7 +126,7 @@ export function Testimonials() {
                     {/* Top Client & Industry */}
                     <div className="flex items-center justify-between pb-4 border-b border-black/5">
                       <div>
-                        <h3 className="font-sans text-lg font-bold text-neutral-900 tracking-tight group-hover:text-[#ff7a00] transition-colors">
+                        <h3 className="font-sans text-lg font-bold text-neutral-900 tracking-tight group-hover:text-blue-600 transition-colors">
                           {item.client}
                         </h3>
                         <span className="text-xs text-neutral-500 font-mono">{item.industry}</span>
@@ -130,21 +135,21 @@ export function Testimonials() {
 
                     {/* 4-Step Breakdown Stack */}
                     <div className="mt-5 space-y-2.5 font-sans text-xs">
-                      <div className="p-3 rounded-[16px] bg-red-50/70 border border-red-100/80">
+                      <div className="p-3 rounded-[16px] bg-[#f4f3ee] border border-neutral-200/80">
                         <span className="font-mono font-bold text-red-600 uppercase text-[10px] block mb-0.5 tracking-wider">
                           Problem
                         </span>
                         <span className="text-neutral-700 leading-snug block">{item.problem}</span>
                       </div>
 
-                      <div className="p-3 rounded-[16px] bg-blue-50/70 border border-blue-100/80">
+                      <div className="p-3 rounded-[16px] bg-[#f4f3ee] border border-neutral-200/80">
                         <span className="font-mono font-bold text-blue-600 uppercase text-[10px] block mb-0.5 tracking-wider">
                           Deployed System
                         </span>
                         <span className="text-neutral-800 font-medium leading-snug block">{item.system}</span>
                       </div>
 
-                      <div className="p-3 rounded-[16px] bg-emerald-50/70 border border-emerald-100/80">
+                      <div className="p-3 rounded-[16px] bg-[#f4f3ee] border border-neutral-200/80">
                         <span className="font-mono font-bold text-emerald-600 uppercase text-[10px] block mb-0.5 tracking-wider">
                           Result
                         </span>
@@ -170,7 +175,7 @@ export function Testimonials() {
                         {item.authorTitle}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1 text-xs font-bold text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
+                    <div className="flex items-center gap-1 text-xs font-bold text-neutral-900 group-hover:text-blue-600 transition-colors">
                       <span>Read Story</span>
                       <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                     </div>
