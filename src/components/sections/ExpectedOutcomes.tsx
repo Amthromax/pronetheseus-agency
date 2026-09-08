@@ -1,4 +1,5 @@
-import { motion } from "motion/react";
+import { animate, motion, useInView, useReducedMotion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 import { Clock, Zap, CalendarCheck, TrendingUp } from "lucide-react";
 
 const METRICS_LIST = [
@@ -31,6 +32,52 @@ const METRICS_LIST = [
     badge: "P&L IMPACT"
   }
 ];
+
+/** Splits a formatted metric into prefix, number and suffix: "+18/mo" -> "+", "18", "/mo". */
+const VALUE_RE = /^([^\d]*)(\d+(?:\.\d+)?)(.*)$/;
+
+/**
+ * Renders a metric value that counts up from zero the first time it scrolls
+ * into view. The full value is what renders on the server and on the first
+ * client paint, so hydration matches and reduced-motion visitors just see the
+ * final number.
+ */
+function CountUpValue({ value, delay = 0 }: { value: string; delay?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "0px 0px -15% 0px" });
+  const reduceMotion = useReducedMotion();
+  const [display, setDisplay] = useState(value);
+
+  useEffect(() => {
+    if (!inView || reduceMotion) return;
+    const match = value.match(VALUE_RE);
+    if (!match) return;
+
+    const [, prefix, num, suffix] = match;
+    const target = parseFloat(num);
+    const decimals = (num.split(".")[1] ?? "").length;
+    const format = (n: number) => `${prefix}${n.toFixed(decimals)}${suffix}`;
+
+    setDisplay(format(0));
+    const controls = animate(0, target, {
+      duration: 1.6,
+      delay,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (n) => setDisplay(format(n)),
+      onComplete: () => setDisplay(value),
+    });
+    return () => controls.stop();
+  }, [inView, reduceMotion, value, delay]);
+
+  return (
+    <div
+      ref={ref}
+      className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 tabular-nums"
+    >
+      {display}
+    </div>
+  );
+}
 
 export function ExpectedOutcomes() {
   return (
@@ -78,9 +125,7 @@ export function ExpectedOutcomes() {
                   </div>
 
                   {/* Value & Labels */}
-                  <div className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 tabular-nums">
-                    {m.value}
-                  </div>
+                  <CountUpValue value={m.value} delay={idx * 0.08} />
                   <h3 className="mt-2 text-sm sm:text-base font-bold tracking-tight text-neutral-900">
                     {m.label}
                   </h3>
