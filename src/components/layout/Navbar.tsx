@@ -83,10 +83,10 @@ export function Navbar() {
         {/* Right Side: Partner+, Our Work (Desktop only), Start a project & Plus Menu Icon */}
         <div className="flex items-center gap-2 sm:gap-5">
           <Link
-            to="/contact"
+            to="/services"
             className="hidden md:inline-flex text-xs sm:text-sm font-medium text-neutral-800 hover:text-black transition"
           >
-            Partner+
+            Revenue Engines
           </Link>
           <Link
             to="/case-studies"

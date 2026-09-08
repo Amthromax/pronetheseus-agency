@@ -76,12 +76,12 @@ export function Hero() {
                 Get Your Free Automation Audit
               </button>
             </Link>
-            <a href="#services" className="w-full sm:w-auto">
+            <Link to="/how-it-works" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto rounded-full bg-white/80 backdrop-blur-md border border-black/5 hover:bg-white text-neutral-800 hover:border-black/15 px-6 sm:px-7 py-3.5 text-xs sm:text-sm font-semibold shadow-xs transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap tracking-wide antialiased">
                 <span>See How It Works</span>
                 <ArrowRight className="w-3.5 h-3.5 text-neutral-600" />
               </button>
-            </a>
+            </Link>
           </motion.div>
 
         </div>
