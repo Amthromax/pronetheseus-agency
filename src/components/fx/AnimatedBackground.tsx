@@ -45,6 +45,7 @@ export function AnimatedBackground() {
 
     const draw = (currentTime: number) => {
       raf = requestAnimationFrame(draw);
+      if (document.visibilityState === "hidden") return;
       const delta = currentTime - lastTime;
 
       if (delta >= interval) {

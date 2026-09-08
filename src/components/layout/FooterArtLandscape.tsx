@@ -24,11 +24,13 @@ export function FooterArtLandscape({ heading = "PRONETHESEUS CAPITAL" }: FooterA
 
       {/* Renaissance Ceramic Artwork Banner with Reduced Height */}
       <img
-        src="/footer-art-orange.png"
+        src="/footer-art-orange.webp"
         alt="Classical Infrastructure & AI Automation Artwork"
         className="w-full h-[150px] sm:h-[210px] md:h-[260px] lg:h-[290px] object-cover object-center shadow-md relative z-10"
-        loading="eager"
+        loading="lazy"
         decoding="async"
+        width={1920}
+        height={400}
       />
     </div>
   );

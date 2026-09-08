@@ -32,7 +32,7 @@ const values = [
   { title: "Design counts", desc: "AI systems should feel effortless — and beautiful." },
 ];
 const team = [
-  { name: "Kanth Magliar", role: "Founder & CEO", image: "/kishore-kanth.png" },
+  { name: "Kanth Magliar", role: "Founder & CEO", image: "/kishore-kanth.webp" },
 ];
 
 const row1Logos = [

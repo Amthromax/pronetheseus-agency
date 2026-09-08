@@ -1,14 +1,16 @@
+import { lazy, Suspense } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/hero/Hero";
 import { TrustedBy } from "@/components/sections/TrustedBy";
 import { WhoWeHelp } from "@/components/sections/WhoWeHelp";
-import { Process } from "@/components/sections/Process";
-import { ExpectedOutcomes } from "@/components/sections/ExpectedOutcomes";
-import { AgenticApplications } from "@/components/sections/AgenticApplications";
-import { Portfolio } from "@/components/sections/Portfolio";
-import { AIInsights } from "@/components/sections/AIInsights";
-import { MarqueeReviews } from "@/components/sections/MarqueeReviews";
-import { FAQ } from "@/components/sections/FAQ";
+
+const ExpectedOutcomes = lazy(() => import("@/components/sections/ExpectedOutcomes").then(m => ({ default: m.ExpectedOutcomes })));
+const Process = lazy(() => import("@/components/sections/Process").then(m => ({ default: m.Process })));
+const AgenticApplications = lazy(() => import("@/components/sections/AgenticApplications").then(m => ({ default: m.AgenticApplications })));
+const Portfolio = lazy(() => import("@/components/sections/Portfolio").then(m => ({ default: m.Portfolio })));
+const AIInsights = lazy(() => import("@/components/sections/AIInsights").then(m => ({ default: m.AIInsights })));
+const MarqueeReviews = lazy(() => import("@/components/sections/MarqueeReviews").then(m => ({ default: m.MarqueeReviews })));
+const FAQ = lazy(() => import("@/components/sections/FAQ").then(m => ({ default: m.FAQ })));
 
 import heroPeople from "@/assets/hero-people-4.png.asset.json";
 
@@ -34,13 +36,15 @@ function Index() {
       <Hero />
       <TrustedBy />
       <WhoWeHelp />
-      <ExpectedOutcomes />
-      <Process />
-      <AgenticApplications />
-      <Portfolio />
-      <AIInsights />
-      <MarqueeReviews />
-      <FAQ />
+      <Suspense fallback={<div className="min-h-[200px]" />}>
+        <ExpectedOutcomes />
+        <Process />
+        <AgenticApplications />
+        <Portfolio />
+        <AIInsights />
+        <MarqueeReviews />
+        <FAQ />
+      </Suspense>
     </>
   );
 }
