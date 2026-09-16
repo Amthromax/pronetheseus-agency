@@ -175,13 +175,13 @@ export function Services() {
                     Subscription
                   </h3>
                   <span className="text-[11px] font-mono text-neutral-400">
-                    Amthromax®
+                    Make Accuracy®
                   </span>
                 </div>
 
                 <div className="space-y-3 text-xs text-neutral-500 font-normal leading-relaxed max-w-lg">
                   <p>
-                    Amthromax operates as an AI &amp; automation system you can turn on.
+                    Make Accuracy operates as an AI &amp; automation system you can turn on.
                   </p>
                   <p>
                     Teams work with us at a defined monthly capacity, running requests through a steady, repeatable cadence.
@@ -226,7 +226,7 @@ export function Services() {
 
               <div className="mt-6 sm:mt-8 flex items-center justify-between pt-4 border-t border-neutral-800">
                 <span className="text-[11px] font-mono text-neutral-500">
-                  Amthromax®
+                  Make Accuracy®
                 </span>
                 <Link
                   to="/contact"

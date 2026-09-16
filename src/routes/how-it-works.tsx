@@ -13,9 +13,9 @@ import {
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How It Works — Pronetheseus AI Infrastructure" },
-      { name: "description", content: "Discover how Pronetheseus rapidly builds, deploys, and scales custom AI revenue engines for ambitious businesses in 14 days." },
-      { property: "og:title", content: "How It Works & Growth System — Pronetheseus" },
+      { title: "How It Works — Make Accuracy AI Infrastructure" },
+      { name: "description", content: "Discover how Make Accuracy rapidly builds, deploys, and scales custom AI revenue engines for ambitious businesses in 14 days." },
+      { property: "og:title", content: "How It Works & Growth System — Make Accuracy" },
       { property: "og:description", content: "From initial process audit to fully autonomous AI infrastructure." },
       { property: "og:url", content: "/how-it-works" },
     ],
@@ -30,7 +30,7 @@ function HowItWorksPage() {
       {/* Page Header */}
       <div className="container-pad mx-auto max-w-[1400px]">
         <SectionHeading 
-          title="How Pronetheseus Drives Rapid Business Growth" 
+          title="How Make Accuracy Drives Rapid Business Growth" 
           description="We engineer custom AI workflows, lead qualification agents, and CRM integrations that eliminate manual bottlenecks and scale your revenue faster."
         />
       </div>
@@ -157,7 +157,7 @@ function HowItWorksPage() {
         </motion.div>
       </section>
 
-      {/* Comparison Section: Why Pronetheseus vs Traditional Approach */}
+      {/* Comparison Section: Why Make Accuracy vs Traditional Approach */}
       <section className="container-pad mx-auto mt-20 max-w-[1400px]">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-sans text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
@@ -175,7 +175,7 @@ function HowItWorksPage() {
                 <th className="py-4 px-6">Comparison Feature</th>
                 <th className="py-4 px-6 text-neutral-400">Traditional Agency</th>
                 <th className="py-4 px-6 text-neutral-400">In-House Engineering</th>
-                <th className="py-4 px-6 bg-blue-600 text-white rounded-t-2xl">Pronetheseus AI Systems</th>
+                <th className="py-4 px-6 bg-blue-600 text-white rounded-t-2xl">Make Accuracy AI Systems</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-neutral-200 text-sm font-medium text-neutral-800">

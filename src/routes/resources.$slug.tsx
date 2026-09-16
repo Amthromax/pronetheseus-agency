@@ -11,10 +11,10 @@ export const Route = createFileRoute("/resources/$slug")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Resource not found — Pronetheseus" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Resource not found — Make Accuracy" }, { name: "robots", content: "noindex" }] };
     }
     const { resource } = loaderData;
-    const title = `${resource.title} — Pronetheseus`;
+    const title = `${resource.title} — Make Accuracy`;
     return {
       meta: [
         { title },

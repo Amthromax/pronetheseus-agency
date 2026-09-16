@@ -37,7 +37,7 @@ export const caseStudies: CaseStudy[] = [
       { v: "1.8", s: "$M", l: "Annual Cost Savings" },
       { v: "<10", s: "sec", l: "Avg Resolution Time" },
     ],
-    quote: "Pronetheseus transformed our customer call center. Our call wait times dropped from 18 minutes to zero instantly.",
+    quote: "Make Accuracy transformed our customer call center. Our call wait times dropped from 18 minutes to zero instantly.",
     who: "Elena Rostova",
     role: "VP Customer Operations",
     customer: {
@@ -328,7 +328,7 @@ export const caseStudies: CaseStudy[] = [
       { v: "96", s: "%", l: "Attendee CSAT" },
       { v: "150", s: "k+", l: "Messages Handled / Event" },
     ],
-    quote: "Pronetheseus handled our entire tournament support without a single customer complaint.",
+    quote: "Make Accuracy handled our entire tournament support without a single customer complaint.",
     who: "Marcus Thorne",
     role: "VP Event Operations",
     customer: {

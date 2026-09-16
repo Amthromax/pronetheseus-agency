@@ -5,7 +5,7 @@ const REVIEWS = [
   {
     name: "Alex Rivera",
     username: "@alexrivera",
-    body: "Amthromax automated our entire inbound lead qualification. Speed-to-lead dropped under 30 seconds!",
+    body: "Make Accuracy automated our entire inbound lead qualification. Speed-to-lead dropped under 30 seconds!",
     img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces",
   },
   {
@@ -47,7 +47,7 @@ const REVIEWS = [
   {
     name: "Sophia Martinez",
     username: "@sophiam_dev",
-    body: "Unbelievable efficiency boost! Our team focuses on high-level strategy while Amthromax handles routine tasks.",
+    body: "Unbelievable efficiency boost! Our team focuses on high-level strategy while Make Accuracy handles routine tasks.",
     img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces",
   },
 ];

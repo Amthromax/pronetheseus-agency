@@ -338,7 +338,7 @@ export function FloatingAppIntegrations() {
             All your go-to apps
           </h2>
           <p className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-900 leading-tight sm:leading-none mt-2">
-            fly on Pronetheseus.
+            fly on Make Accuracy.
           </p>
           <p className="mt-4 text-xs sm:text-sm text-neutral-600 font-normal max-w-lg mx-auto leading-relaxed">
             Seamless bi-directional integrations across Slack, CRM, Microsoft 365, Google Workspace, n8n workflows, and custom agency APIs.

@@ -159,7 +159,7 @@ export function WhyUs() {
                 ))}
               </div>
               <p className="text-xs sm:text-sm text-neutral-800 leading-relaxed font-normal">
-                "They work fast, they work well, and they communicate clearly. From a price, quality, and professionalism perspective, Pronetheseus is the choice."
+                "They work fast, they work well, and they communicate clearly. From a price, quality, and professionalism perspective, Make Accuracy is the choice."
               </p>
               
               <div className="flex items-center gap-3 mt-6">
@@ -240,7 +240,7 @@ export function WhyUs() {
             {/* Top Right Brand Title */}
             <div className="relative z-10 self-end">
               <span className="text-xs sm:text-sm font-semibold tracking-wider text-neutral-300 font-sans">
-                Pronetheseus ®
+                Make Accuracy ®
               </span>
             </div>
 

@@ -59,7 +59,7 @@ export function FlagshipProduct() {
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">
-            Pronetheseus AI Revenue Engine
+            Make Accuracy AI Revenue Engine
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-sans max-w-2xl mx-auto leading-relaxed">
             The complete autonomous operating system for service businesses. Replaces fragmented tools with a single unified lead-to-customer automation infrastructure.

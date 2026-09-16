@@ -14,9 +14,9 @@ import { Marquee } from "@/components/ui/marquee";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Pronetheseus" },
-      { name: "description", content: "The senior team behind Pronetheseus and the beliefs that guide our work." },
-      { property: "og:title", content: "About — Pronetheseus" },
+      { title: "About — Make Accuracy" },
+      { name: "description", content: "The senior team behind Make Accuracy and the beliefs that guide our work." },
+      { property: "og:title", content: "About — Make Accuracy" },
       { property: "og:description", content: "Meet the team building the AI backbone of ambitious companies." },
       { property: "og:url", content: "/about" },
     ],
@@ -99,7 +99,7 @@ function Page() {
 
             {/* Main Heading */}
             <h2 className="mt-4 font-sans text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
-              Meet the Person Behind Pronetheseus
+              Meet the Person Behind Make Accuracy
             </h2>
 
             {/* Narrative Text */}
@@ -476,7 +476,7 @@ function Page() {
 
           {/* Description */}
           <p className="mx-auto mt-4 max-w-2xl font-sans text-sm font-normal leading-relaxed text-neutral-400 sm:text-base">
-            Seamlessly deploy the entire Pronetheseus platform or separate best-in-class modules into your current environment with built-in integrations. No manual scripting or maintenance.
+            Seamlessly deploy the entire Make Accuracy platform or separate best-in-class modules into your current environment with built-in integrations. No manual scripting or maintenance.
           </p>
 
           {/* Grid Container */}

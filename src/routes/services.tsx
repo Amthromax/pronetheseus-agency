@@ -8,9 +8,9 @@ import { ContactCTA } from "@/components/sections/ContactCTA";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services & How It Works — Pronetheseus" },
+      { title: "Services & How It Works — Make Accuracy" },
       { name: "description", content: "AI Revenue Automation, AI Customer Service, AI Operations, and our 5-step automation methodology." },
-      { property: "og:title", content: "Services & Automation Methodology — Pronetheseus" },
+      { property: "og:title", content: "Services & Automation Methodology — Make Accuracy" },
       { property: "og:description", content: "Everything we ship. From single-agent deployments to end-to-end business automation." },
       { property: "og:url", content: "/services" },
     ],

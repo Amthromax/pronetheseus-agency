@@ -27,13 +27,13 @@ import {
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms & Conditions — Pronetheseus Agency Infrastructure" },
+      { title: "Terms & Conditions — Make Accuracy Agency Infrastructure" },
       {
         name: "description",
         content:
-          "The commercial and security terms governing Pronetheseus engagements: scope, SLAs, client responsibilities, credential handling, IP ownership, liability, termination, and dispute resolution.",
+          "The commercial and security terms governing Make Accuracy engagements: scope, SLAs, client responsibilities, credential handling, IP ownership, liability, termination, and dispute resolution.",
       },
-      { property: "og:title", content: "Terms & Conditions — Pronetheseus" },
+      { property: "og:title", content: "Terms & Conditions — Make Accuracy" },
       { property: "og:url", content: "/terms" },
     ],
     links: [{ rel: "canonical", href: "/terms" }],
@@ -107,7 +107,7 @@ function TermsPage() {
             Last Updated: September 8, 2026 • Version 3.0
           </p>
           <p className="mt-4 text-sm sm:text-base text-neutral-600 leading-relaxed">
-            These terms govern your use of this website and every engagement in which Pronetheseus
+            These terms govern your use of this website and every engagement in which Make Accuracy
             Agency Infrastructure Systems audits, designs, builds, or operates automation infrastructure
             for you. They cover what we deliver, what we need from you, how security and credentials are
             handled on both sides, who owns the resulting work, and how the commercial relationship
@@ -134,7 +134,7 @@ function TermsPage() {
         <div className="mt-10 space-y-10 text-neutral-700 leading-relaxed text-sm sm:text-base">
           <Section id="scope" n={1} title="Scope of Engagement" icon={<Shield className="size-5 text-[#ff7a00]" />}>
             <p>
-              By engaging Pronetheseus Agency Infrastructure Systems, you agree to these Terms. Our
+              By engaging Make Accuracy Agency Infrastructure Systems, you agree to these Terms. Our
               service is the design, deployment, and maintenance of custom automation infrastructure,
               including but not limited to n8n workflow orchestration, AI voice agents, and CRM
               integration layers.
@@ -167,7 +167,7 @@ function TermsPage() {
               </li>
               <li>
                 <strong>Pre-Existing IP</strong> — tooling, libraries, templates, and methodology owned
-                by Pronetheseus before or independently of your engagement.
+                by Make Accuracy before or independently of your engagement.
               </li>
               <li>
                 <strong>Third-Party Services</strong> — external platforms and APIs the Deliverables
@@ -331,8 +331,8 @@ function TermsPage() {
               <strong className="text-neutral-900">We will never ask</strong> for your personal account
               password, for a multi-factor code outside a live session you scheduled, or for payment card
               or banking credentials. Treat any such request as fraudulent and report it to{" "}
-              <a href="mailto:security@pronetheseus.com" className="text-[#ff7a00] font-semibold underline">
-                security@pronetheseus.com
+              <a href="mailto:security@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
+                security@makeaccuracy.com
               </a>
               .
             </p>
@@ -346,7 +346,7 @@ function TermsPage() {
           >
             <p>
               Upon final payment, all custom code, workflow logic, and system documentation developed
-              specifically for your business becomes your exclusive intellectual property. Pronetheseus
+              specifically for your business becomes your exclusive intellectual property. Make Accuracy
               retains rights only to its Pre-Existing IP — proprietary internal frameworks, libraries,
               accelerators, and methodology used to accelerate delivery.
             </p>
@@ -491,7 +491,7 @@ function TermsPage() {
             </p>
             <p>
               Each party's total aggregate liability arising out of or relating to the engagement is
-              limited to the total fees paid by you to Pronetheseus in the twelve months preceding the
+              limited to the total fees paid by you to Make Accuracy in the twelve months preceding the
               event giving rise to the claim.
             </p>
             <p>
@@ -507,7 +507,7 @@ function TermsPage() {
             icon={<Handshake className="size-5 text-[#ff7a00]" />}
           >
             <p>
-              You will indemnify Pronetheseus against third-party claims arising from Client Data, from
+              You will indemnify Make Accuracy against third-party claims arising from Client Data, from
               your use of the Deliverables in breach of these Terms or applicable law, and from your
               breach of a Third-Party Service's terms.
             </p>
@@ -602,7 +602,7 @@ function TermsPage() {
             <p>
               These Terms are governed by the laws of the jurisdiction stated in your Statement of Work,
               without regard to conflict-of-law rules. Where no jurisdiction is stated, the governing law
-              is that of the place of business of Pronetheseus.
+              is that of the place of business of Make Accuracy.
             </p>
             <p>
               Before starting formal proceedings, the parties will attempt in good faith to resolve any
@@ -634,12 +634,12 @@ function TermsPage() {
             </p>
             <p className="flex flex-wrap items-center gap-x-1.5">
               <Mail className="size-4 text-[#ff7a00]" /> Contract and billing questions:{" "}
-              <a href="mailto:hello@amthromax.com" className="text-[#ff7a00] font-semibold underline">
-                hello@amthromax.com
+              <a href="mailto:hello@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
+                hello@makeaccuracy.com
               </a>
               . Security matters:{" "}
-              <a href="mailto:security@pronetheseus.com" className="text-[#ff7a00] font-semibold underline">
-                security@pronetheseus.com
+              <a href="mailto:security@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
+                security@makeaccuracy.com
               </a>
               .
             </p>

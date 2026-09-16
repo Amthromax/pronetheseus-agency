@@ -84,30 +84,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Pronetheseus — AI Automation & AI Agents that Work 24/7" },
+      { title: "Make Accuracy — AI Automation & AI Agents that Work 24/7" },
       {
         name: "description",
         content:
-          "Pronetheseus builds AI agents, n8n workflows, and custom automation systems that save teams hundreds of hours every month.",
+          "Make Accuracy builds AI agents, n8n workflows, and custom automation systems that save teams hundreds of hours every month.",
       },
-      { name: "author", content: "Pronetheseus" },
+      { name: "author", content: "Make Accuracy" },
       { name: "theme-color", content: "#0a0a0a" },
-      { property: "og:site_name", content: "Pronetheseus" },
-      { property: "og:title", content: "Pronetheseus — AI Automation & AI Agents" },
+      { property: "og:site_name", content: "Make Accuracy" },
+      { property: "og:title", content: "Make Accuracy — AI Automation & AI Agents" },
       {
         property: "og:description",
         content: "AI Employees that work 24/7. We design and ship automation that pays for itself.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@pronetheseus" },
+      { name: "twitter:site", content: "@makeaccuracy" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/logo.png", type: "image/png" },
+      { rel: "icon", href: "/logo-mark.png", type: "image/png" },
+      { rel: "icon", href: "/logo.svg", type: "image/svg+xml" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -121,13 +122,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "Pronetheseus",
+          name: "Make Accuracy",
           url: "/",
           description:
             "AI automation agency building AI agents, n8n workflows, CRM automation, voice AI, and custom software.",
           sameAs: [
-            "https://www.linkedin.com/company/pronetheseus",
-            "https://x.com/pronetheseus",
+            "https://www.linkedin.com/company/makeaccuracy",
+            "https://x.com/makeaccuracy",
           ],
         }),
       },

@@ -6,9 +6,9 @@ import { RollingText } from "@/components/ui/rolling-text";
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — Pronetheseus" },
+      { title: "Careers — Make Accuracy" },
       { name: "description", content: "Join a senior team building the AI backbone of ambitious companies." },
-      { property: "og:title", content: "Careers — Pronetheseus" },
+      { property: "og:title", content: "Careers — Make Accuracy" },
       { property: "og:description", content: "We hire senior operators, engineers, and designers." },
       { property: "og:url", content: "/careers" },
     ],

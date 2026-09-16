@@ -1,3 +1,4 @@
+import { Logo } from "@/components/ui/logo";
 import { RollingText } from "@/components/ui/rolling-text";
 import { Link, useLocation } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
@@ -20,10 +21,8 @@ export function Footer() {
         
         {/* Top Header Row: Logo Icon & Social Links */}
         <div className="flex items-center justify-between pb-12 sm:pb-16">
-          <Link to="/" className="inline-flex items-center gap-2 group">
-            <span className="font-display font-black text-2xl tracking-tighter text-neutral-900">
-              Ʌ
-            </span>
+          <Link to="/" className="inline-flex items-center gap-2 group" aria-label="Home">
+            <Logo className="h-7 sm:h-8 w-auto text-neutral-900" />
           </Link>
 
           <div className="flex items-center gap-2 font-mono text-xs text-neutral-700 tracking-wider">
@@ -59,10 +58,10 @@ export function Footer() {
 
             <div className="pt-2">
               <a
-                href="mailto:hello@amthromax.com"
+                href="mailto:hello@makeaccuracy.com"
                 className="inline-block text-xl sm:text-2xl md:text-3xl font-medium text-neutral-900 underline underline-offset-8 decoration-neutral-900/80 hover:opacity-75 transition-opacity"
               >
-                <RollingText>hello@amthromax.com</RollingText>
+                <RollingText>hello@makeaccuracy.com</RollingText>
               </a>
             </div>
           </div>
@@ -108,7 +107,7 @@ export function Footer() {
 
           {/* Center Copyright */}
           <div className="text-neutral-500 text-[11px]">
-            ( ©{new Date().getFullYear()} Amthromax Studios )
+            ( ©{new Date().getFullYear()} Make Accuracy )
           </div>
 
           {/* Right Policy Links */}

@@ -325,7 +325,7 @@ export function AgenticApplications() {
               }`}
             >
               <div className="flex items-center">
-                <span><RollingText>AMTHROMAX AI ENGINE</RollingText></span>
+                <span><RollingText>MAKE ACCURACY AI ENGINE</RollingText></span>
                 <span className="ml-2 rounded-sm bg-emerald-500 px-2 py-0.5 text-[10px] font-bold text-white uppercase tracking-normal">
                   NEW
                 </span>

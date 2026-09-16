@@ -4,7 +4,7 @@ interface FooterArtLandscapeProps {
   heading?: string;
 }
 
-export function FooterArtLandscape({ heading = "PRONETHESEUS CAPITAL" }: FooterArtLandscapeProps) {
+export function FooterArtLandscape({ heading = "MAKE ACCURACY CAPITAL" }: FooterArtLandscapeProps) {
   return (
     <div className="relative w-full overflow-hidden select-none bg-sandel">
       {/* Left Sidebar Frame Accent */}

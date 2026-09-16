@@ -8,9 +8,9 @@ import { ContactCTA } from "@/components/sections/ContactCTA";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Pricing — Pronetheseus" },
+      { title: "Pricing — Make Accuracy" },
       { name: "description", content: "Simple, senior-team pricing. Starter, Growth, and Enterprise engagements." },
-      { property: "og:title", content: "Pricing — Pronetheseus" },
+      { property: "og:title", content: "Pricing — Make Accuracy" },
       { property: "og:description", content: "Transparent pricing for AI automation and custom software." },
       { property: "og:url", content: "/pricing" },
     ],

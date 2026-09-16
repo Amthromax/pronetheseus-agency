@@ -19,9 +19,9 @@ import {
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Get Your Free Automation Audit & Book Call — Pronetheseus" },
+      { title: "Get Your Free Automation Audit & Book Call — Make Accuracy" },
       { name: "description", content: "Get your free AI automation audit and schedule a 30-minute strategy session." },
-      { property: "og:title", content: "Free Automation Audit — Pronetheseus" },
+      { property: "og:title", content: "Free Automation Audit — Make Accuracy" },
       { property: "og:description", content: "Free AI automation diagnosis and calendar booking." },
       { property: "og:url", content: "/book" },
     ],
@@ -65,7 +65,7 @@ function BookPage() {
             title={isBooked ? "Booking Confirmed!" : "Schedule Your Audit Review Call"}
             description={
               isBooked
-                ? "Thank you for scheduling a strategy session with Pronetheseus. Here is what happens next."
+                ? "Thank you for scheduling a strategy session with Make Accuracy. Here is what happens next."
                 : "Pick a date & time that suits you. 30 minutes with a Principal Systems Architect. Zero sales pitch."
             }
           />

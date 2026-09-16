@@ -1,3 +1,4 @@
+import { Logo } from "@/components/ui/logo";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -70,10 +71,10 @@ export function Navbar() {
         <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
           <Link
             to="/"
-            className="font-bold text-lg sm:text-2xl leading-none tracking-tighter text-black select-none font-sans flex items-center"
-            aria-label="Pronetheseus Home"
+            className="font-bold text-lg sm:text-2xl leading-none tracking-tighter text-black select-none font-sans flex items-center gap-2"
+            aria-label="Make Accuracy Home"
           >
-            <span className="text-lg sm:text-xl font-extrabold tracking-widest font-mono">Ʌ</span>
+            <Logo className="h-5 sm:h-6 w-auto text-black" />
           </Link>
 
           <span className="text-[11px] sm:text-sm text-neutral-500 font-medium tracking-tight select-none">

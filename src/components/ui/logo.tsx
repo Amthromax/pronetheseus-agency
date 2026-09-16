@@ -1,0 +1,36 @@
+import React from "react";
+
+interface LogoProps extends React.SVGProps<SVGSVGElement> {
+  className?: string;
+}
+
+export function Logo({ className = "h-6 w-auto", ...props }: LogoProps) {
+  return (
+    <svg
+      viewBox="0 0 714 379"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      {...props}
+    >
+      <g fillRule="evenodd">
+        <path d="M 79 276 L 79 278 L 83 284 L 91 294 L 97 303 L 106 318 L 112 331 L 119 342 L 120 342 L 122 344 L 126 346 L 174 346 L 165 327 L 157 315 L 153 310 L 145 302 L 136 295 L 128 290 L 117 285 L 97 279 Z" />
+        <path d="M 235 225 L 245 235 L 263 259 L 281 291 L 284 299 L 302 334 L 310 342 L 319 346 L 377 346 L 349 290 L 339 275 L 321 256 L 302 243 L 287 236 L 263 229 L 241 225 Z" />
+        <path d="M 32 203 L 33 208 L 47 226 L 62 241 L 72 248 L 89 256 L 116 263 L 132 269 L 158 285 L 177 305 L 185 317 L 191 330 L 201 342 L 210 346 L 280 346 L 247 280 L 230 252 L 224 244 L 207 227 L 191 216 L 168 206 L 142 201 L 34 201 Z" />
+        <path d="M 379 146 L 404 172 L 425 200 L 452 247 L 496 332 L 503 340 L 515 346 L 600 346 L 538 229 L 521 205 L 505 189 L 485 175 L 460 163 L 433 155 Z" />
+        <path d="M 142 127 L 143 132 L 168 164 L 180 176 L 198 189 L 222 199 L 289 214 L 312 224 L 333 238 L 347 251 L 360 267 L 397 335 L 406 343 L 413 346 L 473 346 L 398 204 L 376 174 L 361 159 L 342 145 L 308 130 L 280 125 L 144 125 Z" />
+        <path d="M 264 34 L 311 89 L 336 109 L 368 120 L 422 129 L 462 139 L 484 147 L 516 165 L 539 186 L 559 213 L 623 331 L 633 340 L 647 346 L 664 346 L 678 336 L 681 328 L 679 312 L 563 90 L 545 63 L 530 49 L 511 39 L 481 32 Z" />
+      </g>
+    </svg>
+  );
+}
+
+export function LogoImage({ className = "h-6 w-auto", alt = "Logo" }: { className?: string; alt?: string }) {
+  return (
+    <img
+      src="/logo-mark-dark.png"
+      alt={alt}
+      className={`object-contain ${className}`}
+    />
+  );
+}

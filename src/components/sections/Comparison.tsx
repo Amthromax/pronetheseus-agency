@@ -23,7 +23,7 @@ export function Comparison() {
           <div className="grid grid-cols-[1.4fr_1fr_1fr] border-b border-black/5 bg-white/80 backdrop-blur-md text-xs font-mono font-bold uppercase tracking-widest text-neutral-500">
             <div className="p-4 sm:p-5" />
             <div className="p-4 sm:p-5 text-center">Traditional Agency</div>
-            <div className="p-4 sm:p-5 text-center text-neutral-900 font-bold">Pronetheseus</div>
+            <div className="p-4 sm:p-5 text-center text-neutral-900 font-bold">Make Accuracy</div>
           </div>
           {rows.map((r, i) => (
             <div key={i} className="grid grid-cols-[1.4fr_1fr_1fr] items-center border-b border-black/5 text-sm last:border-b-0">

@@ -21,13 +21,13 @@ import {
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Pronetheseus Agency Infrastructure" },
+      { title: "Privacy Policy — Make Accuracy Agency Infrastructure" },
       {
         name: "description",
         content:
-          "How Pronetheseus collects, uses, retains, and safeguards client and operational data — including our security program, sub-processors, AI data handling, retention schedule, and your data rights.",
+          "How Make Accuracy collects, uses, retains, and safeguards client and operational data — including our security program, sub-processors, AI data handling, retention schedule, and your data rights.",
       },
-      { property: "og:title", content: "Privacy Policy — Pronetheseus" },
+      { property: "og:title", content: "Privacy Policy — Make Accuracy" },
       { property: "og:url", content: "/privacy" },
     ],
     links: [{ rel: "canonical", href: "/privacy" }],
@@ -98,7 +98,7 @@ function PrivacyPage() {
             Last Updated: September 8, 2026 • Version 3.0
           </p>
           <p className="mt-4 text-sm sm:text-base text-neutral-600 leading-relaxed">
-            This policy explains what data Pronetheseus Agency Infrastructure Systems handles when we
+            This policy explains what data Make Accuracy Agency Infrastructure Systems handles when we
             audit, build, and operate automation infrastructure for your business — how we protect it,
             how long we keep it, who else touches it, and what you can ask us to do with it. It applies
             to our website, our booking and contact flows, and every workflow, agent, or integration we
@@ -130,7 +130,7 @@ function PrivacyPage() {
             icon={<Lock className="size-5 text-[#ff7a00]" />}
           >
             <p>
-              Pronetheseus Agency Infrastructure Systems ("Pronetheseus", "we", "our") is dedicated to
+              Make Accuracy Agency Infrastructure Systems ("Make Accuracy", "we", "our") is dedicated to
               protecting client, agency, and operational telemetry data. We implement enterprise-grade
               encryption standard protocols (AES-256 at rest, TLS 1.3 in transit) across all n8n
               workflows, CRM hooks, and AI agent execution layers.
@@ -341,8 +341,8 @@ function PrivacyPage() {
             </ul>
             <p>
               A current, named sub-processor list is maintained and provided on request to{" "}
-              <a href="mailto:privacy@pronetheseus.com" className="text-[#ff7a00] font-semibold underline">
-                privacy@pronetheseus.com
+              <a href="mailto:privacy@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
+                privacy@makeaccuracy.com
               </a>
               . Clients under an active DPA are notified before a new sub-processor with access to their
               data is added, and may object on reasonable security grounds.
@@ -393,8 +393,8 @@ function PrivacyPage() {
             <p className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 text-sm text-neutral-600">
               <strong className="text-neutral-900">Responsible disclosure.</strong> If you believe you
               have found a vulnerability in our website or in infrastructure we operate, email{" "}
-              <a href="mailto:security@pronetheseus.com" className="text-[#ff7a00] font-semibold underline">
-                security@pronetheseus.com
+              <a href="mailto:security@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
+                security@makeaccuracy.com
               </a>
               . Please include reproduction steps and avoid accessing or modifying data that is not
               yours. We acknowledge reports within two business days and will not pursue action against
@@ -506,7 +506,7 @@ function PrivacyPage() {
           >
             <p>
               You retain 100% ownership of all proprietary code, database schema, client lists, and AI
-              prompt architecture created during your engagement. Pronetheseus never sells, licenses, or
+              prompt architecture created during your engagement. Make Accuracy never sells, licenses, or
               exposes agency client data to third-party model providers for model training purposes.
             </p>
             <p>
@@ -533,8 +533,8 @@ function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-2 text-neutral-600">
               <li>
                 <strong>How to ask.</strong> Email{" "}
-                <a href="mailto:privacy@pronetheseus.com" className="text-[#ff7a00] font-semibold underline">
-                  privacy@pronetheseus.com
+                <a href="mailto:privacy@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
+                  privacy@makeaccuracy.com
                 </a>{" "}
                 from the address on file, or use the details in section 15.
               </li>
@@ -620,16 +620,16 @@ function PrivacyPage() {
             <p>
               For privacy questions, data requests, DPA copies, or the current sub-processor list,
               contact{" "}
-              <a href="mailto:privacy@pronetheseus.com" className="text-[#ff7a00] font-semibold underline">
-                privacy@pronetheseus.com
+              <a href="mailto:privacy@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
+                privacy@makeaccuracy.com
               </a>
               . For vulnerability reports and security matters, contact{" "}
-              <a href="mailto:security@pronetheseus.com" className="text-[#ff7a00] font-semibold underline">
-                security@pronetheseus.com
+              <a href="mailto:security@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
+                security@makeaccuracy.com
               </a>
               . For anything else, our general address is{" "}
-              <a href="mailto:hello@amthromax.com" className="text-[#ff7a00] font-semibold underline">
-                hello@amthromax.com
+              <a href="mailto:hello@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
+                hello@makeaccuracy.com
               </a>
               .
             </p>

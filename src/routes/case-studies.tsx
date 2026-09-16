@@ -11,9 +11,9 @@ import {
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
     meta: [
-      { title: "Proven System Results & Case Studies — Pronetheseus" },
+      { title: "Proven System Results & Case Studies — Make Accuracy" },
       { name: "description", content: "Real problem-to-result breakdowns demonstrating how service businesses eliminate operational drag." },
-      { property: "og:title", content: "Case Studies & Results — Pronetheseus" },
+      { property: "og:title", content: "Case Studies & Results — Make Accuracy" },
       { property: "og:description", content: "ROI, hours saved, and lead response benchmarks for service businesses." },
       { property: "og:url", content: "/case-studies" },
     ],

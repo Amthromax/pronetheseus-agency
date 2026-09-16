@@ -8,9 +8,9 @@ import { ContactCTA } from "@/components/sections/ContactCTA";
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
-      { title: "Industries & AI Revenue Engine — Pronetheseus" },
+      { title: "Industries & AI Revenue Engine — Make Accuracy" },
       { name: "description", content: "AI automation systems and flagships tailored for Home Services, Dental Clinics, Real Estate, Professional Services, and Marketing Agencies." },
-      { property: "og:title", content: "Industries & AI Revenue Engine — Pronetheseus" },
+      { property: "og:title", content: "Industries & AI Revenue Engine — Make Accuracy" },
       { property: "og:description", content: "Playbooks and AI systems engineered for service businesses." },
       { property: "og:url", content: "/industries" },
     ],

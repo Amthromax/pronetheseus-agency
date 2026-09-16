@@ -8,7 +8,7 @@ export function CookieConsent() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("amthromax_cookie_consent");
+    const consent = localStorage.getItem("makeaccuracy_cookie_consent");
     if (!consent) {
       const timer = setTimeout(() => setIsOpen(true), 500);
       return () => clearTimeout(timer);
@@ -16,17 +16,17 @@ export function CookieConsent() {
   }, []);
 
   const handleAcceptAll = () => {
-    localStorage.setItem("amthromax_cookie_consent", "accepted_all");
+    localStorage.setItem("makeaccuracy_cookie_consent", "accepted_all");
     setIsOpen(false);
   };
 
   const handleRejectAll = () => {
-    localStorage.setItem("amthromax_cookie_consent", "rejected_all");
+    localStorage.setItem("makeaccuracy_cookie_consent", "rejected_all");
     setIsOpen(false);
   };
 
   const handleClose = () => {
-    localStorage.setItem("amthromax_cookie_consent", "dismissed");
+    localStorage.setItem("makeaccuracy_cookie_consent", "dismissed");
     setIsOpen(false);
   };
 

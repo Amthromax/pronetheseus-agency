@@ -19,13 +19,13 @@ import {
 export const Route = createFileRoute("/automations")({
   head: () => ({
     meta: [
-      { title: "Automations — Pronetheseus" },
+      { title: "Automations — Make Accuracy" },
       {
         name: "description",
         content:
           "Production-grade AI agents and n8n automations for sales, support, ops, and marketing — shipped in weeks with evals, guardrails, and monitoring built in.",
       },
-      { property: "og:title", content: "Automations — Pronetheseus" },
+      { property: "og:title", content: "Automations — Make Accuracy" },
       {
         property: "og:description",
         content:

@@ -17,9 +17,9 @@ import heroPeople from "@/assets/hero-people-4.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pronetheseus — Agency Infrastructure & AI Automation Systems" },
+      { title: "Make Accuracy — Agency Infrastructure & AI Automation Systems" },
       { name: "description", content: "Automate lead capture, customer conversations, appointment booking, follow-ups, and repetitive business operations." },
-      { property: "og:title", content: "Pronetheseus — AI Revenue Engine & Business Automation Systems" },
+      { property: "og:title", content: "Make Accuracy — AI Revenue Engine & Business Automation Systems" },
       { property: "og:description", content: "Autonomous AI Infrastructure. Built for High-Growth Agencies." },
       { property: "og:url", content: "/" },
     ],
