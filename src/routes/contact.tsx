@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { SectionHeading } from "@/components/sections/SectionHeading";
+import { trackEvent } from "@/lib/analytics";
 import { Building2, CalendarDays, Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
 
@@ -32,8 +33,9 @@ type FormData = z.infer<typeof schema>;
 
 function Page() {
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({ resolver: zodResolver(schema) });
-  const onSubmit = async (_: FormData) => {
+  const onSubmit = async (data: FormData) => {
     await new Promise((r) => setTimeout(r, 700));
+    trackEvent("contact_form_submit", "ContactForm", data.email);
     toast.success("Message received — we'll be in touch within 24 hours.");
     reset();
   };

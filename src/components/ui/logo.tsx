@@ -25,7 +25,7 @@ export function Logo({ className = "h-6 w-auto", ...props }: LogoProps) {
   );
 }
 
-export function LogoImage({ className = "h-6 w-auto", alt = "Logo" }: { className?: string; alt?: string }) {
+export function LogoImage({ className = "h-6 w-auto", alt = "Make Accuracy Logo" }: { className?: string; alt?: string }) {
   return (
     <img
       src="/logo-mark-dark.png"

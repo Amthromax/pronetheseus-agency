@@ -62,7 +62,7 @@ function CaseStudyPage() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-sandel-border">
         <div className="absolute inset-0">
-          <img src={study.hero} alt="" className="h-full w-full object-cover opacity-25" />
+          <img src={study.hero} alt={`${study.company} case study hero graphic`} className="h-full w-full object-cover opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#F5ECE0]/70 via-[#F5ECE0]/90 to-[#F5ECE0]" />
         </div>
         <div className="container-pad relative mx-auto max-w-[1400px] pt-32 sm:pt-40 pb-16">
@@ -261,7 +261,7 @@ function CaseStudyPage() {
                 className="group overflow-hidden rounded-2xl border border-sandel-border bg-sandel-card transition hover:border-neutral-400 hover:shadow-lg"
               >
                 <div className="aspect-[16/7] overflow-hidden bg-neutral-200">
-                  <img src={o.hero} alt="" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  <img src={o.hero} alt={`${o.company} case study visual`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-6">
                   <div className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-500">{o.industry}</div>

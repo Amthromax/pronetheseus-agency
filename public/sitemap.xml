@@ -1,62 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pronetheseus.com/</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://makeaccuracy.com/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://pronetheseus.com/services</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://makeaccuracy.com/services</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pronetheseus.com/solutions</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://makeaccuracy.com/solutions</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pronetheseus.com/industries</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://makeaccuracy.com/industries</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pronetheseus.com/pricing</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://makeaccuracy.com/pricing</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pronetheseus.com/case-studies</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://makeaccuracy.com/how-it-works</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pronetheseus.com/about</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://makeaccuracy.com/automations</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://makeaccuracy.com/case-studies</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://makeaccuracy.com/book</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://makeaccuracy.com/contact</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://makeaccuracy.com/about</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://pronetheseus.com/contact</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://makeaccuracy.com/careers</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://pronetheseus.com/privacy</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://makeaccuracy.com/resources</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://makeaccuracy.com/privacy</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://pronetheseus.com/terms</loc>
-    <lastmod>2026-08-25</lastmod>
+    <loc>https://makeaccuracy.com/terms</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

@@ -2,14 +2,16 @@ import { RollingText } from "@/components/ui/rolling-text";
 import { motion } from "motion/react";
 import { ScrollReveal } from "@/components/fx/ScrollReveal";
 import { SplitText } from "@/components/fx/SplitText";
+import { Bot, Zap, Cpu, TrendingUp, ArrowUpRight } from "lucide-react";
+import type { ComponentType } from "react";
 
 interface InsightPost {
   id: string;
   title: string;
   date: string;
   readTime?: string;
-  gradientBg: string;
-  graphicSvg: React.ReactNode;
+  category: string;
+  icon: ComponentType<{ className?: string }>;
 }
 
 const SIDE_POSTS: InsightPost[] = [
@@ -17,50 +19,31 @@ const SIDE_POSTS: InsightPost[] = [
     id: "runtime-agents",
     title: "Can Today's AI Agents Survive Their Own Runtime?",
     date: "MAY 15, 2026",
-    gradientBg: "bg-gradient-to-tr from-neutral-800 via-neutral-700 to-neutral-900",
-    graphicSvg: (
-      <div className="relative size-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-800 via-slate-800 to-neutral-950">
-        <div className="size-10 sm:size-14 rounded-full bg-white/20 backdrop-blur-md shadow-inner border border-white/30 animate-pulse" />
-        <div className="absolute size-7 sm:size-10 rounded-full bg-gradient-to-tr from-neutral-500 to-neutral-300 shadow-md" />
-      </div>
-    ),
+    category: "Agent Architecture",
+    icon: Bot,
   },
   {
     id: "ai-work-productivity",
     title: "What's new in AI for Work: features that drive enterprise productivity",
-    date: "FEBRUARY 20, 2026",
+    date: "FEB 20, 2026",
     readTime: "8 MIN",
-    gradientBg: "bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-700",
-    graphicSvg: (
-      <div className="relative size-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-tr from-teal-600 via-cyan-600 to-blue-800">
-        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,white_1px,transparent_1px)] bg-[size:10px_10px]" />
-        <div className="w-12 h-6 sm:w-16 sm:h-8 rounded-full border-2 border-white/60 rotate-45 transform bg-cyan-400/30 backdrop-blur-xs" />
-      </div>
-    ),
+    category: "Enterprise AI",
+    icon: Zap,
   },
   {
     id: "parallel-agent-processing",
     title: "Parallel Agent Processing",
-    date: "JANUARY 16, 2026",
+    date: "JAN 16, 2026",
     readTime: "6 MIN",
-    gradientBg: "bg-gradient-to-br from-sky-300 via-blue-400 to-indigo-500",
-    graphicSvg: (
-      <div className="relative size-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-sky-200 via-sky-400 to-blue-500">
-        <div className="w-16 h-8 sm:w-20 sm:h-10 rounded-3xl bg-white/50 backdrop-blur-md rotate-[-25deg] shadow-lg border border-white/70" />
-      </div>
-    ),
+    category: "Orchestration",
+    icon: Cpu,
   },
   {
     id: "productivity-paradox",
     title: "The AI productivity paradox: why employees are moving faster than enterprises",
-    date: "JANUARY 12, 2026",
-    gradientBg: "bg-gradient-to-tr from-neutral-700 via-neutral-800 to-neutral-900",
-    graphicSvg: (
-      <div className="relative size-full flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-tr from-neutral-800 via-slate-800 to-neutral-900">
-        <div className="size-8 sm:size-12 rounded-full border-4 border-white/60 bg-white/10 backdrop-blur-md shadow-md" />
-        <div className="absolute size-5 rounded-full bg-white/70" />
-      </div>
-    ),
+    date: "JAN 12, 2026",
+    category: "Benchmarks",
+    icon: TrendingUp,
   },
 ];
 
@@ -79,7 +62,7 @@ export function AIInsights() {
           </button>
         </div>
 
-        {/* Insights Grid Container: Apple Design System (squircle card, frosted overlay) */}
+        {/* Insights Grid Container: Apple Design System */}
         <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-12 lg:gap-8 lg:pb-0 items-stretch font-sans">
           {/* Main Featured Post - Apple Squircle */}
           <div className="shrink-0 w-[290px] xs:w-[330px] lg:w-auto lg:col-span-7 snap-center flex flex-col">
@@ -89,10 +72,14 @@ export function AIInsights() {
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 className="group relative overflow-hidden rounded-[28px] sm:rounded-[34px] border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300 min-h-[340px] sm:min-h-[440px] flex flex-col justify-end p-5 sm:p-7 cursor-pointer h-full"
               >
-                {/* 3D Gradient Background Art */}
-                <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-slate-900 to-black overflow-hidden">
-                  <div className="absolute -top-20 -left-20 size-[400px] sm:size-[550px] rounded-full bg-gradient-to-tr from-neutral-700 via-slate-600 to-neutral-800 opacity-40 blur-3xl animate-orb" />
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_0%,rgba(0,0,0,0.4)_100%)] pointer-events-none" />
+                {/* Red Hills Landscape Background Art */}
+                <div className="absolute inset-0 bg-neutral-900 overflow-hidden">
+                  <img
+                    src="/red-hills-landscape.jpg"
+                    alt="Configured, not coded - Surreal landscape"
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 pointer-events-none" />
                 </div>
 
                 {/* Apple Frosted Glass Card Box at Bottom */}
@@ -109,33 +96,46 @@ export function AIInsights() {
             </ScrollReveal>
           </div>
 
-          {/* Right Side Compact Posts List - Apple Glass Item Cards */}
+          {/* Right Side Compact Posts List */}
           <div className="lg:col-span-5 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-3 pb-2 lg:flex-col lg:justify-between lg:gap-3.5 lg:pb-0 shrink-0 lg:shrink w-full">
-            {SIDE_POSTS.map((post, idx) => (
-              <div key={post.id} className="shrink-0 w-[240px] xs:w-[270px] lg:w-auto snap-center">
-                <ScrollReveal variant="card" staggerIndex={idx} staggerStep={0.08}>
-                  <motion.div
-                    whileHover={{ scale: 1.015, x: 4 }}
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    className="group flex items-center gap-3.5 p-3 sm:p-3.5 rounded-[22px] border border-white/80 bg-sandel-card shadow-[0_6px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] hover:border-neutral-300/80 transition-all duration-300 cursor-pointer h-full font-sans"
-                  >
-                    <div className="size-16 sm:size-20 rounded-[18px] shrink-0 overflow-hidden shadow-2xs transition-transform duration-300 group-hover:scale-105 border border-black/5">
-                      {post.graphicSvg}
-                    </div>
+            {SIDE_POSTS.map((post, idx) => {
+              const Icon = post.icon;
+              return (
+                <div key={post.id} className="shrink-0 w-[260px] xs:w-[300px] lg:w-auto snap-center">
+                  <ScrollReveal variant="card" staggerIndex={idx} staggerStep={0.08}>
+                    <motion.div
+                      whileHover={{ scale: 1.01, x: 4 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      className="group flex items-center justify-between gap-3.5 p-3.5 sm:p-4 rounded-[22px] border border-white/90 bg-white/80 backdrop-blur-md shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] hover:bg-white transition-all duration-300 cursor-pointer h-full font-sans"
+                    >
+                      <div className="flex items-start gap-3 min-w-0 flex-1">
+                        <div className="size-9 rounded-full bg-neutral-900 text-white flex items-center justify-center shrink-0 shadow-xs group-hover:bg-[#ff7a00] transition-colors duration-300">
+                          <Icon className="size-4" />
+                        </div>
 
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-sans text-xs sm:text-sm font-bold tracking-tight text-neutral-900 leading-snug group-hover:text-neutral-600 transition-colors line-clamp-2">
-                        {post.title}
-                      </h4>
-                      <div className="mt-1 font-mono text-[10px] font-medium text-neutral-500 uppercase tracking-wider flex items-center gap-1">
-                        <span>{post.date}</span>
-                        {post.readTime && <span>• {post.readTime}</span>}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-600 bg-neutral-200/80 px-2 py-0.5 rounded-full">
+                              {post.category}
+                            </span>
+                            <span className="text-[10px] font-mono font-medium text-neutral-400">
+                              {post.date}
+                            </span>
+                          </div>
+                          <h4 className="font-sans text-xs sm:text-sm font-bold tracking-tight text-neutral-900 leading-snug group-hover:text-black transition-colors line-clamp-2">
+                            {post.title}
+                          </h4>
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                </ScrollReveal>
-              </div>
-            ))}
+
+                      <div className="shrink-0 size-8 rounded-full border border-neutral-200/80 bg-neutral-50 flex items-center justify-center text-neutral-400 group-hover:border-neutral-900 group-hover:bg-neutral-900 group-hover:text-white transition-all duration-300">
+                        <ArrowUpRight className="size-4" />
+                      </div>
+                    </motion.div>
+                  </ScrollReveal>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

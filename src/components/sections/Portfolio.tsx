@@ -10,7 +10,8 @@ interface ProjectItem {
   logo: string;
   isLogoCustom?: boolean;
   logoElement?: React.ReactNode;
-  image: string;
+  image?: string;
+  video?: string;
   slug: string;
 }
 
@@ -21,6 +22,7 @@ const PROJECTS: ProjectItem[] = [
     category: "Ad Production & UI Design",
     year: "2025",
     logo: "posh",
+    video: "/577f5bdc263b08f258b0617310296331_720w.mp4",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1000&auto=format&fit=crop&q=80",
     slug: "posh-ai",
   },
@@ -30,6 +32,7 @@ const PROJECTS: ProjectItem[] = [
     category: "Ad Production & Creative",
     year: "2025",
     logo: "taxcloud",
+    video: "/cd3c68457171b265af2936e7c7fd4a3a_720w.mp4",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1000&auto=format&fit=crop&q=80",
     slug: "taxcloud",
   },
@@ -39,20 +42,12 @@ const PROJECTS: ProjectItem[] = [
     category: "Podcast Production & Animation",
     year: "2025",
     logo: "",
+    video: "/d2eb218790e349d9b689b598f10711d1_720w.mp4",
     isLogoCustom: true,
     logoElement: (
-      <div className="relative w-full h-full flex items-center justify-center bg-[#eae9e3] p-8">
-        <div className="relative max-w-[85%] max-h-[85%] flex items-center justify-center">
-          <img
-            src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80"
-            alt="MacBook Showcase"
-            className="rounded-lg shadow-xl object-cover"
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="size-8 sm:size-10 rounded-full bg-white/90 shadow-md border border-neutral-200 flex items-center justify-center">
-              <span className="size-3.5 rounded-full bg-[#e11d48] border-2 border-white" />
-            </div>
-          </div>
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="size-8 sm:size-10 rounded-full bg-white/90 shadow-md border border-neutral-200 flex items-center justify-center">
+          <span className="size-3.5 rounded-full bg-[#e11d48] border-2 border-white" />
         </div>
       </div>
     ),
@@ -65,10 +60,11 @@ const PROJECTS: ProjectItem[] = [
     category: "Video Production",
     year: "2026",
     logo: "",
+    video: "/4e40a7a089f37d5cc1c45dd3714e7819_t4.mp4",
     isLogoCustom: true,
     logoElement: (
-      <div className="w-full h-full flex items-center justify-center bg-[#e6e5df] p-8">
-        <div className="text-center font-display tracking-tight font-extrabold text-2xl sm:text-4xl text-neutral-900 flex items-center justify-center gap-0.5">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="text-center font-display tracking-tight font-extrabold text-2xl sm:text-4xl lg:text-5xl text-neutral-900 flex items-center justify-center gap-0.5 drop-shadow-sm">
           <span>time</span>
           <span className="text-[#059669]">4</span>
           <span>learning</span>
@@ -131,7 +127,19 @@ export function Portfolio() {
             >
               {/* Full-Bleed Media Container Box */}
               <div className="relative bg-neutral-900 overflow-hidden rounded-xl aspect-[16/10] min-h-[300px] sm:min-h-[390px] w-full flex items-center justify-center">
-                {project.isLogoCustom ? (
+                {project.video ? (
+                  <>
+                    <video
+                      src={project.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition duration-500" />
+                  </>
+                ) : project.isLogoCustom ? (
                   project.logoElement
                 ) : (
                   <>
