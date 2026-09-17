@@ -73,7 +73,7 @@ function Page() {
           {/* Right Column: Direct Channels + Working Hours */}
           <div className="space-y-4 font-sans">
             <InfoCard Icon={CalendarDays} title="Book a strategy call" body="30-minute call with a principal engineer. Free, actionable, no sales pressure." cta="Open calendar" ctaTo="/book" />
-            <InfoCard Icon={Mail} title="Email us directly" body="hello@makeaccuracy.com — we reply within one business day." />
+            <InfoCard Icon={Mail} title="Email us directly" body="hello@makeaccuracy.agency — we reply within one business day." />
             <InfoCard Icon={Phone} title="Call or WhatsApp" body="+91 86829 19009 · Mon–Fri, available across IST & GMT timezones." />
             <InfoCard Icon={Clock} title="Working hours" body="Monday – Friday · 9:00 AM to 7:00 PM IST. Async support over email on weekends." />
           </div>

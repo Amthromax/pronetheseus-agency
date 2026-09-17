@@ -341,8 +341,8 @@ function PrivacyPage() {
             </ul>
             <p>
               A current, named sub-processor list is maintained and provided on request to{" "}
-              <a href="mailto:privacy@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
-                privacy@makeaccuracy.com
+              <a href="mailto:privacy@makeaccuracy.agency" className="text-[#ff7a00] font-semibold underline">
+                privacy@makeaccuracy.agency
               </a>
               . Clients under an active DPA are notified before a new sub-processor with access to their
               data is added, and may object on reasonable security grounds.
@@ -393,8 +393,8 @@ function PrivacyPage() {
             <p className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 text-sm text-neutral-600">
               <strong className="text-neutral-900">Responsible disclosure.</strong> If you believe you
               have found a vulnerability in our website or in infrastructure we operate, email{" "}
-              <a href="mailto:security@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
-                security@makeaccuracy.com
+              <a href="mailto:security@makeaccuracy.agency" className="text-[#ff7a00] font-semibold underline">
+                security@makeaccuracy.agency
               </a>
               . Please include reproduction steps and avoid accessing or modifying data that is not
               yours. We acknowledge reports within two business days and will not pursue action against
@@ -533,8 +533,8 @@ function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-2 text-neutral-600">
               <li>
                 <strong>How to ask.</strong> Email{" "}
-                <a href="mailto:privacy@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
-                  privacy@makeaccuracy.com
+                <a href="mailto:privacy@makeaccuracy.agency" className="text-[#ff7a00] font-semibold underline">
+                  privacy@makeaccuracy.agency
                 </a>{" "}
                 from the address on file, or use the details in section 15.
               </li>
@@ -620,16 +620,16 @@ function PrivacyPage() {
             <p>
               For privacy questions, data requests, DPA copies, or the current sub-processor list,
               contact{" "}
-              <a href="mailto:privacy@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
-                privacy@makeaccuracy.com
+              <a href="mailto:privacy@makeaccuracy.agency" className="text-[#ff7a00] font-semibold underline">
+                privacy@makeaccuracy.agency
               </a>
               . For vulnerability reports and security matters, contact{" "}
-              <a href="mailto:security@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
-                security@makeaccuracy.com
+              <a href="mailto:security@makeaccuracy.agency" className="text-[#ff7a00] font-semibold underline">
+                security@makeaccuracy.agency
               </a>
               . For anything else, our general address is{" "}
-              <a href="mailto:hello@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
-                hello@makeaccuracy.com
+              <a href="mailto:hello@makeaccuracy.agency" className="text-[#ff7a00] font-semibold underline">
+                hello@makeaccuracy.agency
               </a>
               .
             </p>

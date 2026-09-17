@@ -123,12 +123,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "AI Employees that work 24/7. We design and ship automation that pays for itself.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://makeaccuracy.com/logo-mark.png" },
+      { property: "og:image", content: "https://makeaccuracy.agency/logo-mark.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@makeaccuracy" },
       { name: "twitter:title", content: "Make Accuracy — AI Automation & AI Agents" },
       { name: "twitter:description", content: "AI Employees that work 24/7. Custom automation workflows that scale revenue." },
-      { name: "twitter:image", content: "https://makeaccuracy.com/logo-mark.png" },
+      { name: "twitter:image", content: "https://makeaccuracy.agency/logo-mark.png" },
     ],
     links: [
       {
@@ -137,7 +137,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/logo-mark.png", type: "image/png" },
       { rel: "icon", href: "/logo.svg", type: "image/svg+xml" },
-      { rel: "canonical", href: "https://makeaccuracy.com" },
+      { rel: "canonical", href: "https://makeaccuracy.agency" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -152,8 +152,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Make Accuracy",
-          url: "https://makeaccuracy.com",
-          logo: "https://makeaccuracy.com/logo-mark.png",
+          url: "https://makeaccuracy.agency",
+          logo: "https://makeaccuracy.agency/logo-mark.png",
           description:
             "AI automation agency building AI agents, n8n workflows, CRM automation, voice AI, and custom software.",
           sameAs: [

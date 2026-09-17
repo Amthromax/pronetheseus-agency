@@ -125,7 +125,7 @@ export const createBookingEvent = createServerFn({ method: "POST" })
       const body = {
         summary: `Strategy call · ${data.name}`,
         description: [
-          `Booked via makeaccuracy.com`,
+          `Booked via makeaccuracy.agency`,
           `Ref: ${ref}`,
           `Guest: ${data.name} <${data.email}>`,
           data.notes ? `Notes: ${data.notes}` : null,

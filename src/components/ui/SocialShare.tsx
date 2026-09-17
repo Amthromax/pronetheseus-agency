@@ -15,7 +15,7 @@ export function SocialShare({
   className = "",
 }: SocialShareProps) {
   const [copied, setCopied] = useState(false);
-  const shareUrl = typeof window !== "undefined" ? url || window.location.href : "https://makeaccuracy.com";
+  const shareUrl = typeof window !== "undefined" ? url || window.location.href : "https://makeaccuracy.agency";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(shareUrl);

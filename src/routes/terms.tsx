@@ -331,8 +331,8 @@ function TermsPage() {
               <strong className="text-neutral-900">We will never ask</strong> for your personal account
               password, for a multi-factor code outside a live session you scheduled, or for payment card
               or banking credentials. Treat any such request as fraudulent and report it to{" "}
-              <a href="mailto:security@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
-                security@makeaccuracy.com
+              <a href="mailto:security@makeaccuracy.agency" className="text-[#ff7a00] font-semibold underline">
+                security@makeaccuracy.agency
               </a>
               .
             </p>
@@ -634,12 +634,12 @@ function TermsPage() {
             </p>
             <p className="flex flex-wrap items-center gap-x-1.5">
               <Mail className="size-4 text-[#ff7a00]" /> Contract and billing questions:{" "}
-              <a href="mailto:hello@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
-                hello@makeaccuracy.com
+              <a href="mailto:hello@makeaccuracy.agency" className="text-[#ff7a00] font-semibold underline">
+                hello@makeaccuracy.agency
               </a>
               . Security matters:{" "}
-              <a href="mailto:security@makeaccuracy.com" className="text-[#ff7a00] font-semibold underline">
-                security@makeaccuracy.com
+              <a href="mailto:security@makeaccuracy.agency" className="text-[#ff7a00] font-semibold underline">
+                security@makeaccuracy.agency
               </a>
               .
             </p>

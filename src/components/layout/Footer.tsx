@@ -58,10 +58,10 @@ export function Footer() {
 
             <div className="pt-2">
               <a
-                href="mailto:hello@makeaccuracy.com"
+                href="mailto:hello@makeaccuracy.agency"
                 className="inline-block text-xl sm:text-2xl md:text-3xl font-medium text-neutral-900 underline underline-offset-8 decoration-neutral-900/80 hover:opacity-75 transition-opacity"
               >
-                <RollingText>hello@makeaccuracy.com</RollingText>
+                <RollingText>hello@makeaccuracy.agency</RollingText>
               </a>
             </div>
           </div>
