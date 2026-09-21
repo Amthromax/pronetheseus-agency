@@ -1,5 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 714 714" fill="none">
-  <g fill="currentColor" fill-rule="evenodd" transform="translate(0, 168)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 714 714">
+  <style>
+    .icon-path { fill: #0a0a0a; }
+    @media (prefers-color-scheme: dark) {
+      .icon-path { fill: #ffffff; }
+    }
+  </style>
+  <g class="icon-path" fill-rule="evenodd" transform="translate(0, 168)">
     <path d="M 79 276 L 79 278 L 83 284 L 91 294 L 97 303 L 106 318 L 112 331 L 119 342 L 120 342 L 122 344 L 126 346 L 174 346 L 165 327 L 157 315 L 153 310 L 145 302 L 136 295 L 128 290 L 117 285 L 97 279 Z" />
     <path d="M 235 225 L 245 235 L 263 259 L 281 291 L 284 299 L 302 334 L 310 342 L 319 346 L 377 346 L 349 290 L 339 275 L 321 256 L 302 243 L 287 236 L 263 229 L 241 225 Z" />
     <path d="M 32 203 L 33 208 L 47 226 L 62 241 L 72 248 L 89 256 L 116 263 L 132 269 L 158 285 L 177 305 L 185 317 L 191 330 L 201 342 L 210 346 L 280 346 L 247 280 L 230 252 L 224 244 L 207 227 L 191 216 L 168 206 L 142 201 L 34 201 Z" />
