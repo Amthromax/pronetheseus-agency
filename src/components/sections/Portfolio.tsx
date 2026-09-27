@@ -1,26 +1,90 @@
 import { RollingText } from "@/components/ui/rolling-text";
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
-import { portfolioItems } from "@/data/portfolio";
-import { ArrowRight } from "lucide-react";
-import { useState } from "react";
+
+interface ProjectItem {
+  id: string;
+  title: string;
+  category: string;
+  year: string;
+  logo: string;
+  isLogoCustom?: boolean;
+  logoElement?: React.ReactNode;
+  image?: string;
+  video?: string;
+  slug: string;
+}
+
+const PROJECTS: ProjectItem[] = [
+  {
+    id: "1",
+    title: "POSH AI",
+    category: "Ad Production & UI Design",
+    year: "2025",
+    logo: "posh",
+    video: "/577f5bdc263b08f258b0617310296331_720w.mp4",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1000&auto=format&fit=crop&q=80",
+    slug: "apex-web-platform",
+  },
+  {
+    id: "2",
+    title: "TaxCloud",
+    category: "Ad Production & Creative",
+    year: "2025",
+    logo: "taxcloud",
+    video: "/cd3c68457171b265af2936e7c7fd4a3a_720w.mp4",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1000&auto=format&fit=crop&q=80",
+    slug: "plasmaone-digital-experience",
+  },
+  {
+    id: "3",
+    title: "Tosoh Bioscience",
+    category: "Podcast Production & Animation",
+    year: "2025",
+    logo: "",
+    video: "/d2eb218790e349d9b689b598f10711d1_720w.mp4",
+    isLogoCustom: true,
+    logoElement: (
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="size-8 sm:size-10 rounded-full bg-white/90 shadow-md border border-neutral-200 flex items-center justify-center">
+          <span className="size-3.5 rounded-full bg-[#e11d48] border-2 border-white" />
+        </div>
+      </div>
+    ),
+    image: "",
+    slug: "atlas-ops-dashboard",
+  },
+  {
+    id: "4",
+    title: "Time4Learning",
+    category: "Video Production",
+    year: "2026",
+    logo: "",
+    video: "/4e40a7a089f37d5cc1c45dd3714e7819_t4.mp4",
+    isLogoCustom: true,
+    logoElement: (
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="text-center font-display tracking-tight font-extrabold text-2xl sm:text-4xl lg:text-5xl text-neutral-900 flex items-center justify-center gap-0.5 drop-shadow-sm">
+          <span>time</span>
+          <span className="text-[#059669]">4</span>
+          <span>learning</span>
+        </div>
+      </div>
+    ),
+    image: "",
+    slug: "ava-concierge-agent",
+  },
+];
 
 export function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState<string>("All");
-
-  const categories = ["All", "Websites", "AI Agents", "Proptech & Real Estate", "Integrations"];
-
-  const filteredItems =
-    activeCategory === "All"
-      ? portfolioItems
-      : portfolioItems.filter((item) => item.category === activeCategory);
-
   return (
-    <section
-      id="our-work"
-      className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden"
-    >
+    <section id="our-work" className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden">
       <div className="mx-auto max-w-[1700px] px-4 sm:px-8 lg:px-16 xl:px-20">
+        
+        {/* Top Section Header Divider Bar */}
+        <div className="flex items-center justify-between border-b border-black/10 pb-4 mb-6">
+        </div>
+
         {/* Main Section Title & Subtitle + View All Button */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div className="max-w-4xl">
@@ -31,125 +95,91 @@ export function Portfolio() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="text-3xl xs:text-4xl sm:text-5xl lg:text-[50px] font-semibold text-neutral-900 tracking-tight leading-[1.1] font-sans"
             >
-              Selected projects across AI agents, web apps, and automation engines.
+              Selected projects across ad production, podcast, social, and motion.
             </motion.h2>
 
             <p className="mt-4 text-xs sm:text-sm text-neutral-500 font-normal leading-relaxed max-w-xl font-sans">
-              Production systems built for scale — featuring high-converting platforms, voice
-              agents, and custom workflow integrations.
+              A curated selection of projects that reflect our commitment to simplicity and purposeful design.
             </p>
           </div>
 
-          <div className="shrink-0 flex items-center gap-3">
+          <div className="shrink-0">
             <Link
               to="/case-studies"
               className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-[#f4f3ee] px-4 py-2 text-xs font-semibold text-neutral-800 hover:bg-neutral-200/70 transition shadow-2xs cursor-pointer font-sans"
             >
-              <span>
-                <RollingText>View all case studies</RollingText>
-              </span>
-              <ArrowRight className="size-3.5" />
+              <span><RollingText>View all projects</RollingText></span>
+              <span className="text-sm font-normal">+</span>
             </Link>
           </div>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="flex flex-wrap gap-2 mb-8">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => setActiveCategory(cat)}
-              className={`rounded-full px-4 py-1.5 text-xs font-semibold transition cursor-pointer ${
-                activeCategory === cat
-                  ? "bg-neutral-900 text-white"
-                  : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* All 11 Portfolio Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {filteredItems.map((project, idx) => (
+        {/* 2x2 Selected Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          {PROJECTS.map((project, idx) => (
             <motion.div
-              key={project.slug}
+              key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="group rounded-2xl bg-[#f1f0ec] border border-black/[0.07] p-2 flex flex-col justify-between shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:border-black/20 hover:shadow-lg transition duration-300"
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="group rounded-2xl bg-[#f1f0ec] border border-black/[0.07] p-1.5 flex flex-col justify-between shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:border-black/15 transition duration-300 cursor-pointer"
             >
-              {/* Media Container */}
-              <div className="relative overflow-hidden rounded-xl aspect-[16/10] w-full bg-neutral-900 flex items-center justify-center">
-                {project.showcase ? (
-                  <img
-                    src={project.showcase}
-                    alt={`${project.title} preview`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500 ease-out"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div
-                    className={`w-full h-full bg-gradient-to-br ${project.gradient} p-6 flex flex-col justify-end text-white`}
-                  >
-                    <span className="text-xs uppercase tracking-widest opacity-80">
-                      {project.tag}
-                    </span>
-                    <span className="font-display text-2xl font-bold mt-1">{project.title}</span>
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition duration-300" />
-              </div>
-
-              {/* Meta details */}
-              <div className="p-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
-                    {project.category}
-                  </span>
-                  <span className="text-xs text-neutral-500 font-mono">{project.year}</span>
+              <Link to="/portfolio/$slug" params={{ slug: project.slug }} className="block w-full">
+                {/* Full-Bleed Media Container Box */}
+                <div className="relative bg-neutral-900 overflow-hidden rounded-xl aspect-[16/10] min-h-[300px] sm:min-h-[390px] w-full flex items-center justify-center">
+                  {project.video ? (
+                    <>
+                      <video
+                        src={project.video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
+                      />
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition duration-500" />
+                    </>
+                  ) : project.isLogoCustom ? (
+                    project.logoElement
+                  ) : (
+                    <>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out"
+                      />
+                      <div className="absolute inset-0 bg-black/15 group-hover:bg-black/5 transition duration-500" />
+                      
+                      {/* Centered Overlay Logo */}
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-display opacity-95 group-hover:scale-110 transition duration-500 drop-shadow-md">
+                          {project.logo}
+                        </span>
+                      </div>
+                    </>
+                  )}
                 </div>
 
-                <h3 className="mt-2 text-base font-bold text-neutral-900 tracking-tight leading-snug group-hover:text-blue-600 transition-colors">
-                  {project.title}
-                </h3>
-
-                <p className="mt-1 text-xs text-neutral-600 line-clamp-2 leading-relaxed font-sans">
-                  {project.summary}
-                </p>
-
-                {/* Key Outcome Badge */}
-                {project.outcomes[0] && (
-                  <div className="mt-3 pt-2 border-t border-black/5 flex items-center justify-between text-xs">
-                    <span className="text-neutral-500 font-mono text-[11px]">
-                      {project.outcomes[0].label}:
-                    </span>
-                    <span className="font-bold text-neutral-900 font-mono">
-                      {project.outcomes[0].value}
-                    </span>
+                {/* Bottom Full-Width Card Meta Details Info Row */}
+                <div className="px-2.5 sm:px-3 pt-2.5 pb-1.5 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-[13px] sm:text-sm font-bold text-neutral-900 tracking-tight leading-tight">
+                      {project.title}
+                    </h3>
+                    <p className="text-[11px] sm:text-xs text-neutral-500 font-normal mt-0.5">
+                      {project.category}
+                    </p>
                   </div>
-                )}
-              </div>
-
-              {/* Direct Link to Portfolio Page */}
-              <div className="p-2 pt-0">
-                <Link
-                  to="/portfolio/$slug"
-                  params={{ slug: project.slug }}
-                  className="w-full inline-flex items-center justify-between rounded-xl bg-white px-3.5 py-2 text-xs font-bold text-neutral-900 border border-neutral-200/80 hover:bg-neutral-900 hover:text-white transition duration-200"
-                >
-                  <span>
-                    <RollingText>View Case Breakdown</RollingText>
-                  </span>
-                  <ArrowRight className="size-3.5" />
-                </Link>
-              </div>
+                  <div className="text-[11px] sm:text-xs font-medium text-neutral-500 shrink-0">
+                    {project.year}
+                  </div>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
