@@ -38,6 +38,7 @@ export const Route = createFileRoute("/case-studies/$slug")({
         { title },
         { name: "description", content: description },
         { property: "og:title", content: title },
+        { property: "og:description", content: description },
         {
           property: "og:url",
           content: `https://makeaccuracy.agency/case-studies/${study.slug || params.slug}`,

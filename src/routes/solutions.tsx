@@ -12,6 +12,11 @@ export const Route = createFileRoute("/solutions")({
         name: "description",
         content: "End-to-end AI solutions for revenue, operations, and support.",
       },
+      { property: "og:title", content: "Solutions — Make Accuracy" },
+      {
+        property: "og:description",
+        content: "End-to-end AI solutions for revenue, operations, and support.",
+      },
       { property: "og:url", content: "https://makeaccuracy.agency/solutions" },
     ],
     links: [{ rel: "canonical", href: "https://makeaccuracy.agency/solutions" }],
