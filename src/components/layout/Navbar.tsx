@@ -7,10 +7,14 @@ import { RollingText } from "@/components/ui/rolling-text";
 
 const allNavLinks = [
   { label: "Services", to: "/services" },
+  { label: "Solutions", to: "/solutions" },
+  { label: "Automations", to: "/automations" },
   { label: "Industries", to: "/industries" },
   { label: "Case Studies", to: "/case-studies" },
   { label: "Pricing", to: "/pricing" },
   { label: "About", to: "/about" },
+  { label: "Resources", to: "/resources" },
+  { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
 ];
 

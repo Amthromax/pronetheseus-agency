@@ -54,9 +54,19 @@ function ProjectPage() {
       <section className={`relative overflow-hidden bg-gradient-to-br ${item.gradient}`}>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         <div className="container-pad relative mx-auto max-w-[1200px] pt-32 pb-24 md:pt-40 md:pb-32">
-          <Link to="/" className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white">
-            <ArrowLeft className="size-4" /> All work
-          </Link>
+          <div className="flex items-center gap-3 flex-wrap">
+            <Link to="/" className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white">
+              <ArrowLeft className="size-4" /> All work
+            </Link>
+            <span className="text-white/40">·</span>
+            <Link to="/case-studies" className="text-sm text-white/80 hover:text-white">
+              Case Studies
+            </Link>
+            <span className="text-white/40">·</span>
+            <Link to="/services" className="text-sm text-white/80 hover:text-white">
+              Services
+            </Link>
+          </div>
           <div className="mt-8 text-xs uppercase tracking-widest text-white/80">{item.tag}</div>
           <h1 className="mt-3 font-display text-4xl text-white md:text-6xl">{item.title}</h1>
           <p className="mt-6 max-w-2xl text-lg text-white/85">{item.summary}</p>

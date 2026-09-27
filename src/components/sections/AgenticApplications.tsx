@@ -49,6 +49,22 @@ export function AgenticApplications() {
           <h2 className="font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-[42px] leading-[1.12]">
             <SplitText text="Proven AI Automation Systems Built for Business Growth." />
           </h2>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link to="/automations" className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-blue-800 font-sans">
+              <span><RollingText>Automations Engine</RollingText></span>
+              <ArrowRight className="size-3.5" />
+            </Link>
+            <span className="text-neutral-400">·</span>
+            <Link to="/services" className="inline-flex items-center gap-1 text-xs font-bold text-neutral-700 hover:text-neutral-900 font-sans">
+              <span><RollingText>View All Services</RollingText></span>
+              <ArrowRight className="size-3.5" />
+            </Link>
+            <span className="text-neutral-400">·</span>
+            <Link to="/solutions" className="inline-flex items-center gap-1 text-xs font-bold text-neutral-700 hover:text-neutral-900 font-sans">
+              <span><RollingText>Custom Solutions</RollingText></span>
+              <ArrowRight className="size-3.5" />
+            </Link>
+          </div>
         </div>
 
         {/* 3 Clean Showcase Application Category Cards */}

@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { motion } from "motion/react";
+import { caseStudies } from "@/data/case-studies";
 import { 
   TrendingUp, Clock, ShieldCheck, Zap, ArrowRight, Building2, 
   Stethoscope, Wrench, Landmark, ShoppingBag, Check, Layers
@@ -194,6 +195,74 @@ function CaseStudiesPage() {
               </motion.div>
             );
           })}
+        </div>
+      </section>
+
+      {/* Complete Case Study Directory Grid (All 10 Case Studies) */}
+      <section id="case-study-directory" className="container-pad mx-auto mt-16 max-w-[1400px]">
+        <div className="max-w-3xl mb-10">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-emerald-600">Client Implementation Directory</span>
+          <h2 className="mt-2 font-serif text-3xl font-normal tracking-tight text-neutral-900 sm:text-4xl">
+            All 10 Production Case Studies
+          </h2>
+          <p className="mt-2 text-sm sm:text-base text-neutral-600 font-sans">
+            In-depth technical breakdowns of ROI, system architecture, and operational metrics.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {caseStudies.map((study, idx) => (
+            <motion.div
+              key={study.slug}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: idx * 0.04 }}
+              className="group flex flex-col justify-between rounded-[24px] border border-neutral-200/80 bg-[#f4f3ee] p-6 shadow-2xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
+              <div>
+                <div className="aspect-[16/9] w-full overflow-hidden rounded-xl bg-neutral-200 mb-4">
+                  <img
+                    src={study.hero}
+                    alt={`${study.company} case study cover`}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+
+                <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">
+                  {study.industry}
+                </span>
+
+                <h3 className="mt-3 font-sans text-lg font-bold text-neutral-900 group-hover:text-blue-600 transition-colors">
+                  {study.company}
+                </h3>
+
+                <p className="mt-2 text-xs text-neutral-600 line-clamp-2 leading-relaxed font-sans">
+                  {study.after}
+                </p>
+
+                <div className="mt-4 pt-3 border-t border-neutral-300/60 grid grid-cols-2 gap-2 text-xs font-sans">
+                  {study.metrics.slice(0, 2).map((m) => (
+                    <div key={m.l}>
+                      <span className="font-bold text-neutral-900 block">{m.v}{m.s}</span>
+                      <span className="text-[10px] text-neutral-500 font-mono uppercase block">{m.l}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-neutral-300/40">
+                <Link
+                  to="/case-studies/$slug"
+                  params={{ slug: study.slug }}
+                  className="inline-flex w-full items-center justify-between rounded-xl bg-white px-4 py-2.5 text-xs font-bold text-neutral-900 border border-neutral-200 hover:bg-neutral-900 hover:text-white transition-all duration-200 shadow-2xs"
+                >
+                  <span><RollingText>Read Case Study</RollingText></span>
+                  <ArrowRight className="size-3.5" />
+                </Link>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 

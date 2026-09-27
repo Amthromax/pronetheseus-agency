@@ -89,16 +89,134 @@ export function Footer() {
 
         </div>
 
+        {/* Site Navigation Links Section */}
+        <div className="pt-10 pb-12 border-t border-neutral-300/80 grid grid-cols-2 md:grid-cols-4 gap-8 font-sans text-xs">
+          <div>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-neutral-500 block mb-3">
+              Systems &amp; Solutions
+            </span>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/services" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Services &amp; Revenue Engines</RollingText>
+                </Link>
+              </li>
+              <li>
+                <Link to="/solutions" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Custom Solutions</RollingText>
+                </Link>
+              </li>
+              <li>
+                <Link to="/automations" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Automations Engine</RollingText>
+                </Link>
+              </li>
+              <li>
+                <Link to="/how-it-works" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>How It Works</RollingText>
+                </Link>
+              </li>
+              <li>
+                <Link to="/industries" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Industries We Serve</RollingText>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-neutral-500 block mb-3">
+              Company &amp; Work
+            </span>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/about" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>About Make Accuracy</RollingText>
+                </Link>
+              </li>
+              <li>
+                <Link to="/case-studies" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Case Studies &amp; Results</RollingText>
+                </Link>
+              </li>
+              <li>
+                <Link to="/demo" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Interactive AI Agent Demo</RollingText>
+                </Link>
+              </li>
+              <li>
+                <Link to="/pricing" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Pricing &amp; Partner Tier</RollingText>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-neutral-500 block mb-3">
+              Insights &amp; Resources
+            </span>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/resources" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Playbooks &amp; Guides</RollingText>
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Blog &amp; AI Insights</RollingText>
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Careers &amp; Team</RollingText>
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Contact Us</RollingText>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-neutral-500 block mb-3">
+              Legal &amp; Booking
+            </span>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/book" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Book Strategy Call</RollingText>
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Privacy Policy</RollingText>
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="hover:text-black transition-colors font-medium text-neutral-800">
+                  <RollingText>Terms &amp; Conditions</RollingText>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         {/* Bottom Credits & Navigation Links Bar */}
         <div className="pt-8 border-t border-neutral-300/80 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-neutral-600">
           
           {/* Left Navigation Links */}
           <div className="flex items-center gap-6">
             <Link to="/services" className="hover:text-black transition-colors font-medium">
-              <RollingText>Our Work</RollingText>
+              <RollingText>Services</RollingText>
+            </Link>
+            <Link to="/case-studies" className="hover:text-black transition-colors font-medium">
+              <RollingText>Case Studies</RollingText>
             </Link>
             <Link to="/pricing" className="hover:text-black transition-colors font-medium">
-              <RollingText>Partner +</RollingText>
+              <RollingText>Pricing</RollingText>
             </Link>
             <Link to="/contact" className="hover:text-black transition-colors font-medium">
               <RollingText>Contact</RollingText>
