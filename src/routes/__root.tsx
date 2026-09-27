@@ -158,13 +158,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Make Accuracy",
-          url: "https://makeaccuracy.agency",
-          logo: "https://makeaccuracy.agency/logo-mark.png",
-          description:
-            "AI automation agency building AI agents, n8n workflows, CRM automation, voice AI, and custom software.",
-          sameAs: ["https://www.linkedin.com/company/makeaccuracy", "https://x.com/makeaccuracy"],
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://makeaccuracy.agency/#organization",
+              name: "Make Accuracy",
+              url: "https://makeaccuracy.agency/",
+              logo: "https://makeaccuracy.agency/logo-mark.png",
+              description:
+                "AI automation agency building AI agents, n8n workflows, CRM automation, voice AI, and custom software.",
+              sameAs: [
+                "https://www.linkedin.com/company/makeaccuracy",
+                "https://x.com/makeaccuracy",
+              ],
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://makeaccuracy.agency/#website",
+              name: "Make Accuracy",
+              url: "https://makeaccuracy.agency/",
+              publisher: {
+                "@id": "https://makeaccuracy.agency/#organization",
+              },
+            },
+          ],
         }),
       },
     ],
