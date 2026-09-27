@@ -49,17 +49,6 @@ export function WhoWeHelp() {
             We engineer tailored AI automation systems for service-driven companies ready to capture
             leads faster and streamline operations.
           </p>
-          <div className="mt-3">
-            <Link
-              to="/industries"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-800 transition"
-            >
-              <span>
-                <RollingText>Explore all industry solutions</RollingText>
-              </span>
-              <ArrowRight className="size-3.5" />
-            </Link>
-          </div>
         </div>
 
         {/* 5 Industry Cards Grid: Apple Design System */}
