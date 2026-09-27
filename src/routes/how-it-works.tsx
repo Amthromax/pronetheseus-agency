@@ -17,9 +17,9 @@ export const Route = createFileRoute("/how-it-works")({
       { name: "description", content: "Discover how Make Accuracy rapidly builds, deploys, and scales custom AI revenue engines for ambitious businesses in 14 days." },
       { property: "og:title", content: "How It Works & Growth System — Make Accuracy" },
       { property: "og:description", content: "From initial process audit to fully autonomous AI infrastructure." },
-      { property: "og:url", content: "/how-it-works" },
+      { property: "og:url", content: "https://makeaccuracy.agency/how-it-works" },
     ],
-    links: [{ rel: "canonical", href: "/how-it-works" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/how-it-works" }],
   }),
   component: HowItWorksPage,
 });

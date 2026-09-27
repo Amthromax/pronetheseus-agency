@@ -9,17 +9,21 @@ export const Route = createFileRoute("/portfolio/$slug")({
     if (!item) throw notFound();
     return item;
   },
-  head: ({ loaderData }) => ({
+  head: ({ loaderData, params }) => ({
     meta: loaderData
       ? [
           { title: `${loaderData.title} — Make Accuracy Portfolio` },
           { name: "description", content: loaderData.summary },
           { property: "og:title", content: `${loaderData.title} — Make Accuracy` },
           { property: "og:description", content: loaderData.summary },
+          { property: "og:url", content: `https://makeaccuracy.agency/portfolio/${loaderData.slug || params.slug}` },
           { property: "og:type", content: "article" },
           { name: "twitter:card", content: "summary_large_image" },
         ]
       : [{ title: "Case study — Make Accuracy" }],
+    links: loaderData
+      ? [{ rel: "canonical", href: `https://makeaccuracy.agency/portfolio/${loaderData.slug || params.slug}` }]
+      : [],
   }),
   notFoundComponent: () => (
     <main className="container-pad mx-auto max-w-3xl py-32 text-center">

@@ -34,9 +34,9 @@ export const Route = createFileRoute("/terms")({
           "The commercial and security terms governing Make Accuracy engagements: scope, SLAs, client responsibilities, credential handling, IP ownership, liability, termination, and dispute resolution.",
       },
       { property: "og:title", content: "Terms & Conditions — Make Accuracy" },
-      { property: "og:url", content: "/terms" },
+      { property: "og:url", content: "https://makeaccuracy.agency/terms" },
     ],
-    links: [{ rel: "canonical", href: "/terms" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/terms" }],
   }),
   component: TermsPage,
 });

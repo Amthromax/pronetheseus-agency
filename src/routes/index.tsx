@@ -21,9 +21,10 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Automate lead capture, customer conversations, appointment booking, follow-ups, and repetitive business operations." },
       { property: "og:title", content: "Make Accuracy — AI Revenue Engine & Business Automation Systems" },
       { property: "og:description", content: "Autonomous AI Infrastructure. Built for High-Growth Agencies." },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://makeaccuracy.agency/" },
     ],
     links: [
+      { rel: "canonical", href: "https://makeaccuracy.agency/" },
       { rel: "preload", as: "image", href: heroPeople.url, fetchPriority: "high" },
     ],
   }),

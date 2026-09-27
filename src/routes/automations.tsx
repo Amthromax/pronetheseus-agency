@@ -31,9 +31,9 @@ export const Route = createFileRoute("/automations")({
         content:
           "AI agents and n8n workflows that free your team from repetitive work. See what we build, how we build it, and how fast.",
       },
-      { property: "og:url", content: "/automations" },
+      { property: "og:url", content: "https://makeaccuracy.agency/automations" },
     ],
-    links: [{ rel: "canonical", href: "/automations" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/automations" }],
   }),
   component: AutomationsPage,
 });

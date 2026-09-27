@@ -15,9 +15,9 @@ export const Route = createFileRoute("/case-studies")({
       { name: "description", content: "Real problem-to-result breakdowns demonstrating how service businesses eliminate operational drag." },
       { property: "og:title", content: "Case Studies & Results — Make Accuracy" },
       { property: "og:description", content: "ROI, hours saved, and lead response benchmarks for service businesses." },
-      { property: "og:url", content: "/case-studies" },
+      { property: "og:url", content: "https://makeaccuracy.agency/case-studies" },
     ],
-    links: [{ rel: "canonical", href: "/case-studies" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/case-studies" }],
   }),
   component: CaseStudiesPage,
 });

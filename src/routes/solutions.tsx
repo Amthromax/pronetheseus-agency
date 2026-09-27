@@ -9,9 +9,9 @@ export const Route = createFileRoute("/solutions")({
     meta: [
       { title: "Solutions — Make Accuracy" },
       { name: "description", content: "End-to-end AI solutions for revenue, operations, and support." },
-      { property: "og:url", content: "/solutions" },
+      { property: "og:url", content: "https://makeaccuracy.agency/solutions" },
     ],
-    links: [{ rel: "canonical", href: "/solutions" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/solutions" }],
   }),
   component: () => (
     <>

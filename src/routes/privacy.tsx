@@ -28,9 +28,9 @@ export const Route = createFileRoute("/privacy")({
           "How Make Accuracy collects, uses, retains, and safeguards client and operational data — including our security program, sub-processors, AI data handling, retention schedule, and your data rights.",
       },
       { property: "og:title", content: "Privacy Policy — Make Accuracy" },
-      { property: "og:url", content: "/privacy" },
+      { property: "og:url", content: "https://makeaccuracy.agency/privacy" },
     ],
-    links: [{ rel: "canonical", href: "/privacy" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/privacy" }],
   }),
   component: PrivacyPage,
 });

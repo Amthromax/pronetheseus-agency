@@ -23,9 +23,9 @@ export const Route = createFileRoute("/book")({
       { name: "description", content: "Get your free AI automation audit and schedule a 30-minute strategy session." },
       { property: "og:title", content: "Free Automation Audit — Make Accuracy" },
       { property: "og:description", content: "Free AI automation diagnosis and calendar booking." },
-      { property: "og:url", content: "/book" },
+      { property: "og:url", content: "https://makeaccuracy.agency/book" },
     ],
-    links: [{ rel: "canonical", href: "/book" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/book" }],
   }),
   component: BookPage,
 });

@@ -9,9 +9,9 @@ export const Route = createFileRoute("/blog")({
       { name: "description", content: "Field notes from the frontlines of AI automation." },
       { property: "og:title", content: "Blog — Make Accuracy" },
       { property: "og:description", content: "Playbooks, essays, and tactical guides." },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: "https://makeaccuracy.agency/blog" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/blog" }],
   }),
   component: () => (
     <div className="pt-40">

@@ -9,19 +9,22 @@ export const Route = createFileRoute("/resources/$slug")({
     if (!resource) throw notFound();
     return { resource };
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, params }) => {
     if (!loaderData) {
       return { meta: [{ title: "Resource not found — Make Accuracy" }, { name: "robots", content: "noindex" }] };
     }
     const { resource } = loaderData;
     const title = `${resource.title} — Make Accuracy`;
+    const slug = resource.slug || params.slug;
     return {
       meta: [
         { title },
         { name: "description", content: resource.description },
         { property: "og:title", content: title },
         { property: "og:description", content: resource.description },
+        { property: "og:url", content: `https://makeaccuracy.agency/resources/${slug}` },
       ],
+      links: [{ rel: "canonical", href: `https://makeaccuracy.agency/resources/${slug}` }],
     };
   },
   notFoundComponent: () => (

@@ -18,9 +18,9 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "The senior team behind Make Accuracy and the beliefs that guide our work." },
       { property: "og:title", content: "About — Make Accuracy" },
       { property: "og:description", content: "Meet the team building the AI backbone of ambitious companies." },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://makeaccuracy.agency/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/about" }],
   }),
   component: Page,
 });

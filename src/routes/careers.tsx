@@ -10,9 +10,9 @@ export const Route = createFileRoute("/careers")({
       { name: "description", content: "Join a senior team building the AI backbone of ambitious companies." },
       { property: "og:title", content: "Careers — Make Accuracy" },
       { property: "og:description", content: "We hire senior operators, engineers, and designers." },
-      { property: "og:url", content: "/careers" },
+      { property: "og:url", content: "https://makeaccuracy.agency/careers" },
     ],
-    links: [{ rel: "canonical", href: "/careers" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/careers" }],
   }),
   component: Page,
 });

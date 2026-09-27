@@ -11,9 +11,9 @@ export const Route = createFileRoute("/demo")({
       { name: "description", content: "Try a live preview of a Make Accuracy AI agent handling real customer questions, then book a consult to build your own." },
       { property: "og:title", content: "AI Agent Demo — Make Accuracy" },
       { property: "og:description", content: "Interactive preview of a production-style AI agent. Ask about pricing, booking, or handoff — see how it responds." },
-      { property: "og:url", content: "/demo" },
+      { property: "og:url", content: "https://makeaccuracy.agency/demo" },
     ],
-    links: [{ rel: "canonical", href: "/demo" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/demo" }],
   }),
   component: DemoPage,
 });

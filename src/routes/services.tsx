@@ -12,9 +12,9 @@ export const Route = createFileRoute("/services")({
       { name: "description", content: "AI Revenue Automation, AI Customer Service, AI Operations, and our 5-step automation methodology." },
       { property: "og:title", content: "Services & Automation Methodology — Make Accuracy" },
       { property: "og:description", content: "Everything we ship. From single-agent deployments to end-to-end business automation." },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: "https://makeaccuracy.agency/services" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/services" }],
   }),
   component: ServicesPage,
 });

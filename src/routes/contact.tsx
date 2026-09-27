@@ -16,9 +16,9 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Book a free 30-minute strategy call with the Make Accuracy team." },
       { property: "og:title", content: "Contact — Make Accuracy" },
       { property: "og:description", content: "30-minute strategy call. Concrete plan, no fluff." },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://makeaccuracy.agency/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://makeaccuracy.agency/contact" }],
   }),
   component: Page,
 });

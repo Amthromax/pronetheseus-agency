@@ -11,7 +11,7 @@ export const Route = createFileRoute("/case-studies/$slug")({
     if (!study) throw notFound();
     return { study };
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, params }) => {
     if (!loaderData) {
       return { meta: [{ title: "Case study not found" }, { name: "robots", content: "noindex" }] };
     }
@@ -23,10 +23,13 @@ export const Route = createFileRoute("/case-studies/$slug")({
         { title },
         { name: "description", content: description },
         { property: "og:title", content: title },
-        { property: "og:description", content: description },
+        { property: "og:url", content: `https://makeaccuracy.agency/case-studies/${study.slug || params.slug}` },
         { property: "og:image", content: study.hero },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image", content: study.hero },
+      ],
+      links: [
+        { rel: "canonical", href: `https://makeaccuracy.agency/case-studies/${study.slug || params.slug}` },
       ],
     };
   },
