@@ -18,7 +18,6 @@ export function Footer() {
   return (
     <footer className="relative w-full bg-[#ebedeb] text-neutral-900 py-12 sm:py-16 font-sans">
       <div className="mx-auto max-w-[1700px] px-6 sm:px-12 lg:px-20 xl:px-24">
-        
         {/* Top Header Row: Logo Icon & Social Links */}
         <div className="flex items-center justify-between pb-12 sm:pb-16">
           <Link to="/" className="inline-flex items-center gap-2 group" aria-label="Home">
@@ -48,11 +47,11 @@ export function Footer() {
 
         {/* Main 2-Column Content Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start pb-16 sm:pb-24">
-          
           {/* Left Column: Greeting Headline & Email */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8">
             <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-[40px] font-normal leading-[1.18] tracking-tight text-neutral-900 max-w-xl font-sans">
-              We’d love to hear from you.<br />
+              We’d love to hear from you.
+              <br />
               Whether you have a project in mind, or just want to say hi.
             </h2>
 
@@ -71,7 +70,7 @@ export function Footer() {
             <h3 className="text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-900 font-sans">
               Let's talk
             </h3>
-            
+
             <p className="text-xs sm:text-sm font-mono text-neutral-600 tracking-tight">
               Tell us about your project, question, or idea.
             </p>
@@ -81,12 +80,13 @@ export function Footer() {
                 to="/book"
                 className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[#d6d8d6] hover:bg-[#caccca] active:scale-[0.99] px-8 py-4 text-xs font-mono font-semibold tracking-wider uppercase text-neutral-900 transition-all shadow-2xs cursor-pointer"
               >
-                <span><RollingText>Book a call</RollingText></span>
+                <span>
+                  <RollingText>Book a call</RollingText>
+                </span>
                 <Phone className="size-3.5 fill-current text-neutral-900" />
               </Link>
             </div>
           </div>
-
         </div>
 
         {/* Site Navigation Links Section */}
@@ -97,27 +97,42 @@ export function Footer() {
             </span>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/services"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Services &amp; Revenue Engines</RollingText>
                 </Link>
               </li>
               <li>
-                <Link to="/solutions" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/solutions"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Custom Solutions</RollingText>
                 </Link>
               </li>
               <li>
-                <Link to="/automations" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/automations"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Automations Engine</RollingText>
                 </Link>
               </li>
               <li>
-                <Link to="/how-it-works" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/how-it-works"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>How It Works</RollingText>
                 </Link>
               </li>
               <li>
-                <Link to="/industries" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/industries"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Industries We Serve</RollingText>
                 </Link>
               </li>
@@ -130,22 +145,34 @@ export function Footer() {
             </span>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/about"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>About Make Accuracy</RollingText>
                 </Link>
               </li>
               <li>
-                <Link to="/case-studies" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/case-studies"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Case Studies &amp; Results</RollingText>
                 </Link>
               </li>
               <li>
-                <Link to="/demo" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/demo"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Interactive AI Agent Demo</RollingText>
                 </Link>
               </li>
               <li>
-                <Link to="/pricing" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/pricing"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Pricing &amp; Partner Tier</RollingText>
                 </Link>
               </li>
@@ -158,22 +185,34 @@ export function Footer() {
             </span>
             <ul className="space-y-2">
               <li>
-                <Link to="/resources" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/resources"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Playbooks &amp; Guides</RollingText>
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/blog"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Blog &amp; AI Insights</RollingText>
                 </Link>
               </li>
               <li>
-                <Link to="/careers" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/careers"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Careers &amp; Team</RollingText>
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/contact"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Contact Us</RollingText>
                 </Link>
               </li>
@@ -186,17 +225,26 @@ export function Footer() {
             </span>
             <ul className="space-y-2">
               <li>
-                <Link to="/book" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/book"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Book Strategy Call</RollingText>
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/privacy"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Privacy Policy</RollingText>
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="hover:text-black transition-colors font-medium text-neutral-800">
+                <Link
+                  to="/terms"
+                  className="hover:text-black transition-colors font-medium text-neutral-800"
+                >
                   <RollingText>Terms &amp; Conditions</RollingText>
                 </Link>
               </li>
@@ -206,7 +254,6 @@ export function Footer() {
 
         {/* Bottom Credits & Navigation Links Bar */}
         <div className="pt-8 border-t border-neutral-300/80 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-neutral-600">
-          
           {/* Left Navigation Links */}
           <div className="flex items-center gap-6">
             <Link to="/services" className="hover:text-black transition-colors font-medium">
@@ -237,9 +284,7 @@ export function Footer() {
               <RollingText>Terms &amp; Conditions</RollingText>
             </Link>
           </div>
-
         </div>
-
       </div>
     </footer>
   );

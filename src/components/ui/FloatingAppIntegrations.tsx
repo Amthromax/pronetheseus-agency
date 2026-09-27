@@ -33,10 +33,22 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-14 sm:size-18",
     svgIcon: (
       <svg className="size-full p-2.5 sm:p-3" viewBox="0 0 122.8 122.8" fill="none">
-        <path d="M25.8 77.6c0 7.1-5.8 12.9-12.9 12.9S0 84.7 0 77.6s5.8-12.9 12.9-12.9h12.9v12.9zm6.5 0c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9v32.3c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V77.6z" fill="#E01E5A"/>
-        <path d="M45.2 25.8c-7.1 0-12.9-5.8-12.9-12.9S38.1 0 45.2 0s12.9 5.8 12.9 12.9v12.9H45.2zm0 6.5c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H12.9C5.8 58.1 0 52.3 0 45.2s5.8-12.9 12.9-12.9h32.3z" fill="#36C5F0"/>
-        <path d="M97 45.2c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9-5.8 12.9-12.9 12.9H97V45.2zm-6.5 0c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V12.9C77.6 5.8 83.4 0 90.5 0s12.9 5.8 12.9 12.9v32.3z" fill="#2EB67D"/>
-        <path d="M77.6 97c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9-12.9-5.8-12.9-12.9V97h12.9zm0-6.5c-7.1 0-12.9-5.8-12.9-12.9s5.8-12.9 12.9-12.9h32.3c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H77.6z" fill="#ECB22E"/>
+        <path
+          d="M25.8 77.6c0 7.1-5.8 12.9-12.9 12.9S0 84.7 0 77.6s5.8-12.9 12.9-12.9h12.9v12.9zm6.5 0c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9v32.3c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V77.6z"
+          fill="#E01E5A"
+        />
+        <path
+          d="M45.2 25.8c-7.1 0-12.9-5.8-12.9-12.9S38.1 0 45.2 0s12.9 5.8 12.9 12.9v12.9H45.2zm0 6.5c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H12.9C5.8 58.1 0 52.3 0 45.2s5.8-12.9 12.9-12.9h32.3z"
+          fill="#36C5F0"
+        />
+        <path
+          d="M97 45.2c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9-5.8 12.9-12.9 12.9H97V45.2zm-6.5 0c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V12.9C77.6 5.8 83.4 0 90.5 0s12.9 5.8 12.9 12.9v32.3z"
+          fill="#2EB67D"
+        />
+        <path
+          d="M77.6 97c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9-12.9-5.8-12.9-12.9V97h12.9zm0-6.5c-7.1 0-12.9-5.8-12.9-12.9s5.8-12.9 12.9-12.9h32.3c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H77.6z"
+          fill="#ECB22E"
+        />
       </svg>
     ),
   },
@@ -56,8 +68,11 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-16 sm:size-20",
     svgIcon: (
       <svg className="size-full p-2.5 sm:p-3" viewBox="0 0 256 256" fill="none">
-        <rect width="256" height="256" rx="48" fill="#001E36"/>
-        <path fill="#31A8FF" d="M56 64h48c20 0 34 10 34 29 0 20-14 30-35 30H81v45H56V64zm25 40h20c8 0 13-4 13-11 0-7-5-11-13-11H81v22zM151 155c8 6 19 10 31 10 12 0 18-5 18-12 0-8-7-11-20-15-18-6-29-14-29-30 0-18 16-30 39-30 13 0 23 3 30 8l-7 18c-6-4-15-7-24-7-10 0-15 5-15 11 0 7 7 10 21 15 20 7 29 15 29 31 0 19-15 31-42 31-14 0-27-4-35-10l8-18z"/>
+        <rect width="256" height="256" rx="48" fill="#001E36" />
+        <path
+          fill="#31A8FF"
+          d="M56 64h48c20 0 34 10 34 29 0 20-14 30-35 30H81v45H56V64zm25 40h20c8 0 13-4 13-11 0-7-5-11-13-11H81v22zM151 155c8 6 19 10 31 10 12 0 18-5 18-12 0-8-7-11-20-15-18-6-29-14-29-30 0-18 16-30 39-30 13 0 23 3 30 8l-7 18c-6-4-15-7-24-7-10 0-15 5-15 11 0 7 7 10 21 15 20 7 29 15 29 31 0 19-15 31-42 31-14 0-27-4-35-10l8-18z"
+        />
       </svg>
     ),
   },
@@ -77,9 +92,12 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-16 sm:size-20",
     svgIcon: (
       <svg className="size-full p-2 sm:p-2.5" viewBox="0 0 256 256" fill="none">
-        <path fill="#107C41" d="M152 24h80a16 16 0 0 1 16 16v176a16 16 0 0 1-16 16h-80V24z"/>
-        <path fill="#0E6C38" d="M8 52a16 16 0 0 1 16-16h128v184H24a16 16 0 0 1-16-16V52z"/>
-        <path fill="#FFFFFF" d="M48 92h24l18 36 18-36h24l-30 52 32 52h-24l-20-40-20 40H46l32-52-30-52z"/>
+        <path fill="#107C41" d="M152 24h80a16 16 0 0 1 16 16v176a16 16 0 0 1-16 16h-80V24z" />
+        <path fill="#0E6C38" d="M8 52a16 16 0 0 1 16-16h128v184H24a16 16 0 0 1-16-16V52z" />
+        <path
+          fill="#FFFFFF"
+          d="M48 92h24l18 36 18-36h24l-30 52 32 52h-24l-20-40-20 40H46l32-52-30-52z"
+        />
       </svg>
     ),
   },
@@ -89,7 +107,8 @@ const INTEGRATION_APPS: AppIcon[] = [
     id: "canva",
     name: "Canva",
     category: "Creative Assets",
-    bgColor: "bg-gradient-to-tr from-[#00C4CC] via-[#0085FF] to-[#7D2AE8] shadow-2xl border border-white/30",
+    bgColor:
+      "bg-gradient-to-tr from-[#00C4CC] via-[#0085FF] to-[#7D2AE8] shadow-2xl border border-white/30",
     position: "top-[5%] right-[16%] sm:right-[14%]",
     floatDelay: 1.2,
     floatDuration: 4.6,
@@ -99,7 +118,10 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-16 sm:size-20",
     svgIcon: (
       <svg className="size-full p-2.5 sm:p-3" viewBox="0 0 100 100" fill="none">
-        <path fill="#FFFFFF" d="M68.5 35.8c-2.4-3.1-6.1-4.8-10.8-4.8-10.2 0-18.4 8.1-18.4 19.2 0 10.4 7.6 18.2 17.5 18.2 5.1 0 9.2-1.9 12.1-5.5l-3.8-3.4c-2 2.5-4.8 3.8-8.3 3.8-6.4 0-11.2-5-11.2-12.8 0-7.7 5.1-13.4 11.9-13.4 3.4 0 5.9 1.2 7.7 3.3l3.3-4.7zM42.1 44.5c0-1.8-1.2-2.8-3.1-2.8-2.5 0-4.6 2.1-6.1 5.3l-2.4-1.6c2.1-4.2 5.3-7.1 9.8-7.1 4.1 0 6.9 2.2 6.9 6.2v17h-4.8v-2.8c-1.8 2.1-4.2 3.3-7.2 3.3-4.1 0-7.1-2.6-7.1-6.4 0-4.3 3.4-6.6 9.4-6.8l4.6-.2v-4.1zm-4.6 13.9c2.7 0 4.6-1.8 4.6-4.5v-2.4l-3.7.2c-3.6.2-5.4 1.4-5.4 3.8 0 1.9 1.6 2.9 4.5 2.9z"/>
+        <path
+          fill="#FFFFFF"
+          d="M68.5 35.8c-2.4-3.1-6.1-4.8-10.8-4.8-10.2 0-18.4 8.1-18.4 19.2 0 10.4 7.6 18.2 17.5 18.2 5.1 0 9.2-1.9 12.1-5.5l-3.8-3.4c-2 2.5-4.8 3.8-8.3 3.8-6.4 0-11.2-5-11.2-12.8 0-7.7 5.1-13.4 11.9-13.4 3.4 0 5.9 1.2 7.7 3.3l3.3-4.7zM42.1 44.5c0-1.8-1.2-2.8-3.1-2.8-2.5 0-4.6 2.1-6.1 5.3l-2.4-1.6c2.1-4.2 5.3-7.1 9.8-7.1 4.1 0 6.9 2.2 6.9 6.2v17h-4.8v-2.8c-1.8 2.1-4.2 3.3-7.2 3.3-4.1 0-7.1-2.6-7.1-6.4 0-4.3 3.4-6.6 9.4-6.8l4.6-.2v-4.1zm-4.6 13.9c2.7 0 4.6-1.8 4.6-4.5v-2.4l-3.7.2c-3.6.2-5.4 1.4-5.4 3.8 0 1.9 1.6 2.9 4.5 2.9z"
+        />
       </svg>
     ),
   },
@@ -119,12 +141,18 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-14 sm:size-16",
     svgIcon: (
       <svg className="size-full p-2 sm:p-2.5" viewBox="0 0 192 192" fill="none">
-        <circle cx="96" cy="96" r="88" fill="#4285F4"/>
-        <path fill="#EA4335" d="M96 44h81.4A88 88 0 0 0 35.8 24.5L74.9 92.2A52 52 0 0 1 96 44z"/>
-        <path fill="#FBBC05" d="M96 148a52 52 0 0 1-45.1-26L11.8 54.3A88 88 0 0 0 96 184l39.1-67.8A51.9 51.9 0 0 1 96 148z"/>
-        <path fill="#34A853" d="M96 148l39.1 67.8A88 88 0 0 0 177.4 54.3H99.2A52 52 0 0 1 96 148z"/>
-        <circle cx="96" cy="96" r="48" fill="#FFFFFF"/>
-        <circle cx="96" cy="96" r="36" fill="#1A73E3"/>
+        <circle cx="96" cy="96" r="88" fill="#4285F4" />
+        <path fill="#EA4335" d="M96 44h81.4A88 88 0 0 0 35.8 24.5L74.9 92.2A52 52 0 0 1 96 44z" />
+        <path
+          fill="#FBBC05"
+          d="M96 148a52 52 0 0 1-45.1-26L11.8 54.3A88 88 0 0 0 96 184l39.1-67.8A51.9 51.9 0 0 1 96 148z"
+        />
+        <path
+          fill="#34A853"
+          d="M96 148l39.1 67.8A88 88 0 0 0 177.4 54.3H99.2A52 52 0 0 1 96 148z"
+        />
+        <circle cx="96" cy="96" r="48" fill="#FFFFFF" />
+        <circle cx="96" cy="96" r="36" fill="#1A73E3" />
       </svg>
     ),
   },
@@ -144,7 +172,10 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-14 sm:size-16",
     svgIcon: (
       <svg className="size-full p-2.5 sm:p-3" viewBox="0 0 256 256" fill="none">
-        <path fill="#FFFFFF" d="M128 32a96 96 0 0 0-83 144L32 224l49-13a96 96 0 1 0 47-179zm53 137c-2 6-13 13-19 13-4 1-11 1-35-9-31-12-51-43-52-45-2-2-12-16-12-31 0-15 8-22 11-25 3-3 7-3 9-3s6 0 8 1c2 1 7 16 8 19 1 2 1 4 0 7s-2 4-4 6c-2 2-5 4-2 8 4 6 12 20 27 32 18 15 33 20 37 22 4 2 7 1 9-1s9-10 11-13c2-3 5-2 8-1s20 10 23 11c3 2 5 4 6 6 1 3 1 8-1 15z"/>
+        <path
+          fill="#FFFFFF"
+          d="M128 32a96 96 0 0 0-83 144L32 224l49-13a96 96 0 1 0 47-179zm53 137c-2 6-13 13-19 13-4 1-11 1-35-9-31-12-51-43-52-45-2-2-12-16-12-31 0-15 8-22 11-25 3-3 7-3 9-3s6 0 8 1c2 1 7 16 8 19 1 2 1 4 0 7s-2 4-4 6c-2 2-5 4-2 8 4 6 12 20 27 32 18 15 33 20 37 22 4 2 7 1 9-1s9-10 11-13c2-3 5-2 8-1s20 10 23 11c3 2 5 4 6 6 1 3 1 8-1 15z"
+        />
       </svg>
     ),
   },
@@ -164,9 +195,12 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-16 sm:size-20",
     svgIcon: (
       <svg className="size-full p-2 sm:p-2.5" viewBox="0 0 256 256" fill="none">
-        <path fill="#D24726" d="M152 24h80a16 16 0 0 1 16 16v176a16 16 0 0 1-16 16h-80V24z"/>
-        <path fill="#B73A1B" d="M8 52a16 16 0 0 1 16-16h128v184H24a16 16 0 0 1-16-16V52z"/>
-        <path fill="#FFFFFF" d="M48 92h40a28 28 0 0 1 0 56H68v36H48V92zm20 18v20h20a10 10 0 0 0 0-20H68z"/>
+        <path fill="#D24726" d="M152 24h80a16 16 0 0 1 16 16v176a16 16 0 0 1-16 16h-80V24z" />
+        <path fill="#B73A1B" d="M8 52a16 16 0 0 1 16-16h128v184H24a16 16 0 0 1-16-16V52z" />
+        <path
+          fill="#FFFFFF"
+          d="M48 92h40a28 28 0 0 1 0 56H68v36H48V92zm20 18v20h20a10 10 0 0 0 0-20H68z"
+        />
       </svg>
     ),
   },
@@ -186,8 +220,11 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-14 sm:size-16",
     svgIcon: (
       <svg className="size-full p-2 sm:p-2.5" viewBox="0 0 256 256" fill="none">
-        <rect width="256" height="256" rx="48" fill="#FFFFFF"/>
-        <path fill="#000000" d="M48 37c6 5 8 4 19 3l90-5c3 0 1-3 0-3L138 20c-3-3-8-5-14-4L45 21c-4 1-5 3-3 5l6 11zm6 29v107c0 5 3 7 8 6l98-8c5-1 6-4 6-7V51c0-4-2-6-5-5L59 54c-3 1-5 3-5 7zm97 8c0-2-1-3-3-2l-20 4-1 1v40l-28-38c-1-2-4-4-7-3l-20 2c-2 0-3 2-3 4v52c0 2 1 3 4 2l11-1V90l30 39c2 3 4 4 7 3l19-2c2 0 3-2 3-4V74z"/>
+        <rect width="256" height="256" rx="48" fill="#FFFFFF" />
+        <path
+          fill="#000000"
+          d="M48 37c6 5 8 4 19 3l90-5c3 0 1-3 0-3L138 20c-3-3-8-5-14-4L45 21c-4 1-5 3-3 5l6 11zm6 29v107c0 5 3 7 8 6l98-8c5-1 6-4 6-7V51c0-4-2-6-5-5L59 54c-3 1-5 3-5 7zm97 8c0-2-1-3-3-2l-20 4-1 1v40l-28-38c-1-2-4-4-7-3l-20 2c-2 0-3 2-3 4v52c0 2 1 3 4 2l11-1V90l30 39c2 3 4 4 7 3l19-2c2 0 3-2 3-4V74z"
+        />
       </svg>
     ),
   },
@@ -207,9 +244,12 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-16 sm:size-20",
     svgIcon: (
       <svg className="size-full p-2 sm:p-2.5" viewBox="0 0 256 256" fill="none">
-        <path fill="#185ABD" d="M152 24h80a16 16 0 0 1 16 16v176a16 16 0 0 1-16 16h-80V24z"/>
-        <path fill="#103F91" d="M8 52a16 16 0 0 1 16-16h128v184H24a16 16 0 0 1-16-16V52z"/>
-        <path fill="#FFFFFF" d="M36 92h22l14 56 16-56h20l16 56 14-56h22l-24 92h-22l-16-54-16 54H60L36 92z"/>
+        <path fill="#185ABD" d="M152 24h80a16 16 0 0 1 16 16v176a16 16 0 0 1-16 16h-80V24z" />
+        <path fill="#103F91" d="M8 52a16 16 0 0 1 16-16h128v184H24a16 16 0 0 1-16-16V52z" />
+        <path
+          fill="#FFFFFF"
+          d="M36 92h22l14 56 16-56h20l16 56 14-56h22l-24 92h-22l-16-54-16 54H60L36 92z"
+        />
       </svg>
     ),
   },
@@ -229,9 +269,9 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-14 sm:size-16",
     svgIcon: (
       <svg className="size-full p-2.5 sm:p-3" viewBox="0 0 256 256" fill="none">
-        <rect width="256" height="256" rx="48" fill="#0079BF"/>
-        <rect x="44" y="44" width="72" height="168" rx="16" fill="#FFFFFF"/>
-        <rect x="140" y="44" width="72" height="104" rx="16" fill="#FFFFFF"/>
+        <rect width="256" height="256" rx="48" fill="#0079BF" />
+        <rect x="44" y="44" width="72" height="168" rx="16" fill="#FFFFFF" />
+        <rect x="140" y="44" width="72" height="104" rx="16" fill="#FFFFFF" />
       </svg>
     ),
   },
@@ -251,8 +291,11 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-12 sm:size-14",
     svgIcon: (
       <svg className="size-full p-2.5 sm:p-3" viewBox="0 0 256 256" fill="none">
-        <rect width="256" height="256" rx="48" fill="#2D8CFF"/>
-        <path fill="#FFFFFF" d="M48 92a16 16 0 0 1 16-16h76a16 16 0 0 1 16 16v72a16 16 0 0 1-16 16H64a16 16 0 0 1-16-16V92zm124 18l36-26a8 8 0 0 1 12 7v74a8 8 0 0 1-12 7l-36-26v-36z"/>
+        <rect width="256" height="256" rx="48" fill="#2D8CFF" />
+        <path
+          fill="#FFFFFF"
+          d="M48 92a16 16 0 0 1 16-16h76a16 16 0 0 1 16 16v72a16 16 0 0 1-16 16H64a16 16 0 0 1-16-16V92zm124 18l36-26a8 8 0 0 1 12 7v74a8 8 0 0 1-12 7l-36-26v-36z"
+        />
       </svg>
     ),
   },
@@ -272,11 +315,11 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-14 sm:size-16",
     svgIcon: (
       <svg className="size-full p-2.5 sm:p-3" viewBox="0 0 256 256" fill="none">
-        <rect width="256" height="256" rx="48" fill="#EA4B71"/>
-        <circle cx="70" cy="128" r="28" fill="#FFFFFF"/>
-        <circle cx="186" cy="74" r="28" fill="#FFFFFF"/>
-        <circle cx="186" cy="182" r="28" fill="#FFFFFF"/>
-        <path d="M70 128H186M186 74V182" stroke="#FFFFFF" strokeWidth="18" strokeLinecap="round"/>
+        <rect width="256" height="256" rx="48" fill="#EA4B71" />
+        <circle cx="70" cy="128" r="28" fill="#FFFFFF" />
+        <circle cx="186" cy="74" r="28" fill="#FFFFFF" />
+        <circle cx="186" cy="182" r="28" fill="#FFFFFF" />
+        <path d="M70 128H186M186 74V182" stroke="#FFFFFF" strokeWidth="18" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -296,8 +339,11 @@ const INTEGRATION_APPS: AppIcon[] = [
     size: "size-12 sm:size-14",
     svgIcon: (
       <svg className="size-full p-2.5 sm:p-3" viewBox="0 0 256 256" fill="none">
-        <rect width="256" height="256" rx="48" fill="#181717"/>
-        <path fill="#FFFFFF" d="M128 32C75 32 32 75 32 128c0 42 27 78 65 91 5 1 7-2 7-5v-18c-26 6-32-13-32-13-4-11-10-14-10-14-9-6 1-6 1-6 10 1 15 10 15 10 8 15 22 10 28 8 1-6 3-10 6-13-21-2-43-11-43-47 0-10 4-19 10-26-1-2-4-12 1-25 0 0 8-3 26 10 8-2 16-3 25-3s17 1 25 3c18-13 26-10 26-10 5 13 2 23 1 25 6 7 10 16 10 26 0 36-22 45-43 47 3 3 6 9 6 18v27c0 3 2 6 7 5 38-13 65-49 65-91 0-53-43-96-96-96z"/>
+        <rect width="256" height="256" rx="48" fill="#181717" />
+        <path
+          fill="#FFFFFF"
+          d="M128 32C75 32 32 75 32 128c0 42 27 78 65 91 5 1 7-2 7-5v-18c-26 6-32-13-32-13-4-11-10-14-10-14-9-6 1-6 1-6 10 1 15 10 15 10 8 15 22 10 28 8 1-6 3-10 6-13-21-2-43-11-43-47 0-10 4-19 10-26-1-2-4-12 1-25 0 0 8-3 26 10 8-2 16-3 25-3s17 1 25 3c18-13 26-10 26-10 5 13 2 23 1 25 6 7 10 16 10 26 0 36-22 45-43 47 3 3 6 9 6 18v27c0 3 2 6 7 5 38-13 65-49 65-91 0-53-43-96-96-96z"
+        />
       </svg>
     ),
   },
@@ -325,7 +371,6 @@ export function FloatingAppIntegrations() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 min-h-[480px] sm:min-h-[560px] flex flex-col items-center justify-center">
-
         {/* Central Headline Box with Glassmorphism & Subtle Shimmer Border */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -341,7 +386,8 @@ export function FloatingAppIntegrations() {
             fly on Make Accuracy.
           </p>
           <p className="mt-4 text-xs sm:text-sm text-neutral-600 font-normal max-w-lg mx-auto leading-relaxed">
-            Seamless bi-directional integrations across Slack, CRM, Microsoft 365, Google Workspace, n8n workflows, and custom agency APIs.
+            Seamless bi-directional integrations across Slack, CRM, Microsoft 365, Google Workspace,
+            n8n workflows, and custom agency APIs.
           </p>
         </motion.div>
 

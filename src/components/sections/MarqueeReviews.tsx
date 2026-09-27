@@ -71,11 +71,17 @@ const ReviewCard = ({
     <figure
       className={cn(
         "relative h-full w-72 sm:w-80 cursor-pointer overflow-hidden rounded-[20px] border p-4 shadow-2xs transition-all duration-300 hover:scale-[1.02] hover:shadow-md shrink-0",
-        "border-neutral-200/90 bg-[#f4f3ee] hover:bg-neutral-100/90"
+        "border-neutral-200/90 bg-[#f4f3ee] hover:bg-neutral-100/90",
       )}
     >
       <div className="flex flex-row items-center gap-3">
-        <img className="rounded-full size-9 object-cover border border-black/5" width="36" height="36" alt={name} src={img} />
+        <img
+          className="rounded-full size-9 object-cover border border-black/5"
+          width="36"
+          height="36"
+          alt={name}
+          src={img}
+        />
         <div className="flex flex-col">
           <figcaption className="text-xs font-bold text-neutral-900 font-sans tracking-tight">
             {name}
@@ -83,7 +89,9 @@ const ReviewCard = ({
           <p className="text-[11px] font-medium text-neutral-500 font-mono">{username}</p>
         </div>
       </div>
-      <blockquote className="mt-2.5 text-xs text-neutral-700 font-sans leading-relaxed">{body}</blockquote>
+      <blockquote className="mt-2.5 text-xs text-neutral-700 font-sans leading-relaxed">
+        {body}
+      </blockquote>
     </figure>
   );
 };

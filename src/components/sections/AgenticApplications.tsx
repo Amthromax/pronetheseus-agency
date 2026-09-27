@@ -6,7 +6,12 @@ import { motion, useInView, useReducedMotion, type Transition } from "motion/rea
 import { ArrowRight, Search, MousePointer2 } from "lucide-react";
 import { RollingText } from "@/components/ui/rolling-text";
 
-const CHIP_LOOP: Transition = { duration: 4.4, times: [0, 0.38, 0.5, 0.88, 1], repeat: Infinity, ease: "easeInOut" };
+const CHIP_LOOP: Transition = {
+  duration: 4.4,
+  times: [0, 0.38, 0.5, 0.88, 1],
+  repeat: Infinity,
+  ease: "easeInOut",
+};
 
 /** Cycles a module chip between its active (dark) and idle (light) look. */
 const chipCycle = (idleFirst: boolean) => {
@@ -41,34 +46,54 @@ export function AgenticApplications() {
   const live = !reduceMotion && mocksInView;
 
   return (
-    <section id="agentic-applications" className="relative bg-sandel py-10 sm:py-16 text-neutral-900 overflow-hidden">
+    <section
+      id="agentic-applications"
+      className="relative bg-sandel py-10 sm:py-16 text-neutral-900 overflow-hidden"
+    >
       <div className="container-pad mx-auto max-w-[1440px] relative z-10">
-        
         {/* Main Top Header */}
         <div className="max-w-3xl mb-8 sm:mb-12">
           <h2 className="font-display text-2xl font-bold tracking-tight text-neutral-900 sm:text-4xl lg:text-[42px] leading-[1.12]">
             <SplitText text="Proven AI Automation Systems Built for Business Growth." />
           </h2>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link to="/automations" className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-blue-800 font-sans">
-              <span><RollingText>Automations Engine</RollingText></span>
+            <Link
+              to="/automations"
+              className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-blue-800 font-sans"
+            >
+              <span>
+                <RollingText>Automations Engine</RollingText>
+              </span>
               <ArrowRight className="size-3.5" />
             </Link>
             <span className="text-neutral-400">·</span>
-            <Link to="/services" className="inline-flex items-center gap-1 text-xs font-bold text-neutral-700 hover:text-neutral-900 font-sans">
-              <span><RollingText>View All Services</RollingText></span>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-1 text-xs font-bold text-neutral-700 hover:text-neutral-900 font-sans"
+            >
+              <span>
+                <RollingText>View All Services</RollingText>
+              </span>
               <ArrowRight className="size-3.5" />
             </Link>
             <span className="text-neutral-400">·</span>
-            <Link to="/solutions" className="inline-flex items-center gap-1 text-xs font-bold text-neutral-700 hover:text-neutral-900 font-sans">
-              <span><RollingText>Custom Solutions</RollingText></span>
+            <Link
+              to="/solutions"
+              className="inline-flex items-center gap-1 text-xs font-bold text-neutral-700 hover:text-neutral-900 font-sans"
+            >
+              <span>
+                <RollingText>Custom Solutions</RollingText>
+              </span>
               <ArrowRight className="size-3.5" />
             </Link>
           </div>
         </div>
 
         {/* 3 Clean Showcase Application Category Cards */}
-        <div ref={mocksRef} className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-6 mb-8 sm:mb-12 md:pb-0">
+        <div
+          ref={mocksRef}
+          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-6 mb-8 sm:mb-12 md:pb-0"
+        >
           {/* Card 1: Pre-built Applications */}
           <div className="shrink-0 w-[280px] xs:w-[310px] md:w-auto snap-center flex flex-col">
             <ScrollReveal variant="card" staggerIndex={0} className="h-full w-full">
@@ -92,7 +117,8 @@ export function AgenticApplications() {
                     </div>
                   </div>
                   <p className="mt-2.5 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                    Deploy turnkey AI agents for lead response, customer support, booking, and reviews in days.
+                    Deploy turnkey AI agents for lead response, customer support, booking, and
+                    reviews in days.
                   </p>
                 </div>
 
@@ -100,7 +126,9 @@ export function AgenticApplications() {
                 <div className="mt-6 rounded-xl border border-neutral-200/80 bg-white/80 p-4 space-y-3 text-neutral-900 shadow-2xs">
                   <div className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3.5 py-2 shadow-2xs">
                     <Search className="size-4 text-neutral-400" />
-                    <span className="text-xs sm:text-sm font-semibold text-neutral-900">Speed-to-Lead & Follow-up</span>
+                    <span className="text-xs sm:text-sm font-semibold text-neutral-900">
+                      Speed-to-Lead & Follow-up
+                    </span>
                     <motion.span
                       aria-hidden
                       className="ml-auto h-3.5 w-px shrink-0 bg-neutral-900"
@@ -123,8 +151,15 @@ export function AgenticApplications() {
                       <motion.span
                         aria-hidden
                         className="absolute -bottom-2 -right-1"
-                        animate={live ? { y: [0, 0, -3, 0, 0], scale: [1, 1, 0.82, 1, 1] } : undefined}
-                        transition={{ duration: 4.4, times: [0, 0.3, 0.38, 0.46, 1], repeat: Infinity, ease: "easeInOut" }}
+                        animate={
+                          live ? { y: [0, 0, -3, 0, 0], scale: [1, 1, 0.82, 1, 1] } : undefined
+                        }
+                        transition={{
+                          duration: 4.4,
+                          times: [0, 0.3, 0.38, 0.46, 1],
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
                       >
                         <MousePointer2 className="size-3.5 text-neutral-900 fill-neutral-900" />
                       </motion.span>
@@ -165,7 +200,8 @@ export function AgenticApplications() {
                     </div>
                   </div>
                   <p className="mt-2.5 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                    Bi-directional sync between your CRM, calendar, Slack, WhatsApp, and email platforms.
+                    Bi-directional sync between your CRM, calendar, Slack, WhatsApp, and email
+                    platforms.
                   </p>
                 </div>
 
@@ -192,7 +228,13 @@ export function AgenticApplications() {
                           key={badge.label}
                           className={`size-5 rounded-sm ${badge.tone} text-white font-bold text-[9px] flex items-center justify-center`}
                           animate={live ? { scale: [1, 1.22, 1], y: [0, -2, 0] } : undefined}
-                          transition={{ duration: 0.85, repeat: Infinity, repeatDelay: 2.15, delay: i * 0.35, ease: "easeInOut" }}
+                          transition={{
+                            duration: 0.85,
+                            repeat: Infinity,
+                            repeatDelay: 2.15,
+                            delay: i * 0.35,
+                            ease: "easeInOut",
+                          }}
                         >
                           {badge.label}
                         </motion.span>
@@ -201,18 +243,38 @@ export function AgenticApplications() {
                     <motion.div
                       className="h-2 w-3/4 rounded-sm bg-neutral-200 mb-1 origin-left"
                       animate={live ? { scaleX: [0.2, 1, 1, 0.2] } : undefined}
-                      transition={{ duration: 3, times: [0, 0.35, 0.86, 1], repeat: Infinity, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{
+                        duration: 3,
+                        times: [0, 0.35, 0.86, 1],
+                        repeat: Infinity,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
                     />
                     <motion.div
                       className="h-2 w-1/2 rounded-sm bg-neutral-200 origin-left"
                       animate={live ? { scaleX: [0.2, 1, 1, 0.2] } : undefined}
-                      transition={{ duration: 3, times: [0, 0.35, 0.86, 1], repeat: Infinity, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{
+                        duration: 3,
+                        times: [0, 0.35, 0.86, 1],
+                        repeat: Infinity,
+                        delay: 0.18,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
                     />
                     <motion.span
                       aria-hidden
                       className="absolute bottom-2 right-4"
-                      animate={live ? { x: [0, -7, 0, 0], y: [0, -4, 0, 0], scale: [1, 0.86, 1, 1] } : undefined}
-                      transition={{ duration: 3, times: [0, 0.12, 0.24, 1], repeat: Infinity, ease: "easeInOut" }}
+                      animate={
+                        live
+                          ? { x: [0, -7, 0, 0], y: [0, -4, 0, 0], scale: [1, 0.86, 1, 1] }
+                          : undefined
+                      }
+                      transition={{
+                        duration: 3,
+                        times: [0, 0.12, 0.24, 1],
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
                     >
                       <MousePointer2 className="size-4 text-neutral-900 fill-neutral-900" />
                     </motion.span>
@@ -245,7 +307,8 @@ export function AgenticApplications() {
                     </div>
                   </div>
                   <p className="mt-2.5 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                    Custom-built AI workflows engineered around your specific agency or business operations.
+                    Custom-built AI workflows engineered around your specific agency or business
+                    operations.
                   </p>
                 </div>
 
@@ -253,19 +316,59 @@ export function AgenticApplications() {
                   <div className="w-full rounded-xl border border-neutral-200 bg-neutral-900 p-4 font-mono text-xs leading-relaxed text-neutral-200 shadow-md">
                     <motion.div
                       className="flex items-center gap-3 text-neutral-500 select-none"
-                      animate={live ? { clipPath: ["inset(0 100% 0 0)", "inset(0 0% 0 0)", "inset(0 0% 0 0)", "inset(0 100% 0 0)"] } : undefined}
-                      transition={{ duration: 5.2, times: [0, 0.26, 0.92, 1], repeat: Infinity, ease: "linear" }}
+                      animate={
+                        live
+                          ? {
+                              clipPath: [
+                                "inset(0 100% 0 0)",
+                                "inset(0 0% 0 0)",
+                                "inset(0 0% 0 0)",
+                                "inset(0 100% 0 0)",
+                              ],
+                            }
+                          : undefined
+                      }
+                      transition={{
+                        duration: 5.2,
+                        times: [0, 0.26, 0.92, 1],
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     >
                       <span>1</span>
-                      <span><span className="text-sky-400 font-semibold">def</span> <span className="text-amber-400 font-semibold">qualify_lead</span>(inquiry):</span>
+                      <span>
+                        <span className="text-sky-400 font-semibold">def</span>{" "}
+                        <span className="text-amber-400 font-semibold">qualify_lead</span>(inquiry):
+                      </span>
                     </motion.div>
                     <motion.div
                       className="flex items-center gap-3 text-neutral-500 select-none pl-4"
-                      animate={live ? { clipPath: ["inset(0 100% 0 0)", "inset(0 100% 0 0)", "inset(0 0% 0 0)", "inset(0 0% 0 0)", "inset(0 100% 0 0)"] } : undefined}
-                      transition={{ duration: 5.2, times: [0, 0.3, 0.56, 0.92, 1], repeat: Infinity, ease: "linear" }}
+                      animate={
+                        live
+                          ? {
+                              clipPath: [
+                                "inset(0 100% 0 0)",
+                                "inset(0 100% 0 0)",
+                                "inset(0 0% 0 0)",
+                                "inset(0 0% 0 0)",
+                                "inset(0 100% 0 0)",
+                              ],
+                            }
+                          : undefined
+                      }
+                      transition={{
+                        duration: 5.2,
+                        times: [0, 0.3, 0.56, 0.92, 1],
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                     >
                       <span>2</span>
-                      <span><span className="text-sky-400 font-semibold">if</span> <span className="text-emerald-400">"booking"</span> <span className="text-sky-400 font-semibold">in</span></span>
+                      <span>
+                        <span className="text-sky-400 font-semibold">if</span>{" "}
+                        <span className="text-emerald-400">"booking"</span>{" "}
+                        <span className="text-sky-400 font-semibold">in</span>
+                      </span>
                       <motion.span
                         aria-hidden
                         className="h-3 w-1.5 shrink-0 bg-neutral-400"
@@ -291,7 +394,10 @@ export function AgenticApplications() {
         {/* Sidebar & Content Detail Section */}
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] xl:grid-cols-[280px_1fr] gap-6 lg:gap-8 pt-4">
           {/* Left Sidebar Navigation */}
-          <ScrollReveal variant="card" className="flex flex-row overflow-x-auto snap-x scrollbar-none pb-2 gap-2 lg:flex-col lg:space-y-2 lg:gap-0 lg:pb-0">
+          <ScrollReveal
+            variant="card"
+            className="flex flex-row overflow-x-auto snap-x scrollbar-none pb-2 gap-2 lg:flex-col lg:space-y-2 lg:gap-0 lg:pb-0"
+          >
             <div className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-1.5 flex items-center gap-1 shrink-0 lg:shrink">
               Select Category <span className="text-[10px]">▼</span>
             </div>
@@ -304,8 +410,12 @@ export function AgenticApplications() {
                   : "bg-[#f4f3ee] border border-neutral-200/90 text-neutral-700 hover:bg-[#eae8e1] hover:text-black"
               }`}
             >
-              <span><RollingText>PRE-BUILT AUTOMATIONS</RollingText></span>
-              {activeTab === "PRE-BUILT" && <span className="size-2 rounded-full bg-neutral-100 ml-2" />}
+              <span>
+                <RollingText>PRE-BUILT AUTOMATIONS</RollingText>
+              </span>
+              {activeTab === "PRE-BUILT" && (
+                <span className="size-2 rounded-full bg-neutral-100 ml-2" />
+              )}
             </button>
 
             <button
@@ -316,8 +426,12 @@ export function AgenticApplications() {
                   : "bg-[#f4f3ee] border border-neutral-200/90 text-neutral-700 hover:bg-[#eae8e1] hover:text-black"
               }`}
             >
-              <span><RollingText>WORKFLOW ACCELERATORS</RollingText></span>
-              {activeTab === "ACCELERATORS" && <span className="size-2 rounded-full bg-neutral-100 ml-2" />}
+              <span>
+                <RollingText>WORKFLOW ACCELERATORS</RollingText>
+              </span>
+              {activeTab === "ACCELERATORS" && (
+                <span className="size-2 rounded-full bg-neutral-100 ml-2" />
+              )}
             </button>
 
             <button
@@ -328,8 +442,12 @@ export function AgenticApplications() {
                   : "bg-[#f4f3ee] border border-neutral-200/90 text-neutral-700 hover:bg-[#eae8e1] hover:text-black"
               }`}
             >
-              <span><RollingText>CUSTOM AI SOLUTIONS</RollingText></span>
-              {activeTab === "TAILORED" && <span className="size-2 rounded-full bg-neutral-100 ml-2" />}
+              <span>
+                <RollingText>CUSTOM AI SOLUTIONS</RollingText>
+              </span>
+              {activeTab === "TAILORED" && (
+                <span className="size-2 rounded-full bg-neutral-100 ml-2" />
+              )}
             </button>
 
             <button
@@ -341,12 +459,16 @@ export function AgenticApplications() {
               }`}
             >
               <div className="flex items-center">
-                <span><RollingText>MAKE ACCURACY AI ENGINE</RollingText></span>
+                <span>
+                  <RollingText>MAKE ACCURACY AI ENGINE</RollingText>
+                </span>
                 <span className="ml-2 rounded-sm bg-emerald-500 px-2 py-0.5 text-[10px] font-bold text-white uppercase tracking-normal">
                   NEW
                 </span>
               </div>
-              {activeTab === "ARTEMIS" && <span className="size-2 rounded-full bg-neutral-100 ml-2" />}
+              {activeTab === "ARTEMIS" && (
+                <span className="size-2 rounded-full bg-neutral-100 ml-2" />
+              )}
             </button>
           </ScrollReveal>
 
@@ -358,7 +480,8 @@ export function AgenticApplications() {
                   Ready-to-Deploy AI Systems
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm text-neutral-600 font-normal">
-                  Custom-engineered AI agents built to handle high-volume customer & revenue workflows.
+                  Custom-engineered AI agents built to handle high-volume customer & revenue
+                  workflows.
                 </p>
               </div>
 
@@ -406,14 +529,17 @@ export function AgenticApplications() {
                           </span>
                         </div>
                         <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                          Respond to form fills, ads, and missed calls in under 60 seconds via SMS and WhatsApp.
+                          Respond to form fills, ads, and missed calls in under 60 seconds via SMS
+                          and WhatsApp.
                         </p>
                         <div className="mt-3 flex items-center gap-2">
                           <Link
                             to="/book"
                             className="inline-flex items-center gap-1.5 rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-neutral-800"
                           >
-                            <span><RollingText>GET THIS SYSTEM</RollingText></span>
+                            <span>
+                              <RollingText>GET THIS SYSTEM</RollingText>
+                            </span>
                             <ArrowRight className="size-3" />
                           </Link>
                         </div>
@@ -426,7 +552,8 @@ export function AgenticApplications() {
                               o
                             </div>
                             <div className="rounded-xl bg-white p-2.5 border border-neutral-200/80 text-neutral-800 shadow-2xs leading-relaxed max-w-[88%] text-xs">
-                              Hi Alex! Thanks for requesting a consultation quote. I can book your appointment right now.
+                              Hi Alex! Thanks for requesting a consultation quote. I can book your
+                              appointment right now.
                             </div>
                           </div>
 
@@ -485,14 +612,17 @@ export function AgenticApplications() {
                           </span>
                         </div>
                         <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                          Qualify customer budget and timeline before placing appointments directly onto your calendar.
+                          Qualify customer budget and timeline before placing appointments directly
+                          onto your calendar.
                         </p>
                         <div className="mt-3 flex items-center gap-2">
                           <Link
                             to="/book"
                             className="inline-flex items-center gap-1.5 rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-neutral-800"
                           >
-                            <span><RollingText>GET THIS SYSTEM</RollingText></span>
+                            <span>
+                              <RollingText>GET THIS SYSTEM</RollingText>
+                            </span>
                             <ArrowRight className="size-3" />
                           </Link>
                         </div>
@@ -565,14 +695,17 @@ export function AgenticApplications() {
                           </span>
                         </div>
                         <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                          Provide instant 24/7 answers, order status updates, and service triage across web and SMS.
+                          Provide instant 24/7 answers, order status updates, and service triage
+                          across web and SMS.
                         </p>
                         <div className="mt-3 flex items-center gap-2">
                           <Link
                             to="/book"
                             className="inline-flex items-center gap-1.5 rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-neutral-800"
                           >
-                            <span><RollingText>GET THIS SYSTEM</RollingText></span>
+                            <span>
+                              <RollingText>GET THIS SYSTEM</RollingText>
+                            </span>
                             <ArrowRight className="size-3" />
                           </Link>
                         </div>
@@ -594,7 +727,8 @@ export function AgenticApplications() {
                               o
                             </div>
                             <div className="rounded-xl bg-white p-2.5 border border-neutral-200/80 text-neutral-800 shadow-2xs leading-relaxed max-w-[88%] text-xs">
-                              We offer 24/7 emergency scheduling! Regular appointments are available Sat 8am-4pm.
+                              We offer 24/7 emergency scheduling! Regular appointments are available
+                              Sat 8am-4pm.
                             </div>
                           </div>
                         </div>
@@ -633,14 +767,17 @@ export function AgenticApplications() {
                           </span>
                         </div>
                         <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                          Replace 2-week email drag with a 15-minute intake portal, document collection, and contract flow.
+                          Replace 2-week email drag with a 15-minute intake portal, document
+                          collection, and contract flow.
                         </p>
                         <div className="mt-3 flex items-center gap-2">
                           <Link
                             to="/book"
                             className="inline-flex items-center gap-1.5 rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-2xs transition hover:bg-neutral-800"
                           >
-                            <span><RollingText>GET THIS SYSTEM</RollingText></span>
+                            <span>
+                              <RollingText>GET THIS SYSTEM</RollingText>
+                            </span>
                             <ArrowRight className="size-3" />
                           </Link>
                         </div>
@@ -690,13 +827,21 @@ export function AgenticApplications() {
                   to="/services"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-neutral-950 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-md transition-all duration-300 hover:bg-neutral-800 hover:scale-[1.02]"
                 >
-                  <span><RollingText>EXPLORE ALL AUTOMATIONS</RollingText></span>
+                  <span>
+                    <RollingText>EXPLORE ALL AUTOMATIONS</RollingText>
+                  </span>
                   <ArrowRight className="size-4" />
                 </Link>
               </ScrollReveal>
 
               <div className="text-xs sm:text-sm text-neutral-600 font-semibold hidden sm:block">
-                Showing {categoryFilter === "ALL" ? "4 of 4" : categoryFilter === "CUSTOMER_SERVICE" ? "3 Customer AI" : "1 Ops & Revenue"} Automation Systems
+                Showing{" "}
+                {categoryFilter === "ALL"
+                  ? "4 of 4"
+                  : categoryFilter === "CUSTOMER_SERVICE"
+                    ? "3 Customer AI"
+                    : "1 Ops & Revenue"}{" "}
+                Automation Systems
               </div>
             </div>
           </div>

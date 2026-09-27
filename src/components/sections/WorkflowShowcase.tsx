@@ -40,7 +40,10 @@ function NodeIcon({ n }: { n: Node }) {
 
 const presets = [
   { name: "Inbound Lead → Booked", desc: "Qualify, enrich, and book a call in under 60 seconds." },
-  { name: "Support Ticket → Resolution", desc: "Deflect, classify, respond, and escalate as needed." },
+  {
+    name: "Support Ticket → Resolution",
+    desc: "Deflect, classify, respond, and escalate as needed.",
+  },
   { name: "Invoice → Payment", desc: "Generate, send, chase, reconcile — hands-free." },
 ];
 
@@ -48,7 +51,10 @@ export function WorkflowShowcase() {
   const [active, setActive] = useState(0);
   return (
     <section className="relative container-pad mx-auto max-w-[1400px] py-10 md:py-14">
-      <SectionHeading title="Watch a workflow come to life" description="Real templates we deploy in production — click any preset to see the flow animate." />
+      <SectionHeading
+        title="Watch a workflow come to life"
+        description="Real templates we deploy in production — click any preset to see the flow animate."
+      />
       <div className="mt-8 grid gap-8 lg:grid-cols-[280px_1fr]">
         <div className="space-y-2">
           {presets.map((p, i) => (
@@ -86,7 +92,12 @@ export function WorkflowShowcase() {
                       key={`${active}-arrow-${i}`}
                       initial={{ x: "-100%" }}
                       animate={{ x: "100%" }}
-                      transition={{ delay: i * 0.12 + 0.2, duration: 0.8, repeat: Infinity, repeatDelay: 1.6 }}
+                      transition={{
+                        delay: i * 0.12 + 0.2,
+                        duration: 0.8,
+                        repeat: Infinity,
+                        repeatDelay: 1.6,
+                      }}
                       className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-brand to-transparent"
                     />
                   </div>

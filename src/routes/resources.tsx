@@ -27,9 +27,13 @@ export const Route = createFileRoute("/resources")({
               <div className="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-[#ff7a00]/20 to-[#c2410c]/10 text-brand ring-1 ring-inset ring-white/10">
                 <r.Icon className="size-4" />
               </div>
-              <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">{r.tag}</div>
+              <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">
+                {r.tag}
+              </div>
               <div className="mt-1 font-display text-2xl">{r.title}</div>
-              <div className="mt-4 text-sm text-brand"><RollingText>Free download →</RollingText></div>
+              <div className="mt-4 text-sm text-brand">
+                <RollingText>Free download →</RollingText>
+              </div>
             </Link>
           ))}
         </div>

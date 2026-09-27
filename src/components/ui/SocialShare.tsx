@@ -15,7 +15,8 @@ export function SocialShare({
   className = "",
 }: SocialShareProps) {
   const [copied, setCopied] = useState(false);
-  const shareUrl = typeof window !== "undefined" ? url || window.location.href : "https://makeaccuracy.agency";
+  const shareUrl =
+    typeof window !== "undefined" ? url || window.location.href : "https://makeaccuracy.agency";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(shareUrl);
@@ -28,7 +29,7 @@ export function SocialShare({
   const handleTwitterShare = () => {
     trackEvent("share_twitter", "SocialShare", shareUrl);
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      title
+      title,
     )}&url=${encodeURIComponent(shareUrl)}`;
     window.open(twitterUrl, "_blank", "noopener,noreferrer");
   };
@@ -36,7 +37,7 @@ export function SocialShare({
   const handleLinkedinShare = () => {
     trackEvent("share_linkedin", "SocialShare", shareUrl);
     const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-      shareUrl
+      shareUrl,
     )}`;
     window.open(linkedinUrl, "_blank", "noopener,noreferrer");
   };

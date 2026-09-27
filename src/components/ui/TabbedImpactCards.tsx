@@ -35,7 +35,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         title: "Starter",
         priceRange: "$1,500 – $2,500",
         priceNote: "Setup + $500–$750/mo retainer",
-        description: "Essential AI lead capture, intent qualification, and direct calendar booking for growing service businesses.",
+        description:
+          "Essential AI lead capture, intent qualification, and direct calendar booking for growing service businesses.",
         features: [
           "AI Lead Capture & Intent Qualification",
           "Sub-60s Email & SMS Automated Follow-up",
@@ -52,7 +53,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         title: "Growth",
         priceRange: "$3,500 – $6,000",
         priceNote: "Setup + $1,000–$1,500/mo retainer",
-        description: "Complete multi-channel AI Revenue Engine with WhatsApp chat, AI Voice Agents, and automated follow-up cadences.",
+        description:
+          "Complete multi-channel AI Revenue Engine with WhatsApp chat, AI Voice Agents, and automated follow-up cadences.",
         highlight: true,
         features: [
           "Everything in Starter Package +",
@@ -70,7 +72,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         title: "Scale",
         priceRange: "$7,500 – $10,000+",
         priceNote: "Setup + $2,000–$3,000+/mo retainer",
-        description: "End-to-end multi-department automation suite with automated review generation & cold database lead reactivation.",
+        description:
+          "End-to-end multi-department automation suite with automated review generation & cold database lead reactivation.",
         features: [
           "Everything in Growth Package +",
           "Automated Google Review Generation Engine",
@@ -87,7 +90,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         title: "100% IP Ownership",
         priceRange: "Included Free",
         priceNote: "Guaranteed on all packages & retainers",
-        description: "You retain full IP and source code repository ownership with zero proprietary platform dependencies.",
+        description:
+          "You retain full IP and source code repository ownership with zero proprietary platform dependencies.",
         features: [
           "Full source code & GitHub repository transfer",
           "Self-hosted infrastructure configuration",
@@ -109,7 +113,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         title: "Single Engine Build",
         priceRange: "$2,000 – $4,000",
         priceNote: "Fixed project scope",
-        description: "Focuses on automated client onboarding, automated invoice generation, or lead triage.",
+        description:
+          "Focuses on automated client onboarding, automated invoice generation, or lead triage.",
         features: [
           "1 Core Engine integration",
           "n8n / Make / Supabase automation",
@@ -126,7 +131,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         priceRange: "$5,000 – $10,000+",
         priceNote: "Cross-department build",
         highlight: true,
-        description: "Integrates onboarding, delivery tracking, and client reporting into a unified engine.",
+        description:
+          "Integrates onboarding, delivery tracking, and client reporting into a unified engine.",
         features: [
           "3 Core operational engines",
           "Custom API & CRM webhooks",
@@ -142,7 +148,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         title: "Architecture Blueprint",
         priceRange: "$1,500",
         priceNote: "Standalone audit",
-        description: "Comprehensive system audit and step-by-step technical blueprint for your internal team.",
+        description:
+          "Comprehensive system audit and step-by-step technical blueprint for your internal team.",
         features: [
           "Full tech stack vulnerability audit",
           "Custom automation roadmap",
@@ -180,7 +187,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         title: "Starter Retainer",
         priceRange: "$500 / mo",
         priceNote: "Recurring maintenance",
-        description: "Essential server monitoring, emergency error patches, and routine security updates.",
+        description:
+          "Essential server monitoring, emergency error patches, and routine security updates.",
         features: [
           "24/7 Server uptime monitoring",
           "Monthly system health check",
@@ -197,7 +205,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         priceRange: "$1,500 / mo",
         priceNote: "Maintenance & improvements",
         highlight: true,
-        description: "Continuous workflow optimization, new feature rollouts, and priority Slack access.",
+        description:
+          "Continuous workflow optimization, new feature rollouts, and priority Slack access.",
         features: [
           "24/7 Automated error alert system",
           "Up to 10 hours monthly feature dev",
@@ -213,7 +222,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         title: "Full Infrastructure OS",
         priceRange: "$3,000+ / mo",
         priceNote: "Unlimited optimization",
-        description: "Complete hands-off infrastructure management with a dedicated Principal Systems Architect.",
+        description:
+          "Complete hands-off infrastructure management with a dedicated Principal Systems Architect.",
         features: [
           "Dedicated Senior Systems Architect",
           "Unlimited bug fixes & minor tweaks",
@@ -229,7 +239,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         title: "15-Min Emergency SLA",
         priceRange: "Add-on",
         priceNote: "Critical uptime guarantee",
-        description: "Guaranteed 15-minute response SLA for mission-critical client delivery pipelines.",
+        description:
+          "Guaranteed 15-minute response SLA for mission-critical client delivery pipelines.",
         features: [
           "15-Minute incident response time",
           "Dedicated emergency phone hotline",
@@ -268,7 +279,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         priceRange: "$30,000 – $50,000+",
         priceNote: "Multi-branch deployment",
         highlight: true,
-        description: "Bespoke infrastructure for multi-location or high-volume agencies handling 100+ active clients.",
+        description:
+          "Bespoke infrastructure for multi-location or high-volume agencies handling 100+ active clients.",
         features: [
           "Multi-branch workspace architecture",
           "Custom AI model fine-tuning",
@@ -284,7 +296,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         title: "Autonomous SDR Hub",
         priceRange: "$10,000 – $18,000",
         priceNote: "Outbound AI Engine",
-        description: "AI SDR agent that qualifies leads, handles objections, and schedules sales calls directly into CRM.",
+        description:
+          "AI SDR agent that qualifies leads, handles objections, and schedules sales calls directly into CRM.",
         features: [
           "Real-time lead enrichment",
           "Multi-channel outreach automation",
@@ -300,7 +313,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
         title: "Executive ROI Portal",
         priceRange: "$5,000 – $8,000",
         priceNote: "Real-time analytics",
-        description: "Custom client dashboard displaying live workflow metrics, hour savings, and cost reductions.",
+        description:
+          "Custom client dashboard displaying live workflow metrics, hour savings, and cost reductions.",
         features: [
           "Real-time client portal UI",
           "Automated PDF report generation",
@@ -316,7 +330,8 @@ const PRICING_CATEGORIES: CategoryData[] = [
 export function TabbedImpactCards() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
-  const currentCategory = PRICING_CATEGORIES.find((cat) => cat.id === activeCategory) || PRICING_CATEGORIES[0];
+  const currentCategory =
+    PRICING_CATEGORIES.find((cat) => cat.id === activeCategory) || PRICING_CATEGORIES[0];
 
   return (
     <div className="w-full bg-sandel text-neutral-900 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-sandel-border">
@@ -381,7 +396,9 @@ export function TabbedImpactCards() {
                     <div>
                       {/* Top Header Row: Type Label & Badge Pill */}
                       <div className="flex items-center justify-between gap-2">
-                        <span className={`text-[10px] font-mono font-bold uppercase tracking-wider ${isHighlight ? "text-neutral-400" : "text-neutral-500"}`}>
+                        <span
+                          className={`text-[10px] font-mono font-bold uppercase tracking-wider ${isHighlight ? "text-neutral-400" : "text-neutral-500"}`}
+                        >
                           {card.type}
                         </span>
                         <span
@@ -406,14 +423,18 @@ export function TabbedImpactCards() {
 
                       {/* Pricing Range & Note */}
                       <div className="mt-3">
-                        <div className={`font-sans text-xl sm:text-2xl font-bold tracking-tight ${
-                          isHighlight ? "text-white" : "text-neutral-900"
-                        }`}>
+                        <div
+                          className={`font-sans text-xl sm:text-2xl font-bold tracking-tight ${
+                            isHighlight ? "text-white" : "text-neutral-900"
+                          }`}
+                        >
                           {card.priceRange}
                         </div>
-                        <div className={`text-[11px] mt-0.5 ${
-                          isHighlight ? "text-neutral-400" : "text-neutral-500"
-                        }`}>
+                        <div
+                          className={`text-[11px] mt-0.5 ${
+                            isHighlight ? "text-neutral-400" : "text-neutral-500"
+                          }`}
+                        >
                           {card.priceNote}
                         </div>
                       </div>
@@ -427,14 +448,24 @@ export function TabbedImpactCards() {
                         {card.description}
                       </p>
 
-                      <hr className={`my-4 ${isHighlight ? "border-neutral-800" : "border-black/5"}`} />
+                      <hr
+                        className={`my-4 ${isHighlight ? "border-neutral-800" : "border-black/5"}`}
+                      />
 
                       {/* Feature Bullet List */}
                       <ul className="space-y-2 text-xs">
                         {card.features.map((feat, fIdx) => (
                           <li key={fIdx} className="flex items-start gap-2 leading-snug">
-                            <Check className={`size-3.5 shrink-0 mt-0.5 ${isHighlight ? "text-white" : "text-neutral-900"}`} />
-                            <span className={isHighlight ? "text-neutral-200 font-medium" : "text-neutral-700 font-medium"}>
+                            <Check
+                              className={`size-3.5 shrink-0 mt-0.5 ${isHighlight ? "text-white" : "text-neutral-900"}`}
+                            />
+                            <span
+                              className={
+                                isHighlight
+                                  ? "text-neutral-200 font-medium"
+                                  : "text-neutral-700 font-medium"
+                              }
+                            >
                               {feat}
                             </span>
                           </li>
@@ -452,7 +483,9 @@ export function TabbedImpactCards() {
                             : "bg-neutral-900 text-white hover:bg-black shadow-sm"
                         }`}
                       >
-                        <Sparkles className={`size-3.5 ${isHighlight ? "text-neutral-600" : "text-neutral-400"}`} />
+                        <Sparkles
+                          className={`size-3.5 ${isHighlight ? "text-neutral-600" : "text-neutral-400"}`}
+                        />
                         <span>{card.ctaText}</span>
                         <ArrowRight className="size-3.5 transition group-hover:translate-x-1" />
                       </Link>

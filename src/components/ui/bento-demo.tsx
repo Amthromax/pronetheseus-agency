@@ -1,4 +1,9 @@
-import { Calendar as CalendarIcon, FileText as FileTextIcon, Bell as BellIcon, Share2 as Share2Icon } from "lucide-react";
+import {
+  Calendar as CalendarIcon,
+  FileText as FileTextIcon,
+  Bell as BellIcon,
+  Share2 as Share2Icon,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Calendar } from "@/components/ui/calendar";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
@@ -47,14 +52,12 @@ const features = [
               "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none"
+              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
             )}
           >
             <div className="flex flex-row items-center gap-2">
               <div className="flex flex-col">
-                <figcaption className="text-sm font-medium dark:text-white">
-                  {f.name}
-                </figcaption>
+                <figcaption className="text-sm font-medium dark:text-white">{f.name}</figcaption>
               </div>
             </div>
             <blockquote className="mt-2 text-xs">{f.body}</blockquote>
@@ -76,7 +79,9 @@ const features = [
           <BellIcon className="size-4 text-neutral-900" />
           <span>Real-Time Lead Alert</span>
         </div>
-        <p className="mt-2 text-xs text-neutral-600">New high-intent lead booked appointment for AI Automation Audit.</p>
+        <p className="mt-2 text-xs text-neutral-600">
+          New high-intent lead booked appointment for AI Automation Audit.
+        </p>
       </div>
     ),
   },
@@ -93,7 +98,9 @@ const features = [
           <Share2Icon className="size-4 text-neutral-900" />
           <span>Universal API Connectors</span>
         </div>
-        <p className="mt-2 text-xs text-neutral-600">Sync Slack, ClickUp, HubSpot, Salesforce, and WhatsApp bi-directionally.</p>
+        <p className="mt-2 text-xs text-neutral-600">
+          Sync Slack, ClickUp, HubSpot, Salesforce, and WhatsApp bi-directionally.
+        </p>
       </div>
     ),
   },

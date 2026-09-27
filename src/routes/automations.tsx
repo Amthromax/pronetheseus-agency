@@ -43,48 +43,46 @@ const AUTOMATIONS = [
     Icon: PhoneCall,
     tag: "Voice",
     title: "Voice AI receptionist",
-    body:
-      "Answers, qualifies, and books meetings 24/7. Sub-second latency, natural handoff to humans, full transcripts pushed to your CRM.",
+    body: "Answers, qualifies, and books meetings 24/7. Sub-second latency, natural handoff to humans, full transcripts pushed to your CRM.",
     bullets: ["Twilio / Vonage telephony", "Under 800ms round-trip", "Warm handoff with context"],
   },
   {
     Icon: Bot,
     tag: "Chat",
     title: "Concierge chat agent",
-    body:
-      "A website and in-app agent that answers real product questions, books calls, and routes edge cases to the right human on Slack.",
+    body: "A website and in-app agent that answers real product questions, books calls, and routes edge cases to the right human on Slack.",
     bullets: ["Grounded on your docs", "Escalation with transcript", "Retention & CSAT tracking"],
   },
   {
     Icon: Mail,
     tag: "Inbox",
     title: "Inbox triage & response",
-    body:
-      "Classifies, drafts, and sends replies from a shared inbox. Learns your tone. Humans stay in the loop for anything ambiguous.",
-    bullets: ["Gmail / Outlook / HelpScout", "Draft-first or auto-send", "SLA + backlog dashboards"],
+    body: "Classifies, drafts, and sends replies from a shared inbox. Learns your tone. Humans stay in the loop for anything ambiguous.",
+    bullets: [
+      "Gmail / Outlook / HelpScout",
+      "Draft-first or auto-send",
+      "SLA + backlog dashboards",
+    ],
   },
   {
     Icon: Workflow,
     tag: "Ops",
     title: "End-to-end n8n workflows",
-    body:
-      "Orchestrate everything between your tools — CRM sync, lead routing, billing reconciliation, onboarding, reporting.",
+    body: "Orchestrate everything between your tools — CRM sync, lead routing, billing reconciliation, onboarding, reporting.",
     bullets: ["Self-hosted or n8n cloud", "Versioned, tested, monitored", "Own the IP"],
   },
   {
     Icon: Database,
     tag: "Data",
     title: "Internal copilots",
-    body:
-      "A private copilot on top of your CRM, warehouse, and docs. Ask questions, generate briefs, ship RFPs in hours instead of days.",
+    body: "A private copilot on top of your CRM, warehouse, and docs. Ask questions, generate briefs, ship RFPs in hours instead of days.",
     bullets: ["RAG over your systems", "Row-level permissions", "Cited answers, no hallucination"],
   },
   {
     Icon: LineChart,
     tag: "Growth",
     title: "Outbound & lead-gen agents",
-    body:
-      "Enrich, segment, and personalize outbound at scale — with real deliverability guardrails and reply-detection handoff.",
+    body: "Enrich, segment, and personalize outbound at scale — with real deliverability guardrails and reply-detection handoff.",
     bullets: ["Apollo / Clay integrations", "Per-account personalization", "Reply routing to reps"],
   },
 ];
@@ -93,8 +91,7 @@ const PROCESS = [
   {
     week: "Week 1",
     title: "Scope & eval design",
-    body:
-      "Map the workflow end-to-end, pick the highest-leverage step, and define what 'good' looks like as a testable metric.",
+    body: "Map the workflow end-to-end, pick the highest-leverage step, and define what 'good' looks like as a testable metric.",
   },
   {
     week: "Week 2",
@@ -133,9 +130,21 @@ const INTEGRATIONS = [
 ];
 
 const GUARANTEES = [
-  { Icon: ShieldCheck, title: "Evals + guardrails on day one", body: "Every agent ships with an eval suite tied to a real business metric. No vibes." },
-  { Icon: Zap, title: "2–4 weeks to production", body: "Fixed scope, weekly demos, measurable outcome — not a six-month consulting engagement." },
-  { Icon: Puzzle, title: "You own the code", body: "Handover includes the repo, prompts, workflows, and runbook. Never a black box." },
+  {
+    Icon: ShieldCheck,
+    title: "Evals + guardrails on day one",
+    body: "Every agent ships with an eval suite tied to a real business metric. No vibes.",
+  },
+  {
+    Icon: Zap,
+    title: "2–4 weeks to production",
+    body: "Fixed scope, weekly demos, measurable outcome — not a six-month consulting engagement.",
+  },
+  {
+    Icon: Puzzle,
+    title: "You own the code",
+    body: "Handover includes the repo, prompts, workflows, and runbook. Never a black box.",
+  },
 ];
 
 const FAQS = [
@@ -216,7 +225,9 @@ function AutomationsPage() {
                 <div className="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-[#ff7a00]/20 to-[#c2410c]/10 text-brand ring-1 ring-inset ring-white/10">
                   <a.Icon className="size-4" />
                 </div>
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">{a.tag}</div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                  {a.tag}
+                </div>
               </div>
               <h3 className="mt-4 font-display text-2xl">{a.title}</h3>
               <p className="mt-3 text-sm text-foreground/70">{a.body}</p>
@@ -266,7 +277,10 @@ function AutomationsPage() {
 
       {/* Integrations */}
       <section className="container-pad mx-auto max-w-[1400px] py-16">
-        <SectionHeading title="Plays well with your stack" description="If it has an API, we can integrate. A few we work with weekly:" />
+        <SectionHeading
+          title="Plays well with your stack"
+          description="If it has an API, we can integrate. A few we work with weekly:"
+        />
         <div className="mt-10 flex flex-wrap justify-center gap-2">
           {INTEGRATIONS.map((i) => (
             <span

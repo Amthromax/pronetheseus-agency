@@ -10,14 +10,17 @@ export function Portfolio() {
 
   const categories = ["All", "Websites", "AI Agents", "Proptech & Real Estate", "Integrations"];
 
-  const filteredItems = activeCategory === "All" 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === activeCategory);
+  const filteredItems =
+    activeCategory === "All"
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="our-work" className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden">
+    <section
+      id="our-work"
+      className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden"
+    >
       <div className="mx-auto max-w-[1700px] px-4 sm:px-8 lg:px-16 xl:px-20">
-        
         {/* Main Section Title & Subtitle + View All Button */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div className="max-w-4xl">
@@ -32,7 +35,8 @@ export function Portfolio() {
             </motion.h2>
 
             <p className="mt-4 text-xs sm:text-sm text-neutral-500 font-normal leading-relaxed max-w-xl font-sans">
-              Production systems built for scale — featuring high-converting platforms, voice agents, and custom workflow integrations.
+              Production systems built for scale — featuring high-converting platforms, voice
+              agents, and custom workflow integrations.
             </p>
           </div>
 
@@ -41,7 +45,9 @@ export function Portfolio() {
               to="/case-studies"
               className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-[#f4f3ee] px-4 py-2 text-xs font-semibold text-neutral-800 hover:bg-neutral-200/70 transition shadow-2xs cursor-pointer font-sans"
             >
-              <span><RollingText>View all case studies</RollingText></span>
+              <span>
+                <RollingText>View all case studies</RollingText>
+              </span>
               <ArrowRight className="size-3.5" />
             </Link>
           </div>
@@ -86,8 +92,12 @@ export function Portfolio() {
                     loading="lazy"
                   />
                 ) : (
-                  <div className={`w-full h-full bg-gradient-to-br ${project.gradient} p-6 flex flex-col justify-end text-white`}>
-                    <span className="text-xs uppercase tracking-widest opacity-80">{project.tag}</span>
+                  <div
+                    className={`w-full h-full bg-gradient-to-br ${project.gradient} p-6 flex flex-col justify-end text-white`}
+                  >
+                    <span className="text-xs uppercase tracking-widest opacity-80">
+                      {project.tag}
+                    </span>
                     <span className="font-display text-2xl font-bold mt-1">{project.title}</span>
                   </div>
                 )}
@@ -114,8 +124,12 @@ export function Portfolio() {
                 {/* Key Outcome Badge */}
                 {project.outcomes[0] && (
                   <div className="mt-3 pt-2 border-t border-black/5 flex items-center justify-between text-xs">
-                    <span className="text-neutral-500 font-mono text-[11px]">{project.outcomes[0].label}:</span>
-                    <span className="font-bold text-neutral-900 font-mono">{project.outcomes[0].value}</span>
+                    <span className="text-neutral-500 font-mono text-[11px]">
+                      {project.outcomes[0].label}:
+                    </span>
+                    <span className="font-bold text-neutral-900 font-mono">
+                      {project.outcomes[0].value}
+                    </span>
                   </div>
                 )}
               </div>
@@ -127,14 +141,15 @@ export function Portfolio() {
                   params={{ slug: project.slug }}
                   className="w-full inline-flex items-center justify-between rounded-xl bg-white px-3.5 py-2 text-xs font-bold text-neutral-900 border border-neutral-200/80 hover:bg-neutral-900 hover:text-white transition duration-200"
                 >
-                  <span><RollingText>View Case Breakdown</RollingText></span>
+                  <span>
+                    <RollingText>View Case Breakdown</RollingText>
+                  </span>
                   <ArrowRight className="size-3.5" />
                 </Link>
               </div>
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

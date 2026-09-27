@@ -13,7 +13,10 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Make Accuracy" },
-      { name: "description", content: "Book a free 30-minute strategy call with the Make Accuracy team." },
+      {
+        name: "description",
+        content: "Book a free 30-minute strategy call with the Make Accuracy team.",
+      },
       { property: "og:title", content: "Contact — Make Accuracy" },
       { property: "og:description", content: "30-minute strategy call. Concrete plan, no fluff." },
       { property: "og:url", content: "https://makeaccuracy.agency/contact" },
@@ -32,7 +35,12 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 function Page() {
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({ resolver: zodResolver(schema) });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<FormData>({ resolver: zodResolver(schema) });
   const onSubmit = async (data: FormData) => {
     await new Promise((r) => setTimeout(r, 700));
     trackEvent("contact_form_submit", "ContactForm", data.email);
@@ -42,40 +50,91 @@ function Page() {
   return (
     <div className="min-h-screen bg-sandel text-neutral-900 pt-36 pb-20">
       <div className="container-pad mx-auto max-w-[1400px]">
-        <SectionHeading title="Let's talk about your automation stack" description="Book a call or send a note — we reply within a business day." />
+        <SectionHeading
+          title="Let's talk about your automation stack"
+          description="Book a call or send a note — we reply within a business day."
+        />
       </div>
       <section className="container-pad mx-auto mt-10 max-w-[1400px]">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
           {/* Left Column: Contact Form + Company Background Cards */}
           <div className="space-y-4 font-sans">
-            <form onSubmit={handleSubmit(onSubmit)} className="rounded-[28px] sm:rounded-[32px] border border-neutral-200/90 bg-[#f4f3ee] p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] font-sans">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="rounded-[28px] sm:rounded-[32px] border border-neutral-200/90 bg-[#f4f3ee] p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] font-sans"
+            >
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="Name" error={errors.name?.message}><input {...register("name")} className="cf-input" placeholder="Your name" /></Field>
-                <Field label="Email" error={errors.email?.message}><input {...register("email")} type="email" className="cf-input" placeholder="you@company.com" /></Field>
+                <Field label="Name" error={errors.name?.message}>
+                  <input {...register("name")} className="cf-input" placeholder="Your name" />
+                </Field>
+                <Field label="Email" error={errors.email?.message}>
+                  <input
+                    {...register("email")}
+                    type="email"
+                    className="cf-input"
+                    placeholder="you@company.com"
+                  />
+                </Field>
                 <div className="sm:col-span-2">
-                  <Field label="Company (optional)" error={errors.company?.message}><input {...register("company")} className="cf-input" placeholder="Acme Inc." /></Field>
+                  <Field label="Company (optional)" error={errors.company?.message}>
+                    <input {...register("company")} className="cf-input" placeholder="Acme Inc." />
+                  </Field>
                 </div>
                 <div className="sm:col-span-2">
                   <Field label="What are you looking to build?" error={errors.message?.message}>
-                    <textarea {...register("message")} rows={4} className="cf-input resize-none" placeholder="Tell us about your business and where you'd like automation..." />
+                    <textarea
+                      {...register("message")}
+                      rows={4}
+                      className="cf-input resize-none"
+                      placeholder="Tell us about your business and where you'd like automation..."
+                    />
                   </Field>
                 </div>
               </div>
-              <button disabled={isSubmitting} className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-neutral-900 hover:bg-black px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 shadow-md cursor-pointer">
+              <button
+                disabled={isSubmitting}
+                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-neutral-900 hover:bg-black px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 shadow-md cursor-pointer"
+              >
                 <RollingText>{isSubmitting ? "Sending..." : "Send message"}</RollingText>
               </button>
               <style>{`.cf-input{width:100%;background:#ffffff;border:1px solid rgba(0,0,0,0.08);border-radius:14px;padding:12px 14px;font-size:13.5px;outline:none;color:#18181b;transition:all 0.2s}.cf-input::placeholder{color:rgb(140,140,148)}.cf-input:focus{background:#ffffff;border-color:rgba(0,0,0,0.4);box-shadow:0 0 0 3px rgba(0,0,0,0.05)}`}</style>
             </form>
-            <InfoCard Icon={Building2} title="Make Accuracy Technologies" body="An AI automation studio building AI Employees, n8n workflows, CRM automations and voice agents for growing teams worldwide." />
-            <InfoCard Icon={MapPin} title="Headquartered in India" body="Registered office · Mumbai, Maharashtra, India — with a fully remote delivery team across London, New York, Dubai and Singapore." />
+            <InfoCard
+              Icon={Building2}
+              title="Make Accuracy Technologies"
+              body="An AI automation studio building AI Employees, n8n workflows, CRM automations and voice agents for growing teams worldwide."
+            />
+            <InfoCard
+              Icon={MapPin}
+              title="Headquartered in India"
+              body="Registered office · Mumbai, Maharashtra, India — with a fully remote delivery team across London, New York, Dubai and Singapore."
+            />
           </div>
 
           {/* Right Column: Direct Channels + Working Hours */}
           <div className="space-y-4 font-sans">
-            <InfoCard Icon={CalendarDays} title="Book a strategy call" body="30-minute call with a principal engineer. Free, actionable, no sales pressure." cta="Open calendar" ctaTo="/book" />
-            <InfoCard Icon={Mail} title="Email us directly" body="hello@makeaccuracy.agency — we reply within one business day." />
-            <InfoCard Icon={Phone} title="Call or WhatsApp" body="+91 86829 19009 · Mon–Fri, available across IST & GMT timezones." />
-            <InfoCard Icon={Clock} title="Working hours" body="Monday – Friday · 9:00 AM to 7:00 PM IST. Async support over email on weekends." />
+            <InfoCard
+              Icon={CalendarDays}
+              title="Book a strategy call"
+              body="30-minute call with a principal engineer. Free, actionable, no sales pressure."
+              cta="Open calendar"
+              ctaTo="/book"
+            />
+            <InfoCard
+              Icon={Mail}
+              title="Email us directly"
+              body="hello@makeaccuracy.agency — we reply within one business day."
+            />
+            <InfoCard
+              Icon={Phone}
+              title="Call or WhatsApp"
+              body="+91 86829 19009 · Mon–Fri, available across IST & GMT timezones."
+            />
+            <InfoCard
+              Icon={Clock}
+              title="Working hours"
+              body="Monday – Friday · 9:00 AM to 7:00 PM IST. Async support over email on weekends."
+            />
           </div>
         </div>
       </section>
@@ -93,21 +152,41 @@ function Field({ label, error, children }: { label: string; error?: string; chil
   );
 }
 
-function InfoCard({ Icon, title, body, cta, ctaTo }: { Icon: ComponentType<{ className?: string }>; title: string; body: string; cta?: string; ctaTo?: string; }) {
+function InfoCard({
+  Icon,
+  title,
+  body,
+  cta,
+  ctaTo,
+}: {
+  Icon: ComponentType<{ className?: string }>;
+  title: string;
+  body: string;
+  cta?: string;
+  ctaTo?: string;
+}) {
   return (
     <div className="rounded-[24px] sm:rounded-[28px] border border-neutral-200/90 bg-[#f4f3ee] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.07)] transition-all duration-300 font-sans">
       <div className="grid size-11 place-items-center rounded-2xl bg-white text-neutral-900 border border-black/10 shadow-2xs">
         <Icon className="size-5" />
       </div>
       <div className="mt-4 font-sans text-xl font-bold text-neutral-900">{title}</div>
-      <p className="mt-1.5 text-sm text-neutral-600 font-sans leading-relaxed font-normal">{body}</p>
-      {cta && (
-        ctaTo ? (
-          <Link to={ctaTo} className="mt-3 inline-block text-xs font-mono font-bold uppercase tracking-wider text-neutral-900 hover:underline"><RollingText>{cta + " →"}</RollingText></Link>
+      <p className="mt-1.5 text-sm text-neutral-600 font-sans leading-relaxed font-normal">
+        {body}
+      </p>
+      {cta &&
+        (ctaTo ? (
+          <Link
+            to={ctaTo}
+            className="mt-3 inline-block text-xs font-mono font-bold uppercase tracking-wider text-neutral-900 hover:underline"
+          >
+            <RollingText>{cta + " →"}</RollingText>
+          </Link>
         ) : (
-          <button className="mt-3 text-xs font-mono font-bold uppercase tracking-wider text-neutral-900 hover:underline cursor-pointer"><RollingText>{cta + " →"}</RollingText></button>
-        )
-      )}
+          <button className="mt-3 text-xs font-mono font-bold uppercase tracking-wider text-neutral-900 hover:underline cursor-pointer">
+            <RollingText>{cta + " →"}</RollingText>
+          </button>
+        ))}
     </div>
   );
 }

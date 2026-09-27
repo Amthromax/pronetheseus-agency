@@ -20,18 +20,26 @@ export function ContactCTA() {
 
         <ScrollReveal variant="text" delay={0.2} className="mx-auto mt-6 max-w-2xl">
           <p className="text-base sm:text-lg text-neutral-400 font-normal leading-relaxed">
-            Eliminate manual client onboarding, reporting chaos, and payroll bloat. Book your free 30-minute infrastructure strategy audit today.
+            Eliminate manual client onboarding, reporting chaos, and payroll bloat. Book your free
+            30-minute infrastructure strategy audit today.
           </p>
         </ScrollReveal>
 
-        <ScrollReveal variant="button" delay={0.35} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <ScrollReveal
+          variant="button"
+          delay={0.35}
+          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
           <Link to="/book">
             <MagneticButton className="group relative overflow-hidden rounded-full bg-white text-neutral-950 px-8 py-4 text-base font-semibold shadow-md transition duration-300 hover:bg-neutral-100 hover:scale-105">
               <span className="relative z-10 inline-flex items-center gap-2">
                 <RollingText>Book Strategy Call</RollingText>
                 <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
-              <span aria-hidden className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black/10 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+              />
             </MagneticButton>
           </Link>
 
@@ -39,7 +47,9 @@ export function ContactCTA() {
             to="/pricing"
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-base font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-white/10"
           >
-            <span><RollingText>Explore Pricing & SLAs</RollingText></span>
+            <span>
+              <RollingText>Explore Pricing & SLAs</RollingText>
+            </span>
           </Link>
         </ScrollReveal>
       </div>

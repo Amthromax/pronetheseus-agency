@@ -11,8 +11,14 @@ export function TiltCard({ children, intensity = 10, className, ...props }: Prop
   const ref = useRef<HTMLDivElement>(null);
   const mx = useMotionValue(0.5);
   const my = useMotionValue(0.5);
-  const rx = useSpring(useTransform(my, [0, 1], [intensity, -intensity]), { stiffness: 220, damping: 22 });
-  const ry = useSpring(useTransform(mx, [0, 1], [-intensity, intensity]), { stiffness: 220, damping: 22 });
+  const rx = useSpring(useTransform(my, [0, 1], [intensity, -intensity]), {
+    stiffness: 220,
+    damping: 22,
+  });
+  const ry = useSpring(useTransform(mx, [0, 1], [-intensity, intensity]), {
+    stiffness: 220,
+    damping: 22,
+  });
   const glowX = useTransform(mx, [0, 1], ["0%", "100%"]);
   const glowY = useTransform(my, [0, 1], ["0%", "100%"]);
 

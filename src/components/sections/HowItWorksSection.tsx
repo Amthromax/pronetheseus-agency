@@ -9,35 +9,35 @@ const STEPS = [
     name: "Audit",
     icon: Search,
     desc: "We identify repetitive and revenue-losing processes across your sales, service, and operations.",
-    badge: "Process Mapping"
+    badge: "Process Mapping",
   },
   {
     number: "02",
     name: "Design",
     icon: Compass,
     desc: "We map the ideal automated workflow, defining trigger logic, AI prompt structures, and CRM schemas.",
-    badge: "System Blueprint"
+    badge: "System Blueprint",
   },
   {
     number: "03",
     name: "Build",
     icon: Cpu,
     desc: "We connect AI, CRM, communication and business systems using enterprise n8n workflows and custom APIs.",
-    badge: "Engineering"
+    badge: "Engineering",
   },
   {
     number: "04",
     name: "Deploy",
     icon: Rocket,
     desc: "Your automation goes live with zero downtime to your existing client communications.",
-    badge: "Go Live"
+    badge: "Go Live",
   },
   {
     number: "05",
     name: "Optimize",
     icon: Sliders,
     desc: "We monitor, improve and expand the system based on real-time performance analytics.",
-    badge: "Continuous ROI"
+    badge: "Continuous ROI",
   },
 ];
 
@@ -51,7 +51,8 @@ export function HowItWorksSection() {
             How It Works
           </h2>
           <p className="mt-3.5 text-base sm:text-lg text-neutral-600 font-sans max-w-2xl mx-auto">
-            A clear, 5-step engineering methodology that eliminates buyer uncertainty and delivers production-ready automation.
+            A clear, 5-step engineering methodology that eliminates buyer uncertainty and delivers
+            production-ready automation.
           </p>
         </div>
 
@@ -101,7 +102,9 @@ export function HowItWorksSection() {
         <div className="mt-12 text-center">
           <Link to="/book">
             <button className="rounded-xl bg-[#18181b] px-8 py-3.5 text-sm font-semibold text-white shadow-md transition duration-200 hover:bg-black hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2 mx-auto">
-              <span><RollingText>Start Step 01 — Get Free Audit</RollingText></span>
+              <span>
+                <RollingText>Start Step 01 — Get Free Audit</RollingText>
+              </span>
               <ArrowRight className="size-4 text-white" />
             </button>
           </Link>

@@ -2,14 +2,7 @@ import { motion, type HTMLMotionProps, type Variants } from "motion/react";
 import { useEffect, useState, type ReactNode } from "react";
 
 export type RevealVariant =
-  | "heading"
-  | "text"
-  | "card"
-  | "image"
-  | "button"
-  | "icon"
-  | "section"
-  | "badge";
+  "heading" | "text" | "card" | "image" | "button" | "icon" | "section" | "badge";
 
 interface ScrollRevealProps extends Omit<HTMLMotionProps<"div">, "children"> {
   children: ReactNode;

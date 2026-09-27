@@ -60,7 +60,8 @@ export function IsometricSandbox() {
             Dedicated Multi-Sandbox Architecture
           </h3>
           <p className="mt-2 text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
-            Every build runs inside dedicated, zero-downtime sandbox environments engineered for maximum security, zero vendor lock-in, and instant scalability.
+            Every build runs inside dedicated, zero-downtime sandbox environments engineered for
+            maximum security, zero vendor lock-in, and instant scalability.
           </p>
 
           {/* Active Sandbox Info Box */}
@@ -77,9 +78,7 @@ export function IsometricSandbox() {
             <h4 className="mt-1 font-display text-base font-bold text-neutral-900">
               {sandboxes[activeSandbox - 1].label}
             </h4>
-            <p className="mt-1 text-xs text-neutral-600">
-              {sandboxes[activeSandbox - 1].desc}
-            </p>
+            <p className="mt-1 text-xs text-neutral-600">{sandboxes[activeSandbox - 1].desc}</p>
           </div>
         </div>
 
@@ -88,9 +87,21 @@ export function IsometricSandbox() {
           {/* Isometric Diamond Grid Canvas */}
           <div className="relative w-full h-full flex items-center justify-center scale-90 sm:scale-100">
             {/* SVG Grid Lines */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none stroke-neutral-300/80" viewBox="0 0 500 350" fill="none">
-              <path d="M 250,30 L 450,150 L 250,270 L 50,150 Z" strokeWidth="1" strokeDasharray="3 3" />
-              <path d="M 250,75 L 350,135 L 250,195 L 150,135 Z" strokeWidth="1" strokeDasharray="2 2" />
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none stroke-neutral-300/80"
+              viewBox="0 0 500 350"
+              fill="none"
+            >
+              <path
+                d="M 250,30 L 450,150 L 250,270 L 50,150 Z"
+                strokeWidth="1"
+                strokeDasharray="3 3"
+              />
+              <path
+                d="M 250,75 L 350,135 L 250,195 L 150,135 Z"
+                strokeWidth="1"
+                strokeDasharray="2 2"
+              />
               {/* Connecting Lines between Sandboxes */}
               <line x1="250" y1="90" x2="160" y2="150" stroke="#cbd5e1" strokeWidth="1.5" />
               <line x1="250" y1="90" x2="340" y2="150" stroke="#cbd5e1" strokeWidth="1.5" />
@@ -106,14 +117,18 @@ export function IsometricSandbox() {
                 activeSandbox === 1 ? "z-20 scale-105" : "z-10 opacity-90"
               }`}
             >
-              <div className={`relative w-full h-full rounded-xl border bg-white p-3 shadow-lg transition-all ${
-                activeSandbox === 1 ? "border-[#ff7a00] ring-2 ring-[#ff7a00]/30 shadow-orange-500/20" : "border-neutral-400"
-              }`}>
+              <div
+                className={`relative w-full h-full rounded-xl border bg-white p-3 shadow-lg transition-all ${
+                  activeSandbox === 1
+                    ? "border-[#ff7a00] ring-2 ring-[#ff7a00]/30 shadow-orange-500/20"
+                    : "border-neutral-400"
+                }`}
+              >
                 {/* Top Corner Status LED */}
                 <div className="absolute top-2 right-2 size-2 rounded-full bg-emerald-500 shadow-emerald-500/50 shadow-sm" />
                 {/* Top Left Corner Dot */}
                 <div className="absolute top-2 left-2 size-1.5 rounded-full bg-neutral-900" />
-                
+
                 {/* Front Side LED Dots */}
                 <div className="absolute bottom-2.5 right-3 flex items-center gap-1">
                   <span className="size-1.5 rounded-full bg-[#ff7a00]" />
@@ -142,9 +157,13 @@ export function IsometricSandbox() {
                 activeSandbox === 2 ? "z-20 scale-105" : "z-10 opacity-90"
               }`}
             >
-              <div className={`relative w-full h-full rounded-xl border bg-white p-3 shadow-lg transition-all ${
-                activeSandbox === 2 ? "border-[#ff7a00] ring-2 ring-[#ff7a00]/30 shadow-orange-500/20" : "border-neutral-400"
-              }`}>
+              <div
+                className={`relative w-full h-full rounded-xl border bg-white p-3 shadow-lg transition-all ${
+                  activeSandbox === 2
+                    ? "border-[#ff7a00] ring-2 ring-[#ff7a00]/30 shadow-orange-500/20"
+                    : "border-neutral-400"
+                }`}
+              >
                 <div className="absolute top-2 right-2 size-2 rounded-full bg-emerald-500 shadow-emerald-500/50 shadow-sm" />
                 <div className="absolute top-2 left-2 size-1.5 rounded-full bg-neutral-900" />
                 <div className="absolute bottom-2.5 right-3 flex items-center gap-1">
@@ -172,9 +191,13 @@ export function IsometricSandbox() {
                 activeSandbox === 4 ? "z-20 scale-105" : "z-10 opacity-90"
               }`}
             >
-              <div className={`relative w-full h-full rounded-xl border bg-white p-3 shadow-lg transition-all ${
-                activeSandbox === 4 ? "border-[#ff7a00] ring-2 ring-[#ff7a00]/30 shadow-orange-500/20" : "border-neutral-400"
-              }`}>
+              <div
+                className={`relative w-full h-full rounded-xl border bg-white p-3 shadow-lg transition-all ${
+                  activeSandbox === 4
+                    ? "border-[#ff7a00] ring-2 ring-[#ff7a00]/30 shadow-orange-500/20"
+                    : "border-neutral-400"
+                }`}
+              >
                 <div className="absolute top-2 right-2 size-2 rounded-full bg-emerald-500 shadow-emerald-500/50 shadow-sm" />
                 <div className="absolute top-2 left-2 size-1.5 rounded-full bg-neutral-900" />
                 <div className="absolute bottom-2.5 right-3 flex items-center gap-1">
@@ -202,9 +225,13 @@ export function IsometricSandbox() {
                 activeSandbox === 3 ? "z-30 scale-105" : "z-10 opacity-90"
               }`}
             >
-              <div className={`relative w-full h-full rounded-xl border bg-white p-3 shadow-xl transition-all ${
-                activeSandbox === 3 ? "border-[#ff7a00] ring-2 ring-[#ff7a00]/40 shadow-orange-500/30" : "border-neutral-400"
-              }`}>
+              <div
+                className={`relative w-full h-full rounded-xl border bg-white p-3 shadow-xl transition-all ${
+                  activeSandbox === 3
+                    ? "border-[#ff7a00] ring-2 ring-[#ff7a00]/40 shadow-orange-500/30"
+                    : "border-neutral-400"
+                }`}
+              >
                 {/* Central Red Pulse Light Indicator */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 flex items-center justify-center">
                   <div className="size-6 rounded-full border border-dashed border-[#ff7a00]/60 flex items-center justify-center animate-spin-slow" />

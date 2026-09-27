@@ -1,20 +1,20 @@
 import { RollingText } from "@/components/ui/rolling-text";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { 
-  Sparkles, 
-  Globe, 
-  Database, 
-  Mail, 
-  User, 
-  ArrowRight, 
-  CheckCircle2, 
-  Calendar, 
+import {
+  Sparkles,
+  Globe,
+  Database,
+  Mail,
+  User,
+  ArrowRight,
+  CheckCircle2,
+  Calendar,
   Zap,
   BarChart,
   Cpu,
   ChevronDown,
-  Check
+  Check,
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
@@ -29,7 +29,14 @@ const BUSINESS_TYPES = [
 
 const EMPLOYEE_RANGES = ["1-5 employees", "5-20 employees", "20-50 employees", "50+ employees"];
 
-const CRM_OPTIONS = ["HubSpot", "GoHighLevel", "Salesforce", "Zoho", "Spreadsheets / None", "Other CRM"];
+const CRM_OPTIONS = [
+  "HubSpot",
+  "GoHighLevel",
+  "Salesforce",
+  "Zoho",
+  "Spreadsheets / None",
+  "Other CRM",
+];
 
 const LEAD_VOLUMES = ["< 50 leads/mo", "50-200 leads/mo", "200-500 leads/mo", "500+ leads/mo"];
 
@@ -70,7 +77,9 @@ function CustomSelect({ value, options, onChange }: CustomSelectProps) {
         className="w-full flex items-center justify-between rounded-xl border border-sandel-border bg-sandel px-4 py-3 text-xs sm:text-sm font-semibold text-neutral-900 shadow-2xs transition-all hover:border-neutral-400 hover:bg-white focus:border-black focus:outline-none cursor-pointer"
       >
         <span>{value}</span>
-        <ChevronDown className={`size-4 text-neutral-500 transition-transform duration-200 ${isOpen ? "rotate-180 text-black" : ""}`} />
+        <ChevronDown
+          className={`size-4 text-neutral-500 transition-transform duration-200 ${isOpen ? "rotate-180 text-black" : ""}`}
+        />
       </button>
 
       <AnimatePresence>
@@ -95,12 +104,14 @@ function CustomSelect({ value, options, onChange }: CustomSelectProps) {
                       setIsOpen(false);
                     }}
                     className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-semibold font-sans transition-colors cursor-pointer text-left ${
-                      isSelected 
-                        ? "bg-neutral-200 text-neutral-900 font-bold" 
+                      isSelected
+                        ? "bg-neutral-200 text-neutral-900 font-bold"
                         : "text-neutral-800 hover:bg-sandel hover:text-neutral-900"
                     }`}
                   >
-                    <span><RollingText>{option}</RollingText></span>
+                    <span>
+                      <RollingText>{option}</RollingText>
+                    </span>
                     {isSelected && <Check className="size-3.5 text-neutral-900 shrink-0" />}
                   </button>
                 );
@@ -146,7 +157,8 @@ export function AutomationAuditSection() {
             Get Your Free Automation Audit
           </h2>
           <p className="mt-3.5 text-base sm:text-lg text-neutral-600 font-sans max-w-2xl mx-auto">
-            Discover exactly where your business is losing leads and how much time & revenue custom AI workflows can recover for you.
+            Discover exactly where your business is losing leads and how much time & revenue custom
+            AI workflows can recover for you.
           </p>
         </div>
 
@@ -166,7 +178,11 @@ export function AutomationAuditSection() {
                 Audit Blueprint Generated!
               </h3>
               <p className="mt-2 text-sm sm:text-base text-neutral-600 font-sans max-w-lg mx-auto">
-                We have processed <span className="font-semibold text-neutral-900">{formData.website || "your website"}</span> for <span className="font-semibold text-neutral-900">{formData.businessType}</span>.
+                We have processed{" "}
+                <span className="font-semibold text-neutral-900">
+                  {formData.website || "your website"}
+                </span>{" "}
+                for <span className="font-semibold text-neutral-900">{formData.businessType}</span>.
               </p>
 
               {/* Instant Score Card */}
@@ -211,7 +227,9 @@ export function AutomationAuditSection() {
               <div className="mt-8 pt-6 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link to="/book">
                   <button className="w-full sm:w-auto rounded-xl bg-[#18181b] px-8 py-4 text-sm font-medium text-white shadow-md transition hover:bg-black flex items-center justify-center gap-2 cursor-pointer">
-                    <span><RollingText>Review Full Audit on Calendar</RollingText></span>
+                    <span>
+                      <RollingText>Review Full Audit on Calendar</RollingText>
+                    </span>
                     <Calendar className="size-4" />
                   </button>
                 </Link>
@@ -223,14 +241,23 @@ export function AutomationAuditSection() {
               {/* Form Step Indicator */}
               <div className="flex items-center justify-between mb-8 pb-4 border-b border-neutral-200">
                 <span className="text-xs font-sans font-bold text-neutral-900 uppercase tracking-wider">
-                  Step {step} of 3 — {step === 1 ? "Business Profile" : step === 2 ? "Operational Stack" : "Deliver My Audit"}
+                  Step {step} of 3 —{" "}
+                  {step === 1
+                    ? "Business Profile"
+                    : step === 2
+                      ? "Operational Stack"
+                      : "Deliver My Audit"}
                 </span>
                 <div className="flex items-center gap-1.5">
                   {[1, 2, 3].map((i) => (
                     <div
                       key={i}
                       className={`h-2 rounded-full transition-all duration-300 ${
-                        i === step ? "w-8 bg-neutral-900" : i < step ? "w-3 bg-neutral-700" : "w-3 bg-neutral-300"
+                        i === step
+                          ? "w-8 bg-neutral-900"
+                          : i < step
+                            ? "w-3 bg-neutral-700"
+                            : "w-3 bg-neutral-300"
                       }`}
                     />
                   ))}
@@ -239,7 +266,11 @@ export function AutomationAuditSection() {
 
               {/* Step 1: Business Profile */}
               {step === 1 && (
-                <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="space-y-6">
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="space-y-6"
+                >
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-sans mb-2">
                       Company Website URL *
@@ -286,7 +317,9 @@ export function AutomationAuditSection() {
                     onClick={() => setStep(2)}
                     className="w-full mt-4 rounded-full bg-neutral-900 hover:bg-black py-3.5 text-sm font-semibold text-white transition flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                   >
-                    <span><RollingText>Next: Operational Stack</RollingText></span>
+                    <span>
+                      <RollingText>Next: Operational Stack</RollingText>
+                    </span>
                     <ArrowRight className="size-4" />
                   </button>
                 </motion.div>
@@ -294,7 +327,11 @@ export function AutomationAuditSection() {
 
               {/* Step 2: Operational Stack */}
               {step === 2 && (
-                <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="space-y-6">
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="space-y-6"
+                >
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-sans mb-2">
@@ -343,7 +380,9 @@ export function AutomationAuditSection() {
                       onClick={() => setStep(3)}
                       className="w-2/3 rounded-full bg-neutral-900 hover:bg-black py-3.5 text-sm font-semibold text-white transition flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                     >
-                      <span><RollingText>Next: Deliver Report</RollingText></span>
+                      <span>
+                        <RollingText>Next: Deliver Report</RollingText>
+                      </span>
                       <ArrowRight className="size-4" />
                     </button>
                   </div>
@@ -352,7 +391,11 @@ export function AutomationAuditSection() {
 
               {/* Step 3: Contact & Submit */}
               {step === 3 && (
-                <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="space-y-6">
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="space-y-6"
+                >
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-700 font-sans mb-2">
                       Your Name *
@@ -399,7 +442,9 @@ export function AutomationAuditSection() {
                       type="submit"
                       className="w-2/3 rounded-full bg-neutral-900 hover:bg-black py-3.5 text-sm font-semibold text-white shadow-md transition flex items-center justify-center gap-2 cursor-pointer"
                     >
-                      <span><RollingText>Generate My Audit Report</RollingText></span>
+                      <span>
+                        <RollingText>Generate My Audit Report</RollingText>
+                      </span>
                       <Sparkles className="size-4 text-white" />
                     </button>
                   </div>

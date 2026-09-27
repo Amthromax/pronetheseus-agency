@@ -4,10 +4,41 @@ import { Stagger, staggerItem } from "@/components/ui/reveal";
 import { motion } from "motion/react";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import {
-  Check, TrendingUp, Smile, Zap, Clock, Shield, Globe, Award, Sparkles, Compass,
-  Layers, Cpu, Command, Flame, Sun, HeartHandshake, CreditCard, ShoppingBag,
-  FileText, Database, Hash, Cloud, GitBranch, Brain, Target, Layout, Box,
-  MessageCircle, Code2, Workflow, Building2, ChevronRight, Server, Hexagon, Circle
+  Check,
+  TrendingUp,
+  Smile,
+  Zap,
+  Clock,
+  Shield,
+  Globe,
+  Award,
+  Sparkles,
+  Compass,
+  Layers,
+  Cpu,
+  Command,
+  Flame,
+  Sun,
+  HeartHandshake,
+  CreditCard,
+  ShoppingBag,
+  FileText,
+  Database,
+  Hash,
+  Cloud,
+  GitBranch,
+  Brain,
+  Target,
+  Layout,
+  Box,
+  MessageCircle,
+  Code2,
+  Workflow,
+  Building2,
+  ChevronRight,
+  Server,
+  Hexagon,
+  Circle,
 } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
 
@@ -15,9 +46,15 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Make Accuracy" },
-      { name: "description", content: "The senior team behind Make Accuracy and the beliefs that guide our work." },
+      {
+        name: "description",
+        content: "The senior team behind Make Accuracy and the beliefs that guide our work.",
+      },
       { property: "og:title", content: "About — Make Accuracy" },
-      { property: "og:description", content: "Meet the team building the AI backbone of ambitious companies." },
+      {
+        property: "og:description",
+        content: "Meet the team building the AI backbone of ambitious companies.",
+      },
       { property: "og:url", content: "https://makeaccuracy.agency/about" },
     ],
     links: [{ rel: "canonical", href: "https://makeaccuracy.agency/about" }],
@@ -31,9 +68,7 @@ const values = [
   { title: "Own the outcome", desc: "We measure success in hours saved and revenue moved." },
   { title: "Design counts", desc: "AI systems should feel effortless — and beautiful." },
 ];
-const team = [
-  { name: "Kanth Magliar", role: "Founder & CEO", image: "/kishore-kanth.webp" },
-];
+const team = [{ name: "Kanth Magliar", role: "Founder & CEO", image: "/kishore-kanth.webp" }];
 
 const row1Logos = [
   { name: "Stripe", icon: CreditCard },
@@ -63,7 +98,10 @@ function Page() {
   return (
     <div className="min-h-screen bg-white text-neutral-900 pt-36 pb-20">
       <div className="container-pad mx-auto max-w-[1400px]">
-        <SectionHeading title="We build the AI backbone of ambitious companies" description="A boutique studio of senior engineers, designers, and operators. We take on a limited number of engagements each quarter." />
+        <SectionHeading
+          title="We build the AI backbone of ambitious companies"
+          description="A boutique studio of senior engineers, designers, and operators. We take on a limited number of engagements each quarter."
+        />
       </div>
       <section className="container-pad mx-auto mt-16 max-w-[1400px]">
         <Stagger className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -74,7 +112,9 @@ function Page() {
               className="rounded-[24px] sm:rounded-[28px] border border-neutral-200/80 bg-[#f4f3ee] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all duration-300 font-sans"
             >
               <div className="font-sans text-xl font-bold text-neutral-900">{v.title}</div>
-              <p className="mt-2 text-sm text-neutral-600 font-sans leading-relaxed font-normal">{v.desc}</p>
+              <p className="mt-2 text-sm text-neutral-600 font-sans leading-relaxed font-normal">
+                {v.desc}
+              </p>
             </motion.div>
           ))}
         </Stagger>
@@ -104,22 +144,44 @@ function Page() {
 
             {/* Narrative Text */}
             <p className="mt-6 font-sans text-base font-normal leading-relaxed text-neutral-700 sm:text-lg">
-              We are a team focused on helping businesses attract high quality enquiries and turn them into real clients. For the past four years, we have worked with businesses that wanted more than just traffic, clicks, or impressive numbers. Our focus is simple. We bring the right people to your business and help more of them take the next step. Many businesses are already putting in the effort, but their marketing may be reaching the wrong audience or losing interested people before they enquire. Our team helps identify these gaps and improve the complete journey. We keep the process clear and practical. We understand your business, build the right system, reach the right people, and improve what is not working. We also work with a limited number of clients at a time. This allows our team to give every business proper attention, communicate clearly, and keep you informed about the progress and results.
+              We are a team focused on helping businesses attract high quality enquiries and turn
+              them into real clients. For the past four years, we have worked with businesses that
+              wanted more than just traffic, clicks, or impressive numbers. Our focus is simple. We
+              bring the right people to your business and help more of them take the next step. Many
+              businesses are already putting in the effort, but their marketing may be reaching the
+              wrong audience or losing interested people before they enquire. Our team helps
+              identify these gaps and improve the complete journey. We keep the process clear and
+              practical. We understand your business, build the right system, reach the right
+              people, and improve what is not working. We also work with a limited number of clients
+              at a time. This allows our team to give every business proper attention, communicate
+              clearly, and keep you informed about the progress and results.
             </p>
 
             {/* Stats Row */}
             <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8 border-y border-neutral-200/80 py-8">
               <div className="py-2">
-                <div className="font-sans text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">4+</div>
-                <div className="mt-2 font-sans text-sm font-medium text-neutral-600 sm:text-base">Years of Experience</div>
+                <div className="font-sans text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
+                  4+
+                </div>
+                <div className="mt-2 font-sans text-sm font-medium text-neutral-600 sm:text-base">
+                  Years of Experience
+                </div>
               </div>
               <div className="py-2 border-t sm:border-t-0 sm:border-l border-neutral-200/80 sm:pl-8">
-                <div className="font-sans text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">62+</div>
-                <div className="mt-2 font-sans text-sm font-medium text-neutral-600 sm:text-base">Businesses Worked With</div>
+                <div className="font-sans text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
+                  62+
+                </div>
+                <div className="mt-2 font-sans text-sm font-medium text-neutral-600 sm:text-base">
+                  Businesses Worked With
+                </div>
               </div>
               <div className="py-2 border-t sm:border-t-0 sm:border-l border-neutral-200/80 sm:pl-8">
-                <div className="font-sans text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">4.9 / 5</div>
-                <div className="mt-2 font-sans text-sm font-medium text-neutral-600 sm:text-base">Client Satisfaction</div>
+                <div className="font-sans text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
+                  4.9 / 5
+                </div>
+                <div className="mt-2 font-sans text-sm font-medium text-neutral-600 sm:text-base">
+                  Client Satisfaction
+                </div>
               </div>
             </div>
 
@@ -136,7 +198,10 @@ function Page() {
                   "Strong focus on ROI and business growth",
                   "Built for long-term results, not short-term spikes",
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3.5 font-sans text-base font-medium text-neutral-800 sm:text-lg">
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3.5 font-sans text-base font-medium text-neutral-800 sm:text-lg"
+                  >
                     <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600/10 text-blue-600">
                       <Check className="h-4 w-4" />
                     </div>
@@ -164,10 +229,15 @@ function Page() {
                 />
               </div>
               <div className="p-7 sm:p-8 bg-sandel-card">
-                <div className="font-sans text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900">Kanth Magliar</div>
-                <div className="mt-1 text-base sm:text-lg font-semibold text-blue-600">Founder & CEO</div>
+                <div className="font-sans text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900">
+                  Kanth Magliar
+                </div>
+                <div className="mt-1 text-base sm:text-lg font-semibold text-blue-600">
+                  Founder & CEO
+                </div>
                 <p className="mt-3 text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  Leading AI automation & growth infrastructure for scaling agencies and enterprises.
+                  Leading AI automation & growth infrastructure for scaling agencies and
+                  enterprises.
                 </p>
               </div>
             </motion.div>
@@ -178,7 +248,6 @@ function Page() {
       {/* Bento Grid Metrics Section */}
       <section className="container-pad mx-auto mt-24 max-w-[1400px]">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          
           {/* Card 1: Growth Metrics */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -193,7 +262,8 @@ function Page() {
                 <span>Growth Metrics</span>
               </div>
               <h3 className="mt-4 font-sans text-lg font-bold leading-snug text-neutral-900 sm:text-xl">
-                Helping businesses build stronger online presence through websites, ads, and content.
+                Helping businesses build stronger online presence through websites, ads, and
+                content.
               </h3>
             </div>
 
@@ -225,12 +295,18 @@ function Page() {
             {/* Bottom stats */}
             <div className="grid grid-cols-2 gap-4 border-t border-neutral-300/70 pt-4 font-sans">
               <div>
-                <div className="text-2xl font-extrabold tracking-tight text-neutral-900 sm:text-3xl">42+</div>
+                <div className="text-2xl font-extrabold tracking-tight text-neutral-900 sm:text-3xl">
+                  42+
+                </div>
                 <div className="mt-0.5 text-xs font-medium text-neutral-600">Industries Served</div>
               </div>
               <div>
-                <div className="text-2xl font-extrabold tracking-tight text-neutral-900 sm:text-3xl">78+</div>
-                <div className="mt-0.5 text-xs font-medium text-neutral-600">Projects delivered</div>
+                <div className="text-2xl font-extrabold tracking-tight text-neutral-900 sm:text-3xl">
+                  78+
+                </div>
+                <div className="mt-0.5 text-xs font-medium text-neutral-600">
+                  Projects delivered
+                </div>
               </div>
             </div>
           </motion.div>
@@ -252,7 +328,10 @@ function Page() {
 
               {/* Abstract Vertical Blue Fiber Lines Graphic */}
               <div className="absolute inset-x-0 bottom-0 top-10 flex items-end justify-between gap-1 px-4 opacity-90">
-                {[40, 65, 80, 95, 85, 70, 90, 100, 80, 60, 75, 90, 100, 85, 65, 95, 70, 50, 85, 95, 75, 60].map((h, idx) => (
+                {[
+                  40, 65, 80, 95, 85, 70, 90, 100, 80, 60, 75, 90, 100, 85, 65, 95, 70, 50, 85, 95,
+                  75, 60,
+                ].map((h, idx) => (
                   <div
                     key={idx}
                     style={{ height: `${h}%` }}
@@ -267,7 +346,8 @@ function Page() {
                 Revenue Systems Built With Purpose
               </h3>
               <p className="mt-2 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                Every strategy is designed to attract the right audience, build trust, and generate qualified leads.
+                Every strategy is designed to attract the right audience, build trust, and generate
+                qualified leads.
               </p>
             </div>
           </motion.div>
@@ -293,15 +373,21 @@ function Page() {
             <div className="my-6 grid grid-cols-3 gap-2 font-sans">
               <div>
                 <div className="text-xl font-extrabold text-neutral-900 sm:text-2xl">40%</div>
-                <div className="mt-1 text-[11px] font-medium leading-tight text-neutral-600">Trust & Positioning</div>
+                <div className="mt-1 text-[11px] font-medium leading-tight text-neutral-600">
+                  Trust & Positioning
+                </div>
               </div>
               <div>
                 <div className="text-xl font-extrabold text-neutral-900 sm:text-2xl">35%</div>
-                <div className="mt-1 text-[11px] font-medium leading-tight text-neutral-600">Traffic Acquisition</div>
+                <div className="mt-1 text-[11px] font-medium leading-tight text-neutral-600">
+                  Traffic Acquisition
+                </div>
               </div>
               <div>
                 <div className="text-xl font-extrabold text-neutral-900 sm:text-2xl">25%</div>
-                <div className="mt-1 text-[11px] font-medium leading-tight text-neutral-600">Conversion Optimization</div>
+                <div className="mt-1 text-[11px] font-medium leading-tight text-neutral-600">
+                  Conversion Optimization
+                </div>
               </div>
             </div>
 
@@ -346,7 +432,9 @@ function Page() {
                   5.0
                 </div>
               </div>
-              <div className="mt-3 font-sans text-xs font-medium text-neutral-600">Client satisfaction score</div>
+              <div className="mt-3 font-sans text-xs font-medium text-neutral-600">
+                Client satisfaction score
+              </div>
             </div>
 
             {/* Bottom stats row */}
@@ -390,10 +478,18 @@ function Page() {
 
             {/* Checklist Horizontal Timeline */}
             <div className="my-6 flex flex-wrap items-center justify-between gap-2 border-y border-neutral-300/70 py-4 font-sans text-xs font-semibold text-neutral-800">
-              <span className="flex items-center gap-1"><Check className="h-3.5 w-3.5 text-neutral-600" /> Discovery</span>
-              <span className="flex items-center gap-1"><Check className="h-3.5 w-3.5 text-neutral-600" /> Strategy</span>
-              <span className="flex items-center gap-1"><Check className="h-3.5 w-3.5 text-neutral-600" /> Design System</span>
-              <span className="flex items-center gap-1"><Check className="h-3.5 w-3.5 text-neutral-600" /> Launch</span>
+              <span className="flex items-center gap-1">
+                <Check className="h-3.5 w-3.5 text-neutral-600" /> Discovery
+              </span>
+              <span className="flex items-center gap-1">
+                <Check className="h-3.5 w-3.5 text-neutral-600" /> Strategy
+              </span>
+              <span className="flex items-center gap-1">
+                <Check className="h-3.5 w-3.5 text-neutral-600" /> Design System
+              </span>
+              <span className="flex items-center gap-1">
+                <Check className="h-3.5 w-3.5 text-neutral-600" /> Launch
+              </span>
             </div>
 
             {/* Bottom stats row */}
@@ -404,7 +500,9 @@ function Page() {
               </div>
               <div>
                 <div className="text-2xl font-extrabold text-neutral-900 sm:text-3xl">24/7</div>
-                <div className="mt-0.5 text-xs font-medium text-neutral-600">Project Communication</div>
+                <div className="mt-0.5 text-xs font-medium text-neutral-600">
+                  Project Communication
+                </div>
               </div>
             </div>
           </motion.div>
@@ -452,19 +550,20 @@ function Page() {
               </div>
               <div>
                 <div className="text-2xl font-extrabold text-neutral-900 sm:text-3xl">50ms</div>
-                <div className="mt-0.5 text-xs font-medium text-neutral-600">Average response time</div>
+                <div className="mt-0.5 text-xs font-medium text-neutral-600">
+                  Average response time
+                </div>
               </div>
             </div>
           </motion.div>
-
         </div>
       </section>
 
       {/* 100+ Integrations Section */}
       <section className="relative mt-20 overflow-hidden border-y border-neutral-900 bg-[#040508] py-20 text-white">
         {/* Subtle background grid pattern */}
-        <div 
-          aria-hidden 
+        <div
+          aria-hidden
           className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#1f293718_1px,transparent_1px),linear-gradient(to_bottom,#1f293718_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_80%,transparent_100%)]"
         />
 
@@ -476,13 +575,15 @@ function Page() {
 
           {/* Description */}
           <p className="mx-auto mt-4 max-w-2xl font-sans text-sm font-normal leading-relaxed text-neutral-400 sm:text-base">
-            Seamlessly deploy the entire Make Accuracy platform or separate best-in-class modules into your current environment with built-in integrations. No manual scripting or maintenance.
+            Seamlessly deploy the entire Make Accuracy platform or separate best-in-class modules
+            into your current environment with built-in integrations. No manual scripting or
+            maintenance.
           </p>
 
           {/* Grid Container */}
           <div className="relative mt-12">
             {/* Intense radial blue blur spotlight behind the box grid */}
-            <div 
+            <div
               aria-hidden
               className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.65)_0%,rgba(29,78,216,0.3)_45%,transparent_75%)] blur-3xl"
             />
@@ -490,132 +591,222 @@ function Page() {
             <div className="relative z-10 grid grid-cols-2 gap-3 sm:grid-cols-4 md:grid-cols-7 sm:gap-4">
               {[
                 // Row 1
-                { 
-                  name: "AWS Auto Scaling Group", 
+                {
+                  name: "AWS Auto Scaling Group",
                   active: false,
                   icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cls}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className={cls}
+                    >
                       <path d="M4 8h16M4 16h16M8 4v16M16 4v16" />
                       <circle cx="12" cy="12" r="2" fill="currentColor" />
                     </svg>
-                  )
+                  ),
                 },
-                { 
-                  name: "Azure", 
+                {
+                  name: "Azure",
                   active: true,
                   icon: (cls: string) => (
                     <svg viewBox="0 0 24 24" fill="currentColor" className={cls}>
                       <path d="M13.05 2.15L3.6 18.5H8.7L14.6 8.2L18.3 18.5H23.4L15.9 2.15H13.05ZM11.1 11.8L6.45 21.85H0.6L9.65 6.2L11.1 11.8Z" />
                     </svg>
-                  )
+                  ),
                 },
-                { 
-                  name: "AWS", 
+                {
+                  name: "AWS",
                   active: true,
                   icon: (cls: string) => (
                     <svg viewBox="0 0 60 36" fill="currentColor" className={cls}>
-                      <text x="3" y="22" fontFamily="sans-serif" fontSize="22" fontWeight="900" letterSpacing="-0.5">aws</text>
-                      <path d="M6 28 Q 28 36 50 28" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                      <path d="M46 25 L 52 28 L 47 32" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                      <text
+                        x="3"
+                        y="22"
+                        fontFamily="sans-serif"
+                        fontSize="22"
+                        fontWeight="900"
+                        letterSpacing="-0.5"
+                      >
+                        aws
+                      </text>
+                      <path
+                        d="M6 28 Q 28 36 50 28"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M46 25 L 52 28 L 47 32"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                      />
                     </svg>
-                  )
+                  ),
                 },
-                { 
-                  name: "GCP", 
+                {
+                  name: "GCP",
                   active: true,
                   icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className={cls}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={cls}
+                    >
                       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                       <circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none" />
                     </svg>
-                  )
+                  ),
                 },
-                { 
-                  name: "OCI", 
+                {
+                  name: "OCI",
                   active: true,
                   icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" className={cls}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3.5"
+                      className={cls}
+                    >
                       <ellipse cx="12" cy="12" rx="9" ry="5.5" />
                     </svg>
-                  )
+                  ),
                 },
-                { 
-                  name: "Tanzu", 
+                {
+                  name: "Tanzu",
                   active: true,
                   icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className={cls}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.2"
+                      className={cls}
+                    >
                       <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
                       <circle cx="12" cy="12" r="3.5" strokeWidth="1.8" />
                     </svg>
-                  )
+                  ),
                 },
-                { 
-                  name: "Spot Elastigroup", 
+                {
+                  name: "Spot Elastigroup",
                   active: false,
                   icon: (cls: string) => (
                     <svg viewBox="0 0 24 24" fill="currentColor" className={cls}>
                       <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
                     </svg>
-                  )
+                  ),
                 },
 
                 // Row 2
-                { 
-                  name: "Serverless", 
+                {
+                  name: "Serverless",
                   active: false,
                   icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cls}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className={cls}
+                    >
                       <polygon points="12 2 2 7 12 12 22 7 12 2" />
                       <polyline points="2 17 12 22 22 17" />
                     </svg>
-                  )
+                  ),
                 },
-                { 
-                  name: "WinRM", 
+                {
+                  name: "WinRM",
                   active: true,
                   icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={cls}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className={cls}
+                    >
                       <rect x="3" y="4" width="18" height="16" rx="2" />
                       <polyline points="7 9 10 12 7 15" strokeWidth="2.5" strokeLinecap="round" />
-                      <line x1="12" y1="15" x2="16" y2="15" strokeWidth="2.5" strokeLinecap="round" />
+                      <line
+                        x1="12"
+                        y1="15"
+                        x2="16"
+                        y2="15"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                      />
                     </svg>
-                  )
+                  ),
                 },
-                { 
-                  name: "Amazon ECS", 
+                {
+                  name: "Amazon ECS",
                   active: true,
                   icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" className={cls}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinejoin="round"
+                      className={cls}
+                    >
                       <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" />
                       <path d="M2 7l10 5 10-5" />
                       <line x1="12" y1="12" x2="12" y2="22" />
                     </svg>
-                  )
+                  ),
                 },
-                { 
-                  name: "Azure Functions", 
+                {
+                  name: "Azure Functions",
                   active: true,
                   icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className={cls}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      className={cls}
+                    >
                       <path d="M6 5L3 12l3 7M18 5l3 7-3 7" strokeWidth="2.2" />
-                      <polygon points="13 3 8 13 13 13 11 21 17 11 12 11 13 3" fill="currentColor" stroke="none" />
+                      <polygon
+                        points="13 3 8 13 13 13 11 21 17 11 12 11 13 3"
+                        fill="currentColor"
+                        stroke="none"
+                      />
                     </svg>
-                  )
+                  ),
                 },
-                { 
-                  name: "AWS Lambda", 
+                {
+                  name: "AWS Lambda",
                   active: true,
                   icon: (cls: string) => (
                     <svg viewBox="0 0 24 24" fill="currentColor" className={cls}>
                       <path d="M4 20h4l3.8-8.5L15 20h5L13.8 8.8 16.5 4h-4.2L10 8.8 8.4 4H4l3.5 7.8L4 20z" />
                     </svg>
-                  )
+                  ),
                 },
-                { 
-                  name: "Kubernetes", 
+                {
+                  name: "Kubernetes",
                   active: true,
                   icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={cls}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      className={cls}
+                    >
                       <polygon points="12 2 21 7 21 17 12 22 3 17 3 7 12 2" />
                       <circle cx="12" cy="12" r="3.2" strokeWidth="2" />
                       <line x1="12" y1="2" x2="12" y2="8.8" strokeWidth="2" />
@@ -625,16 +816,16 @@ function Page() {
                       <line x1="21" y1="7" x2="14.7" y2="10.5" strokeWidth="2" />
                       <line x1="9.3" y1="13.5" x2="3" y2="17" strokeWidth="2" />
                     </svg>
-                  )
+                  ),
                 },
-                { 
-                  name: "Spot Elastigroup", 
+                {
+                  name: "Spot Elastigroup",
                   active: false,
                   icon: (cls: string) => (
                     <svg viewBox="0 0 24 24" fill="currentColor" className={cls}>
                       <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
                     </svg>
-                  )
+                  ),
                 },
               ].map((item, idx) => {
                 return (
@@ -646,8 +837,12 @@ function Page() {
                         : "border border-neutral-800/60 bg-[#0c0d12]/90 text-neutral-500 opacity-30 backdrop-blur-sm hover:opacity-60 hover:text-neutral-300"
                     }`}
                   >
-                    {item.icon(`h-9 w-9 sm:h-11 sm:w-11 transition-transform duration-300 group-hover:scale-110 ${item.active ? "text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.9)]" : "text-neutral-500"}`)}
-                    <span className={`mt-3 font-sans text-xs sm:text-sm font-bold tracking-tight text-center leading-tight ${item.active ? "text-white" : "text-neutral-500"}`}>
+                    {item.icon(
+                      `h-9 w-9 sm:h-11 sm:w-11 transition-transform duration-300 group-hover:scale-110 ${item.active ? "text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.9)]" : "text-neutral-500"}`,
+                    )}
+                    <span
+                      className={`mt-3 font-sans text-xs sm:text-sm font-bold tracking-tight text-center leading-tight ${item.active ? "text-white" : "text-neutral-500"}`}
+                    >
                       {item.name}
                     </span>
                   </div>
@@ -662,7 +857,6 @@ function Page() {
       <section className="bg-white py-20 text-neutral-900">
         <div className="container-pad mx-auto max-w-[1400px]">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 sm:gap-8">
-            
             {/* Row 1 - Col 1: Card 01 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -678,7 +872,8 @@ function Page() {
                 Strategic Thinking
               </h3>
               <p className="mt-3 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                Every project begins with understanding your business, audience, and goals before any execution starts.
+                Every project begins with understanding your business, audience, and goals before
+                any execution starts.
               </p>
             </motion.div>
 
@@ -714,7 +909,8 @@ function Page() {
                 Systems That Work Together
               </h3>
               <p className="mt-3 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                Your website, ads, and content work together to build trust, improve engagement, and generate qualified leads.
+                Your website, ads, and content work together to build trust, improve engagement, and
+                generate qualified leads.
               </p>
             </motion.div>
 
@@ -733,7 +929,8 @@ function Page() {
                 Focused On Real Results
               </h3>
               <p className="mt-3 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                Every strategy is built to increase conversions, generate quality leads, and support long-term business growth.
+                Every strategy is built to increase conversions, generate quality leads, and support
+                long-term business growth.
               </p>
             </motion.div>
 
@@ -752,7 +949,8 @@ function Page() {
                 Transparent Communication
               </h3>
               <p className="mt-3 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                Direct updates from senior engineers, weekly progress demos, and clear, jargon-free milestone reporting.
+                Direct updates from senior engineers, weekly progress demos, and clear, jargon-free
+                milestone reporting.
               </p>
             </motion.div>
 
@@ -771,10 +969,10 @@ function Page() {
                 Continuous Optimization
               </h3>
               <p className="mt-3 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                We monitor performance post-launch and continuously refine workflows to maximize speed, scalability, and ROI.
+                We monitor performance post-launch and continuously refine workflows to maximize
+                speed, scalability, and ROI.
               </p>
             </motion.div>
-
           </div>
         </div>
       </section>

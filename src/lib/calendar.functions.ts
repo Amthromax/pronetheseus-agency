@@ -9,7 +9,10 @@ const RFC3339_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(Z|[+-]\d{2}:\
 function zoneOffset(dateYMD: string, tz: string): string {
   // Use noon UTC of the same date — safely away from any DST switch window.
   const probe = new Date(`${dateYMD}T12:00:00Z`);
-  const parts = new Intl.DateTimeFormat("en-US", { timeZone: tz, timeZoneName: "longOffset" }).formatToParts(probe);
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: tz,
+    timeZoneName: "longOffset",
+  }).formatToParts(probe);
   const raw = parts.find((p) => p.type === "timeZoneName")?.value ?? "";
   const m = raw.match(/([+-]\d{2}:\d{2})/);
   if (m) return m[1];
@@ -75,7 +78,7 @@ export const getBusySlots = createServerFn({ method: "POST" })
       const res = await fetch(`${GATEWAY_URL}/freeBusy`, {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${lovableKey}`,
+          Authorization: `Bearer ${lovableKey}`,
           "X-Connection-Api-Key": connKey,
           "Content-Type": "application/json",
         },
@@ -91,7 +94,9 @@ export const getBusySlots = createServerFn({ method: "POST" })
         console.warn(`Google Calendar freeBusy warning [${res.status}]: ${text}`);
         return { busy: [], connected: false };
       }
-      const json = (await res.json()) as { calendars?: { primary?: { busy?: Array<{ start: string; end: string }> } } };
+      const json = (await res.json()) as {
+        calendars?: { primary?: { busy?: Array<{ start: string; end: string }> } };
+      };
       const busy = json.calendars?.primary?.busy ?? [];
       return { busy: busy.map((b) => ({ start: b.start, end: b.end })), connected: true };
     } catch (err) {
@@ -129,7 +134,9 @@ export const createBookingEvent = createServerFn({ method: "POST" })
           `Ref: ${ref}`,
           `Guest: ${data.name} <${data.email}>`,
           data.notes ? `Notes: ${data.notes}` : null,
-        ].filter(Boolean).join("\n"),
+        ]
+          .filter(Boolean)
+          .join("\n"),
         start: { dateTime: startDT, timeZone: tz },
         end: { dateTime: endDT, timeZone: tz },
         attendees: [{ email: data.email, displayName: data.name }],
@@ -146,7 +153,7 @@ export const createBookingEvent = createServerFn({ method: "POST" })
       const res = await fetch(url, {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${lovableKey}`,
+          Authorization: `Bearer ${lovableKey}`,
           "X-Connection-Api-Key": connKey,
           "Content-Type": "application/json",
         },
@@ -227,7 +234,7 @@ export const rescheduleBookingEvent = createServerFn({ method: "POST" })
       const res = await fetch(url, {
         method: "PATCH",
         headers: {
-          "Authorization": `Bearer ${lovableKey}`,
+          Authorization: `Bearer ${lovableKey}`,
           "X-Connection-Api-Key": connKey,
           "Content-Type": "application/json",
         },
@@ -237,7 +244,9 @@ export const rescheduleBookingEvent = createServerFn({ method: "POST" })
         const text = await res.text();
         console.error(`Google Calendar patch failed [${res.status}]: ${text}`);
       }
-      const event = res.ok ? ((await res.json()) as { id?: string; htmlLink?: string; hangoutLink?: string }) : {};
+      const event = res.ok
+        ? ((await res.json()) as { id?: string; htmlLink?: string; hangoutLink?: string })
+        : {};
       return {
         eventId: event.id ?? data.eventId,
         htmlLink: event.htmlLink ?? null,
@@ -268,7 +277,7 @@ export const cancelBookingEvent = createServerFn({ method: "POST" })
       const res = await fetch(url, {
         method: "DELETE",
         headers: {
-          "Authorization": `Bearer ${lovableKey}`,
+          Authorization: `Bearer ${lovableKey}`,
           "X-Connection-Api-Key": connKey,
         },
       });

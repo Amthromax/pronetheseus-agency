@@ -51,16 +51,26 @@ export function CookieConsent() {
 
           {/* Description Content */}
           <p className="pr-8 text-xs sm:text-[13px] text-neutral-300 leading-relaxed font-normal">
-            Essential cookies keep the site working and stay on. Optional cookies help with performance and advertising — accept, reject, or manage them. Learn more in our{" "}
-            <Link to="/privacy" className="font-semibold text-white underline underline-offset-2 hover:text-neutral-300 transition">
+            Essential cookies keep the site working and stay on. Optional cookies help with
+            performance and advertising — accept, reject, or manage them. Learn more in our{" "}
+            <Link
+              to="/privacy"
+              className="font-semibold text-white underline underline-offset-2 hover:text-neutral-300 transition"
+            >
               Cookie Policy
             </Link>
             ,{" "}
-            <Link to="/privacy" className="font-semibold text-white underline underline-offset-2 hover:text-neutral-300 transition">
+            <Link
+              to="/privacy"
+              className="font-semibold text-white underline underline-offset-2 hover:text-neutral-300 transition"
+            >
               Privacy Policy
             </Link>
             , and{" "}
-            <Link to="/terms" className="font-semibold text-white underline underline-offset-2 hover:text-neutral-300 transition">
+            <Link
+              to="/terms"
+              className="font-semibold text-white underline underline-offset-2 hover:text-neutral-300 transition"
+            >
               Terms of Service
             </Link>
             .

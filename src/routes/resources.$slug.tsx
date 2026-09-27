@@ -11,7 +11,12 @@ export const Route = createFileRoute("/resources/$slug")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Resource not found — Make Accuracy" }, { name: "robots", content: "noindex" }] };
+      return {
+        meta: [
+          { title: "Resource not found — Make Accuracy" },
+          { name: "robots", content: "noindex" },
+        ],
+      };
     }
     const { resource } = loaderData;
     const title = `${resource.title} — Make Accuracy`;
@@ -44,7 +49,9 @@ export const Route = createFileRoute("/resources/$slug")({
       <div className="container-pad mx-auto max-w-3xl pb-24 text-center">
         <h1 className="font-display text-3xl">Something went wrong</h1>
         <p className="mt-3 text-sm text-muted-foreground">{error.message}</p>
-        <button onClick={reset} className="mt-6 text-sm text-brand"><RollingText>Try again</RollingText></button>
+        <button onClick={reset} className="mt-6 text-sm text-brand">
+          <RollingText>Try again</RollingText>
+        </button>
       </div>
     </div>
   ),
@@ -69,7 +76,9 @@ function ResourceDetail() {
           <div className="grid size-12 place-items-center rounded-2xl bg-gradient-to-br from-[#ff7a00]/20 to-[#c2410c]/10 text-brand ring-1 ring-inset ring-white/10">
             <resource.Icon className="size-5" />
           </div>
-          <div className="text-xs uppercase tracking-widest text-muted-foreground">{resource.tag}</div>
+          <div className="text-xs uppercase tracking-widest text-muted-foreground">
+            {resource.tag}
+          </div>
         </div>
 
         <h1 className="mt-5 font-display text-4xl leading-[1.05] tracking-tight md:text-6xl">
@@ -86,7 +95,10 @@ function ResourceDetail() {
 
         <div className="mt-14 space-y-8">
           {resource.sections.map((s: { heading: string; body: string }) => (
-            <section key={s.heading} className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+            <section
+              key={s.heading}
+              className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 md:p-8"
+            >
               <h2 className="font-display text-2xl">{s.heading}</h2>
               <p className="mt-3 text-muted-foreground">{s.body}</p>
             </section>
@@ -95,7 +107,9 @@ function ResourceDetail() {
 
         {others.length > 0 && (
           <div className="mt-20">
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">More resources</div>
+            <div className="text-xs uppercase tracking-widest text-muted-foreground">
+              More resources
+            </div>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               {others.map((r) => (
                 <Link
@@ -104,7 +118,9 @@ function ResourceDetail() {
                   params={{ slug: r.slug }}
                   className="group rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-brand/40"
                 >
-                  <div className="text-xs uppercase tracking-widest text-muted-foreground">{r.tag}</div>
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                    {r.tag}
+                  </div>
                   <div className="mt-1 font-display text-xl">{r.title}</div>
                   <div className="mt-3 text-sm text-brand">Read more →</div>
                 </Link>

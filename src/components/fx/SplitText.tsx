@@ -64,7 +64,10 @@ export function SplitText({
       aria-label={text}
     >
       {words.map((word, wi) => (
-        <span key={wi} className={`inline-block overflow-hidden whitespace-nowrap align-bottom ${wordClassName ?? ""}`}>
+        <span
+          key={wi}
+          className={`inline-block overflow-hidden whitespace-nowrap align-bottom ${wordClassName ?? ""}`}
+        >
           {word.split("").map((ch, ci) => (
             <motion.span
               key={ci}

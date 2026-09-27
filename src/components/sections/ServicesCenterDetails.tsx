@@ -1,33 +1,24 @@
 import { motion } from "motion/react";
-import { 
-  ShieldCheck, 
-  Zap, 
-  Cpu, 
-  Lock, 
-  RefreshCw, 
-  CheckCircle2, 
-  Clock, 
-  Code 
-} from "lucide-react";
+import { ShieldCheck, Zap, Cpu, Lock, RefreshCw, CheckCircle2, Clock, Code } from "lucide-react";
 
 export function ServicesCenterDetails() {
   return (
     <section className="relative bg-sandel py-12 sm:py-16 text-neutral-900 overflow-hidden">
       <div className="container-pad mx-auto max-w-[1200px] text-center">
-        
         {/* Section Header */}
         <div className="mx-auto max-w-3xl">
           <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900">
             Engineered for Precision & Scalability
           </h2>
           <p className="mt-3 text-sm sm:text-base text-neutral-600 font-sans max-w-2xl mx-auto leading-relaxed">
-            Every automation system we deploy is custom-built, fully documented, and integrated directly into your existing software stack without operational downtime.
+            Every automation system we deploy is custom-built, fully documented, and integrated
+            directly into your existing software stack without operational downtime.
           </p>
         </div>
 
         {/* Centered Key Metrics Row - No Boxes */}
         <div className="mt-10 pt-8 border-t border-sandel-border/60 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -38,10 +29,12 @@ export function ServicesCenterDetails() {
               <Clock className="size-5 text-neutral-900" />
               <span>&lt; 60s</span>
             </div>
-            <span className="mt-1 text-xs font-medium text-neutral-600 font-sans">Speed-to-Lead Response</span>
+            <span className="mt-1 text-xs font-medium text-neutral-600 font-sans">
+              Speed-to-Lead Response
+            </span>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -52,10 +45,12 @@ export function ServicesCenterDetails() {
               <Code className="size-5 text-neutral-900" />
               <span>100%</span>
             </div>
-            <span className="mt-1 text-xs font-medium text-neutral-600 font-sans">Code & IP Ownership</span>
+            <span className="mt-1 text-xs font-medium text-neutral-600 font-sans">
+              Code & IP Ownership
+            </span>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -66,10 +61,12 @@ export function ServicesCenterDetails() {
               <Zap className="size-5 text-neutral-900" />
               <span>3 Weeks</span>
             </div>
-            <span className="mt-1 text-xs font-medium text-neutral-600 font-sans">Avg. System Go-Live</span>
+            <span className="mt-1 text-xs font-medium text-neutral-600 font-sans">
+              Avg. System Go-Live
+            </span>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -80,13 +77,14 @@ export function ServicesCenterDetails() {
               <ShieldCheck className="size-5 text-neutral-900" />
               <span>99.9%</span>
             </div>
-            <span className="mt-1 text-xs font-medium text-neutral-600 font-sans">Workflow Execution Uptime</span>
+            <span className="mt-1 text-xs font-medium text-neutral-600 font-sans">
+              Workflow Execution Uptime
+            </span>
           </motion.div>
         </div>
 
         {/* Detailed Information Columns - Clean Centered Layout Without Boxes */}
         <div className="mt-12 pt-8 border-t border-sandel-border/60 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-          
           <div className="flex flex-col items-center text-center">
             <div className="size-10 rounded-full bg-neutral-900/10 text-neutral-900 flex items-center justify-center mb-3">
               <Cpu className="size-5" />
@@ -95,7 +93,8 @@ export function ServicesCenterDetails() {
               Universal Integration
             </h3>
             <p className="mt-1.5 text-xs text-neutral-600 font-sans leading-relaxed">
-              Bi-directional API and webhook synchronization across Slack, ClickUp, Notion, HubSpot, Salesforce, WhatsApp, and custom databases.
+              Bi-directional API and webhook synchronization across Slack, ClickUp, Notion, HubSpot,
+              Salesforce, WhatsApp, and custom databases.
             </p>
           </div>
 
@@ -103,11 +102,10 @@ export function ServicesCenterDetails() {
             <div className="size-10 rounded-full bg-neutral-900/10 text-neutral-900 flex items-center justify-center mb-3">
               <Lock className="size-5" />
             </div>
-            <h3 className="font-sans text-base font-bold text-neutral-900">
-              Security & Privacy
-            </h3>
+            <h3 className="font-sans text-base font-bold text-neutral-900">Security & Privacy</h3>
             <p className="mt-1.5 text-xs text-neutral-600 font-sans leading-relaxed">
-              Enterprise-grade data protection with encrypted API credential storage, zero-retention LLM prompts, and full SOC2 compliance readiness.
+              Enterprise-grade data protection with encrypted API credential storage, zero-retention
+              LLM prompts, and full SOC2 compliance readiness.
             </p>
           </div>
 
@@ -115,11 +113,10 @@ export function ServicesCenterDetails() {
             <div className="size-10 rounded-full bg-neutral-900/10 text-neutral-900 flex items-center justify-center mb-3">
               <RefreshCw className="size-5" />
             </div>
-            <h3 className="font-sans text-base font-bold text-neutral-900">
-              Autonomous Retries
-            </h3>
+            <h3 className="font-sans text-base font-bold text-neutral-900">Autonomous Retries</h3>
             <p className="mt-1.5 text-xs text-neutral-600 font-sans leading-relaxed">
-              Self-healing automation pipelines with automatic error retries, intelligent fallback paths, and instant team alert triggers.
+              Self-healing automation pipelines with automatic error retries, intelligent fallback
+              paths, and instant team alert triggers.
             </p>
           </div>
 
@@ -131,12 +128,11 @@ export function ServicesCenterDetails() {
               Zero Platform Lock-in
             </h3>
             <p className="mt-1.5 text-xs text-neutral-600 font-sans leading-relaxed">
-              You own 100% of the workflow logic, code endpoints, and documentation. You maintain total control over your business infrastructure.
+              You own 100% of the workflow logic, code endpoints, and documentation. You maintain
+              total control over your business infrastructure.
             </p>
           </div>
-
         </div>
-
       </div>
     </section>
   );

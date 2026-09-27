@@ -8,9 +8,17 @@ export const Route = createFileRoute("/demo")({
   head: () => ({
     meta: [
       { title: "AI Agent Demo — Make Accuracy" },
-      { name: "description", content: "Try a live preview of a Make Accuracy AI agent handling real customer questions, then book a consult to build your own." },
+      {
+        name: "description",
+        content:
+          "Try a live preview of a Make Accuracy AI agent handling real customer questions, then book a consult to build your own.",
+      },
       { property: "og:title", content: "AI Agent Demo — Make Accuracy" },
-      { property: "og:description", content: "Interactive preview of a production-style AI agent. Ask about pricing, booking, or handoff — see how it responds." },
+      {
+        property: "og:description",
+        content:
+          "Interactive preview of a production-style AI agent. Ask about pricing, booking, or handoff — see how it responds.",
+      },
       { property: "og:url", content: "https://makeaccuracy.agency/demo" },
     ],
     links: [{ rel: "canonical", href: "https://makeaccuracy.agency/demo" }],
@@ -141,23 +149,29 @@ function DemoPage() {
     };
   }, []);
 
-  const send = useCallback((raw: string) => {
-    const text = raw.trim();
-    if (!text || typing) return;
-    const userMsg: Msg = { id: `u-${Date.now()}`, role: "user", text, ts: Date.now() };
-    setMessages((m) => [...m, userMsg]);
-    setInput("");
-    setSuggestions([]);
-    setTyping(true);
-    const r = reply(text);
-    const delay = Math.min(1400, 500 + text.length * 20);
-    timeoutRef.current = setTimeout(() => {
-      setMessages((m) => [...m, { id: `a-${Date.now()}`, role: "agent", text: r.text, ts: Date.now() }]);
-      setSuggestions(r.suggestions ?? []);
-      setTyping(false);
-      requestAnimationFrame(() => inputRef.current?.focus());
-    }, delay);
-  }, [typing]);
+  const send = useCallback(
+    (raw: string) => {
+      const text = raw.trim();
+      if (!text || typing) return;
+      const userMsg: Msg = { id: `u-${Date.now()}`, role: "user", text, ts: Date.now() };
+      setMessages((m) => [...m, userMsg]);
+      setInput("");
+      setSuggestions([]);
+      setTyping(true);
+      const r = reply(text);
+      const delay = Math.min(1400, 500 + text.length * 20);
+      timeoutRef.current = setTimeout(() => {
+        setMessages((m) => [
+          ...m,
+          { id: `a-${Date.now()}`, role: "agent", text: r.text, ts: Date.now() },
+        ]);
+        setSuggestions(r.suggestions ?? []);
+        setTyping(false);
+        requestAnimationFrame(() => inputRef.current?.focus());
+      }, delay);
+    },
+    [typing],
+  );
 
   const reset = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -273,7 +287,9 @@ function DemoPage() {
           {/* Side panel */}
           <aside className="flex flex-col gap-6">
             <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-              <div className="text-xs uppercase tracking-widest text-muted-foreground">What this agent can do</div>
+              <div className="text-xs uppercase tracking-widest text-muted-foreground">
+                What this agent can do
+              </div>
               <ul className="mt-4 space-y-3">
                 {capabilities.map((c) => (
                   <li key={c} className="flex gap-3 text-sm">
@@ -285,10 +301,15 @@ function DemoPage() {
             </div>
 
             <div className="rounded-3xl border border-brand/30 bg-gradient-to-br from-[#ff7a00]/15 to-[#c2410c]/5 p-6">
-              <div className="text-xs uppercase tracking-widest text-brand">Ready for the real thing?</div>
-              <div className="mt-3 font-display text-2xl leading-tight">Book a 30-minute strategy call</div>
+              <div className="text-xs uppercase tracking-widest text-brand">
+                Ready for the real thing?
+              </div>
+              <div className="mt-3 font-display text-2xl leading-tight">
+                Book a 30-minute strategy call
+              </div>
               <p className="mt-3 text-sm text-foreground/70">
-                We'll scope your workflow, sketch the agent, and share a concrete plan with pricing — no pitch deck.
+                We'll scope your workflow, sketch the agent, and share a concrete plan with pricing
+                — no pitch deck.
               </p>
               <Link
                 to="/book"
@@ -296,11 +317,14 @@ function DemoPage() {
               >
                 <RollingText>Book a consult</RollingText> <ArrowRight className="size-4" />
               </Link>
-              <div className="mt-3 text-xs text-muted-foreground">Free · 30 min · no obligation</div>
+              <div className="mt-3 text-xs text-muted-foreground">
+                Free · 30 min · no obligation
+              </div>
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 text-xs text-muted-foreground">
-              Note: this preview uses a scripted response set to keep it fast and predictable. Production agents we ship are powered by live models, your tools, and your data.
+              Note: this preview uses a scripted response set to keep it fast and predictable.
+              Production agents we ship are powered by live models, your tools, and your data.
             </div>
           </aside>
         </div>
@@ -315,7 +339,9 @@ function MessageRow({ msg }: { msg: Msg }) {
     <div className={`flex gap-3 ${isUser ? "flex-row-reverse" : ""}`}>
       <div
         className={`grid size-8 shrink-0 place-items-center rounded-full ring-1 ring-inset ring-white/10 ${
-          isUser ? "bg-white/10 text-foreground" : "bg-gradient-to-br from-[#ff7a00]/20 to-[#c2410c]/10 text-brand"
+          isUser
+            ? "bg-white/10 text-foreground"
+            : "bg-gradient-to-br from-[#ff7a00]/20 to-[#c2410c]/10 text-brand"
         }`}
       >
         {isUser ? <User className="size-4" /> : <Bot className="size-4" />}
@@ -339,7 +365,10 @@ function TypingRow() {
       <div className="grid size-8 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#ff7a00]/20 to-[#c2410c]/10 text-brand ring-1 ring-inset ring-white/10">
         <Bot className="size-4" />
       </div>
-      <div className="rounded-2xl bg-white/[0.04] px-4 py-3 ring-1 ring-inset ring-white/10" aria-label="Agent is typing">
+      <div
+        className="rounded-2xl bg-white/[0.04] px-4 py-3 ring-1 ring-inset ring-white/10"
+        aria-label="Agent is typing"
+      >
         <div className="flex gap-1">
           <span className="size-1.5 animate-bounce rounded-full bg-foreground/60 [animation-delay:-0.3s]" />
           <span className="size-1.5 animate-bounce rounded-full bg-foreground/60 [animation-delay:-0.15s]" />

@@ -1,6 +1,16 @@
 import { SectionHeading } from "./SectionHeading";
 import { Marquee } from "@/components/ui/marquee";
-import { Bot, Sparkles, LineChart, Headphones, Megaphone, PenTool, Code2, Database, type LucideIcon } from "lucide-react";
+import {
+  Bot,
+  Sparkles,
+  LineChart,
+  Headphones,
+  Megaphone,
+  PenTool,
+  Code2,
+  Database,
+  type LucideIcon,
+} from "lucide-react";
 import portrait from "@/assets/agent-portrait.png.asset.json";
 import portrait2 from "@/assets/agent-portrait-2.png.asset.json";
 import portrait3 from "@/assets/agent-portrait-3.png.asset.json";
@@ -10,25 +20,86 @@ import portrait6 from "@/assets/agent-portrait-6.png.asset.json";
 import portrait7 from "@/assets/agent-portrait-7.png.asset.json";
 import portrait8 from "@/assets/agent-portrait-8.png.asset.json";
 
-type Agent = { name: string; role: string; Icon: LucideIcon; gradient: string; image?: string; preserveColor?: boolean };
+type Agent = {
+  name: string;
+  role: string;
+  Icon: LucideIcon;
+  gradient: string;
+  image?: string;
+  preserveColor?: boolean;
+};
 
 const agents: Agent[] = [
-  { name: "AI Reputation Specialist", role: "Reviews & brand sentiment", Icon: Sparkles, gradient: "from-stone-500 via-amber-800 to-stone-900", image: portrait8.url, preserveColor: true },
-  { name: "AI Sales Assistant", role: "Qualifies & closes leads", Icon: Megaphone, gradient: "from-fuchsia-500 via-purple-600 to-violet-700", image: portrait4.url, preserveColor: true },
-  { name: "AI Data Analyst", role: "Insights & dashboards", Icon: LineChart, gradient: "from-lime-400 via-emerald-500 to-cyan-500", image: portrait3.url, preserveColor: true },
-  { name: "AI Inside Salesperson", role: "Outbound at scale", Icon: Bot, gradient: "from-slate-700 via-zinc-800 to-neutral-900", image: portrait6.url, preserveColor: true },
-  { name: "AI Support Agent", role: "24/7 customer care", Icon: Headphones, gradient: "from-fuchsia-500 via-purple-500 to-indigo-500", image: portrait2.url, preserveColor: true },
-  { name: "AI Content Writer", role: "SEO copy & campaigns", Icon: PenTool, gradient: "from-amber-400 via-orange-500 to-orange-500", image: portrait.url, preserveColor: true },
-  { name: "AI Ops Engineer", role: "Workflow automations", Icon: Code2, gradient: "from-violet-500 via-purple-600 to-fuchsia-600", image: portrait5.url, preserveColor: true },
-  { name: "AI Data Cleaner", role: "Enrichment & dedupe", Icon: Database, gradient: "from-amber-400 via-yellow-500 to-orange-500", image: portrait7.url, preserveColor: true },
+  {
+    name: "AI Reputation Specialist",
+    role: "Reviews & brand sentiment",
+    Icon: Sparkles,
+    gradient: "from-stone-500 via-amber-800 to-stone-900",
+    image: portrait8.url,
+    preserveColor: true,
+  },
+  {
+    name: "AI Sales Assistant",
+    role: "Qualifies & closes leads",
+    Icon: Megaphone,
+    gradient: "from-fuchsia-500 via-purple-600 to-violet-700",
+    image: portrait4.url,
+    preserveColor: true,
+  },
+  {
+    name: "AI Data Analyst",
+    role: "Insights & dashboards",
+    Icon: LineChart,
+    gradient: "from-lime-400 via-emerald-500 to-cyan-500",
+    image: portrait3.url,
+    preserveColor: true,
+  },
+  {
+    name: "AI Inside Salesperson",
+    role: "Outbound at scale",
+    Icon: Bot,
+    gradient: "from-slate-700 via-zinc-800 to-neutral-900",
+    image: portrait6.url,
+    preserveColor: true,
+  },
+  {
+    name: "AI Support Agent",
+    role: "24/7 customer care",
+    Icon: Headphones,
+    gradient: "from-fuchsia-500 via-purple-500 to-indigo-500",
+    image: portrait2.url,
+    preserveColor: true,
+  },
+  {
+    name: "AI Content Writer",
+    role: "SEO copy & campaigns",
+    Icon: PenTool,
+    gradient: "from-amber-400 via-orange-500 to-orange-500",
+    image: portrait.url,
+    preserveColor: true,
+  },
+  {
+    name: "AI Ops Engineer",
+    role: "Workflow automations",
+    Icon: Code2,
+    gradient: "from-violet-500 via-purple-600 to-fuchsia-600",
+    image: portrait5.url,
+    preserveColor: true,
+  },
+  {
+    name: "AI Data Cleaner",
+    role: "Enrichment & dedupe",
+    Icon: Database,
+    gradient: "from-amber-400 via-yellow-500 to-orange-500",
+    image: portrait7.url,
+    preserveColor: true,
+  },
 ];
 
 function AgentCard({ agent }: { agent: Agent }) {
   const { Icon } = agent;
   return (
-    <div
-      className="group relative h-[420px] w-[260px] shrink-0 rounded-3xl p-[1.5px] transition-[transform,box-shadow,filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-3 hover:scale-[1.03] hover:shadow-[0_40px_90px_-20px_rgba(0,0,0,0.75)]"
-    >
+    <div className="group relative h-[420px] w-[260px] shrink-0 rounded-3xl p-[1.5px] transition-[transform,box-shadow,filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-3 hover:scale-[1.03] hover:shadow-[0_40px_90px_-20px_rgba(0,0,0,0.75)]">
       <div className="relative h-full w-full overflow-hidden rounded-[calc(1.5rem-1px)]">
         <div className={`absolute inset-0 bg-gradient-to-br ${agent.gradient}`} />
         {agent.image && (

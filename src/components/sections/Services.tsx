@@ -1,14 +1,7 @@
 import { RollingText } from "@/components/ui/rolling-text";
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
-import { 
-  TrendingUp, 
-  Bot, 
-  Workflow, 
-  Rocket, 
-  CheckCircle2, 
-  ArrowRight
-} from "lucide-react";
+import { TrendingUp, Bot, Workflow, Rocket, CheckCircle2, ArrowRight } from "lucide-react";
 
 const SERVICE_CATEGORIES = [
   {
@@ -18,10 +11,19 @@ const SERVICE_CATEGORIES = [
     icon: TrendingUp,
     badge: "REVENUE DRIVER",
     services: [
-      { name: "AI lead capture", desc: "Instantly capture leads across form fills, ads, and live chat" },
+      {
+        name: "AI lead capture",
+        desc: "Instantly capture leads across form fills, ads, and live chat",
+      },
       { name: "Lead qualification", desc: "Autonomous AI scoring and budget/intent validation" },
-      { name: "Automated follow-up", desc: "Multi-channel speed-to-lead response under 60 seconds" },
-      { name: "Appointment booking", desc: "Sub-second calendar booking without back-and-forth emails" },
+      {
+        name: "Automated follow-up",
+        desc: "Multi-channel speed-to-lead response under 60 seconds",
+      },
+      {
+        name: "Appointment booking",
+        desc: "Sub-second calendar booking without back-and-forth emails",
+      },
     ],
   },
   {
@@ -31,36 +33,71 @@ const SERVICE_CATEGORIES = [
     icon: Bot,
     badge: "24/7 SUPPORT",
     services: [
-      { name: "Website AI agents", desc: "Custom-trained brand chatbots that resolve complex inquiries" },
-      { name: "WhatsApp & SMS", desc: "Direct 2-way conversational support and transactional text messaging" },
+      {
+        name: "Website AI agents",
+        desc: "Custom-trained brand chatbots that resolve complex inquiries",
+      },
+      {
+        name: "WhatsApp & SMS",
+        desc: "Direct 2-way conversational support and transactional text messaging",
+      },
       { name: "Email AI", desc: "Intelligent inbox triaging, draft generation, and auto-replies" },
-      { name: "AI voice agents", desc: "Human-sounding inbound & outbound voice assistance for calls" },
+      {
+        name: "AI voice agents",
+        desc: "Human-sounding inbound & outbound voice assistance for calls",
+      },
     ],
   },
   {
     id: "operations",
     title: "AI Operations",
-    tagline: "Streamline client onboarding and internal administrative workflows to eliminate manual drag.",
+    tagline:
+      "Streamline client onboarding and internal administrative workflows to eliminate manual drag.",
     icon: Workflow,
     badge: "OPS EFFICIENCY",
     services: [
-      { name: "Client onboarding", desc: "Replace 2-week email back-and-forth with a 15-minute portal" },
-      { name: "Internal workflows", desc: "Bi-directional sync across Slack, ClickUp, Notion & Linear" },
-      { name: "Document processing", desc: "Automated PDF extraction, invoice matching, and parsing" },
-      { name: "SLA notifications", desc: "Real-time Slack & email alerts for urgent operational items" },
+      {
+        name: "Client onboarding",
+        desc: "Replace 2-week email back-and-forth with a 15-minute portal",
+      },
+      {
+        name: "Internal workflows",
+        desc: "Bi-directional sync across Slack, ClickUp, Notion & Linear",
+      },
+      {
+        name: "Document processing",
+        desc: "Automated PDF extraction, invoice matching, and parsing",
+      },
+      {
+        name: "SLA notifications",
+        desc: "Real-time Slack & email alerts for urgent operational items",
+      },
     ],
   },
   {
     id: "growth-systems",
     title: "AI Growth Systems",
-    tagline: "Maximize customer lifetime value, re-engage cold leads, and automate revenue reporting.",
+    tagline:
+      "Maximize customer lifetime value, re-engage cold leads, and automate revenue reporting.",
     icon: Rocket,
     badge: "GROWTH ENGINE",
     services: [
-      { name: "Lead nurturing", desc: "Automated multi-touch campaign cadences tailored by lead behavior" },
-      { name: "Review requests", desc: "Automated post-service 5-star Google review collection flows" },
-      { name: "Reactivation", desc: "Database reactivation campaigns to turn old contacts into bookings" },
-      { name: "Reporting", desc: "Live client reporting dashboards updated 24/7 without slide decks" },
+      {
+        name: "Lead nurturing",
+        desc: "Automated multi-touch campaign cadences tailored by lead behavior",
+      },
+      {
+        name: "Review requests",
+        desc: "Automated post-service 5-star Google review collection flows",
+      },
+      {
+        name: "Reactivation",
+        desc: "Database reactivation campaigns to turn old contacts into bookings",
+      },
+      {
+        name: "Reporting",
+        desc: "Live client reporting dashboards updated 24/7 without slide decks",
+      },
     ],
   },
 ];
@@ -77,9 +114,11 @@ const INCLUDED_FEATURES = [
 
 export function Services() {
   return (
-    <section id="services" className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden">
+    <section
+      id="services"
+      className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden"
+    >
       <div className="mx-auto max-w-[1700px] px-4 sm:px-8 lg:px-16 xl:px-20">
-        
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-12">
           <motion.h2
@@ -146,7 +185,9 @@ export function Services() {
                     to="/book"
                     className="inline-flex w-full items-center justify-between rounded-full bg-neutral-900 px-4 py-2.5 text-xs font-bold text-white transition duration-300 hover:bg-black shadow-sm"
                   >
-                    <span><RollingText>{`Explore ${cat.title}`}</RollingText></span>
+                    <span>
+                      <RollingText>{`Explore ${cat.title}`}</RollingText>
+                    </span>
                     <ArrowRight className="size-3.5" />
                   </Link>
                 </div>
@@ -166,7 +207,6 @@ export function Services() {
 
           {/* Split Subscription Card Box */}
           <div className="rounded-[24px] border-2 border-neutral-900 overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-xl bg-white">
-            
             {/* Left Half (Light Background) */}
             <div className="lg:col-span-6 p-5 sm:p-7 lg:p-8 bg-[#f7f7f3] border-b lg:border-b-0 lg:border-r border-neutral-300 flex flex-col justify-between">
               <div>
@@ -174,20 +214,22 @@ export function Services() {
                   <h3 className="text-lg sm:text-xl font-bold text-neutral-900 tracking-tight">
                     Subscription
                   </h3>
-                  <span className="text-[11px] font-mono text-neutral-400">
-                    Make Accuracy®
-                  </span>
+                  <span className="text-[11px] font-mono text-neutral-400">Make Accuracy®</span>
                 </div>
 
                 <div className="space-y-3 text-xs text-neutral-500 font-normal leading-relaxed max-w-lg">
+                  <p>Make Accuracy operates as an AI &amp; automation system you can turn on.</p>
                   <p>
-                    Make Accuracy operates as an AI &amp; automation system you can turn on.
+                    Teams work with us at a defined monthly capacity, running requests through a
+                    steady, repeatable cadence.
                   </p>
                   <p>
-                    Teams work with us at a defined monthly capacity, running requests through a steady, repeatable cadence.
-                  </p>
-                  <p>
-                    Whether that starts with a focused scope or continues month to month, the structure stays the same. Clear ownership. Output that compounds instead of resetting. <strong className="text-neutral-900 font-bold">Plans typically start from $5K based on the level of capacity you need.</strong>
+                    Whether that starts with a focused scope or continues month to month, the
+                    structure stays the same. Clear ownership. Output that compounds instead of
+                    resetting.{" "}
+                    <strong className="text-neutral-900 font-bold">
+                      Plans typically start from $5K based on the level of capacity you need.
+                    </strong>
                   </p>
                 </div>
               </div>
@@ -209,25 +251,22 @@ export function Services() {
                   Included in every plan
                 </h3>
                 <p className="mt-1.5 text-xs text-neutral-400 font-normal leading-relaxed mb-4">
-                  Every engagement runs on the same operating system, same team, and delivery model, whether you start small or scale ongoing capacity.
+                  Every engagement runs on the same operating system, same team, and delivery model,
+                  whether you start small or scale ongoing capacity.
                 </p>
 
                 <div className="space-y-2">
                   {INCLUDED_FEATURES.map((feat) => (
                     <div key={feat} className="flex items-center gap-2.5">
                       <span className="size-1.5 rounded-full bg-neutral-400 shrink-0" />
-                      <span className="text-xs font-medium text-neutral-200">
-                        {feat}
-                      </span>
+                      <span className="text-xs font-medium text-neutral-200">{feat}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="mt-6 sm:mt-8 flex items-center justify-between pt-4 border-t border-neutral-800">
-                <span className="text-[11px] font-mono text-neutral-500">
-                  Make Accuracy®
-                </span>
+                <span className="text-[11px] font-mono text-neutral-500">Make Accuracy®</span>
                 <Link
                   to="/contact"
                   className="inline-flex items-center justify-center rounded-full bg-neutral-200 px-6 py-2.5 text-xs font-bold text-neutral-900 hover:bg-white transition shadow-sm cursor-pointer"
@@ -236,10 +275,8 @@ export function Services() {
                 </Link>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
   );

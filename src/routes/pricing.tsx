@@ -9,9 +9,15 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title: "Pricing — Make Accuracy" },
-      { name: "description", content: "Simple, senior-team pricing. Starter, Growth, and Enterprise engagements." },
+      {
+        name: "description",
+        content: "Simple, senior-team pricing. Starter, Growth, and Enterprise engagements.",
+      },
       { property: "og:title", content: "Pricing — Make Accuracy" },
-      { property: "og:description", content: "Transparent pricing for AI automation and custom software." },
+      {
+        property: "og:description",
+        content: "Transparent pricing for AI automation and custom software.",
+      },
       { property: "og:url", content: "https://makeaccuracy.agency/pricing" },
     ],
     links: [{ rel: "canonical", href: "https://makeaccuracy.agency/pricing" }],

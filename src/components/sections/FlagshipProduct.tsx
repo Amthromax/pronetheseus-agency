@@ -1,76 +1,76 @@
 import { RollingText } from "@/components/ui/rolling-text";
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
-import { 
-  Bot, 
-  MessageSquare, 
-  Database, 
-  Star, 
-  RotateCcw, 
+import {
+  Bot,
+  MessageSquare,
+  Database,
+  Star,
+  RotateCcw,
   ArrowRight,
   CheckCircle2,
   Zap,
-  Sliders
+  Sliders,
 } from "lucide-react";
 
 const ADDON_MODULES = [
-  { 
-    icon: Bot, 
-    title: "AI Voice Agent", 
-    desc: "24/7 inbound phone reception & outbound calling", 
+  {
+    icon: Bot,
+    title: "AI Voice Agent",
+    desc: "24/7 inbound phone reception & outbound calling",
     tag: "Voice AI",
-    badgeBg: "bg-neutral-100 text-neutral-800 border-neutral-200" 
+    badgeBg: "bg-neutral-100 text-neutral-800 border-neutral-200",
   },
-  { 
-    icon: MessageSquare, 
-    title: "WhatsApp Automation", 
-    desc: "2-way chat support, instant quotes & media", 
+  {
+    icon: MessageSquare,
+    title: "WhatsApp Automation",
+    desc: "2-way chat support, instant quotes & media",
     tag: "Messaging",
-    badgeBg: "bg-sky-500/10 text-sky-700 border-sky-200" 
+    badgeBg: "bg-sky-500/10 text-sky-700 border-sky-200",
   },
-  { 
-    icon: Database, 
-    title: "CRM Automation", 
-    desc: "Bi-directional sync for HighLevel, HubSpot & Salesforce", 
+  {
+    icon: Database,
+    title: "CRM Automation",
+    desc: "Bi-directional sync for HighLevel, HubSpot & Salesforce",
     tag: "Pipeline",
-    badgeBg: "bg-blue-500/10 text-blue-700 border-blue-200" 
+    badgeBg: "bg-blue-500/10 text-blue-700 border-blue-200",
   },
-  { 
-    icon: Star, 
-    title: "Review Engine", 
-    desc: "Automated post-service Google 5-star review collector", 
+  {
+    icon: Star,
+    title: "Review Engine",
+    desc: "Automated post-service Google 5-star review collector",
     tag: "Reputation",
-    badgeBg: "bg-amber-500/10 text-amber-700 border-amber-200" 
+    badgeBg: "bg-amber-500/10 text-amber-700 border-amber-200",
   },
-  { 
-    icon: RotateCcw, 
-    title: "Reactivation Bot", 
-    desc: "Turn inactive CRM leads into active bookings", 
+  {
+    icon: RotateCcw,
+    title: "Reactivation Bot",
+    desc: "Turn inactive CRM leads into active bookings",
     tag: "Growth",
-    badgeBg: "bg-purple-500/10 text-purple-700 border-purple-200" 
+    badgeBg: "bg-purple-500/10 text-purple-700 border-purple-200",
   },
 ];
 
 export function FlagshipProduct() {
   return (
-    <section id="flagship-product" className="relative bg-sandel py-10 sm:py-14 text-neutral-900 overflow-hidden">
+    <section
+      id="flagship-product"
+      className="relative bg-sandel py-10 sm:py-14 text-neutral-900 overflow-hidden"
+    >
       <div className="relative z-10 container-pad mx-auto max-w-[1440px]">
-        
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-neutral-900">
             Make Accuracy AI Revenue Engine
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-sans max-w-2xl mx-auto leading-relaxed">
-            The complete autonomous operating system for service businesses. Replaces fragmented tools with a single unified lead-to-customer automation infrastructure.
+            The complete autonomous operating system for service businesses. Replaces fragmented
+            tools with a single unified lead-to-customer automation infrastructure.
           </p>
         </div>
 
-
-
         {/* CORE vs ADD-ONS ARCHITECTURE */}
         <div className="mt-6 grid gap-6 lg:grid-cols-12 items-stretch font-sans">
-          
           {/* Left Column: Core System (Obsidian Dark High-Impact Card - Apple Superellipse) */}
           <div className="lg:col-span-7 rounded-[28px] sm:rounded-[34px] bg-neutral-900 text-white p-6 sm:p-8 shadow-2xl relative overflow-hidden flex flex-col justify-between border border-neutral-800">
             <div>
@@ -91,7 +91,8 @@ export function FlagshipProduct() {
                   AI Lead-to-Appointment System
                 </h3>
                 <p className="mt-1.5 text-xs sm:text-sm text-neutral-300 leading-relaxed font-sans max-w-xl">
-                  Captures inbound leads instantly, qualifies prospect intent in under 60 seconds, logs deals to your CRM, and books qualified calls straight into your calendar.
+                  Captures inbound leads instantly, qualifies prospect intent in under 60 seconds,
+                  logs deals to your CRM, and books qualified calls straight into your calendar.
                 </p>
               </div>
 
@@ -119,15 +120,25 @@ export function FlagshipProduct() {
               {/* Performance Metrics Pill Bar */}
               <div className="mt-5 p-3 rounded-[18px] bg-neutral-800/60 border border-neutral-700/60 grid grid-cols-3 gap-2 text-center">
                 <div>
-                  <span className="block font-sans text-sm sm:text-base font-bold text-white">&lt; 60s</span>
-                  <span className="text-[9px] font-mono text-neutral-400 uppercase">Response Time</span>
+                  <span className="block font-sans text-sm sm:text-base font-bold text-white">
+                    &lt; 60s
+                  </span>
+                  <span className="text-[9px] font-mono text-neutral-400 uppercase">
+                    Response Time
+                  </span>
                 </div>
                 <div className="border-x border-neutral-700/60 px-1">
-                  <span className="block font-sans text-sm sm:text-base font-bold text-white">3.4x</span>
-                  <span className="text-[9px] font-mono text-neutral-400 uppercase">Booking Rate</span>
+                  <span className="block font-sans text-sm sm:text-base font-bold text-white">
+                    3.4x
+                  </span>
+                  <span className="text-[9px] font-mono text-neutral-400 uppercase">
+                    Booking Rate
+                  </span>
                 </div>
                 <div>
-                  <span className="block font-sans text-sm sm:text-base font-bold text-white">24/7</span>
+                  <span className="block font-sans text-sm sm:text-base font-bold text-white">
+                    24/7
+                  </span>
                   <span className="text-[9px] font-mono text-neutral-400 uppercase">Coverage</span>
                 </div>
               </div>
@@ -137,7 +148,9 @@ export function FlagshipProduct() {
             <div className="mt-6">
               <Link to="/contact">
                 <button className="w-full rounded-full bg-white hover:bg-neutral-100 text-neutral-900 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider shadow-md transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2">
-                  <span><RollingText>Get Core Revenue Engine</RollingText></span>
+                  <span>
+                    <RollingText>Get Core Revenue Engine</RollingText>
+                  </span>
                   <ArrowRight className="size-4" />
                 </button>
               </Link>
@@ -169,8 +182,8 @@ export function FlagshipProduct() {
                 {ADDON_MODULES.map((addon) => {
                   const Icon = addon.icon;
                   return (
-                    <div 
-                      key={addon.title} 
+                    <div
+                      key={addon.title}
                       className="group flex items-center justify-between p-3 rounded-[18px] bg-white border border-black/5 hover:border-neutral-300 hover:shadow-md transition-all duration-300 shadow-2xs"
                     >
                       <div className="flex items-center gap-3 min-w-0">
@@ -182,7 +195,9 @@ export function FlagshipProduct() {
                             <h4 className="text-xs font-bold text-neutral-900 font-sans truncate">
                               {addon.title}
                             </h4>
-                            <span className={`px-2 py-0.5 rounded-full text-[9px] font-mono font-semibold border ${addon.badgeBg}`}>
+                            <span
+                              className={`px-2 py-0.5 rounded-full text-[9px] font-mono font-semibold border ${addon.badgeBg}`}
+                            >
                               {addon.tag}
                             </span>
                           </div>
@@ -200,18 +215,18 @@ export function FlagshipProduct() {
             </div>
 
             <div className="mt-5 pt-3.5 border-t border-black/5">
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="w-full inline-flex items-center justify-center gap-1.5 text-xs font-mono font-bold text-neutral-900 hover:text-black transition-colors py-1"
               >
-                <span><RollingText>CUSTOMIZE YOUR AUTOMATION STACK</RollingText></span>
+                <span>
+                  <RollingText>CUSTOMIZE YOUR AUTOMATION STACK</RollingText>
+                </span>
                 <ArrowRight className="size-3.5" />
               </Link>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );

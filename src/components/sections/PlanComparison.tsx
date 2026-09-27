@@ -10,36 +10,119 @@ const groups: Group[] = [
   {
     title: "Core Build & Architecture",
     rows: [
-      { label: "Operations Audit & Blueprint", hint: "Deep workflow mapping across sales & delivery", setup: true, monthly: true, enterprise: true },
-      { label: "Custom n8n & AI Agent Build", hint: "Workflows built inside your stack", setup: "1 Engine", monthly: "Ongoing Builds", enterprise: "Full Agency OS" },
-      { label: "100% Code Ownership", hint: "You own all repos & databases", setup: true, monthly: true, enterprise: true },
-      { label: "Tool Integrations", hint: "Slack, ClickUp, Notion, HubSpot, Drive", setup: "Up to 4 Tools", monthly: "Unlimited", enterprise: "Custom API & Database" },
+      {
+        label: "Operations Audit & Blueprint",
+        hint: "Deep workflow mapping across sales & delivery",
+        setup: true,
+        monthly: true,
+        enterprise: true,
+      },
+      {
+        label: "Custom n8n & AI Agent Build",
+        hint: "Workflows built inside your stack",
+        setup: "1 Engine",
+        monthly: "Ongoing Builds",
+        enterprise: "Full Agency OS",
+      },
+      {
+        label: "100% Code Ownership",
+        hint: "You own all repos & databases",
+        setup: true,
+        monthly: true,
+        enterprise: true,
+      },
+      {
+        label: "Tool Integrations",
+        hint: "Slack, ClickUp, Notion, HubSpot, Drive",
+        setup: "Up to 4 Tools",
+        monthly: "Unlimited",
+        enterprise: "Custom API & Database",
+      },
     ],
   },
   {
     title: "Operations, Infrastructure & Monitoring",
     rows: [
-      { label: "24/7 Automated Workflow Monitoring", hint: "Real-time error alerts & auto-retry", setup: "30 Days", monthly: true, enterprise: true },
-      { label: "Monthly Workflow Optimizations", hint: "Continuous system tuning", setup: false, monthly: true, enterprise: true },
-      { label: "API Version Maintenance", hint: "Handling tool breaking changes", setup: false, monthly: true, enterprise: true },
-      { label: "Enterprise Action Firewall Security", hint: "Bank-grade data encryption & privacy", setup: false, monthly: false, enterprise: true },
+      {
+        label: "24/7 Automated Workflow Monitoring",
+        hint: "Real-time error alerts & auto-retry",
+        setup: "30 Days",
+        monthly: true,
+        enterprise: true,
+      },
+      {
+        label: "Monthly Workflow Optimizations",
+        hint: "Continuous system tuning",
+        setup: false,
+        monthly: true,
+        enterprise: true,
+      },
+      {
+        label: "API Version Maintenance",
+        hint: "Handling tool breaking changes",
+        setup: false,
+        monthly: true,
+        enterprise: true,
+      },
+      {
+        label: "Enterprise Action Firewall Security",
+        hint: "Bank-grade data encryption & privacy",
+        setup: false,
+        monthly: false,
+        enterprise: true,
+      },
     ],
   },
   {
     title: "Support, Team & SLAs",
     rows: [
-      { label: "Hyper-care Post-Launch Support", setup: "30 Days", monthly: "Ongoing", enterprise: "24/7 Priority" },
+      {
+        label: "Hyper-care Post-Launch Support",
+        setup: "30 Days",
+        monthly: "Ongoing",
+        enterprise: "24/7 Priority",
+      },
       { label: "Dedicated Senior Architect Slack", setup: false, monthly: true, enterprise: true },
       { label: "30-Day ROI & Performance SLA", setup: false, monthly: true, enterprise: true },
-      { label: "Dedicated Principal Engineer Team", setup: false, monthly: false, enterprise: true },
+      {
+        label: "Dedicated Principal Engineer Team",
+        setup: false,
+        monthly: false,
+        enterprise: true,
+      },
     ],
   },
 ];
 
 const plans = [
-  { key: "setup", name: "Starter", price: "$1.5k–$2.5k", suffix: "setup + $500–$750/mo", best: "Core AI Lead Engine", cta: "Book Starter Audit", highlight: false },
-  { key: "monthly", name: "Growth", price: "$3.5k–$6k", suffix: "setup + $1k–$1.5k/mo", best: "Multi-Channel AI Revenue Engine", cta: "Get Growth Engine", highlight: true, badge: "Most popular" },
-  { key: "enterprise", name: "Scale", price: "$7.5k–$10k+", suffix: "setup + $2k–$3k+/mo", best: "End-to-End Enterprise OS Suite", cta: "Request Scale Blueprint", highlight: false },
+  {
+    key: "setup",
+    name: "Starter",
+    price: "$1.5k–$2.5k",
+    suffix: "setup + $500–$750/mo",
+    best: "Core AI Lead Engine",
+    cta: "Book Starter Audit",
+    highlight: false,
+  },
+  {
+    key: "monthly",
+    name: "Growth",
+    price: "$3.5k–$6k",
+    suffix: "setup + $1k–$1.5k/mo",
+    best: "Multi-Channel AI Revenue Engine",
+    cta: "Get Growth Engine",
+    highlight: true,
+    badge: "Most popular",
+  },
+  {
+    key: "enterprise",
+    name: "Scale",
+    price: "$7.5k–$10k+",
+    suffix: "setup + $2k–$3k+/mo",
+    best: "End-to-End Enterprise OS Suite",
+    cta: "Request Scale Blueprint",
+    highlight: false,
+  },
 ] as const;
 
 function CellView({ v }: { v: Cell }) {
@@ -58,7 +141,9 @@ export function PlanComparison() {
     <section className="relative py-16 md:py-24 bg-sandel text-neutral-900 font-sans">
       <div className="container-pad mx-auto max-w-[1400px]">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="text-xs uppercase tracking-[0.2em] font-mono font-semibold text-neutral-500">Compare Offer Scope</div>
+          <div className="text-xs uppercase tracking-[0.2em] font-mono font-semibold text-neutral-500">
+            Compare Offer Scope
+          </div>
           <h2 className="mt-3 font-sans text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
             Detailed Capability Comparison
           </h2>
@@ -73,8 +158,12 @@ export function PlanComparison() {
             <thead className="sticky top-0 z-10 bg-white/90 backdrop-blur-md">
               <tr className="border-b border-black/5">
                 <th className="w-[34%] p-5 text-left align-bottom">
-                  <div className="text-xs uppercase tracking-[0.18em] font-mono font-semibold text-neutral-500">Offer Tier</div>
-                  <div className="mt-2 text-base font-bold text-neutral-900">Capabilities & Deliverables</div>
+                  <div className="text-xs uppercase tracking-[0.18em] font-mono font-semibold text-neutral-500">
+                    Offer Tier
+                  </div>
+                  <div className="mt-2 text-base font-bold text-neutral-900">
+                    Capabilities & Deliverables
+                  </div>
                 </th>
                 {plans.map((p) => (
                   <th
@@ -90,8 +179,12 @@ export function PlanComparison() {
                       )}
                     </div>
                     <div className="mt-2 flex items-baseline justify-center gap-1">
-                      <span className="font-sans text-xl md:text-2xl font-bold text-neutral-900">{p.price}</span>
-                      {p.suffix && <span className="text-xs text-neutral-500 font-normal">{p.suffix}</span>}
+                      <span className="font-sans text-xl md:text-2xl font-bold text-neutral-900">
+                        {p.price}
+                      </span>
+                      {p.suffix && (
+                        <span className="text-xs text-neutral-500 font-normal">{p.suffix}</span>
+                      )}
                     </div>
                     <div className="mt-1 text-[11px] text-neutral-500 font-normal">{p.best}</div>
                   </th>
@@ -114,11 +207,21 @@ export function PlanComparison() {
                     <tr key={`${g.title}-${i}`} className="border-b border-black/5 last:border-b-0">
                       <td className="p-5 align-top">
                         <div className="font-bold text-neutral-900">{r.label}</div>
-                        {r.hint && <div className="mt-0.5 text-xs text-neutral-500 font-normal">{r.hint}</div>}
+                        {r.hint && (
+                          <div className="mt-0.5 text-xs text-neutral-500 font-normal">
+                            {r.hint}
+                          </div>
+                        )}
                       </td>
-                      <td className="p-5 text-center align-middle"><CellView v={r.setup} /></td>
-                      <td className="bg-neutral-200/30 p-5 text-center align-middle"><CellView v={r.monthly} /></td>
-                      <td className="p-5 text-center align-middle"><CellView v={r.enterprise} /></td>
+                      <td className="p-5 text-center align-middle">
+                        <CellView v={r.setup} />
+                      </td>
+                      <td className="bg-neutral-200/30 p-5 text-center align-middle">
+                        <CellView v={r.monthly} />
+                      </td>
+                      <td className="p-5 text-center align-middle">
+                        <CellView v={r.enterprise} />
+                      </td>
                     </tr>
                   ))}
                 </Fragment>
@@ -126,11 +229,18 @@ export function PlanComparison() {
 
               <tr className="border-t border-black/5 bg-white/60">
                 <td className="p-5 align-middle">
-                  <div className="text-sm font-bold text-neutral-900">Ready to build your agency OS?</div>
-                  <div className="mt-0.5 text-xs text-neutral-500 font-normal">Free 30-min strategy call. Concrete plan, no fluff.</div>
+                  <div className="text-sm font-bold text-neutral-900">
+                    Ready to build your agency OS?
+                  </div>
+                  <div className="mt-0.5 text-xs text-neutral-500 font-normal">
+                    Free 30-min strategy call. Concrete plan, no fluff.
+                  </div>
                 </td>
                 {plans.map((p) => (
-                  <td key={`cta-${p.key}`} className={`p-4 text-center align-middle ${p.highlight ? "bg-neutral-200/40" : ""}`}>
+                  <td
+                    key={`cta-${p.key}`}
+                    className={`p-4 text-center align-middle ${p.highlight ? "bg-neutral-200/40" : ""}`}
+                  >
                     <Link
                       to="/book"
                       className={`inline-flex w-full items-center justify-center gap-1.5 rounded-full px-4 py-2.5 text-xs font-bold transition-all duration-300 ${
@@ -150,7 +260,8 @@ export function PlanComparison() {
         </div>
 
         <div className="mt-8 text-center text-xs text-neutral-500 font-normal">
-          * Note: Exact numbers depend heavily on market segment, workflow complexity, and measurable financial value created.
+          * Note: Exact numbers depend heavily on market segment, workflow complexity, and
+          measurable financial value created.
         </div>
       </div>
     </section>

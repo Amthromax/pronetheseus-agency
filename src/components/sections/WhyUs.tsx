@@ -20,17 +20,17 @@ const AVATARS = [
 
 export function WhyUs() {
   return (
-    <section id="why-us" className="relative bg-white py-16 sm:py-24 text-neutral-900 overflow-hidden font-sans">
+    <section
+      id="why-us"
+      className="relative bg-white py-16 sm:py-24 text-neutral-900 overflow-hidden font-sans"
+    >
       <div className="mx-auto max-w-[1700px] px-4 sm:px-8 lg:px-16 xl:px-20">
-        
         {/* Top Header Row */}
         <div className="flex items-center justify-between border-b border-black/10 pb-4 mb-6">
           <span className="text-sm font-medium tracking-tight text-neutral-800 font-sans">
             /Why us
           </span>
-          <span className="text-sm font-medium text-neutral-400 font-sans">
-            (02)
-          </span>
+          <span className="text-sm font-medium text-neutral-400 font-sans">(02)</span>
         </div>
 
         {/* Main Section Headline */}
@@ -47,7 +47,6 @@ export function WhyUs() {
 
         {/* 4 Column Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          
           {/* COLUMN 1: Creative Systems + Bullet points */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -86,7 +85,10 @@ export function WhyUs() {
             {/* Bottom Bullet Points Container */}
             <div className="rounded-[20px] bg-white border border-neutral-200/80 p-4 sm:p-5 mt-2.5 flex-1 flex flex-col justify-center space-y-2.5">
               {BULLET_POINTS.map((pt) => (
-                <div key={pt} className="flex items-center gap-2.5 text-xs sm:text-sm font-medium text-neutral-800 tracking-tight">
+                <div
+                  key={pt}
+                  className="flex items-center gap-2.5 text-xs sm:text-sm font-medium text-neutral-800 tracking-tight"
+                >
                   <span className="size-1.5 rounded-full bg-neutral-900 shrink-0" />
                   <span>{pt}</span>
                 </div>
@@ -159,9 +161,10 @@ export function WhyUs() {
                 ))}
               </div>
               <p className="text-xs sm:text-sm text-neutral-800 leading-relaxed font-normal">
-                "They work fast, they work well, and they communicate clearly. From a price, quality, and professionalism perspective, Make Accuracy is the choice."
+                "They work fast, they work well, and they communicate clearly. From a price,
+                quality, and professionalism perspective, Make Accuracy is the choice."
               </p>
-              
+
               <div className="flex items-center gap-3 mt-6">
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
@@ -169,7 +172,9 @@ export function WhyUs() {
                   className="size-9 rounded-full object-cover ring-1 ring-black/10"
                 />
                 <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-neutral-900 leading-tight">Connor Lewis</h4>
+                  <h4 className="text-xs sm:text-sm font-bold text-neutral-900 leading-tight">
+                    Connor Lewis
+                  </h4>
                   <p className="text-[11px] text-neutral-500 font-medium">Founder - Studio Lewis</p>
                 </div>
               </div>
@@ -254,7 +259,6 @@ export function WhyUs() {
               </p>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

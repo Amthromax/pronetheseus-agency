@@ -57,7 +57,9 @@ export function AIInsights() {
             <SplitText text="AI Insights" />
           </h2>
           <button className="group inline-flex items-center gap-1.5 rounded-full border border-black/5 bg-white/80 backdrop-blur-sm px-4 py-2 text-xs font-mono font-semibold tracking-wider text-neutral-900 shadow-2xs transition-all duration-300 hover:bg-neutral-900 hover:text-white cursor-pointer">
-            <span><RollingText>VIEW ALL</RollingText></span>
+            <span>
+              <RollingText>VIEW ALL</RollingText>
+            </span>
             <span className="text-neutral-400 group-hover:text-white">•</span>
           </button>
         </div>
@@ -101,7 +103,10 @@ export function AIInsights() {
             {SIDE_POSTS.map((post, idx) => {
               const Icon = post.icon;
               return (
-                <div key={post.id} className="shrink-0 w-[260px] xs:w-[300px] lg:w-auto snap-center">
+                <div
+                  key={post.id}
+                  className="shrink-0 w-[260px] xs:w-[300px] lg:w-auto snap-center"
+                >
                   <ScrollReveal variant="card" staggerIndex={idx} staggerStep={0.08}>
                     <motion.div
                       whileHover={{ scale: 1.01, x: 4 }}

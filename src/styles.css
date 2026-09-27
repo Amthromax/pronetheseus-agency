@@ -50,11 +50,11 @@
   --color-brand-glow: var(--brand-glow);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
-  --color-sandel: #FFFFFF;
-  --color-sandel-card: #FFFFFF;
-  --color-sandel-border: #E5E5E5;
-  --color-crail: #C15F3C;
-  --color-crail-bg: #FDF5F0;
+  --color-sandel: #ffffff;
+  --color-sandel-card: #ffffff;
+  --color-sandel-border: #e5e5e5;
+  --color-crail: #c15f3c;
+  --color-crail-bg: #fdf5f0;
   --font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -63,7 +63,7 @@
 
 :root {
   --radius: 0.9rem;
-  --background: #FFFFFF;
+  --background: #ffffff;
   --foreground: oklch(0.18 0 0);
   --surface: oklch(0.14 0 0);
   --surface-elevated: oklch(0.18 0 0);
@@ -73,13 +73,13 @@
   --popover-foreground: oklch(0.98 0 0);
   --primary: oklch(0.74 0.18 55);
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.20 0 0);
+  --secondary: oklch(0.2 0 0);
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.18 0 0);
-  --muted-foreground: oklch(0.70 0 0);
-  --accent: oklch(0.30 0.08 55);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.3 0.08 55);
   --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.68 0.20 50);
+  --destructive: oklch(0.68 0.2 50);
   --destructive-foreground: oklch(0.99 0 0);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 12%);
@@ -89,21 +89,25 @@
   --brand-glow: oklch(0.78 0.17 60);
   --chart-1: oklch(0.72 0.19 55);
   --chart-2: oklch(0.78 0.17 60);
-  --chart-3: oklch(0.60 0.19 50);
-  --chart-4: oklch(0.50 0.16 45);
+  --chart-3: oklch(0.6 0.19 50);
+  --chart-4: oklch(0.5 0.16 45);
   --chart-5: oklch(0.85 0.13 60);
   --sidebar: oklch(0.11 0 0);
   --sidebar-foreground: oklch(0.98 0 0);
   --sidebar-primary: oklch(0.72 0.19 55);
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.20 0 0);
+  --sidebar-accent: oklch(0.2 0 0);
   --sidebar-accent-foreground: oklch(0.98 0 0);
   --sidebar-border: oklch(1 0 0 / 8%);
   --sidebar-ring: oklch(0.72 0.19 55);
 
   --gradient-brand: linear-gradient(135deg, #171717 0%, #404040 100%);
-  --gradient-brand-soft: linear-gradient(135deg, oklch(0.20 0 0 / 0.20), oklch(0.14 0 0 / 0.05));
-  --gradient-radial: radial-gradient(1200px 600px at 50% -10%, oklch(0.20 0 0 / 0.35), transparent 60%);
+  --gradient-brand-soft: linear-gradient(135deg, oklch(0.2 0 0 / 0.2), oklch(0.14 0 0 / 0.05));
+  --gradient-radial: radial-gradient(
+    1200px 600px at 50% -10%,
+    oklch(0.2 0 0 / 0.35),
+    transparent 60%
+  );
   --shadow-glow: 0 0 60px -10px oklch(0 0 0 / 0.15);
   --shadow-glow-lg: 0 30px 120px -20px oklch(0 0 0 / 0.25);
   --shadow-elevated: 0 20px 60px -20px oklch(0 0 0 / 0.6), 0 2px 8px -2px oklch(0 0 0 / 0.4);
@@ -113,7 +117,11 @@
   html {
     color-scheme: light dark;
     background-color: var(--color-background);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
     scroll-padding-top: 80px;
     letter-spacing: -0.01em;
     -webkit-font-smoothing: antialiased;
@@ -123,7 +131,11 @@
   }
   * {
     border-color: var(--color-border);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -131,13 +143,29 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
-  h1, h2, h3, h4, h5, h6, p, span, a, button, label, input, textarea {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  button,
+  label,
+  input,
+  textarea {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -192,7 +220,7 @@
 }
 
 @utility text-gradient {
-  background: linear-gradient(180deg, #fff 0%, oklch(0.80 0.04 60) 100%);
+  background: linear-gradient(180deg, #fff 0%, oklch(0.8 0.04 60) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -229,62 +257,124 @@
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 @keyframes float-y {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
 }
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 @keyframes orb-drift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(40px, -30px) scale(1.05); }
-  66% { transform: translate(-30px, 20px) scale(0.98); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.05);
+  }
+  66% {
+    transform: translate(-30px, 20px) scale(0.98);
+  }
 }
 @keyframes flow {
-  from { stroke-dashoffset: 40; }
-  to { stroke-dashoffset: 0; }
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 @keyframes light-sweep {
-  0% { transform: translateX(-100%) skewX(-20deg); }
-  100% { transform: translateX(200%) skewX(-20deg); }
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-20deg);
+  }
 }
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 @keyframes conic-spin {
-  to { transform: rotate(1turn); }
+  to {
+    transform: rotate(1turn);
+  }
 }
 
-@utility animate-marquee { animation: marquee 40s linear infinite; }
-@utility animate-float-y { animation: float-y 6s ease-in-out infinite; }
-@utility animate-orb { animation: orb-drift 18s ease-in-out infinite; }
-@utility animate-flow { animation: flow 1.2s linear infinite; }
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+@utility animate-float-y {
+  animation: float-y 6s ease-in-out infinite;
+}
+@utility animate-orb {
+  animation: orb-drift 18s ease-in-out infinite;
+}
+@utility animate-flow {
+  animation: flow 1.2s linear infinite;
+}
 @utility animate-gradient-shift {
   background-size: 200% 200%;
   animation: gradient-shift 12s ease infinite;
 }
-@utility animate-light-sweep { animation: light-sweep 3s ease-in-out infinite; }
-@utility animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
-@utility animate-conic-spin { animation: conic-spin 6s linear infinite; }
+@utility animate-light-sweep {
+  animation: light-sweep 3s ease-in-out infinite;
+}
+@utility animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+@utility animate-conic-spin {
+  animation: conic-spin 6s linear infinite;
+}
 
 @utility glow-red {
-  box-shadow: 0 0 40px -8px oklch(0.72 0.19 55 / 0.6), 0 0 80px -20px oklch(0.72 0.19 55 / 0.4);
+  box-shadow:
+    0 0 40px -8px oklch(0.72 0.19 55 / 0.6),
+    0 0 80px -20px oklch(0.72 0.19 55 / 0.4);
 }
 
 @utility container-pad {
   padding-inline: 1.25rem;
-  @media (min-width: 768px) { padding-inline: 2.5rem; }
-  @media (min-width: 1280px) { padding-inline: 4rem; }
+  @media (min-width: 768px) {
+    padding-inline: 2.5rem;
+  }
+  @media (min-width: 1280px) {
+    padding-inline: 4rem;
+  }
 }
 
 /* ── Rolling text hover effect (buttons / CTAs) ─────────────────────────────

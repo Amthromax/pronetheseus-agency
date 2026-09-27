@@ -3,20 +3,9 @@ import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "@tanstack/react-router";
 
-const BentoGrid = ({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) => {
+const BentoGrid = ({ children, className }: { children: ReactNode; className?: string }) => {
   return (
-    <div
-      className={cn(
-        "grid w-full auto-rows-[22rem] grid-cols-3 gap-4",
-        className,
-      )}
-    >
+    <div className={cn("grid w-full auto-rows-[22rem] grid-cols-3 gap-4", className)}>
       {children}
     </div>
   );
@@ -34,7 +23,7 @@ const BentoCard = ({
   name: string;
   className?: string;
   background?: ReactNode;
-  Icon?: any;
+  Icon?: React.ElementType;
   description?: string;
   href?: string;
   cta?: string;
@@ -52,11 +41,17 @@ const BentoCard = ({
   >
     <div>{background}</div>
     <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-2">
-      {Icon && <Icon className="h-10 w-10 origin-left transform-gpu text-neutral-800 transition-all duration-300 ease-in-out group-hover:scale-75 dark:text-neutral-200" />}
+      {Icon && (
+        <Icon className="h-10 w-10 origin-left transform-gpu text-neutral-800 transition-all duration-300 ease-in-out group-hover:scale-75 dark:text-neutral-200" />
+      )}
       <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 font-sans tracking-tight">
         {name}
       </h3>
-      {description && <p className="max-w-lg text-sm text-neutral-600 font-normal leading-relaxed">{description}</p>}
+      {description && (
+        <p className="max-w-lg text-sm text-neutral-600 font-normal leading-relaxed">
+          {description}
+        </p>
+      )}
     </div>
 
     {href && cta && (

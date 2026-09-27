@@ -1,7 +1,16 @@
 import { RollingText } from "@/components/ui/rolling-text";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Search, ArrowRight, X, Sparkles, CheckCircle2, Star, Quote, ArrowUpRight } from "lucide-react";
+import {
+  Search,
+  ArrowRight,
+  X,
+  Sparkles,
+  CheckCircle2,
+  Star,
+  Quote,
+  ArrowUpRight,
+} from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 interface ImplementationStep {
@@ -25,7 +34,8 @@ interface StoryItem {
   authorTitle?: string;
 }
 
-const DEFAULT_FALLBACK_IMG = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80";
+const DEFAULT_FALLBACK_IMG =
+  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80";
 
 const STORIES: StoryItem[] = [
   {
@@ -33,16 +43,31 @@ const STORIES: StoryItem[] = [
     title: "How an 80-million-customer energy giant replaced voice with AI-driven self-service",
     category: "Voice AI & Ops",
     metric: "90% Deflection",
-    summary: "Eliminated long phone queues by deploying conversational voice AI to handle high-frequency utility inquiries, billing updates, and meter readouts.",
+    summary:
+      "Eliminated long phone queues by deploying conversational voice AI to handle high-frequency utility inquiries, billing updates, and meter readouts.",
     steps: [
-      { step: "01", label: "Challenge", desc: "45,000+ daily inbound calls created 18-minute wait times during peak hours." },
-      { step: "02", label: "AI Execution", desc: "Deployed conversational voice agent integrated with SAP billing & webhook triggers." },
-      { step: "03", label: "Result", desc: "90% automated deflection with sub-10 second resolution times." },
+      {
+        step: "01",
+        label: "Challenge",
+        desc: "45,000+ daily inbound calls created 18-minute wait times during peak hours.",
+      },
+      {
+        step: "02",
+        label: "AI Execution",
+        desc: "Deployed conversational voice agent integrated with SAP billing & webhook triggers.",
+      },
+      {
+        step: "03",
+        label: "Result",
+        desc: "90% automated deflection with sub-10 second resolution times.",
+      },
     ],
     tags: ["Voice AI", "SAP Integration", "Webhook Auto"],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
     slug: "energy-giant-ai-voice",
-    quote: "Make Accuracy transformed our customer call center. Our call wait times dropped from 18 minutes to zero instantly.",
+    quote:
+      "Make Accuracy transformed our customer call center. Our call wait times dropped from 18 minutes to zero instantly.",
     author: "Elena Rostova",
     authorTitle: "VP Customer Operations",
   },
@@ -51,16 +76,31 @@ const STORIES: StoryItem[] = [
     title: "Fortune 50 Financial Institution Modernizes Global Banking Service Operations",
     category: "Financial Services",
     metric: "$2.4M Saved",
-    summary: "Modernized global wire transfer verification and account compliance checks using sub-second document scanning and automated KYC agents.",
+    summary:
+      "Modernized global wire transfer verification and account compliance checks using sub-second document scanning and automated KYC agents.",
     steps: [
-      { step: "01", label: "Challenge", desc: "Manual compliance reviews delayed international wire approvals by up to 48 hours." },
-      { step: "02", label: "AI Execution", desc: "Engineered OCR & document parsing agents synced with core banking ledger." },
-      { step: "03", label: "Result", desc: "$2.4M operational cost reduction and 98% faster transaction approvals." },
+      {
+        step: "01",
+        label: "Challenge",
+        desc: "Manual compliance reviews delayed international wire approvals by up to 48 hours.",
+      },
+      {
+        step: "02",
+        label: "AI Execution",
+        desc: "Engineered OCR & document parsing agents synced with core banking ledger.",
+      },
+      {
+        step: "03",
+        label: "Result",
+        desc: "$2.4M operational cost reduction and 98% faster transaction approvals.",
+      },
     ],
     tags: ["Financial AI", "OCR Engine", "Core Banking API"],
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
     slug: "financial-institution-modernization",
-    quote: "Our global compliance team now processes wire verifications in seconds with zero calculation errors.",
+    quote:
+      "Our global compliance team now processes wire verifications in seconds with zero calculation errors.",
     author: "Alexander Wright",
     authorTitle: "Chief Risk Officer",
   },
@@ -69,16 +109,31 @@ const STORIES: StoryItem[] = [
     title: "Ecuador's largest insurer transforms contact center operations with generative AI",
     category: "Customer Service",
     metric: "<30s Response",
-    summary: "Replaced legacy contact center IVRs with multi-lingual generative AI agents capable of handling claims processing and policy adjustments.",
+    summary:
+      "Replaced legacy contact center IVRs with multi-lingual generative AI agents capable of handling claims processing and policy adjustments.",
     steps: [
-      { step: "01", label: "Challenge", desc: "High agent turnover and peak call surges caused high customer churn during claims." },
-      { step: "02", label: "AI Execution", desc: "Deployed 24/7 omni-channel generative AI agents across WhatsApp & web chat." },
-      { step: "03", label: "Result", desc: "<30s instant response rate and 42% decrease in support operating costs." },
+      {
+        step: "01",
+        label: "Challenge",
+        desc: "High agent turnover and peak call surges caused high customer churn during claims.",
+      },
+      {
+        step: "02",
+        label: "AI Execution",
+        desc: "Deployed 24/7 omni-channel generative AI agents across WhatsApp & web chat.",
+      },
+      {
+        step: "03",
+        label: "Result",
+        desc: "<30s instant response rate and 42% decrease in support operating costs.",
+      },
     ],
     tags: ["Claims AI", "Generative Agents", "WhatsApp API"],
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
     slug: "ecuador-insurer-transformation",
-    quote: "Our policyholders file claims and receive instant approval notifications on WhatsApp in under a minute.",
+    quote:
+      "Our policyholders file claims and receive instant approval notifications on WhatsApp in under a minute.",
     author: "Maria Fernandez",
     authorTitle: "Head of CX",
   },
@@ -87,16 +142,31 @@ const STORIES: StoryItem[] = [
     title: "Insurance provider transforms customer service with autonomous AI agents",
     category: "AI Support Agents",
     metric: "99.4% Accuracy",
-    summary: "Automated policy underwriting, customer inquiry triage, and policy renewal reminders with zero human intervention required.",
+    summary:
+      "Automated policy underwriting, customer inquiry triage, and policy renewal reminders with zero human intervention required.",
     steps: [
-      { step: "01", label: "Challenge", desc: "Manual policy underwriting caused a 4-day lag between inquiry and quote delivery." },
-      { step: "02", label: "AI Execution", desc: "Configured automated underwriting rules engine paired with LLM document parser." },
-      { step: "03", label: "Result", desc: "99.4% decision accuracy with quote turnaround reduced from 4 days to 45s." },
+      {
+        step: "01",
+        label: "Challenge",
+        desc: "Manual policy underwriting caused a 4-day lag between inquiry and quote delivery.",
+      },
+      {
+        step: "02",
+        label: "AI Execution",
+        desc: "Configured automated underwriting rules engine paired with LLM document parser.",
+      },
+      {
+        step: "03",
+        label: "Result",
+        desc: "99.4% decision accuracy with quote turnaround reduced from 4 days to 45s.",
+      },
     ],
     tags: ["Underwriting Bot", "LLM Parser", "HubSpot CRM"],
-    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80",
     slug: "insurance-provider-ai-agents",
-    quote: "Our underwriters now review edge cases while our AI agents handle 95% of standard policy issuance automatically.",
+    quote:
+      "Our underwriters now review edge cases while our AI agents handle 95% of standard policy issuance automatically.",
     author: "Robert Sterling",
     authorTitle: "VP Underwriting",
   },
@@ -105,14 +175,28 @@ const STORIES: StoryItem[] = [
     title: "Global design and engineering software leader automated technical support",
     category: "Tech Support AI",
     metric: "4.2x Throughput",
-    summary: "Accelerated technical support tickets for complex CAD software by routing log files and error diagnostics directly to autonomous code assist agents.",
+    summary:
+      "Accelerated technical support tickets for complex CAD software by routing log files and error diagnostics directly to autonomous code assist agents.",
     steps: [
-      { step: "01", label: "Challenge", desc: "Tier-1 support engineers spent 60% of their time reading raw error log files." },
-      { step: "02", label: "AI Execution", desc: "Built automated log parsing AI that diagnoses stack traces and recommends fixes." },
-      { step: "03", label: "Result", desc: "4.2x ticket resolution throughput and 75% reduction in escalation rates." },
+      {
+        step: "01",
+        label: "Challenge",
+        desc: "Tier-1 support engineers spent 60% of their time reading raw error log files.",
+      },
+      {
+        step: "02",
+        label: "AI Execution",
+        desc: "Built automated log parsing AI that diagnoses stack traces and recommends fixes.",
+      },
+      {
+        step: "03",
+        label: "Result",
+        desc: "4.2x ticket resolution throughput and 75% reduction in escalation rates.",
+      },
     ],
     tags: ["Log AI", "Ticket Router", "Zendesk API"],
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
     slug: "engineering-software-support",
     quote: "Saves our engineering support team hundreds of hours every week.",
     author: "Dr. Jonathan Vance",
@@ -123,14 +207,28 @@ const STORIES: StoryItem[] = [
     title: "How a leading confectionary manufacturer automated B2B retail ordering",
     category: "B2B Revenue AI",
     metric: "100% Order Sync",
-    summary: "Transformed manual wholesale order entry from PDF invoices into automated n8n database sync, eliminating order fulfillment errors.",
+    summary:
+      "Transformed manual wholesale order entry from PDF invoices into automated n8n database sync, eliminating order fulfillment errors.",
     steps: [
-      { step: "01", label: "Challenge", desc: "Retail distributors sent unstructured PDF orders via email, causing entry delays." },
-      { step: "02", label: "AI Execution", desc: "Implemented automated email parser and ERP database synchronization engine." },
-      { step: "03", label: "Result", desc: "100% order synchronization accuracy and 12 hours saved daily per rep." },
+      {
+        step: "01",
+        label: "Challenge",
+        desc: "Retail distributors sent unstructured PDF orders via email, causing entry delays.",
+      },
+      {
+        step: "02",
+        label: "AI Execution",
+        desc: "Implemented automated email parser and ERP database synchronization engine.",
+      },
+      {
+        step: "03",
+        label: "Result",
+        desc: "100% order synchronization accuracy and 12 hours saved daily per rep.",
+      },
     ],
     tags: ["ERP Auto-Sync", "Email OCR", "n8n Workflows"],
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
     slug: "confectionary-manufacturer-b2b",
     quote: "Fulfillment accuracy reached 100% instantly.",
     author: "Pierre Dubois",
@@ -141,14 +239,28 @@ const STORIES: StoryItem[] = [
     title: "Empowering a Global Frontline Workforce with AI-Driven Employee Assistance",
     category: "Enterprise Ops",
     metric: "45k Users",
-    summary: "Empowered 45,000 global field technicians with an instant voice-activated mobile AI assistant for equipment manuals and safety compliance.",
+    summary:
+      "Empowered 45,000 global field technicians with an instant voice-activated mobile AI assistant for equipment manuals and safety compliance.",
     steps: [
-      { step: "01", label: "Challenge", desc: "Field technicians lost 2+ hours daily searching through paper maintenance manuals." },
-      { step: "02", label: "AI Execution", desc: "Created RAG vector database assistant accessible via mobile app and voice." },
-      { step: "03", label: "Result", desc: "45,000 active daily users with 35% improvement in first-time fix rates." },
+      {
+        step: "01",
+        label: "Challenge",
+        desc: "Field technicians lost 2+ hours daily searching through paper maintenance manuals.",
+      },
+      {
+        step: "02",
+        label: "AI Execution",
+        desc: "Created RAG vector database assistant accessible via mobile app and voice.",
+      },
+      {
+        step: "03",
+        label: "Result",
+        desc: "45,000 active daily users with 35% improvement in first-time fix rates.",
+      },
     ],
     tags: ["Vector RAG", "Mobile Voice AI", "Safety Compliance"],
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
     slug: "frontline-workforce-assistance",
     quote: "Field repair efficiency increased beyond our highest expectations.",
     author: "Samantha Reed",
@@ -159,16 +271,31 @@ const STORIES: StoryItem[] = [
     title: "Transforming Live Event Support with Intelligent Digital Self-Service",
     category: "Event Automation",
     metric: "24/7 Availability",
-    summary: "Handled 100,000+ attendee ticket changes, venue navigation, and VIP upgrades during major international sports tournaments using automated AI bots.",
+    summary:
+      "Handled 100,000+ attendee ticket changes, venue navigation, and VIP upgrades during major international sports tournaments using automated AI bots.",
     steps: [
-      { step: "01", label: "Challenge", desc: "Event staff overwhelmed by 10,000+ simultaneous inquiries during peak event hours." },
-      { step: "02", label: "AI Execution", desc: "Deployed multi-platform self-service bot integrated with ticketing APIs." },
-      { step: "03", label: "Result", desc: "24/7 instant resolution with 96% attendee satisfaction score." },
+      {
+        step: "01",
+        label: "Challenge",
+        desc: "Event staff overwhelmed by 10,000+ simultaneous inquiries during peak event hours.",
+      },
+      {
+        step: "02",
+        label: "AI Execution",
+        desc: "Deployed multi-platform self-service bot integrated with ticketing APIs.",
+      },
+      {
+        step: "03",
+        label: "Result",
+        desc: "24/7 instant resolution with 96% attendee satisfaction score.",
+      },
     ],
     tags: ["Event Bot", "Ticketing API", "Real-Time AI"],
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
     slug: "live-event-self-service",
-    quote: "Make Accuracy handled our entire tournament support without a single customer complaint.",
+    quote:
+      "Make Accuracy handled our entire tournament support without a single customer complaint.",
     author: "Marcus Thorne",
     authorTitle: "VP Event Operations",
   },
@@ -177,16 +304,31 @@ const STORIES: StoryItem[] = [
     title: "Modernizing Digital Self-Service for Corporate Travel & Mobility",
     category: "Travel & Mobility",
     metric: "60% Cost Reduction",
-    summary: "Streamlined corporate flight rebooking, hotel cancellation, and expense reporting into a single automated Slack & Teams conversational bot.",
+    summary:
+      "Streamlined corporate flight rebooking, hotel cancellation, and expense reporting into a single automated Slack & Teams conversational bot.",
     steps: [
-      { step: "01", label: "Challenge", desc: "Flight disruptions required manual phone calls to travel agents, causing missed connections." },
-      { step: "02", label: "AI Execution", desc: "Built automated rebooking bot connected to Amadeus & Sabre travel GDS." },
-      { step: "03", label: "Result", desc: "60% operational cost reduction and instant sub-1 minute flight rebooking." },
+      {
+        step: "01",
+        label: "Challenge",
+        desc: "Flight disruptions required manual phone calls to travel agents, causing missed connections.",
+      },
+      {
+        step: "02",
+        label: "AI Execution",
+        desc: "Built automated rebooking bot connected to Amadeus & Sabre travel GDS.",
+      },
+      {
+        step: "03",
+        label: "Result",
+        desc: "60% operational cost reduction and instant sub-1 minute flight rebooking.",
+      },
     ],
     tags: ["Amadeus GDS", "Slack Bot", "Rebooking Engine"],
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80",
     slug: "corporate-travel-self-service",
-    quote: "Our business travelers rebook canceled flights directly inside Slack in under a minute.",
+    quote:
+      "Our business travelers rebook canceled flights directly inside Slack in under a minute.",
     author: "Claire Dupont",
     authorTitle: "Global Travel Director",
   },
@@ -195,14 +337,28 @@ const STORIES: StoryItem[] = [
     title: "Scaling Developer Velocity with Autonomous Code Assist & Workflows",
     category: "Developer Ops",
     metric: "3x Shipping Speed",
-    summary: "Scaled software team output by introducing autonomous code review agents and automated pull request testing workflows.",
+    summary:
+      "Scaled software team output by introducing autonomous code review agents and automated pull request testing workflows.",
     steps: [
-      { step: "01", label: "Challenge", desc: "Senior engineers spent 15+ hours weekly reviewing repetitive PR boilerplate code." },
-      { step: "02", label: "AI Execution", desc: "Integrated automated AI code reviewer into GitHub CI/CD pipeline." },
-      { step: "03", label: "Result", desc: "3x feature shipping speed with 50% fewer production bug regressions." },
+      {
+        step: "01",
+        label: "Challenge",
+        desc: "Senior engineers spent 15+ hours weekly reviewing repetitive PR boilerplate code.",
+      },
+      {
+        step: "02",
+        label: "AI Execution",
+        desc: "Integrated automated AI code reviewer into GitHub CI/CD pipeline.",
+      },
+      {
+        step: "03",
+        label: "Result",
+        desc: "3x feature shipping speed with 50% fewer production bug regressions.",
+      },
     ],
     tags: ["GitHub CI/CD", "AI Code Review", "DevOps Auto"],
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
     slug: "developer-velocity-assist",
     quote: "Our development velocity tripled after introducing automated AI code review agents.",
     author: "Alex Chen",
@@ -210,7 +366,13 @@ const STORIES: StoryItem[] = [
   },
 ];
 
-const CATEGORIES = ["All", "Customer Service", "Financial Services", "Voice AI & Ops", "Enterprise Ops"];
+const CATEGORIES = [
+  "All",
+  "Customer Service",
+  "Financial Services",
+  "Voice AI & Ops",
+  "Enterprise Ops",
+];
 
 export function CaseStudies() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -218,9 +380,10 @@ export function CaseStudies() {
   const [activeStoryModal, setActiveStoryModal] = useState<StoryItem | null>(null);
 
   const filteredStories = STORIES.filter((story) => {
-    const matchesSearch = story.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          story.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          story.summary.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch =
+      story.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      story.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      story.summary.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCat = selectedCategory === "All" || story.category === selectedCategory;
     return matchesSearch && matchesCat;
   });
@@ -228,7 +391,6 @@ export function CaseStudies() {
   return (
     <section className="relative bg-sandel text-neutral-900 min-h-screen py-12 sm:py-20">
       <div className="container-pad mx-auto max-w-[1400px]">
-        
         {/* Header & Subtitle */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
@@ -236,7 +398,9 @@ export function CaseStudies() {
               Our customers, their stories
             </h1>
             <p className="mt-2 text-sm sm:text-base text-neutral-600 font-sans max-w-xl">
-              Step-by-step implementation breakdowns demonstrating how global enterprises replace manual bottlenecks with autonomous AI engines. Click any box to view full story details.
+              Step-by-step implementation breakdowns demonstrating how global enterprises replace
+              manual bottlenecks with autonomous AI engines. Click any box to view full story
+              details.
             </p>
           </div>
 
@@ -295,7 +459,7 @@ export function CaseStudies() {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-90" />
-                  
+
                   {/* Top Apple Badges overlay */}
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
                     <span className="rounded-full bg-black/65 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-sans font-medium text-white tracking-wide uppercase shadow-2xs">
@@ -333,7 +497,9 @@ export function CaseStudies() {
                         </span>
                         <div>
                           <span className="font-bold text-neutral-900 mr-1">{st.label}:</span>
-                          <span className="text-neutral-600 font-normal leading-tight">{st.desc}</span>
+                          <span className="text-neutral-600 font-normal leading-tight">
+                            {st.desc}
+                          </span>
                         </div>
                       </div>
                     ))}
@@ -366,7 +532,6 @@ export function CaseStudies() {
             </motion.div>
           ))}
         </div>
-
       </div>
 
       {/* APPLE DESIGN FULL INFORMATION POPUP MODAL */}
@@ -450,7 +615,10 @@ export function CaseStudies() {
                   </h4>
                   <div className="space-y-2.5 pt-1">
                     {activeStoryModal.steps.map((st) => (
-                      <div key={st.step} className="flex items-start gap-3 text-xs sm:text-sm font-sans">
+                      <div
+                        key={st.step}
+                        className="flex items-start gap-3 text-xs sm:text-sm font-sans"
+                      >
                         <span className="font-mono font-bold text-white text-[10px] bg-neutral-900 px-2 py-0.5 rounded-full shrink-0 shadow-2xs">
                           {st.step}
                         </span>
@@ -510,7 +678,9 @@ export function CaseStudies() {
                   params={{ slug: activeStoryModal.slug }}
                   className="inline-flex items-center gap-2 rounded-full bg-neutral-900 hover:bg-black px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-all shadow-sm hover:scale-[1.02]"
                 >
-                  <span><RollingText>Open Dedicated Page</RollingText></span>
+                  <span>
+                    <RollingText>Open Dedicated Page</RollingText>
+                  </span>
                   <ArrowUpRight className="size-4 text-blue-400" />
                 </Link>
               </div>
@@ -518,7 +688,6 @@ export function CaseStudies() {
           </div>
         )}
       </AnimatePresence>
-
     </section>
   );
 }

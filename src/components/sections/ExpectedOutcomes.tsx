@@ -8,29 +8,29 @@ const METRICS_LIST = [
     label: "Monthly Hours Saved",
     desc: "Reclaim founder and staff time previously lost to manual lead triage & repetitive data entry.",
     icon: Clock,
-    badge: "TIME RECLAIMED"
+    badge: "TIME RECLAIMED",
   },
   {
     value: "<60s",
     label: "Speed-to-Lead Response",
     desc: "Sub-60s multi-channel response across web forms, SMS, phone, and WhatsApp.",
     icon: Zap,
-    badge: "SPEED TO LEAD"
+    badge: "SPEED TO LEAD",
   },
   {
     value: "+18/mo",
     label: "New Monthly Bookings",
     desc: "Capture after-hours leads and automatically qualify & book them directly onto calendars.",
     icon: CalendarCheck,
-    badge: "PIPELINE GROWTH"
+    badge: "PIPELINE GROWTH",
   },
   {
     value: "3.2×",
     label: "Measured ROI",
     desc: "Demonstrated return on investment within 90 days of deploying core AI revenue systems.",
     icon: TrendingUp,
-    badge: "P&L IMPACT"
-  }
+    badge: "P&L IMPACT",
+  },
 ];
 
 /** Splits a formatted metric into prefix, number and suffix: "+18/mo" -> "+", "18", "/mo". */
@@ -81,9 +81,11 @@ function CountUpValue({ value, delay = 0 }: { value: string; delay?: number }) {
 
 export function ExpectedOutcomes() {
   return (
-    <section id="expected-outcomes" className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden">
+    <section
+      id="expected-outcomes"
+      className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden"
+    >
       <div className="mx-auto max-w-[1700px] px-4 sm:px-8 lg:px-16 xl:px-20">
-        
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-12">
           <motion.h2
@@ -96,7 +98,8 @@ export function ExpectedOutcomes() {
             Measurable Operational Proof
           </motion.h2>
           <p className="mt-3 text-xs sm:text-sm text-neutral-500 font-normal leading-relaxed max-w-xl mx-auto">
-            Concrete benchmarks observed across active service business and agency automation deployments.
+            Concrete benchmarks observed across active service business and agency automation
+            deployments.
           </p>
         </div>
 
@@ -137,7 +140,6 @@ export function ExpectedOutcomes() {
             );
           })}
         </div>
-
       </div>
     </section>
   );

@@ -70,7 +70,6 @@ export function Navbar() {
       className="fixed inset-x-0 top-0 pt-2.5 sm:pt-3.5 pb-1 z-[100] px-4 sm:px-8 lg:px-12 w-full max-w-[1700px] mx-auto pointer-events-auto"
     >
       <div className="relative flex items-center justify-between rounded-full bg-[#f6f5f0] border border-neutral-200/70 px-4 py-2 sm:px-6 sm:py-2.5 shadow-[0_2px_15px_rgba(0,0,0,0.03)]">
-        
         {/* Left Side: Logo & Live Dynamic Date-Time */}
         <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
           <Link
@@ -131,7 +130,9 @@ export function Navbar() {
             className="mt-2.5 rounded-3xl border border-neutral-200/90 bg-[#f6f5f0] p-5 shadow-2xl backdrop-blur-2xl max-w-md ml-auto overflow-hidden"
           >
             <div className="flex items-center justify-between pb-3 mb-3 border-b border-neutral-200">
-              <span className="text-xs font-semibold uppercase tracking-wider text-neutral-400">Navigation</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-neutral-400">
+                Navigation
+              </span>
               <button
                 onClick={() => setOpen(false)}
                 className="text-xs font-medium text-neutral-500 hover:text-black flex items-center gap-1 cursor-pointer"

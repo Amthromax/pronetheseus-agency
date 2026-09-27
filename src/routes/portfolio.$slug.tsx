@@ -16,13 +16,21 @@ export const Route = createFileRoute("/portfolio/$slug")({
           { name: "description", content: loaderData.summary },
           { property: "og:title", content: `${loaderData.title} — Make Accuracy` },
           { property: "og:description", content: loaderData.summary },
-          { property: "og:url", content: `https://makeaccuracy.agency/portfolio/${loaderData.slug || params.slug}` },
+          {
+            property: "og:url",
+            content: `https://makeaccuracy.agency/portfolio/${loaderData.slug || params.slug}`,
+          },
           { property: "og:type", content: "article" },
           { name: "twitter:card", content: "summary_large_image" },
         ]
       : [{ title: "Case study — Make Accuracy" }],
     links: loaderData
-      ? [{ rel: "canonical", href: `https://makeaccuracy.agency/portfolio/${loaderData.slug || params.slug}` }]
+      ? [
+          {
+            rel: "canonical",
+            href: `https://makeaccuracy.agency/portfolio/${loaderData.slug || params.slug}`,
+          },
+        ]
       : [],
   }),
   notFoundComponent: () => (
@@ -38,7 +46,12 @@ export const Route = createFileRoute("/portfolio/$slug")({
     <main className="container-pad mx-auto max-w-3xl py-32 text-center">
       <h1 className="font-display text-3xl">Something went wrong</h1>
       <p className="mt-3 text-muted-foreground">{(error as Error)?.message}</p>
-      <button onClick={reset} className="mt-6 rounded-full border border-white/10 px-5 py-2 text-sm"><RollingText>Try again</RollingText></button>
+      <button
+        onClick={reset}
+        className="mt-6 rounded-full border border-white/10 px-5 py-2 text-sm"
+      >
+        <RollingText>Try again</RollingText>
+      </button>
     </main>
   ),
   component: ProjectPage,
@@ -55,7 +68,10 @@ function ProjectPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         <div className="container-pad relative mx-auto max-w-[1200px] pt-32 pb-24 md:pt-40 md:pb-32">
           <div className="flex items-center gap-3 flex-wrap">
-            <Link to="/" className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white"
+            >
               <ArrowLeft className="size-4" /> All work
             </Link>
             <span className="text-white/40">·</span>
@@ -71,9 +87,18 @@ function ProjectPage() {
           <h1 className="mt-3 font-display text-4xl text-white md:text-6xl">{item.title}</h1>
           <p className="mt-6 max-w-2xl text-lg text-white/85">{item.summary}</p>
           <div className="mt-8 flex flex-wrap gap-6 text-sm text-white/80">
-            <div><div className="text-xs uppercase tracking-widest text-white/60">Client</div><div className="mt-1">{item.client}</div></div>
-            <div><div className="text-xs uppercase tracking-widest text-white/60">Year</div><div className="mt-1">{item.year}</div></div>
-            <div><div className="text-xs uppercase tracking-widest text-white/60">Category</div><div className="mt-1">{item.category}</div></div>
+            <div>
+              <div className="text-xs uppercase tracking-widest text-white/60">Client</div>
+              <div className="mt-1">{item.client}</div>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-widest text-white/60">Year</div>
+              <div className="mt-1">{item.year}</div>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-widest text-white/60">Category</div>
+              <div className="mt-1">{item.category}</div>
+            </div>
           </div>
         </div>
       </section>
@@ -124,17 +149,28 @@ function ProjectPage() {
           <h2 className="font-display text-2xl">Stack</h2>
           <div className="mt-4 flex flex-wrap gap-2">
             {item.stack.map((s) => (
-              <span key={s} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-sm text-foreground/80">{s}</span>
+              <span
+                key={s}
+                className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-sm text-foreground/80"
+              >
+                {s}
+              </span>
             ))}
           </div>
         </div>
 
         <div className="mt-20 flex items-center justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-8">
           <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">Next project</div>
+            <div className="text-xs uppercase tracking-widest text-muted-foreground">
+              Next project
+            </div>
             <div className="mt-1 font-display text-2xl">{next.title}</div>
           </div>
-          <Link to="/portfolio/$slug" params={{ slug: next.slug }} className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-medium text-white">
+          <Link
+            to="/portfolio/$slug"
+            params={{ slug: next.slug }}
+            className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-medium text-white"
+          >
             View <ArrowRight className="size-4" />
           </Link>
         </div>

@@ -25,12 +25,12 @@ export function Logo({ className = "h-6 w-auto", ...props }: LogoProps) {
   );
 }
 
-export function LogoImage({ className = "h-6 w-auto", alt = "Make Accuracy Logo" }: { className?: string; alt?: string }) {
-  return (
-    <img
-      src="/logo-mark-dark.png"
-      alt={alt}
-      className={`object-contain ${className}`}
-    />
-  );
+export function LogoImage({
+  className = "h-6 w-auto",
+  alt = "Make Accuracy Logo",
+}: {
+  className?: string;
+  alt?: string;
+}) {
+  return <img src="/logo-mark-dark.png" alt={alt} className={`object-contain ${className}`} />;
 }

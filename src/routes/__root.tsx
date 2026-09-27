@@ -54,11 +54,17 @@ function NotFoundComponent() {
         </div>
 
         <div className="pt-6 border-t border-white/5 flex items-center justify-center gap-6 text-xs text-neutral-500">
-          <Link to="/services" className="hover:text-white transition">Services</Link>
+          <Link to="/services" className="hover:text-white transition">
+            Services
+          </Link>
           <span>•</span>
-          <Link to="/solutions" className="hover:text-white transition">Solutions</Link>
+          <Link to="/solutions" className="hover:text-white transition">
+            Solutions
+          </Link>
           <span>•</span>
-          <Link to="/contact" className="hover:text-white transition">Contact</Link>
+          <Link to="/contact" className="hover:text-white transition">
+            Contact
+          </Link>
         </div>
       </div>
     </div>
@@ -127,7 +133,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@makeaccuracy" },
       { name: "twitter:title", content: "Make Accuracy — AI Automation & AI Agents" },
-      { name: "twitter:description", content: "AI Employees that work 24/7. Custom automation workflows that scale revenue." },
+      {
+        name: "twitter:description",
+        content: "AI Employees that work 24/7. Custom automation workflows that scale revenue.",
+      },
       { name: "twitter:image", content: "https://makeaccuracy.agency/logo-mark.png" },
     ],
     links: [
@@ -135,9 +144,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", sizes: "any" },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "icon", href: "/logo-mark.png", type: "image/png" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -157,10 +164,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           logo: "https://makeaccuracy.agency/logo-mark.png",
           description:
             "AI automation agency building AI agents, n8n workflows, CRM automation, voice AI, and custom software.",
-          sameAs: [
-            "https://www.linkedin.com/company/makeaccuracy",
-            "https://x.com/makeaccuracy",
-          ],
+          sameAs: ["https://www.linkedin.com/company/makeaccuracy", "https://x.com/makeaccuracy"],
         }),
       },
     ],
@@ -217,4 +221,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-

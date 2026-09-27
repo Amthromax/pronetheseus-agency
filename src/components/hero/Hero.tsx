@@ -1,14 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
-import {
-  UserPlus,
-  Bot,
-  Filter,
-  RefreshCw,
-  Calendar,
-  Database,
-  ArrowRight
-} from "lucide-react";
+import { UserPlus, Bot, Filter, RefreshCw, Calendar, Database, ArrowRight } from "lucide-react";
 import { FlipWords } from "@/components/ui/flip-words";
 import { RollingText } from "@/components/ui/rolling-text";
 
@@ -63,10 +55,12 @@ export function Hero() {
             <span className="block">Autonomous AI Infrastructure.</span>
             <span className="block text-neutral-900 mt-1 sm:mt-1.5">
               Built for High-Growth{" "}
-              <FlipWords words={HERO_WORDS} className="text-neutral-900 font-bold p-0 px-1 inline-block relative" />
+              <FlipWords
+                words={HERO_WORDS}
+                className="text-neutral-900 font-bold p-0 px-1 inline-block relative"
+              />
             </span>
           </motion.h1>
-
 
           {/* Apple Action Pill Buttons CTAs */}
           <motion.div
@@ -82,12 +76,13 @@ export function Hero() {
             </Link>
             <Link to="/how-it-works" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto rounded-full bg-white hover:bg-neutral-50 text-neutral-900 border border-neutral-900 px-6 sm:px-7 py-3.5 text-xs sm:text-sm font-semibold shadow-xs transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap tracking-wide antialiased">
-                <span><RollingText>See How It Works</RollingText></span>
+                <span>
+                  <RollingText>See How It Works</RollingText>
+                </span>
                 <ArrowRight className="w-3.5 h-3.5 text-neutral-900" />
               </button>
             </Link>
           </motion.div>
-
         </div>
       </div>
     </section>

@@ -21,10 +21,12 @@ const CASE_STUDIES: CaseStudyCard[] = [
   {
     client: "Apex Plumbing & HVAC",
     industry: "Home Services (12 Techs)",
-    problem: "40% of emergency inbound calls after 6 PM went to voicemail, missing lucrative repair contracts.",
+    problem:
+      "40% of emergency inbound calls after 6 PM went to voicemail, missing lucrative repair contracts.",
     system: "Voice AI Call Assistant & SMS Speed-to-Lead Agent",
     result: "47 hours/month saved • +18 emergency jobs booked/mo",
-    testimonial: "We used to lose high-value weekend service calls because no one answered immediately. The AI agent now qualifies and books emergency slots directly into our dispatch calendar in under 45 seconds.",
+    testimonial:
+      "We used to lose high-value weekend service calls because no one answered immediately. The AI agent now qualifies and books emergency slots directly into our dispatch calendar in under 45 seconds.",
     author: "Dave Reynolds",
     authorTitle: "Operations Director",
     slug: "energy-giant-ai-voice",
@@ -32,10 +34,12 @@ const CASE_STUDIES: CaseStudyCard[] = [
   {
     client: "BrightSmile Dental Studio",
     industry: "Dental Practice (3 Locations)",
-    problem: "25% patient appointment no-show rate and staff spent 15+ hours/week making manual phone reminder calls.",
+    problem:
+      "25% patient appointment no-show rate and staff spent 15+ hours/week making manual phone reminder calls.",
     system: "Automated WhatsApp & SMS Cadence with 2-way Rescheduling",
     result: "32% faster lead response • 94% patient attendance rate",
-    testimonial: "Our front desk staff can finally focus on patient care instead of spending hours on the phone chasing confirmations. No-shows dropped almost to zero within 30 days.",
+    testimonial:
+      "Our front desk staff can finally focus on patient care instead of spending hours on the phone chasing confirmations. No-shows dropped almost to zero within 30 days.",
     author: "Dr. Sarah Lin",
     authorTitle: "Managing Partner",
     slug: "ecuador-insurer-transformation",
@@ -43,10 +47,12 @@ const CASE_STUDIES: CaseStudyCard[] = [
   {
     client: "Vanguard Realty Group",
     industry: "Real Estate Brokerage (18 Agents)",
-    problem: "Inbound portal leads sat uncontacted for hours, causing high lead decay and lost property commissions.",
+    problem:
+      "Inbound portal leads sat uncontacted for hours, causing high lead decay and lost property commissions.",
     system: "Sub-minute WhatsApp Qualifying Bot & CRM Auto-Sync Engine",
     result: "3.2× ROI on ad spend • 14 extra buyer tours booked/mo",
-    testimonial: "Speed is everything in real estate. Having an autonomous AI SDR qualify buyers on WhatsApp in 30 seconds doubled our agent tour bookings in the first month.",
+    testimonial:
+      "Speed is everything in real estate. Having an autonomous AI SDR qualify buyers on WhatsApp in 30 seconds doubled our agent tour bookings in the first month.",
     author: "Marcus Vance",
     authorTitle: "Principal Broker",
     slug: "financial-institution-modernization",
@@ -69,7 +75,10 @@ export function Testimonials({ className = "", hideBorders = false }: Testimonia
   };
 
   return (
-    <section id="customer-testimonials" className={`relative bg-sandel py-12 sm:py-16 text-neutral-900 overflow-hidden ${hideBorders ? "" : "border-y border-sandel-border"} ${className}`}>
+    <section
+      id="customer-testimonials"
+      className={`relative bg-sandel py-12 sm:py-16 text-neutral-900 overflow-hidden ${hideBorders ? "" : "border-y border-sandel-border"} ${className}`}
+    >
       <div className="container-pad mx-auto max-w-[1400px]">
         {/* Header Container */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
@@ -78,7 +87,8 @@ export function Testimonials({ className = "", hideBorders = false }: Testimonia
               Proven System Results & Case Studies
             </h2>
             <p className="mt-2 text-sm sm:text-base text-neutral-600 font-sans max-w-2xl">
-              Real problem-to-result breakdowns demonstrating how service businesses eliminate operational drag.
+              Real problem-to-result breakdowns demonstrating how service businesses eliminate
+              operational drag.
             </p>
           </div>
 
@@ -147,14 +157,18 @@ export function Testimonials({ className = "", hideBorders = false }: Testimonia
                         <span className="font-mono font-bold text-blue-600 uppercase text-[10px] block mb-0.5 tracking-wider">
                           Deployed System
                         </span>
-                        <span className="text-neutral-800 font-medium leading-snug block">{item.system}</span>
+                        <span className="text-neutral-800 font-medium leading-snug block">
+                          {item.system}
+                        </span>
                       </div>
 
                       <div className="p-3 rounded-[16px] bg-[#f4f3ee] border border-neutral-200/80">
                         <span className="font-mono font-bold text-emerald-600 uppercase text-[10px] block mb-0.5 tracking-wider">
                           Result
                         </span>
-                        <span className="text-neutral-900 font-bold leading-snug block">{item.result}</span>
+                        <span className="text-neutral-900 font-bold leading-snug block">
+                          {item.result}
+                        </span>
                       </div>
                     </div>
 
@@ -193,7 +207,9 @@ export function Testimonials({ className = "", hideBorders = false }: Testimonia
             to="/book"
             className="inline-flex items-center gap-2 rounded-xl bg-[#18181b] px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-white shadow-xs transition-all duration-200 hover:bg-black hover:scale-[1.01]"
           >
-            <span><RollingText>Get Your Free Automation Audit</RollingText></span>
+            <span>
+              <RollingText>Get Your Free Automation Audit</RollingText>
+            </span>
             <ArrowRight className="size-4 text-white" />
           </Link>
         </div>

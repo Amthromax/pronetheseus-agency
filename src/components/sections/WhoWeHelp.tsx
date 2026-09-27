@@ -1,46 +1,39 @@
 import { RollingText } from "@/components/ui/rolling-text";
 import { motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
-import {
-  Home,
-  Stethoscope,
-  Building2,
-  Scale,
-  TrendingUp,
-  ArrowRight
-} from "lucide-react";
+import { Home, Stethoscope, Building2, Scale, TrendingUp, ArrowRight } from "lucide-react";
 
 const INDUSTRIES = [
   {
     icon: Home,
     title: "Home Services",
     desc: "Capture & convert inbound leads.",
-    features: ["Instant phone/form response", "24/7 lead capture", "Automated scheduling"]
+    features: ["Instant phone/form response", "24/7 lead capture", "Automated scheduling"],
   },
   {
     icon: Stethoscope,
     title: "Dental Clinics",
     desc: "Automate inquiries & bookings.",
-    features: ["Appointment booking bot", "SMS confirmation alerts", "Patient reactivation"]
+    features: ["Appointment booking bot", "SMS confirmation alerts", "Patient reactivation"],
   },
   {
     icon: Building2,
     title: "Real Estate",
     desc: "Respond to & nurture leads.",
-    features: ["Property inquiry bot", "Lead qualification", "Long-term drip campaigns"]
+    features: ["Property inquiry bot", "Lead qualification", "Long-term drip campaigns"],
   },
   {
     icon: Scale,
     title: "Professional Services",
     desc: "Automate client workflows.",
-    features: ["Client intake portal", "Contract distribution", "Invoice reminders"]
+    features: ["Client intake portal", "Contract distribution", "Invoice reminders"],
   },
   {
     icon: TrendingUp,
     title: "Marketing Agencies",
     desc: "Automate client operations.",
-    features: ["Automated onboarding", "Slack & PM integrations", "Real-time reporting"]
-  }
+    features: ["Automated onboarding", "Slack & PM integrations", "Real-time reporting"],
+  },
 ];
 
 export function WhoWeHelp() {
@@ -53,11 +46,17 @@ export function WhoWeHelp() {
             Built for service businesses
           </h2>
           <p className="mt-1 text-xs sm:text-sm text-neutral-600 font-sans max-w-xl mx-auto">
-            We engineer tailored AI automation systems for service-driven companies ready to capture leads faster and streamline operations.
+            We engineer tailored AI automation systems for service-driven companies ready to capture
+            leads faster and streamline operations.
           </p>
           <div className="mt-3">
-            <Link to="/industries" className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-800 transition">
-              <span><RollingText>Explore all industry solutions</RollingText></span>
+            <Link
+              to="/industries"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-800 transition"
+            >
+              <span>
+                <RollingText>Explore all industry solutions</RollingText>
+              </span>
               <ArrowRight className="size-3.5" />
             </Link>
           </div>
@@ -92,7 +91,10 @@ export function WhoWeHelp() {
 
                   <div className="mt-3 pt-3 border-t border-black/5 space-y-1.5">
                     {ind.features.map((feat) => (
-                      <div key={feat} className="flex items-center gap-1.5 text-[11px] text-neutral-600">
+                      <div
+                        key={feat}
+                        className="flex items-center gap-1.5 text-[11px] text-neutral-600"
+                      >
                         <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 shrink-0" />
                         <span>{feat}</span>
                       </div>
@@ -105,7 +107,9 @@ export function WhoWeHelp() {
                     to="/book"
                     className="inline-flex w-full items-center justify-between rounded-full bg-white/80 backdrop-blur-sm border border-black/5 px-4 py-2 text-xs font-semibold text-neutral-800 transition duration-300 group-hover:bg-neutral-900 group-hover:text-white shadow-2xs"
                   >
-                    <span><RollingText>Automate My Business</RollingText></span>
+                    <span>
+                      <RollingText>Automate My Business</RollingText>
+                    </span>
                     <ArrowRight className="size-3" />
                   </Link>
                 </div>
@@ -127,13 +131,16 @@ export function WhoWeHelp() {
               Don't see your industry?
             </h4>
             <p className="mt-0.5 text-xs text-neutral-300 font-sans max-w-xl">
-              We can still identify your best automation opportunities and build custom workflow engines.
+              We can still identify your best automation opportunities and build custom workflow
+              engines.
             </p>
           </div>
 
           <Link to="/book" className="shrink-0">
             <button className="rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-neutral-900 shadow-sm transition-all duration-300 hover:bg-neutral-100 hover:scale-[1.03] cursor-pointer flex items-center gap-1.5">
-              <span><RollingText>Get Free Automation Audit</RollingText></span>
+              <span>
+                <RollingText>Get Free Automation Audit</RollingText>
+              </span>
               <ArrowRight className="size-3.5 text-neutral-900" />
             </button>
           </Link>

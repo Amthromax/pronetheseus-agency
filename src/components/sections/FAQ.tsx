@@ -45,16 +45,16 @@ const SYSTEM_FAQS = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden">
+    <section
+      id="faq"
+      className="relative bg-white py-16 sm:py-24 text-neutral-900 font-sans overflow-hidden"
+    >
       <div className="mx-auto max-w-[1700px] px-4 sm:px-8 lg:px-16 xl:px-20">
-        
         {/* Top Section Header Divider Bar */}
-        <div className="flex items-center justify-between border-b border-black/10 pb-4 mb-8 sm:mb-12">
-        </div>
+        <div className="flex items-center justify-between border-b border-black/10 pb-4 mb-8 sm:mb-12"></div>
 
         {/* 2 Column FAQ Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          
           {/* Left Column: Heading & CTA */}
           <div className="lg:col-span-5 flex flex-col justify-between h-full">
             <div>
@@ -78,7 +78,9 @@ export function FAQ() {
                 to="/contact"
                 className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-[#f4f3ee] px-4 py-2 text-xs font-semibold text-neutral-800 hover:bg-neutral-200/70 transition shadow-2xs cursor-pointer font-sans"
               >
-                <span><RollingText>Contact us</RollingText></span>
+                <span>
+                  <RollingText>Contact us</RollingText>
+                </span>
                 <span className="text-sm font-normal">+</span>
               </Link>
             </div>
@@ -117,9 +119,7 @@ export function FAQ() {
               </Accordion>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );

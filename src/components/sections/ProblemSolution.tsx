@@ -5,28 +5,36 @@ import { Link } from "@tanstack/react-router";
 const PAINS_VS_SOLUTIONS = [
   {
     category: "Client Onboarding",
-    oldWay: "14 days of back-and-forth emails, lost files, manual intake forms, delayed Slack invites.",
-    newWay: "Automated 15-minute onboarding: instant Slack channel setup, Google Drive folder creation, CRM sync & client kickoff.",
-    impact: "90% Faster Time-To-Value"
+    oldWay:
+      "14 days of back-and-forth emails, lost files, manual intake forms, delayed Slack invites.",
+    newWay:
+      "Automated 15-minute onboarding: instant Slack channel setup, Google Drive folder creation, CRM sync & client kickoff.",
+    impact: "90% Faster Time-To-Value",
   },
   {
     category: "Client Reporting",
-    oldWay: "Account managers spending 15+ hours every Friday copying metrics into manual slide decks.",
-    newWay: "Live client portals & automated weekly email digests generated directly from API data pipelines.",
-    impact: "120+ Hours Saved / Month"
+    oldWay:
+      "Account managers spending 15+ hours every Friday copying metrics into manual slide decks.",
+    newWay:
+      "Live client portals & automated weekly email digests generated directly from API data pipelines.",
+    impact: "120+ Hours Saved / Month",
   },
   {
     category: "Project & Task Management",
-    oldWay: "Silos between Slack, ClickUp, Notion, and email leads to dropped deliverables and missed deadlines.",
-    newWay: "Bi-directional n8n automation syncing every project update across all tools in real-time.",
-    impact: "Zero Missed Client Milestones"
+    oldWay:
+      "Silos between Slack, ClickUp, Notion, and email leads to dropped deliverables and missed deadlines.",
+    newWay:
+      "Bi-directional n8n automation syncing every project update across all tools in real-time.",
+    impact: "Zero Missed Client Milestones",
   },
   {
     category: "Team Capacity & Payroll",
-    oldWay: "Scaling from 15 to 30 clients requires hiring 4 expensive operations & account managers.",
-    newWay: "Scale to 45+ clients using your existing operational team with autonomous AI workflows.",
-    impact: "3x Client Capacity"
-  }
+    oldWay:
+      "Scaling from 15 to 30 clients requires hiring 4 expensive operations & account managers.",
+    newWay:
+      "Scale to 45+ clients using your existing operational team with autonomous AI workflows.",
+    impact: "3x Client Capacity",
+  },
 ];
 
 export function ProblemSolution() {
@@ -38,7 +46,11 @@ export function ProblemSolution() {
             What problem do we solve?
           </h2>
           <p className="mt-2.5 text-sm text-neutral-400 md:text-base">
-            We break through the <span className="text-white font-medium">&ldquo;Agency Operational Scaling Wall&rdquo;</span> — replacing human data copying with automated, production-grade infrastructure.
+            We break through the{" "}
+            <span className="text-white font-medium">
+              &ldquo;Agency Operational Scaling Wall&rdquo;
+            </span>{" "}
+            — replacing human data copying with automated, production-grade infrastructure.
           </p>
         </div>
 
@@ -55,7 +67,9 @@ export function ProblemSolution() {
                     <span className="font-mono text-xs font-semibold tabular-nums tracking-widest text-brand bg-brand/10 border border-brand/20 px-2 py-0.5 rounded-md">
                       0{idx + 1}
                     </span>
-                    <h3 className="font-display text-base md:text-lg font-semibold tracking-tight text-white">{item.category}</h3>
+                    <h3 className="font-display text-base md:text-lg font-semibold tracking-tight text-white">
+                      {item.category}
+                    </h3>
                   </div>
                   <div className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-brand/10 border border-brand/20 px-2.5 py-0.5 text-[11px] font-medium text-orange-200 tracking-tight">
                     <Zap className="size-3 text-brand" />
@@ -79,7 +93,9 @@ export function ProblemSolution() {
                       <CheckCircle2 className="size-3.5 shrink-0" />
                       <span>Infrastructure-Backed Agency</span>
                     </div>
-                    <p className="mt-1 text-neutral-200 font-medium leading-normal text-xs">{item.newWay}</p>
+                    <p className="mt-1 text-neutral-200 font-medium leading-normal text-xs">
+                      {item.newWay}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -90,8 +106,12 @@ export function ProblemSolution() {
         {/* Action Callout */}
         <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl border border-brand/30 bg-gradient-to-r from-brand/15 via-orange-950/20 to-neutral-950/90 px-6 py-4 sm:flex-row backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(255,122,0,0.2),inset_0_1px_0_0_rgba(255,255,255,0.1)]">
           <div>
-            <h4 className="font-display text-lg font-semibold tracking-tight text-white">Ready to remove operational bottlenecks?</h4>
-            <p className="mt-0.5 text-xs text-neutral-400">Get a free 30-minute infrastructure audit of your agency stack.</p>
+            <h4 className="font-display text-lg font-semibold tracking-tight text-white">
+              Ready to remove operational bottlenecks?
+            </h4>
+            <p className="mt-0.5 text-xs text-neutral-400">
+              Get a free 30-minute infrastructure audit of your agency stack.
+            </p>
           </div>
           <Link
             to="/book"
