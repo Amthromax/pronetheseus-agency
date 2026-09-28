@@ -91,7 +91,7 @@ export const getBusySlots = createServerFn({ method: "POST" })
       });
       if (!res.ok) {
         const text = await res.text();
-        console.warn(`Google Calendar freeBusy warning [${res.status}]: ${text}`);
+        console.warn(`Calendar freeBusy warning [${res.status}]: ${text}`);
         return { busy: [], connected: false };
       }
       const json = (await res.json()) as {
@@ -100,7 +100,7 @@ export const getBusySlots = createServerFn({ method: "POST" })
       const busy = json.calendars?.primary?.busy ?? [];
       return { busy: busy.map((b) => ({ start: b.start, end: b.end })), connected: true };
     } catch (err) {
-      console.warn("Failed to fetch busy slots from Google Calendar:", err);
+      console.warn("Failed to fetch busy slots from Calendar:", err);
       return { busy: [], connected: false };
     }
   });
@@ -181,7 +181,7 @@ export const createBookingEvent = createServerFn({ method: "POST" })
         fallback: false,
       };
     } catch (err) {
-      console.error("Failed to create Google Calendar event:", err);
+      console.error("Failed to create Calendar event:", err);
       return {
         ref,
         eventId: `local-${ref}`,

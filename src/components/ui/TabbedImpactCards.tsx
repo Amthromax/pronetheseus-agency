@@ -40,7 +40,7 @@ const PRICING_CATEGORIES: CategoryData[] = [
         features: [
           "AI Lead Capture & Intent Qualification",
           "Sub-60s Email & SMS Automated Follow-up",
-          "Direct Google & Outlook Calendar Booking",
+          "Direct Cal.com & Outlook Calendar Booking",
           "Core CRM Automation & Contact Sync",
           "100% System & Code Ownership",
         ],

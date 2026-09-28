@@ -177,7 +177,7 @@ export const portfolioItems: PortfolioItem[] = [
     challenge:
       "Realtors spent 22 hours a week manually answering initial property queries and coordinating agent calendars.",
     solution:
-      "Shipped a React real estate portal backed by an AI concierge, MLS data sync, and instant tour booking via SMS & Google Calendar.",
+      "Shipped a React real estate portal backed by an AI concierge, MLS data sync, and instant tour booking via SMS & Cal.com.",
     outcomes: [
       { label: "Hours Saved / Mo", value: "880" },
       { label: "ROI", value: "312%" },

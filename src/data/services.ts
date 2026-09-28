@@ -58,7 +58,7 @@ export const services: Service[] = [
     desc: "Qualify inbound agency leads instantly on WhatsApp & SMS with sub-second response times.",
     benefits: [
       "24/7 lead qualification",
-      "Live Google Calendar booking",
+      "Live Cal.com booking",
       "HubSpot & CRM auto-sync",
     ],
     Icon: MessageSquare,

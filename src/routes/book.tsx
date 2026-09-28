@@ -2,7 +2,6 @@ import { RollingText } from "@/components/ui/rolling-text";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { SectionHeading } from "@/components/sections/SectionHeading";
-import { AutomationAuditSection } from "@/components/sections/AutomationAuditSection";
 import {
   ArrowLeft,
   ArrowRight,
@@ -19,13 +18,13 @@ import {
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Get Your Free Automation Audit & Book Call — Make Accuracy" },
+      { title: "Schedule Strategy Call — Make Accuracy" },
       {
         name: "description",
-        content: "Get your free AI automation audit and schedule a 30-minute strategy session.",
+        content: "Schedule a 30-minute strategy session with Make Accuracy.",
       },
-      { property: "og:title", content: "Free Automation Audit — Make Accuracy" },
-      { property: "og:description", content: "Free AI automation diagnosis and calendar booking." },
+      { property: "og:title", content: "Schedule Strategy Call — Make Accuracy" },
+      { property: "og:description", content: "Schedule a 30-minute strategy session." },
       { property: "og:url", content: "https://makeaccuracy.agency/book" },
     ],
     links: [{ rel: "canonical", href: "https://makeaccuracy.agency/book" }],
@@ -33,7 +32,8 @@ export const Route = createFileRoute("/book")({
   component: BookPage,
 });
 
-const GOOGLE_CALENDAR_BOOKING_URL = "https://calendar.app.google/yJMFo3qDAZfJZoeA7";
+const CAL_COM_BOOKING_URL =
+  import.meta.env.VITE_CAL_COM_URL || "https://cal.com/make-accuracy01";
 
 function BookPage() {
   const [isBooked, setIsBooked] = useState(false);
@@ -41,10 +41,12 @@ function BookPage() {
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       if (
-        event.origin.includes("google.com") ||
-        event.origin.includes("calendar.app.google") ||
+        event.origin.includes("cal.com") ||
         (typeof event.data === "string" &&
-          (event.data.includes("booked") || event.data.includes("scheduled")))
+          (event.data.includes("booked") ||
+            event.data.includes("scheduled") ||
+            event.data.includes("bookingSuccessful"))) ||
+        (typeof event.data === "object" && event.data?.type === "cal:bookingSuccessful")
       ) {
         setIsBooked(true);
       }
@@ -56,10 +58,7 @@ function BookPage() {
 
   return (
     <div className="bg-sandel text-neutral-900 min-h-screen pt-28 md:pt-32">
-      {/* Interactive Free Automation Audit Section */}
-      <AutomationAuditSection />
-
-      <div className="container-pad mx-auto max-w-[1400px] mt-12">
+      <div className="container-pad mx-auto max-w-[1400px]">
         <Link
           to="/contact"
           className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-600 hover:text-neutral-900 transition"
@@ -85,7 +84,6 @@ function BookPage() {
           <div className="relative overflow-hidden rounded-3xl border border-sandel-border bg-sandel-card p-8 md:p-14 shadow-lg">
             <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
               {/* Glowing Icon Badge */}
-              {/* Glowing Icon Badge */}
               <div className="relative flex size-20 items-center justify-center rounded-2xl bg-neutral-200/80 border border-black/10 shadow-md">
                 <CheckCircle2 className="size-10 text-neutral-900" />
                 <Sparkles className="absolute -top-2 -right-2 size-6 text-neutral-700 animate-pulse" />
@@ -96,9 +94,9 @@ function BookPage() {
                 Thank You for Booking!
               </h3>
               <p className="mt-4 text-base text-neutral-600 md:text-lg leading-relaxed max-w-2xl font-sans">
-                Your 30-minute infrastructure strategy session has been successfully booked in our
-                calendar. A Google Meet invitation and calendar confirmation are on their way to
-                your email inbox.
+                Your 30-minute infrastructure strategy session has been successfully booked via
+                Cal.com. A calendar invitation and video meeting link are on their way to your email
+                inbox.
               </p>
 
               {/* 3 Next Steps Grid */}
@@ -111,8 +109,7 @@ function BookPage() {
                     1. Check Your Inbox
                   </h4>
                   <p className="mt-1 text-xs text-neutral-600 leading-normal font-sans">
-                    Look for your Google Calendar email invite containing the direct Google Meet
-                    video room link.
+                    Look for your Cal.com email invite containing the direct video room link.
                   </p>
                 </div>
 
@@ -137,7 +134,7 @@ function BookPage() {
                     3. Live 1-on-1 Call
                   </h4>
                   <p className="mt-1 text-xs text-neutral-600 leading-normal font-sans">
-                    Join the Google Meet at your chosen time. We&apos;ll present a concrete
+                    Join the video call at your chosen time. We&apos;ll present a concrete
                     infrastructure & automation blueprint.
                   </p>
                 </div>
@@ -168,7 +165,7 @@ function BookPage() {
             </div>
           </div>
         ) : (
-          /* Active Booking View (Google Calendar Scheduling) */
+          /* Active Booking View (Cal.com Scheduling) */
           <div>
             {/* Top Badges */}
             <div className="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-neutral-200/90 bg-[#f4f3ee] p-4 shadow-xs">
@@ -177,7 +174,7 @@ function BookPage() {
                   <Clock className="size-4 text-neutral-900" /> 30-Minute Free Audit
                 </span>
                 <span className="inline-flex items-center gap-2 font-semibold">
-                  <Video className="size-4 text-neutral-900" /> Live Google Meet
+                  <Video className="size-4 text-neutral-900" /> Live Video Call
                 </span>
                 <span className="inline-flex items-center gap-2 font-semibold">
                   <ShieldCheck className="size-4 text-neutral-900" /> Instant Calendar Sync
@@ -185,25 +182,25 @@ function BookPage() {
               </div>
 
               <a
-                href={GOOGLE_CALENDAR_BOOKING_URL}
+                href={CAL_COM_BOOKING_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white border border-neutral-300 px-4 py-1.5 text-xs font-semibold text-neutral-800 transition hover:bg-neutral-100 hover:border-neutral-400"
               >
                 <span>
-                  <RollingText>Open in Google Calendar</RollingText>
+                  <RollingText>Open in Cal.com</RollingText>
                 </span>
                 <ExternalLink className="size-3.5" />
               </a>
             </div>
 
-            {/* Embedded Google Calendar Appointment Schedule */}
+            {/* Embedded Cal.com Appointment Schedule */}
             <div className="relative w-full overflow-hidden rounded-3xl border border-neutral-200/90 bg-[#f4f3ee] p-2 md:p-3 shadow-md">
               <iframe
-                src={GOOGLE_CALENDAR_BOOKING_URL}
+                src={CAL_COM_BOOKING_URL}
                 className="w-full h-[720px] md:h-[800px] rounded-2xl bg-white border-0"
                 style={{ border: 0 }}
-                title="Book a strategy call via Google Calendar"
+                title="Book a strategy call via Cal.com"
                 loading="lazy"
               />
             </div>

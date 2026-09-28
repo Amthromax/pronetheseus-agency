@@ -157,7 +157,7 @@ export const CORE_QUESTIONS: CoreQuestion[] = [
         "Direct 1-on-1 call with a Principal Systems Architect (zero high-pressure sales reps)",
         "Live stack tear-down & custom bottleneck identification during the call",
         "Receive a customized Agency Infrastructure Blueprint within 24 hours of call completion",
-        "Pick your exact date & time with instant Google Calendar invite & meeting link",
+        "Pick your exact date & time with instant Cal.com calendar invite & meeting link",
       ],
       metric: "30 Min",
       metricLabel: "Free Systems Strategy Call",

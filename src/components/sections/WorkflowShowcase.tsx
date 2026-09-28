@@ -17,7 +17,7 @@ const flow: Node[] = [
   { id: "ai", label: "OpenAI", src: `${GB}/openai-icon.svg` },
   { id: "crm", label: "HubSpot", src: "https://cdn.simpleicons.org/hubspot/FF7A59" },
   { id: "email", label: "Gmail", src: `${GB}/google-gmail.svg` },
-  { id: "cal", label: "Google Calendar", src: `${GB}/google-calendar.svg` },
+  { id: "cal", label: "Cal.com", src: "https://cdn.simpleicons.org/calcom/000000" },
   { id: "slack", label: "Slack", src: `${GB}/slack-icon.svg` },
   { id: "invoice", label: "Stripe", src: "https://cdn.simpleicons.org/stripe/635BFF" },
 ];
