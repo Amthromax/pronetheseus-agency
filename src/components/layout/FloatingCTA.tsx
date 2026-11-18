@@ -30,7 +30,7 @@ export function FloatingCTA() {
           </button>
           <Link
             to="/contact"
-            className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-5 py-3 text-sm font-medium text-white shadow-[0_20px_60px_-15px_rgba(255,122,0,0.7)] transition hover:scale-[1.03]"
+            className="group relative inline-flex items-center gap-2 rounded-full bg-neutral-900 hover:bg-black px-5 py-3 text-sm font-medium text-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.45)] transition hover:scale-[1.03]"
           >
             <CalendarClock className="size-4" />
             <RollingText>Book Strategy Call</RollingText>

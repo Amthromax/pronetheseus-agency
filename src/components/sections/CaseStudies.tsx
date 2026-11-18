@@ -418,7 +418,7 @@ export function CaseStudies() {
         </div>
 
         {/* Category Pills Filter */}
-        <div className="flex items-center gap-2 overflow-x-auto scrollbar-none pb-4 mb-8">
+        <div className="flex items-center gap-2 overflow-x-auto sm:overflow-visible scrollbar-none py-2 mb-6">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}

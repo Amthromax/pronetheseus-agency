@@ -74,7 +74,7 @@ const agents: Agent[] = [
     name: "AI Content Writer",
     role: "SEO copy & campaigns",
     Icon: PenTool,
-    gradient: "from-amber-400 via-orange-500 to-orange-500",
+    gradient: "from-neutral-700 via-neutral-800 to-neutral-950",
     image: portrait.url,
     preserveColor: true,
   },
@@ -90,7 +90,7 @@ const agents: Agent[] = [
     name: "AI Data Cleaner",
     role: "Enrichment & dedupe",
     Icon: Database,
-    gradient: "from-amber-400 via-yellow-500 to-orange-500",
+    gradient: "from-slate-600 via-slate-800 to-neutral-950",
     image: portrait7.url,
     preserveColor: true,
   },
@@ -148,8 +148,8 @@ export function Industries() {
         />
       </div>
 
-      <div className="relative mt-16 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-        <Marquee speed={55} className="py-4">
+      <div className="relative mt-10 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+        <Marquee speed={55} className="py-10">
           {agents.map((a) => (
             <AgentCard key={`a-${a.name}`} agent={a} />
           ))}

@@ -59,20 +59,20 @@ export function ProblemSolution() {
           {PAINS_VS_SOLUTIONS.map((item, idx) => (
             <div
               key={idx}
-              className="group relative overflow-hidden rounded-2xl border border-white/12 bg-neutral-950/70 p-4 md:p-5 backdrop-blur-2xl transition duration-300 hover:border-brand/40 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+              className="group relative overflow-hidden rounded-2xl border border-white/12 bg-neutral-950/70 p-4 md:p-5 backdrop-blur-2xl transition duration-300 hover:border-white/30 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
             >
               <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
                 <div className="lg:w-1/4">
                   <div className="flex items-center gap-2">
-                    <span className="font-mono text-xs font-semibold tabular-nums tracking-widest text-brand bg-brand/10 border border-brand/20 px-2 py-0.5 rounded-md">
+                    <span className="font-mono text-xs font-semibold tabular-nums tracking-widest text-white bg-white/10 border border-white/20 px-2 py-0.5 rounded-md">
                       0{idx + 1}
                     </span>
                     <h3 className="font-display text-base md:text-lg font-semibold tracking-tight text-white">
                       {item.category}
                     </h3>
                   </div>
-                  <div className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-brand/10 border border-brand/20 px-2.5 py-0.5 text-[11px] font-medium text-orange-200 tracking-tight">
-                    <Zap className="size-3 text-brand" />
+                  <div className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-white/10 border border-white/20 px-2.5 py-0.5 text-[11px] font-medium text-neutral-200 tracking-tight">
+                    <Zap className="size-3 text-white" />
                     <span className="tabular-nums">{item.impact}</span>
                   </div>
                 </div>
@@ -104,7 +104,7 @@ export function ProblemSolution() {
         </div>
 
         {/* Action Callout */}
-        <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl border border-brand/30 bg-gradient-to-r from-brand/15 via-orange-950/20 to-neutral-950/90 px-6 py-4 sm:flex-row backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(255,122,0,0.2),inset_0_1px_0_0_rgba(255,255,255,0.1)]">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl border border-white/15 bg-gradient-to-r from-white/10 via-neutral-900 to-neutral-950/90 px-6 py-4 sm:flex-row backdrop-blur-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.1)]">
           <div>
             <h4 className="font-display text-lg font-semibold tracking-tight text-white">
               Ready to remove operational bottlenecks?
@@ -115,7 +115,7 @@ export function ProblemSolution() {
           </div>
           <Link
             to="/book"
-            className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-5 py-2.5 text-xs font-semibold text-white shadow-[0_8px_20px_-8px_rgba(255,122,0,0.6)] transition hover:scale-105"
+            className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-neutral-950 shadow-[0_8px_20px_-8px_rgba(255,255,255,0.25)] transition hover:bg-neutral-100 hover:scale-105"
           >
             <RollingText>Schedule Free Audit Call</RollingText>
             <ArrowRight className="size-3.5 transition group-hover:translate-x-1" />

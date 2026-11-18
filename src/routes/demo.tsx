@@ -206,7 +206,7 @@ function DemoPage() {
           <div className="flex min-h-[560px] flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
             <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.02] px-5 py-4">
               <div className="flex items-center gap-3">
-                <div className="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-[#ff7a00]/20 to-[#c2410c]/10 text-brand ring-1 ring-inset ring-white/10">
+                <div className="grid size-10 place-items-center rounded-xl bg-neutral-900/10 text-brand ring-1 ring-inset ring-black/10">
                   <Bot className="size-4" />
                 </div>
                 <div>
@@ -300,7 +300,7 @@ function DemoPage() {
               </ul>
             </div>
 
-            <div className="rounded-3xl border border-brand/30 bg-gradient-to-br from-[#ff7a00]/15 to-[#c2410c]/5 p-6">
+            <div className="rounded-3xl border border-neutral-200 bg-neutral-50 p-6">
               <div className="text-xs uppercase tracking-widest text-brand">
                 Ready for the real thing?
               </div>
@@ -341,7 +341,7 @@ function MessageRow({ msg }: { msg: Msg }) {
         className={`grid size-8 shrink-0 place-items-center rounded-full ring-1 ring-inset ring-white/10 ${
           isUser
             ? "bg-white/10 text-foreground"
-            : "bg-gradient-to-br from-[#ff7a00]/20 to-[#c2410c]/10 text-brand"
+            : "bg-neutral-900/10 text-brand"
         }`}
       >
         {isUser ? <User className="size-4" /> : <Bot className="size-4" />}
@@ -362,7 +362,7 @@ function MessageRow({ msg }: { msg: Msg }) {
 function TypingRow() {
   return (
     <div className="flex gap-3">
-      <div className="grid size-8 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#ff7a00]/20 to-[#c2410c]/10 text-brand ring-1 ring-inset ring-white/10">
+      <div className="grid size-8 shrink-0 place-items-center rounded-full bg-neutral-900/10 text-brand ring-1 ring-inset ring-black/10">
         <Bot className="size-4" />
       </div>
       <div

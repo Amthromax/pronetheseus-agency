@@ -65,7 +65,7 @@ export function AIInsights() {
         </div>
 
         {/* Insights Grid Container: Apple Design System */}
-        <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-12 lg:gap-8 lg:pb-0 items-stretch font-sans">
+        <div className="flex overflow-x-auto lg:overflow-visible snap-x snap-mandatory scrollbar-none gap-4 pt-3 pb-5 -mx-4 px-4 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-12 lg:gap-8 lg:pt-2 lg:pb-2 items-stretch font-sans">
           {/* Main Featured Post - Apple Squircle */}
           <div className="shrink-0 w-[290px] xs:w-[330px] lg:w-auto lg:col-span-7 snap-center flex flex-col">
             <ScrollReveal variant="image" className="h-full w-full">
@@ -99,7 +99,7 @@ export function AIInsights() {
           </div>
 
           {/* Right Side Compact Posts List */}
-          <div className="lg:col-span-5 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-3 pb-2 lg:flex-col lg:justify-between lg:gap-3.5 lg:pb-0 shrink-0 lg:shrink w-full">
+          <div className="lg:col-span-5 flex overflow-x-auto lg:overflow-visible snap-x snap-mandatory scrollbar-none gap-3 py-2 lg:flex-col lg:justify-between lg:gap-3.5 lg:py-0 shrink-0 lg:shrink w-full">
             {SIDE_POSTS.map((post, idx) => {
               const Icon = post.icon;
               return (
@@ -114,7 +114,7 @@ export function AIInsights() {
                       className="group flex items-center justify-between gap-3.5 p-3.5 sm:p-4 rounded-[22px] border border-white/90 bg-white/80 backdrop-blur-md shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] hover:bg-white transition-all duration-300 cursor-pointer h-full font-sans"
                     >
                       <div className="flex items-start gap-3 min-w-0 flex-1">
-                        <div className="size-9 rounded-full bg-neutral-900 text-white flex items-center justify-center shrink-0 shadow-xs group-hover:bg-[#ff7a00] transition-colors duration-300">
+                        <div className="size-9 rounded-full bg-neutral-900 text-white flex items-center justify-center shrink-0 shadow-xs group-hover:bg-neutral-700 transition-colors duration-300">
                           <Icon className="size-4" />
                         </div>
 

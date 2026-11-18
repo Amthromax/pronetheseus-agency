@@ -350,7 +350,7 @@ export function TabbedImpactCards() {
         </div>
 
         {/* Filter Category Pills Bar - Apple HIG Mobile Scrollable */}
-        <div className="mt-8 sm:mt-10 flex justify-center font-sans overflow-x-auto no-scrollbar py-2 px-2 -mx-4 sm:mx-0">
+        <div className="mt-8 sm:mt-10 flex justify-start sm:justify-center font-sans overflow-x-auto sm:overflow-visible no-scrollbar py-3 px-4 sm:px-2 -mx-4 sm:mx-0">
           <div className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full border border-white/80 bg-sandel-card p-1.5 shadow-[0_8px_25px_rgb(0,0,0,0.04)] backdrop-blur-md">
             {PRICING_CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.id;

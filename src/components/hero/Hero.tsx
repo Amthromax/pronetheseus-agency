@@ -31,7 +31,7 @@ export function Hero() {
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden select-none">
         <img
           src="/colosseum-hero-sketch.webp"
-          alt="Roman Colosseum Architectural Sketch with Orange Accent"
+          alt="Roman Colosseum Architectural Sketch"
           className="w-full h-full object-cover object-center lg:object-left-bottom opacity-30 sm:opacity-85 lg:opacity-100 mix-blend-multiply"
           loading="eager"
           fetchPriority="high"

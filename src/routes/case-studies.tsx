@@ -4,6 +4,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { motion } from "motion/react";
 import { caseStudies } from "@/data/case-studies";
+import { CountUp } from "@/components/ui/count-up";
 import {
   TrendingUp,
   Clock,
@@ -84,7 +85,7 @@ function CaseStudiesPage() {
     <div className="bg-sandel text-neutral-900 min-h-screen font-sans pt-28 pb-20">
       {/* Hero Stats Header */}
       <div className="container-pad mx-auto max-w-[1400px]">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto text-center">
           <h1 className="font-serif text-3xl font-normal tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
             Real Problem-to-Result Operations
           </h1>
@@ -103,7 +104,7 @@ function CaseStudiesPage() {
             className="rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] px-7 py-6 sm:px-8 sm:py-7 shadow-2xs"
           >
             <div className="font-sans text-3xl sm:text-4xl font-extrabold text-neutral-900">
-              $14.2M+
+              <CountUp end={14.2} prefix="$" suffix="M+" decimals={1} duration={2000} />
             </div>
             <div className="mt-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500">
               Client Cost Savings
@@ -118,7 +119,7 @@ function CaseStudiesPage() {
             className="rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] px-7 py-6 sm:px-8 sm:py-7 shadow-2xs"
           >
             <div className="font-sans text-3xl sm:text-4xl font-extrabold text-neutral-900">
-              1.2M+
+              <CountUp end={1.2} suffix="M+" decimals={1} duration={2000} />
             </div>
             <div className="mt-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500">
               Inbound Leads Qualified
@@ -133,7 +134,7 @@ function CaseStudiesPage() {
             className="rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] px-7 py-6 sm:px-8 sm:py-7 shadow-2xs"
           >
             <div className="font-sans text-3xl sm:text-4xl font-extrabold text-neutral-900">
-              &lt; 45s
+              {"< "}<CountUp end={45} suffix="s" duration={1800} />
             </div>
             <div className="mt-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500">
               Average Speed-to-Lead
@@ -148,7 +149,7 @@ function CaseStudiesPage() {
             className="rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] px-7 py-6 sm:px-8 sm:py-7 shadow-2xs"
           >
             <div className="font-sans text-3xl sm:text-4xl font-extrabold text-neutral-900">
-              99.9%
+              <CountUp end={99.9} suffix="%" decimals={1} duration={2200} />
             </div>
             <div className="mt-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500">
               Uptime SLA Reliability
@@ -162,8 +163,8 @@ function CaseStudiesPage() {
 
       {/* Industry Performance Benchmarks */}
       <section className="container-pad mx-auto mt-12 max-w-[1400px]">
-        <div className="max-w-3xl mb-10">
-          <span className="font-mono text-xs font-bold uppercase tracking-widest text-blue-600">
+        <div className="max-w-3xl mx-auto text-center mb-10">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-500">
             Industry Performance Breakdown
           </span>
           <h2 className="mt-2 font-serif text-3xl font-normal tracking-tight text-neutral-900 sm:text-4xl">
@@ -190,7 +191,7 @@ function CaseStudiesPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="flex size-10 items-center justify-center rounded-xl bg-white text-neutral-900 border border-neutral-200 shadow-2xs">
-                        <Icon className="size-5 text-blue-600" />
+                        <Icon className="size-5 text-neutral-900" />
                       </div>
                       <h3 className="font-sans text-lg font-bold text-neutral-900">
                         {item.industry}
@@ -236,7 +237,7 @@ function CaseStudiesPage() {
                   </span>
                   <Link
                     to="/how-it-works"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-700 font-sans"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-900 hover:text-neutral-600 font-sans"
                   >
                     <span>
                       <RollingText>See Methodology</RollingText>
@@ -250,14 +251,14 @@ function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Complete Case Study Directory Grid (All 10 Case Studies) */}
+      {/* Complete Case Study Directory Grid */}
       <section id="case-study-directory" className="container-pad mx-auto mt-16 max-w-[1400px]">
-        <div className="max-w-3xl mb-10">
+        <div className="max-w-3xl mx-auto text-center mb-10">
           <span className="font-mono text-xs font-bold uppercase tracking-widest text-emerald-600">
             Client Implementation Directory
           </span>
           <h2 className="mt-2 font-serif text-3xl font-normal tracking-tight text-neutral-900 sm:text-4xl">
-            All 10 Production Case Studies
+            Production Case Studies
           </h2>
           <p className="mt-2 text-sm sm:text-base text-neutral-600 font-sans">
             In-depth technical breakdowns of ROI, system architecture, and operational metrics.
@@ -265,7 +266,15 @@ function CaseStudiesPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {caseStudies.map((study, idx) => (
+          {caseStudies
+            .filter(
+              (study) =>
+                study.slug !== "corporate-travel-self-service" &&
+                study.slug !== "developer-velocity-assist" &&
+                study.slug !== "frontline-workforce-assistance" &&
+                study.slug !== "live-event-self-service",
+            )
+            .map((study, idx) => (
             <motion.div
               key={study.slug}
               initial={{ opacity: 0, y: 15 }}
@@ -283,11 +292,11 @@ function CaseStudiesPage() {
                   />
                 </div>
 
-                <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-700 bg-neutral-200/70 px-2.5 py-1 rounded-md">
                   {study.industry}
                 </span>
 
-                <h3 className="mt-3 font-sans text-lg font-bold text-neutral-900 group-hover:text-blue-600 transition-colors">
+                <h3 className="mt-3 font-sans text-lg font-bold text-neutral-900 group-hover:text-neutral-600 transition-colors">
                   {study.company}
                 </h3>
 
@@ -332,7 +341,7 @@ function CaseStudiesPage() {
         <div className="rounded-[32px] sm:rounded-[40px] border border-neutral-200/80 bg-[#f4f3ee] p-8 sm:p-12 shadow-[0_12px_40px_rgb(0,0,0,0.04)]">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             <div className="lg:col-span-2">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-blue-600">
+              <span className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-500">
                 Enterprise Standard
               </span>
               <h2 className="mt-3 font-serif text-3xl font-normal tracking-tight text-neutral-900 sm:text-4xl">

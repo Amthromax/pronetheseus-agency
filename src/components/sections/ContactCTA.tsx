@@ -8,13 +8,14 @@ import { MagneticButton } from "@/components/fx/MagneticButton";
 export function ContactCTA() {
   return (
     <section className="relative overflow-hidden bg-neutral-950 py-20 text-white border-t border-white/10">
-      {/* Glow Orbs */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] rounded-full bg-gradient-to-tr from-neutral-800/30 via-neutral-900/30 to-transparent blur-[140px] animate-pulse-glow" />
-      </div>
+      {/* Lightweight Ambient Radial Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_300px_at_50%_50%,rgba(255,255,255,0.06),transparent_70%)]"
+      />
 
       <div className="container-pad relative mx-auto max-w-[1400px] text-center">
-        <h2 className="mx-auto max-w-4xl font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
+        <h2 className="mx-auto max-w-4xl font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-white leading-[1.1]">
           <SplitText text="Transform Your Agency Delivery Infrastructure in 3 Weeks." />
         </h2>
 

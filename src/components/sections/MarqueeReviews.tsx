@@ -109,14 +109,14 @@ export function MarqueeReviews() {
       </div>
 
       {/* Dual Row Marquee: Row 1 moves right, Row 2 moves left */}
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden gap-4">
-        <Marquee reverse pauseOnHover speed={35} className="w-full">
+      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden gap-2">
+        <Marquee reverse pauseOnHover speed={35} className="w-full py-3">
           {firstRow.map((review, idx) => (
             <ReviewCard key={`row1-${idx}-${review.username}`} {...review} />
           ))}
         </Marquee>
 
-        <Marquee pauseOnHover speed={35} className="w-full">
+        <Marquee pauseOnHover speed={35} className="w-full py-3">
           {secondRow.map((review, idx) => (
             <ReviewCard key={`row2-${idx}-${review.username}`} {...review} />
           ))}

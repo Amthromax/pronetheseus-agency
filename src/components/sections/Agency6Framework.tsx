@@ -3,7 +3,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { SectionHeading } from "./SectionHeading";
 import { ScrollReveal } from "@/components/fx/ScrollReveal";
-import { ParallaxLayer } from "@/components/fx/ParallaxLayer";
 import {
   Users,
   AlertTriangle,
@@ -176,12 +175,11 @@ export function Agency6Framework() {
       id="clarity-framework"
       className="relative bg-[#fbfbfd] py-10 md:py-14 text-neutral-900 overflow-hidden border-y border-black/[0.05]"
     >
-      {/* Soft ambient parallax glow */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <ParallaxLayer speed="slow" className="absolute top-1/3 left-1/2 -translate-x-1/2">
-          <div className="size-[650px] rounded-full bg-gradient-to-tr from-orange-200/30 via-neutral-200/40 to-transparent blur-[140px]" />
-        </ParallaxLayer>
-      </div>
+      {/* Soft ambient radial backdrop */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(650px_350px_at_50%_35%,rgba(0,0,0,0.03),transparent_70%)]"
+      />
 
       <div className="relative mx-auto w-full max-w-[1750px] px-4 sm:px-6 md:px-10 lg:px-12">
         <SectionHeading
@@ -203,7 +201,7 @@ export function Agency6Framework() {
                   whileTap={{ scale: 0.98 }}
                   className={`group relative flex w-full flex-col items-start justify-between rounded-[18px] p-3.5 text-left transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer ${
                     isActive
-                      ? "border border-orange-500/40 bg-white text-neutral-950 shadow-[0_8px_24px_-4px_rgba(255,122,0,0.2),0_2px_4px_rgba(0,0,0,0.03)] ring-2 ring-orange-500/20 -translate-y-0.5"
+                      ? "border border-neutral-900/40 bg-white text-neutral-950 shadow-[0_8px_24px_-4px_rgba(0,0,0,0.12),0_2px_4px_rgba(0,0,0,0.03)] ring-2 ring-neutral-900/15 -translate-y-0.5"
                       : "border border-black/[0.06] bg-white/80 backdrop-blur-md text-neutral-700 shadow-[0_2px_6px_rgba(0,0,0,0.02)] hover:border-black/15 hover:bg-white hover:shadow-[0_6px_16px_rgba(0,0,0,0.04)]"
                   }`}
                 >
@@ -304,7 +302,7 @@ export function Agency6Framework() {
                       Key Deliverable Benchmark
                     </div>
                     {activeQuestion.details.metric && (
-                      <div className="mt-2 font-display text-4xl md:text-5xl font-extrabold tracking-tight text-gradient-brand tabular-nums">
+                      <div className="mt-2 font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white tabular-nums">
                         {activeQuestion.details.metric}
                       </div>
                     )}
@@ -331,7 +329,7 @@ export function Agency6Framework() {
                   <div className="mt-6 space-y-3">
                     <Link
                       to="/book"
-                      className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#ff7a00] to-[#c2410c] px-5 py-3 text-xs font-bold text-white shadow-[0_8px_25px_-5px_rgba(255,122,0,0.4)] transition duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                      className="group flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-xs font-bold text-neutral-950 shadow-[0_8px_25px_-5px_rgba(255,255,255,0.2)] transition duration-300 hover:bg-neutral-100 hover:scale-[1.02] active:scale-[0.98]"
                     >
                       <span>
                         <RollingText>Book Strategy Call to Discuss This</RollingText>

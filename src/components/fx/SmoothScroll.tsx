@@ -1,29 +1,10 @@
 import { useEffect } from "react";
-import Lenis from "lenis";
 
 export function SmoothScroll() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) return;
 
-    const lenis = new Lenis({
-      duration: 0.9,
-      easing: (t) => 1 - Math.pow(1 - t, 3), // Smooth cubic out curve
-      smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.0,
-      autoResize: true,
-    });
-
-    let rafId = 0;
-    const loop = (time: number) => {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(loop);
-    };
-    rafId = requestAnimationFrame(loop);
-
-    // Intercept internal anchor links for ultra-smooth target scrolling
+    // Smooth-scroll only when clicking in-page #anchor links; keep native wheel/trackpad scrolling crisp and instant.
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
       const anchor = target?.closest("a");
@@ -34,18 +15,13 @@ export function SmoothScroll() {
         const el = document.querySelector(href);
         if (el) {
           e.preventDefault();
-          lenis.scrollTo(el as HTMLElement, { offset: -80, duration: 1.0 });
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }
     };
 
     document.addEventListener("click", handleAnchorClick);
-
-    return () => {
-      cancelAnimationFrame(rafId);
-      document.removeEventListener("click", handleAnchorClick);
-      lenis.destroy();
-    };
+    return () => document.removeEventListener("click", handleAnchorClick);
   }, []);
 
   return null;

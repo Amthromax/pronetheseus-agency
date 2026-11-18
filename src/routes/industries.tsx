@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { WhoWeHelp } from "@/components/sections/WhoWeHelp";
 import { IndustriesCenterDetails } from "@/components/sections/IndustriesCenterDetails";
 import { FlagshipProduct } from "@/components/sections/FlagshipProduct";
-import { Industries } from "@/components/sections/Industries";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
 export const Route = createFileRoute("/industries")({
@@ -33,7 +32,6 @@ function IndustriesPage() {
       <WhoWeHelp />
       <IndustriesCenterDetails />
       <FlagshipProduct />
-      <Industries />
       <ContactCTA />
     </div>
   );

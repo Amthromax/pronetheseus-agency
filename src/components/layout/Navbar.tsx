@@ -36,23 +36,30 @@ export function Navbar() {
           hour12: true,
         })
         .toLowerCase();
-      setDateTimeStr(`${day} ${month},${time}`);
+      const next = `${day} ${month},${time}`;
+      setDateTimeStr((prev) => (prev === next ? prev : next));
     };
 
     updateTime();
-    const interval = setInterval(updateTime, 1000);
+    const interval = setInterval(updateTime, 15000);
     return () => clearInterval(interval);
   }, []);
 
   // Hide navbar on scroll down, show on scroll up
   useEffect(() => {
     let lastScrollY = window.scrollY;
+    let isHidden = false;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 60) {
+      const delta = currentScrollY - lastScrollY;
+      if (Math.abs(delta) < 6) return;
+
+      if (delta > 0 && currentScrollY > 80 && !isHidden) {
+        isHidden = true;
         setHidden(true);
-      } else if (currentScrollY < lastScrollY) {
+      } else if (delta < 0 && isHidden) {
+        isHidden = false;
         setHidden(false);
       }
       lastScrollY = Math.max(0, currentScrollY);

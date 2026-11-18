@@ -89,7 +89,7 @@ function PrivacyPage() {
 
         <div className="border-b border-neutral-200 pb-8">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-neutral-100 px-3 py-1 text-xs font-mono font-semibold text-neutral-800 uppercase tracking-wider mb-4 border border-neutral-200">
-            <ShieldCheck className="size-3.5 text-[#ff7a00]" /> SOC2 Ready Compliance
+            <ShieldCheck className="size-3.5 text-neutral-900" /> SOC2 Ready Compliance
           </span>
           <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-neutral-900">
             Privacy Policy
@@ -116,7 +116,7 @@ function PrivacyPage() {
           <ol className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
             {SECTIONS.map((s) => (
               <li key={s.id} className="text-sm">
-                <a href={"#" + s.id} className="text-neutral-600 hover:text-[#ff7a00] transition">
+                <a href={"#" + s.id} className="text-neutral-600 hover:text-neutral-900 transition">
                   <span className="font-mono text-neutral-400 mr-2">
                     {String(s.n).padStart(2, "0")}
                   </span>
@@ -132,7 +132,7 @@ function PrivacyPage() {
             id="commitment"
             n={1}
             title="Commitment to Security & Confidentiality"
-            icon={<Lock className="size-5 text-[#ff7a00]" />}
+            icon={<Lock className="size-5 text-neutral-900" />}
           >
             <p>
               Make Accuracy Agency Infrastructure Systems ("Make Accuracy", "we", "our") is
@@ -159,7 +159,7 @@ function PrivacyPage() {
             id="collect"
             n={2}
             title="Data We Collect"
-            icon={<Eye className="size-5 text-[#ff7a00]" />}
+            icon={<Eye className="size-5 text-neutral-900" />}
           >
             <p>
               We collect the minimum data required to audit, deploy, and maintain custom agency
@@ -201,7 +201,7 @@ function PrivacyPage() {
             id="use"
             n={3}
             title="How We Use Data & Legal Bases"
-            icon={<FileText className="size-5 text-[#ff7a00]" />}
+            icon={<FileText className="size-5 text-neutral-900" />}
           >
             <p>
               We use data only for the purposes below, each with a stated lawful basis under GDPR
@@ -243,7 +243,7 @@ function PrivacyPage() {
             id="credentials"
             n={4}
             title="Credential & Secrets Handling"
-            icon={<Server className="size-5 text-[#ff7a00]" />}
+            icon={<Server className="size-5 text-neutral-900" />}
           >
             <p>
               Deploying automation requires access to your systems. We handle that access under
@@ -286,7 +286,7 @@ function PrivacyPage() {
             id="ai"
             n={5}
             title="AI Model & Automation Data Handling"
-            icon={<Cpu className="size-5 text-[#ff7a00]" />}
+            icon={<Cpu className="size-5 text-neutral-900" />}
           >
             <p>
               Our systems call third-party AI models. How your data reaches those models matters, so
@@ -325,7 +325,7 @@ function PrivacyPage() {
             id="subprocessors"
             n={6}
             title="Sub-Processors & Third Parties"
-            icon={<Users className="size-5 text-[#ff7a00]" />}
+            icon={<Users className="size-5 text-neutral-900" />}
           >
             <p>
               We rely on a small set of infrastructure providers to deliver the service. Each is
@@ -358,7 +358,7 @@ function PrivacyPage() {
               A current, named sub-processor list is maintained and provided on request to{" "}
               <a
                 href="mailto:privacy@makeaccuracy.agency"
-                className="text-[#ff7a00] font-semibold underline"
+                className="text-neutral-900 font-semibold underline"
               >
                 privacy@makeaccuracy.agency
               </a>
@@ -371,7 +371,7 @@ function PrivacyPage() {
             id="security"
             n={7}
             title="Our Security Program"
-            icon={<ShieldCheck className="size-5 text-[#ff7a00]" />}
+            icon={<ShieldCheck className="size-5 text-neutral-900" />}
           >
             <p>
               We operate a defence-in-depth program built around SOC 2 Trust Services criteria.
@@ -444,7 +444,7 @@ function PrivacyPage() {
               you have found a vulnerability in our website or in infrastructure we operate, email{" "}
               <a
                 href="mailto:security@makeaccuracy.agency"
-                className="text-[#ff7a00] font-semibold underline"
+                className="text-neutral-900 font-semibold underline"
               >
                 security@makeaccuracy.agency
               </a>
@@ -463,7 +463,7 @@ function PrivacyPage() {
             id="incident"
             n={8}
             title="Incident Response & Breach Notification"
-            icon={<Siren className="size-5 text-[#ff7a00]" />}
+            icon={<Siren className="size-5 text-neutral-900" />}
           >
             <p>
               We maintain a written incident response plan covering detection, containment,
@@ -499,7 +499,7 @@ function PrivacyPage() {
             id="retention"
             n={9}
             title="Data Retention & Deletion"
-            icon={<Timer className="size-5 text-[#ff7a00]" />}
+            icon={<Timer className="size-5 text-neutral-900" />}
           >
             <p>We keep data only as long as it serves the purpose it was collected for:</p>
             <ul className="list-disc pl-6 space-y-2 text-neutral-600">
@@ -538,7 +538,7 @@ function PrivacyPage() {
             id="transfers"
             n={10}
             title="International Data Transfers"
-            icon={<Globe2 className="size-5 text-[#ff7a00]" />}
+            icon={<Globe2 className="size-5 text-neutral-900" />}
           >
             <p>
               Our infrastructure and sub-processors may be located outside your country. Where
@@ -558,7 +558,7 @@ function PrivacyPage() {
             id="ownership"
             n={11}
             title="Data Ownership & Non-Disclosure"
-            icon={<Lock className="size-5 text-[#ff7a00]" />}
+            icon={<Lock className="size-5 text-neutral-900" />}
           >
             <p>
               You retain 100% ownership of all proprietary code, database schema, client lists, and
@@ -577,7 +577,7 @@ function PrivacyPage() {
             id="rights"
             n={12}
             title="Your Rights & Data Requests"
-            icon={<UserCheck className="size-5 text-[#ff7a00]" />}
+            icon={<UserCheck className="size-5 text-neutral-900" />}
           >
             <p>
               Depending on where you live, you may have the right to access, correct, delete, port,
@@ -592,7 +592,7 @@ function PrivacyPage() {
                 <strong>How to ask.</strong> Email{" "}
                 <a
                   href="mailto:privacy@makeaccuracy.agency"
-                  className="text-[#ff7a00] font-semibold underline"
+                  className="text-neutral-900 font-semibold underline"
                 >
                   privacy@makeaccuracy.agency
                 </a>{" "}
@@ -629,7 +629,7 @@ function PrivacyPage() {
             id="cookies"
             n={13}
             title="Cookies & Analytics"
-            icon={<Cookie className="size-5 text-[#ff7a00]" />}
+            icon={<Cookie className="size-5 text-neutral-900" />}
           >
             <p>
               Our website uses strictly necessary cookies to function and, with your consent, a
@@ -662,7 +662,7 @@ function PrivacyPage() {
             id="changes"
             n={14}
             title="Changes to This Policy"
-            icon={<FileText className="size-5 text-[#ff7a00]" />}
+            icon={<FileText className="size-5 text-neutral-900" />}
           >
             <p>
               We update this policy as our infrastructure and obligations change. The version number
@@ -677,28 +677,28 @@ function PrivacyPage() {
             id="contact"
             n={15}
             title="Contact & Data Protection Enquiries"
-            icon={<Mail className="size-5 text-[#ff7a00]" />}
+            icon={<Mail className="size-5 text-neutral-900" />}
           >
             <p>
               For privacy questions, data requests, DPA copies, or the current sub-processor list,
               contact{" "}
               <a
                 href="mailto:privacy@makeaccuracy.agency"
-                className="text-[#ff7a00] font-semibold underline"
+                className="text-neutral-900 font-semibold underline"
               >
                 privacy@makeaccuracy.agency
               </a>
               . For vulnerability reports and security matters, contact{" "}
               <a
                 href="mailto:security@makeaccuracy.agency"
-                className="text-[#ff7a00] font-semibold underline"
+                className="text-neutral-900 font-semibold underline"
               >
                 security@makeaccuracy.agency
               </a>
               . For anything else, our general address is{" "}
               <a
                 href="mailto:hello@makeaccuracy.agency"
-                className="text-[#ff7a00] font-semibold underline"
+                className="text-neutral-900 font-semibold underline"
               >
                 hello@makeaccuracy.agency
               </a>
@@ -706,7 +706,7 @@ function PrivacyPage() {
             </p>
             <p className="text-sm text-neutral-500">
               Related: see our{" "}
-              <Link to="/terms" className="text-[#ff7a00] font-semibold underline">
+              <Link to="/terms" className="text-neutral-900 font-semibold underline">
                 Terms of Service
               </Link>{" "}
               for the commercial terms, SLAs, and security obligations governing engagements.

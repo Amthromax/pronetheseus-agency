@@ -52,8 +52,8 @@ export function IsometricSandbox() {
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Left Column: Heading & Selected Details */}
         <div className="max-w-md">
-          <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-[11px] font-mono font-semibold uppercase tracking-wider text-[#ff7a00]">
-            <span className="size-2 rounded-full bg-[#ff7a00] animate-ping" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-neutral-100 px-3 py-1 text-[11px] font-mono font-semibold uppercase tracking-wider text-neutral-900">
+            <span className="size-2 rounded-full bg-neutral-900 animate-ping" />
             ISOLATED AGENCY INFRASTRUCTURE
           </div>
           <h3 className="mt-3 font-display text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900">
@@ -67,7 +67,7 @@ export function IsometricSandbox() {
           {/* Active Sandbox Info Box */}
           <div className="mt-6 rounded-2xl border border-neutral-300 bg-white p-4 shadow-sm">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold text-[#ff7a00]">
+              <span className="text-xs font-mono font-bold text-neutral-900">
                 {sandboxes[activeSandbox - 1].name}
               </span>
               <span className="rounded-full bg-emerald-100 border border-emerald-300 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 flex items-center gap-1">
@@ -120,7 +120,7 @@ export function IsometricSandbox() {
               <div
                 className={`relative w-full h-full rounded-xl border bg-white p-3 shadow-lg transition-all ${
                   activeSandbox === 1
-                    ? "border-[#ff7a00] ring-2 ring-[#ff7a00]/30 shadow-orange-500/20"
+                    ? "border-neutral-900 ring-2 ring-neutral-900/20 shadow-neutral-900/10"
                     : "border-neutral-400"
                 }`}
               >
@@ -131,9 +131,9 @@ export function IsometricSandbox() {
 
                 {/* Front Side LED Dots */}
                 <div className="absolute bottom-2.5 right-3 flex items-center gap-1">
-                  <span className="size-1.5 rounded-full bg-[#ff7a00]" />
-                  <span className="size-1.5 rounded-full bg-[#ff7a00]" />
-                  <span className="size-1.5 rounded-full bg-[#ff7a00]" />
+                  <span className="size-1.5 rounded-full bg-neutral-900" />
+                  <span className="size-1.5 rounded-full bg-neutral-900" />
+                  <span className="size-1.5 rounded-full bg-neutral-900" />
                   <span className="size-1.5 rounded-full bg-neutral-300" />
                 </div>
                 {/* Ventilation Grille */}
@@ -160,15 +160,15 @@ export function IsometricSandbox() {
               <div
                 className={`relative w-full h-full rounded-xl border bg-white p-3 shadow-lg transition-all ${
                   activeSandbox === 2
-                    ? "border-[#ff7a00] ring-2 ring-[#ff7a00]/30 shadow-orange-500/20"
+                    ? "border-neutral-900 ring-2 ring-neutral-900/20 shadow-neutral-900/10"
                     : "border-neutral-400"
                 }`}
               >
                 <div className="absolute top-2 right-2 size-2 rounded-full bg-emerald-500 shadow-emerald-500/50 shadow-sm" />
                 <div className="absolute top-2 left-2 size-1.5 rounded-full bg-neutral-900" />
                 <div className="absolute bottom-2.5 right-3 flex items-center gap-1">
-                  <span className="size-1.5 rounded-full bg-[#ff7a00]" />
-                  <span className="size-1.5 rounded-full bg-[#ff7a00]" />
+                  <span className="size-1.5 rounded-full bg-neutral-900" />
+                  <span className="size-1.5 rounded-full bg-neutral-900" />
                   <span className="size-1.5 rounded-full bg-neutral-300" />
                   <span className="size-1.5 rounded-full bg-neutral-300" />
                 </div>
@@ -194,16 +194,16 @@ export function IsometricSandbox() {
               <div
                 className={`relative w-full h-full rounded-xl border bg-white p-3 shadow-lg transition-all ${
                   activeSandbox === 4
-                    ? "border-[#ff7a00] ring-2 ring-[#ff7a00]/30 shadow-orange-500/20"
+                    ? "border-neutral-900 ring-2 ring-neutral-900/20 shadow-neutral-900/10"
                     : "border-neutral-400"
                 }`}
               >
                 <div className="absolute top-2 right-2 size-2 rounded-full bg-emerald-500 shadow-emerald-500/50 shadow-sm" />
                 <div className="absolute top-2 left-2 size-1.5 rounded-full bg-neutral-900" />
                 <div className="absolute bottom-2.5 right-3 flex items-center gap-1">
-                  <span className="size-1.5 rounded-full bg-[#ff7a00]" />
-                  <span className="size-1.5 rounded-full bg-[#ff7a00]" />
-                  <span className="size-1.5 rounded-full bg-[#ff7a00]" />
+                  <span className="size-1.5 rounded-full bg-neutral-900" />
+                  <span className="size-1.5 rounded-full bg-neutral-900" />
+                  <span className="size-1.5 rounded-full bg-neutral-900" />
                   <span className="size-1.5 rounded-full bg-neutral-300" />
                 </div>
                 <div className="absolute bottom-3 left-12 flex gap-1 transform -rotate-12 opacity-40">
@@ -228,22 +228,22 @@ export function IsometricSandbox() {
               <div
                 className={`relative w-full h-full rounded-xl border bg-white p-3 shadow-xl transition-all ${
                   activeSandbox === 3
-                    ? "border-[#ff7a00] ring-2 ring-[#ff7a00]/40 shadow-orange-500/30"
+                    ? "border-neutral-900 ring-2 ring-neutral-900/25 shadow-neutral-900/15"
                     : "border-neutral-400"
                 }`}
               >
                 {/* Central Red Pulse Light Indicator */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 flex items-center justify-center">
-                  <div className="size-6 rounded-full border border-dashed border-[#ff7a00]/60 flex items-center justify-center animate-spin-slow" />
-                  <div className="absolute size-3 rounded-full bg-[#ff7a00] shadow-[#ff7a00] shadow-sm animate-pulse" />
+                  <div className="size-6 rounded-full border border-dashed border-neutral-900/60 flex items-center justify-center animate-spin-slow" />
+                  <div className="absolute size-3 rounded-full bg-neutral-900 shadow-neutral-900 shadow-sm animate-pulse" />
                 </div>
 
                 <div className="absolute top-2 right-2 size-2 rounded-full bg-emerald-500 shadow-emerald-500/50 shadow-sm" />
                 <div className="absolute top-2 left-2 size-1.5 rounded-full bg-neutral-900" />
                 <div className="absolute bottom-2.5 right-3 flex items-center gap-1">
-                  <span className="size-1.5 rounded-full bg-[#ff7a00]" />
-                  <span className="size-1.5 rounded-full bg-[#ff7a00]" />
-                  <span className="size-1.5 rounded-full bg-[#ff7a00]" />
+                  <span className="size-1.5 rounded-full bg-neutral-900" />
+                  <span className="size-1.5 rounded-full bg-neutral-900" />
+                  <span className="size-1.5 rounded-full bg-neutral-900" />
                   <span className="size-1.5 rounded-full bg-neutral-300" />
                 </div>
                 <div className="absolute bottom-3 left-12 flex gap-1 transform -rotate-12 opacity-40">

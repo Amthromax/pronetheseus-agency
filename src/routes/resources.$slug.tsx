@@ -73,7 +73,7 @@ function ResourceDetail() {
         </Link>
 
         <div className="mt-8 flex items-center gap-4">
-          <div className="grid size-12 place-items-center rounded-2xl bg-gradient-to-br from-[#ff7a00]/20 to-[#c2410c]/10 text-brand ring-1 ring-inset ring-white/10">
+          <div className="grid size-12 place-items-center rounded-2xl bg-neutral-900/10 text-brand ring-1 ring-inset ring-black/10">
             <resource.Icon className="size-5" />
           </div>
           <div className="text-xs uppercase tracking-widest text-muted-foreground">

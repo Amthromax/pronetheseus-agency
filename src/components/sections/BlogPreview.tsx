@@ -45,7 +45,7 @@ export function BlogPreview() {
             whileHover={{ y: -4 }}
             className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.01] p-6"
           >
-            <div className="aspect-[16/10] w-full rounded-2xl bg-gradient-to-br from-[#ff7a00]/30 via-[#c2410c]/20 to-black" />
+            <div className="aspect-[16/10] w-full rounded-2xl bg-gradient-to-br from-neutral-700/30 via-neutral-800/20 to-black" />
             <div className="mt-6 flex items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground">
               <span className="rounded-full border border-brand/30 bg-brand/10 px-2 py-0.5 text-brand">
                 {p.tag}

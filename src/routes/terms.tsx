@@ -98,7 +98,7 @@ function TermsPage() {
 
         <div className="border-b border-neutral-200 pb-8">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-neutral-100 px-3 py-1 text-xs font-mono font-semibold text-neutral-800 uppercase tracking-wider mb-4 border border-neutral-200">
-            <FileCheck className="size-3.5 text-[#ff7a00]" /> Engineering Agreement
+            <FileCheck className="size-3.5 text-neutral-900" /> Engineering Agreement
           </span>
           <h1 className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-neutral-900">
             Terms & Conditions
@@ -125,7 +125,7 @@ function TermsPage() {
           <ol className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
             {SECTIONS.map((s) => (
               <li key={s.id} className="text-sm">
-                <a href={"#" + s.id} className="text-neutral-600 hover:text-[#ff7a00] transition">
+                <a href={"#" + s.id} className="text-neutral-600 hover:text-neutral-900 transition">
                   <span className="font-mono text-neutral-400 mr-2">
                     {String(s.n).padStart(2, "0")}
                   </span>
@@ -141,7 +141,7 @@ function TermsPage() {
             id="scope"
             n={1}
             title="Scope of Engagement"
-            icon={<Shield className="size-5 text-[#ff7a00]" />}
+            icon={<Shield className="size-5 text-neutral-900" />}
           >
             <p>
               By engaging Make Accuracy Agency Infrastructure Systems, you agree to these Terms. Our
@@ -161,7 +161,7 @@ function TermsPage() {
             id="definitions"
             n={2}
             title="Definitions"
-            icon={<BookOpen className="size-5 text-[#ff7a00]" />}
+            icon={<BookOpen className="size-5 text-neutral-900" />}
           >
             <ul className="list-disc pl-6 space-y-2 text-neutral-600">
               <li>
@@ -195,7 +195,7 @@ function TermsPage() {
             id="sow"
             n={3}
             title="Statements of Work & Change Control"
-            icon={<GitBranch className="size-5 text-[#ff7a00]" />}
+            icon={<GitBranch className="size-5 text-neutral-900" />}
           >
             <p>
               Each engagement begins with a written SOW specifying scope, deliverables, milestones,
@@ -229,7 +229,7 @@ function TermsPage() {
             id="sla"
             n={4}
             title="30-Day SLA & Work Guarantee"
-            icon={<Clock className="size-5 text-[#ff7a00]" />}
+            icon={<Clock className="size-5 text-neutral-900" />}
           >
             <p>
               We commit to a 30-day deployment window for standard Growth-tier infrastructure
@@ -257,7 +257,7 @@ function TermsPage() {
             id="client"
             n={5}
             title="Client Responsibilities"
-            icon={<Users className="size-5 text-[#ff7a00]" />}
+            icon={<Users className="size-5 text-neutral-900" />}
           >
             <p>Delivery depends on your side of the engagement. You agree to:</p>
             <ul className="list-disc pl-6 space-y-2 text-neutral-600">
@@ -288,11 +288,11 @@ function TermsPage() {
             id="security"
             n={6}
             title="Security Obligations & Credential Handling"
-            icon={<KeyRound className="size-5 text-[#ff7a00]" />}
+            icon={<KeyRound className="size-5 text-neutral-900" />}
           >
             <p>
               Security is a shared obligation. Our practices are described in full in our{" "}
-              <Link to="/privacy" className="text-[#ff7a00] font-semibold underline">
+              <Link to="/privacy" className="text-neutral-900 font-semibold underline">
                 Privacy Policy
               </Link>
               ; the contractual commitments are here.
@@ -364,7 +364,7 @@ function TermsPage() {
               it to{" "}
               <a
                 href="mailto:security@makeaccuracy.agency"
-                className="text-[#ff7a00] font-semibold underline"
+                className="text-neutral-900 font-semibold underline"
               >
                 security@makeaccuracy.agency
               </a>
@@ -376,7 +376,7 @@ function TermsPage() {
             id="ip"
             n={7}
             title="Code Ownership & Intellectual Property"
-            icon={<Scale className="size-5 text-[#ff7a00]" />}
+            icon={<Scale className="size-5 text-neutral-900" />}
           >
             <p>
               Upon final payment, all custom code, workflow logic, and system documentation
@@ -415,7 +415,7 @@ function TermsPage() {
             id="thirdparty"
             n={8}
             title="Third-Party Services & API Costs"
-            icon={<Plug className="size-5 text-[#ff7a00]" />}
+            icon={<Plug className="size-5 text-neutral-900" />}
           >
             <p>
               Deliverables typically depend on Third-Party Services — hosting, workflow platforms,
@@ -446,7 +446,7 @@ function TermsPage() {
             id="confidentiality"
             n={9}
             title="Confidentiality"
-            icon={<Lock className="size-5 text-[#ff7a00]" />}
+            icon={<Lock className="size-5 text-neutral-900" />}
           >
             <p>
               Each party will keep the other's non-public information confidential, use it only to
@@ -465,7 +465,7 @@ function TermsPage() {
             id="payment"
             n={10}
             title="Payment Terms & Invoicing"
-            icon={<CreditCard className="size-5 text-[#ff7a00]" />}
+            icon={<CreditCard className="size-5 text-neutral-900" />}
           >
             <p>
               Deployment fees are invoiced 50% upfront to secure the engineering slot, with the
@@ -501,7 +501,7 @@ function TermsPage() {
             id="warranties"
             n={11}
             title="Warranties & Disclaimers"
-            icon={<AlertTriangle className="size-5 text-[#ff7a00]" />}
+            icon={<AlertTriangle className="size-5 text-neutral-900" />}
           >
             <p>
               We warrant that services are performed with reasonable skill and care by qualified
@@ -525,7 +525,7 @@ function TermsPage() {
             id="liability"
             n={12}
             title="Limitation of Liability"
-            icon={<ShieldAlert className="size-5 text-[#ff7a00]" />}
+            icon={<ShieldAlert className="size-5 text-neutral-900" />}
           >
             <p>
               To the maximum extent permitted by law, neither party is liable for indirect,
@@ -547,7 +547,7 @@ function TermsPage() {
             id="indemnity"
             n={13}
             title="Indemnification"
-            icon={<Handshake className="size-5 text-[#ff7a00]" />}
+            icon={<Handshake className="size-5 text-neutral-900" />}
           >
             <p>
               You will indemnify Make Accuracy against third-party claims arising from Client Data,
@@ -570,7 +570,7 @@ function TermsPage() {
             id="term"
             n={14}
             title="Term, Suspension & Termination"
-            icon={<LogOut className="size-5 text-[#ff7a00]" />}
+            icon={<LogOut className="size-5 text-neutral-900" />}
           >
             <ul className="list-disc pl-6 space-y-2 text-neutral-600">
               <li>
@@ -605,7 +605,7 @@ function TermsPage() {
             id="acceptable"
             n={15}
             title="Acceptable Use"
-            icon={<Ban className="size-5 text-[#ff7a00]" />}
+            icon={<Ban className="size-5 text-neutral-900" />}
           >
             <p>You agree not to use our services or the Deliverables to:</p>
             <ul className="list-disc pl-6 space-y-2 text-neutral-600">
@@ -639,7 +639,7 @@ function TermsPage() {
             id="subcontractors"
             n={16}
             title="Subcontractors & Non-Solicitation"
-            icon={<Users className="size-5 text-[#ff7a00]" />}
+            icon={<Users className="size-5 text-neutral-900" />}
           >
             <p>
               We may use vetted subcontractors and sub-processors to deliver an engagement and
@@ -658,7 +658,7 @@ function TermsPage() {
             id="law"
             n={17}
             title="Governing Law & Dispute Resolution"
-            icon={<Gavel className="size-5 text-[#ff7a00]" />}
+            icon={<Gavel className="size-5 text-neutral-900" />}
           >
             <p>
               These Terms are governed by the laws of the jurisdiction stated in your Statement of
@@ -685,7 +685,7 @@ function TermsPage() {
             id="changes"
             n={18}
             title="Changes to These Terms & Contact"
-            icon={<RefreshCw className="size-5 text-[#ff7a00]" />}
+            icon={<RefreshCw className="size-5 text-neutral-900" />}
           >
             <p>
               We may update these Terms as our services evolve. The version number and last-updated
@@ -695,17 +695,17 @@ function TermsPage() {
               a signed SOW without your written agreement.
             </p>
             <p className="flex flex-wrap items-center gap-x-1.5">
-              <Mail className="size-4 text-[#ff7a00]" /> Contract and billing questions:{" "}
+              <Mail className="size-4 text-neutral-900" /> Contract and billing questions:{" "}
               <a
                 href="mailto:hello@makeaccuracy.agency"
-                className="text-[#ff7a00] font-semibold underline"
+                className="text-neutral-900 font-semibold underline"
               >
                 hello@makeaccuracy.agency
               </a>
               . Security matters:{" "}
               <a
                 href="mailto:security@makeaccuracy.agency"
-                className="text-[#ff7a00] font-semibold underline"
+                className="text-neutral-900 font-semibold underline"
               >
                 security@makeaccuracy.agency
               </a>
@@ -713,7 +713,7 @@ function TermsPage() {
             </p>
             <p className="text-sm text-neutral-500">
               Related: see our{" "}
-              <Link to="/privacy" className="text-[#ff7a00] font-semibold underline">
+              <Link to="/privacy" className="text-neutral-900 font-semibold underline">
                 Privacy Policy
               </Link>{" "}
               for how we collect, protect, and retain data.

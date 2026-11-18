@@ -36,7 +36,7 @@ export function TrustedBy() {
           {logos.map((l, i) => (
             <span
               key={i}
-              className="font-display text-xl sm:text-2xl font-bold tracking-[0.24em] text-white/40 transition-all duration-500 hover:scale-105 hover:text-white hover:[text-shadow:0_0_24px_rgba(255,122,0,0.7)] cursor-default select-none"
+              className="font-display text-xl sm:text-2xl font-bold tracking-[0.24em] text-white/40 transition-all duration-500 hover:scale-105 hover:text-white hover:[text-shadow:0_0_24px_rgba(255,255,255,0.45)] cursor-default select-none"
             >
               {l}
             </span>

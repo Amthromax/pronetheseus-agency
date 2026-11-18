@@ -1,7 +1,7 @@
 import { RollingText } from "@/components/ui/rolling-text";
 import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
-import { ChevronLeft, ChevronRight, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight, Quote, Zap, AlertTriangle, Cpu } from "lucide-react";
 import { motion } from "motion/react";
 import { ScrollReveal } from "@/components/fx/ScrollReveal";
 
@@ -67,132 +67,132 @@ interface TestimonialsProps {
 export function Testimonials({ className = "", hideBorders = false }: TestimonialsProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === "left" ? -400 : 400;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       id="customer-testimonials"
-      className={`relative bg-sandel py-12 sm:py-16 text-neutral-900 overflow-hidden ${hideBorders ? "" : "border-y border-sandel-border"} ${className}`}
+      className={`relative bg-sandel py-14 sm:py-20 text-neutral-900 overflow-hidden ${hideBorders ? "" : "border-y border-sandel-border"} ${className}`}
     >
       <div className="container-pad mx-auto max-w-[1400px]">
-        {/* Header Container */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
-          <div>
-            <h2 className="font-serif text-3xl font-normal tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
-              Proven System Results & Case Studies
-            </h2>
-            <p className="mt-2 text-sm sm:text-base text-neutral-600 font-sans max-w-2xl">
-              Real problem-to-result breakdowns demonstrating how service businesses eliminate
-              operational drag.
-            </p>
-          </div>
-
-          {/* Prev / Next Navigation Arrows */}
-          <div className="flex items-center gap-3 shrink-0">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => scroll("left")}
-              aria-label="Previous story"
-              className="size-11 rounded-xl border border-sandel-border bg-sandel-card flex items-center justify-center text-neutral-800 shadow-2xs transition-all duration-200 hover:bg-sandel cursor-pointer"
-            >
-              <ChevronLeft className="size-5" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => scroll("right")}
-              aria-label="Next story"
-              className="size-11 rounded-xl border border-sandel-border bg-sandel-card flex items-center justify-center text-neutral-800 shadow-2xs transition-all duration-200 hover:bg-sandel cursor-pointer"
-            >
-              <ChevronRight className="size-5" />
-            </motion.button>
-          </div>
+        {/* Header */}
+        <div className="mb-14 text-center">
+          <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-neutral-500 mb-3 block">
+            Client Success Stories
+          </span>
+          <h2 className="font-serif text-3xl font-normal tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
+            Proven System Results & Case Studies
+          </h2>
+          <p className="mt-3 text-sm sm:text-base text-neutral-600 font-sans max-w-2xl leading-relaxed mx-auto">
+            Real problem-to-result breakdowns demonstrating how service businesses eliminate
+            operational drag.
+          </p>
         </div>
 
-        {/* Client -> Problem -> System -> Result -> Testimonial Grid */}
+        {/* Cards Grid */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-8 pt-2 scrollbar-none snap-x snap-mandatory min-w-0"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 pb-10 pt-2"
         >
           {CASE_STUDIES.map((item, idx) => (
-            <ScrollReveal key={idx} variant="card" staggerIndex={idx} staggerStep={0.1}>
+            <ScrollReveal key={idx} variant="card" staggerIndex={idx} staggerStep={0.12}>
               <Link
                 to="/case-studies/$slug"
                 params={{ slug: item.slug }}
                 className="block cursor-pointer h-full"
               >
                 <motion.div
-                  whileHover={{ y: -4 }}
-                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative flex min-h-[460px] w-[340px] sm:w-[420px] md:w-[440px] shrink-0 snap-start flex-col justify-between rounded-[28px] sm:rounded-[32px] border border-white/80 bg-sandel-card p-7 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:border-neutral-300/80 transition-all duration-300 cursor-pointer h-full font-sans"
+                  whileHover={{ y: -5 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  className="group relative flex w-full shrink-0 flex-col rounded-[28px] sm:rounded-[32px] border border-neutral-200/80 bg-[#f4f3ee] shadow-[0_4px_24px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:border-neutral-300/80 transition-all duration-300 cursor-pointer h-full font-sans overflow-hidden"
                 >
-                  <div>
-                    {/* Top Client & Industry */}
-                    <div className="flex items-center justify-between pb-4 border-b border-black/5">
-                      <div>
-                        <h3 className="font-sans text-lg font-bold text-neutral-900 tracking-tight group-hover:text-blue-600 transition-colors">
-                          {item.client}
-                        </h3>
-                        <span className="text-xs text-neutral-500 font-mono">{item.industry}</span>
-                      </div>
-                    </div>
+                  {/* Top — Client & Industry */}
+                  <div className="px-7 pt-7 pb-5 border-b border-neutral-200/60">
+                    <span className="text-[10px] font-mono font-semibold text-neutral-500 uppercase tracking-wider block mb-1.5">
+                      {item.industry}
+                    </span>
+                    <h3 className="font-sans text-xl font-bold text-neutral-900 tracking-tight group-hover:text-neutral-700 transition-colors">
+                      {item.client}
+                    </h3>
+                  </div>
 
-                    {/* 4-Step Breakdown Stack */}
-                    <div className="mt-5 space-y-2.5 font-sans text-xs">
-                      <div className="p-3 rounded-[16px] bg-[#f4f3ee] border border-neutral-200/80">
-                        <span className="font-mono font-bold text-red-600 uppercase text-[10px] block mb-0.5 tracking-wider">
-                          Problem
-                        </span>
-                        <span className="text-neutral-700 leading-snug block">{item.problem}</span>
+                  {/* Card Body */}
+                  <div className="flex-1 flex flex-col justify-between px-7 py-6">
+                    {/* Problem → System → Result pipeline */}
+                    <div className="space-y-3">
+                      {/* Problem */}
+                      <div className="flex items-start gap-3">
+                        <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-lg bg-red-50 text-red-500">
+                          <AlertTriangle className="size-3.5" />
+                        </div>
+                        <div>
+                          <span className="text-[10px] font-mono font-bold text-red-600 uppercase tracking-wider block mb-0.5">
+                            Problem
+                          </span>
+                          <span className="text-xs text-neutral-600 leading-relaxed block">
+                            {item.problem}
+                          </span>
+                        </div>
                       </div>
 
-                      <div className="p-3 rounded-[16px] bg-[#f4f3ee] border border-neutral-200/80">
-                        <span className="font-mono font-bold text-blue-600 uppercase text-[10px] block mb-0.5 tracking-wider">
-                          Deployed System
-                        </span>
-                        <span className="text-neutral-800 font-medium leading-snug block">
-                          {item.system}
-                        </span>
+                      {/* Deployed System */}
+                      <div className="flex items-start gap-3">
+                        <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-neutral-600">
+                          <Cpu className="size-3.5" />
+                        </div>
+                        <div>
+                          <span className="text-[10px] font-mono font-bold text-neutral-500 uppercase tracking-wider block mb-0.5">
+                            Deployed System
+                          </span>
+                          <span className="text-xs text-neutral-800 font-semibold leading-relaxed block">
+                            {item.system}
+                          </span>
+                        </div>
                       </div>
 
-                      <div className="p-3 rounded-[16px] bg-[#f4f3ee] border border-neutral-200/80">
-                        <span className="font-mono font-bold text-emerald-600 uppercase text-[10px] block mb-0.5 tracking-wider">
-                          Result
-                        </span>
-                        <span className="text-neutral-900 font-bold leading-snug block">
-                          {item.result}
-                        </span>
+                      {/* Result */}
+                      <div className="flex items-start gap-3">
+                        <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                          <Zap className="size-3.5" />
+                        </div>
+                        <div>
+                          <span className="text-[10px] font-mono font-bold text-emerald-600 uppercase tracking-wider block mb-0.5">
+                            Result
+                          </span>
+                          <span className="text-xs text-neutral-900 font-bold leading-relaxed block">
+                            {item.result}
+                          </span>
+                        </div>
                       </div>
                     </div>
 
                     {/* Testimonial Quote */}
-                    <div className="mt-5 pt-4 border-t border-black/5">
-                      <p className="text-xs sm:text-sm text-neutral-700 font-normal italic leading-relaxed">
-                        "{item.testimonial}"
-                      </p>
-                    </div>
-                  </div>
+                    <div className="mt-6 pt-5 border-t border-neutral-200/60">
+                      <div className="relative">
+                        <Quote className="absolute -top-1 -left-1 size-5 text-neutral-300" />
+                        <p className="pl-6 text-[13px] text-neutral-600 font-normal italic leading-relaxed">
+                          {item.testimonial}
+                        </p>
+                      </div>
 
-                  {/* Author Info */}
-                  <div className="mt-6 pt-3.5 border-t border-black/5 flex items-center justify-between">
-                    <div>
-                      <span className="text-xs font-bold text-neutral-900 block font-sans">
-                        {item.author}
-                      </span>
-                      <span className="text-[11px] font-medium text-neutral-500 block leading-tight">
-                        {item.authorTitle}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1 text-xs font-bold text-neutral-900 group-hover:text-blue-600 transition-colors">
-                      <span>Read Story</span>
-                      <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                      {/* Author */}
+                      <div className="mt-5 flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="size-9 rounded-full bg-neutral-900 flex items-center justify-center text-white text-[10px] font-bold tracking-wide">
+                            {item.author.split(" ").map(n => n[0]).join("")}
+                          </div>
+                          <div>
+                            <span className="text-sm font-bold text-neutral-900 block font-sans">
+                              {item.author}
+                            </span>
+                            <span className="text-[11px] text-neutral-500 block leading-tight">
+                              {item.authorTitle}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-1.5 text-xs font-bold text-neutral-400 group-hover:text-neutral-900 transition-colors duration-300">
+                          <span>Read Story</span>
+                          <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -201,11 +201,11 @@ export function Testimonials({ className = "", hideBorders = false }: Testimonia
           ))}
         </div>
 
-        {/* Bottom Callout Button */}
-        <div className="mt-8 text-center">
+        {/* Bottom CTA */}
+        <div className="mt-4 text-center">
           <Link
             to="/book"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#18181b] px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-white shadow-xs transition-all duration-200 hover:bg-black hover:scale-[1.01]"
+            className="inline-flex items-center gap-2 rounded-xl bg-neutral-900 px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-white shadow-xs transition-all duration-200 hover:bg-black hover:scale-[1.01]"
           >
             <span>
               <RollingText>Get Your Free Automation Audit</RollingText>

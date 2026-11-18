@@ -1,46 +1,31 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { SectionHeading } from "@/components/sections/SectionHeading";
-import { Stagger, staggerItem } from "@/components/ui/reveal";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
+import { RollingText } from "@/components/ui/rolling-text";
+import { CountUp } from "@/components/ui/count-up";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import {
+  ArrowRight,
+  ArrowUpRight,
   Check,
   TrendingUp,
-  Smile,
   Zap,
-  Clock,
-  Shield,
-  Globe,
-  Award,
-  Sparkles,
-  Compass,
+  ShieldCheck,
   Layers,
   Cpu,
-  Command,
-  Flame,
-  Sun,
-  HeartHandshake,
-  CreditCard,
-  ShoppingBag,
-  FileText,
-  Database,
-  Hash,
-  Cloud,
-  GitBranch,
-  Brain,
-  Target,
-  Layout,
-  Box,
-  MessageCircle,
+  Quote,
+  Sparkles,
   Code2,
+  Database,
+  Cloud,
   Workflow,
-  Building2,
-  ChevronRight,
-  Server,
-  Hexagon,
-  Circle,
+  MessageSquare,
+  CreditCard,
+  Terminal,
+  Globe,
+  Compass,
+  Lock,
+  Activity,
 } from "lucide-react";
-import { Marquee } from "@/components/ui/marquee";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -48,931 +33,565 @@ export const Route = createFileRoute("/about")({
       { title: "About — Make Accuracy" },
       {
         name: "description",
-        content: "The senior team behind Make Accuracy and the beliefs that guide our work.",
+        content:
+          "Led by Founder & CEO Kanth K Maglaire — meet the senior engineering studio building autonomous AI and revenue infrastructure for ambitious companies.",
       },
       { property: "og:title", content: "About — Make Accuracy" },
       {
         property: "og:description",
-        content: "Meet the team building the AI backbone of ambitious companies.",
+        content:
+          "Meet Kanth K Maglaire and the senior team engineering the AI backbone of high-growth companies.",
       },
       { property: "og:url", content: "https://makeaccuracy.agency/about" },
     ],
     links: [{ rel: "canonical", href: "https://makeaccuracy.agency/about" }],
   }),
-  component: Page,
+  component: AboutPage,
 });
 
-const values = [
-  { title: "Ship weekly", desc: "Real demos every Friday, not quarterly steering committees." },
-  { title: "Senior only", desc: "Every engagement is led by a principal engineer." },
-  { title: "Own the outcome", desc: "We measure success in hours saved and revenue moved." },
-  { title: "Design counts", desc: "AI systems should feel effortless — and beautiful." },
-];
-const team = [{ name: "Kanth Magliar", role: "Founder & CEO", image: "/kishore-kanth.webp" }];
-
-const row1Logos = [
-  { name: "Stripe", icon: CreditCard },
-  { name: "OpenAI", icon: Sparkles },
-  { name: "Vercel", icon: Layers },
-  { name: "Shopify", icon: ShoppingBag },
-  { name: "Linear", icon: Compass },
-  { name: "Notion", icon: FileText },
-  { name: "Supabase", icon: Database },
-  { name: "Slack", icon: Hash },
-  { name: "Figma", icon: Box },
-];
-
-const row2Logos = [
-  { name: "AWS", icon: Cloud },
-  { name: "GitHub", icon: GitBranch },
-  { name: "Anthropic", icon: Brain },
-  { name: "HubSpot", icon: Target },
-  { name: "Webflow", icon: Layout },
-  { name: "Salesforce", icon: Building2 },
-  { name: "Intercom", icon: MessageCircle },
-  { name: "Retool", icon: Workflow },
-  { name: "Datadog", icon: Code2 },
+const STUDIO_PRINCIPLES = [
+  {
+    num: "01",
+    Icon: Zap,
+    title: "Ship Weekly",
+    desc: "Working software and live production demos every Friday — never endless strategy decks or quarterly steering committees.",
+  },
+  {
+    num: "02",
+    Icon: ShieldCheck,
+    title: "Senior Engineers Only",
+    desc: "Every engagement is architected and led directly by principal engineers and operators. Zero junior handoffs.",
+  },
+  {
+    num: "03",
+    Icon: TrendingUp,
+    title: "Outcome Accountability",
+    desc: "We measure success strictly in hours reclaimed, speed-to-lead, conversion lift, and verified bottom-line ROI.",
+  },
+  {
+    num: "04",
+    Icon: Compass,
+    title: "Craft & Precision",
+    desc: "Enterprise AI infrastructure should feel effortless, transparent, and unmistakably refined for every operator who touches it.",
+  },
 ];
 
-function Page() {
+const FOUNDER_COMMITMENTS = [
+  "Focused on qualified, high-intent revenue outcomes — never vanity clicks or surface metrics",
+  "Every system is engineered around real operational workflows, never generic templates",
+  "Radical candor: we tell you what actually moves the needle, not what merely sounds impressive",
+  "100% code, workflow, and data ownership handed over — zero agency lock-in",
+  "Intentionally capped quarterly client roster so every partner receives direct executive attention",
+];
+
+const CLOUD_STACK = [
+  { name: "AWS", category: "Cloud", Icon: Cloud },
+  { name: "Azure", category: "Enterprise", Icon: Layers },
+  { name: "Google Cloud", category: "Infra", Icon: Globe },
+  { name: "OpenAI", category: "Models", Icon: Sparkles },
+  { name: "Anthropic", category: "Models", Icon: Cpu },
+  { name: "n8n", category: "Workflows", Icon: Workflow },
+  { name: "HubSpot", category: "CRM", Icon: Activity },
+  { name: "Salesforce", category: "CRM", Icon: Database },
+  { name: "Twilio", category: "Voice", Icon: MessageSquare },
+  { name: "Stripe", category: "Billing", Icon: CreditCard },
+  { name: "PostgreSQL", category: "Data", Icon: Database },
+  { name: "Kubernetes", category: "Compute", Icon: Terminal },
+  { name: "GitHub CI", category: "DevOps", Icon: Code2 },
+  { name: "SOC2 VPC", category: "Security", Icon: Lock },
+];
+
+const WORKING_MODEL = [
+  {
+    num: "01",
+    title: "Strategic First Principles",
+    desc: "Every engagement starts inside your actual operations — auditing bottlenecks, customer journeys, and data flows before writing a single line of code.",
+  },
+  {
+    num: "02",
+    title: "Unified Revenue Infrastructure",
+    desc: "Your website, acquisition channels, CRM, and autonomous AI agents operate as one synchronized engine rather than disconnected tools.",
+  },
+  {
+    num: "03",
+    title: "Engineered for Measurable ROI",
+    desc: "Every workflow is tied to concrete telemetry — speed-to-lead, hours saved, deflection rate, and pipeline velocity.",
+  },
+  {
+    num: "04",
+    title: "Direct Senior Communication",
+    desc: "Work directly with Kanth K Maglaire and our principal engineers through dedicated Slack channels and jargon-free weekly milestone reviews.",
+  },
+  {
+    num: "05",
+    title: "Continuous Post-Launch Refinement",
+    desc: "We monitor live latency, eval accuracy, and conversion trends after cutover — tuning systems so performance compounds over time.",
+  },
+];
+
+function AboutPage() {
   return (
-    <div className="min-h-screen bg-white text-neutral-900 pt-36 pb-20">
-      <div className="container-pad mx-auto max-w-[1400px]">
-        <SectionHeading
-          title="We build the AI backbone of ambitious companies"
-          description="A boutique studio of senior engineers, designers, and operators. We take on a limited number of engagements each quarter."
-        />
-      </div>
-      <section className="container-pad mx-auto mt-16 max-w-[1400px]">
-        <Stagger className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {values.map((v) => (
-            <motion.div
-              key={v.title}
-              variants={staggerItem}
-              className="rounded-[24px] sm:rounded-[28px] border border-neutral-200/80 bg-[#f4f3ee] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] transition-all duration-300 font-sans"
+    <div className="min-h-screen bg-white text-neutral-900 font-sans pt-28 sm:pt-36">
+      {/* 1. EDITORIAL HERO SECTION */}
+      <section className="container-pad mx-auto max-w-[1400px] pb-16 sm:pb-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-neutral-500">
+            <span className="size-1.5 rounded-full bg-neutral-900" />
+            About Make Accuracy · Est. 2022
+          </div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-5 font-serif text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-neutral-900 leading-[1.08]"
+          >
+            Engineering the AI Backbone of Ambitious Companies
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-5 text-base sm:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto"
+          >
+            A boutique engineering studio of senior architects, designers, and operators. We partner
+            with a select number of businesses each quarter to replace manual drag with autonomous,
+            production-grade AI systems.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-8 flex flex-wrap items-center justify-center gap-3"
+          >
+            <Link
+              to="/book"
+              className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-7 py-3.5 text-xs sm:text-sm font-semibold text-white shadow-sm transition hover:bg-black hover:scale-[1.02]"
             >
-              <div className="font-sans text-xl font-bold text-neutral-900">{v.title}</div>
-              <p className="mt-2 text-sm text-neutral-600 font-sans leading-relaxed font-normal">
-                {v.desc}
-              </p>
-            </motion.div>
-          ))}
-        </Stagger>
-      </section>
+              <RollingText>Book a Strategy Call</RollingText>
+              <ArrowRight className="size-4" />
+            </Link>
+            <Link
+              to="/case-studies"
+              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-7 py-3.5 text-xs sm:text-sm font-semibold text-neutral-900 shadow-2xs transition hover:border-neutral-900 hover:bg-neutral-50"
+            >
+              <RollingText>View Proven Results</RollingText>
+              <ArrowUpRight className="size-4" />
+            </Link>
+          </motion.div>
+        </div>
 
-      {/* Unified Founder Showcase Section */}
-      <section className="container-pad mx-auto mt-20 max-w-[1400px]">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start"
-        >
-          {/* Left Column: Narrative, Stats & Highlights */}
-          <div className="lg:col-span-7">
-            {/* Section Tag */}
-            <div className="flex items-center gap-2 font-sans text-[13px] font-semibold uppercase tracking-wider text-blue-600">
-              <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-blue-600" />
-              ABOUT THE FOUNDER
+        {/* 4 Animated Impact Metric Cards */}
+        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] px-7 py-6 shadow-2xs"
+          >
+            <div className="font-sans text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
+              <CountUp end={4} suffix="+" duration={1400} />
             </div>
-
-            {/* Main Heading */}
-            <h2 className="mt-4 font-sans text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl md:text-5xl">
-              Meet the Person Behind Make Accuracy
-            </h2>
-
-            {/* Narrative Text */}
-            <p className="mt-6 font-sans text-base font-normal leading-relaxed text-neutral-700 sm:text-lg">
-              We are a team focused on helping businesses attract high quality enquiries and turn
-              them into real clients. For the past four years, we have worked with businesses that
-              wanted more than just traffic, clicks, or impressive numbers. Our focus is simple. We
-              bring the right people to your business and help more of them take the next step. Many
-              businesses are already putting in the effort, but their marketing may be reaching the
-              wrong audience or losing interested people before they enquire. Our team helps
-              identify these gaps and improve the complete journey. We keep the process clear and
-              practical. We understand your business, build the right system, reach the right
-              people, and improve what is not working. We also work with a limited number of clients
-              at a time. This allows our team to give every business proper attention, communicate
-              clearly, and keep you informed about the progress and results.
+            <div className="mt-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500">
+              Years of Execution
+            </div>
+            <p className="mt-2 text-xs text-neutral-600 leading-relaxed">
+              Shipping production growth &amp; automation systems since 2022.
             </p>
-
-            {/* Stats Row */}
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8 border-y border-neutral-200/80 py-8">
-              <div className="py-2">
-                <div className="font-sans text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
-                  4+
-                </div>
-                <div className="mt-2 font-sans text-sm font-medium text-neutral-600 sm:text-base">
-                  Years of Experience
-                </div>
-              </div>
-              <div className="py-2 border-t sm:border-t-0 sm:border-l border-neutral-200/80 sm:pl-8">
-                <div className="font-sans text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
-                  62+
-                </div>
-                <div className="mt-2 font-sans text-sm font-medium text-neutral-600 sm:text-base">
-                  Businesses Worked With
-                </div>
-              </div>
-              <div className="py-2 border-t sm:border-t-0 sm:border-l border-neutral-200/80 sm:pl-8">
-                <div className="font-sans text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
-                  4.9 / 5
-                </div>
-                <div className="mt-2 font-sans text-sm font-medium text-neutral-600 sm:text-base">
-                  Client Satisfaction
-                </div>
-              </div>
-            </div>
-
-            {/* Why Clients Choose to Work With Me */}
-            <div className="mt-10">
-              <h3 className="mb-6 font-sans text-xl font-bold tracking-tight text-neutral-900 sm:text-2xl">
-                Why Clients Choose to Work With Me
-              </h3>
-              <div className="space-y-4">
-                {[
-                  "I focus on leads that are ready to buy, not just traffic",
-                  "Every strategy is built around real results, not theory",
-                  "I tell you what works, not what sounds good",
-                  "Strong focus on ROI and business growth",
-                  "Built for long-term results, not short-term spikes",
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-3.5 font-sans text-base font-medium text-neutral-800 sm:text-lg"
-                  >
-                    <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600/10 text-blue-600">
-                      <Check className="h-4 w-4" />
-                    </div>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Founder Portrait Card */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end lg:sticky lg:top-28">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="group w-full max-w-[440px] overflow-hidden rounded-[32px] sm:rounded-[40px] border border-neutral-200/80 bg-sandel-card shadow-[0_16px_45px_rgba(0,0,0,0.08)] hover:shadow-[0_24px_55px_rgba(0,0,0,0.12)] transition-all duration-300 font-sans"
-            >
-              <div className="aspect-[4/4.5] w-full overflow-hidden bg-neutral-100 flex items-center justify-center text-5xl font-sans text-white font-bold">
-                <img
-                  src="/kishore-kanth.png"
-                  alt="Kanth Magliar"
-                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-7 sm:p-8 bg-sandel-card">
-                <div className="font-sans text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900">
-                  Kanth Magliar
-                </div>
-                <div className="mt-1 text-base sm:text-lg font-semibold text-blue-600">
-                  Founder & CEO
-                </div>
-                <p className="mt-3 text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  Leading AI automation & growth infrastructure for scaling agencies and
-                  enterprises.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Bento Grid Metrics Section */}
-      <section className="container-pad mx-auto mt-24 max-w-[1400px]">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {/* Card 1: Growth Metrics */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-[28px] border border-neutral-300/80 bg-[#f4f3ee] p-6 text-neutral-900 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] sm:p-7"
-          >
-            <div>
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-white px-3 py-1 font-sans text-xs font-semibold text-neutral-800 shadow-sm">
-                <TrendingUp className="h-3.5 w-3.5 text-neutral-700" />
-                <span>Growth Metrics</span>
-              </div>
-              <h3 className="mt-4 font-sans text-lg font-bold leading-snug text-neutral-900 sm:text-xl">
-                Helping businesses build stronger online presence through websites, ads, and
-                content.
-              </h3>
-            </div>
-
-            {/* Bar chart graphic */}
-            <div className="my-6 rounded-2xl border border-neutral-300/70 bg-white p-5 shadow-sm">
-              <div className="flex h-28 items-end justify-between gap-1.5 px-2">
-                {[35, 42, 50, 60, 95, 100, 90, 85, 55, 45, 38, 30].map((height, i) => {
-                  const isHighlight = i >= 4 && i <= 7;
-                  return (
-                    <div key={i} className="flex h-full flex-1 flex-col items-center justify-end">
-                      <div
-                        style={{ height: `${height}%` }}
-                        className={`w-full rounded-t-sm transition-all duration-500 ${
-                          isHighlight
-                            ? "bg-gradient-to-t from-red-600 via-orange-500 to-amber-400 shadow-[0_0_12px_rgba(239,68,68,0.4)]"
-                            : "bg-neutral-200"
-                        }`}
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="mt-3 flex items-center justify-between border-t border-neutral-200 pt-2 font-mono text-xs text-neutral-500">
-                <span>2019</span>
-                <span>2026</span>
-              </div>
-            </div>
-
-            {/* Bottom stats */}
-            <div className="grid grid-cols-2 gap-4 border-t border-neutral-300/70 pt-4 font-sans">
-              <div>
-                <div className="text-2xl font-extrabold tracking-tight text-neutral-900 sm:text-3xl">
-                  42+
-                </div>
-                <div className="mt-0.5 text-xs font-medium text-neutral-600">Industries Served</div>
-              </div>
-              <div>
-                <div className="text-2xl font-extrabold tracking-tight text-neutral-900 sm:text-3xl">
-                  78+
-                </div>
-                <div className="mt-0.5 text-xs font-medium text-neutral-600">
-                  Projects delivered
-                </div>
-              </div>
-            </div>
           </motion.div>
 
-          {/* Card 2: Custom-Built Solutions */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-[28px] border border-neutral-300/80 bg-[#f4f3ee] p-6 text-neutral-900 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] sm:p-7"
+            transition={{ delay: 0.08 }}
+            className="rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] px-7 py-6 shadow-2xs"
           >
-            {/* Visual Header Box */}
-            <div className="relative h-52 w-full overflow-hidden rounded-2xl border border-neutral-900 bg-neutral-950 p-4 shadow-inner">
-              <div className="relative z-10 flex items-center justify-between font-mono text-xs font-semibold text-neutral-300">
-                <span>100%</span>
-                <span>Custom-Built Solutions</span>
-              </div>
-
-              {/* Abstract Vertical Blue Fiber Lines Graphic */}
-              <div className="absolute inset-x-0 bottom-0 top-10 flex items-end justify-between gap-1 px-4 opacity-90">
-                {[
-                  40, 65, 80, 95, 85, 70, 90, 100, 80, 60, 75, 90, 100, 85, 65, 95, 70, 50, 85, 95,
-                  75, 60,
-                ].map((h, idx) => (
-                  <div
-                    key={idx}
-                    style={{ height: `${h}%` }}
-                    className="w-1.5 rounded-t-full bg-gradient-to-t from-blue-900 via-blue-500 to-sky-300 shadow-[0_0_8px_rgba(56,189,248,0.3)] transition-all duration-300 group-hover:brightness-125"
-                  />
-                ))}
-              </div>
+            <div className="font-sans text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
+              <CountUp end={62} suffix="+" duration={1800} />
             </div>
-
-            <div className="mt-6 flex flex-1 flex-col justify-end">
-              <h3 className="font-sans text-xl font-bold tracking-tight text-neutral-900">
-                Revenue Systems Built With Purpose
-              </h3>
-              <p className="mt-2 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                Every strategy is designed to attract the right audience, build trust, and generate
-                qualified leads.
-              </p>
+            <div className="mt-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500">
+              Businesses Transformed
             </div>
+            <p className="mt-2 text-xs text-neutral-600 leading-relaxed">
+              Service firms, agencies, healthcare, and enterprise operators.
+            </p>
           </motion.div>
 
-          {/* Card 3: Three Core Areas */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.15 }}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-[28px] border border-neutral-300/80 bg-[#f4f3ee] p-6 text-neutral-900 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] sm:p-7"
+            transition={{ delay: 0.16 }}
+            className="rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] px-7 py-6 shadow-2xs"
           >
-            <div>
-              <h3 className="font-sans text-xl font-bold leading-snug tracking-tight text-neutral-900">
-                Every Growth System Is Built Around Three Core Areas
-              </h3>
-              <p className="mt-2 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                The strongest results come when strategy, visibility, and conversion work together.
-              </p>
+            <div className="font-sans text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
+              <CountUp end={78} suffix="+" duration={1900} />
             </div>
-
-            {/* Metrics Row */}
-            <div className="my-6 grid grid-cols-3 gap-2 font-sans">
-              <div>
-                <div className="text-xl font-extrabold text-neutral-900 sm:text-2xl">40%</div>
-                <div className="mt-1 text-[11px] font-medium leading-tight text-neutral-600">
-                  Trust & Positioning
-                </div>
-              </div>
-              <div>
-                <div className="text-xl font-extrabold text-neutral-900 sm:text-2xl">35%</div>
-                <div className="mt-1 text-[11px] font-medium leading-tight text-neutral-600">
-                  Traffic Acquisition
-                </div>
-              </div>
-              <div>
-                <div className="text-xl font-extrabold text-neutral-900 sm:text-2xl">25%</div>
-                <div className="mt-1 text-[11px] font-medium leading-tight text-neutral-600">
-                  Conversion Optimization
-                </div>
-              </div>
+            <div className="mt-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500">
+              Systems Delivered
             </div>
-
-            {/* Progress Bars Stack */}
-            <div className="space-y-2.5 pt-2">
-              {/* Red Bar with White Dot Knob */}
-              <div className="relative h-3 w-full overflow-hidden rounded-full bg-neutral-200">
-                <div className="relative h-full w-[80%] rounded-full bg-gradient-to-r from-red-600 to-rose-500">
-                  <div className="absolute right-0 top-1/2 h-2.5 w-2.5 -translate-y-1/2 translate-x-1 transform rounded-full bg-white shadow-md" />
-                </div>
-              </div>
-              {/* Amber/Yellow Bar */}
-              <div className="h-3 w-full overflow-hidden rounded-full bg-neutral-200">
-                <div className="h-full w-[45%] rounded-full bg-amber-500" />
-              </div>
-              {/* Light Grey Bar */}
-              <div className="h-3 w-full overflow-hidden rounded-full bg-neutral-200">
-                <div className="h-full w-[20%] rounded-full bg-neutral-400" />
-              </div>
-            </div>
+            <p className="mt-2 text-xs text-neutral-600 leading-relaxed">
+              Custom AI agents, voice pipelines, and end-to-end CRM meshes.
+            </p>
           </motion.div>
 
-          {/* Card 4: Client Satisfaction */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-[28px] border border-neutral-300/80 bg-[#f4f3ee] p-6 text-neutral-900 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] sm:p-7"
+            transition={{ delay: 0.24 }}
+            className="rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] px-7 py-6 shadow-2xs"
           >
-            <div>
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-white px-3 py-1 font-sans text-xs font-semibold text-neutral-800 shadow-sm">
-                <Smile className="h-3.5 w-3.5 text-neutral-700" />
-                <span>Client satisfaction</span>
-              </div>
+            <div className="font-sans text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
+              <CountUp end={4.9} decimals={1} suffix=" / 5" duration={2000} />
             </div>
-
-            {/* Gauge Circle */}
-            <div className="my-6 flex flex-col items-center justify-center">
-              <div className="relative flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-tr from-lime-600 via-lime-400 to-emerald-400 p-1.5 shadow-[0_0_25px_rgba(132,204,22,0.3)]">
-                <div className="flex h-full w-full items-center justify-center rounded-full bg-lime-400 font-sans text-2xl font-extrabold text-neutral-950 shadow-inner">
-                  5.0
-                </div>
-              </div>
-              <div className="mt-3 font-sans text-xs font-medium text-neutral-600">
-                Client satisfaction score
-              </div>
+            <div className="mt-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500">
+              Client Satisfaction
             </div>
-
-            {/* Bottom stats row */}
-            <div className="grid grid-cols-3 gap-2 border-t border-neutral-300/70 pt-4 text-center font-sans">
-              <div>
-                <div className="text-xl font-extrabold text-neutral-900 sm:text-2xl">4.9</div>
-                <div className="mt-0.5 text-xs font-medium text-neutral-600">Rating</div>
-              </div>
-              <div>
-                <div className="text-xl font-extrabold text-neutral-900 sm:text-2xl">98%</div>
-                <div className="mt-0.5 text-xs font-medium text-neutral-600">Client success</div>
-              </div>
-              <div>
-                <div className="text-xl font-extrabold text-neutral-900 sm:text-2xl">78+</div>
-                <div className="mt-0.5 text-xs font-medium text-neutral-600">Reviews</div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Card 5: Project Delivery Speed */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-[28px] border border-neutral-300/80 bg-[#f4f3ee] p-6 text-neutral-900 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] sm:p-7"
-          >
-            <div>
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-white px-3 py-1 font-sans text-xs font-semibold text-neutral-800 shadow-sm">
-                <Zap className="h-3.5 w-3.5 text-neutral-700" />
-                <span>Project delivery speed</span>
-              </div>
-
-              <div className="mt-4 font-sans text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
-                14 days
-              </div>
-              <div className="mt-1 font-sans text-xs font-medium text-neutral-600">
-                Average website delivery timeline
-              </div>
-            </div>
-
-            {/* Checklist Horizontal Timeline */}
-            <div className="my-6 flex flex-wrap items-center justify-between gap-2 border-y border-neutral-300/70 py-4 font-sans text-xs font-semibold text-neutral-800">
-              <span className="flex items-center gap-1">
-                <Check className="h-3.5 w-3.5 text-neutral-600" /> Discovery
-              </span>
-              <span className="flex items-center gap-1">
-                <Check className="h-3.5 w-3.5 text-neutral-600" /> Strategy
-              </span>
-              <span className="flex items-center gap-1">
-                <Check className="h-3.5 w-3.5 text-neutral-600" /> Design System
-              </span>
-              <span className="flex items-center gap-1">
-                <Check className="h-3.5 w-3.5 text-neutral-600" /> Launch
-              </span>
-            </div>
-
-            {/* Bottom stats row */}
-            <div className="grid grid-cols-2 gap-4 font-sans">
-              <div>
-                <div className="text-2xl font-extrabold text-neutral-900 sm:text-3xl">98%</div>
-                <div className="mt-0.5 text-xs font-medium text-neutral-600">On-time delivery</div>
-              </div>
-              <div>
-                <div className="text-2xl font-extrabold text-neutral-900 sm:text-3xl">24/7</div>
-                <div className="mt-0.5 text-xs font-medium text-neutral-600">
-                  Project Communication
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Card 6: Design Performance */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="group relative flex flex-col justify-between overflow-hidden rounded-[28px] border border-neutral-300/80 bg-[#f4f3ee] p-6 text-neutral-900 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(0,0,0,0.08)] sm:p-7"
-          >
-            <div>
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 bg-white px-3 py-1 font-sans text-xs font-semibold text-neutral-800 shadow-sm">
-                <Clock className="h-3.5 w-3.5 text-neutral-700" />
-                <span>Design performance</span>
-              </div>
-
-              <div className="mt-4 font-sans text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-5xl">
-                120ms
-              </div>
-              <div className="mt-1 font-sans text-xs font-medium text-neutral-600">
-                Average interaction response time
-              </div>
-            </div>
-
-            {/* Performance Bar Gauge */}
-            <div className="my-6 rounded-2xl border border-neutral-300/70 bg-white p-4 shadow-sm">
-              <div className="relative h-2 w-full rounded-full bg-neutral-200">
-                <div className="relative h-full w-[60%] rounded-full bg-gradient-to-r from-red-600 via-rose-500 to-red-400">
-                  <div className="absolute right-0 top-1/2 h-3.5 w-3.5 -translate-y-1/2 rounded-full bg-white shadow-[0_0_10px_rgba(0,0,0,0.2)]" />
-                </div>
-              </div>
-              <div className="mt-2 flex items-center justify-between font-mono text-xs text-neutral-500">
-                <span>0ms</span>
-                <span>200ms</span>
-              </div>
-            </div>
-
-            {/* Bottom stats row */}
-            <div className="grid grid-cols-2 gap-4 border-t border-neutral-300/70 pt-4 font-sans">
-              <div>
-                <div className="text-2xl font-extrabold text-neutral-900 sm:text-3xl">99.9%</div>
-                <div className="mt-0.5 text-xs font-medium text-neutral-600">Reliability</div>
-              </div>
-              <div>
-                <div className="text-2xl font-extrabold text-neutral-900 sm:text-3xl">50ms</div>
-                <div className="mt-0.5 text-xs font-medium text-neutral-600">
-                  Average response time
-                </div>
-              </div>
-            </div>
+            <p className="mt-2 text-xs text-neutral-600 leading-relaxed">
+              98% on-time sprint delivery with zero vendor lock-in.
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* 100+ Integrations Section */}
-      <section className="relative mt-20 overflow-hidden border-y border-neutral-900 bg-[#040508] py-20 text-white">
-        {/* Subtle background grid pattern */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#1f293718_1px,transparent_1px),linear-gradient(to_bottom,#1f293718_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_80%,transparent_100%)]"
-        />
-
-        <div className="relative z-10 mx-auto max-w-[1240px] px-6 text-center">
-          {/* Main Metallic Title */}
-          <h2 className="font-sans text-5xl font-extrabold tracking-tight text-transparent sm:text-6xl md:text-7xl bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text leading-tight">
-            100+ Integrations
-          </h2>
-
-          {/* Description */}
-          <p className="mx-auto mt-4 max-w-2xl font-sans text-sm font-normal leading-relaxed text-neutral-400 sm:text-base">
-            Seamlessly deploy the entire Make Accuracy platform or separate best-in-class modules
-            into your current environment with built-in integrations. No manual scripting or
-            maintenance.
-          </p>
-
-          {/* Grid Container */}
-          <div className="relative mt-12">
-            {/* Intense radial blue blur spotlight behind the box grid */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.65)_0%,rgba(29,78,216,0.3)_45%,transparent_75%)] blur-3xl"
-            />
-
-            <div className="relative z-10 grid grid-cols-2 gap-3 sm:grid-cols-4 md:grid-cols-7 sm:gap-4">
-              {[
-                // Row 1
-                {
-                  name: "AWS Auto Scaling Group",
-                  active: false,
-                  icon: (cls: string) => (
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      className={cls}
-                    >
-                      <path d="M4 8h16M4 16h16M8 4v16M16 4v16" />
-                      <circle cx="12" cy="12" r="2" fill="currentColor" />
-                    </svg>
-                  ),
-                },
-                {
-                  name: "Azure",
-                  active: true,
-                  icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="currentColor" className={cls}>
-                      <path d="M13.05 2.15L3.6 18.5H8.7L14.6 8.2L18.3 18.5H23.4L15.9 2.15H13.05ZM11.1 11.8L6.45 21.85H0.6L9.65 6.2L11.1 11.8Z" />
-                    </svg>
-                  ),
-                },
-                {
-                  name: "AWS",
-                  active: true,
-                  icon: (cls: string) => (
-                    <svg viewBox="0 0 60 36" fill="currentColor" className={cls}>
-                      <text
-                        x="3"
-                        y="22"
-                        fontFamily="sans-serif"
-                        fontSize="22"
-                        fontWeight="900"
-                        letterSpacing="-0.5"
-                      >
-                        aws
-                      </text>
-                      <path
-                        d="M6 28 Q 28 36 50 28"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M46 25 L 52 28 L 47 32"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  ),
-                },
-                {
-                  name: "GCP",
-                  active: true,
-                  icon: (cls: string) => (
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className={cls}
-                    >
-                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                      <circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none" />
-                    </svg>
-                  ),
-                },
-                {
-                  name: "OCI",
-                  active: true,
-                  icon: (cls: string) => (
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="3.5"
-                      className={cls}
-                    >
-                      <ellipse cx="12" cy="12" rx="9" ry="5.5" />
-                    </svg>
-                  ),
-                },
-                {
-                  name: "Tanzu",
-                  active: true,
-                  icon: (cls: string) => (
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.2"
-                      className={cls}
-                    >
-                      <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
-                      <circle cx="12" cy="12" r="3.5" strokeWidth="1.8" />
-                    </svg>
-                  ),
-                },
-                {
-                  name: "Spot Elastigroup",
-                  active: false,
-                  icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="currentColor" className={cls}>
-                      <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-                    </svg>
-                  ),
-                },
-
-                // Row 2
-                {
-                  name: "Serverless",
-                  active: false,
-                  icon: (cls: string) => (
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      className={cls}
-                    >
-                      <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                      <polyline points="2 17 12 22 22 17" />
-                    </svg>
-                  ),
-                },
-                {
-                  name: "WinRM",
-                  active: true,
-                  icon: (cls: string) => (
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      className={cls}
-                    >
-                      <rect x="3" y="4" width="18" height="16" rx="2" />
-                      <polyline points="7 9 10 12 7 15" strokeWidth="2.5" strokeLinecap="round" />
-                      <line
-                        x1="12"
-                        y1="15"
-                        x2="16"
-                        y2="15"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  ),
-                },
-                {
-                  name: "Amazon ECS",
-                  active: true,
-                  icon: (cls: string) => (
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinejoin="round"
-                      className={cls}
-                    >
-                      <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" />
-                      <path d="M2 7l10 5 10-5" />
-                      <line x1="12" y1="12" x2="12" y2="22" />
-                    </svg>
-                  ),
-                },
-                {
-                  name: "Azure Functions",
-                  active: true,
-                  icon: (cls: string) => (
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      className={cls}
-                    >
-                      <path d="M6 5L3 12l3 7M18 5l3 7-3 7" strokeWidth="2.2" />
-                      <polygon
-                        points="13 3 8 13 13 13 11 21 17 11 12 11 13 3"
-                        fill="currentColor"
-                        stroke="none"
-                      />
-                    </svg>
-                  ),
-                },
-                {
-                  name: "AWS Lambda",
-                  active: true,
-                  icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="currentColor" className={cls}>
-                      <path d="M4 20h4l3.8-8.5L15 20h5L13.8 8.8 16.5 4h-4.2L10 8.8 8.4 4H4l3.5 7.8L4 20z" />
-                    </svg>
-                  ),
-                },
-                {
-                  name: "Kubernetes",
-                  active: true,
-                  icon: (cls: string) => (
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      className={cls}
-                    >
-                      <polygon points="12 2 21 7 21 17 12 22 3 17 3 7 12 2" />
-                      <circle cx="12" cy="12" r="3.2" strokeWidth="2" />
-                      <line x1="12" y1="2" x2="12" y2="8.8" strokeWidth="2" />
-                      <line x1="12" y1="15.2" x2="12" y2="22" strokeWidth="2" />
-                      <line x1="3" y1="7" x2="9.3" y2="10.5" strokeWidth="2" />
-                      <line x1="14.7" y1="13.5" x2="21" y2="17" strokeWidth="2" />
-                      <line x1="21" y1="7" x2="14.7" y2="10.5" strokeWidth="2" />
-                      <line x1="9.3" y1="13.5" x2="3" y2="17" strokeWidth="2" />
-                    </svg>
-                  ),
-                },
-                {
-                  name: "Spot Elastigroup",
-                  active: false,
-                  icon: (cls: string) => (
-                    <svg viewBox="0 0 24 24" fill="currentColor" className={cls}>
-                      <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" />
-                    </svg>
-                  ),
-                },
-              ].map((item, idx) => {
-                return (
-                  <div
-                    key={idx}
-                    className={`group relative flex h-26 sm:h-32 flex-col items-center justify-center rounded-2xl transition-all duration-300 p-3 sm:p-4 ${
-                      item.active
-                        ? "border border-blue-400/60 bg-gradient-to-b from-[#3b82f6] to-[#1d4ed8] text-white shadow-[0_0_30px_rgba(59,130,246,0.6),inset_0_0_15px_rgba(255,255,255,0.15)] hover:shadow-[0_0_45px_rgba(59,130,246,0.85)] hover:border-blue-300"
-                        : "border border-neutral-800/60 bg-[#0c0d12]/90 text-neutral-500 opacity-30 backdrop-blur-sm hover:opacity-60 hover:text-neutral-300"
-                    }`}
-                  >
-                    {item.icon(
-                      `h-9 w-9 sm:h-11 sm:w-11 transition-transform duration-300 group-hover:scale-110 ${item.active ? "text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.9)]" : "text-neutral-500"}`,
-                    )}
-                    <span
-                      className={`mt-3 font-sans text-xs sm:text-sm font-bold tracking-tight text-center leading-tight ${item.active ? "text-white" : "text-neutral-500"}`}
-                    >
-                      {item.name}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Work Process: Why Businesses Work With Us Section */}
-      <section className="bg-white py-20 text-neutral-900">
+      {/* 2. EDITORIAL FOUNDER SPOTLIGHT — KANTH K MAGLAIRE */}
+      <section className="border-y border-neutral-200/80 bg-[#f4f3ee]/60 py-16 sm:py-24">
         <div className="container-pad mx-auto max-w-[1400px]">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 sm:gap-8">
-            {/* Row 1 - Col 1: Card 01 */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            {/* Left Column: Museum-Grade Portrait Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="flex h-full flex-col rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] p-6 sm:p-8 hover:border-neutral-300 transition-all duration-300 shadow-sm"
+              className="lg:col-span-5 lg:sticky lg:top-28"
             >
-              <div className="inline-flex w-fit rounded-lg border border-neutral-300 bg-white px-3 py-1 font-mono text-xs font-bold text-neutral-900">
-                01
+              <div className="group overflow-hidden rounded-[32px] border border-neutral-200/90 bg-white shadow-[0_18px_50px_rgba(0,0,0,0.06)]">
+                <div className="relative aspect-[4/4.6] w-full overflow-hidden bg-neutral-100">
+                  <img
+                    src="/kishore-kanth.webp"
+                    alt="Kanth K Maglaire — Founder & CEO of Make Accuracy"
+                    onError={(e) => {
+                      const img = e.currentTarget;
+                      if (!img.dataset.fallback) {
+                        img.dataset.fallback = "1";
+                        img.src = "/kishore-kanth.png";
+                      }
+                    }}
+                    className="h-full w-full object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
+                  />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between text-white">
+                    <div>
+                      <div className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-white/75">
+                        Founder &amp; Chief Executive Officer
+                      </div>
+                      <div className="mt-1 font-serif text-2xl sm:text-3xl font-normal tracking-tight text-white">
+                        Kanth K Maglaire
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Founder Metadata Footer */}
+                <div className="p-6 sm:p-7 space-y-5">
+                  <div className="relative rounded-2xl bg-[#f4f3ee] border border-neutral-200/80 p-5">
+                    <Quote className="size-4 text-neutral-400 mb-2" />
+                    <p className="text-xs sm:text-sm italic text-neutral-700 leading-relaxed">
+                      &ldquo;Most companies don&apos;t have a traffic problem or a talent problem —
+                      they have an execution bottleneck. Build the right system once, and growth
+                      compounds quietly every single day.&rdquo;
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-3 pt-1 text-center">
+                    <div className="rounded-xl border border-neutral-200/80 bg-white px-2.5 py-3">
+                      <div className="font-sans text-base font-extrabold text-neutral-900">42+</div>
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-500 mt-0.5">
+                        Sectors
+                      </div>
+                    </div>
+                    <div className="rounded-xl border border-neutral-200/80 bg-white px-2.5 py-3">
+                      <div className="font-sans text-base font-extrabold text-neutral-900">14d</div>
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-500 mt-0.5">
+                        Avg Launch
+                      </div>
+                    </div>
+                    <div className="rounded-xl border border-neutral-200/80 bg-white px-2.5 py-3">
+                      <div className="font-sans text-base font-extrabold text-neutral-900">100%</div>
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-500 mt-0.5">
+                        Client IP
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="mt-5 font-sans text-xl font-bold tracking-tight text-neutral-900">
-                Strategic Thinking
-              </h3>
-              <p className="mt-3 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                Every project begins with understanding your business, audience, and goals before
-                any execution starts.
-              </p>
             </motion.div>
 
-            {/* Row 1 - Col 2: Section Title */}
+            {/* Right Column: Narrative, Philosophy & Founder Commitments */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex h-full flex-col items-center justify-center p-6 text-center sm:p-8"
+              className="lg:col-span-7"
             >
-              <div className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-neutral-600">
-                <span className="h-2 w-2 rounded-sm bg-blue-600" />
-                Work process
+              <div className="inline-flex items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">
+                <span className="size-1.5 rounded-full bg-neutral-900" />
+                Leadership &amp; Origin
               </div>
-              <h2 className="mt-4 font-sans text-2xl font-extrabold tracking-tight text-neutral-900 uppercase leading-tight sm:text-3xl md:text-4xl max-w-xs">
-                WHY BUSINESSES WORK WITH US
+
+              <h2 className="mt-3 font-serif text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-neutral-900 leading-[1.12]">
+                Meet the Person Behind Make Accuracy
               </h2>
-            </motion.div>
 
-            {/* Row 1 - Col 3: Card 02 */}
+              <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium text-neutral-600">
+                <span className="font-bold text-neutral-900">Kanth K Maglaire</span>
+                <span className="text-neutral-300">•</span>
+                <span>Founder &amp; CEO</span>
+                <span className="text-neutral-300">•</span>
+                <span>Principal AI &amp; Revenue Systems Architect</span>
+              </div>
+
+              <div className="mt-7 space-y-5 text-sm sm:text-base text-neutral-700 leading-relaxed">
+                <p>
+                  Make Accuracy was founded by <strong className="text-neutral-900">Kanth K Maglaire</strong>{" "}
+                  with a straightforward conviction: scaling businesses deserve real operational
+                  infrastructure, not hollow dashboards, bloated retainers, or fragmented software
+                  experiments.
+                </p>
+                <p>
+                  Over the past four years, we have partnered with more than 62 service businesses,
+                  agencies, and high-growth operators who wanted more than raw clicks or vanity
+                  numbers. Many companies already invest heavily in demand, yet lose ready-to-buy
+                  enquiries because follow-ups are slow, handoffs are manual, and systems don&apos;t
+                  talk to one another.
+                </p>
+                <p>
+                  We step directly inside that operational gap. We map your complete customer and
+                  delivery journey, engineer tailored AI agents and automated workflows around your
+                  existing stack, and keep our quarterly client roster intentionally capped so every
+                  partner receives direct senior attention, clear communication, and compounding
+                  long-term results.
+                </p>
+              </div>
+
+              {/* Founder Commitments */}
+              <div className="mt-10 rounded-[28px] border border-neutral-200/90 bg-white p-6 sm:p-8 shadow-2xs">
+                <div className="flex items-center justify-between border-b border-neutral-200/80 pb-4">
+                  <h3 className="font-sans text-base sm:text-lg font-bold tracking-tight text-neutral-900">
+                    Why Partners Choose to Work With Us
+                  </h3>
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+                    5 Standards
+                  </span>
+                </div>
+
+                <ul className="mt-5 space-y-3.5">
+                  {FOUNDER_COMMITMENTS.map((item, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start gap-3.5 text-xs sm:text-sm font-medium text-neutral-800 leading-relaxed"
+                    >
+                      <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-neutral-900 text-white">
+                        <Check className="size-3" />
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 pt-5 border-t border-neutral-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="text-xs text-neutral-500">
+                    Speak directly with <span className="font-semibold text-neutral-900">Kanth K Maglaire</span> about your workflow roadmap.
+                  </div>
+                  <Link
+                    to="/book"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-5 py-2.5 text-xs font-semibold text-white transition hover:bg-black shrink-0"
+                  >
+                    <RollingText>Schedule Intro Call</RollingText>
+                    <ArrowRight className="size-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. FOUR STUDIO PRINCIPLES */}
+      <section className="container-pad mx-auto max-w-[1400px] py-16 sm:py-24">
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-500">
+            Operating Philosophy
+          </span>
+          <h2 className="mt-2 font-serif text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-neutral-900">
+            Principles That Govern Every Build
+          </h2>
+          <p className="mt-3 text-sm sm:text-base text-neutral-600 leading-relaxed">
+            Small senior teams outperform bloated agencies when engineering rigor and business
+            clarity come first.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {STUDIO_PRINCIPLES.map((p, idx) => (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              key={p.title}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex h-full flex-col rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] p-6 sm:p-8 hover:border-neutral-300 transition-all duration-300 shadow-sm"
+              transition={{ duration: 0.4, delay: idx * 0.06 }}
+              className="group flex flex-col justify-between rounded-[26px] border border-neutral-200/80 bg-[#f4f3ee] p-7 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
             >
-              <div className="inline-flex w-fit rounded-lg border border-neutral-300 bg-white px-3 py-1 font-mono text-xs font-bold text-neutral-900">
-                02
+              <div>
+                <div className="flex items-center justify-between">
+                  <div className="grid size-11 place-items-center rounded-xl bg-white border border-neutral-200 text-neutral-900 shadow-2xs transition-colors duration-300 group-hover:bg-neutral-900 group-hover:text-white group-hover:border-neutral-900">
+                    <p.Icon className="size-5" />
+                  </div>
+                  <span className="font-mono text-xs font-bold text-neutral-400">{p.num}</span>
+                </div>
+                <h3 className="mt-6 font-sans text-lg font-bold tracking-tight text-neutral-900">
+                  {p.title}
+                </h3>
+                <p className="mt-2 text-xs sm:text-sm text-neutral-600 leading-relaxed">{p.desc}</p>
               </div>
-              <h3 className="mt-5 font-sans text-xl font-bold tracking-tight text-neutral-900">
-                Systems That Work Together
-              </h3>
-              <p className="mt-3 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                Your website, ads, and content work together to build trust, improve engagement, and
-                generate qualified leads.
-              </p>
             </motion.div>
+          ))}
+        </div>
+      </section>
 
-            {/* Row 2 - Col 1: Card 03 */}
+      {/* 4. OBSIDIAN ENTERPRISE INTEGRATIONS SHOWCASE */}
+      <section className="relative overflow-hidden bg-neutral-950 py-20 sm:py-24 text-white">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,#000_70%,transparent_100%)]"
+        />
+
+        <div className="relative z-10 container-pad mx-auto max-w-[1400px] text-center">
+          <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-neutral-400">
+            Infrastructure Compatibility
+          </span>
+          <h2 className="mt-3 font-serif text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white">
+            100+ Production Integrations
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-neutral-400 leading-relaxed">
+            Deploy our complete autonomous architecture or individual high-leverage modules directly
+            inside your existing cloud, CRM, and communication stack — zero migration friction.
+          </p>
+
+          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3.5">
+            {CLOUD_STACK.map((item) => (
+              <div
+                key={item.name}
+                className="group flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-6 backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/[0.09] hover:-translate-y-0.5"
+              >
+                <div className="grid size-10 place-items-center rounded-xl bg-white/10 text-white transition-transform duration-300 group-hover:scale-110">
+                  <item.Icon className="size-5" />
+                </div>
+                <span className="mt-3 font-sans text-xs sm:text-sm font-bold text-white">
+                  {item.name}
+                </span>
+                <span className="mt-0.5 font-mono text-[10px] uppercase tracking-wider text-neutral-500">
+                  {item.category}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. HOW WE PARTNER — EXECUTIVE WORKING MODEL */}
+      <section className="bg-white py-20 sm:py-24 text-neutral-900">
+        <div className="container-pad mx-auto max-w-[1400px]">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <span className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-500">
+              How We Partner
+            </span>
+            <h2 className="mt-2 font-serif text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-neutral-900">
+              Why Ambitious Businesses Work With Us
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-neutral-600 leading-relaxed">
+              Clear process, senior accountability, and systems engineered to keep performing long
+              after launch day.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {WORKING_MODEL.slice(0, 2).map((step, idx) => (
+              <motion.div
+                key={step.num}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.06 }}
+                className="flex flex-col justify-between rounded-[26px] border border-neutral-200/80 bg-[#f4f3ee] p-7 sm:p-8 shadow-2xs transition-all duration-300 hover:border-neutral-300 hover:shadow-md"
+              >
+                <div>
+                  <span className="inline-flex rounded-lg border border-neutral-200 bg-white px-3 py-1 font-mono text-xs font-bold text-neutral-900">
+                    {step.num}
+                  </span>
+                  <h3 className="mt-5 font-sans text-xl font-bold tracking-tight text-neutral-900">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2.5 text-sm text-neutral-600 leading-relaxed">{step.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+
+            {/* Obsidian Centerpiece Highlight Card */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex h-full flex-col rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] p-6 sm:p-8 hover:border-neutral-300 transition-all duration-300 shadow-sm"
+              transition={{ duration: 0.4, delay: 0.12 }}
+              className="flex flex-col justify-between rounded-[26px] border border-neutral-800 bg-neutral-950 p-7 sm:p-8 text-white shadow-xl"
             >
-              <div className="inline-flex w-fit rounded-lg border border-neutral-300 bg-white px-3 py-1 font-mono text-xs font-bold text-neutral-900">
-                03
+              <div>
+                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">
+                  The Make Accuracy Standard
+                </span>
+                <h3 className="mt-4 font-serif text-2xl sm:text-3xl font-normal tracking-tight text-white leading-snug">
+                  Founder-Led Architecture. Zero Junior Handoffs.
+                </h3>
+                <p className="mt-3 text-xs sm:text-sm text-neutral-400 leading-relaxed">
+                  Every client works directly with Kanth K Maglaire and senior systems engineers
+                  from day-one discovery through live production cutover.
+                </p>
               </div>
-              <h3 className="mt-5 font-sans text-xl font-bold tracking-tight text-neutral-900">
-                Focused On Real Results
-              </h3>
-              <p className="mt-3 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                Every strategy is built to increase conversions, generate quality leads, and support
-                long-term business growth.
-              </p>
+              <Link
+                to="/book"
+                className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-neutral-950 transition hover:bg-neutral-100"
+              >
+                <RollingText>Work With Our Team</RollingText>
+                <ArrowRight className="size-3.5" />
+              </Link>
             </motion.div>
 
-            {/* Row 2 - Col 2: Card 04 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex h-full flex-col rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] p-6 sm:p-8 hover:border-neutral-300 transition-all duration-300 shadow-sm"
-            >
-              <div className="inline-flex w-fit rounded-lg border border-neutral-300 bg-white px-3 py-1 font-mono text-xs font-bold text-neutral-900">
-                04
-              </div>
-              <h3 className="mt-5 font-sans text-xl font-bold tracking-tight text-neutral-900">
-                Transparent Communication
-              </h3>
-              <p className="mt-3 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                Direct updates from senior engineers, weekly progress demos, and clear, jargon-free
-                milestone reporting.
-              </p>
-            </motion.div>
-
-            {/* Row 2 - Col 3: Card 05 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex h-full flex-col rounded-2xl border border-neutral-200/80 bg-[#f4f3ee] p-6 sm:p-8 hover:border-neutral-300 transition-all duration-300 shadow-sm"
-            >
-              <div className="inline-flex w-fit rounded-lg border border-neutral-300 bg-white px-3 py-1 font-mono text-xs font-bold text-neutral-900">
-                05
-              </div>
-              <h3 className="mt-5 font-sans text-xl font-bold tracking-tight text-neutral-900">
-                Continuous Optimization
-              </h3>
-              <p className="mt-3 font-sans text-sm font-normal leading-relaxed text-neutral-600">
-                We monitor performance post-launch and continuously refine workflows to maximize
-                speed, scalability, and ROI.
-              </p>
-            </motion.div>
+            {WORKING_MODEL.slice(2).map((step, idx) => (
+              <motion.div
+                key={step.num}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: (idx + 3) * 0.06 }}
+                className="flex flex-col justify-between rounded-[26px] border border-neutral-200/80 bg-[#f4f3ee] p-7 sm:p-8 shadow-2xs transition-all duration-300 hover:border-neutral-300 hover:shadow-md"
+              >
+                <div>
+                  <span className="inline-flex rounded-lg border border-neutral-200 bg-white px-3 py-1 font-mono text-xs font-bold text-neutral-900">
+                    {step.num}
+                  </span>
+                  <h3 className="mt-5 font-sans text-xl font-bold tracking-tight text-neutral-900">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2.5 text-sm text-neutral-600 leading-relaxed">{step.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

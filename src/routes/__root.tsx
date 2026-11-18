@@ -17,7 +17,6 @@ import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { FloatingCTA } from "@/components/layout/FloatingCTA";
 import { Toaster } from "@/components/ui/sonner";
 import { SmoothScroll } from "@/components/fx/SmoothScroll";
-import { AnimatedBackground } from "@/components/fx/AnimatedBackground";
 
 function NotFoundComponent() {
   return (
@@ -226,7 +225,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <SmoothScroll />
-      <AnimatedBackground />
       <ScrollProgress />
       <Navbar />
       <main id="main-content" tabIndex={-1}>

@@ -83,7 +83,7 @@ export function AnimatedBackground() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(1200px 700px at 15% 10%, rgba(255,122,0,0.04), transparent 60%), radial-gradient(900px 600px at 85% 90%, rgba(194,65,12,0.03), transparent 55%), #FFFFFF",
+            "radial-gradient(1200px 700px at 15% 10%, rgba(0,0,0,0.03), transparent 60%), radial-gradient(900px 600px at 85% 90%, rgba(0,0,0,0.02), transparent 55%), #FFFFFF",
         }}
       />
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full opacity-30" />

@@ -42,7 +42,7 @@ export function WhoWeHelp() {
       <div className="container-pad mx-auto max-w-[1400px]">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-neutral-900">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-neutral-900">
             Built for service businesses
           </h2>
           <p className="mt-1 text-xs sm:text-sm text-neutral-600 font-sans max-w-xl mx-auto">
@@ -52,7 +52,7 @@ export function WhoWeHelp() {
         </div>
 
         {/* 5 Industry Cards Grid: Apple Design System */}
-        <div className="mt-6 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-3.5 pb-3 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 sm:gap-4 sm:pb-0 font-sans">
+        <div className="mt-4 flex overflow-x-auto sm:overflow-visible snap-x snap-mandatory scrollbar-none gap-3.5 pt-3 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 sm:gap-4 font-sans">
           {INDUSTRIES.map((ind, idx) => {
             const Icon = ind.icon;
             return (

@@ -103,7 +103,7 @@ function Slider({
         step={step}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
-        className="mt-3 w-full accent-[#ff7a00]"
+        className="mt-3 w-full accent-neutral-900"
       />
     </label>
   );

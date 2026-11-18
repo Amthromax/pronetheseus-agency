@@ -92,7 +92,7 @@ export function AgenticApplications() {
         {/* 3 Clean Showcase Application Category Cards */}
         <div
           ref={mocksRef}
-          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-6 mb-8 sm:mb-12 md:pb-0"
+          className="flex overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none gap-4 pt-3 pb-5 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-6 mb-8 sm:mb-12 md:pt-2 md:pb-2"
         >
           {/* Card 1: Pre-built Applications */}
           <div className="shrink-0 w-[280px] xs:w-[310px] md:w-auto snap-center flex flex-col">
@@ -396,7 +396,7 @@ export function AgenticApplications() {
           {/* Left Sidebar Navigation */}
           <ScrollReveal
             variant="card"
-            className="flex flex-row overflow-x-auto snap-x scrollbar-none pb-2 gap-2 lg:flex-col lg:space-y-2 lg:gap-0 lg:pb-0"
+            className="flex flex-row overflow-x-auto lg:overflow-visible snap-x scrollbar-none py-2 gap-2 lg:flex-col lg:space-y-2 lg:gap-0 lg:py-0"
           >
             <div className="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-1.5 flex items-center gap-1 shrink-0 lg:shrink">
               Select Category <span className="text-[10px]">▼</span>
@@ -509,7 +509,7 @@ export function AgenticApplications() {
             </div>
 
             {/* 2-Column Grid of Ultra-Clean Professional AI Applications Boxes */}
-            <div className="mt-6 flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 md:gap-6 md:pb-0">
+            <div className="mt-4 flex overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none gap-4 pt-3 pb-5 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 md:gap-6 md:pt-2 md:pb-2">
               {/* Card 1: Speed to lead */}
               {(categoryFilter === "ALL" || categoryFilter === "CUSTOMER_SERVICE") && (
                 <div className="shrink-0 w-[290px] xs:w-[320px] md:w-auto snap-center flex flex-col">

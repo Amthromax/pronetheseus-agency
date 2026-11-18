@@ -33,7 +33,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Apex Next-Gen Web Platform",
     tag: "High-Performance Website",
     category: "Websites",
-    gradient: "from-orange-500 to-amber-900",
+    gradient: "from-neutral-700 to-neutral-950",
     client: "Apex Labs",
     year: "2025",
     summary:
@@ -55,7 +55,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "PlasmaOne Digital Experience",
     tag: "Web App & Brand Site",
     category: "Websites",
-    gradient: "from-rose-600 to-orange-950",
+    gradient: "from-neutral-800 to-black",
     client: "PlasmaOne Technologies",
     year: "2025",
     summary:
@@ -101,7 +101,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Yoode Autonomous AI Agent",
     tag: "Voice & Conversational AI",
     category: "AI Agents",
-    gradient: "from-orange-600 to-rose-950",
+    gradient: "from-slate-700 to-neutral-950",
     client: "Yoode AI",
     year: "2025",
     summary:
@@ -123,7 +123,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Helios Intake Voice Agent",
     tag: "Voice AI + EMR Sync",
     category: "AI Agents",
-    gradient: "from-orange-500 to-orange-900",
+    gradient: "from-zinc-700 to-neutral-950",
     client: "Helios Health",
     year: "2025",
     summary:
@@ -145,7 +145,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Prism Sales AI Agent",
     tag: "Multi-channel Sales AI",
     category: "AI Agents",
-    gradient: "from-orange-500 to-pink-800",
+    gradient: "from-slate-600 to-neutral-900",
     client: "Prism Retail",
     year: "2024",
     summary:
@@ -169,7 +169,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Northwind Real Estate AI Concierge",
     tag: "Real Estate + Voice AI",
     category: "Real Estate",
-    gradient: "from-rose-500 to-orange-900",
+    gradient: "from-neutral-700 to-stone-950",
     client: "Northwind Realty",
     year: "2025",
     summary:
@@ -191,7 +191,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Zentra Real Estate Automation",
     tag: "PropTech & MLS Engine",
     category: "Real Estate",
-    gradient: "from-fuchsia-600 to-orange-900",
+    gradient: "from-zinc-600 to-neutral-950",
     client: "Zentra Property Group",
     year: "2025",
     summary:
@@ -237,7 +237,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Quanta CRM Mesh Automation",
     tag: "n8n + Enterprise CRM",
     category: "Automation",
-    gradient: "from-orange-700 to-black",
+    gradient: "from-neutral-800 to-black",
     client: "Quanta Industries",
     year: "2024",
     summary:

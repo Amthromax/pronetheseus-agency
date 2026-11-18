@@ -305,7 +305,7 @@ const INTEGRATION_APPS: AppIcon[] = [
     id: "n8n",
     name: "n8n Workflow Engine",
     category: "Core Automation Engine",
-    bgColor: "bg-[#EA4B71] shadow-2xl border border-rose-400/40 ring-4 ring-orange-500/20",
+    bgColor: "bg-[#EA4B71] shadow-2xl border border-rose-400/40 ring-4 ring-rose-500/20",
     position: "bottom-[18%] left-[45%] sm:left-[46%]",
     floatDelay: 0.2,
     floatDuration: 4.5,
@@ -365,10 +365,11 @@ export function FloatingAppIntegrations() {
         />
       </div>
 
-      {/* Dynamic Ambient Glow Halo */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center z-0">
-        <div className="size-[650px] sm:size-[800px] rounded-full bg-gradient-to-tr from-orange-400/10 via-orange-600/5 to-transparent blur-[120px] animate-pulse" />
-      </div>
+      {/* Lightweight Ambient Glow Halo */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(600px_400px_at_50%_50%,rgba(0,0,0,0.04),transparent_70%)]"
+      />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 min-h-[480px] sm:min-h-[560px] flex flex-col items-center justify-center">
         {/* Central Headline Box with Glassmorphism & Subtle Shimmer Border */}
@@ -399,7 +400,7 @@ export function FloatingAppIntegrations() {
             whileHover={{ scale: 1.15, rotate: 90 }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="relative size-12 sm:size-14 rounded-full bg-white border border-neutral-300 text-neutral-900 flex items-center justify-center shadow-xl hover:shadow-2xl hover:border-[#ff7a00] hover:text-[#ff7a00] cursor-pointer"
+            className="relative size-12 sm:size-14 rounded-full bg-white border border-neutral-300 text-neutral-900 flex items-center justify-center shadow-xl hover:shadow-2xl hover:border-neutral-900 hover:bg-neutral-900 hover:text-white cursor-pointer"
             title="Explore 100+ More Integrations"
           >
             <Plus className="size-6 sm:size-7" />

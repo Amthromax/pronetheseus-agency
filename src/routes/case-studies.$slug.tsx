@@ -129,7 +129,7 @@ function CaseStudyPage() {
               >
                 <div className="font-sans text-4xl font-extrabold text-neutral-900">
                   {m.v}
-                  <span className="ml-1 text-2xl text-[#ff7a00] font-bold">{m.s}</span>
+                  <span className="ml-1 text-2xl text-neutral-900 font-bold">{m.s}</span>
                 </div>
                 <div className="mt-1 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-500">
                   {m.l}
@@ -153,7 +153,7 @@ function CaseStudyPage() {
               changed.
             </p>
             <div className="mt-6 flex items-center gap-2 text-xs font-mono text-neutral-500">
-              <BookOpen className="size-4 text-[#ff7a00]" /> 5 min read · Updated 2026
+              <BookOpen className="size-4 text-neutral-900" /> 5 min read · Updated 2026
             </div>
           </div>
           <div className="lg:col-span-2 space-y-5 text-sm sm:text-base leading-relaxed text-neutral-700 font-sans">
@@ -206,22 +206,22 @@ function CaseStudyPage() {
           <div className="lg:col-span-2">
             <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <Detail
-                icon={<Users className="size-4 text-[#ff7a00]" />}
+                icon={<Users className="size-4 text-neutral-900" />}
                 label="Team size"
                 value={study.customer.size}
               />
               <Detail
-                icon={<MapPin className="size-4 text-[#ff7a00]" />}
+                icon={<MapPin className="size-4 text-neutral-900" />}
                 label="HQ"
                 value={study.customer.location}
               />
               <Detail
-                icon={<Globe className="size-4 text-[#ff7a00]" />}
+                icon={<Globe className="size-4 text-neutral-900" />}
                 label="Website"
                 value={study.customer.website}
               />
               <Detail
-                icon={<CheckCircle2 className="size-4 text-[#ff7a00]" />}
+                icon={<CheckCircle2 className="size-4 text-neutral-900" />}
                 label="Founded"
                 value={study.customer.founded}
               />
@@ -310,7 +310,7 @@ function CaseStudyPage() {
                 className="relative rounded-2xl border border-sandel-border bg-sandel-card p-6 shadow-2xs"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-2xl font-bold text-[#ff7a00]">{w.step}</span>
+                  <span className="font-mono text-2xl font-bold text-neutral-900">{w.step}</span>
                   <span className="rounded-md border border-sandel-border bg-sandel px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-wider text-neutral-700">
                     {w.duration}
                   </span>
@@ -337,7 +337,7 @@ function CaseStudyPage() {
 
           {/* Main Executive Quote */}
           <blockquote className="mt-8 rounded-2xl border border-sandel-border bg-sandel-card p-8 shadow-sm max-w-4xl">
-            <Quote className="size-8 text-[#ff7a00]" />
+            <Quote className="size-8 text-neutral-900" />
             <p className="mt-4 font-sans text-xl sm:text-2xl font-bold leading-snug text-neutral-900">
               "{study.quote}"
             </p>
@@ -380,7 +380,7 @@ function CaseStudyPage() {
             <h2 className="font-sans text-3xl font-bold">More Client Stories</h2>
             <Link
               to="/case-studies"
-              className="text-xs sm:text-sm font-bold text-neutral-700 hover:text-[#ff7a00] font-sans"
+              className="text-xs sm:text-sm font-bold text-neutral-700 hover:text-neutral-900 font-sans"
             >
               View all stories →
             </Link>
@@ -404,13 +404,13 @@ function CaseStudyPage() {
                   <div className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-500">
                     {o.industry}
                   </div>
-                  <h3 className="mt-1 font-sans text-xl font-bold text-neutral-900 group-hover:text-[#ff7a00] transition-colors">
+                  <h3 className="mt-1 font-sans text-xl font-bold text-neutral-900 group-hover:text-neutral-600 transition-colors">
                     {o.company}
                   </h3>
                   <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-sans line-clamp-2">
                     {o.after}
                   </p>
-                  <div className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-neutral-900 group-hover:text-[#ff7a00]">
+                  <div className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-neutral-900 group-hover:text-neutral-600">
                     Read case study <ArrowRight className="size-3.5" />
                   </div>
                 </div>

@@ -24,7 +24,7 @@ export const Route = createFileRoute("/resources")({
               params={{ slug: r.slug }}
               className="group rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-brand/40"
             >
-              <div className="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-[#ff7a00]/20 to-[#c2410c]/10 text-brand ring-1 ring-inset ring-white/10">
+              <div className="grid size-10 place-items-center rounded-xl bg-neutral-900/10 text-brand ring-1 ring-inset ring-black/10">
                 <r.Icon className="size-4" />
               </div>
               <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">
